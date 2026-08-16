@@ -161,3 +161,33 @@ OnInit:
 	setunittitle(getnpcid(0), "<Card Buyer>");
 	end;
 }
+
+// Bodyguards: visible and proximity-reactive, but they do not open dialogue.
+paramk,41,161,4	script	Guard#card_collector_1	405,2,1,{
+	callsub S_Warn;
+	end;
+
+OnTouch:
+	callsub S_Warn;
+	end;
+
+S_Warn:
+	if (@CardGuardWarningUntil > gettimetick(2))
+		return;
+	@CardGuardWarningUntil = gettimetick(2) + 3;
+
+	switch (rand(3)) {
+	case 0:
+		npctalk "Easy. Don't try anything.", strnpcinfo(0), bc_self;
+		break;
+	case 1:
+		npctalk "Watch yourself. The Collector is protected.", strnpcinfo(0), bc_self;
+		break;
+	default:
+		npctalk "Keep your hands where I can see them.", strnpcinfo(0), bc_self;
+		break;
+	}
+	return;
+}
+
+paramk,41,157,2	duplicate(Guard#card_collector_1)	Guard#card_collector_2	405,2,1
