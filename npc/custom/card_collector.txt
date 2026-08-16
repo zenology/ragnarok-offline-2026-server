@@ -5,7 +5,8 @@
 //= Offers are derived from the canonical source monster:
 //= Normal Lv. 1-50: 1 point; Lv. 51-100: 2 points;
 //= Lv. 101+: 5 points; Miniboss: 5 points; MVP: 10 points.
-//= Loyalty promotions are intentionally deferred.
+//= Account-wide loyalty counters reward repeat Normal, Miniboss,
+//= and MVP card sales. Multiple milestones roll independently.
 //============================================================
 
 paramk,41,159,4	script	Card Collector#offline	4_M_MANAGER,{
@@ -14,7 +15,7 @@ paramk,41,159,4	script	Card Collector#offline	4_M_MANAGER,{
 	mes "Not Zeny--^0055FFCash Points^000000.";
 	mes "My offer depends on the monster behind each card.";
 	next;
-	switch (select("Sell cards.:Check my Cash Points.:Leave.")) {
+	switch (select("Sell cards.:Check points and loyalty.:Leave.")) {
 	case 1:
 		getinventorylist;
 		.@card_count = 0;
@@ -88,6 +89,7 @@ paramk,41,159,4	script	Card Collector#offline	4_M_MANAGER,{
 		input .@amount, 1, .@owned;
 		.@points_each = callsub(S_GetOffer, .@selected_id);
 		.@payment = .@amount * .@points_each;
+		.@tier = callsub(S_GetTier, .@selected_id);
 
 		mes "[Card Collector]";
 		mes "^0055FF" + mesitemlink(.@selected_id, false) + "^000000 x" + .@amount;
@@ -97,10 +99,91 @@ paramk,41,159,4	script	Card Collector#offline	4_M_MANAGER,{
 		if (select("Sell the cards.:Keep them.") != 1)
 			close;
 
+		// Roll every completed loyalty milestone before committing so the
+		// complete reward bundle can be checked for inventory capacity.
+		switch (.@tier) {
+		case 1:
+			.@new_progress = #CC_Normal + .@amount;
+			.@milestones = .@new_progress / 30;
+			.@remainder = .@new_progress % 30;
+			for (.@i = 0; .@i < .@milestones; ++.@i) {
+				if (rand(100) < 70)
+					.@old_card_albums += 5;
+				else
+					.@dead_branches += 5;
+			}
+			break;
+		case 2:
+			.@new_progress = #CC_Mini + .@amount;
+			.@milestones = .@new_progress / 5;
+			.@remainder = .@new_progress % 5;
+			for (.@i = 0; .@i < .@milestones; ++.@i) {
+				if (rand(100) < 50)
+					.@magic_card_albums += 1;
+				else
+					.@dead_branches += 10;
+			}
+			break;
+		case 3:
+			.@new_progress = #CC_MVP + .@amount;
+			.@milestones = .@new_progress / 5;
+			.@remainder = .@new_progress % 5;
+			for (.@i = 0; .@i < .@milestones; ++.@i) {
+				.@roll = rand(100);
+				if (.@roll < 15)
+					.@mvp_card_albums += 1;
+				else if (.@roll < 55)
+					.@bloody_branches += 2;
+				else if (.@roll < 95)
+					.@empty_bottles += 100;
+				else
+					.@backstabs += 1;
+			}
+			break;
+		default:
+			mes "[Card Collector]";
+			mes "I can no longer classify that card.";
+			close;
+		}
+
+		.@reward_count = 0;
+		if (.@old_card_albums) {
+			.@reward_ids[.@reward_count] = 616;
+			.@reward_amounts[.@reward_count++] = .@old_card_albums;
+		}
+		if (.@dead_branches) {
+			.@reward_ids[.@reward_count] = 604;
+			.@reward_amounts[.@reward_count++] = .@dead_branches;
+		}
+		if (.@magic_card_albums) {
+			.@reward_ids[.@reward_count] = 12246;
+			.@reward_amounts[.@reward_count++] = .@magic_card_albums;
+		}
+		if (.@mvp_card_albums) {
+			.@reward_ids[.@reward_count] = 35000;
+			.@reward_amounts[.@reward_count++] = .@mvp_card_albums;
+		}
+		if (.@bloody_branches) {
+			.@reward_ids[.@reward_count] = 12103;
+			.@reward_amounts[.@reward_count++] = .@bloody_branches;
+		}
+		if (.@empty_bottles) {
+			.@reward_ids[.@reward_count] = 713;
+			.@reward_amounts[.@reward_count++] = .@empty_bottles;
+		}
+
+		if (.@reward_count && !checkweight2(.@reward_ids, .@reward_amounts)) {
+			mes "[Card Collector]";
+			mes "Your inventory cannot hold the loyalty reward.";
+			mes "Make room, then bring the cards back.";
+			close;
+		}
+
 		// Revalidate immediately before committing the exchange.
 		if (getiteminfo(.@selected_id, ITEMINFO_TYPE) != IT_CARD ||
 			getiteminfo(.@selected_id, ITEMINFO_SUBTYPE) != CARD_NORMAL ||
 			callsub(S_GetOffer, .@selected_id) != .@points_each ||
+			callsub(S_GetTier, .@selected_id) != .@tier ||
 			countitem(.@selected_id) < .@amount) {
 			mes "[Card Collector]";
 			mes "The deal changed before we could finish.";
@@ -110,17 +193,46 @@ paramk,41,159,4	script	Card Collector#offline	4_M_MANAGER,{
 
 		delitem .@selected_id, .@amount;
 		#CASHPOINTS += .@payment;
-		logmes "Card Collector: sold " + .@amount + " x item " + .@selected_id + " for " + .@payment + " Cash Points; balance " + #CASHPOINTS;
+		switch (.@tier) {
+		case 1: #CC_Normal = .@remainder; break;
+		case 2: #CC_Mini = .@remainder; break;
+		case 3: #CC_MVP = .@remainder; break;
+		}
+		for (.@i = 0; .@i < .@reward_count; ++.@i)
+			getitem .@reward_ids[.@i], .@reward_amounts[.@i];
+		logmes "Card Collector: sold " + .@amount + " x item " + .@selected_id + " for " + .@payment + " Cash Points; tier " + .@tier + "; milestones " + .@milestones + "; OCA " + .@old_card_albums + "; DB " + .@dead_branches + "; MCA " + .@magic_card_albums + "; MVP albums " + .@mvp_card_albums + "; BDB " + .@bloody_branches + "; bottles " + .@empty_bottles + "; backstabs " + .@backstabs + "; balance " + #CASHPOINTS;
 
 		mes "[Card Collector]";
 		mes "A clean deal.";
 		mes "You received ^0055FF" + .@payment + " Cash Points^000000.";
 		mes "Current balance: ^0055FF" + #CASHPOINTS + " Cash Points^000000.";
+		if (.@milestones) {
+			mes "^FF8800Loyalty reward:^000000";
+			if (.@old_card_albums) mes mesitemlink(616, false) + " x" + .@old_card_albums;
+			if (.@dead_branches) mes mesitemlink(604, false) + " x" + .@dead_branches;
+			if (.@magic_card_albums) mes mesitemlink(12246, false) + " x" + .@magic_card_albums;
+			if (.@mvp_card_albums) mes mesitemlink(35000, false) + " x" + .@mvp_card_albums;
+			if (.@bloody_branches) mes mesitemlink(12103, false) + " x" + .@bloody_branches;
+			if (.@empty_bottles) mes mesitemlink(713, false) + " x" + .@empty_bottles;
+		}
+		if (.@backstabs) {
+			mes "...";
+			next;
+			mes "[Card Collector]";
+			mes "You really should have kept that MVP card.";
+			next;
+			close2;
+			unitkill getcharid(3);
+			end;
+		}
 		close;
 
 	case 2:
 		mes "[Card Collector]";
 		mes "Your account has ^0055FF" + #CASHPOINTS + " Cash Points^000000.";
+		mes "Normal-card loyalty: ^0055FF" + #CC_Normal + " / 30^000000.";
+		mes "Miniboss-card loyalty: ^0055FF" + #CC_Mini + " / 5^000000.";
+		mes "MVP-card loyalty: ^0055FF" + #CC_MVP + " / 5^000000.";
 		close;
 
 	default:
@@ -136,6 +248,16 @@ S_GetOffer:
 	if (inarray(.Offer2[0], .@item_id) != -1)
 		return 2;
 	if (inarray(.Offer1[0], .@item_id) != -1)
+		return 1;
+	return 0;
+
+S_GetTier:
+	.@item_id = getarg(0);
+	if (inarray(.Offer10[0], .@item_id) != -1)
+		return 3;
+	if (inarray(.MinibossCards[0], .@item_id) != -1)
+		return 2;
+	if (callsub(S_GetOffer, .@item_id) > 0)
 		return 1;
 	return 0;
 
@@ -158,8 +280,24 @@ OnInit:
 	// 139 cards worth 10 Cash Points.
 	setarray .Offer10[0], 4121,4123,4128,4131,4132,4134,4135,4137,4142,4143,4144,4145,4146,4147,4148,4168,4236,4263,4276,4302,4305,4318,4324,4330,4342,4352,4357,4359,4361,4363,4365,4367,4372,4374,4376,4386,4399,4403,4407,4408,4419,4425,4430,4441,4451,4456,4507,4509,4520,4525,4526,4527,4528,4529,4534,4556,4557,4560,4561,4562,4563,4564,4565,4566,4574,4576,4578,4580,4592,4601,4603,4610,4625,4636,4647,4648,4649,4650,4651,4652;
 	setarray .Offer10[80], 4662,4671,4672,4673,4674,4675,4676,4677,4678,4679,4680,4681,4682,4683,4697,27020,27025,27081,27104,27106,27113,27119,27126,27150,27151,27152,27162,27164,27180,27182,27265,27294,27298,27305,27318,27319,27321,27326,27327,27346,27362,27363,31023,31026,300007,300078,300079,300080,300099,300100,300107,300145,300151,300217,300227,300239,300248,300262,300281;
+	// 84 Miniboss cards are a separate loyalty tier even though they share
+	// the five-Cash-Point offer with Normal monsters of Level 101+.
+	setarray .MinibossCards[0], 4047,4054,4163,4169,4179,4183,4197,4203,4207,4237,4238,4241,4243,4250,4254,4266,4290,4300,4306,4354,4384,4391,4392,4393,4394,4395,4396,4397,4398,4406,4423,4426,4427,4428,4429,4431,4440,4462,4463,4508,4524,4532,4533,4575,4577,4579,4581,4590,4591,4605,4606,4631,4632,4642,4643,4645,4646,4684,4685,4686,4687,4688,4689,4690,4691,4692,4693,4694,4695,4696,27105,27109,27165,27183,27262,27263,27322,27323,27324,27325,31024,31025,300103,300228;
+	deletearray $@CC_MvpAlbumCards[0], getarraysize($@CC_MvpAlbumCards);
+	copyarray $@CC_MvpAlbumCards[0], .Offer10[0], getarraysize(.Offer10);
 	setunittitle(getnpcid(0), "<Card Buyer>");
 	end;
+}
+
+function	script	F_OfflineMvpCardAlbum	{
+	.@size = getarraysize($@CC_MvpAlbumCards);
+	if (.@size <= 0) {
+		displaymessage strcharinfo(0), "The MVP Card Album is not ready yet.";
+		getitem 35000,1;
+		return;
+	}
+	getitem $@CC_MvpAlbumCards[rand(.@size)],1;
+	return;
 }
 
 // Bodyguards: visible and proximity-reactive, but they do not open dialogue.
