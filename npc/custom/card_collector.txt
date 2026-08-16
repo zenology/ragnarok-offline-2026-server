@@ -244,21 +244,6 @@ paramk,41,159,4	script	Black Market Boss#offline	4_M_MANAGER,{
 		close;
 	}
 
-S_Lerp:
-	.@lv = getarg(0);
-	.@lv0 = getarg(1);
-	.@lv1 = getarg(2);
-	.@p0 = getarg(3);
-	.@p1 = getarg(4);
-	if (.@lv1 <= .@lv0)
-		return .@p0;
-	if (.@lv <= .@lv0)
-		return .@p0;
-	if (.@lv >= .@lv1)
-		return .@p1;
-	.@span = .@lv1 - .@lv0;
-	return .@p0 + ((.@lv - .@lv0) * (.@p1 - .@p0) + .@span / 2) / .@span;
-
 S_GetOffer:
 	.@item_id = getarg(0);
 	.@i = inarray(.CardIds[0], .@item_id);
@@ -268,14 +253,10 @@ S_GetOffer:
 	if (.@lv < 1)
 		return 0;
 	if (inarray(.Offer10[0], .@item_id) != -1)
-		return callsub(S_Lerp, .@lv, .MvpLv0, .MvpLv1, .MvpP0, .MvpP1);
+		return callfunc("F_OfflineCardCollectorOffer", .@lv, 3);
 	if (inarray(.MinibossCards[0], .@item_id) != -1)
-		return callsub(S_Lerp, .@lv, .MiniLv0, .MiniLv1, .MiniP0, .MiniP1);
-	if (.@lv <= 50)
-		return callsub(S_Lerp, .@lv, .N1Lv0, .N1Lv1, .N1P0, .N1P1);
-	if (.@lv <= 100)
-		return callsub(S_Lerp, .@lv, .N2Lv0, .N2Lv1, .N2P0, .N2P1);
-	return callsub(S_Lerp, .@lv, .N3Lv0, .N3Lv1, .N3P0, .N3P1);
+		return callfunc("F_OfflineCardCollectorOffer", .@lv, 2);
+	return callfunc("F_OfflineCardCollectorOffer", .@lv, 1);
 
 S_GetTier:
 	.@item_id = getarg(0);
@@ -289,11 +270,6 @@ S_GetTier:
 
 OnInit:
 	.PageSize = 10;
-	.N1Lv0 = 1; .N1Lv1 = 50; .N1P0 = 250; .N1P1 = 1000;
-	.N2Lv0 = 51; .N2Lv1 = 100; .N2P0 = 2000; .N2P1 = 4000;
-	.N3Lv0 = 101; .N3Lv1 = 255; .N3P0 = 7000; .N3P1 = 15000;
-	.MiniLv0 = 27; .MiniLv1 = 186; .MiniP0 = 7000; .MiniP1 = 20000;
-	.MvpLv0 = 25; .MvpLv1 = 255; .MvpP0 = 20000; .MvpP1 = 100000;
 
 	freeloop 1;
 	.@n = 0;
