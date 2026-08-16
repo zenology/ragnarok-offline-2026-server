@@ -5,7 +5,9 @@
 //= account-wide Cash Points. Browse is one hidden pointshop
 //= per function category. Category shops are filled at OnInit
 //= by a hidden NPC. Modest official packs replace loose bottles.
-//= Timed Infinite rental boxes remain. Random boxes are omitted.
+//= Timed Infinite rental boxes remain. Upgrade stones use official
+//= 10-packs plus loose Blacksmith Blessing and Shadow Refine Hammer.
+//= Random boxes are omitted. Farmable Oridecon/Elunium stay on Zeny NPCs.
 //============================================================
 
 paramk,39,185,4	script	Rooke#offline	542,{
@@ -30,8 +32,8 @@ paramk,39,185,4	script	Rooke#offline	542,{
 	mes "The good kind. The kind the Kafra ladies pretend not to know about.";
 	next;
 	mes "[Rooke]";
-	mes "Manuals, gum, tonics, tickets...";
-	mes "If it goes in a bottle or under the tongue, I can source it.";
+	mes "Manuals, gum, tonics, tickets... stones, if you know how to ask.";
+	mes "If it goes in a bottle, under the tongue, or into a forge, I can source it.";
 	mes "First taste is honest. ^0055FFCash Points^000000 only.";
 	mes "Come on. Browse. You know you want to.";
 	next;
@@ -39,10 +41,11 @@ paramk,39,185,4	script	Rooke#offline	542,{
 	mes "Most packs run ^0055FF2 Cash Points^000000. Stronger stuff is ^0055FF3-4^000000.";
 	mes "A twenty-count pack costs double. Strays without a pack are ^0055FF1^000000 a piece.";
 	mes "Rental boxes are timed. ^0055FF1 day 5 / 3 days 10 / 5 days 15 / 7 days 20^000000.";
+	mes "Upgrade stones have their own shelf. Blessings are ^0055FF3^000000. The hammer is ^0055FF2^000000.";
 	mes "The reset stuff? That's a different shelf. ^0055FF20 Cash Points^000000.";
 	mes "Tell me what you're craving, or whisper a name and I'll find it.";
 	next;
-	switch (select("EXP and Drop:Combat Buffs:Recovery:Convenience:Reset:Search this stall:")) {
+	switch (select("EXP and Drop:Combat Buffs:Recovery:Convenience:Upgrade:Reset:Search this stall:")) {
 	case 1:
 		callsub S_OpenCategory, 0;
 		end;
@@ -56,9 +59,12 @@ paramk,39,185,4	script	Rooke#offline	542,{
 		callsub S_OpenCategory, 3;
 		end;
 	case 5:
-		callsub S_OpenCategory, 4;
+		callsub S_OpenCategory, 5;
 		end;
 	case 6:
+		callsub S_OpenCategory, 4;
+		end;
+	case 7:
 		callsub S_Search;
 		end;
 	}
@@ -146,6 +152,7 @@ OnInit:
 -	pointshop	cons2	-1,#CASHPOINTS,501:2
 -	pointshop	cons3	-1,#CASHPOINTS,501:2
 -	pointshop	cons4	-1,#CASHPOINTS,501:2
+-	pointshop	cons5	-1,#CASHPOINTS,501:2
 
 -	script	cons_seller_db	-1,{
 	end;
@@ -159,7 +166,8 @@ OnInit:
 	// TODO scripts, and weaker same-name duplicates are excluded.
 	// Ordinary buffs use one modest official pack per family. Ability sets
 	// the 10-count price; pack volume scales it. Timed Infinite rental boxes
-	// remain. Singles without a clean pack cost 1 Cash Point.
+	// remain. Singles without a clean pack cost 1 Cash Point, except
+	// Blacksmith Blessing at 3 and Shadow Refine Hammer at 2.
 	// Category 0: EXP and Drop
 	setarray .ItemId[0],     12900, 13990, 13695, 13696, 16267, 13758, 12902, 16633, 16268, 12312, 12872;
 	setarray .ItemPrice[0],      2,     2,     2,     3,     4,     8,     2,     3,     4,     1,     1;
@@ -180,11 +188,15 @@ OnInit:
 	setarray .ItemId[43],    12213;
 	setarray .ItemPrice[43],    20;
 	setarray .ItemCat[43],       4;
+	// Category 5: Upgrade. Farmable Oridecon/Elunium stay on Zeny NPCs.
+	setarray .ItemId[44],    12920, 12921, 16394, 16396, 16260, 16261,  6635, 23436;
+	setarray .ItemPrice[44],     2,     2,     3,     3,     4,     4,     3,     2;
+	setarray .ItemCat[44],       5,     5,     5,     5,     5,     5,     5,     5;
 
-	.ItemCount = 44;
-	deletearray .CatHas[0], 5;
+	.ItemCount = 52;
+	deletearray .CatHas[0], 6;
 
-	for (.@cat = 0; .@cat < 5; ++.@cat)
+	for (.@cat = 0; .@cat < 6; ++.@cat)
 		npcshopdelitem "cons" + .@cat, 501;
 	npcshopdelitem "cons_search", 501;
 
