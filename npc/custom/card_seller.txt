@@ -26,6 +26,23 @@ paramk,47,186,4	script	Corvin#offline	512,{
 		mes "Please contact a game master.";
 		close;
 	}
+	if ((eaclass()&EAJ_BASEMASK) == EAJ_SUMMONER) {
+		mes "[Corvin]";
+		mes "A-a cat?";
+		mes "The cat is talking.";
+		mes "Of course it is. Why would tonight make sense?";
+		next;
+	} else if (eaclass()&EAJL_BABY) {
+		mes "[Corvin]";
+		mes "Oh! A ch-child...?";
+		mes "No... that feeling...";
+		mes "Why does someone so small feel this dangerous?";
+		next;
+		mes "[Corvin]";
+		mes "P-please, browse anything you like.";
+		mes "Just... please do not hurt me.";
+		next;
+	}
 	mes "[Corvin]";
 	mes "U-um... welcome to our black-market card stall.";
 	mes "My brother handles the dangerous merchandise.";
@@ -61,6 +78,38 @@ paramk,49,186,4	script	Corven#offline	512,{
 		mes "Please contact a game master.";
 		close;
 	}
+	.@eac = eaclass();
+	if ((.@eac&EAJ_BASEMASK) == EAJ_SUMMONER) {
+		mes "[Corven]";
+		mes "Wait... a cat?";
+		mes "The cat can talk.";
+		mes "Fine. I have to see where this goes.";
+		next;
+	} else if (!(.@eac&EAJL_2)) {
+		if (.@eac&EAJL_UPPER) {
+			mes "[Corven]";
+			mes "Hm...? This child feels strangely familiar.";
+			mes "There is far too much power behind those young eyes.";
+			mes "Very well. I will make an exception.";
+			next;
+		} else {
+			mes "[Corven]";
+			mes "What is this? Who brought a child in here?";
+			mes "You are far too young for my collection.";
+			next;
+			mes "[Corven]";
+			mes "Come back after you have earned your second class.";
+			mes "Then perhaps I will consider opening my shelves.";
+			close;
+		}
+	} else if (.@eac&EAJL_BABY) {
+		mes "[Corven]";
+		mes "Another child--";
+		mes "...No. Something is wrong.";
+		mes "This one is dangerous. Very dangerous.";
+		mes "Fine. The shelves are open.";
+		next;
+	}
 	mes "[Corven]";
 	mes "Our family runs this black-market card row.";
 	mes "My brother beside me deals in normal cards.";
@@ -86,13 +135,39 @@ OnInit:
 }
 
 paramk,51,186,4	script	Veynar#offline	10576,{
-	.@menu$ = getvariableofnpc( .alphabet_menu$, "mvp_card_seller_creation" );
-	if (.@menu$ == "") {
+	.@mvp_menu$ = getvariableofnpc( .alphabet_menu$, "mvp_card_seller_creation" );
+	.@special_menu$ = getvariableofnpc( .special_alphabet_menu$, "mvp_card_seller_creation" );
+	if (.@mvp_menu$ == "" || .@special_menu$ == "") {
 		mes "[Veynar]";
 		mes "I am sorry, it seems like something went wrong.";
 		mes "I cannot find any cards in our database at the moment.";
 		mes "Please contact a game master.";
 		close;
+	}
+	if (!(eaclass()&EAJL_THIRD) && Class != JOB_SPIRIT_HANDLER) {
+		mes "[Veynar]";
+		mes "No. Even Corven's standards are more generous than mine.";
+		mes "You are not nearly seasoned enough for what I sell.";
+		next;
+		mes "[Veynar]";
+		mes "Let the world leave a few more scars upon you.";
+		mes "Survive long enough to become someone worth remembering.";
+		mes "Then you may return.";
+		close;
+	}
+	if (Class == JOB_SPIRIT_HANDLER) {
+		mes "[Veynar]";
+		mes "A cat.";
+		mes "A talking cat with enough scars to stand before me.";
+		mes "Unexpected. Not unwelcome.";
+		next;
+	} else if (eaclass()&EAJL_BABY) {
+		mes "[Veynar]";
+		mes "A child?";
+		mes "...How deceptive.";
+		mes "There is something profoundly dangerous behind that small frame.";
+		mes "Interesting. You may proceed.";
+		next;
 	}
 	if (#CASHPOINTS < 70) {
 		mes "[Veynar]";
@@ -123,11 +198,35 @@ paramk,51,186,4	script	Veynar#offline	10576,{
 	mes "Trinkets for beginners and collectors with modest ambitions.";
 	mes "The merchants beside me will gladly entertain you with those.";
 	mes "Do not confuse their stock with mine.";
-	mes "Would you like to browse the collection?";
+	mes "Which collection have you come to see?";
 	next;
-	.@s = select(.@menu$) -1;
-	close2;
-	callshop "card_mvp#"+ getvariableofnpc( .alphabet$[.@s], "mvp_card_seller_creation" ), 1;
+	switch (select("Show me your MVP cards.:I know you have something more valuable.:")) {
+	case 1:
+		.@s = select(.@mvp_menu$) - 1;
+		close2;
+		callshop "card_mvp#" + getvariableofnpc( .alphabet$[.@s], "mvp_card_seller_creation" ), 1;
+		end;
+	case 2:
+		mes "[Veynar]";
+		mes "^777777...This one has taste.^000000";
+		mes "So, you know I keep something more valuable.";
+		if (#CASHPOINTS <= 100) {
+			next;
+			mes "[Veynar]";
+			mes "Taste without the means to indulge it is merely appetite.";
+			mes "^777777...A hundr--";
+			mes "Ah. I cannot speak so carelessly.^000000";
+			close;
+		}
+		next;
+		mes "[Veynar]";
+		mes "Very well. You may look upon the cards no other merchant can offer.";
+		next;
+		.@s = select(.@special_menu$) - 1;
+		close2;
+		callshop "card_special#" + getvariableofnpc( .special_alphabet$[.@s], "mvp_card_seller_creation" ), 1;
+		end;
+	}
 	end;
 
 OnInit:
@@ -315,8 +414,12 @@ OnInit:
 	freeloop 1;
 	deletearray .alphabet$[0], getarraysize(.alphabet$);
 	deletearray .HasAlphabet[0], getarraysize(.HasAlphabet);
+	deletearray .special_alphabet$[0], getarraysize(.special_alphabet$);
+	deletearray .SpecialHasAlphabet[0], getarraysize(.SpecialHasAlphabet);
 	.size_alphabet = 0;
+	.special_size_alphabet = 0;
 	.alphabet_menu$ = "";
+	.special_alphabet_menu$ = "";
 	.@alphabet$ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	// Reviewed MVP cards. Source monster data is not needed here because
@@ -332,8 +435,10 @@ OnInit:
 	setarray .SpecialCardIds[80], 27218,27219,27220,27221,27222,27224,27225,27301,27330,27331,27332,27333,27334,27335,27336,27337,27338,27339,27340,27341,27342,27343,27364,27365,27366,27367,27393,27394,27395,27396,31006,31007,31008,31009,31010,31011,31012,31013,31014,31015,300127,300128,300129,300130,300131,300132,300133,300134,300135,300136,300163,300164,300165,300166,300167,300168,300177,300178,300179,300180,300181,300182,300183,300184,300185,300186,300187,300188,300189,300190,300191,300195,300201,300203,300209,300282,300283,300284,300285,300288;
 	setarray .SpecialCardIds[160], 300289,300307,300308,300309,300310,300421,300422,300423,300424,300425,300426,300486,300487,300488,300489,300490,300491,300492,300493,300494,300495,300496,300497,300547,300550,300551,300552,300618;
 
-	for (.@i = 0; .@i < 26; ++.@i)
+	for (.@i = 0; .@i < 26; ++.@i) {
 		npcshopdelitem "card_mvp#" + charat(.@alphabet$, .@i), 501;
+		npcshopdelitem "card_special#" + charat(.@alphabet$, .@i), 501;
+	}
 
 	.@card_count = getarraysize(.CardIds);
 	for (.@i = 0; .@i < .@card_count; ++.@i) {
@@ -362,8 +467,8 @@ OnInit:
 			.@letter$ = "A";
 			.@letter_index = 0;
 		}
-		.HasAlphabet[.@letter_index] = true;
-		npcshopadditem "card_mvp#" + .@letter$, .@item_id, 120;
+		.SpecialHasAlphabet[.@letter_index] = true;
+		npcshopadditem "card_special#" + .@letter$, .@item_id, 120;
 	}
 
 	for (.@i = 0; .@i < 26; ++.@i) {
@@ -371,6 +476,11 @@ OnInit:
 			.@letter$ = charat(.@alphabet$, .@i);
 			.alphabet$[.size_alphabet++] = .@letter$;
 			.alphabet_menu$ += .@letter$ + " Cards:";
+		}
+		if (.SpecialHasAlphabet[.@i]) {
+			.@letter$ = charat(.@alphabet$, .@i);
+			.special_alphabet$[.special_size_alphabet++] = .@letter$;
+			.special_alphabet_menu$ += .@letter$ + " Cards:";
 		}
 	}
 	freeloop 0;
@@ -402,3 +512,29 @@ OnInit:
 -	pointshop	card_mvp#X	-1,#CASHPOINTS,501:100
 -	pointshop	card_mvp#Y	-1,#CASHPOINTS,501:100
 -	pointshop	card_mvp#Z	-1,#CASHPOINTS,501:100
+-	pointshop	card_special#A	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#B	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#C	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#D	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#E	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#F	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#G	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#H	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#I	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#J	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#K	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#L	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#M	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#N	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#O	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#P	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#Q	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#R	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#S	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#T	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#U	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#V	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#W	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#X	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#Y	-1,#CASHPOINTS,501:120
+-	pointshop	card_special#Z	-1,#CASHPOINTS,501:120
