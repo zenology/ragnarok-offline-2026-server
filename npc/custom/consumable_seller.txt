@@ -4,7 +4,8 @@
 //= Sells a curated cash-origin consumable whitelist for
 //= account-wide Cash Points. Browse is one hidden pointshop
 //= per function category. Category shops are filled at OnInit
-//= by a hidden NPC. Random boxes are omitted.
+//= by a hidden NPC. Modest official packs replace loose bottles.
+//= Timed Infinite rental boxes remain. Random boxes are omitted.
 //============================================================
 
 paramk,39,185,4	script	Rooke#offline	542,{
@@ -35,7 +36,9 @@ paramk,39,185,4	script	Rooke#offline	542,{
 	mes "Come on. Browse. You know you want to.";
 	next;
 	mes "[Rooke]";
-	mes "Most bottles run ^0055FF2-5 Cash Points^000000.";
+	mes "Most packs run ^0055FF2 Cash Points^000000. Stronger stuff is ^0055FF3-4^000000.";
+	mes "A twenty-count pack costs double. Strays without a pack are ^0055FF1^000000 a piece.";
+	mes "Rental boxes are timed. ^0055FF1 day 5 / 3 days 10 / 5 days 15 / 7 days 20^000000.";
 	mes "The reset stuff? That's a different shelf. ^0055FF20 Cash Points^000000.";
 	mes "Tell me what you're craving, or whisper a name and I'll find it.";
 	next;
@@ -152,30 +155,33 @@ OnFillSearch:
 	end;
 
 OnInit:
-	// Canonical SKUs only. Boxes, regional copies, [Not For Sale], empty TODO
-	// scripts, and weaker same-name duplicates are excluded.
+	// Canonical SKUs only. Random boxes, regional copies, [Not For Sale], empty
+	// TODO scripts, and weaker same-name duplicates are excluded.
+	// Ordinary buffs use one modest official pack per family. Ability sets
+	// the 10-count price; pack volume scales it. Timed Infinite rental boxes
+	// remain. Singles without a clean pack cost 1 Cash Point.
 	// Category 0: EXP and Drop
-	setarray .ItemId[0],     12208, 12312, 12411, 14592, 14532, 14533, 14545, 12872, 12210, 12562, 12412;
-	setarray .ItemPrice[0],      3,     4,     5,     3,     2,     4,     5,     4,     3,     4,     5;
+	setarray .ItemId[0],     12900, 13990, 13695, 13696, 16267, 13758, 12902, 16633, 16268, 12312, 12872;
+	setarray .ItemPrice[0],      2,     2,     2,     3,     4,     8,     2,     3,     4,     1,     1;
 	setarray .ItemCat[0],        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,     0;
 	// Category 1: Combat Buffs
-	setarray .ItemId[11],    12884, 12885, 12886, 12202, 12203, 12204, 12205, 12206, 12207, 12215, 12216, 12217, 12218, 12219, 12220, 12299, 14536;
-	setarray .ItemPrice[11],     5,     5,     5,     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,     3,     3;
+	setarray .ItemId[11],    17263, 17264, 17265, 12903, 12904, 12905, 12906, 12907, 12908, 12913, 12914, 12915, 12916, 12917, 12918, 13717, 12299;
+	setarray .ItemPrice[11],    10,    10,    10,     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,     2,     1,     1;
 	setarray .ItemCat[11],       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1;
 	// Category 2: Recovery
-	setarray .ItemId[28],    14534, 14535, 14537;
-	setarray .ItemPrice[28],     2,     3,     3;
+	setarray .ItemId[28],    13711, 13714, 13719;
+	setarray .ItemPrice[28],     2,     3,     1;
 	setarray .ItemCat[28],       2,     2,     2;
 	// Category 3: Convenience
-	setarray .ItemId[31],    12211, 12212, 12209,  7776,  7621, 12214, 12887, 14527, 14529;
-	setarray .ItemPrice[31],     2,     2,     2,     5,     3,     3,     5,     3,     2;
-	setarray .ItemCat[31],       3,     3,     3,     3,     3,     3,     3,     3,     3;
+	setarray .ItemId[31],    12909, 12910, 12901,  7776, 13600, 13582, 17314, 17251, 17474, 17229, 13553, 14347;
+	setarray .ItemPrice[31],     2,     2,     2,     1,     2,     1,     5,    10,    15,    20,     1,     4;
+	setarray .ItemCat[31],       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3;
 	// Category 4: Reset
-	setarray .ItemId[40],    12213;
-	setarray .ItemPrice[40],    20;
-	setarray .ItemCat[40],       4;
+	setarray .ItemId[43],    12213;
+	setarray .ItemPrice[43],    20;
+	setarray .ItemCat[43],       4;
 
-	.ItemCount = 41;
+	.ItemCount = 44;
 	deletearray .CatHas[0], 5;
 
 	for (.@cat = 0; .@cat < 5; ++.@cat)
@@ -191,7 +197,7 @@ OnInit:
 			.ItemId[.@i] = 0;
 			continue;
 		}
-		if (.@type != IT_USABLE && .@type != IT_HEALING && .@type != IT_DELAYCONSUME && .@type != IT_ETC) {
+		if (.@type != IT_USABLE && .@type != IT_HEALING && .@type != IT_DELAYCONSUME && .@type != IT_ETC && .@type != IT_CASH) {
 			debugmes "Consumable Seller: rejected type for item " + .@id + " (" + .@name$ + ").";
 			.ItemId[.@i] = 0;
 			continue;
