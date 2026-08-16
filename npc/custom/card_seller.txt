@@ -19,6 +19,7 @@
 //= 3.3 Shop prices = Collector offer + 30%
 //= 3.4 Special cards = midpoint MVP offer + 30%
 //= 3.5 Veynar browse gates use Collector prices, not shop prices
+//= 3.6 Opening dialogue no longer recites shop rates
 //============================================================
 
 function	script	F_OfflineCardLerp	{
@@ -110,19 +111,6 @@ paramk,47,186,4	script	Corvin#offline	512,{
 	mes "I only have normal monster cards.";
 	mes "They are still useful... I think.";
 	mes "Please do not compare my shelves to theirs.";
-	next;
-	.@p1a = callfunc("F_OfflineCardShopPrice", 1, 1);
-	.@p1b = callfunc("F_OfflineCardShopPrice", 50, 1);
-	.@p2a = callfunc("F_OfflineCardShopPrice", 51, 1);
-	.@p2b = callfunc("F_OfflineCardShopPrice", 100, 1);
-	.@p3a = callfunc("F_OfflineCardShopPrice", 101, 1);
-	.@p3b = callfunc("F_OfflineCardShopPrice", 255, 1);
-	mes "[Corvin]";
-	mes "I sell cards from normal monsters for ^0055FF" + .@p1a + "-" + .@p3b + " Cash Points^000000.";
-	mes "The stronger the source monster, the higher the price.";
-	mes "^777777Lv. 1-50: " + .@p1a + "-" + .@p1b + " | 51-100: " + .@p2a + "-" + .@p2b;
-	mes "101+: " + .@p3a + "-" + .@p3b + "^000000";
-	mes "Miniboss and MVP cards are not available here.";
 	mes "Would you like to browse the collection?";
 	next;
 	.@s = select(.@menu$) -1;
@@ -182,12 +170,6 @@ paramk,49,186,4	script	Corven#offline	512,{
 	mes "He has quantity. I have standards.";
 	mes "Do not misunderstand--his collection has its uses.";
 	mes "But when ordinary prey no longer impresses you, you come to me.";
-	next;
-	.@p_lo = callfunc("F_OfflineCardShopPrice", 27, 2);
-	.@p_hi = callfunc("F_OfflineCardShopPrice", 186, 2);
-	mes "[Corven]";
-	mes "I sell cards from miniboss monsters for ^0055FF" + .@p_lo + "-" + .@p_hi + " Cash Points^000000.";
-	mes "The stronger the source monster, the higher the price.";
 	mes "Every card here came from a monster worth remembering.";
 	mes "Would you like to browse the collection?";
 	next;
@@ -253,19 +235,8 @@ paramk,51,186,4	script	Veynar#offline	10576,{
 	mes "You thought luck would bring you every card you wanted?";
 	mes "If luck were enough, you would not be standing before me.";
 	next;
-	.@mvp_lo = callfunc("F_OfflineCardShopPrice", 25, 3);
-	.@mvp_hi = callfunc("F_OfflineCardShopPrice", 255, 3);
-	.@special = callfunc("F_OfflineSpecialCardShopPrice");
-	mes "[Veynar]";
-	mes "MVP cards cost ^0055FF" + .@mvp_lo + "-" + .@mvp_hi + " Cash Points^000000.";
-	mes "The stronger the source monster, the higher the price.";
-	mes "My special cards cost ^0055FF" + .@special + " Cash Points^000000 each.";
-	mes "Too expensive? Then search every corner of Rune-Midgard for another seller.";
-	mes "You will return empty-handed.";
-	next;
 	mes "[Veynar]";
 	mes "Only I can obtain these rarities.";
-	mes "Remember that before you question my price.";
 	mes "Normal cards? Miniboss cards?";
 	mes "Trinkets for beginners and collectors with modest ambitions.";
 	mes "The merchants beside me will gladly entertain you with those.";
@@ -287,8 +258,6 @@ paramk,51,186,4	script	Veynar#offline	10576,{
 			next;
 			mes "[Veynar]";
 			mes "Taste without the means to indulge it is merely appetite.";
-			mes "^777777..." + .@special_look + "--";
-			mes "Ah. I cannot speak so carelessly.^000000";
 			close;
 		}
 		next;
