@@ -41,7 +41,7 @@ paramk,39,185,4	script	Rooke#offline	542,{
 	mes "Most packs run ^0055FF2 Cash Points^000000. Stronger stuff is ^0055FF3-4^000000.";
 	mes "A twenty-count pack costs double. Strays without a pack are ^0055FF1^000000 a piece.";
 	mes "Rental boxes are timed. ^0055FF1 day 5 / 3 days 10 / 5 days 15 / 7 days 20^000000.";
-	mes "Upgrade stones have their own shelf. Blessings are ^0055FF3^000000. The hammer is ^0055FF2^000000.";
+	mes "Upgrade stones have their own shelf. Blessings are ^0055FF1^000000. The hammer is ^0055FF5^000000.";
 	mes "The reset stuff? That's a different shelf. ^0055FF20 Cash Points^000000.";
 	mes "Tell me what you're craving, or whisper a name and I'll find it.";
 	next;
@@ -167,7 +167,7 @@ OnInit:
 	// Ordinary buffs use one modest official pack per family. Ability sets
 	// the 10-count price; pack volume scales it. Timed Infinite rental boxes
 	// remain. Singles without a clean pack cost 1 Cash Point, except
-	// Blacksmith Blessing at 3 and Shadow Refine Hammer at 2.
+	// Shadow Refine Hammer at 5.
 	// Category 0: EXP and Drop
 	setarray .ItemId[0],     12900, 13990, 13695, 13696, 16267, 13758, 12902, 16633, 16268, 12312, 12872;
 	setarray .ItemPrice[0],      2,     2,     2,     3,     4,     8,     2,     3,     4,     1,     1;
@@ -190,7 +190,7 @@ OnInit:
 	setarray .ItemCat[43],       4;
 	// Category 5: Upgrade. Farmable Oridecon/Elunium stay on Zeny NPCs.
 	setarray .ItemId[44],    12920, 12921, 16394, 16396, 16260, 16261,  6635, 23436;
-	setarray .ItemPrice[44],     2,     2,     3,     3,     4,     4,     3,     2;
+	setarray .ItemPrice[44],     2,     2,     3,     3,     4,     4,     1,     5;
 	setarray .ItemCat[44],       5,     5,     5,     5,     5,     5,     5,     5;
 
 	.ItemCount = 52;
