@@ -3,8 +3,8 @@
 //===== Description: =========================================
 //= Replaces Stylist#prontera. Standard 3rd jobs may toggle
 //= the official alternative (Second Costume) body for one
-//= Costume Change Ticket (6959). Other jobs get flavor talk
-//= only. Original Style UI is removed. Sprite 4_F_02.
+//= Costume Change Ticket (6959). Does not open Style Shop.
+//= Clothes dye is Ginedin at prt_in,284,168.
 //============================================================
 
 prt_in,243,168,4	script	Stylist#prontera	4_F_02,{
@@ -23,7 +23,8 @@ prt_in,243,168,4	script	Stylist#prontera	4_F_02,{
 		next;
 		mes "[Jovovich]";
 		mes "Those clothes already look right on you.";
-		mes "I'm not touching them. This is enough.";
+		mes "I'm not touching the cut.";
+		mes "If you want a different color, Ginedin beside me still dyes.";
 		close;
 	}
 
@@ -39,6 +40,7 @@ prt_in,243,168,4	script	Stylist#prontera	4_F_02,{
 	if (select("I'm interested:Not now") == 2) {
 		mes "[Jovovich]";
 		mes "Come back when those clothes itch.";
+		mes "Color is Ginedin's counter, not mine.";
 		close;
 	}
 
@@ -49,11 +51,13 @@ prt_in,243,168,4	script	Stylist#prontera	4_F_02,{
 	if (select("I have it:I don't") == 2) {
 		mes "[Jovovich]";
 		mes "Then come back with a " + getitemname(.TicketId) + ".";
+		mes "Rooke in the black market sells them.";
 		close;
 	}
 	if (countitem(.TicketId) < 1) {
 		mes "[Jovovich]";
 		mes "You don't. Don't bluff a stylist.";
+		mes "Rooke sells those tickets.";
 		close;
 	}
 
@@ -69,6 +73,7 @@ prt_in,243,168,4	script	Stylist#prontera	4_F_02,{
 	else
 		mes "There. The alternative cut.";
 	mes "Bring another ticket when you want to switch again.";
+	mes "A new color is Ginedin, next to me.";
 	close;
 
 S_GetOutfit:

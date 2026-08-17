@@ -27,8 +27,8 @@ alberta_in,55,142,7	script	Stylist#alberta	4_F_02,{
 
 //= Stylist of Prontera
 //===================================================
-// Replaced by npc/custom/second_costume.txt (Second Costume ticket toggle).
-// Do not restore openstylist() here.
+// Replaced by npc/custom/second_costume.txt (Second Costume ticket talk).
+// Do not restore openstylist() here. Clothes dye is Ginedin.
 
 //= Stylist of Lighthalzen
 //===================================================
