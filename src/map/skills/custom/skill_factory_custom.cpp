@@ -3,23 +3,21 @@
 
 #include "skill_factory_custom.hpp"
 
-#include "../swordman/bash.hpp"
+#include "../skill_impl.hpp"
 
-class SkillCustomBash;
+// Include .cpp files into the TU to optimize compile time
+// For reference see unity builds or amalgamated builds
+#include "rekenbercelestial.cpp"
 
 std::unique_ptr<const SkillImpl> SkillFactoryCustom::create(const e_skill skill_id) const {
-#if 0
-	switch( skill_id ){
-		case SM_BASH:
-			return std::make_unique<SkillCustomBash>();
-
-		default:
-			return nullptr;
-	}
-#endif
+	if (skill_id == OFFLINE_REKENBER_CELESTIAL)
+		return std::make_unique<SkillRekenberCelestial>();
 
 	return nullptr;
 }
+
+#if 0
+#include "../swordman/bash.hpp"
 
 class SkillCustomBash : public SkillBash{
 	void calculateSkillRatio(const Damage* wd, const block_list* src, const block_list* target, uint16 skill_lv, int32& base_skillratio, int32 mflag) const override{
@@ -32,3 +30,4 @@ class SkillCustomBash : public SkillBash{
 		base_skillratio += 300 * skill_lv;
 	}
 };
+#endif
