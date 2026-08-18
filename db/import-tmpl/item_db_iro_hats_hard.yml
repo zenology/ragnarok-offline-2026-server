@@ -4,13 +4,11 @@
 # Scripts mapped from those descriptions onto existing rAthena bonus commands.
 #
 # Omitted (no verified local mapping):
-# - 400738 +12 "low chance" Fear (no rate)
 # - Premium-buff extra lines on 401019 / 401460
 # - Star Clust Lv.3 combos on 420569 (those SKUs are etc enchant stones)
 # - Snow Flower Armor/Robe combos on 420590 (no local armor/robe rows)
 # - Moonflower Bow combo on 420245 (no local bow)
 # - Poenitentia Flamen combo on 400625 (no local weapon)
-# - Powerful Skeleton / Archer / Soldier card combos on 400738
 # - Hero-LT and OS-AD series combos on 410531 / 410539
 # - Tendrillion / Toxic Enhancement Chimera / Infinite Eddga / Mine Cowraiders cards
 # - Grass Rune Armor combo on 420503
@@ -169,8 +167,10 @@ Body:
          bonus bLongAtkRate,15;
          bonus2 bMagicAddEle,Ele_All,15;
       }
-      if (.@r>=12)
+      if (.@r>=12) {
          bonus bFixedCast,-300;
+         bonus3 bAddEffWhenHit,Eff_Fear,300,ATF_SHORT|ATF_MAGIC;
+      }
       if (.@g>=ENCHANTGRADE_D) {
          bonus bMaxHPrate,10;
          bonus bMaxSPrate,10;

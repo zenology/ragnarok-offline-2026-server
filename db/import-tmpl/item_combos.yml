@@ -149,6 +149,25 @@ Body:
          autobonus "{ bonus bPow,40; bonus bSpl,40; }",50,15000,BF_WEAPON|BF_MAGIC;
   - Combos:
       - Combo:
+          - Bijou_Hat_US
+          - P_Archer_Skeleton_Card
+    Script: |
+      bonus bLongAtkRate,15;
+  - Combos:
+      - Combo:
+          - Bijou_Hat_US
+          - P_Skeleton_Card
+    Script: |
+      bonus bBaseAtk,40;
+      bonus3 bAddEff,Eff_Stun,800,ATF_SHORT|ATF_LONG;
+  - Combos:
+      - Combo:
+          - Bijou_Hat_US
+          - P_Soldier_Skeleton_Card
+    Script: |
+      bonus bCritAtkRate,25;
+  - Combos:
+      - Combo:
           - Misst_J_Tiara
           - Mistress_Card
     Script: |

@@ -110,6 +110,12 @@ Body:
     Name: Teleport Scroll (Rachel)
   - Id: 12979
     Name: Teleport Scroll (Localizing Region)
+  - Id: 4446
+    Name: Powerful Skeleton Card
+  - Id: 4633
+    Name: Powerful Archer Skeleton Card
+  - Id: 4634
+    Name: Powerful Soldier Skeleton Card
 
 Footer:
   Imports:
