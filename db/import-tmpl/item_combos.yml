@@ -32,3 +32,22 @@
 Header:
   Type: COMBO_DB
   Version: 1
+
+Body:
+  # Divine Pride 2026-08-18: Grey Wolf Cub in Mouth set bonuses.
+  - Combos:
+      - Combo:
+          - Grey_Cub_US    # 420388
+          - Gray_W_Suits   # 450177
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bPAtk,25;
+      bonus bBaseAtk,75*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Grey_Cub_US    # 420388
+          - Gray_W_Robe    # 450178
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bSMatk,25;
+      bonus bMatk,75*(getequiprefinerycnt(EQI_ARMOR)/3);

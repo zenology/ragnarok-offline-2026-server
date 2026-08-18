@@ -111,6 +111,10 @@ Body:
   - Id: 12979
     Name: Teleport Scroll (Localizing Region)
 
+Footer:
+  Imports:
+    - Path: db/import/item_db_iro_hats.yml
+
 #Body:
 # THQ Quest Items
 #=============================================================

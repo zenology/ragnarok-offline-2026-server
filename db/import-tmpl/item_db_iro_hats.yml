@@ -1,0 +1,1199 @@
+###########################################################################
+# iRO history headgear missing from rAthena item_db_equip.yml
+# Source: Divine Pride item pages fetched 2026-08-18
+# Scope: costume rows plus easy/medium scripts only
+# Hard combat hats (grade, 4th-job sets, -LT, Warlock/Wanderer skill hats) stay parked
+###########################################################################
+
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 15919
+    AegisName: C_Domovoi_RU
+    Name: Costume Mini Domovoi
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    View: 2172
+
+  - Id: 15987
+    AegisName: C_Rune_Helm_Violet
+    Name: Costume Violet Rune Helm
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2202
+
+  - Id: 19377
+    AegisName: Mini_Melon
+    Name: Mini Melon
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 1758
+
+  - Id: 19383
+    AegisName: Slurp_Slurp_Hat
+    Name: Slurp Slurp Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 1764
+
+  - Id: 19457
+    AegisName: Lovely_Heart_Cap
+    Name: Lovely Heart Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 1770
+
+  - Id: 400525
+    AegisName: C_Wildcat_Knit_Cap_W
+    Name: Costume Wildcat Knit Cap (White)
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2381
+
+  - Id: 400668
+    AegisName: C_Cow_Hat
+    Name: Costume Cow Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 799
+
+  - Id: 400669
+    AegisName: C_Yellow_Head_Dress
+    Name: Costume Yellow Headdress
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2537
+
+  - Id: 400790
+    AegisName: C_Valkyrie_Circlet_US
+    Name: "Costume Valkyrie's Circlet"
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 940
+
+  - Id: 400915
+    AegisName: C_Dancing_Octo_US
+    Name: Costume Dancing Octopus
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 1007
+
+  - Id: 400938
+    AegisName: C_Master_US
+    Name: Costume Master Class
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+
+  - Id: 401013
+    AegisName: C_Midgard_Diadem_JP
+    Name: Costume Celestial Diadem
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2692
+
+  - Id: 401149
+    AegisName: C_Success_CN
+    Name: Costume Hollgrehenn Aura
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2791
+
+  - Id: 401180
+    AegisName: C_Rune_Helm_Sun
+    Name: Costume Sun Rune Helm
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2219
+
+  - Id: 401211
+    AegisName: C_Flash_of_Lightning
+    Name: Costume Lightning Flash
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2415
+
+  - Id: 401228
+    AegisName: C_Louyang_Cap_US
+    Name: Costume Special Louyang Cap
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 396
+
+  - Id: 401232
+    AegisName: C_Rune_Helm_Love
+    Name: Costume Love Rune Helm
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2220
+
+  - Id: 401284
+    AegisName: C_Rune_Helm_Wind
+    Name: Costume Wind Rune Helm
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2208
+
+  - Id: 401314
+    AegisName: C_White_Fox_Bamboo_Hat
+    Name: Costume White Fox Bamboo Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2505
+
+  - Id: 401315
+    AegisName: C_Fox_Ear_Beret
+    Name: Costume Fox Ear Beret
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2825
+
+  - Id: 401316
+    AegisName: C_Mask_Of_Fox_YL
+    Name: Costume Yellow Fox Mask
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2826
+
+  - Id: 401318
+    AegisName: C_Bunny_Shell_US
+    Name: Costume Easter Bunny Eggshell
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 1000
+
+  - Id: 401319
+    AegisName: C_Dark_Knight_Helm
+    Name: Costume Dark Knight Helm
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2174
+
+  - Id: 401368
+    AegisName: C_Holy_Knight_Helm
+    Name: Costume Holy Knight Helm
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2207
+
+  - Id: 401384
+    AegisName: C_Fire_Cowboy
+    Name: Costume Fiery Cowboy Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 1075
+
+  - Id: 401392
+    AegisName: C_Tarou_Magical_Hat
+    Name: Costume Tarou Magical Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 2845
+
+  - Id: 401424
+    AegisName: C_Ancient_Giant_Helm
+    Name: Costume Ancient Giant Helm
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 1221
+
+  - Id: 401470
+    AegisName: C_Worldcup_Ball
+    Name: Costume World Cup Ball
+    Type: Armor
+    Slots: 1
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 673
+
+  - Id: 410395
+    AegisName: C_God_Of_Sun_Poring
+    Name: Costume Sun God Poring
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    View: 2669
+
+  - Id: 410469
+    AegisName: C_Bubble_Pool_US
+    Name: Costume Summer Bubbles
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+
+  - Id: 410608
+    AegisName: C_Ear_OF_Bloody
+    Name: Costume Crimson Flame Ears
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    View: 2318
+
+  - Id: 410609
+    AegisName: C_Nine_Tailed_Fox
+    Name: Costume Ninetails Fox
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    View: 2823
+
+  - Id: 410629
+    AegisName: C_Two_Side_Wing
+    Name: Costume Two Side Wing
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    View: 2831
+
+  - Id: 420371
+    AegisName: C_Aura_Of_Ra_TH
+    Name: Costume Aura of Amon Ra
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2094
+
+  - Id: 420445
+    AegisName: C_Poncho
+    Name: Costume Poncho
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2670
+
+  - Id: 420651
+    AegisName: C_Skia_Two_Side_Up_BG
+    Name: Costume Skia Wig (Blue Green)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2760
+
+  - Id: 420653
+    AegisName: C_Skia_Two_Side_Up_CB
+    Name: Costume Skia Wig (Sakura)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2762
+
+  - Id: 420654
+    AegisName: C_Skia_Two_Side_Up_LB
+    Name: Costume Skia Wig (Light Blue)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2763
+
+  - Id: 420655
+    AegisName: C_Skia_Two_Side_Up_SV
+    Name: Costume Skia Wig (Silver)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2764
+
+  - Id: 420656
+    AegisName: C_Skia_Two_Side_Up_BL
+    Name: Costume Skia Wig (Black)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2765
+
+  - Id: 420668
+    AegisName: C_Rocking_Short_BD
+    Name: Costume Rocking Short (Blonde)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2777
+
+  - Id: 420669
+    AegisName: C_Rocking_Short_RD
+    Name: Costume Rocking Short (Red)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2778
+
+  - Id: 420670
+    AegisName: C_Rocking_Short_LB
+    Name: Costume Rocking Short (Light Blue)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2779
+
+  - Id: 420672
+    AegisName: C_Rocking_Short_JBL
+    Name: Costume Rocking Short (Black)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2781
+
+  - Id: 420673
+    AegisName: C_Rocking_Short_WH
+    Name: Costume Rocking Short (White)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2782
+
+  - Id: 420760
+    AegisName: C_Azure_Flame_Muffler
+    Name: Costume Azure Flame Muffler
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2752
+
+  - Id: 420790
+    AegisName: C_Majestic_Fox
+    Name: Costume Majestic Fox
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2742
+
+  - Id: 420791
+    AegisName: C_Naughty_P_Wig
+    Name: Costume Mischievous Princess Wig
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2824
+
+  - Id: 420831
+    AegisName: C_Holy_Knight_Guard
+    Name: Costume Holy Knight Pauldron
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2715
+
+  - Id: 440041
+    AegisName: C_Firehorse_US
+    Name: Costume Fire Horse
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+      Costume_Head_Mid: true
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 1631
+
+  - Id: 440049
+    AegisName: C_23Anniv_Poring1
+    Name: Costume Poring Commoner
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+      Costume_Head_Mid: true
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2554
+
+  - Id: 440050
+    AegisName: C_23Anniv_Poring2
+    Name: Costume Poring Royalty
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+      Costume_Head_Mid: true
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2552
+
+  - Id: 480783
+    AegisName: C_Dark_Knight_Cloak
+    Name: Costume Dark Knight Cloak
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    View: 2732
+
+
+  - Id: 5860
+    AegisName: S_Prontera_Army_Cap
+    Name: Siege Army Cap
+    Type: Armor
+    Weight: 10
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 60
+    View: 48
+    Script: |
+      bonus2 bSubRace,RC_Player_Human,10;
+
+  - Id: 5861
+    AegisName: S_Kafra_Hairband
+    Name: Siege Kafra Band
+    Type: Armor
+    Weight: 10
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 60
+    View: 106
+    Script: |
+      bonus2 bSubRace,RC_Player_Human,10;
+
+  - Id: 5862
+    AegisName: S_Sweet_Gents
+    Name: Siege Sweet Gent
+    Type: Armor
+    Weight: 10
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 60
+    View: 29
+    Script: |
+      bonus2 bSubRace,RC_Player_Human,10;
+
+  - Id: 5863
+    AegisName: S_Robin_Eyepatch
+    Name: Siege Zoro Mask
+    Type: Armor
+    Weight: 10
+    Defense: 2
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 70
+    View: 50
+    Script: |
+      bonus2 bSubRace,RC_Player_Human,2;
+
+  - Id: 5876
+    AegisName: IRO_Flag_Bandana
+    Name: Star-Spangled Bandana
+    Type: Armor
+    Weight: 20
+    Defense: 7
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 30
+    Refineable: true
+    View: 1062
+    Script: |
+      bonus bAllStats,1;
+      skill "SM_BASH",1;
+      bonus2 bAddRace,RC_All,10;
+
+  - Id: 5877
+    AegisName: IRO_Flag_Hat
+    Name: "'Merica Hat"
+    Type: Armor
+    Weight: 20
+    Defense: 7
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1063
+    Script: |
+      bonus bSpeedRate,25;
+      if (getrefine()>=7) {
+         bonus bLuk,10;
+         bonus bFlee,10;
+      }
+
+  - Id: 5948
+    AegisName: Loki_Assassin_Mask
+    Name: "Loki's Assassin Mask"
+    Type: Armor
+    Weight: 1
+    Defense: 1
+    Jobs:
+      Assassin: true
+      Guillotine_Cross: true
+      Shadow_Cross: true
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1345
+    Script: |
+      bonus bAtkRate,-10;
+      bonus bMatkRate,-10;
+      bonus bAspdRate,10;
+
+  - Id: 5949
+    AegisName: Bra_Hat
+    Name: Bra Hat
+    Type: Armor
+    Weight: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1346
+    Script: |
+      bonus2 bSubRace,RC_DemiHuman,10;
+      bonus2 bSubRace,RC_Player_Human,10;
+
+  - Id: 15972
+    AegisName: Comp_Happy_Balloon_K
+    Name: "[Event] Happy Balloon"
+    Type: Armor
+    Weight: 1
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1289
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,10;
+
+  - Id: 18837
+    AegisName: Cheering_Whistle
+    Name: Cheering Whistle
+    Type: Armor
+    Weight: 10
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 952
+    Script: |
+      bonus bStr,2;
+
+  - Id: 18886
+    AegisName: Rainbow_Long_Octopus
+    Name: Rainbow Long Octopus
+    Type: Armor
+    Weight: 50
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1007
+    Script: |
+      bonus bVit,2;
+      bonus bDex,2;
+      bonus bAllStats,3;
+      bonus bMaxHPrate,10;
+      bonus bMaxSPrate,10;
+      bonus bUnbreakableHelm;
+
+  - Id: 18907
+    AegisName: Drooping_Panda
+    Name: Clinging Panda
+    Type: Armor
+    Weight: 20
+    Defense: 8
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1029
+    Script: |
+      bonus2 bSubRace,RC_DemiHuman,5;
+      bonus2 bSubRace,RC_Player_Human,5;
+      bonus2 bAddSize,Size_Medium,10;
+
+  - Id: 18911
+    AegisName: Red_Flower_Hat
+    Name: Red Flower Hat
+    Type: Armor
+    Weight: 20
+    Defense: 10
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1033
+    Script: |
+      bonus bDex,5;
+      bonus2 bSubEle,Ele_Earth,3;
+      bonus2 bSubRace,RC_DemiHuman,10;
+      bonus2 bSubRace,RC_Player_Human,10;
+      if (getrefine()>=12)
+         bonus bShortWeaponDamageReturn,5;
+
+  - Id: 18944
+    AegisName: Deviruchi_Balloon
+    Name: Deviruchi Balloon
+    Type: Armor
+    Weight: 20
+    Defense: 5
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1082
+    Script: |
+      bonus bAllStats,1;
+      bonus2 bAddRace,RC_Demon,1;
+      bonus2 bMagicAddRace,RC_Demon,1;
+
+  - Id: 18945
+    AegisName: Tare_Maid_Doll_Hat
+    Name: Super Cute Doll Hat
+    Type: Armor
+    Weight: 30
+    Defense: 2
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 30
+    Refineable: true
+    View: 1083
+    Script: |
+      bonus bInt,2;
+      bonus bDex,2;
+      bonus bMaxHPrate,2;
+      bonus bMaxSPrate,30;
+      bonus bMdef,3;
+      bonus bFlee,-1;
+      skill "PR_MAGNIFICAT",1;
+
+  - Id: 18946
+    AegisName: Tare_HSchool_Doll_Hat
+    Name: Very Cute Doll Hat
+    Type: Armor
+    Weight: 30
+    Defense: 2
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 30
+    Refineable: true
+    View: 1084
+    Script: |
+      bonus bStr,2;
+      bonus bLuk,2;
+      bonus bMaxHPrate,1;
+      bonus bMaxSPrate,15;
+      bonus bMdef,3;
+      bonus bFlee,-1;
+
+  - Id: 18961
+    AegisName: Lunatic_Hat_Smelting
+    Name: Lunatic Smelting Hat
+    Type: Armor
+    Weight: 10
+    Defense: 2
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 521
+
+  - Id: 18963
+    AegisName: Happy_Parrot
+    Name: Happy Parrot
+    Type: Armor
+    Weight: 10
+    Defense: 5
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1116
+    Script: |
+      bonus bLuk,1;
+
+  - Id: 18964
+    AegisName: Crown_Of_Saint
+    Name: Crown Of Saint
+    Type: Armor
+    Weight: 10
+    Defense: 5
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1117
+    Script: |
+      bonus bAllStats,2;
+      skill "AL_CURE",1;
+      skill "PR_STRECOVERY",1;
+
+  - Id: 18967
+    AegisName: Jinn_Poring_Balloon
+    Name: Jinn Poring Balloon
+    Type: Armor
+    Weight: 5
+    Defense: 5
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1132
+    Script: |
+      bonus bStr,1;
+      bonus bInt,1;
+      bonus bLuk,1;
+
+  - Id: 18986
+    AegisName: Happy_Parrot_
+    Name: Happy Parrot
+    Type: Armor
+    Weight: 10
+    Defense: 5
+    Slots: 1
+    Locations:
+      Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1116
+    Script: |
+      bonus bLuk,1;
+
+  - Id: 18994
+    AegisName: Black_Veil
+    Name: Dark Veil
+    Type: Armor
+    Weight: 30
+    Defense: 10
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1173
+    Script: |
+      bonus bStr,2;
+      bonus bAgi,3;
+      bonus bMdef,5;
+
+  - Id: 18996
+    AegisName: Ribbon_Of_Lady
+    Name: Ribbon Of Lady
+    Type: Armor
+    Weight: 30
+    Defense: 10
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1175
+    Script: |
+      bonus bInt,3;
+      bonus bVit,2;
+      bonus bMdef,5;
+
+  - Id: 19005
+    AegisName: Party_Balloon
+    Name: Party Balloon
+    Type: Armor
+    Weight: 20
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1184
+    Script: |
+      bonus2 bSubRace,RC_DemiHuman,1;
+      bonus2 bSubRace,RC_Player_Human,1;
+
+  - Id: 19335
+    AegisName: Sweets_Bonbon
+    Name: Sweets BongBong
+    Type: Armor
+    Weight: 10
+    Defense: 18
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 853
+
+  - Id: 19355
+    AegisName: Egg_Minihat
+    Name: Egg Minihat
+    Type: Armor
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1722
+
+  - Id: 19413
+    AegisName: SnowFlake_Tiara
+    Name: Snow Flower
+    Type: Armor
+    Weight: 50
+    Defense: 5
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    View: 1799
+
+  - Id: 19416
+    AegisName: Midgarts_Glory
+    Name: Midgarts Glory
+    Type: Armor
+    Defense: 6
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 50
+
+  - Id: 19458
+    AegisName: Luna_On_Shoulder
+    Name: Lunatic on Shoulder
+    Type: Armor
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1881
+
+  - Id: 400937
+    AegisName: USA_Hat_US
+    Name: USA Flag Hat
+    Type: Armor
+    Weight: 20
+    Defense: 20
+    Slots: 1
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Refineable: true
+    View: 1063
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,1500;
+      bonus bMaxSP,150;
+      bonus bHit,15;
+      bonus bFlee,15;
+      bonus bAllStats,.@r;
+      bonus bBaseAtk,10*.@r;
+      bonus bMatk,10*.@r;
+      if (BaseLevel<=130) {
+         bonus bSpeedRate,25;
+         bonus bAllStats,5;
+         bonus2 bExpAddRace,RC_All,50;
+      }
+
+  - Id: 401146
+    AegisName: EV_Santa_Hat_US
+    Name: "[Event] Santa Claus Hat"
+    Type: Armor
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 20
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+
+  - Id: 420388
+    AegisName: Grey_Cub_US
+    Name: Grey Wolf Cub in Mouth
+    Type: Armor
+    Weight: 10
+    Defense: 10
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    View: 1235
+    Script: |
+      bonus bAllTraitStats,5;
+      bonus bMaxHPrate,10;
+      bonus2 bAddSize,Size_All,BaseLevel/10;
+      bonus2 bMagicAddSize,Size_All,BaseLevel/10;
+
+  - Id: 420513
+    AegisName: Seaweed_In_Mouth_US
+    Name: "[Event] Chewy Seaweed"
+    Type: Armor
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 57
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bBaseAtk,30;
+      bonus bMatk,30;
+      bonus bMaxHP,1000;
+      skill "SA_FROSTWEAPON",2;
+
+  - Id: 420701
+    AegisName: EV_Xmas_Beard_US
+    Name: "[Event] Santa Claus Beard"
+    Type: Armor
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 25
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+
+  - Id: 420884
+    AegisName: 23Anniv_Scarf_US
+    Name: "[Event] 23rd Anniversary Scarf"
+    Type: Armor
+    Weight: 100
+    Defense: 100
+    Slots: 1
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1416
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bPAtk,3;
+      bonus bSMatk,3;
+
+  - Id: 420898
+    AegisName: BP3_Lower_US
+    Name: "[S3] Nyar's Familiar"
+    Type: Armor
+    Weight: 30
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 1689
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bAllStats,5;
+      bonus bAllTraitStats,5;
+      bonus2 bExpAddRace,RC_All,5;
+      bonus2 bDropAddRace,RC_All,5;
+      bonus bDelayrate,-5;
+
+  - Id: 401091
+    AegisName: Poo_Hat_US
+    Name: "[Event] Sewer Warrior Hat"
+    Type: Armor
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 76
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      bonus bBaseAtk,10;
+      bonus bMatk,10;
+      bonus bMaxHPrate,10;
+      bonus bMaxSPrate,10;
+      bonus bFlee2,10;
+
+  - Id: 420605
+    AegisName: True_Gangster_US
+    Name: True Gangster Scarf
+    Type: Armor
+    Weight: 20
+    Defense: 20
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 369
+    Script: |
+      bonus bMdef,20;
+      bonus bBaseAtk,200;
+      bonus bMatk,200;
+      bonus bAllStats,10;
+      skill "MC_GREED",1;
+      skill "MC_OVERCHARGE",10;
+      bonus2 bDropAddRace,RC_All,15;
+
+  - Id: 420863
+    AegisName: Red_Bat2_US
+    Name: Von Blood Brothers
+    Type: Armor
+    Weight: 20
+    Defense: 20
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 2093
+    Script: |
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus bBaseAtk,250;
+      bonus bMatk,250;
+      bonus bHPGainValue,777;
+      bonus bSPGainValue,77;
+      skill "MC_GREED",1;
+      bonus2 bExpAddRace,RC_All,20;
+      bonus2 bDropAddRace,RC_All,20;
+
+  - Id: 420931
+    AegisName: Gangster_Tactician_US
+    Name: Gangster Tactician Headset
+    Type: Armor
+    Weight: 20
+    Defense: 20
+    Slots: 1
+    Locations:
+      Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 2716
+    Script: |
+      bonus bMdef,20;
+      bonus bBaseAtk,300;
+      bonus bMatk,300;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      skill "MC_GREED",1;
+      skill "MC_OVERCHARGE",10;
+      skill "WZ_ESTIMATION",1;
+      bonus2 bDropAddRace,RC_All,25;
+      bonus2 bExpAddRace,RC_All,25;
+
