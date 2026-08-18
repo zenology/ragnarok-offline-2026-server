@@ -4,7 +4,6 @@
 # Scripts mapped from those descriptions onto existing rAthena bonus commands.
 #
 # Omitted (no verified local mapping):
-# - 400718 Grade B 23x23 400% splash + 100% of that damage as HP
 # - 400738 +12 "low chance" Fear (no rate)
 # - Premium-buff extra lines on 401019 / 401460
 # - Star Clust Lv.3 combos on 420569 (those SKUs are etc enchant stones)
@@ -17,6 +16,7 @@
 # - Grass Rune Armor combo on 420503
 # - Autocast levels capped to local skill MaxLevel (Cart Cannon 5 not 10,
 #   Focused Arrow Strike 5 not 10)
+# 400718 Grade B splash is OFFLINE_REKENBER_CELESTIAL (skill 10000), not bSplashRange.
 # Do not dump these IDs into Harlan's 100 CP pointshop.
 ###########################################################################
 
@@ -139,6 +139,8 @@ Body:
          bonus bFixedCast,-500;
       if (.@g>=ENCHANTGRADE_C)
          bonus bAtkRate,15;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus3 bAutoSpell,"OFFLINE_REKENBER_CELESTIAL",1,70;
 
   - Id: 400738
     AegisName: Bijou_Hat_US
