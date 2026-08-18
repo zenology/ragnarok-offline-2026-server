@@ -566,7 +566,7 @@ Body:
 
   - Id: 5877
     AegisName: IRO_Flag_Hat
-    Name: "'Merica Hat"
+    Name: Merica Hat
     Type: Armor
     Weight: 20
     Defense: 7
