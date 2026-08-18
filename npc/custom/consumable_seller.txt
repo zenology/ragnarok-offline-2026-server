@@ -26,6 +26,7 @@
 //= Teleport Scrolls: Rune-Midgarts Central/South/Other, Lighthalzen, Rachel, Localizing
 //= 2/2/5, 3, 5, 8; butterfly Yellow/Green/Red/Blue 2/3/5/8;
 //= Infinite Giant Fly Wing 1-day 30; Halter 3/7/30-day 45/150/300.
+//= Premium: Nyangvine 5; Staff 50; 1/10/30-day boxes 50/400/1000.
 //= Style and Reset: dye coupons 20; Costume Change Ticket 100
 //= (100,000 Zeny); Premium Reset Stone 1000; Neuralizer 1000 (1,000,000 Zeny).
 //= Upgrade: basic ores 1-2; Oridecon/Elunium 5; Enriched 10; HD Ori/Elu 30;
@@ -213,25 +214,29 @@ OnInit:
 	setarray .ItemCat[31],       2,     2,     2;
 	// Category 3: Convenience. Giant Fly, Infinite Fly 1/3/5/7,
 	// city teleports by region, butterfly by the same geography,
-	// then insurance / utility / Halter.
+	// then insurance / utility / Halter, then Premium Service.
 	setarray .ItemId[34],    12910, 17608, 17314, 17251, 17474, 17229, 12977, 12978, 12980, 12981, 12982, 12979;
 	setarray .ItemPrice[34],     5,    30,    30,    45,    60,   150,     2,     2,     5,     3,     5,     8;
 	setarray .ItemCat[34],       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3;
 	setarray .ItemId[46],    14582, 14583, 14584, 14585, 14527, 12214, 12209, 14500,  6413,  7621, 13621, 12211,  7776, 17176, 17162, 16683;
 	setarray .ItemPrice[46],     2,     3,     5,     8,    10,     2,     3,     5,    15,    10,    15,     1,    50,    45,   150,   300;
 	setarray .ItemCat[46],       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3;
+	// Premium Service family: Nyangvine, then 1/10/30-day boxes.
+	setarray .ItemId[62],     6909, 23209, 23216, 23207;
+	setarray .ItemPrice[62],     5,    50,   400,  1000;
+	setarray .ItemCat[62],       3,     3,     3,     3;
 	// Category 4: Style and Reset. Dye A-Z; Costume Ticket;
 	// Premium Reset Stone; Neuralizer.
-	setarray .ItemId[62],     6046,  6047,  6959,  6320, 12213;
-	setarray .ItemPrice[62],    20,    20,   100,  1000,  1000;
-	setarray .ItemCat[62],       4,     4,     4,     4,     4;
+	setarray .ItemId[66],     6046,  6047,  6959,  6320, 12213;
+	setarray .ItemPrice[66],    20,    20,   100,  1000,  1000;
+	setarray .ItemCat[66],       4,     4,     4,     4,     4;
 	// Upgrade. Basic ores 1 CP A-Z then Emveretarcon; finished;
 	// Enriched; HD Ori/Elu then Bradium/Carnium; Blessing; Hammer.
-	setarray .ItemId[67],     1003,   998,  1002,  1010,   999,  1011,   985,   984,  7619,  7620,  6241,  6240,  6226,  6225,  6635, 23436;
-	setarray .ItemPrice[67],     1,     1,     1,     1,     1,     2,     5,     5,    10,    10,    30,    30,   100,   100,    13,   100;
-	setarray .ItemCat[67],       5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5;
+	setarray .ItemId[71],     1003,   998,  1002,  1010,   999,  1011,   985,   984,  7619,  7620,  6241,  6240,  6226,  6225,  6635, 23436;
+	setarray .ItemPrice[71],     1,     1,     1,     1,     1,     2,     5,     5,    10,    10,    30,    30,   100,   100,    13,   100;
+	setarray .ItemCat[71],       5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5;
 
-	.ItemCount = 83;
+	.ItemCount = 87;
 	deletearray .CatHas[0], 6;
 
 	for (.@cat = 0; .@cat < 6; ++.@cat)
