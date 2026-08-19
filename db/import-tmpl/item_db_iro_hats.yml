@@ -620,7 +620,7 @@ Body:
 
   - Id: 15972
     AegisName: Comp_Happy_Balloon_K
-    Name: "[Event] Happy Balloon"
+    Name: Happy Balloon
     Type: Armor
     Weight: 1
     Locations:
@@ -976,7 +976,7 @@ Body:
 
   - Id: 401146
     AegisName: EV_Santa_Hat_US
-    Name: "[Event] Santa Claus Hat"
+    Name: Santa Claus Hat
     Type: Armor
     Locations:
       Head_Top: true
@@ -1012,7 +1012,7 @@ Body:
 
   - Id: 420513
     AegisName: Seaweed_In_Mouth_US
-    Name: "[Event] Chewy Seaweed"
+    Name: Chewy Seaweed
     Type: Armor
     Locations:
       Head_Low: true
@@ -1036,7 +1036,7 @@ Body:
 
   - Id: 420701
     AegisName: EV_Xmas_Beard_US
-    Name: "[Event] Santa Claus Beard"
+    Name: Santa Claus Beard
     Type: Armor
     Locations:
       Head_Low: true
@@ -1055,7 +1055,7 @@ Body:
 
   - Id: 420884
     AegisName: 23Anniv_Scarf_US
-    Name: "[Event] 23rd Anniversary Scarf"
+    Name: 23rd Anniversary Scarf
     Type: Armor
     Weight: 100
     Defense: 100
@@ -1082,7 +1082,7 @@ Body:
 
   - Id: 420898
     AegisName: BP3_Lower_US
-    Name: "[S3] Nyar's Familiar"
+    Name: "Nyar's Familiar"
     Type: Armor
     Weight: 30
     Locations:
@@ -1108,7 +1108,7 @@ Body:
 
   - Id: 401091
     AegisName: Poo_Hat_US
-    Name: "[Event] Sewer Warrior Hat"
+    Name: Sewer Warrior Hat
     Type: Armor
     Locations:
       Head_Top: true
