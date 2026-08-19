@@ -3,11 +3,13 @@
 //===== Description: =========================================
 //= Sells reviewed iRO cash/event headgear for Cash Points.
 //= Browse is Equipment, Rental, Specialty, or Event, then Top /
-//= Eye / Mouth, then A-Z by client identifiedDisplayName. Letter
-//= shops are filled in that display-name order, then ID.
+//= Eye / Mouth, then 0-9 (when a display name starts with a digit)
+//= then A-Z by client identifiedDisplayName. Letter shops are
+//= filled in that display-name order, then ID.
 //= Specialty is Temporal Circlets and Frontier Rune Crowns.
-//= Event is Racing Caps, RWC/RTC/RCC tournament hats, and tagged
-//= [Event]/[S2]/[S3] leftovers from the iRO-history create pass. Hats that exist
+//= Event is Racing Caps, RWC/RTC/RCC tournament hats, and iRO-history
+//= create-pass leftovers. Display names do not keep [Event]/[S2]/[S3]
+//= prefixes. Hats that exist
 //= in item_db but have no client itemInfo.lua row stay on the
 //= shelf; client itemInfo is a later pass. Client-tagged rental hats
 //= are sold as duration boxes, not the loose SKU. Every SKU costs
@@ -79,7 +81,7 @@ S_OpenCatalog:
 		close;
 	}
 	.@s = select(.@menu$) - 1;
-	.@idx = .@slot * 26 + .@s;
+	.@idx = .@slot * 27 + .@s;
 	if (.@kind == 0)
 		.@letter$ = getvariableofnpc(.HatLetter$[.@idx], "hat_seller_db");
 	else if (.@kind == 1)
@@ -97,6 +99,7 @@ OnInit:
 	end;
 }
 
+-	pointshop	hat0#0	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#A	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#B	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#C	-1,#CASHPOINTS,501:100
@@ -123,6 +126,7 @@ OnInit:
 -	pointshop	hat0#X	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#Y	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#Z	-1,#CASHPOINTS,501:100
+-	pointshop	hat1#0	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#A	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#B	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#C	-1,#CASHPOINTS,501:100
@@ -149,6 +153,7 @@ OnInit:
 -	pointshop	hat1#X	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#Y	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#Z	-1,#CASHPOINTS,501:100
+-	pointshop	hat2#0	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#A	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#B	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#C	-1,#CASHPOINTS,501:100
@@ -175,6 +180,7 @@ OnInit:
 -	pointshop	hat2#X	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#Y	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#Z	-1,#CASHPOINTS,501:100
+-	pointshop	rent0#0	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#A	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#B	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#C	-1,#CASHPOINTS,501:100
@@ -201,6 +207,7 @@ OnInit:
 -	pointshop	rent0#X	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#Y	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#Z	-1,#CASHPOINTS,501:100
+-	pointshop	rent1#0	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#A	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#B	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#C	-1,#CASHPOINTS,501:100
@@ -227,6 +234,7 @@ OnInit:
 -	pointshop	rent1#X	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#Y	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#Z	-1,#CASHPOINTS,501:100
+-	pointshop	rent2#0	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#A	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#B	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#C	-1,#CASHPOINTS,501:100
@@ -253,6 +261,7 @@ OnInit:
 -	pointshop	rent2#X	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#Y	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#Z	-1,#CASHPOINTS,501:100
+-	pointshop	spec0#0	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#A	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#B	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#C	-1,#CASHPOINTS,501:100
@@ -279,6 +288,7 @@ OnInit:
 -	pointshop	spec0#X	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#Y	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#Z	-1,#CASHPOINTS,501:100
+-	pointshop	spec1#0	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#A	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#B	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#C	-1,#CASHPOINTS,501:100
@@ -305,6 +315,7 @@ OnInit:
 -	pointshop	spec1#X	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#Y	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#Z	-1,#CASHPOINTS,501:100
+-	pointshop	spec2#0	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#A	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#B	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#C	-1,#CASHPOINTS,501:100
@@ -331,6 +342,7 @@ OnInit:
 -	pointshop	spec2#X	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#Y	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#Z	-1,#CASHPOINTS,501:100
+-	pointshop	evt0#0	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#A	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#B	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#C	-1,#CASHPOINTS,501:100
@@ -357,6 +369,7 @@ OnInit:
 -	pointshop	evt0#X	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#Y	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#Z	-1,#CASHPOINTS,501:100
+-	pointshop	evt1#0	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#A	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#B	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#C	-1,#CASHPOINTS,501:100
@@ -383,6 +396,7 @@ OnInit:
 -	pointshop	evt1#X	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#Y	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#Z	-1,#CASHPOINTS,501:100
+-	pointshop	evt2#0	-1,#CASHPOINTS,501:100
 -	pointshop	evt2#A	-1,#CASHPOINTS,501:100
 -	pointshop	evt2#B	-1,#CASHPOINTS,501:100
 -	pointshop	evt2#C	-1,#CASHPOINTS,501:100
@@ -415,7 +429,7 @@ OnInit:
 
 OnInit:
 	freeloop 1;
-	// iRO cash-shop real hats, plus easy/medium/hard real hats from the iRO-history create pass. Ordinary farmable and city hats are omitted even if they appeared in a Kafra package or lucky scroll. _C copies and rental SKUs are omitted. Dedicated getitem originals such as Robo Eye 5325 are included. Hats with no client itemInfo stay on the shelf. Tagged [Event]/[S2]/[S3] hard hats sit on Event.
+	// iRO cash-shop real hats, plus easy/medium/hard real hats from the iRO-history create pass. Ordinary farmable and city hats are omitted even if they appeared in a Kafra package or lucky scroll. _C copies and rental SKUs are omitted. Dedicated getitem originals such as Robo Eye 5325 are included. Hats with no client itemInfo stay on the shelf. Create-pass hats whose names used to start with [Event]/[S2]/[S3] sit on Event.
 	setarray .IroId[0], 5038,5077,5098,5099,5101,5102,5105,5117,5133,5137,5138,5139,5140,5142,5163,5182,5184,5188,5193,5208,5210,5211,5214,5217,5218,5219,5220,5221,5222,5226,5228,5229,5233,5237,5242,5245,5255,5269,5276,5283,5284,5285,5287,5288,5289,5290,5291,5292,5293,5294,5307,5324,5325,5335,5340,5341,5342,5343,5344,5345,5359,5360,5361,5371,5372,5373,5374,5375,5376,5377,5378,5380,5381,5382,5384,5387,5389,5396,5397,5401,5403,5405,5411,5420,5421,5451,5454,5459,5464,5490,5497,5500,5501,5502,5505,5508,5509,5514,5515,5529;
 	setarray .IroId[100], 5531,5532,5537,5538,5539,5545,5546,5548,5549,5550,5564,5569,5570,5574,5581,5582,5585,5611,5662,5663,5676,5677,5683,5690,5738,5744,5745,5761,5762,5763,5775,5778,5783,5785,5801,5878,5916,5918,5921,5924,5933,5937,5938,5945,5963,5966,5967,5968,5969,5971,5972,5973,5975,5978,15165,15166,18507,18508,18518,18519,18522,18539,18543,18563,18564,18565,18580,18591,18599,18600,18601,18603,18611,18613,18616,18651,18653,18656,18657,18662,18666,18670,18673,18676,18678,18697,18720,18729,18746,18754,18787,18799,18813,18823,18842,18845,18858,18877,18878,18887;
 	setarray .IroId[200], 18909,18916,18917,18933,18937,18959,18968,19010,19020,19024,19079,19082,19083,19086,19087,19095,19102,19114,19116,19125,19129,19130,19135,19137,19138,19139,19141,19156,19162,19163,19170,19171,19172,19181,19244,19246,19249,19263,19264,19268,19269,19285,19296,19299,19300,19306,19308,19326,19327,19329,19337,19342,19343,19364,19379,19380,19381,19387,19391,19407,19409,19426,19437,19444,19446,19451,19469,19495,19498,19499,28502,400001,400002,400011,400022,400023,400049,400054,400059,400061,400078,400396,400408,400506,410012,410016,410071,410079,410120,410130,410215,410216,410333,410342,410345,420003,420093,420160,420182,420187;
@@ -438,11 +452,11 @@ OnInit:
 	setarray .IroDisp$[240], "Happy Flapping Angel Wings","Siegfried's Helmet","Classical Feather Hat","Giant Tree's Young Leaves","Dog Officer","Heart Card in Mouth","Amistr Beret","Book of Soyga","Feather of Seraphim","Demon's Hand","Safety Glasses","Taurus Hat","Phoenix Crown","Engineer Cap","Striking Hat","Floating Tai-Chi Spheres","Protect Cloth","Experimental Goat Cap","Eyes of Illusion","Work Cap";
 	setarray .IroDisp$[260], "Black Feather","King Of Spirit Circlet","Little Garden","Star Eyepatch","Injured Soldier's Eyepatch","Heavenly Order","Crown of Saint","Diabolus Wing","Citrus Ribbon","Eight Trigrams Seal","Mob Scarf","Victory Wing Ears","Victory Wing Ears","Officer's Hat","Ignis Cap Type K","Drooping Thanatos's Dolor","Stripe Hat","Great Magician's Ceremonial Crown","Scorpio Celestial Coronet","Sagittarius Celestial Coronet";
 	setarray .IroDisp$[280], "Goral Crown","Ghost Whisper","Clockwise","Altair Hat","EXP Advisor","Battle Processor","Demon's Familiar","Deep Blue Sunglasses","Guardian Helm","Phantom Beast Ears","Ear of Spirit","Ears of Abyss","Crow Tengu Mask","Purified Pigeon","Smiling Eyes","Disk in Mouth","Einherjar's Mantle","Tyrant of Earth","Book of Sorcery","Sacred Lapel";
-	setarray .IroDisp$[300], "Ghost Fire","Loyal Servant of Morroc","Black Veil","Libra Diadem","Scorpio Crown","Orc Successor Helm","Duel Dragon Hat","Splash Cat Hat","Squirrel Ear Hat (White)","Two Tone Cap","Chic Peony","Wildcat Knit Cap (White)","Invincible Crest Hat","Khalitzburg Knight White Helm","Flash of Lightning","Striped Ribbon Hat","Full Faith Crown","Snake Queen Crown","Ancient Morocc Noble Jewelry","Divine Protect Shield","Exiled Ninja's Eyes","Lord of Royals","Old Camouflage Scarf","Consecrate Fides Aureola","Twinhead Dragon Scale";
-	setarray .IroDisp$[325], "Siege Army Cap","Siege Kafra Band","Siege Sweet Gent","Siege Zoro Mask","Star-Spangled Bandana","Merica Hat","Loki's Assassin Mask","Bra Hat","Cheering Whistle","Rainbow Long Octopus","Drooping Panda","Red Flower Hat","Deviruchi Balloon","Super Cute Doll Hat","Very Cute Doll Hat","Refined Lunatic Hat","Happy Parrot","Crown of Saint","Jinn Poring Balloon","Happy Parrot";
-	setarray .IroDisp$[345], "Black Veil","Lady's Ribbon","Party Balloon","Sweets Bonbon","Egg Minihat","Snow Flower","Midgards Glory","Lunatic on Shoulder","USA Flag Hat","Grey Wolf Cub in Mouth","True Gangster Scarf","Von Blood Brothers","Gangster Tactician Headset";
-	setarray .IroDisp$[358], "Special Garden of Eden","Poenetentia Spirit Crown","Poenetentia Willful Crown","Rekenber's Celestial Hat","Disciple of Bijou","Queen Bee Jeweled Crown","Robotic Valkyrie Hairband","Future Yoyo King Hat","Boitata Cap","Future Wolf King Hat","Kiel Successor Doll","Umbala Utan Helmet","Bankrupt Headgear","Future Gryphon Hat","Eddga Follower Doll","Focused Cat Paw Physical Hat","Focused Cat Paw Magical Hat","Bone Detardeurus Wing","Angelgolt's Wing","Vampire Von Blood";
-	setarray .IroDisp$[378], "Hero Follower Mask","OS Follower Mask","Poenitentia Follower Mask","Thanatos Follower Mask","Kitsune Gaze","Ancient Morroc Noble Jewelry-LT","Little Garden-LT","Floating Ball-LT","Ranger's Binoculars","Moon Follower Eyepatch","Moon God Lapel","Special Bear Balloon","Constellation Orb","Biosphere Scarf","Cosmic Star Blessing","Frosty Breath","Buffalo Bandit Scarf";
+	setarray .IroDisp$[300], "Ghost Fire","Loyal Servant of Morroc","Black Veil","Libra Diadem","Scorpio Crown","Heritage Symbol of the Orcs","Duel Dragon Hat","Splash Cat Hat","Squirrel Ear Hood (Albino)","Two Tone Cap","Chic Peony","Bobcat Knit Hat (White)","Invincible Crest Hat","Khalitzburg Knight White Helm","The Brandishing","Striped Ribbon Hat","Full Faith Crown","Snake Queen Crown","Ancient Morocc Noble Jewelry","Divine Protect Shield";
+	setarray .IroDisp$[320], "Exiled Ninja's Eyes","Lord of Royals","Old Camouflage Scarf","Consecrate Fides Aureola","Twinhead Dragon Scale","Siege Army Cap","Siege Kafra Band","Siege Sweet Gent","Siege Zoro Mask","Star-Spangled Bandana","Merica Hat","Loki's Assassin Mask","Bra Hat","Cheering Whistle","Rainbow Long Octopus","Drooping Panda","Red Flower Hat","Deviruchi Balloon","Super Cute Doll Hat","Very Cute Doll Hat";
+	setarray .IroDisp$[340], "Refined Lunatic Hat","Happy Parrot","Crown of Saint","Jinn Poring Balloon","Happy Parrot","Black Veil","Lady's Ribbon","Party Balloon","Sweets Bonbon","Egg Minihat","Snow Flower","Midgards Glory","Lunatic on Shoulder","USA Flag Hat","Grey Wolf Cub in Mouth","True Gangster Scarf","Von Blood Brothers","Gangster Tactician Headset","Special Garden of Eden","Poenetentia Spirit Crown";
+	setarray .IroDisp$[360], "Poenetentia Willful Crown","Rekenber's Celestial Hat","Disciple of Bijou","Queen Bee Jeweled Crown","Robotic Valkyrie Hairband","Future Yoyo King Hat","Boitata Cap","Future Wolf King Hat","Kiel Successor Doll","Umbala Utan Helmet","Bankrupt Headgear","Future Gryphon Hat","Eddga Follower Doll","Focused Cat Paw Physical Hat","Focused Cat Paw Magical Hat","Bone Detardeurus Wing","Angelgolt's Wing","Vampire Von Blood","Hero Follower Mask","OS Follower Mask";
+	setarray .IroDisp$[380], "Poenitentia Follower Mask","Thanatos Follower Mask","Kitsune Gaze","Ancient Morroc Noble Jewelry-LT","Little Garden-LT","Floating Ball-LT","Ranger's Binoculars","Moon Follower Eyepatch","Moon God Lapel","Special Bear Balloon","Constellation Orb","Biosphere Scarf","Cosmic Star Blessing","Frosty Breath","Buffalo Bandit Scarf";
 	// Duration boxes for client-tagged rental hats. Slot follows the hat.
 	setarray .RentBoxId[0], 12564,12565,12567,12568,12569,12570,12571,13694,13722,13864,13865,13968,16212,16386,16390,16636,16637,16640,16762;
 	setarray .RentHatId[0],  5794, 5796, 5798, 5799,18500,18501,18502, 5306, 5286, 5314, 5315, 5394, 5540, 5596, 5597, 5462, 5463, 5793,18505;
@@ -454,14 +468,14 @@ OnInit:
 	.SpecCount = 37;
 	setarray .SpecDisp$[0], "Temporal Circlet(Rune Knight)","Temporal Circlet(Royal Guard)","Temporal Circlet(Mechanic)","Temporal Circlet(Genetic)","Temporal Circlet(Guillotine Cross)","Temporal Circlet(Shadow Chaser)","Temporal Circlet(Archbishop)","Temporal Circlet(Sura)","Temporal Circlet(Warlock)","Temporal Circlet(Sorcerer)","Temporal Circlet(Ranger)","Temporal Circlet(Wanderer&Minstrel)","Temporal Circlet(Star Emperor)","Temporal Circlet(Soul Reaper)","Temporal Circlet(Rebellion)","Temporal Circlet(Oboro)","Temporal Circlet(Kagerou)","Temporal Circlet(Super Novice)","Temporal Circlet(Summoner)","Frontier Rune Crown(Dragon Knight)";
 	setarray .SpecDisp$[20], "Frontier Rune Crown(Imperial Guard)","Frontier Rune Crown(Meister)","Frontier Rune Crown(Biolo)","Frontier Rune Crown(Shadow Cross)","Frontier Rune Crown(Abyss Chaser)","Frontier Rune Crown(Arch Mage)","Frontier Rune Crown(Elemental Master)","Frontier Rune Crown(Cardinal)","Frontier Rune Crown(Inquisitor)","Frontier Rune Crown(Windhawk)","Frontier Rune Crown(Troubadour & Trouvere)","Frontier Rune Crown(Shinkiro & Shiranui)","Frontier Rune Crown(Night Watch)","Frontier Rune Crown(Sky Emperor)","Frontier Rune Crown(Soul Ascetic)","Frontier Rune Crown(Hyper Novice)","Frontier Rune Crown(Spirit Handler)";
-	// Racing Caps, RWC/RTC/RCC tournament hats, and tagged [Event]/[S2]/[S3] leftovers from the iRO-history create pass. Missing client itemInfo is not a cut. Gold Dragon Helm 5451 stays on Equipment. Comp_Happy_Balloon_K 15972 stays out: Comp_ copy of Equipment Happy Balloon 19102.
+	// Racing Caps, RWC/RTC/RCC tournament hats, and iRO-history create-pass leftovers. Display names drop [Event]/[S2]/[S3] prefixes. Missing client itemInfo is not a cut. Gold Dragon Helm 5451 stays on Equipment. Comp_Happy_Balloon_K 15972 sits on Event beside Equipment Happy_Balloon_K 19095 (same View and EXP/drop script; 19102 is Pale Moon Hat).
 	setarray .EvtId[0], 5428,5452,5453,5603,5604,5605,5892,5893,5894,5895,18779,18780,18781,18796,18828,18829,18830,19189,19190,19191;
 	setarray .EvtId[20], 19192,19193,19194,19195,19196,19197,19198,19199,19200,19201,19202,19203,19204,19205,19396,19397,400088,400089,400090;
-	setarray .EvtId[39], 401146,420513,420701,420884,420898,401091,401019,401460,410496,420899;
-	.EvtCount = 49;
+	setarray .EvtId[39], 401146,420513,420701,420884,420898,401091,401019,401460,410496,420899,15972;
+	.EvtCount = 50;
 	setarray .EvtDisp$[0], "RWC Anniversary Bread Envelope","Silver Dragon Helm","Copper Dragon Helm","RWC Statue(Winner)","RWC Statue(2nd)","RWC Statue(3rd)","RCC2013 1st Crown","RCC2013 2nd Crown","RCC2013 3rd Crown","RCC2013 Commemorative Hat","RWC Champ Crown(1st)","RWC Champ Crown(2nd)","RWC Champ Crown(3rd)","RWC Crown of Victory(8th)","RMSC2012 Champion Headgear","RMSC2012 1st Runner Headgear","RMSC2012 2nd Runner Headgear","Racing Cap(Mechanic)","Racing Cap(Genetic)","Racing Cap(Guillotine Cross)";
-	setarray .EvtDisp$[20], "Racing Cap(Shadow Chaser)","Racing Cap(Warlock)","Racing Cap(Sorcerer)","Racing Cap(Rune Knight)","Racing Cap(Royal Guard)","Racing Cap(Archbishop)","Racing Cap(Sura)","Racing Cap(Ranger)","Racing Cap(Minstrel)","Racing Cap(Wanderer)","Racing Cap(Gunslinger)","Racing Cap(Ninja)","Racing Cap(Super Novice)","Racing Cap(Summoner)","Racing Cap(Star Gladiator)","Racing Cap(Soul Linker)","2020RTC Gold Naughty Ghost","2020RTC Silver Naughty Ghost","2020RTC Bronze Naughty Ghost";
-	setarray .EvtDisp$[39], "[Event] Santa Claus Hat","[Event] Chewy Seaweed","[Event] Santa Claus Beard","[Event] 23rd Anniversary Scarf","[S3] Nyar's Familiar","[Event] Sewer Warrior Hat","[S2] Issgard Helmet","[S3] Serpent Knight Helm","[S2] Authority of Issgard-VG","[S3] Nyar's Familiar-VG";
+	setarray .EvtDisp$[20], "Racing Cap(Shadow Chaser)","Racing Cap(Warlock)","Racing Cap(Sorcerer)","Racing Cap(Rune Knight)","Racing Cap(Royal Guard)","Racing Cap(Archbishop)","Racing Cap(Sura)","Racing Cap(Ranger)","Racing Cap(Minstrel)","Racing Cap(Wanderer)","Racing Cap(Gunslinger)","Racing Cap(Ninja)","Racing Cap(Super Novice)","Racing Cap(Summoner)","Racing Cap(Star Gladiator)","Racing Cap(Soul Linker)","2020RTC Gold Naughty Ghost","2020RTC Silver Naughty Ghost","2020RTC Bronze Naughty Ghost","Santa Claus Hat";
+	setarray .EvtDisp$[40], "Chewy Seaweed","Santa Claus Beard","23rd Anniversary Scarf","Nyar's Familiar","Sewer Warrior Hat","Issgard Helmet","Serpent Knight Helm","Authority of Issgard-VG","Nyar's Familiar-VG","Happy Balloon";
 	.Price = 100;
 	.@alphabet$ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	.@costume = EQP_COSTUME_HEAD_TOP | EQP_COSTUME_HEAD_MID | EQP_COSTUME_HEAD_LOW;
@@ -473,10 +487,14 @@ OnInit:
 	deletearray .RentHas[0], 78;
 	deletearray .SpecHas[0], 78;
 	deletearray .EvtHas[0], 78;
-	deletearray .HatLetter$[0], 78;
-	deletearray .RentLetter$[0], 78;
-	deletearray .SpecLetter$[0], 78;
-	deletearray .EvtLetter$[0], 78;
+	deletearray .HatHasNum[0], 3;
+	deletearray .RentHasNum[0], 3;
+	deletearray .SpecHasNum[0], 3;
+	deletearray .EvtHasNum[0], 3;
+	deletearray .HatLetter$[0], 81;
+	deletearray .RentLetter$[0], 81;
+	deletearray .SpecLetter$[0], 81;
+	deletearray .EvtLetter$[0], 81;
 	deletearray .HatMenu$[0], 3;
 	deletearray .RentMenu$[0], 3;
 	deletearray .SpecMenu$[0], 3;
@@ -487,6 +505,10 @@ OnInit:
 	deletearray .EvtLetterCount[0], 3;
 
 	for (.@slot = 0; .@slot < 3; ++.@slot) {
+		npcshopdelitem "hat" + .@slot + "#0", 501;
+		npcshopdelitem "rent" + .@slot + "#0", 501;
+		npcshopdelitem "spec" + .@slot + "#0", 501;
+		npcshopdelitem "evt" + .@slot + "#0", 501;
 		for (.@i = 0; .@i < 26; ++.@i) {
 			npcshopdelitem "hat" + .@slot + "#" + charat(.@alphabet$, .@i), 501;
 			npcshopdelitem "rent" + .@slot + "#" + charat(.@alphabet$, .@i), 501;
@@ -549,12 +571,20 @@ OnInit:
 		.@letter$ = strtoupper(charat(.@name$, 0));
 		.@letter_index = strpos(.@alphabet$, .@letter$);
 		if (.@letter_index < 0) {
-			.@letter$ = "A";
-			.@letter_index = 0;
+			if (strpos("0123456789", .@letter$) >= 0) {
+				.@letter$ = "0";
+				.@letter_index = -2;
+			} else {
+				.@letter$ = "A";
+				.@letter_index = 0;
+			}
 		}
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
-				.HatHas[.@slot * 26 + .@letter_index] = true;
+				if (.@letter_index == -2)
+					.HatHasNum[.@slot] = true;
+				else
+					.HatHas[.@slot * 26 + .@letter_index] = true;
 				npcshopadditem "hat" + .@slot + "#" + .@letter$, .@id, .Price;
 			}
 		}
@@ -621,12 +651,20 @@ OnInit:
 		.@letter$ = strtoupper(charat(.@name$, 0));
 		.@letter_index = strpos(.@alphabet$, .@letter$);
 		if (.@letter_index < 0) {
-			.@letter$ = "A";
-			.@letter_index = 0;
+			if (strpos("0123456789", .@letter$) >= 0) {
+				.@letter$ = "0";
+				.@letter_index = -2;
+			} else {
+				.@letter$ = "A";
+				.@letter_index = 0;
+			}
 		}
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
-				.RentHas[.@slot * 26 + .@letter_index] = true;
+				if (.@letter_index == -2)
+					.RentHasNum[.@slot] = true;
+				else
+					.RentHas[.@slot * 26 + .@letter_index] = true;
 				npcshopadditem "rent" + .@slot + "#" + .@letter$, .@id, .Price;
 			}
 		}
@@ -686,12 +724,20 @@ OnInit:
 		.@letter$ = strtoupper(charat(.@name$, 0));
 		.@letter_index = strpos(.@alphabet$, .@letter$);
 		if (.@letter_index < 0) {
-			.@letter$ = "A";
-			.@letter_index = 0;
+			if (strpos("0123456789", .@letter$) >= 0) {
+				.@letter$ = "0";
+				.@letter_index = -2;
+			} else {
+				.@letter$ = "A";
+				.@letter_index = 0;
+			}
 		}
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
-				.SpecHas[.@slot * 26 + .@letter_index] = true;
+				if (.@letter_index == -2)
+					.SpecHasNum[.@slot] = true;
+				else
+					.SpecHas[.@slot * 26 + .@letter_index] = true;
 				npcshopadditem "spec" + .@slot + "#" + .@letter$, .@id, .Price;
 			}
 		}
@@ -751,12 +797,20 @@ OnInit:
 		.@letter$ = strtoupper(charat(.@name$, 0));
 		.@letter_index = strpos(.@alphabet$, .@letter$);
 		if (.@letter_index < 0) {
-			.@letter$ = "A";
-			.@letter_index = 0;
+			if (strpos("0123456789", .@letter$) >= 0) {
+				.@letter$ = "0";
+				.@letter_index = -2;
+			} else {
+				.@letter$ = "A";
+				.@letter_index = 0;
+			}
 		}
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
-				.EvtHas[.@slot * 26 + .@letter_index] = true;
+				if (.@letter_index == -2)
+					.EvtHasNum[.@slot] = true;
+				else
+					.EvtHas[.@slot * 26 + .@letter_index] = true;
 				npcshopadditem "evt" + .@slot + "#" + .@letter$, .@id, .Price;
 			}
 		}
@@ -772,32 +826,52 @@ OnInit:
 		.RentLetterCount[.@slot] = 0;
 		.SpecLetterCount[.@slot] = 0;
 		.EvtLetterCount[.@slot] = 0;
+		if (.HatHasNum[.@slot]) {
+			.HatLetter$[.@slot * 27] = "0";
+			.HatMenu$[.@slot] += "0-9:";
+			.HatLetterCount[.@slot] = 1;
+		}
+		if (.RentHasNum[.@slot]) {
+			.RentLetter$[.@slot * 27] = "0";
+			.RentMenu$[.@slot] += "0-9:";
+			.RentLetterCount[.@slot] = 1;
+		}
+		if (.SpecHasNum[.@slot]) {
+			.SpecLetter$[.@slot * 27] = "0";
+			.SpecMenu$[.@slot] += "0-9:";
+			.SpecLetterCount[.@slot] = 1;
+		}
+		if (.EvtHasNum[.@slot]) {
+			.EvtLetter$[.@slot * 27] = "0";
+			.EvtMenu$[.@slot] += "0-9:";
+			.EvtLetterCount[.@slot] = 1;
+		}
 		for (.@i = 0; .@i < 26; ++.@i) {
 			if (.HatHas[.@slot * 26 + .@i]) {
 				.@letter$ = charat(.@alphabet$, .@i);
 				.@n = .HatLetterCount[.@slot];
-				.HatLetter$[.@slot * 26 + .@n] = .@letter$;
+				.HatLetter$[.@slot * 27 + .@n] = .@letter$;
 				.HatMenu$[.@slot] += .@letter$ + ":";
 				.HatLetterCount[.@slot] = .@n + 1;
 			}
 			if (.RentHas[.@slot * 26 + .@i]) {
 				.@letter$ = charat(.@alphabet$, .@i);
 				.@n = .RentLetterCount[.@slot];
-				.RentLetter$[.@slot * 26 + .@n] = .@letter$;
+				.RentLetter$[.@slot * 27 + .@n] = .@letter$;
 				.RentMenu$[.@slot] += .@letter$ + ":";
 				.RentLetterCount[.@slot] = .@n + 1;
 			}
 			if (.SpecHas[.@slot * 26 + .@i]) {
 				.@letter$ = charat(.@alphabet$, .@i);
 				.@n = .SpecLetterCount[.@slot];
-				.SpecLetter$[.@slot * 26 + .@n] = .@letter$;
+				.SpecLetter$[.@slot * 27 + .@n] = .@letter$;
 				.SpecMenu$[.@slot] += .@letter$ + ":";
 				.SpecLetterCount[.@slot] = .@n + 1;
 			}
 			if (.EvtHas[.@slot * 26 + .@i]) {
 				.@letter$ = charat(.@alphabet$, .@i);
 				.@n = .EvtLetterCount[.@slot];
-				.EvtLetter$[.@slot * 26 + .@n] = .@letter$;
+				.EvtLetter$[.@slot * 27 + .@n] = .@letter$;
 				.EvtMenu$[.@slot] += .@letter$ + ":";
 				.EvtLetterCount[.@slot] = .@n + 1;
 			}

@@ -498,7 +498,7 @@ Body:
 
   - Id: 401019
     AegisName: BP2_Helm_US
-    Name: "[S2] Issgard Helmet"
+    Name: Issgard Helmet
     Type: Armor
     Weight: 20
     Defense: 50
@@ -601,7 +601,7 @@ Body:
 
   - Id: 401091
     AegisName: Poo_Hat_US
-    Name: "[Event] Sewer Warrior Hat"
+    Name: Sewer Warrior Hat
     Type: Armor
     Locations:
       Head_Top: true
@@ -858,7 +858,7 @@ Body:
 
   - Id: 401460
     AegisName: BP3_Helm_US
-    Name: "[S3] Serpent Knight Helm"
+    Name: Serpent Knight Helm
     Type: Armor
     Weight: 20
     Defense: 50
@@ -1058,7 +1058,7 @@ Body:
 
   - Id: 410496
     AegisName: BP2_Middle_LT_US
-    Name: "[S2] Authority of Issgard-VG"
+    Name: Authority of Issgard-VG
     Type: Armor
     Weight: 30
     Slots: 1
@@ -1434,7 +1434,7 @@ Body:
 
   - Id: 420899
     AegisName: BP3_Lower_LT_US
-    Name: "[S3] Nyar's Familiar-VG"
+    Name: "Nyar's Familiar-VG"
     Type: Armor
     Weight: 30
     Slots: 1
