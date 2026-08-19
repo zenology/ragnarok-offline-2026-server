@@ -41,7 +41,7 @@ paramk,41,173,2	script	Harlan#offline	897,{
 	mes "Tournament leftovers, if you missed the crowd.";
 	mes "^0055FFCash Points^000000 only. No eggs.";
 	next;
-	switch (select("Equipment:Rental:Specialty:Event:Search this stall:")) {
+	switch (select("Equipment:Rental:Specialty:Event:")) {
 	case 1:
 		callsub S_OpenCatalog, 0;
 		end;
@@ -53,9 +53,6 @@ paramk,41,173,2	script	Harlan#offline	897,{
 		end;
 	case 4:
 		callsub S_OpenCatalog, 3;
-		end;
-	case 5:
-		callsub S_Search;
 		end;
 	}
 	end;
@@ -95,94 +92,11 @@ S_OpenCatalog:
 	callshop .@prefix$ + .@slot + "#" + .@letter$, 1;
 	end;
 
-S_Search:
-	mes "[Harlan]";
-	mes "Speak a name. Part of one. A number, if you insist.";
-	mes "Hats, timed boxes, fitted circlets, and event leftovers. If it is here, I will find it.";
-	next;
-	input .@query$;
-	if (.@query$ == "") {
-		mes "[Harlan]";
-		mes "You went quiet. Come back when you know what you want.";
-		close;
-	}
-	.@query_id = atoi(.@query$);
-	.@n = 0;
-	.@count = getvariableofnpc(.IroCount, "hat_seller_db");
-	for (.@i = 0; .@i < .@count; ++.@i)
-		callsub S_TryMatch, getvariableofnpc(.IroId[.@i], "hat_seller_db"), getvariableofnpc(.IroAegis$[.@i], "hat_seller_db"), getvariableofnpc(.IroDisp$[.@i], "hat_seller_db");
-	.@count = getvariableofnpc(.RentCount, "hat_seller_db");
-	for (.@i = 0; .@i < .@count; ++.@i) {
-		.@hat = getvariableofnpc(.RentHatId[.@i], "hat_seller_db");
-		callsub S_TryMatch, getvariableofnpc(.RentBoxId[.@i], "hat_seller_db"), getvariableofnpc(.RentAegis$[.@i], "hat_seller_db"), getvariableofnpc(.RentDisp$[.@i], "hat_seller_db"), .@hat, getiteminfo(.@hat, ITEMINFO_AEGISNAME), getitemname(.@hat);
-	}
-	.@count = getvariableofnpc(.SpecCount, "hat_seller_db");
-	for (.@i = 0; .@i < .@count; ++.@i)
-		callsub S_TryMatch, getvariableofnpc(.SpecId[.@i], "hat_seller_db"), getvariableofnpc(.SpecAegis$[.@i], "hat_seller_db"), getvariableofnpc(.SpecDisp$[.@i], "hat_seller_db");
-	.@count = getvariableofnpc(.EvtCount, "hat_seller_db");
-	for (.@i = 0; .@i < .@count; ++.@i)
-		callsub S_TryMatch, getvariableofnpc(.EvtId[.@i], "hat_seller_db"), getvariableofnpc(.EvtAegis$[.@i], "hat_seller_db"), getvariableofnpc(.EvtDisp$[.@i], "hat_seller_db");
-	if (!.@n) {
-		mes "[Harlan]";
-		mes "Not in my cases. Try another name, or browse properly.";
-		close;
-	}
-	if (.@n > 1) {
-		.@choice_menu$ = "";
-		for (.@i = 0; .@i < .@n; ++.@i)
-			.@choice_menu$ += .@found_label$[.@i] + " (100 CP):";
-		mes "[Harlan]";
-		if (.@n >= 10)
-			mes "Ten is enough. Be more particular.";
-		else
-			mes "These are the ones that fit.";
-		next;
-		.@s = select(.@choice_menu$) - 1;
-		.@found_id[0] = .@found_id[.@s];
-	}
-	set getvariableofnpc(.SearchId, "hat_seller_db"), .@found_id[0];
-	donpcevent "hat_seller_db::OnFillSearch";
-	close2;
-	callshop "hat_search", 1;
-	end;
-
-S_TryMatch:
-	if (.@n >= 10)
-		return;
-	.@id = getarg(0);
-	.@aegis$ = getarg(1);
-	.@disp$ = getarg(2, "");
-	.@alias_id = getarg(3, 0);
-	.@alias_aegis$ = getarg(4, "");
-	.@alias_name$ = getarg(5, "");
-	if (.@id < 1)
-		return;
-	for (.@j = 0; .@j < .@n; ++.@j) {
-		if (.@found_id[.@j] == .@id)
-			return;
-	}
-	.@name$ = getitemname(.@id);
-	if (.@disp$ == "")
-		.@disp$ = .@name$;
-	if (.@query_id > 0 && (.@id == .@query_id || (.@alias_id > 0 && .@alias_id == .@query_id))) {
-		.@found_id[.@n] = .@id;
-		.@found_label$[.@n] = .@disp$;
-		.@n += 1;
-		return;
-	}
-	if (compare(.@disp$, .@query$) || compare(.@name$, .@query$) || compare(.@aegis$, .@query$) || (.@alias_name$ != "" && compare(.@alias_name$, .@query$)) || (.@alias_aegis$ != "" && compare(.@alias_aegis$, .@query$))) {
-		.@found_id[.@n] = .@id;
-		.@found_label$[.@n] = .@disp$;
-		.@n += 1;
-	}
-	return;
-
 OnInit:
 	setunittitle(getnpcid(0), "<Milliner>");
 	end;
 }
 
--	pointshop	hat_search	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#A	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#B	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#C	-1,#CASHPOINTS,501:100
@@ -499,10 +413,6 @@ OnInit:
 -	script	hat_seller_db	-1,{
 	end;
 
-OnFillSearch:
-	npcshopitem "hat_search", .SearchId, 100;
-	end;
-
 OnInit:
 	freeloop 1;
 	// iRO cash-shop real hats, plus easy/medium/hard real hats from the iRO-history create pass. Ordinary farmable and city hats are omitted even if they appeared in a Kafra package or lucky scroll. _C copies and rental SKUs are omitted. Dedicated getitem originals such as Robo Eye 5325 are included. Hats with no client itemInfo stay on the shelf. Tagged [Event]/[S2]/[S3] hard hats sit on Event.
@@ -576,7 +486,6 @@ OnInit:
 	deletearray .SpecLetterCount[0], 3;
 	deletearray .EvtLetterCount[0], 3;
 
-	npcshopdelitem "hat_search", 501;
 	for (.@slot = 0; .@slot < 3; ++.@slot) {
 		for (.@i = 0; .@i < 26; ++.@i) {
 			npcshopdelitem "hat" + .@slot + "#" + charat(.@alphabet$, .@i), 501;
