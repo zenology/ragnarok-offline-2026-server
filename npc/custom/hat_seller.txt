@@ -3,8 +3,9 @@
 //===== Description: =========================================
 //= Sells reviewed iRO cash/event headgear for Cash Points.
 //= Browse is Equipment, Rental, Specialty, or Event, then Top /
-//= Eye / Mouth, then A-Z by client identifiedDisplayName. Letter
-//= shops are filled in that display-name order, then ID.
+//= Eye / Mouth, then 0-9 (when a display name starts with a digit)
+//= then A-Z by client identifiedDisplayName. Letter shops are
+//= filled in that display-name order, then ID.
 //= Specialty is Temporal Circlets and Frontier Rune Crowns.
 //= Event is Racing Caps, RWC/RTC/RCC tournament hats, and iRO-history
 //= create-pass leftovers. Display names do not keep [Event]/[S2]/[S3]
@@ -80,7 +81,7 @@ S_OpenCatalog:
 		close;
 	}
 	.@s = select(.@menu$) - 1;
-	.@idx = .@slot * 26 + .@s;
+	.@idx = .@slot * 27 + .@s;
 	if (.@kind == 0)
 		.@letter$ = getvariableofnpc(.HatLetter$[.@idx], "hat_seller_db");
 	else if (.@kind == 1)
@@ -98,6 +99,7 @@ OnInit:
 	end;
 }
 
+-	pointshop	hat0#0	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#A	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#B	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#C	-1,#CASHPOINTS,501:100
@@ -124,6 +126,7 @@ OnInit:
 -	pointshop	hat0#X	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#Y	-1,#CASHPOINTS,501:100
 -	pointshop	hat0#Z	-1,#CASHPOINTS,501:100
+-	pointshop	hat1#0	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#A	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#B	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#C	-1,#CASHPOINTS,501:100
@@ -150,6 +153,7 @@ OnInit:
 -	pointshop	hat1#X	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#Y	-1,#CASHPOINTS,501:100
 -	pointshop	hat1#Z	-1,#CASHPOINTS,501:100
+-	pointshop	hat2#0	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#A	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#B	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#C	-1,#CASHPOINTS,501:100
@@ -176,6 +180,7 @@ OnInit:
 -	pointshop	hat2#X	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#Y	-1,#CASHPOINTS,501:100
 -	pointshop	hat2#Z	-1,#CASHPOINTS,501:100
+-	pointshop	rent0#0	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#A	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#B	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#C	-1,#CASHPOINTS,501:100
@@ -202,6 +207,7 @@ OnInit:
 -	pointshop	rent0#X	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#Y	-1,#CASHPOINTS,501:100
 -	pointshop	rent0#Z	-1,#CASHPOINTS,501:100
+-	pointshop	rent1#0	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#A	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#B	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#C	-1,#CASHPOINTS,501:100
@@ -228,6 +234,7 @@ OnInit:
 -	pointshop	rent1#X	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#Y	-1,#CASHPOINTS,501:100
 -	pointshop	rent1#Z	-1,#CASHPOINTS,501:100
+-	pointshop	rent2#0	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#A	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#B	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#C	-1,#CASHPOINTS,501:100
@@ -254,6 +261,7 @@ OnInit:
 -	pointshop	rent2#X	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#Y	-1,#CASHPOINTS,501:100
 -	pointshop	rent2#Z	-1,#CASHPOINTS,501:100
+-	pointshop	spec0#0	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#A	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#B	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#C	-1,#CASHPOINTS,501:100
@@ -280,6 +288,7 @@ OnInit:
 -	pointshop	spec0#X	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#Y	-1,#CASHPOINTS,501:100
 -	pointshop	spec0#Z	-1,#CASHPOINTS,501:100
+-	pointshop	spec1#0	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#A	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#B	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#C	-1,#CASHPOINTS,501:100
@@ -306,6 +315,7 @@ OnInit:
 -	pointshop	spec1#X	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#Y	-1,#CASHPOINTS,501:100
 -	pointshop	spec1#Z	-1,#CASHPOINTS,501:100
+-	pointshop	spec2#0	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#A	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#B	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#C	-1,#CASHPOINTS,501:100
@@ -332,6 +342,7 @@ OnInit:
 -	pointshop	spec2#X	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#Y	-1,#CASHPOINTS,501:100
 -	pointshop	spec2#Z	-1,#CASHPOINTS,501:100
+-	pointshop	evt0#0	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#A	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#B	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#C	-1,#CASHPOINTS,501:100
@@ -358,6 +369,7 @@ OnInit:
 -	pointshop	evt0#X	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#Y	-1,#CASHPOINTS,501:100
 -	pointshop	evt0#Z	-1,#CASHPOINTS,501:100
+-	pointshop	evt1#0	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#A	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#B	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#C	-1,#CASHPOINTS,501:100
@@ -384,6 +396,7 @@ OnInit:
 -	pointshop	evt1#X	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#Y	-1,#CASHPOINTS,501:100
 -	pointshop	evt1#Z	-1,#CASHPOINTS,501:100
+-	pointshop	evt2#0	-1,#CASHPOINTS,501:100
 -	pointshop	evt2#A	-1,#CASHPOINTS,501:100
 -	pointshop	evt2#B	-1,#CASHPOINTS,501:100
 -	pointshop	evt2#C	-1,#CASHPOINTS,501:100
@@ -474,10 +487,14 @@ OnInit:
 	deletearray .RentHas[0], 78;
 	deletearray .SpecHas[0], 78;
 	deletearray .EvtHas[0], 78;
-	deletearray .HatLetter$[0], 78;
-	deletearray .RentLetter$[0], 78;
-	deletearray .SpecLetter$[0], 78;
-	deletearray .EvtLetter$[0], 78;
+	deletearray .HatHasNum[0], 3;
+	deletearray .RentHasNum[0], 3;
+	deletearray .SpecHasNum[0], 3;
+	deletearray .EvtHasNum[0], 3;
+	deletearray .HatLetter$[0], 81;
+	deletearray .RentLetter$[0], 81;
+	deletearray .SpecLetter$[0], 81;
+	deletearray .EvtLetter$[0], 81;
 	deletearray .HatMenu$[0], 3;
 	deletearray .RentMenu$[0], 3;
 	deletearray .SpecMenu$[0], 3;
@@ -488,6 +505,10 @@ OnInit:
 	deletearray .EvtLetterCount[0], 3;
 
 	for (.@slot = 0; .@slot < 3; ++.@slot) {
+		npcshopdelitem "hat" + .@slot + "#0", 501;
+		npcshopdelitem "rent" + .@slot + "#0", 501;
+		npcshopdelitem "spec" + .@slot + "#0", 501;
+		npcshopdelitem "evt" + .@slot + "#0", 501;
 		for (.@i = 0; .@i < 26; ++.@i) {
 			npcshopdelitem "hat" + .@slot + "#" + charat(.@alphabet$, .@i), 501;
 			npcshopdelitem "rent" + .@slot + "#" + charat(.@alphabet$, .@i), 501;
@@ -550,12 +571,20 @@ OnInit:
 		.@letter$ = strtoupper(charat(.@name$, 0));
 		.@letter_index = strpos(.@alphabet$, .@letter$);
 		if (.@letter_index < 0) {
-			.@letter$ = "A";
-			.@letter_index = 0;
+			if (strpos("0123456789", .@letter$) >= 0) {
+				.@letter$ = "0";
+				.@letter_index = -2;
+			} else {
+				.@letter$ = "A";
+				.@letter_index = 0;
+			}
 		}
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
-				.HatHas[.@slot * 26 + .@letter_index] = true;
+				if (.@letter_index == -2)
+					.HatHasNum[.@slot] = true;
+				else
+					.HatHas[.@slot * 26 + .@letter_index] = true;
 				npcshopadditem "hat" + .@slot + "#" + .@letter$, .@id, .Price;
 			}
 		}
@@ -622,12 +651,20 @@ OnInit:
 		.@letter$ = strtoupper(charat(.@name$, 0));
 		.@letter_index = strpos(.@alphabet$, .@letter$);
 		if (.@letter_index < 0) {
-			.@letter$ = "A";
-			.@letter_index = 0;
+			if (strpos("0123456789", .@letter$) >= 0) {
+				.@letter$ = "0";
+				.@letter_index = -2;
+			} else {
+				.@letter$ = "A";
+				.@letter_index = 0;
+			}
 		}
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
-				.RentHas[.@slot * 26 + .@letter_index] = true;
+				if (.@letter_index == -2)
+					.RentHasNum[.@slot] = true;
+				else
+					.RentHas[.@slot * 26 + .@letter_index] = true;
 				npcshopadditem "rent" + .@slot + "#" + .@letter$, .@id, .Price;
 			}
 		}
@@ -687,12 +724,20 @@ OnInit:
 		.@letter$ = strtoupper(charat(.@name$, 0));
 		.@letter_index = strpos(.@alphabet$, .@letter$);
 		if (.@letter_index < 0) {
-			.@letter$ = "A";
-			.@letter_index = 0;
+			if (strpos("0123456789", .@letter$) >= 0) {
+				.@letter$ = "0";
+				.@letter_index = -2;
+			} else {
+				.@letter$ = "A";
+				.@letter_index = 0;
+			}
 		}
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
-				.SpecHas[.@slot * 26 + .@letter_index] = true;
+				if (.@letter_index == -2)
+					.SpecHasNum[.@slot] = true;
+				else
+					.SpecHas[.@slot * 26 + .@letter_index] = true;
 				npcshopadditem "spec" + .@slot + "#" + .@letter$, .@id, .Price;
 			}
 		}
@@ -752,12 +797,20 @@ OnInit:
 		.@letter$ = strtoupper(charat(.@name$, 0));
 		.@letter_index = strpos(.@alphabet$, .@letter$);
 		if (.@letter_index < 0) {
-			.@letter$ = "A";
-			.@letter_index = 0;
+			if (strpos("0123456789", .@letter$) >= 0) {
+				.@letter$ = "0";
+				.@letter_index = -2;
+			} else {
+				.@letter$ = "A";
+				.@letter_index = 0;
+			}
 		}
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
-				.EvtHas[.@slot * 26 + .@letter_index] = true;
+				if (.@letter_index == -2)
+					.EvtHasNum[.@slot] = true;
+				else
+					.EvtHas[.@slot * 26 + .@letter_index] = true;
 				npcshopadditem "evt" + .@slot + "#" + .@letter$, .@id, .Price;
 			}
 		}
@@ -773,32 +826,52 @@ OnInit:
 		.RentLetterCount[.@slot] = 0;
 		.SpecLetterCount[.@slot] = 0;
 		.EvtLetterCount[.@slot] = 0;
+		if (.HatHasNum[.@slot]) {
+			.HatLetter$[.@slot * 27] = "0";
+			.HatMenu$[.@slot] += "0-9:";
+			.HatLetterCount[.@slot] = 1;
+		}
+		if (.RentHasNum[.@slot]) {
+			.RentLetter$[.@slot * 27] = "0";
+			.RentMenu$[.@slot] += "0-9:";
+			.RentLetterCount[.@slot] = 1;
+		}
+		if (.SpecHasNum[.@slot]) {
+			.SpecLetter$[.@slot * 27] = "0";
+			.SpecMenu$[.@slot] += "0-9:";
+			.SpecLetterCount[.@slot] = 1;
+		}
+		if (.EvtHasNum[.@slot]) {
+			.EvtLetter$[.@slot * 27] = "0";
+			.EvtMenu$[.@slot] += "0-9:";
+			.EvtLetterCount[.@slot] = 1;
+		}
 		for (.@i = 0; .@i < 26; ++.@i) {
 			if (.HatHas[.@slot * 26 + .@i]) {
 				.@letter$ = charat(.@alphabet$, .@i);
 				.@n = .HatLetterCount[.@slot];
-				.HatLetter$[.@slot * 26 + .@n] = .@letter$;
+				.HatLetter$[.@slot * 27 + .@n] = .@letter$;
 				.HatMenu$[.@slot] += .@letter$ + ":";
 				.HatLetterCount[.@slot] = .@n + 1;
 			}
 			if (.RentHas[.@slot * 26 + .@i]) {
 				.@letter$ = charat(.@alphabet$, .@i);
 				.@n = .RentLetterCount[.@slot];
-				.RentLetter$[.@slot * 26 + .@n] = .@letter$;
+				.RentLetter$[.@slot * 27 + .@n] = .@letter$;
 				.RentMenu$[.@slot] += .@letter$ + ":";
 				.RentLetterCount[.@slot] = .@n + 1;
 			}
 			if (.SpecHas[.@slot * 26 + .@i]) {
 				.@letter$ = charat(.@alphabet$, .@i);
 				.@n = .SpecLetterCount[.@slot];
-				.SpecLetter$[.@slot * 26 + .@n] = .@letter$;
+				.SpecLetter$[.@slot * 27 + .@n] = .@letter$;
 				.SpecMenu$[.@slot] += .@letter$ + ":";
 				.SpecLetterCount[.@slot] = .@n + 1;
 			}
 			if (.EvtHas[.@slot * 26 + .@i]) {
 				.@letter$ = charat(.@alphabet$, .@i);
 				.@n = .EvtLetterCount[.@slot];
-				.EvtLetter$[.@slot * 26 + .@n] = .@letter$;
+				.EvtLetter$[.@slot * 27 + .@n] = .@letter$;
 				.EvtMenu$[.@slot] += .@letter$ + ":";
 				.EvtLetterCount[.@slot] = .@n + 1;
 			}

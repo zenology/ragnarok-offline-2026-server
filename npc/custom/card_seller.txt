@@ -2,7 +2,8 @@
 //= Monster Card Sellers A-Z
 //===== Description: =========================================
 //= Separate Normal, Miniboss, and MVP Card Sellers use Cash Points.
-//= Cards are grouped alphabetically. Normal, Miniboss, and MVP cards
+//= Cards are grouped alphabetically. A 0-9 drawer appears before A
+//= when a display name starts with a digit. Normal, Miniboss, and MVP cards
 //= cost the Card Collector offer plus 30%, rounded to the nearest point.
 //= Curated special cards use the midpoint MVP Collector offer plus 30%.
 //=
@@ -20,6 +21,7 @@
 //= 3.4 Special cards = midpoint MVP offer + 30%
 //= 3.5 Veynar browse gates use Collector prices, not shop prices
 //= 3.6 Opening dialogue no longer recites shop rates
+//= 3.7 Digit-leading names use a 0-9 drawer before A
 //============================================================
 
 function	script	F_OfflineCardLerp	{
@@ -76,6 +78,20 @@ function	script	F_OfflineSpecialCardShopPrice	{
 	if (.@mid < 1)
 		return 0;
 	return (.@mid * 13 + 5) / 10;
+}
+
+function	script	F_OfflineLetterShop	{
+	// 0-25 = A-Z, 26 = leading digit (shop suffix "0"), -1 = skip.
+	.@name$ = getarg(0);
+	.@ch$ = strtoupper(charat(.@name$, 0));
+	.@idx = strpos("ABCDEFGHIJKLMNOPQRSTUVWXYZ", .@ch$);
+	if (.@idx >= 0)
+		return .@idx;
+	if (strpos("0123456789", .@ch$) >= 0)
+		return 26;
+	if (getarg(1, 0) == 1)
+		return -1;
+	return 0;
 }
 
 paramk,47,186,4	script	Corvin#offline	512,{
@@ -284,6 +300,7 @@ OnInit:
 	deletearray .HasAlphabet[0], getarraysize(.HasAlphabet);
 	.size_alphabet = 0;
 	.alphabet_menu$ = "";
+	.HasNum = false;
 	.@alphabet$ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	// Reviewed Normal monster cards and their canonical source monsters.
@@ -308,6 +325,7 @@ OnInit:
 
 	for (.@i = 0; .@i < 26; ++.@i)
 		npcshopdelitem "card_mob#" + charat(.@alphabet$, .@i), 501;
+	npcshopdelitem "card_mob#0", 501;
 
 	.@card_count = getarraysize(.CardIds);
 	if (.@card_count != getarraysize(.SourceMobIds)) {
@@ -327,14 +345,23 @@ OnInit:
 		.@price = callfunc("F_OfflineCardShopPrice", .@source_level, 1);
 		if (.@price < 1)
 			continue;
-		.@letter$ = strtoupper(charat(getitemname(.@item_id), 0));
-		.@letter_index = strpos(.@alphabet$, .@letter$);
-		if (.@letter_index < 0)
+		.@drawer = callfunc("F_OfflineLetterShop", getitemname(.@item_id), 1);
+		if (.@drawer < 0)
 			continue;
-		.HasAlphabet[.@letter_index] = true;
+		if (.@drawer == 26) {
+			.@letter$ = "0";
+			.HasNum = true;
+		} else {
+			.@letter$ = charat(.@alphabet$, .@drawer);
+			.HasAlphabet[.@drawer] = true;
+		}
 		npcshopadditem "card_mob#" + .@letter$, .@item_id, .@price;
 	}
 
+	if (.HasNum) {
+		.alphabet$[.size_alphabet++] = "0";
+		.alphabet_menu$ += "0-9 Cards:";
+	}
 	for (.@i = 0; .@i < 26; ++.@i) {
 		if (.HasAlphabet[.@i]) {
 			.@letter$ = charat(.@alphabet$, .@i);
@@ -345,6 +372,7 @@ OnInit:
 	freeloop 0;
 	end;
 }
+-	pointshop	card_mob#0	-1,#CASHPOINTS,501:10
 -	pointshop	card_mob#A	-1,#CASHPOINTS,501:10
 -	pointshop	card_mob#B	-1,#CASHPOINTS,501:10
 -	pointshop	card_mob#C	-1,#CASHPOINTS,501:10
@@ -380,6 +408,7 @@ OnInit:
 	deletearray .HasAlphabet[0], getarraysize(.HasAlphabet);
 	.size_alphabet = 0;
 	.alphabet_menu$ = "";
+	.HasNum = false;
 	.@alphabet$ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	// Reviewed Miniboss cards and their canonical source monsters.
@@ -390,6 +419,7 @@ OnInit:
 
 	for (.@i = 0; .@i < 26; ++.@i)
 		npcshopdelitem "card_miniboss#" + charat(.@alphabet$, .@i), 501;
+	npcshopdelitem "card_miniboss#0", 501;
 
 	.@card_count = getarraysize(.CardIds);
 	if (.@card_count != getarraysize(.SourceMobIds)) {
@@ -409,14 +439,23 @@ OnInit:
 		.@price = callfunc("F_OfflineCardShopPrice", .@source_level, 2);
 		if (.@price < 1)
 			continue;
-		.@letter$ = strtoupper(charat(getitemname(.@item_id), 0));
-		.@letter_index = strpos(.@alphabet$, .@letter$);
-		if (.@letter_index < 0)
+		.@drawer = callfunc("F_OfflineLetterShop", getitemname(.@item_id), 1);
+		if (.@drawer < 0)
 			continue;
-		.HasAlphabet[.@letter_index] = true;
+		if (.@drawer == 26) {
+			.@letter$ = "0";
+			.HasNum = true;
+		} else {
+			.@letter$ = charat(.@alphabet$, .@drawer);
+			.HasAlphabet[.@drawer] = true;
+		}
 		npcshopadditem "card_miniboss#" + .@letter$, .@item_id, .@price;
 	}
 
+	if (.HasNum) {
+		.alphabet$[.size_alphabet++] = "0";
+		.alphabet_menu$ += "0-9 Cards:";
+	}
 	for (.@i = 0; .@i < 26; ++.@i) {
 		if (.HasAlphabet[.@i]) {
 			.@letter$ = charat(.@alphabet$, .@i);
@@ -427,6 +466,7 @@ OnInit:
 	freeloop 0;
 	end;
 }
+-	pointshop	card_miniboss#0	-1,#CASHPOINTS,501:50
 -	pointshop	card_miniboss#A	-1,#CASHPOINTS,501:50
 -	pointshop	card_miniboss#B	-1,#CASHPOINTS,501:50
 -	pointshop	card_miniboss#C	-1,#CASHPOINTS,501:50
@@ -466,6 +506,8 @@ OnInit:
 	.special_size_alphabet = 0;
 	.alphabet_menu$ = "";
 	.special_alphabet_menu$ = "";
+	.HasNum = false;
+	.SpecialHasNum = false;
 	.@alphabet$ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	// Reviewed MVP cards and their canonical source monsters.
@@ -487,6 +529,8 @@ OnInit:
 		npcshopdelitem "card_mvp#" + charat(.@alphabet$, .@i), 501;
 		npcshopdelitem "card_special#" + charat(.@alphabet$, .@i), 501;
 	}
+	npcshopdelitem "card_mvp#0", 501;
+	npcshopdelitem "card_special#0", 501;
 
 	.@card_count = getarraysize(.CardIds);
 	if (.@card_count != getarraysize(.SourceMobIds)) {
@@ -505,11 +549,16 @@ OnInit:
 		.@price = callfunc("F_OfflineCardShopPrice", .@source_level, 3);
 		if (.@price < 1)
 			continue;
-		.@letter$ = strtoupper(charat(getitemname(.@item_id), 0));
-		.@letter_index = strpos(.@alphabet$, .@letter$);
-		if (.@letter_index < 0)
+		.@drawer = callfunc("F_OfflineLetterShop", getitemname(.@item_id), 1);
+		if (.@drawer < 0)
 			continue;
-		.HasAlphabet[.@letter_index] = true;
+		if (.@drawer == 26) {
+			.@letter$ = "0";
+			.HasNum = true;
+		} else {
+			.@letter$ = charat(.@alphabet$, .@drawer);
+			.HasAlphabet[.@drawer] = true;
+		}
 		npcshopadditem "card_mvp#" + .@letter$, .@item_id, .@price;
 	}
 
@@ -525,17 +574,25 @@ OnInit:
 		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
 			getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL)
 			continue;
-		.@letter$ = strtoupper(charat(getitemname(.@item_id), 0));
-		.@letter_index = strpos(.@alphabet$, .@letter$);
-		if (.@letter_index < 0) {
-			// "11th Anniversary Card" is listed under A.
-			.@letter$ = "A";
-			.@letter_index = 0;
+		.@drawer = callfunc("F_OfflineLetterShop", getitemname(.@item_id));
+		if (.@drawer == 26) {
+			.@letter$ = "0";
+			.SpecialHasNum = true;
+		} else {
+			.@letter$ = charat(.@alphabet$, .@drawer);
+			.SpecialHasAlphabet[.@drawer] = true;
 		}
-		.SpecialHasAlphabet[.@letter_index] = true;
 		npcshopadditem "card_special#" + .@letter$, .@item_id, .@special_price;
 	}
 
+	if (.HasNum) {
+		.alphabet$[.size_alphabet++] = "0";
+		.alphabet_menu$ += "0-9 Cards:";
+	}
+	if (.SpecialHasNum) {
+		.special_alphabet$[.special_size_alphabet++] = "0";
+		.special_alphabet_menu$ += "0-9 Cards:";
+	}
 	for (.@i = 0; .@i < 26; ++.@i) {
 		if (.HasAlphabet[.@i]) {
 			.@letter$ = charat(.@alphabet$, .@i);
@@ -551,6 +608,7 @@ OnInit:
 	freeloop 0;
 	end;
 }
+-	pointshop	card_mvp#0	-1,#CASHPOINTS,501:100
 -	pointshop	card_mvp#A	-1,#CASHPOINTS,501:100
 -	pointshop	card_mvp#B	-1,#CASHPOINTS,501:100
 -	pointshop	card_mvp#C	-1,#CASHPOINTS,501:100
@@ -577,6 +635,7 @@ OnInit:
 -	pointshop	card_mvp#X	-1,#CASHPOINTS,501:100
 -	pointshop	card_mvp#Y	-1,#CASHPOINTS,501:100
 -	pointshop	card_mvp#Z	-1,#CASHPOINTS,501:100
+-	pointshop	card_special#0	-1,#CASHPOINTS,501:120
 -	pointshop	card_special#A	-1,#CASHPOINTS,501:120
 -	pointshop	card_special#B	-1,#CASHPOINTS,501:120
 -	pointshop	card_special#C	-1,#CASHPOINTS,501:120
