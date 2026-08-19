@@ -1446,6 +1446,10 @@ enum sc_type : int16 {
 	SC_WIND_CHARM_POWER,
 	SC_GROUND_CHARM_POWER,
 
+	// Offline Premium Buff icons. Rates still come from VIP.
+	SC_AID_PERIOD_PLUSEXP,
+	SC_AID_PERIOD_RECEIVEITEM,
+
 	SC_MAX, //Automatically updated max, used in for's to check we are within bounds.
 };
 

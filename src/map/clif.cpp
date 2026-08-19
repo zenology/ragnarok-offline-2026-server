@@ -18375,14 +18375,13 @@ void clif_parse_mercenary_action(int32 fd, map_session_data* sd)
 /// Notification about the remaining time of a rental item.
 /// 0298 <name id>.W <seconds>.L (ZC_CASH_TIME_COUNTER)
 void clif_rental_time( const map_session_data* sd, t_itemid nameid, int32 seconds ){
-	// '<ItemName>' item will disappear in <seconds/60> minutes.
-	PACKET_ZC_CASH_TIME_COUNTER p = {};
-
-	p.packetType = HEADER_ZC_CASH_TIME_COUNTER;
-	p.itemId = client_nameid( nameid );
-	p.seconds = seconds;
-
-	clif_send( &p, sizeof( p ), sd, SELF );
+	// Offline: do not send ZC_CASH_TIME_COUNTER. The 2025-07-16 client prints
+	// "'ItemName' item will disappear in <minutes> minutes." in chat on login
+	// and again every hour while any rental remains. Items still expire through
+	// pc_inventory_rentals(); inventory removal still uses clif_rental_expired.
+	(void)sd;
+	(void)nameid;
+	(void)seconds;
 }
 
 

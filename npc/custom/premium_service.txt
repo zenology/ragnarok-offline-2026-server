@@ -1,0 +1,334 @@
+//===== Ragnarok Offline =====================================
+//= Premium Buff and Premium Service Staff
+//===== Description: =========================================
+//= Timed account Premium Subscription (rAthena VIP). Duration
+//= boxes grant a rental Premium Service Staff from box minutes
+//= plus remaining time (do not wait for async vip_time ack).
+//= GM @vip <seconds> applies to self; @vip <char_name> <seconds>
+//= adds seconds; 0 clears VIP, #PREMIUM_UNTIL, AID icons, and the rental wand.
+//= #vip is disabled. Player group cannot use @vip.
+//= Using the wand duplicates Premi next to the player.
+//= Premi#src must sit on a real map cell (izlude 1,1). A floating
+//= "-" source becomes JT_FAKENPC and duplicate_dynamic never spawns.
+//= Premi and AID icons follow #PREMIUM_UNTIL, not vip_status.
+//= Extra 24-hour options cost Nyangvine.
+//= Sprite 4_F_PREMI (10209) with official illust prm_1-5.
+//= Do not use 4_SERVICE_30_* (different black-outfit cats)
+//= or 4_CAT_ADMIRAL. Do not name her ABC (Abyss Chaser).
+//============================================================
+
+function	script	F_PremiumRemain	{
+	.@expire = getarg(0);
+	.@now = gettimetick(2);
+	if (.@expire <= .@now)
+		return "inactive";
+	.@left = .@expire - .@now;
+	return (.@left / 3600) + "h " + ((.@left % 3600) / 60) + "m";
+}
+
+// sc_start duration is int32 milliseconds; 30 days overflows.
+function	script	F_PremiumApplyIcons	{
+	.@seconds = getarg(0);
+	if (.@seconds <= 0)
+		return;
+	if (.@seconds > 2147483)
+		.@ms = 2147483647;
+	else
+		.@ms = .@seconds * 1000;
+	sc_start SC_AID_PERIOD_PLUSEXP, .@ms, 20;
+	sc_start SC_AID_PERIOD_RECEIVEITEM, .@ms, 20;
+	return;
+}
+
+function	script	F_PremiumRemainingSeconds	{
+	.@now = gettimetick(2);
+	.@remain = vip_status(VIP_STATUS_REMAINING);
+	if (.@remain < 0)
+		.@remain = 0;
+	if (#PREMIUM_UNTIL > .@now) {
+		.@left = #PREMIUM_UNTIL - .@now;
+		if (.@left > .@remain)
+			.@remain = .@left;
+	}
+	return .@remain;
+}
+
+function	script	F_PremiumResyncStaff	{
+	.@remain = callfunc("F_PremiumRemainingSeconds");
+	if (countitem(23165) > 0)
+		delitem 23165, countitem(23165);
+	if (rentalcountitem(23165) > 0)
+		delitem 23165, rentalcountitem(23165);
+	if (.@remain <= 0) {
+		#PREMIUM_UNTIL = 0;
+		sc_end SC_AID_PERIOD_PLUSEXP;
+		sc_end SC_AID_PERIOD_RECEIVEITEM;
+		return;
+	}
+	callfunc("F_PremiumApplyIcons", .@remain);
+	rentitem 23165, .@remain;
+	return;
+}
+
+function	script	F_PremiumSyncStaff	{
+	.@remain = callfunc("F_PremiumRemainingSeconds");
+	if (.@remain <= 0)
+		return;
+	callfunc("F_PremiumApplyIcons", .@remain);
+	if (rentalcountitem(23165) < 1) {
+		if (countitem(23165) > 0)
+			delitem 23165, countitem(23165);
+		rentitem 23165, .@remain;
+	}
+	return;
+}
+
+function	script	F_PremiumSubscription	{
+	.@minutes = getarg(0);
+	.@old = callfunc("F_PremiumRemainingSeconds");
+	.@seconds = .@old + (.@minutes * 60);
+	#PREMIUM_UNTIL = gettimetick(2) + .@seconds;
+	vip_time .@minutes;
+	if (countitem(23165) > 0)
+		delitem 23165, countitem(23165);
+	if (rentalcountitem(23165) > 0)
+		delitem 23165, rentalcountitem(23165);
+	rentitem 23165, .@seconds;
+	callfunc("F_PremiumApplyIcons", .@seconds);
+	.@days = .@minutes / 1440;
+	if (.@days == 1)
+		dispbottom "Premium Buff activated for 1 day.";
+	else
+		dispbottom "Premium Buff activated for " + .@days + " days.";
+	return;
+}
+
+function	script	F_PremiumServiceStaff	{
+	.@now = gettimetick(2);
+	if (#PREMIUM_STAFF_CD > .@now)
+		return;
+	#PREMIUM_STAFF_CD = .@now + 3;
+	if (getmapflag(strcharinfo(3), mf_nodynamicnpc)) {
+		dispbottom "The Premium Service Staff cannot be called on this map.";
+		return;
+	}
+	.@dup$ = duplicate_dynamic("Premi#src");
+	if (.@dup$ == "") {
+		dispbottom "Premi is already nearby, or there is no open cell. Move a few steps and try again.";
+		return;
+	}
+	.@remain = callfunc("F_PremiumRemainingSeconds");
+	if (.@remain > 0)
+		callfunc("F_PremiumApplyIcons", .@remain);
+	callfunc("F_PremiumSyncExtras");
+	dispbottom "Premi appears nearby.";
+	return;
+}
+
+function	script	F_PremiumExtraRunning	{
+	.@kind = getarg(0);
+	.@now = gettimetick(2);
+	.@exp = (#PREMIUM_EXPUP > .@now || getstatus(SC_PERIOD_PLUSEXP_2ND));
+	.@item = (#PREMIUM_ITEMUP > .@now || getstatus(SC_PERIOD_RECEIVEITEM_2ND));
+	.@death = (#PREMIUM_DEATHDOWN > .@now || getstatus(SC_LIFEINSURANCE));
+	if (.@kind == 1)
+		return .@exp;
+	if (.@kind == 2)
+		return .@item;
+	if (.@kind == 3)
+		return .@death;
+	if (.@kind == 4)
+		return (.@exp || .@item || .@death);
+	return 0;
+}
+
+function	script	F_PremiumApplyExtra	{
+	.@kind = getarg(0);
+	if (callfunc("F_PremiumExtraRunning", .@kind))
+		return 0;
+	.@now = gettimetick(2);
+	.@until = .@now + 86400;
+	if (.@kind == 1 || .@kind == 4) {
+		#PREMIUM_EXPUP = .@until;
+		sc_start SC_PERIOD_PLUSEXP_2ND, 86400000, 30;
+	}
+	if (.@kind == 2 || .@kind == 4) {
+		#PREMIUM_ITEMUP = .@until;
+		sc_start SC_PERIOD_RECEIVEITEM_2ND, 86400000, 30;
+	}
+	if (.@kind == 3 || .@kind == 4) {
+		#PREMIUM_DEATHDOWN = .@until;
+		sc_start SC_LIFEINSURANCE, 86400000, 0;
+	}
+	return 1;
+}
+
+function	script	F_PremiumSyncExtras	{
+	.@now = gettimetick(2);
+	if (#PREMIUM_EXPUP > .@now)
+		sc_start SC_PERIOD_PLUSEXP_2ND, (#PREMIUM_EXPUP - .@now) * 1000, 30;
+	if (#PREMIUM_ITEMUP > .@now)
+		sc_start SC_PERIOD_RECEIVEITEM_2ND, (#PREMIUM_ITEMUP - .@now) * 1000, 30;
+	if (#PREMIUM_DEATHDOWN > .@now)
+		sc_start SC_LIFEINSURANCE, (#PREMIUM_DEATHDOWN - .@now) * 1000, 0;
+	return;
+}
+
+-	script	PremiumLogin#offline	-1,{
+	end;
+
+OnPCLoginEvent:
+	callfunc("F_PremiumSyncStaff");
+	callfunc("F_PremiumSyncExtras");
+	end;
+
+OnGmVipSync:
+	callfunc("F_PremiumResyncStaff");
+	end;
+}
+
+// prm_1 talk (open mouth), prm_2 smile open eyes, prm_3 smile closed eyes,
+// prm_4 sad, prm_5 sad plus blush. Position 2 = bottom right.
+izlude,1,1,4	script	Premi#src	4_F_PREMI,{
+	.@remain = callfunc("F_PremiumRemainingSeconds");
+	if (.@remain > 0)
+		callfunc("F_PremiumApplyIcons", .@remain);
+	callfunc("F_PremiumSyncExtras");
+	cutin "prm_2",2;
+	.@eac = eaclass();
+	if ((.@eac&EAJ_BASEMASK) == EAJ_SUMMONER) {
+		cutin "prm_5",2;
+		mes "[Premi]";
+		mes "Ah-- another cat?";
+		mes "I-I'm working, okay?";
+		next;
+		cutin "prm_2",2;
+	} else if (.@eac&EAJL_BABY) {
+		cutin "prm_5",2;
+		mes "[Premi]";
+		mes "You don't feel like a kitten...";
+		mes "Ehehe. I can still help!";
+		next;
+		cutin "prm_2",2;
+	}
+	mes "[Premi]";
+	mes "Hi hi! Premi is here!";
+	next;
+	if (.@remain <= 0) {
+		cutin "prm_4",2;
+		mes "[Premi]";
+		mes "Aww... your Premium Buff isn't on.";
+		mes "Open a Premium Subscription box first, okay?";
+		close2;
+		cutin "",255;
+		end;
+	}
+	cutin "prm_1",2;
+	mes "[Premi]";
+	mes "Your Premium Buff is still going until:";
+	mes gettimestr("%Y-%m/%d %H:%M:%S", 21, gettimetick(2) + .@remain);
+	next;
+	cutin "prm_1",2;
+	mes "[Premi]";
+	mes "Extra options last 24 hours for every character on this account!";
+	mes "They cost Nyangvine, and I won't sell one that's already running.";
+	next;
+	.@menu$ = "EXP UP (4 Nyangvine):ITEM UP (2 Nyangvine):DEATH DOWN (1 Nyangvine):Advanced Package (6 Nyangvine):Just checking:";
+	switch (select(.@menu$)) {
+	case 1:
+		callsub S_RefuseIfRunning, 1;
+		callsub S_Buy, 4, 1, "EXP UP";
+		end;
+	case 2:
+		callsub S_RefuseIfRunning, 2;
+		callsub S_Buy, 2, 2, "ITEM UP";
+		end;
+	case 3:
+		callsub S_RefuseIfRunning, 3;
+		callsub S_Buy, 1, 3, "DEATH DOWN";
+		end;
+	case 4:
+		callsub S_RefuseIfRunning, 4;
+		callsub S_Buy, 6, 4, "Advanced Package";
+		end;
+	default:
+		cutin "prm_3",2;
+		mes "[Premi]";
+		mes "Okay! Call me again if you need anything!";
+		goto L_End;
+	}
+
+S_RefuseIfRunning:
+	.@kind = getarg(0);
+	if (!callfunc("F_PremiumExtraRunning", .@kind))
+		return;
+	cutin "prm_4",2;
+	mes "[Premi]";
+	if (.@kind == 4) {
+		mes "I can't sell extra options while one is already running...";
+	} else {
+		if (.@kind == 1)
+			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_EXPUP);
+		else if (.@kind == 2)
+			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_ITEMUP);
+		else
+			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_DEATHDOWN);
+		if (.@left$ == "inactive")
+			mes "That extra is already running...";
+		else
+			mes "That extra is already running (" + .@left$ + ")...";
+	}
+	mes "I can't stack it. Sorry...";
+	goto L_End;
+
+S_Buy:
+	.@cost = getarg(0);
+	.@kind = getarg(1);
+	.@label$ = getarg(2);
+	if (callfunc("F_PremiumExtraRunning", .@kind)) {
+		callsub S_RefuseIfRunning, .@kind;
+		end;
+	}
+	if (countitem(6909) < .@cost) {
+		cutin "prm_4",2;
+		mes "[Premi]";
+		mes "That's " + .@cost + " Nyangvine for " + .@label$ + "...";
+		mes "You don't have enough. Dang it...";
+		goto L_End;
+	}
+	cutin "prm_2",2;
+	mes "[Premi]";
+	mes .@label$ + " for 24 hours! " + .@cost + " Nyangvine, okay?";
+	next;
+	if (select("Pay:Never mind") == 2) {
+		cutin "prm_5",2;
+		mes "[Premi]";
+		mes "Ah... o-okay. Never mind then.";
+		goto L_End;
+	}
+	if (callfunc("F_PremiumExtraRunning", .@kind)) {
+		callsub S_RefuseIfRunning, .@kind;
+		end;
+	}
+	if (countitem(6909) < .@cost) {
+		cutin "prm_4",2;
+		mes "[Premi]";
+		mes "The Nyangvine is gone...";
+		goto L_End;
+	}
+	delitem 6909, .@cost;
+	if (callfunc("F_PremiumApplyExtra", .@kind) == 0) {
+		getitem 6909, .@cost;
+		callsub S_RefuseIfRunning, .@kind;
+		end;
+	}
+	cutin "prm_3",2;
+	mes "[Premi]";
+	mes "Yay! " + .@label$ + " is running!";
+	goto L_End;
+
+L_End:
+	close2;
+	cutin "",255;
+	end;
+}

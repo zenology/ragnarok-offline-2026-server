@@ -11781,6 +11781,8 @@ static bool status_change_start_post_delay(block_list* src, block_list* bl, sc_t
 		case SC_JEXPBOOST:
 		case SC_PERIOD_RECEIVEITEM_2ND:
 		case SC_PERIOD_PLUSEXP_2ND:
+		case SC_AID_PERIOD_RECEIVEITEM:
+		case SC_AID_PERIOD_PLUSEXP:
 			if (val1 < 1)
 				return false;
 			break;

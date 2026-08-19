@@ -670,37 +670,39 @@ int32 logchrif_parse_reqvipdata(int32 fd) {
 			time_t now = time(nullptr);
 			time_t vip_time = acc.vip_time;
 			bool isvip = false;
+			// GM groups stay GM. Still apply vip_time so offline Admin accounts can receive Premium +20%.
+			bool keep_group = acc.group_id > login_config.vip_sys.group;
 
-			if( acc.group_id > login_config.vip_sys.group ) { //Don't change group if it's higher.
-				logchrif_sendvipdata(fd,&acc,0x2|((flag&0x8)?0x4:0),mapfd);
-				return 1;
-			}
 			if( flag&2 ) {
 				if(!vip_time)
 					vip_time = now; //new entry
 				vip_time += timediff; // set new duration
 			}
 			if( now < vip_time ) { //isvip
-				if(acc.group_id != login_config.vip_sys.group){ //only upd this if we're not vip already
-					acc.old_group = acc.group_id;
-					if( acc.char_slots == 0 ){
-						acc.char_slots = MIN_CHARS;
+				if( !keep_group ) {
+					if(acc.group_id != login_config.vip_sys.group){ //only upd this if we're not vip already
+						acc.old_group = acc.group_id;
+						if( acc.char_slots == 0 ){
+							acc.char_slots = MIN_CHARS;
+						}
+						acc.char_slots += login_config.vip_sys.char_increase;
 					}
-					acc.char_slots += login_config.vip_sys.char_increase;
+					acc.group_id = login_config.vip_sys.group;
 				}
-				acc.group_id = login_config.vip_sys.group;
 				isvip = true;
-			} else { //expired or @vip -xx
+			} else { //expired or @vip 0
 				vip_time = 0;
-				if(acc.group_id == login_config.vip_sys.group){ //prevent alteration in case account wasn't registered as vip yet
-					acc.group_id = acc.old_group;
-					if( acc.char_slots == 0 ){
-						acc.char_slots = MIN_CHARS;
-					}else{
-						acc.char_slots -= login_config.vip_sys.char_increase;
+				if( !keep_group ) {
+					if(acc.group_id == login_config.vip_sys.group){ //prevent alteration in case account wasn't registered as vip yet
+						acc.group_id = acc.old_group;
+						if( acc.char_slots == 0 ){
+							acc.char_slots = MIN_CHARS;
+						}else{
+							acc.char_slots -= login_config.vip_sys.char_increase;
+						}
 					}
+					acc.old_group = 0;
 				}
-				acc.old_group = 0;
 			}
 			acc.vip_time = vip_time;
 			accounts->save(accounts,&acc, false);

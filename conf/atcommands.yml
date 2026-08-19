@@ -1457,9 +1457,10 @@ Body:
       Displays SVN version of the server.
   - Command: vip
     Help: |
-      Params: <+/- time> <char name>
-      Set a player in VIP mode for a limited time.
-      Time elements: y/a, m, d/j, h, mn, s
+      Params: {<char name>} <seconds>
+      GM @vip only. Omit the name to apply to yourself.
+      Add VIP / Premium Buff time in seconds. 0 removes VIP.
+      Not a #charcommand.
   - Command: vit
     Help: |
       Params: <amount>

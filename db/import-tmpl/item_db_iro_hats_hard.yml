@@ -3,8 +3,10 @@
 # Source: Divine Pride item pages fetched 2026-08-18
 # Scripts mapped from those descriptions onto existing rAthena bonus commands.
 #
+# 401019 / 401460 Premium extra lines use vip_status(VIP_STATUS_ACTIVE)
+# or getstatus(SC_AID_PERIOD_PLUSEXP). Movement speed with no percent is bSpeedRate,25.
+#
 # Omitted (no verified local mapping):
-# - Premium-buff extra lines on 401019 / 401460
 # - Star Clust Lv.3 combos on 420569 (those SKUs are etc enchant stones)
 # - Snow Flower Armor/Robe combos on 420590 (no local armor/robe rows)
 # - Moonflower Bow combo on 420245 (no local bow)
@@ -524,6 +526,12 @@ Body:
       bonus bAllStats,2*.@r;
       bonus bBaseAtk,20*.@r;
       bonus bMatk,20*.@r;
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,10;
+         bonus2 bExpAddRace,RC_All,10;
+         bonus2 bDropAddRace,RC_All,10;
+         bonus bSpeedRate,25;
+      }
 
   - Id: 401043
     AegisName: Great_Kiel_US
@@ -879,6 +887,12 @@ Body:
       bonus bAllStats,3*.@r;
       bonus bBaseAtk,30*.@r;
       bonus bMatk,30*.@r;
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,15;
+         bonus2 bExpAddRace,RC_All,15;
+         bonus2 bDropAddRace,RC_All,15;
+         bonus bSpeedRate,25;
+      }
 
   - Id: 401466
     AegisName: Cat_FF_Phys

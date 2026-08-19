@@ -10648,32 +10648,75 @@ ACMD_FUNC(langtype)
 ACMD_FUNC(vip) {
 #ifdef VIP_ENABLE
 	map_session_data* pl_sd = nullptr;
-	char * modif_p;
+	int32 seconds = 0;
 	int32 vipdifftime = 0;
-	time_t now=time(nullptr);
-	
+	time_t now = time(nullptr);
+	char seconds_buf[32];
+	char *endptr = nullptr;
+	size_t len;
+	size_t split;
+	size_t slen;
+	bool notify_gm;
+
 	nullpo_retr(-1, sd);
 
 	memset(atcmd_output, '\0', sizeof(atcmd_output));
-	
-	if (!message || !*message || sscanf(message, "%255s %23[^\n]",atcmd_output,atcmd_player_name) < 2) {
-		clif_displaymessage(fd, msg_txt(sd,700));	//Usage: @vip <timef> <character name>
+	memset(atcmd_player_name, '\0', sizeof(atcmd_player_name));
+
+	if (command != nullptr && *command == charcommand_symbol) {
+		clif_displaymessage(fd, msg_txt(sd,700)); // Usage: @vip <seconds> or @vip <character name> <seconds>
 		return -1;
 	}
 
-	atcmd_output[sizeof(atcmd_output)-1] = '\0';
+	if (!message || !*message) {
+		clif_displaymessage(fd, msg_txt(sd,700)); // Usage: @vip <seconds> or @vip <character name> <seconds>
+		clif_displaymessage(fd, msg_txt(sd,702)); // 0 seconds removes VIP. Positive seconds are added to remaining time.
+		return -1;
+	}
 
-	modif_p = atcmd_output;
-	vipdifftime = (int32)solve_time(modif_p);
-	if (vipdifftime == 0) {
+	len = strlen(message);
+	while (len > 0 && message[len - 1] == ' ')
+		--len;
+	if (len == 0) {
+		clif_displaymessage(fd, msg_txt(sd,700));
+		clif_displaymessage(fd, msg_txt(sd,702));
+		return -1;
+	}
+
+	split = len;
+	while (split > 0 && message[split - 1] != ' ')
+		--split;
+
+	slen = len - split;
+	if (slen == 0 || slen >= sizeof(seconds_buf)) {
+		clif_displaymessage(fd, msg_txt(sd,700));
+		clif_displaymessage(fd, msg_txt(sd,702));
+		return -1;
+	}
+	memcpy(seconds_buf, message + split, slen);
+	seconds_buf[slen] = '\0';
+	seconds = (int32)strtol(seconds_buf, &endptr, 10);
+	if (endptr == seconds_buf || *endptr != '\0' || seconds < 0) {
 		clif_displaymessage(fd, msg_txt(sd,701)); // Invalid time for vip command.
-		clif_displaymessage(fd, msg_txt(sd,702)); // Time parameter format is +/-<value> to alter. y/a = Year, m = Month, d/j = Day, h = Hour, n/mn = Minute, s = Second.
+		clif_displaymessage(fd, msg_txt(sd,702));
 		return -1;
 	}
 
-	if ((pl_sd = map_nick2sd(atcmd_player_name,false)) == nullptr) {
-		clif_displaymessage(fd, msg_txt(sd,3)); // Character not found.
-		return -1;
+	if (split == 0) {
+		pl_sd = sd;
+	} else {
+		size_t namelen = split;
+		while (namelen > 0 && message[namelen - 1] == ' ')
+			--namelen;
+		if (namelen == 0 || namelen >= NAME_LENGTH) {
+			clif_displaymessage(fd, msg_txt(sd,700));
+			return -1;
+		}
+		safestrncpy(atcmd_player_name, message, namelen + 1);
+		if ((pl_sd = map_nick2sd(atcmd_player_name, false)) == nullptr) {
+			clif_displaymessage(fd, msg_txt(sd,3)); // Character not found.
+			return -1;
+		}
 	}
 
 	if (pc_get_group_level(pl_sd) > pc_get_group_level(sd)) {
@@ -10681,40 +10724,65 @@ ACMD_FUNC(vip) {
 		return -1;
 	}
 
-	if( pc_get_group_level( pl_sd ) > 0 ){
-		clif_displaymessage( sd->fd, msg_txt( sd, 437 ) ); // GM's cannot become a VIP.
-		return -1;
+	// Offline GM accounts keep their group. loginchrif applies vip_time without demoting them.
+	if (seconds == 0) {
+		if (pl_sd->vip.time > now)
+			vipdifftime = (int32)(now - pl_sd->vip.time);
+		else
+			vipdifftime = -1;
+		pc_setreg2(pl_sd, "#PREMIUM_UNTIL", 0);
+	} else {
+		int64 stamp = pc_readreg2(pl_sd, "#PREMIUM_UNTIL");
+		int64 remain = 0;
+		int64 expire;
+
+		vipdifftime = seconds;
+		if (stamp > now)
+			remain = stamp - now;
+		if (pc_isvip(pl_sd) && pl_sd->vip.time > now) {
+			int64 vip_remain = (int64)(pl_sd->vip.time - now);
+			if (vip_remain > remain)
+				remain = vip_remain;
+		}
+		expire = (int64)now + remain + seconds;
+		if (expire > SINT32_MAX)
+			expire = SINT32_MAX;
+		pc_setreg2(pl_sd, "#PREMIUM_UNTIL", expire);
 	}
 
-	if(pl_sd->vip.time==0) pl_sd->vip.time=now;
-	pl_sd->vip.time += vipdifftime; //increase or reduce VIP duration
-	
+	if (pl_sd->vip.time == 0)
+		pl_sd->vip.time = now;
+	pl_sd->vip.time += vipdifftime;
+
+	notify_gm = (fd != pl_sd->fd);
+
 	if (pl_sd->vip.time <= now) {
 		clif_displaymessage(pl_sd->fd, msg_txt(pl_sd,703)); // GM has removed your VIP time.
 
-		if( pl_sd != sd ){
-			sprintf( atcmd_output, msg_txt( sd, 704 ), pl_sd->status.name ); // Player '%s' is no longer VIP.
-			clif_displaymessage( fd, atcmd_output );
+		if (notify_gm) {
+			sprintf(atcmd_output, msg_txt(sd,704), pl_sd->status.name); // Player '%s' is no longer VIP.
+			clif_displaymessage(fd, atcmd_output);
 		}
 	} else {
-		int32 year,month,day,hour,minute,second;
+		int32 year, month, day, hour, minute, second;
 		char timestr[21];
-		
-		split_time((int32)(pl_sd->vip.time-now),&year,&month,&day,&hour,&minute,&second);
-		sprintf(atcmd_output,msg_txt(pl_sd,705),year,month,day,hour,minute,second); // Your VIP status is valid for %d years, %d months, %d days, %d hours, %d minutes and %d seconds.
-		clif_displaymessage(pl_sd->fd,atcmd_output);
-		timestamp2string(timestr,20,pl_sd->vip.time,"%Y-%m-%d %H:%M:%S");
-		sprintf(atcmd_output,msg_txt(pl_sd,707),timestr); // You are VIP until: %s
-		clif_displaymessage(pl_sd->fd,atcmd_output);
 
-		if (pl_sd != sd) {
-			sprintf(atcmd_output,msg_txt(sd,706),pl_sd->status.name,year,month,day,hour,minute,second); // Player '%s' is now VIP for %d years, %d months, %d days, %d hours, %d minutes and %d seconds.
-			clif_displaymessage(fd,atcmd_output);
-			sprintf(atcmd_output,msg_txt(sd,708),timestr); // The player is now VIP until: %s
-			clif_displaymessage(fd,atcmd_output);
+		split_time((int32)(pl_sd->vip.time - now), &year, &month, &day, &hour, &minute, &second);
+		sprintf(atcmd_output, msg_txt(pl_sd,705), year, month, day, hour, minute, second); // Your VIP status is valid for %d years, %d months, %d days, %d hours, %d minutes and %d seconds.
+		clif_displaymessage(pl_sd->fd, atcmd_output);
+		timestamp2string(timestr, 20, pl_sd->vip.time, "%Y-%m-%d %H:%M:%S");
+		sprintf(atcmd_output, msg_txt(pl_sd,707), timestr); // You are VIP until: %s
+		clif_displaymessage(pl_sd->fd, atcmd_output);
+
+		if (notify_gm) {
+			sprintf(atcmd_output, msg_txt(sd,706), pl_sd->status.name, year, month, day, hour, minute, second); // Player '%s' is now VIP for %d years, %d months, %d days, %d hours, %d minutes and %d seconds.
+			clif_displaymessage(fd, atcmd_output);
+			sprintf(atcmd_output, msg_txt(sd,708), timestr); // The player is now VIP until: %s
+			clif_displaymessage(fd, atcmd_output);
 		}
 	}
-	chrif_req_login_operation(pl_sd->status.account_id, pl_sd->status.name, CHRIF_OP_LOGIN_VIP, vipdifftime, 7, 0); 
+	chrif_req_login_operation(pl_sd->status.account_id, pl_sd->status.name, CHRIF_OP_LOGIN_VIP, vipdifftime, 7, 0);
+	npc_event_do_id("PremiumLogin#offline::OnGmVipSync", pl_sd->id);
 	return 0;
 #else
 	clif_displaymessage( fd, msg_txt( sd, 774 ) ); // This command is disabled via configuration.
@@ -12120,6 +12188,9 @@ void atcommand_db_load_groups(){
 		for( auto& it : player_group_db ){
 			cmd->at_groups[it.second->index] = it.second->can_use_command( cmd->command, COMMAND_ATCOMMAND );
 			cmd->char_groups[it.second->index] = it.second->can_use_command( cmd->command, COMMAND_CHARCOMMAND );
+			// Offline: @vip is GM-only. Never expose #vip, including Admin all_commands.
+			if( strcmpi( cmd->command, "vip" ) == 0 )
+				cmd->char_groups[it.second->index] = 0;
 		}
 	}
 
