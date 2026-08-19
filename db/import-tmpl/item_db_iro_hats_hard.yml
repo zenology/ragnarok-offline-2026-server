@@ -17,7 +17,8 @@
 # - Autocast levels capped to local skill MaxLevel (Cart Cannon 5 not 10,
 #   Focused Arrow Strike 5 not 10)
 # 400718 Grade B splash is OFFLINE_REKENBER_CELESTIAL (skill 10000), not bSplashRange.
-# Do not dump these IDs into Harlan's 100 CP pointshop.
+# - 480482 Wind God Cloak-LT is a garment leftover from the hat scrape.
+#   Imported 2026-08-19. Not Harlan stock. Combos use Ceila_Card / Katrinn_Card.
 ###########################################################################
 
 Header:
@@ -1056,32 +1057,6 @@ Body:
       bonus bHPGainValue,666;
       bonus bMagicHPGainValue,666;
 
-  - Id: 410496
-    AegisName: BP2_Middle_LT_US
-    Name: Authority of Issgard-VG
-    Type: Armor
-    Weight: 30
-    Slots: 1
-    Locations:
-      Head_Mid: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
-    Script: |
-      bonus bAllStats,15;
-      bonus bAllTraitStats,15;
-      bonus2 bExpAddRace,RC_All,15;
-      bonus2 bDropAddRace,RC_All,15;
-      bonus bDelayrate,-15;
-
   - Id: 410531
     AegisName: Hero_Follower_US
     Name: Hero Follower Mask
@@ -1458,3 +1433,46 @@ Body:
       bonus2 bExpAddRace,RC_All,15;
       bonus2 bDropAddRace,RC_All,15;
       bonus bDelayrate,-15;
+
+  - Id: 480482
+    AegisName: Tele_WG_Cape_LT
+    Name: Wind God Cloak-LT
+    Type: Armor
+    Weight: 10
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 150
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bMatk,15*(.@r/2);
+      bonus bSpl,.@r/2;
+      bonus2 bMagicAtkEle,Ele_Wind,10*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_Ghost,10*(.@r/3);
+      if (.@r>=7)
+         bonus bMatkRate,15;
+      if (.@r>=9) {
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+      }
+      if (.@r>=11)
+         bonus bDelayrate,-12;
+      if (.@r>=12)
+         bonus2 bMagicAddSize,Size_All,15;
+      if (.@r>=13)
+         bonus2 bIgnoreMdefClassRate,Class_Boss,10;
+      if (.@g>=ENCHANTGRADE_D)
+         bonus bMatkRate,8;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus2 bMagicAtkEle,Ele_All,12;
+      if (.@g>=ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_Wind,20;
+         bonus2 bMagicAtkEle,Ele_Ghost,20;
+      }
+      if (.@g>=ENCHANTGRADE_A)
+         bonus2 bMagicAddRace,RC_All,15;

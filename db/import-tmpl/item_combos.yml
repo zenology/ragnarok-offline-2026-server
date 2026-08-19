@@ -372,170 +372,6 @@ Body:
       bonus bRestartFullRecover;
   - Combos:
       - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_B_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_R_Knife
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_B_Knife
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Axe
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Spear
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Book
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Wand
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Foxtail
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Knuckle
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Violin
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Whip
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Mace
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_M_Mace
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_T_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Katar
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_T_Axe
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Lance
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Staff
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Humma
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Bow
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Revolver
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Rifle
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Shotgun
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Gatling
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Launcher
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_B_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_R_Knife
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_B_Knife
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Axe
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Spear
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Book
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Wand
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Foxtail
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Knuckle
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Violin
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Whip
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Mace
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_M_Mace
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_T_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Katar
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_T_Axe
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Lance
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Staff
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Humma
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Bow
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Revolver
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Rifle
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Shotgun
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Gatling
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Launcher
-    Script: |
-      bonus bBaseAtk,300;
-      bonus bMatk,300;
-      bonus bPow,10;
-      bonus bSpl,10;
-      bonus2 bAddSize,Size_All,30;
-      bonus2 bMagicAddSize,Size_All,30;
-  - Combos:
-      - Combo:
           - BP3_Lower_LT_US
           - Glacier_Sword
       - Combo:
@@ -1058,4 +894,35 @@ Body:
       if (getequiprefinerycnt(EQI_ARMOR)>=11) {
          bonus bSMatk,30;
          bonus bMatk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+      }
+  - Combos:
+      - Combo:
+          - Tele_WG_Cape_LT    # 480482
+          - Ceila_Card    # 4568
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bMagicAtkEle,Ele_Wind,10+3*(.@r/2);
+      if (.@r>=12)
+         bonus5 bAutoSpell,"SA_VIOLENTGALE",3,10,BF_MAGIC,0;
+  - Combos:
+      - Combo:
+          - Tele_WG_Cape_LT    # 480482
+          - Katrinn_Card    # 4366
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bMagicAtkEle,Ele_Ghost,10+3*(.@r/2);
+      if (.@r>=12)
+         bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - C_Dancing_Octo_US    # 400915
+          - Seaweed_In_Mouth_US    # 420513
+    Script: |
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         if (BaseLevel <= 200) {
+            bonus bBaseAtk,50;
+            bonus bMatk,50;
+            bonus bMaxHP,10000;
+            bonus2 bExpAddRace,RC_All,50;
+         }
       }

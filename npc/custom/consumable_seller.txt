@@ -16,7 +16,7 @@
 //= Battle Manual 5; Limited 6; Advanced 7; HE 10; X3 12.
 //= Job Battle Manual 5. Thick Battle Manual 12. Field Manual 25% is not stocked.
 //= Bubble Gum: 7 / 10 / 15. Combat: 3-day Infinite ASPD boxes 100;
-//= food 5; Blessing/AGI 10-packs 5; Aspersio 2;
+//= food 2/3/4/5 by dish tier; Blessing/AGI 10-packs 5; Aspersio 2;
 //= Assumptio/Wind Walk/Adrenaline 10-packs 8; Abrasive 1;
 //= Mega Resist Potion 10. Light ASPD 1/2/3. Concentration Scroll 5.
 //= Recovery: Small Life 3; Medium Life 5; Regeneration 2.
@@ -136,43 +136,45 @@ OnInit:
 	setarray .ItemId[0],     12208, 12872, 14533, 12411, 14545, 14592, 12312, 12210, 12562, 12412;
 	setarray .ItemPrice[0],      5,     6,     7,    10,    12,     5,    12,     7,    10,    15;
 	setarray .ItemCat[0],        0,     0,     0,     0,     0,     0,     0,     0,     0,     0;
-	// Category 1: Combat Buffs. Food A-Z; Light then Infinite ASPD;
-	// scrolls by pack price; Abrasive then Concentration Scroll.
-	setarray .ItemId[10],    12206, 12204, 12205, 12203, 12202, 12207, 14509, 14510, 14511, 17263, 17264, 17265;
-	setarray .ItemPrice[10],     5,     5,     5,     5,     5,     5,     1,     2,     3,   100,   100,   100;
-	setarray .ItemCat[10],       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1;
-	setarray .ItemId[22],    12217, 12913, 12914, 12918, 12916, 12917, 14536, 14531, 12299;
-	setarray .ItemPrice[22],     2,     5,     5,     8,     8,     8,     1,     5,    10;
-	setarray .ItemCat[22],       1,     1,     1,     1,     1,     1,     1,     1,     1;
+	// Category 1: Combat Buffs. Stat food by tier then A-Z; Light then
+	// Infinite ASPD; scrolls by pack price; Abrasive then Concentration Scroll.
+	// Food: Dish06 2, Dish07 3, Dish08/09 4, Dish10 5. Mid-tier IDs are
+	// the existing cooking dishes that iRO history mislabeled as hats.
+	setarray .ItemId[10],    12086, 12092, 12077, 12087, 12083, 12093, 12074, 12206, 12204, 12205, 12203, 12202, 12207;
+	setarray .ItemPrice[10],     2,     3,     3,     3,     4,     4,     4,     5,     5,     5,     5,     5,     5;
+	setarray .ItemCat[10],       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1;
+	setarray .ItemId[23],    14509, 14510, 14511, 17263, 17264, 17265, 12217, 12913, 12914, 12918, 12916, 12917, 14536, 14531, 12299;
+	setarray .ItemPrice[23],     1,     2,     3,   100,   100,   100,     2,     5,     5,     8,     8,     8,     1,     5,    10;
+	setarray .ItemCat[23],       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1;
 	// Category 2: Recovery. Life potions Small then Medium; Regen last.
-	setarray .ItemId[31],    14534, 14535, 14537;
-	setarray .ItemPrice[31],     3,     5,     2;
-	setarray .ItemCat[31],       2,     2,     2;
+	setarray .ItemId[38],    14534, 14535, 14537;
+	setarray .ItemPrice[38],     3,     5,     2;
+	setarray .ItemCat[38],       2,     2,     2;
 	// Category 3: Convenience. Giant Fly, Infinite Fly 1/3/5/7,
 	// city teleports by region, butterfly by the same geography,
 	// then insurance / utility / Halter.
-	setarray .ItemId[34],    12910, 17608, 17314, 17251, 17474, 17229, 12977, 12978, 12980, 12981, 12982, 12979;
-	setarray .ItemPrice[34],     5,    30,    30,    45,    60,   150,     2,     2,     5,     3,     5,     8;
-	setarray .ItemCat[34],       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3;
-	setarray .ItemId[46],    14582, 14583, 14584, 14585, 14527, 12214, 12209, 14500,  6413,  7621, 13621, 12211,  7776, 17176, 17162, 16683;
-	setarray .ItemPrice[46],     2,     3,     5,     8,    10,     2,     3,     5,    15,    10,    15,     1,    50,    45,   150,   300;
-	setarray .ItemCat[46],       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3;
+	setarray .ItemId[41],    12910, 17608, 17314, 17251, 17474, 17229, 12977, 12978, 12980, 12981, 12982, 12979;
+	setarray .ItemPrice[41],     5,    30,    30,    45,    60,   150,     2,     2,     5,     3,     5,     8;
+	setarray .ItemCat[41],       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3;
+	setarray .ItemId[53],    14582, 14583, 14584, 14585, 14527, 12214, 12209, 14500,  6413,  7621, 13621, 12211,  7776, 17176, 17162, 16683;
+	setarray .ItemPrice[53],     2,     3,     5,     8,    10,     2,     3,     5,    15,    10,    15,     1,    50,    45,   150,   300;
+	setarray .ItemCat[53],       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3;
 	// Category 6: Premium Service. Menu first. Nyangvine, then 1/10/30-day boxes.
-	setarray .ItemId[62],     6909, 23209, 23216, 23207;
-	setarray .ItemPrice[62],    10,   100,   800,  2000;
-	setarray .ItemCat[62],       6,     6,     6,     6;
+	setarray .ItemId[69],     6909, 23209, 23216, 23207;
+	setarray .ItemPrice[69],    10,   100,   800,  2000;
+	setarray .ItemCat[69],       6,     6,     6,     6;
 	// Category 4: Style and Reset. Dye A-Z; Costume Ticket;
 	// Premium Reset Stone; Neuralizer.
-	setarray .ItemId[66],     6046,  6047,  6959,  6320, 12213;
-	setarray .ItemPrice[66],    20,    20,   100,  1000,  1000;
-	setarray .ItemCat[66],       4,     4,     4,     4,     4;
+	setarray .ItemId[73],     6046,  6047,  6959,  6320, 12213;
+	setarray .ItemPrice[73],    20,    20,   100,  1000,  1000;
+	setarray .ItemCat[73],       4,     4,     4,     4,     4;
 	// Upgrade. Basic ores 1 CP A-Z then Emveretarcon; finished;
 	// Enriched; HD Ori/Elu then Bradium/Carnium; Blessing; Hammer.
-	setarray .ItemId[71],     1003,   998,  1002,  1010,   999,  1011,   985,   984,  7619,  7620,  6241,  6240,  6226,  6225,  6635, 23436;
-	setarray .ItemPrice[71],     1,     1,     1,     1,     1,     2,     5,     5,    10,    10,    30,    30,   100,   100,    13,   100;
-	setarray .ItemCat[71],       5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5;
+	setarray .ItemId[78],     1003,   998,  1002,  1010,   999,  1011,   985,   984,  7619,  7620,  6241,  6240,  6226,  6225,  6635, 23436;
+	setarray .ItemPrice[78],     1,     1,     1,     1,     1,     2,     5,     5,    10,    10,    30,    30,   100,   100,    13,   100;
+	setarray .ItemCat[78],       5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5;
 
-	.ItemCount = 87;
+	.ItemCount = 94;
 	deletearray .CatHas[0], 7;
 
 	for (.@cat = 0; .@cat < 7; ++.@cat)
