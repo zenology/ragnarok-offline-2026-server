@@ -4,6 +4,9 @@
 //= Timed account Premium Subscription (rAthena VIP). Duration
 //= boxes grant a rental Premium Service Staff from box minutes
 //= plus remaining time (do not wait for async vip_time ack).
+//= GM @vip <seconds> applies to self; @vip <char_name> <seconds>
+//= adds seconds; 0 clears VIP, #PREMIUM_UNTIL, AID icons, and the rental wand.
+//= #vip is disabled. Player group cannot use @vip.
 //= Using the wand duplicates Premi next to the player.
 //= Premi#src must sit on a real map cell (izlude 1,1). A floating
 //= "-" source becomes JT_FAKENPC and duplicate_dynamic never spawns.
@@ -48,6 +51,23 @@ function	script	F_PremiumRemainingSeconds	{
 			.@remain = .@left;
 	}
 	return .@remain;
+}
+
+function	script	F_PremiumResyncStaff	{
+	.@remain = callfunc("F_PremiumRemainingSeconds");
+	if (countitem(23165) > 0)
+		delitem 23165, countitem(23165);
+	if (rentalcountitem(23165) > 0)
+		delitem 23165, rentalcountitem(23165);
+	if (.@remain <= 0) {
+		#PREMIUM_UNTIL = 0;
+		sc_end SC_AID_PERIOD_PLUSEXP;
+		sc_end SC_AID_PERIOD_RECEIVEITEM;
+		return;
+	}
+	callfunc("F_PremiumApplyIcons", .@remain);
+	rentitem 23165, .@remain;
+	return;
 }
 
 function	script	F_PremiumSyncStaff	{
@@ -160,6 +180,10 @@ function	script	F_PremiumSyncExtras	{
 OnPCLoginEvent:
 	callfunc("F_PremiumSyncStaff");
 	callfunc("F_PremiumSyncExtras");
+	end;
+
+OnGmVipSync:
+	callfunc("F_PremiumResyncStaff");
 	end;
 }
 
