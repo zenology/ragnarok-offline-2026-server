@@ -6,12 +6,15 @@
 # 401019 / 401460 Premium extra lines use vip_status(VIP_STATUS_ACTIVE)
 # or getstatus(SC_AID_PERIOD_PLUSEXP). Movement speed with no percent is bSpeedRate,25.
 #
+# 420590 Frosty Breath combos wired 2026-08-20 to existing
+# Snowflower_Armor 450206 / Snowflower_Robe 450207. Do not create duplicate rows.
+#
+# 400625 Flamen combo wired 2026-08-20 to existing Poenitentia_Foramen 800011.
+# 410531 / 410539 Hero-LT (36) and OS-AD (16) combos wired 2026-08-20 to existing weapons.
+# 420245 Moonflower Bow 700078 and Arjuna Bow Thimble 490889 imported 2026-08-20. No shop.
+#
 # Omitted (no verified local mapping):
 # - Star Clust Lv.3 combos on 420569: SKU removed 2026-08-20 (no worn model)
-# - Snow Flower Armor/Robe combos on 420590 (no local armor/robe rows)
-# - Moonflower Bow combo on 420245 (no local bow)
-# - Poenitentia Flamen combo on 400625 (no local weapon)
-# - Hero-LT and OS-AD series combos on 410531 / 410539
 # - Tendrillion / Toxic Enhancement Chimera / Infinite Eddga / Mine Cowraiders cards
 # - Grass Rune Armor combo on 420503
 # - Autocast levels capped to local skill MaxLevel (Cart Cannon 5 not 10,
@@ -1460,3 +1463,77 @@ Body:
       }
       if (.@g>=ENCHANTGRADE_A)
          bonus2 bMagicAddRace,RC_All,15;
+
+  - Id: 490889
+    AegisName: Arjuna_Follower_US
+    Name: Arjuna Bow Thimble
+    Type: Armor
+    Weight: 500
+    Defense: 10
+    Slots: 1
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      bonus bMdef,10;
+      bonus bBaseAtk,150;
+      bonus bAllTraitStats,10;
+      bonus bDelayrate,-15;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSubRace,RC_DemiHuman,20;
+      bonus2 bSubRace,RC_Player_Human,20;
+      bonus2 bSubSize,Size_Medium,20;
+      bonus2 bMagicSubSize,Size_Medium,20;
+      bonus2 bSkillAtk,"SN_FALCONASSAULT",150;
+      if (BaseLevel <= 99) {
+         bonus bMaxHP,10000;
+         bonus bMaxSP,2000;
+      }
+      if (BaseLevel >= 100) {
+         bonus bPow,7;
+         bonus bCrt,7;
+         bonus bCon,7;
+         bonus2 bAddSize,Size_All,BaseLevel/5;
+         bonus2 bSkillAtk,"WH_GALESTORM",2*(BaseLevel/10);
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",2*(BaseLevel/10);
+      }
+
+  - Id: 700078
+    AegisName: MoonGod_Bow_J
+    Name: Moonflower Bow
+    Type: Weapon
+    SubType: Bow
+    Weight: 900
+    Attack: 160
+    MagicAttack: 170
+    Range: 5
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 200
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus2 bSubClass,Class_Boss,50;
+      bonus2 bSubRace,RC_Player_Human,40;
+      bonus2 bSubRace,RC_Player_Doram,40;
+      bonus2 bAddSize,Size_All,8*.@r;
+      bonus2 bMagicAddSize,Size_All,8*.@r;
+      if (.@r>=7) {
+         bonus2 bSkillAtk,"WH_FLAMETRAP",10;
+         bonus2 bSkillAtk,"WH_SWIFTTRAP",10;
+         bonus2 bSkillAtk,"WH_SOLIDTRAP",10;
+         bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",10;
+      }
+      if (.@r>=9) {
+         bonus2 bSkillAtk,"WH_FLAMETRAP",15;
+         bonus2 bSkillAtk,"WH_SWIFTTRAP",15;
+         bonus2 bSkillAtk,"WH_SOLIDTRAP",15;
+         bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",15;
+      }

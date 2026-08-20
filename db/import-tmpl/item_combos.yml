@@ -52,6 +52,27 @@ Body:
       bonus bSMatk,25;
       bonus bMatk,75*(getequiprefinerycnt(EQI_ARMOR)/3);
 
+  # Divine Pride 2026-08-18 text; wired 2026-08-20. Partners already in db/re.
+  # Unnamed movement speed is bSpeedRate,25, same as Grey Cub / Nebula Orb.
+  - Combos:
+      - Combo:
+          - Frosty_Breath_US    # 420590
+          - Snowflower_Armor    # 450206
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bPAtk,30;
+      bonus bPow,getequiprefinerycnt(EQI_ARMOR)/3;
+      bonus bBaseAtk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Frosty_Breath_US    # 420590
+          - Snowflower_Robe    # 450207
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bSMatk,30;
+      bonus bSpl,getequiprefinerycnt(EQI_ARMOR)/3;
+      bonus bMatk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+
   # Divine Pride 2026-08-18: hard iRO-history hat set bonuses. Partners verified in local item_db.
   - Combos:
       - Combo:
@@ -115,6 +136,14 @@ Body:
       bonus bLongAtkRate,15;
       bonus2 bSkillAtk,"NW_WILD_FIRE",7*(getequiprefinerycnt(EQI_HAND_R)/2);
       bonus2 bSkillAtk,"NW_SPIRAL_SHOOTING",7*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Poenetentia_M_Crown    # 400625
+          - Poenitentia_Foramen    # 800011 iRO English: Poenitentia Flamen
+    Script: |
+      bonus bLongAtkRate,15;
+      bonus2 bSkillAtk,"NW_ONLY_ONE_BULLET",10*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",6*(getequiprefinerycnt(EQI_HAND_R)/2);
   - Combos:
       - Combo:
           - Rekenber_Celestial_US
@@ -684,6 +713,176 @@ Body:
       bonus bAllTraitStats,10;
       bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
       bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  # Divine Pride 2026-08-20: Hero Follower Mask + all 36 Hero-LT weapons.
+  - Combos:
+      - Combo:
+          - Hero_Follower_US
+          - Light_Blade_LT
+      - Combo:
+          - Hero_Follower_US
+          - Sword_Of_Bluefire_LT
+      - Combo:
+          - Hero_Follower_US
+          - Slate_Sword_LT
+      - Combo:
+          - Hero_Follower_US
+          - Magic_Sword_LT
+      - Combo:
+          - Hero_Follower_US
+          - Fatalist_LT
+      - Combo:
+          - Hero_Follower_US
+          - Blessed_Knife_LT
+      - Combo:
+          - Hero_Follower_US
+          - Undine_Spear_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Demon_Hunting_Bible_LT
+      - Combo:
+          - Hero_Follower_US
+          - OneSkyOneSun_LT
+      - Combo:
+          - Hero_Follower_US
+          - Shadow_Staff_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Freezing_Rod_LT
+      - Combo:
+          - Hero_Follower_US
+          - MeawFoxtail_LT
+      - Combo:
+          - Hero_Follower_US
+          - SoulWeight_LT
+      - Combo:
+          - Hero_Follower_US
+          - Freedom_Stick_LT
+      - Combo:
+          - Hero_Follower_US
+          - Iron_Nail_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Ray_Knuckle_LT
+      - Combo:
+          - Hero_Follower_US
+          - Trumpet_Shell_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Barb_Wire_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Saint_Hall_LT
+      - Combo:
+          - Hero_Follower_US
+          - Meteor_Striker_LT
+      - Combo:
+          - Hero_Follower_US
+          - Oriental_Sword_LT
+      - Combo:
+          - Hero_Follower_US
+          - Dragonic_Slayer_LT
+      - Combo:
+          - Hero_Follower_US
+          - Shiver_Katar_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Blade_Katar_LT
+      - Combo:
+          - Hero_Follower_US
+          - Avenger_LT
+      - Combo:
+          - Hero_Follower_US
+          - Iron_Staff_LT
+      - Combo:
+          - Hero_Follower_US
+          - Blue_Crystal_Staff_LT
+      - Combo:
+          - Hero_Follower_US
+          - Humma_Clear_LT
+      - Combo:
+          - Hero_Follower_US
+          - Royal_Bow_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Scalet_Dragon_L_Bow_LT
+      - Combo:
+          - Hero_Follower_US
+          - Narcis_Bow_LT
+      - Combo:
+          - Hero_Follower_US
+          - Crimson_Rose_LT
+      - Combo:
+          - Hero_Follower_US
+          - Master_Soul_Rifle_LT
+      - Combo:
+          - Hero_Follower_US
+          - Demon_S_Shot_LT
+      - Combo:
+          - Hero_Follower_US
+          - The_Black_Gatling_LT
+      - Combo:
+          - Hero_Follower_US
+          - Golden_L_Launcher_LT
+    Script: |
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  # Divine Pride 2026-08-20: OS Follower Mask + all 16 OS-AD weapons.
+  - Combos:
+      - Combo:
+          - OS_Follower_US
+          - Cannon_Rapier_AD
+      - Combo:
+          - OS_Follower_US
+          - Kuroiro_AD
+      - Combo:
+          - OS_Follower_US
+          - Boost_Lance_AD
+      - Combo:
+          - OS_Follower_US
+          - Circuit_Board_AD
+      - Combo:
+          - OS_Follower_US
+          - Rutilus_Stick_AD
+      - Combo:
+          - OS_Follower_US
+          - ElectricFox_AD
+      - Combo:
+          - OS_Follower_US
+          - Burning_Knuckle_AD
+      - Combo:
+          - OS_Follower_US
+          - Saphir_Hall_AD
+      - Combo:
+          - OS_Follower_US
+          - Ultio_Spes_AD
+      - Combo:
+          - OS_Follower_US
+          - Beam_Claymore_AD
+      - Combo:
+          - OS_Follower_US
+          - Meuchler_AD
+      - Combo:
+          - OS_Follower_US
+          - Blasti_AD
+      - Combo:
+          - OS_Follower_US
+          - Virtual_Bow_AD
+      - Combo:
+          - OS_Follower_US
+          - MH_P89_AD
+      - Combo:
+          - OS_Follower_US
+          - AC_B44_AD
+      - Combo:
+          - OS_Follower_US
+          - HR_S55_AD
+    Script: |
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
   - Combos:
       - Combo:
           - Kitsune_Gaze_US
@@ -926,3 +1125,41 @@ Body:
             bonus2 bExpAddRace,RC_All,50;
          }
       }
+
+  # Divine Pride 2026-08-20: Moon God Lapel + imported Moonflower Bow.
+  - Combos:
+      - Combo:
+          - MoonGod_Lapel_US    # 420245
+          - MoonGod_Bow_J    # 700078
+    Script: |
+      .@wr = getequiprefinerycnt(EQI_HAND_R);
+      bonus bLongAtkRate,10;
+      bonus2 bSkillAtk,"WH_FLAMETRAP",30;
+      bonus2 bSkillAtk,"WH_SWIFTTRAP",30;
+      bonus2 bSkillAtk,"WH_SOLIDTRAP",30;
+      bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",30;
+      if (.@wr>=11) {
+         bonus2 bAddSize,Size_All,20;
+         bonus2 bMagicAddSize,Size_All,20;
+      }
+      if (.@wr>=12) {
+         bonus2 bSkillCooldown,"WH_GALESTORM",-1500;
+         bonus2 bSkillAtk,"WH_GALESTORM",30;
+      }
+      if (.@wr>=13) {
+         bonus bFixedCast,-200;
+         bonus2 bSkillAtk,"WH_GALESTORM",min(BaseLevel,240)/3;
+      }
+  # Divine Pride 2026-08-20: Arjuna Bow Thimble + Moonflower Bow or existing Gandiva.
+  - Combos:
+      - Combo:
+          - Arjuna_Follower_US    # 490889
+          - MoonGod_Bow_J    # 700078
+      - Combo:
+          - Arjuna_Follower_US    # 490889
+          - Gandiva_Bow_US    # 700109
+    Script: |
+      bonus2 bSkillCooldown,"WH_CRESCIVE_BOLT",-300;
+      bonus bLongAtkRate,30;
+      if (getequiprefinerycnt(EQI_HAND_R)>=14)
+         bonus4 bAutoSpellOnSkill,"WH_CRESCIVE_BOLT","WH_GALESTORM",10,500;
