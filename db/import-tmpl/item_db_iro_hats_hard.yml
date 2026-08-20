@@ -24,10 +24,13 @@
 # as bAddDamageClass / bAddMagicDamageClass on mob IDs 20255-20268.
 # No RC2_ILLUSION_TEDDY in this checkout. Do not invent that group.
 #
+# Player decision 2026-08-20: keep iRO-stated autocast levels on the hats.
+# 401043 Kiel Successor Doll +12 is Lv.10 SN_SHARPSHOOTING. 401459 Eddga
+# Follower Doll +11 is Lv.10 GN_CARTCANNON. Do not clamp those to local
+# skill_db MaxLevel 5. Player-learnable max for both skills stays 5.
+#
 # Omitted (no verified local mapping):
 # - Star Clust Lv.3 combos on 420569: SKU removed 2026-08-20 (no worn model)
-# - Autocast levels capped to local skill MaxLevel (Cart Cannon 5 not 10,
-#   Focused Arrow Strike 5 not 10)
 # 400718 Grade B splash is OFFLINE_REKENBER_CELESTIAL (skill 10000), not bSplashRange.
 # - 480482 Wind God Cloak-LT is a garment leftover from the hat scrape.
 #   Imported 2026-08-19. Not Harlan stock. Combos use Ceila_Card / Katrinn_Card.
@@ -580,7 +583,7 @@ Body:
       if (.@r>=12) {
          bonus bAllTraitStats,7;
          bonus bBaseAtk,70;
-         bonus4 bAutoSpell,"SN_SHARPSHOOTING",5,100,BF_LONG;
+         bonus4 bAutoSpell,"SN_SHARPSHOOTING",10,100,BF_LONG;
       }
       if (.@r>=13) {
          bonus bAllStats,20;
@@ -839,7 +842,7 @@ Body:
       if (.@r>=11) {
          bonus bBaseAtk,70;
          bonus bAllTraitStats,7;
-         bonus3 bAutoSpell,"GN_CARTCANNON",5,50;
+         bonus3 bAutoSpell,"GN_CARTCANNON",10,50;
       }
       if (.@r>=12) {
          bonus bBaseAtk,70;
