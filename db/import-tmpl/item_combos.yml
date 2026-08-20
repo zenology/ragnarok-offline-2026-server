@@ -52,6 +52,27 @@ Body:
       bonus bSMatk,25;
       bonus bMatk,75*(getequiprefinerycnt(EQI_ARMOR)/3);
 
+  # Divine Pride 2026-08-18 text; wired 2026-08-20. Partners already in db/re.
+  # Unnamed movement speed is bSpeedRate,25, same as Grey Cub / Nebula Orb.
+  - Combos:
+      - Combo:
+          - Frosty_Breath_US    # 420590
+          - Snowflower_Armor    # 450206
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bPAtk,30;
+      bonus bPow,getequiprefinerycnt(EQI_ARMOR)/3;
+      bonus bBaseAtk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Frosty_Breath_US    # 420590
+          - Snowflower_Robe    # 450207
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bSMatk,30;
+      bonus bSpl,getequiprefinerycnt(EQI_ARMOR)/3;
+      bonus bMatk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+
   # Divine Pride 2026-08-18: hard iRO-history hat set bonuses. Partners verified in local item_db.
   - Combos:
       - Combo:
@@ -115,6 +136,14 @@ Body:
       bonus bLongAtkRate,15;
       bonus2 bSkillAtk,"NW_WILD_FIRE",7*(getequiprefinerycnt(EQI_HAND_R)/2);
       bonus2 bSkillAtk,"NW_SPIRAL_SHOOTING",7*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Poenetentia_M_Crown    # 400625
+          - Poenitentia_Foramen    # 800011 iRO English: Poenitentia Flamen
+    Script: |
+      bonus bLongAtkRate,15;
+      bonus2 bSkillAtk,"NW_ONLY_ONE_BULLET",10*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",6*(getequiprefinerycnt(EQI_HAND_R)/2);
   - Combos:
       - Combo:
           - Rekenber_Celestial_US
@@ -292,6 +321,16 @@ Body:
       bonus bAllStats,7;
       bonus bAllTraitStats,7;
       bonus bCritical,30;
+  # Divine Pride 2026-08-18 text; wired 2026-08-20. Partner already in db/re.
+  # DP English Toxic Enhancement Chimera Card is local Venom_Kimera_Card 27150.
+  - Combos:
+      - Combo:
+          - Great_Gryphon_US    # 401307
+          - Venom_Kimera_Card    # 27150 client: Venom Enchanted Chimera Card
+    Script: |
+      bonus bMaxHPrate,150;
+      bonus bMaxSPrate,50;
+      bonus bAllTraitStats,25;
   - Combos:
       - Combo:
           - Future_Tiger_US
@@ -302,16 +341,28 @@ Body:
       bonus bMaxSPrate,25;
       bonus2 bAddClass,Class_Normal,15;
       bonus2 bAddClass,Class_Boss,15;
+  # Divine Pride 2026-08-18: Eddga Card or Infinite Eddga Card, not a three-item set.
   - Combos:
       - Combo:
-          - Future_Tiger_US
-          - Eddga_Card
+          - Future_Tiger_US    # 401459
+          - Eddga_Card    # 4123
+      - Combo:
+          - Future_Tiger_US    # 401459
+          - IFN_Eddga_Card    # 4648
     Script: |
       bonus bAllTraitStats,25;
       bonus bMaxHPrate,120;
       bonus bMaxSPrate,50;
       bonus2 bAddClass,Class_Normal,30;
       bonus2 bAddClass,Class_Boss,30;
+  # Divine Pride 2026-08-18 text; wired 2026-08-20. Aegis is Tendrilion_Card.
+  - Combos:
+      - Combo:
+          - Future_Tiger_US    # 401459
+          - Tendrilion_Card    # 4463 client: Tendrillion Card
+    Script: |
+      bonus bPAtk,5;
+      bonus2 bAddSize,Size_All,20;
   - Combos:
       - Combo:
           - Bonedetale_Wings_BR
@@ -370,170 +421,6 @@ Body:
       bonus2 bSubRace,RC_DemiHuman,20;
       bonus2 bSubRace,RC_Player_Human,20;
       bonus bRestartFullRecover;
-  - Combos:
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_B_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_R_Knife
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_B_Knife
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Axe
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Spear
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Book
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Wand
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Foxtail
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Knuckle
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Violin
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Whip
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Mace
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_M_Mace
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_T_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Katar
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_T_Axe
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Lance
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Staff
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Humma
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Bow
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Revolver
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Rifle
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Shotgun
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Gatling
-      - Combo:
-          - BP2_Middle_LT_US
-          - Glacier_Launcher
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_B_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_R_Knife
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_B_Knife
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Axe
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Spear
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Book
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Wand
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Foxtail
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Knuckle
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Violin
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Whip
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Mace
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_M_Mace
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_T_Sword
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Katar
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_T_Axe
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Lance
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Staff
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Humma
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Bow
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Revolver
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Rifle
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Shotgun
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Gatling
-      - Combo:
-          - BP2_Middle_LT_US
-          - D_Glacier_Launcher
-    Script: |
-      bonus bBaseAtk,300;
-      bonus bMatk,300;
-      bonus bPow,10;
-      bonus bSpl,10;
-      bonus2 bAddSize,Size_All,30;
-      bonus2 bMagicAddSize,Size_All,30;
   - Combos:
       - Combo:
           - BP3_Lower_LT_US
@@ -848,6 +735,176 @@ Body:
       bonus bAllTraitStats,10;
       bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
       bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  # Divine Pride 2026-08-20: Hero Follower Mask + all 36 Hero-LT weapons.
+  - Combos:
+      - Combo:
+          - Hero_Follower_US
+          - Light_Blade_LT
+      - Combo:
+          - Hero_Follower_US
+          - Sword_Of_Bluefire_LT
+      - Combo:
+          - Hero_Follower_US
+          - Slate_Sword_LT
+      - Combo:
+          - Hero_Follower_US
+          - Magic_Sword_LT
+      - Combo:
+          - Hero_Follower_US
+          - Fatalist_LT
+      - Combo:
+          - Hero_Follower_US
+          - Blessed_Knife_LT
+      - Combo:
+          - Hero_Follower_US
+          - Undine_Spear_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Demon_Hunting_Bible_LT
+      - Combo:
+          - Hero_Follower_US
+          - OneSkyOneSun_LT
+      - Combo:
+          - Hero_Follower_US
+          - Shadow_Staff_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Freezing_Rod_LT
+      - Combo:
+          - Hero_Follower_US
+          - MeawFoxtail_LT
+      - Combo:
+          - Hero_Follower_US
+          - SoulWeight_LT
+      - Combo:
+          - Hero_Follower_US
+          - Freedom_Stick_LT
+      - Combo:
+          - Hero_Follower_US
+          - Iron_Nail_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Ray_Knuckle_LT
+      - Combo:
+          - Hero_Follower_US
+          - Trumpet_Shell_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Barb_Wire_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Saint_Hall_LT
+      - Combo:
+          - Hero_Follower_US
+          - Meteor_Striker_LT
+      - Combo:
+          - Hero_Follower_US
+          - Oriental_Sword_LT
+      - Combo:
+          - Hero_Follower_US
+          - Dragonic_Slayer_LT
+      - Combo:
+          - Hero_Follower_US
+          - Shiver_Katar_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Blade_Katar_LT
+      - Combo:
+          - Hero_Follower_US
+          - Avenger_LT
+      - Combo:
+          - Hero_Follower_US
+          - Iron_Staff_LT
+      - Combo:
+          - Hero_Follower_US
+          - Blue_Crystal_Staff_LT
+      - Combo:
+          - Hero_Follower_US
+          - Humma_Clear_LT
+      - Combo:
+          - Hero_Follower_US
+          - Royal_Bow_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Scalet_Dragon_L_Bow_LT
+      - Combo:
+          - Hero_Follower_US
+          - Narcis_Bow_LT
+      - Combo:
+          - Hero_Follower_US
+          - Crimson_Rose_LT
+      - Combo:
+          - Hero_Follower_US
+          - Master_Soul_Rifle_LT
+      - Combo:
+          - Hero_Follower_US
+          - Demon_S_Shot_LT
+      - Combo:
+          - Hero_Follower_US
+          - The_Black_Gatling_LT
+      - Combo:
+          - Hero_Follower_US
+          - Golden_L_Launcher_LT
+    Script: |
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  # Divine Pride 2026-08-20: OS Follower Mask + all 16 OS-AD weapons.
+  - Combos:
+      - Combo:
+          - OS_Follower_US
+          - Cannon_Rapier_AD
+      - Combo:
+          - OS_Follower_US
+          - Kuroiro_AD
+      - Combo:
+          - OS_Follower_US
+          - Boost_Lance_AD
+      - Combo:
+          - OS_Follower_US
+          - Circuit_Board_AD
+      - Combo:
+          - OS_Follower_US
+          - Rutilus_Stick_AD
+      - Combo:
+          - OS_Follower_US
+          - ElectricFox_AD
+      - Combo:
+          - OS_Follower_US
+          - Burning_Knuckle_AD
+      - Combo:
+          - OS_Follower_US
+          - Saphir_Hall_AD
+      - Combo:
+          - OS_Follower_US
+          - Ultio_Spes_AD
+      - Combo:
+          - OS_Follower_US
+          - Beam_Claymore_AD
+      - Combo:
+          - OS_Follower_US
+          - Meuchler_AD
+      - Combo:
+          - OS_Follower_US
+          - Blasti_AD
+      - Combo:
+          - OS_Follower_US
+          - Virtual_Bow_AD
+      - Combo:
+          - OS_Follower_US
+          - MH_P89_AD
+      - Combo:
+          - OS_Follower_US
+          - AC_B44_AD
+      - Combo:
+          - OS_Follower_US
+          - HR_S55_AD
+    Script: |
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
   - Combos:
       - Combo:
           - Kitsune_Gaze_US
@@ -1039,6 +1096,18 @@ Body:
          bonus bPAtk,30;
          bonus bBaseAtk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
       }
+  # Divine Pride 2026-08-18 Grass Rune Armor; wired 2026-08-20 to existing Plain_Rune_Armor 450243.
+  # This client's English is Glade Rune Armor. Do not create a duplicate row.
+  - Combos:
+      - Combo:
+          - Bios_Scarf_US    # 420503
+          - Plain_Rune_Armor    # 450243
+    Script: |
+      bonus bDelayrate,-20;
+      if (getequiprefinerycnt(EQI_ARMOR)>=11) {
+         bonus bPAtk,30;
+         bonus bMaxHPrate,25*(getequiprefinerycnt(EQI_ARMOR)/3);
+      }
   - Combos:
       - Combo:
           - Bios_Scarf_US
@@ -1059,3 +1128,137 @@ Body:
          bonus bSMatk,30;
          bonus bMatk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
       }
+  # Divine Pride 2026-08-18 Mine Cowraiders Class 1/2; wired 2026-08-20 to existing Cowraiders cards.
+  # Client English: Shotgun / Revolver Buffalo Bandit Card. Do not add the IDs to card shops again.
+  - Combos:
+      - Combo:
+          - Buffalo_Bandit_US    # 420777
+          - Cowraiders1_Card    # 27170
+    Script: |
+      bonus bBaseAtk,200;
+      bonus2 bSkillAtk,"GS_SPREADATTACK",20*(BaseLevel/5);
+      bonus2 bSkillAtk,"GS_FULLBUSTER",20*(BaseLevel/5);
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_B) {
+         bonus bLongAtkRate,20;
+         bonus2 bSkillCooldown,"NW_WILD_FIRE",-400;
+      }
+  - Combos:
+      - Combo:
+          - Buffalo_Bandit_US    # 420777
+          - Cowraiders2_Card    # 27171
+    Script: |
+      bonus bBaseAtk,200;
+      bonus2 bSkillAtk,"GS_RAPIDSHOWER",20*(BaseLevel/5);
+      bonus2 bSkillAtk,"GS_DESPERADO",20*(BaseLevel/5);
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_B) {
+         bonus bLongAtkRate,20;
+         bonus2 bSkillCooldown,"NW_MAGAZINE_FOR_ONE",-200;
+      }
+  - Combos:
+      - Combo:
+          - Tele_WG_Cape_LT    # 480482
+          - Ceila_Card    # 4568
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bMagicAtkEle,Ele_Wind,10+3*(.@r/2);
+      if (.@r>=12)
+         bonus5 bAutoSpell,"SA_VIOLENTGALE",3,10,BF_MAGIC,0;
+  - Combos:
+      - Combo:
+          - Tele_WG_Cape_LT    # 480482
+          - Katrinn_Card    # 4366
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bMagicAtkEle,Ele_Ghost,10+3*(.@r/2);
+      if (.@r>=12)
+         bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - C_Dancing_Octo_US    # 400915
+          - Seaweed_In_Mouth_US    # 420513
+    Script: |
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         if (BaseLevel <= 200) {
+            bonus bBaseAtk,50;
+            bonus bMatk,50;
+            bonus bMaxHP,10000;
+            bonus2 bExpAddRace,RC_All,50;
+         }
+      }
+
+  # Divine Pride 2026-08-20: Moon God Lapel + imported Moonflower Bow.
+  - Combos:
+      - Combo:
+          - MoonGod_Lapel_US    # 420245
+          - MoonGod_Bow_J    # 700078
+    Script: |
+      .@wr = getequiprefinerycnt(EQI_HAND_R);
+      bonus bLongAtkRate,10;
+      bonus2 bSkillAtk,"WH_FLAMETRAP",30;
+      bonus2 bSkillAtk,"WH_SWIFTTRAP",30;
+      bonus2 bSkillAtk,"WH_SOLIDTRAP",30;
+      bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",30;
+      if (.@wr>=11) {
+         bonus2 bAddSize,Size_All,20;
+         bonus2 bMagicAddSize,Size_All,20;
+      }
+      if (.@wr>=12) {
+         bonus2 bSkillCooldown,"WH_GALESTORM",-1500;
+         bonus2 bSkillAtk,"WH_GALESTORM",30;
+      }
+      if (.@wr>=13) {
+         bonus bFixedCast,-200;
+         bonus2 bSkillAtk,"WH_GALESTORM",min(BaseLevel,240)/3;
+      }
+  # Divine Pride 2026-08-20: Arjuna Bow Thimble + Moonflower Bow or existing Gandiva.
+  - Combos:
+      - Combo:
+          - Arjuna_Follower_US    # 490889
+          - MoonGod_Bow_J    # 700078
+      - Combo:
+          - Arjuna_Follower_US    # 490889
+          - Gandiva_Bow_US    # 700109
+    Script: |
+      bonus2 bSkillCooldown,"WH_CRESCIVE_BOLT",-300;
+      bonus bLongAtkRate,30;
+      if (getequiprefinerycnt(EQI_HAND_R)>=14)
+         bonus4 bAutoSpellOnSkill,"WH_CRESCIVE_BOLT","WH_GALESTORM",10,500;
+
+  # Divine Pride 2026-08-20: Issgard Helmet + imported VG Armor/Robe.
+  # Named-boss lines on the armor rows stay omitted (EP19 mobs are stubs).
+  - Combos:
+      - Combo:
+          - BP2_Helm_US    # 401019
+          - BP2_Armor_LT_US    # 450498
+    Script: |
+      bonus bBaseAtk,150;
+      bonus bPow,7;
+      bonus2 bAddClass,Class_Normal,30;
+  - Combos:
+      - Combo:
+          - BP2_Helm_US    # 401019
+          - BP2_Robe_LT_US    # 450499
+    Script: |
+      bonus bMatk,150;
+      bonus bSpl,7;
+      bonus2 bMagicAddClass,Class_Normal,30;
+  # Divine Pride 2026-08-20: Serpent Knight Helm + imported VG Boots/Shoes.
+  # Named-boss lines on the shoe rows stay omitted (EP20 mobs are stubs).
+  - Combos:
+      - Combo:
+          - BP3_Helm_US    # 401460
+          - BP3_Boots_LT_US    # 470453
+    Script: |
+      bonus bBaseAtk,150;
+      bonus bPow,10;
+      bonus bPAtk,10;
+      bonus2 bAddClass,Class_Normal,30;
+  - Combos:
+      - Combo:
+          - BP3_Helm_US    # 401460
+          - BP3_Shoes_LT_US    # 470455
+    Script: |
+      bonus bMatk,150;
+      bonus bSpl,10;
+      bonus bSMatk,10;
+      bonus2 bMagicAddClass,Class_Normal,30;

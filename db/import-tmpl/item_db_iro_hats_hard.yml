@@ -6,18 +6,34 @@
 # 401019 / 401460 Premium extra lines use vip_status(VIP_STATUS_ACTIVE)
 # or getstatus(SC_AID_PERIOD_PLUSEXP). Movement speed with no percent is bSpeedRate,25.
 #
+# 420590 Frosty Breath combos wired 2026-08-20 to existing
+# Snowflower_Armor 450206 / Snowflower_Robe 450207. Do not create duplicate rows.
+#
+# 400625 Flamen combo wired 2026-08-20 to existing Poenitentia_Foramen 800011.
+# 410531 / 410539 Hero-LT (36) and OS-AD (16) combos wired 2026-08-20 to existing weapons.
+# 420245 Moonflower Bow 700078 and Arjuna Bow Thimble 490889 imported 2026-08-20. No shop.
+# 401019 / 401460 VG Armor/Robe/Boots/Shoes imported 2026-08-20:
+# BP2_Armor_LT_US 450498, BP2_Robe_LT_US 450499, BP3_Boots_LT_US 470453,
+# BP3_Shoes_LT_US 470455. No shop. Named-boss vs Juncea/Aquila/Limacina
+# and Lasgand/Fallen Angel Slug/Snowstorm Angel/Jormund Chief Cleaner
+# omitted: those EP19/EP20 mobs are commented stubs. Do not invent IDs.
+# Card combos wired 2026-08-20 to existing Tendrilion_Card 4463, Venom_Kimera_Card 27150,
+# IFN_Eddga_Card 4648, Cowraiders1_Card 27170, Cowraiders2_Card 27171. No new card rows.
+# 420503 Grass Rune Armor combo wired 2026-08-20 to existing Plain_Rune_Armor 450243.
+# 420311 Special Bear Balloon 20% vs Illusion of Teddy Bear wired 2026-08-20
+# as bAddDamageClass / bAddMagicDamageClass on mob IDs 20255-20268.
+# No RC2_ILLUSION_TEDDY in this checkout. Do not invent that group.
+#
+# Player decision 2026-08-20: keep iRO-stated autocast levels on the hats.
+# 401043 Kiel Successor Doll +12 is Lv.10 SN_SHARPSHOOTING. 401459 Eddga
+# Follower Doll +11 is Lv.10 GN_CARTCANNON. Do not clamp those to local
+# skill_db MaxLevel 5. Player-learnable max for both skills stays 5.
+#
 # Omitted (no verified local mapping):
-# - Star Clust Lv.3 combos on 420569 (those SKUs are etc enchant stones)
-# - Snow Flower Armor/Robe combos on 420590 (no local armor/robe rows)
-# - Moonflower Bow combo on 420245 (no local bow)
-# - Poenitentia Flamen combo on 400625 (no local weapon)
-# - Hero-LT and OS-AD series combos on 410531 / 410539
-# - Tendrillion / Toxic Enhancement Chimera / Infinite Eddga / Mine Cowraiders cards
-# - Grass Rune Armor combo on 420503
-# - Autocast levels capped to local skill MaxLevel (Cart Cannon 5 not 10,
-#   Focused Arrow Strike 5 not 10)
+# - Star Clust Lv.3 combos on 420569: SKU removed 2026-08-20 (no worn model)
 # 400718 Grade B splash is OFFLINE_REKENBER_CELESTIAL (skill 10000), not bSplashRange.
-# Do not dump these IDs into Harlan's 100 CP pointshop.
+# - 480482 Wind God Cloak-LT is a garment leftover from the hat scrape.
+#   Imported 2026-08-19. Not Harlan stock. Combos use Ceila_Card / Katrinn_Card.
 ###########################################################################
 
 Header:
@@ -567,7 +583,7 @@ Body:
       if (.@r>=12) {
          bonus bAllTraitStats,7;
          bonus bBaseAtk,70;
-         bonus4 bAutoSpell,"SN_SHARPSHOOTING",5,100,BF_LONG;
+         bonus4 bAutoSpell,"SN_SHARPSHOOTING",10,100,BF_LONG;
       }
       if (.@r>=13) {
          bonus bAllStats,20;
@@ -826,7 +842,7 @@ Body:
       if (.@r>=11) {
          bonus bBaseAtk,70;
          bonus bAllTraitStats,7;
-         bonus3 bAutoSpell,"GN_CARTCANNON",5,50;
+         bonus3 bAutoSpell,"GN_CARTCANNON",10,50;
       }
       if (.@r>=12) {
          bonus bBaseAtk,70;
@@ -1055,32 +1071,6 @@ Body:
       bonus bMatk,100;
       bonus bHPGainValue,666;
       bonus bMagicHPGainValue,666;
-
-  - Id: 410496
-    AegisName: BP2_Middle_LT_US
-    Name: Authority of Issgard-VG
-    Type: Armor
-    Weight: 30
-    Slots: 1
-    Locations:
-      Head_Mid: true
-    ArmorLevel: 1
-    EquipLevelMin: 1
-    Trade:
-      NoDrop: true
-      NoTrade: true
-      NoSell: true
-      NoCart: true
-      NoStorage: true
-      NoGuildStorage: true
-      NoMail: true
-      NoAuction: true
-    Script: |
-      bonus bAllStats,15;
-      bonus bAllTraitStats,15;
-      bonus2 bExpAddRace,RC_All,15;
-      bonus2 bDropAddRace,RC_All,15;
-      bonus bDelayrate,-15;
 
   - Id: 410531
     AegisName: Hero_Follower_US
@@ -1340,6 +1330,35 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 120
     View: 1734
+    Script: |
+      bonus2 bAddDamageClass,20255,20;
+      bonus2 bAddMagicDamageClass,20255,20;
+      bonus2 bAddDamageClass,20256,20;
+      bonus2 bAddMagicDamageClass,20256,20;
+      bonus2 bAddDamageClass,20257,20;
+      bonus2 bAddMagicDamageClass,20257,20;
+      bonus2 bAddDamageClass,20258,20;
+      bonus2 bAddMagicDamageClass,20258,20;
+      bonus2 bAddDamageClass,20259,20;
+      bonus2 bAddMagicDamageClass,20259,20;
+      bonus2 bAddDamageClass,20260,20;
+      bonus2 bAddMagicDamageClass,20260,20;
+      bonus2 bAddDamageClass,20261,20;
+      bonus2 bAddMagicDamageClass,20261,20;
+      bonus2 bAddDamageClass,20262,20;
+      bonus2 bAddMagicDamageClass,20262,20;
+      bonus2 bAddDamageClass,20263,20;
+      bonus2 bAddMagicDamageClass,20263,20;
+      bonus2 bAddDamageClass,20264,20;
+      bonus2 bAddMagicDamageClass,20264,20;
+      bonus2 bAddDamageClass,20265,20;
+      bonus2 bAddMagicDamageClass,20265,20;
+      bonus2 bAddDamageClass,20266,20;
+      bonus2 bAddMagicDamageClass,20266,20;
+      bonus2 bAddDamageClass,20267,20;
+      bonus2 bAddMagicDamageClass,20267,20;
+      bonus2 bAddDamageClass,20268,20;
+      bonus2 bAddMagicDamageClass,20268,20;
 
   - Id: 420438
     AegisName: Nebula_Orb_US
@@ -1376,22 +1395,6 @@ Body:
       bonus bMatk,100;
       bonus2 bAddSize,Size_All,BaseLevel/15;
       bonus2 bMagicAddSize,Size_All,BaseLevel/15;
-
-  - Id: 420569
-    AegisName: Star_Cosmic_US
-    Name: Cosmic Star Blessing
-    Type: Armor
-    Weight: 10
-    Defense: 10
-    Locations:
-      Head_Low: true
-    ArmorLevel: 1
-    EquipLevelMin: 100
-    Script: |
-      bonus bAllStats,10;
-      bonus bAllTraitStats,10;
-      bonus2 bAddSize,Size_All,BaseLevel/10;
-      bonus2 bMagicAddSize,Size_All,BaseLevel/10;
 
   - Id: 420590
     AegisName: Frosty_Breath_US
@@ -1458,3 +1461,336 @@ Body:
       bonus2 bExpAddRace,RC_All,15;
       bonus2 bDropAddRace,RC_All,15;
       bonus bDelayrate,-15;
+
+  - Id: 480482
+    AegisName: Tele_WG_Cape_LT
+    Name: Wind God Cloak-LT
+    Type: Armor
+    Weight: 10
+    Slots: 1
+    Locations:
+      Garment: true
+    ArmorLevel: 2
+    EquipLevelMin: 150
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bMatk,15*(.@r/2);
+      bonus bSpl,.@r/2;
+      bonus2 bMagicAtkEle,Ele_Wind,10*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_Ghost,10*(.@r/3);
+      if (.@r>=7)
+         bonus bMatkRate,15;
+      if (.@r>=9) {
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",20;
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+      }
+      if (.@r>=11)
+         bonus bDelayrate,-12;
+      if (.@r>=12)
+         bonus2 bMagicAddSize,Size_All,15;
+      if (.@r>=13)
+         bonus2 bIgnoreMdefClassRate,Class_Boss,10;
+      if (.@g>=ENCHANTGRADE_D)
+         bonus bMatkRate,8;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus2 bMagicAtkEle,Ele_All,12;
+      if (.@g>=ENCHANTGRADE_B) {
+         bonus2 bMagicAtkEle,Ele_Wind,20;
+         bonus2 bMagicAtkEle,Ele_Ghost,20;
+      }
+      if (.@g>=ENCHANTGRADE_A)
+         bonus2 bMagicAddRace,RC_All,15;
+
+  - Id: 490889
+    AegisName: Arjuna_Follower_US
+    Name: Arjuna Bow Thimble
+    Type: Armor
+    Weight: 500
+    Defense: 10
+    Slots: 1
+    Locations:
+      Right_Accessory: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      bonus bMdef,10;
+      bonus bBaseAtk,150;
+      bonus bAllTraitStats,10;
+      bonus bDelayrate,-15;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSubRace,RC_DemiHuman,20;
+      bonus2 bSubRace,RC_Player_Human,20;
+      bonus2 bSubSize,Size_Medium,20;
+      bonus2 bMagicSubSize,Size_Medium,20;
+      bonus2 bSkillAtk,"SN_FALCONASSAULT",150;
+      if (BaseLevel <= 99) {
+         bonus bMaxHP,10000;
+         bonus bMaxSP,2000;
+      }
+      if (BaseLevel >= 100) {
+         bonus bPow,7;
+         bonus bCrt,7;
+         bonus bCon,7;
+         bonus2 bAddSize,Size_All,BaseLevel/5;
+         bonus2 bSkillAtk,"WH_GALESTORM",2*(BaseLevel/10);
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",2*(BaseLevel/10);
+      }
+
+  - Id: 700078
+    AegisName: MoonGod_Bow_J
+    Name: Moonflower Bow
+    Type: Weapon
+    SubType: Bow
+    Weight: 900
+    Attack: 160
+    MagicAttack: 170
+    Range: 5
+    Slots: 1
+    Jobs:
+      Hunter: true
+    Classes:
+      Fourth: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 200
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus2 bSubClass,Class_Boss,50;
+      bonus2 bSubRace,RC_Player_Human,40;
+      bonus2 bSubRace,RC_Player_Doram,40;
+      bonus2 bAddSize,Size_All,8*.@r;
+      bonus2 bMagicAddSize,Size_All,8*.@r;
+      if (.@r>=7) {
+         bonus2 bSkillAtk,"WH_FLAMETRAP",10;
+         bonus2 bSkillAtk,"WH_SWIFTTRAP",10;
+         bonus2 bSkillAtk,"WH_SOLIDTRAP",10;
+         bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",10;
+      }
+      if (.@r>=9) {
+         bonus2 bSkillAtk,"WH_FLAMETRAP",15;
+         bonus2 bSkillAtk,"WH_SWIFTTRAP",15;
+         bonus2 bSkillAtk,"WH_SOLIDTRAP",15;
+         bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",15;
+      }
+
+  - Id: 450498
+    AegisName: BP2_Armor_LT_US
+    Name: Issgard Armor-VG
+    Type: Armor
+    Weight: 100
+    Defense: 200
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bBaseAtk,20*.@r;
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,25;
+         bonus2 bExpAddRace,RC_All,10;
+         bonus2 bDropAddRace,RC_All,10;
+      }
+      if (.@r>=11)
+         bonus bAllStats,15;
+      if (.@r>=12)
+         bonus2 bAddRace,RC_All,30;
+      if (.@r>=13) {
+         bonus bBaseAtk,200;
+         bonus bPow,15;
+      }
+      if (.@g>=ENCHANTGRADE_D)
+         bonus2 bAddSize,Size_All,15;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus bDelayrate,-10;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus bPAtk,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,20;
+         bonus2 bDropAddRace,RC_All,20;
+      }
+
+  - Id: 450499
+    AegisName: BP2_Robe_LT_US
+    Name: Issgard Robe-VG
+    Type: Armor
+    Weight: 30
+    Defense: 50
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bMatk,20*.@r;
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,25;
+         bonus2 bExpAddRace,RC_All,10;
+         bonus2 bDropAddRace,RC_All,10;
+      }
+      if (.@r>=11)
+         bonus bAllStats,15;
+      if (.@r>=12)
+         bonus2 bMagicAddRace,RC_All,30;
+      if (.@r>=13) {
+         bonus bMatk,200;
+         bonus bSpl,15;
+      }
+      if (.@g>=ENCHANTGRADE_D)
+         bonus2 bMagicAddSize,Size_All,15;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus bDelayrate,-10;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus bSMatk,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,20;
+         bonus2 bDropAddRace,RC_All,20;
+      }
+
+  - Id: 470453
+    AegisName: BP3_Boots_LT_US
+    Name: Issgard Boots-VG
+    Type: Armor
+    Weight: 100
+    Defense: 100
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bMaxHPrate,30;
+      bonus bMaxSPrate,30;
+      bonus bBaseAtk,70*(.@r/2);
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,30;
+         bonus2 bExpAddRace,RC_All,20;
+         bonus2 bDropAddRace,RC_All,20;
+      }
+      if (.@r>=11)
+         bonus bAllStats,25;
+      if (.@r>=12)
+         bonus2 bAddRace,RC_All,25;
+      if (.@r>=13) {
+         bonus bBaseAtk,250;
+         bonus bPow,15;
+         bonus bPAtk,15;
+      }
+      if (.@r>=14)
+         bonus bFixedCast,-1000;
+      if (.@g>=ENCHANTGRADE_D)
+         bonus2 bAddSize,Size_All,25;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus bDelayrate,-25;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus bPAtk,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,30;
+         bonus2 bDropAddRace,RC_All,30;
+      }
+
+  - Id: 470455
+    AegisName: BP3_Shoes_LT_US
+    Name: Issgard Shoes-VG
+    Type: Armor
+    Weight: 100
+    Defense: 100
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bMaxHPrate,30;
+      bonus bMaxSPrate,30;
+      bonus bMatk,70*(.@r/2);
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,30;
+         bonus2 bExpAddRace,RC_All,20;
+         bonus2 bDropAddRace,RC_All,20;
+      }
+      if (.@r>=11)
+         bonus bAllStats,25;
+      if (.@r>=12)
+         bonus2 bMagicAddRace,RC_All,25;
+      if (.@r>=13) {
+         bonus bMatk,250;
+         bonus bSpl,15;
+         bonus bSMatk,15;
+      }
+      if (.@r>=14)
+         bonus bFixedCast,-1000;
+      if (.@g>=ENCHANTGRADE_D)
+         bonus2 bMagicAddSize,Size_All,25;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus bDelayrate,-25;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus bSMatk,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,30;
+         bonus2 bDropAddRace,RC_All,30;
+      }

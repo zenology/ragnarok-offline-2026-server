@@ -2,7 +2,8 @@
 # iRO history headgear missing from rAthena item_db_equip.yml
 # Source: Divine Pride item pages fetched 2026-08-18
 # Scope: costume rows plus easy/medium scripts only
-# Hard combat hats (grade, 4th-job sets, -LT, Warlock/Wanderer skill hats) stay parked
+# Hard combat hats (grade, 4th-job sets, -LT) live in item_db_iro_hats_hard.yml.
+# 18794 / 18795 Warlock/Wanderer skill hats imported 2026-08-19 from iRO itemInfo.
 ###########################################################################
 
 Header:
@@ -99,14 +100,15 @@ Body:
       Costume_Head_Top: true
     ArmorLevel: 1
     View: 1007
-
-  - Id: 400938
-    AegisName: C_Master_US
-    Name: Costume Master Class
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
+    Script: |
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bBaseAtk,70;
+         bonus bMatk,70;
+         bonus2 bAddSize,Size_All,20;
+         bonus2 bMagicAddSize,Size_All,20;
+         bonus2 bExpAddRace,RC_All,35;
+         bonus2 bDropAddRace,RC_All,10;
+      }
 
   - Id: 401013
     AegisName: C_Midgard_Diadem_JP
@@ -278,6 +280,7 @@ Body:
     Locations:
       Costume_Head_Mid: true
     ArmorLevel: 1
+    View: 2566
 
   - Id: 410608
     AegisName: C_Ear_OF_Bloody
@@ -492,7 +495,6 @@ Body:
     ArmorLevel: 1
     View: 2732
 
-
   - Id: 5860
     AegisName: S_Prontera_Army_Cap
     Name: Siege Army Cap
@@ -640,6 +642,65 @@ Body:
     Script: |
       bonus2 bExpAddRace,RC_All,5;
       bonus2 bDropAddRace,RC_All,10;
+
+  - Id: 18794
+    AegisName: Plain_Black_Mage_Hat
+    Name: Ordinary Black Magician Hat
+    Type: Armor
+    Weight: 20
+    Defense: 15
+    Slots: 1
+    Jobs:
+      Wizard: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    View: 912
+    Script: |
+      .@r = getrefine();
+      bonus2 bSkillAtk,"WL_CRIMSONROCK",5;
+      bonus2 bSkillAtk,"WL_JACKFROST",5;
+      bonus2 bSkillAtk,"WL_EARTHSTRAIN",5;
+      bonus2 bSkillAtk,"WL_CHAINLIGHTNING",5;
+      bonus2 bIgnoreMdefClassRate,Class_Normal,10+2*.@r;
+      if (.@r>=7) {
+         bonus2 bSkillAtk,"WL_CRIMSONROCK",5;
+         bonus2 bSkillAtk,"WL_JACKFROST",5;
+         bonus2 bSkillAtk,"WL_EARTHSTRAIN",5;
+         bonus2 bSkillAtk,"WL_CHAINLIGHTNING",5;
+      }
+      if (.@r>=9)
+         bonus bMatkRate,5;
+
+  - Id: 18795
+    AegisName: Night_Sparrow_Hat
+    Name: Night Sparrow Hat
+    Type: Armor
+    Weight: 20
+    Defense: 15
+    Slots: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    View: 913
+    Script: |
+      bonus bFixedCastrate,-5*getskilllv("WM_LESSON");
+      if (getrefine()>=7)
+         bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",25;
+      if (getrefine()>=9)
+         bonus bMaxSP,200;
 
   - Id: 18837
     AegisName: Cheering_Whistle
@@ -925,17 +986,6 @@ Body:
     ArmorLevel: 1
     View: 1799
 
-  - Id: 19416
-    AegisName: Midgarts_Glory
-    Name: Midgarts Glory
-    Type: Armor
-    Defense: 6
-    Slots: 1
-    Locations:
-      Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 50
-
   - Id: 19458
     AegisName: Luna_On_Shoulder
     Name: Lunatic on Shoulder
@@ -1033,6 +1083,15 @@ Body:
       bonus bMatk,30;
       bonus bMaxHP,1000;
       skill "SA_FROSTWEAPON",2;
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+         bonus bAtkRate,20;
+         bonus bMatkRate,20;
+         skill "AL_BLESSING",5;
+         skill "AL_INCAGI",5;
+         bonus2 bExpAddRace,RC_All,15;
+      }
 
   - Id: 420701
     AegisName: EV_Xmas_Beard_US
@@ -1079,6 +1138,10 @@ Body:
       bonus bMatk,100;
       bonus bPAtk,3;
       bonus bSMatk,3;
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus2 bExpAddRace,RC_All,25;
+         bonus2 bDropAddRace,RC_All,10;
+      }
 
   - Id: 420898
     AegisName: BP3_Lower_US
