@@ -15,6 +15,9 @@
 # Card combos wired 2026-08-20 to existing Tendrilion_Card 4463, Venom_Kimera_Card 27150,
 # IFN_Eddga_Card 4648, Cowraiders1_Card 27170, Cowraiders2_Card 27171. No new card rows.
 # 420503 Grass Rune Armor combo wired 2026-08-20 to existing Plain_Rune_Armor 450243.
+# 420311 Special Bear Balloon 20% vs Illusion of Teddy Bear wired 2026-08-20
+# as bAddDamageClass / bAddMagicDamageClass on mob IDs 20255-20268.
+# No RC2_ILLUSION_TEDDY in this checkout. Do not invent that group.
 #
 # Omitted (no verified local mapping):
 # - Star Clust Lv.3 combos on 420569: SKU removed 2026-08-20 (no worn model)
@@ -1319,6 +1322,35 @@ Body:
     ArmorLevel: 1
     EquipLevelMin: 120
     View: 1734
+    Script: |
+      bonus2 bAddDamageClass,20255,20;
+      bonus2 bAddMagicDamageClass,20255,20;
+      bonus2 bAddDamageClass,20256,20;
+      bonus2 bAddMagicDamageClass,20256,20;
+      bonus2 bAddDamageClass,20257,20;
+      bonus2 bAddMagicDamageClass,20257,20;
+      bonus2 bAddDamageClass,20258,20;
+      bonus2 bAddMagicDamageClass,20258,20;
+      bonus2 bAddDamageClass,20259,20;
+      bonus2 bAddMagicDamageClass,20259,20;
+      bonus2 bAddDamageClass,20260,20;
+      bonus2 bAddMagicDamageClass,20260,20;
+      bonus2 bAddDamageClass,20261,20;
+      bonus2 bAddMagicDamageClass,20261,20;
+      bonus2 bAddDamageClass,20262,20;
+      bonus2 bAddMagicDamageClass,20262,20;
+      bonus2 bAddDamageClass,20263,20;
+      bonus2 bAddMagicDamageClass,20263,20;
+      bonus2 bAddDamageClass,20264,20;
+      bonus2 bAddMagicDamageClass,20264,20;
+      bonus2 bAddDamageClass,20265,20;
+      bonus2 bAddMagicDamageClass,20265,20;
+      bonus2 bAddDamageClass,20266,20;
+      bonus2 bAddMagicDamageClass,20266,20;
+      bonus2 bAddDamageClass,20267,20;
+      bonus2 bAddMagicDamageClass,20267,20;
+      bonus2 bAddDamageClass,20268,20;
+      bonus2 bAddMagicDamageClass,20268,20;
 
   - Id: 420438
     AegisName: Nebula_Orb_US
