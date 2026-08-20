@@ -12,6 +12,11 @@
 # 400625 Flamen combo wired 2026-08-20 to existing Poenitentia_Foramen 800011.
 # 410531 / 410539 Hero-LT (36) and OS-AD (16) combos wired 2026-08-20 to existing weapons.
 # 420245 Moonflower Bow 700078 and Arjuna Bow Thimble 490889 imported 2026-08-20. No shop.
+# 401019 / 401460 VG Armor/Robe/Boots/Shoes imported 2026-08-20:
+# BP2_Armor_LT_US 450498, BP2_Robe_LT_US 450499, BP3_Boots_LT_US 470453,
+# BP3_Shoes_LT_US 470455. No shop. Named-boss vs Juncea/Aquila/Limacina
+# and Lasgand/Fallen Angel Slug/Snowstorm Angel/Jormund Chief Cleaner
+# omitted: those EP19/EP20 mobs are commented stubs. Do not invent IDs.
 # Card combos wired 2026-08-20 to existing Tendrilion_Card 4463, Venom_Kimera_Card 27150,
 # IFN_Eddga_Card 4648, Cowraiders1_Card 27170, Cowraiders2_Card 27171. No new card rows.
 # 420503 Grass Rune Armor combo wired 2026-08-20 to existing Plain_Rune_Armor 450243.
@@ -1569,4 +1574,220 @@ Body:
          bonus2 bSkillAtk,"WH_SWIFTTRAP",15;
          bonus2 bSkillAtk,"WH_SOLIDTRAP",15;
          bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",15;
+      }
+
+  - Id: 450498
+    AegisName: BP2_Armor_LT_US
+    Name: Issgard Armor-VG
+    Type: Armor
+    Weight: 100
+    Defense: 200
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bBaseAtk,20*.@r;
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,25;
+         bonus2 bExpAddRace,RC_All,10;
+         bonus2 bDropAddRace,RC_All,10;
+      }
+      if (.@r>=11)
+         bonus bAllStats,15;
+      if (.@r>=12)
+         bonus2 bAddRace,RC_All,30;
+      if (.@r>=13) {
+         bonus bBaseAtk,200;
+         bonus bPow,15;
+      }
+      if (.@g>=ENCHANTGRADE_D)
+         bonus2 bAddSize,Size_All,15;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus bDelayrate,-10;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus bPAtk,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,20;
+         bonus2 bDropAddRace,RC_All,20;
+      }
+
+  - Id: 450499
+    AegisName: BP2_Robe_LT_US
+    Name: Issgard Robe-VG
+    Type: Armor
+    Weight: 30
+    Defense: 50
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bMatk,20*.@r;
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,25;
+         bonus2 bExpAddRace,RC_All,10;
+         bonus2 bDropAddRace,RC_All,10;
+      }
+      if (.@r>=11)
+         bonus bAllStats,15;
+      if (.@r>=12)
+         bonus2 bMagicAddRace,RC_All,30;
+      if (.@r>=13) {
+         bonus bMatk,200;
+         bonus bSpl,15;
+      }
+      if (.@g>=ENCHANTGRADE_D)
+         bonus2 bMagicAddSize,Size_All,15;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus bDelayrate,-10;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus bSMatk,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,20;
+         bonus2 bDropAddRace,RC_All,20;
+      }
+
+  - Id: 470453
+    AegisName: BP3_Boots_LT_US
+    Name: Issgard Boots-VG
+    Type: Armor
+    Weight: 100
+    Defense: 100
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bMaxHPrate,30;
+      bonus bMaxSPrate,30;
+      bonus bBaseAtk,70*(.@r/2);
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,30;
+         bonus2 bExpAddRace,RC_All,20;
+         bonus2 bDropAddRace,RC_All,20;
+      }
+      if (.@r>=11)
+         bonus bAllStats,25;
+      if (.@r>=12)
+         bonus2 bAddRace,RC_All,25;
+      if (.@r>=13) {
+         bonus bBaseAtk,250;
+         bonus bPow,15;
+         bonus bPAtk,15;
+      }
+      if (.@r>=14)
+         bonus bFixedCast,-1000;
+      if (.@g>=ENCHANTGRADE_D)
+         bonus2 bAddSize,Size_All,25;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus bDelayrate,-25;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus bPAtk,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,30;
+         bonus2 bDropAddRace,RC_All,30;
+      }
+
+  - Id: 470455
+    AegisName: BP3_Shoes_LT_US
+    Name: Issgard Shoes-VG
+    Type: Armor
+    Weight: 100
+    Defense: 100
+    Slots: 1
+    Locations:
+      Shoes: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoStorage: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bMaxHPrate,30;
+      bonus bMaxSPrate,30;
+      bonus bMatk,70*(.@r/2);
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         bonus bAllStats,30;
+         bonus2 bExpAddRace,RC_All,20;
+         bonus2 bDropAddRace,RC_All,20;
+      }
+      if (.@r>=11)
+         bonus bAllStats,25;
+      if (.@r>=12)
+         bonus2 bMagicAddRace,RC_All,25;
+      if (.@r>=13) {
+         bonus bMatk,250;
+         bonus bSpl,15;
+         bonus bSMatk,15;
+      }
+      if (.@r>=14)
+         bonus bFixedCast,-1000;
+      if (.@g>=ENCHANTGRADE_D)
+         bonus2 bMagicAddSize,Size_All,25;
+      if (.@g>=ENCHANTGRADE_C)
+         bonus bDelayrate,-25;
+      if (.@g>=ENCHANTGRADE_B)
+         bonus bSMatk,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bExpAddRace,RC_All,30;
+         bonus2 bDropAddRace,RC_All,30;
       }

@@ -1223,3 +1223,42 @@ Body:
       bonus bLongAtkRate,30;
       if (getequiprefinerycnt(EQI_HAND_R)>=14)
          bonus4 bAutoSpellOnSkill,"WH_CRESCIVE_BOLT","WH_GALESTORM",10,500;
+
+  # Divine Pride 2026-08-20: Issgard Helmet + imported VG Armor/Robe.
+  # Named-boss lines on the armor rows stay omitted (EP19 mobs are stubs).
+  - Combos:
+      - Combo:
+          - BP2_Helm_US    # 401019
+          - BP2_Armor_LT_US    # 450498
+    Script: |
+      bonus bBaseAtk,150;
+      bonus bPow,7;
+      bonus2 bAddClass,Class_Normal,30;
+  - Combos:
+      - Combo:
+          - BP2_Helm_US    # 401019
+          - BP2_Robe_LT_US    # 450499
+    Script: |
+      bonus bMatk,150;
+      bonus bSpl,7;
+      bonus2 bMagicAddClass,Class_Normal,30;
+  # Divine Pride 2026-08-20: Serpent Knight Helm + imported VG Boots/Shoes.
+  # Named-boss lines on the shoe rows stay omitted (EP20 mobs are stubs).
+  - Combos:
+      - Combo:
+          - BP3_Helm_US    # 401460
+          - BP3_Boots_LT_US    # 470453
+    Script: |
+      bonus bBaseAtk,150;
+      bonus bPow,10;
+      bonus bPAtk,10;
+      bonus2 bAddClass,Class_Normal,30;
+  - Combos:
+      - Combo:
+          - BP3_Helm_US    # 401460
+          - BP3_Shoes_LT_US    # 470455
+    Script: |
+      bonus bMatk,150;
+      bonus bSpl,10;
+      bonus bSMatk,10;
+      bonus2 bMagicAddClass,Class_Normal,30;
