@@ -24340,6 +24340,14 @@ Body:
     Type: Etc
     Buy: 100
     Weight: 10
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
   - Id: 7052
     AegisName: Old_Magazine
     Name: Old Papers
