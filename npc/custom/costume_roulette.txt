@@ -4,10 +4,10 @@
 //= Regenerate with tools/generate_costume_roulette.py after item DB changes.
 //============================================================
 
-malangdo,141,137,2	script	Costume Roulette	4_M_MERCAT2,{
+malangdo,141,137,4	script	Costume Roulette	4_M_MERCAT2,{
 	mes "[Costume Roulette]";
-	mes "Choose a costume part, then I will spin only that drawer.";
-	mes "One Silvervine Fruit buys one spin.";
+	mes "Mrrp~ Pick a costume part and I will spin that drawer for you, nya~";
+	mes "One Silvervine Fruit buys one spin, nya.";
 	mes "Pity: " + #COSTUME_ROULETTE_PITY + "/20";
 	next;
 	.@slot = select("Costume Head Top:Costume Head Mid:Costume Head Low / Mouth:Costume Garment:Leave") - 1;
@@ -16,36 +16,37 @@ malangdo,141,137,2	script	Costume Roulette	4_M_MERCAT2,{
 L_Spin:
 	.@count = getvariableofnpc(.SlotCount[.@slot], "costume_roulette_db");
 	if (.@count <= 0) {
-		mes "That drawer is empty.";
+		mes "Mrr...? That drawer is empty, nya.";
 		close;
 	}
 	if (countitem(6417) < 1) {
-		mes "Bring me one Silvervine Fruit.";
+		mes "Mrrp... Bring me one Silvervine Fruit, nya~";
 		close;
 	}
 	.@start = getvariableofnpc(.SlotStart[.@slot], "costume_roulette_db");
 	.@id = getelementofarray(getvariableofnpc(.Ids[0], "costume_roulette_db"), .@start + rand(.@count));
 	if (!checkweight(.@id, 1) || !checkweight(7051, 1)) {
-		mes "Make room in your inventory first. I cannot guarantee the costume and pity reward if your bag is full.";
+		mes "Mrr... Your bag is too full, nya. Make some room first, or I cannot promise the costume and pity gift.";
 		close;
 	}
 	if (.@first_spin) {
-		mes "Spend one Silvervine Fruit for this spin?";
+		mes "Spend one Silvervine Fruit for this spin, nya?";
 		if (select("Spin:Cancel") == 2) close;
 		.@first_spin = 0;
 	}
 	if (countitem(6417) < 1) {
-		mes "You no longer have a Silvervine Fruit.";
+		mes "Mrr... You do not have any Silvervine Fruit left, nya.";
 		close;
 	}
 	delitem 6417, 1;
 	getitem .@id, 1;
 	#COSTUME_ROULETTE_PITY = #COSTUME_ROULETTE_PITY + 1;
-	mes "You received ^0055FF" + getitemname(.@id) + "^000000.";
+	mes "Mrrp~ You received ^0055FF" + getitemname(.@id) + "^000000, nya!";
 	if (#COSTUME_ROULETTE_PITY >= 20) {
 		#COSTUME_ROULETTE_PITY = 0;
 		getitem 7051, 1;
-		mes "Your 20-spin pity is complete. You received ^0055FFSilk Mat^000000.";
+		mes "Thank you, nya~ Silvervine was delicious! Here, take this ^0055FFSilk Mat^000000.";
+		mes "My mama keeps knitting these for me, so I have lots. Please take one, nya~";
 	}
 	next;
 	if (select("Spin again:Finish:Cancel") != 1) close;
