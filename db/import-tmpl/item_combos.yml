@@ -321,6 +321,16 @@ Body:
       bonus bAllStats,7;
       bonus bAllTraitStats,7;
       bonus bCritical,30;
+  # Divine Pride 2026-08-18 text; wired 2026-08-20. Partner already in db/re.
+  # DP English Toxic Enhancement Chimera Card is local Venom_Kimera_Card 27150.
+  - Combos:
+      - Combo:
+          - Great_Gryphon_US    # 401307
+          - Venom_Kimera_Card    # 27150 client: Venom Enchanted Chimera Card
+    Script: |
+      bonus bMaxHPrate,150;
+      bonus bMaxSPrate,50;
+      bonus bAllTraitStats,25;
   - Combos:
       - Combo:
           - Future_Tiger_US
@@ -331,16 +341,28 @@ Body:
       bonus bMaxSPrate,25;
       bonus2 bAddClass,Class_Normal,15;
       bonus2 bAddClass,Class_Boss,15;
+  # Divine Pride 2026-08-18: Eddga Card or Infinite Eddga Card, not a three-item set.
   - Combos:
       - Combo:
-          - Future_Tiger_US
-          - Eddga_Card
+          - Future_Tiger_US    # 401459
+          - Eddga_Card    # 4123
+      - Combo:
+          - Future_Tiger_US    # 401459
+          - IFN_Eddga_Card    # 4648
     Script: |
       bonus bAllTraitStats,25;
       bonus bMaxHPrate,120;
       bonus bMaxSPrate,50;
       bonus2 bAddClass,Class_Normal,30;
       bonus2 bAddClass,Class_Boss,30;
+  # Divine Pride 2026-08-18 text; wired 2026-08-20. Aegis is Tendrilion_Card.
+  - Combos:
+      - Combo:
+          - Future_Tiger_US    # 401459
+          - Tendrilion_Card    # 4463 client: Tendrillion Card
+    Script: |
+      bonus bPAtk,5;
+      bonus2 bAddSize,Size_All,20;
   - Combos:
       - Combo:
           - Bonedetale_Wings_BR
@@ -1074,6 +1096,18 @@ Body:
          bonus bPAtk,30;
          bonus bBaseAtk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
       }
+  # Divine Pride 2026-08-18 Grass Rune Armor; wired 2026-08-20 to existing Plain_Rune_Armor 450243.
+  # This client's English is Glade Rune Armor. Do not create a duplicate row.
+  - Combos:
+      - Combo:
+          - Bios_Scarf_US    # 420503
+          - Plain_Rune_Armor    # 450243
+    Script: |
+      bonus bDelayrate,-20;
+      if (getequiprefinerycnt(EQI_ARMOR)>=11) {
+         bonus bPAtk,30;
+         bonus bMaxHPrate,25*(getequiprefinerycnt(EQI_ARMOR)/3);
+      }
   - Combos:
       - Combo:
           - Bios_Scarf_US
@@ -1093,6 +1127,32 @@ Body:
       if (getequiprefinerycnt(EQI_ARMOR)>=11) {
          bonus bSMatk,30;
          bonus bMatk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+      }
+  # Divine Pride 2026-08-18 Mine Cowraiders Class 1/2; wired 2026-08-20 to existing Cowraiders cards.
+  # Client English: Shotgun / Revolver Buffalo Bandit Card. Do not add the IDs to card shops again.
+  - Combos:
+      - Combo:
+          - Buffalo_Bandit_US    # 420777
+          - Cowraiders1_Card    # 27170
+    Script: |
+      bonus bBaseAtk,200;
+      bonus2 bSkillAtk,"GS_SPREADATTACK",20*(BaseLevel/5);
+      bonus2 bSkillAtk,"GS_FULLBUSTER",20*(BaseLevel/5);
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_B) {
+         bonus bLongAtkRate,20;
+         bonus2 bSkillCooldown,"NW_WILD_FIRE",-400;
+      }
+  - Combos:
+      - Combo:
+          - Buffalo_Bandit_US    # 420777
+          - Cowraiders2_Card    # 27171
+    Script: |
+      bonus bBaseAtk,200;
+      bonus2 bSkillAtk,"GS_RAPIDSHOWER",20*(BaseLevel/5);
+      bonus2 bSkillAtk,"GS_DESPERADO",20*(BaseLevel/5);
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_B) {
+         bonus bLongAtkRate,20;
+         bonus2 bSkillCooldown,"NW_MAGAZINE_FOR_ONE",-200;
       }
   - Combos:
       - Combo:

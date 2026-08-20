@@ -12,11 +12,12 @@
 # 400625 Flamen combo wired 2026-08-20 to existing Poenitentia_Foramen 800011.
 # 410531 / 410539 Hero-LT (36) and OS-AD (16) combos wired 2026-08-20 to existing weapons.
 # 420245 Moonflower Bow 700078 and Arjuna Bow Thimble 490889 imported 2026-08-20. No shop.
+# Card combos wired 2026-08-20 to existing Tendrilion_Card 4463, Venom_Kimera_Card 27150,
+# IFN_Eddga_Card 4648, Cowraiders1_Card 27170, Cowraiders2_Card 27171. No new card rows.
+# 420503 Grass Rune Armor combo wired 2026-08-20 to existing Plain_Rune_Armor 450243.
 #
 # Omitted (no verified local mapping):
 # - Star Clust Lv.3 combos on 420569: SKU removed 2026-08-20 (no worn model)
-# - Tendrillion / Toxic Enhancement Chimera / Infinite Eddga / Mine Cowraiders cards
-# - Grass Rune Armor combo on 420503
 # - Autocast levels capped to local skill MaxLevel (Cart Cannon 5 not 10,
 #   Focused Arrow Strike 5 not 10)
 # 400718 Grade B splash is OFFLINE_REKENBER_CELESTIAL (skill 10000), not bSplashRange.
