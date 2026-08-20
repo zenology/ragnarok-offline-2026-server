@@ -110,14 +110,6 @@ Body:
          bonus2 bDropAddRace,RC_All,10;
       }
 
-  - Id: 400938
-    AegisName: C_Master_US
-    Name: Costume Master Class
-    Type: Armor
-    Locations:
-      Costume_Head_Top: true
-    ArmorLevel: 1
-
   - Id: 401013
     AegisName: C_Midgard_Diadem_JP
     Name: Costume Celestial Diadem
@@ -288,6 +280,7 @@ Body:
     Locations:
       Costume_Head_Mid: true
     ArmorLevel: 1
+    View: 2566
 
   - Id: 410608
     AegisName: C_Ear_OF_Bloody
@@ -501,7 +494,6 @@ Body:
       Costume_Head_Low: true
     ArmorLevel: 1
     View: 2732
-
 
   - Id: 5860
     AegisName: S_Prontera_Army_Cap
@@ -993,17 +985,6 @@ Body:
       Head_Top: true
     ArmorLevel: 1
     View: 1799
-
-  - Id: 19416
-    AegisName: Midgarts_Glory
-    Name: Midgarts Glory
-    Type: Armor
-    Defense: 6
-    Slots: 1
-    Locations:
-      Head_Top: true
-    ArmorLevel: 1
-    EquipLevelMin: 50
 
   - Id: 19458
     AegisName: Luna_On_Shoulder

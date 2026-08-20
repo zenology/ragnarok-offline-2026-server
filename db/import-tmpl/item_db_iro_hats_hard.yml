@@ -7,7 +7,7 @@
 # or getstatus(SC_AID_PERIOD_PLUSEXP). Movement speed with no percent is bSpeedRate,25.
 #
 # Omitted (no verified local mapping):
-# - Star Clust Lv.3 combos on 420569 (those SKUs are etc enchant stones)
+# - Star Clust Lv.3 combos on 420569: SKU removed 2026-08-20 (no worn model)
 # - Snow Flower Armor/Robe combos on 420590 (no local armor/robe rows)
 # - Moonflower Bow combo on 420245 (no local bow)
 # - Poenitentia Flamen combo on 400625 (no local weapon)
@@ -1351,22 +1351,6 @@ Body:
       bonus bMatk,100;
       bonus2 bAddSize,Size_All,BaseLevel/15;
       bonus2 bMagicAddSize,Size_All,BaseLevel/15;
-
-  - Id: 420569
-    AegisName: Star_Cosmic_US
-    Name: Cosmic Star Blessing
-    Type: Armor
-    Weight: 10
-    Defense: 10
-    Locations:
-      Head_Low: true
-    ArmorLevel: 1
-    EquipLevelMin: 100
-    Script: |
-      bonus bAllStats,10;
-      bonus bAllTraitStats,10;
-      bonus2 bAddSize,Size_All,BaseLevel/10;
-      bonus2 bMagicAddSize,Size_All,BaseLevel/10;
 
   - Id: 420590
     AegisName: Frosty_Breath_US
