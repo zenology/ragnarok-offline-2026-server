@@ -424,7 +424,7 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 		410005,		// C_Magic_Heir_TW
 		440002;		// C_Happy_Cat_TW
 
-	while(1) {
+	for (.@round = 0; .@round < 100; ++.@round) {
 		for ( .@i = 0; .@i < 18; ++.@i ) {
 			if (getiteminfo(.@box_list[.@i], ITEMINFO_TYPE) == -1)	// temporary check
 				continue;
@@ -469,12 +469,22 @@ mal_in01,20,124,5	script	Designer Heidam#eventhat	4_CAT_SAILOR5,{
 			close;
 		}
 	}
+	close;
 }
 
 malangdo,115,154,3	script	Fashion Stone#stone	4_BULLETIN_BOARD2,{ end; }
 
 // Costume enchant (top, mid, low)
-mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
+mal_in01,23,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
+	disable_items;
+	mes "[Aver De Dosh]";
+	mes "Bring me a Costume Headgear and the matching Costume Enchant Stone.";
+	mes "The success chance is 75%, nya... fashion can be cruel.";
+	if (select("Continue:Cancel") != 1)
+		close;
+	callfunc("F_CostumeEnhanceHead");
+	close;
+/* Legacy Aver implementation retained for historical reference; the generated service above is live.
 	disable_items;
 	mes "[Aver De Dosh]";
 	mes "Welcome to Fashion Stone!!";
@@ -1293,9 +1303,20 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 	getitem2 .@equip_id,1,1,.@equip_refine,0,.@card[0],.@card[1],.@card[2],.@card[3];
 	close;
 }
+*/
+}
 
 // Costume enchant (garment)
 mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
+	disable_items;
+	mes "[Lace La Zard]";
+	mes "Bring me a Costume Garment and a Garment or Dual Enchant Stone.";
+	mes "The success chance is 75%.";
+	if (select("Continue:Cancel") != 1)
+		close;
+	callfunc("F_CostumeEnhanceGarment");
+	close;
+/* Legacy Lace implementation retained for historical reference; the generated service above is live.
 	disable_items;
 	mes "[Lace La Zard]";
 	mes "Welcome to Fashion Stone!!";
@@ -1449,4 +1470,6 @@ mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
 	}
 	getitem2 .@equip_id,1,1,.@equip_refine,0,.@card[0],.@card[1],.@card[2],.@card[3];
 	close;
+}
+*/
 }
