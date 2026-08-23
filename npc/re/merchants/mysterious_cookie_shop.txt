@@ -1,4 +1,4 @@
-//===== rAthena Script ======================================= 
+//===== rAthena Script =======================================
 //= Milo Crumb
 //===== Changelogs: ==========================================
 //= 1.0 Initial version from replays. [Capuche]
@@ -6,52 +6,47 @@
 
 malangdo,124,152,3	script	Milo Crumb#stone	4_COOKIEHOUSE,{
 	mes "[Milo Crumb]";
-	mes "Ah, there you are! Looking to give your fashion a little something extra?";
-	mes "Bring me " + mesitemlink(7000) + " and I'll trade you a stone to suit your style.";
+	mes "Ahhh... a customer. Or a cookie wearing a customer. Hard to tell.";
+	mes "I am Milo Crumb. Milo Crumb. Milo Crumb. I paid a Prontera clerk to make the name official.";
+	mes "It cost me three cookies, a signature, and one deeply suspicious stamp.";
+	mes "Bring me " + mesitemlink(7000) + " and I will trade you a stone. The coins are not cookies, but I am coping.";
 	next;
-	switch( select( "^4d4dffTop^000000 Stones", "^1C8008Middle^000000 Stones", "^ff0000Lower^000000 Stones", "^9905d8Garment^000000 Stones", "^8B4513Dual and effect^000000 Stones", "^9905d8Costumes^000000 on the ¡Ùclo¡Úthe¡Ùsline¡Ú" ) ) {
+	switch( select( "^4d4dffTop^000000 Stones", "^1C8008Middle^000000 Stones", "^ff0000Lower^000000 Stones", "^9905d8Garment^000000 Stones", "^8B4513Dual and effect^000000 Stones" ) ) {
 	case 1:
 		mes "[Milo Crumb]";
-		mes "Let's see what stones you can turn into with your mileage!";
+		mes "Top stones! Put them on the top. Unless your top is underneath. Then we have a problem.";
+		mes "Let us see what your mileage can become before I eat the receipt.";
 		close2;
 		callshop( "barter_stone_top" );
 		end;
 	case 2:
 		mes "[Milo Crumb]";
-		mes "Let's see what stones you can turn into with your mileage!";
+		mes "Middle stones! The safest place for a stone is the middle. Probably.";
+		mes "Let us see what your mileage can become before I rename myself again.";
 		close2;
 		callshop( "barter_stone_mid" );
 		end;
 	case 3:
 		mes "[Milo Crumb]";
-		mes "Let's see what stones you can turn into with your mileage!";
+		mes "Lower stones! Down is a direction, and directions are just cookies with maps.";
+		mes "Let us see what your mileage can become. No nibbling the stone.";
 		close2;
 		callshop( "barter_stone_low" );
 		end;
 	case 4:
 		mes "[Milo Crumb]";
-		mes "Let's see what stones you can turn into with your mileage!";
+		mes "Garment stones! Very elegant. Very cloak. Very crumb-resistant, I hope.";
+		mes "Let us see what your mileage can become.";
 		close2;
 		callshop( "barter_stone_garment" );
 		end;
 	case 5:
 		mes "[Milo Crumb]";
-		mes "Let's see what stones you can turn into with your mileage!";
+		mes "Dual and effect stones! Two things at once. Like two cookies. Dangerous mathematics.";
+		mes "Let us see what your mileage can become before the crumbs achieve enlightenment.";
 		close2;
 		callshop( "barter_stone_dual" );
 		end;
-	case 6:
-		mes "[Milo Crumb]";
-		mes "Use the mileage you have to shake off the clothesline where all kinds of clothes are hanging!";
-		next;
-		switch( select( "First clothesline", "Second clothesline" ) ) {
-		case 1:
-			callshop( "barter_costume_1" );
-			end;
-		case 2:
-			callshop( "barter_costume_2" );
-			end;
-		}
 	}
 OnInit:
 	.@npc_id = getnpcid(0);
