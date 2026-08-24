@@ -656,18 +656,22 @@ ACMD_FUNC(where)
 	nullpo_retr(-1, sd);
 	memset(atcmd_player_name, '\0', sizeof atcmd_player_name);
 
-	if (!message || !*message || sscanf(message, "%23[^\n]", atcmd_player_name) < 1) {
-		clif_displaymessage(fd, msg_txt(sd,910)); // Please enter a player name (usage: @where <char name>).
-		return -1;
-	}
+	if (!message || !*message) {
+		pl_sd = sd;
+	} else {
+		if (sscanf(message, "%23[^\n]", atcmd_player_name) < 1) {
+			clif_displaymessage(fd, msg_txt(sd,910)); // Please enter a player name (usage: @where [<char name>]).
+			return -1;
+		}
 
-	pl_sd = map_nick2sd(atcmd_player_name,true);
-	if (pl_sd == nullptr ||
-	    strncmp(pl_sd->status.name, atcmd_player_name, NAME_LENGTH) != 0 ||
-	    (pc_has_permission(pl_sd, PC_PERM_HIDE_SESSION) && pc_get_group_level(pl_sd) > pc_get_group_level(sd) && !pc_has_permission(sd, PC_PERM_WHO_DISPLAY_AID))
-	) {
-		clif_displaymessage(fd, msg_txt(sd,3)); // Character not found.
-		return -1;
+		pl_sd = map_nick2sd(atcmd_player_name, true);
+		if (pl_sd == nullptr ||
+		    strncmp(pl_sd->status.name, atcmd_player_name, NAME_LENGTH) != 0 ||
+		    (pc_has_permission(pl_sd, PC_PERM_HIDE_SESSION) && pc_get_group_level(pl_sd) > pc_get_group_level(sd) && !pc_has_permission(sd, PC_PERM_WHO_DISPLAY_AID))
+		) {
+			clif_displaymessage(fd, msg_txt(sd,3)); // Character not found.
+			return -1;
+		}
 	}
 
 	snprintf(atcmd_output, sizeof atcmd_output, "%s %s %d %d", pl_sd->status.name, mapindex_id2name(pl_sd->mapindex), pl_sd->x, pl_sd->y);
