@@ -74,6 +74,11 @@ glast_01,192,292,4	script	Black Market Contact#gh	4_M_MASKMAN,{
 	end;
 }
 
+dali02,80,113,4	script	Black Market Contact#dali	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 11;
+	end;
+}
+
 // Black Market exit. Return to the last Contact stored for this character.
 paramk,8,171,4	script	Black Market Contact#exit	4_M_MASKMAN,{
 	mes "[Black Market Contact]";
@@ -114,6 +119,9 @@ paramk,8,171,4	script	Black Market Contact#exit	4_M_MASKMAN,{
 		break;
 	case 10:
 		warp "glast_01",192,289;
+		break;
+	case 11:
+		warp "dali02",80,110;
 		break;
 	default:
 		// Characters already inside before this feature had no return record.
