@@ -1,0 +1,132 @@
+//===== Ragnarok Offline =====================================
+//= Black Market Contacts
+//===== Description: =========================================
+//= Persistent character-local entry records for the Black Market.
+//= Permit and quest gating remain deferred.
+//============================================================
+
+function	script	F_BlackMarketContact	{
+	mes "[Black Market Contact]";
+	mes "Keep your voice down. I work for the Black Market.";
+	mes "Normally, you need a Permit before anyone lets you through.";
+	mes "I can get you inside for free this time.";
+	next;
+	if (select("Enter the Black Market.:Not now.") == 2)
+		close;
+
+	// Permanent character variable: overwritten on every confirmed entry.
+	BM_ReturnLocation = getarg(0);
+	mes "[Black Market Contact]";
+	mes "Stay close and do not ask questions.";
+	close2;
+	warp "paramk",11,171;
+	end;
+}
+
+// Entry points. The numeric argument is the return-location ID used below.
+prontera,195,56,4	script	Black Market Contact#offline	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 1;
+	end;
+}
+
+morocc,38,153,4	script	Black Market Contact#moc	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 2;
+	end;
+}
+
+payon_in01,182,25,4	script	Black Market Contact#pay	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 3;
+	end;
+}
+
+gef_tower,163,173,4	script	Black Market Contact#gef	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 4;
+	end;
+}
+
+yuno,117,126,4	script	Black Market Contact#yun	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 5;
+	end;
+}
+
+lighthalzen,320,270,4	script	Black Market Contact#lhz	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 6;
+	end;
+}
+
+hu_in01,219,385,4	script	Black Market Contact#hug	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 7;
+	end;
+}
+
+rachel,175,201,4	script	Black Market Contact#rac	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 8;
+	end;
+}
+
+lasagna,160,307,4	script	Black Market Contact#las	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 9;
+	end;
+}
+
+glast_01,192,292,4	script	Black Market Contact#gh	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 10;
+	end;
+}
+
+dali02,80,113,4	script	Black Market Contact#dali	4_M_MASKMAN,{
+	callfunc "F_BlackMarketContact", 11;
+	end;
+}
+
+// Black Market exit. Return to the last Contact stored for this character.
+paramk,8,171,4	script	Black Market Contact#exit	4_M_MASKMAN,{
+	mes "[Black Market Contact]";
+	mes "Leaving already? I can put you back on the street without anyone noticing.";
+	next;
+	if (select("Leave quietly.:Stay here.") == 2)
+		close;
+	mes "[Black Market Contact]";
+	mes "Stay close and do not look back.";
+	close2;
+	switch (BM_ReturnLocation) {
+	case 1:
+		warp "prontera",195,53;
+		break;
+	case 2:
+		warp "morocc",38,150;
+		break;
+	case 3:
+		warp "payon_in01",182,22;
+		break;
+	case 4:
+		warp "gef_tower",163,170;
+		break;
+	case 5:
+		warp "yuno",117,123;
+		break;
+	case 6:
+		warp "lighthalzen",320,267;
+		break;
+	case 7:
+		warp "hu_in01",219,382;
+		break;
+	case 8:
+		warp "rachel",175,198;
+		break;
+	case 9:
+		warp "lasagna",160,304;
+		break;
+	case 10:
+		warp "glast_01",192,289;
+		break;
+	case 11:
+		warp "dali02",80,110;
+		break;
+	default:
+		// Characters already inside before this feature had no return record.
+		warp "prontera",195,53;
+		break;
+	}
+	end;
+}
