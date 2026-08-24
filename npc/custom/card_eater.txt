@@ -1,0 +1,323 @@
+//===== Ragnarok Offline =====================================
+//= Card Eater
+//===== Description: =========================================
+//= Feeds a curated 120-card Normal-monster whitelist into the
+//= Malangdo costume loop for Silvervine Fruit and Event Stone Coin.
+//= Payout is based on the whitelist card's level class.
+//============================================================
+
+malangdo,138,140,4	script	Card Eater#offline	4_CAT_ADV2,{
+L_Main:
+	if (!.Valid) {
+		mes "[Card Eater]";
+		mes "My menu is a mess. Come back after someone fixes my dinner list.";
+		close;
+	}
+
+	mes "[Card Eater]";
+	mes "Mrrr... cards are delicious. Crispy corners, inky middle, lovely paper.";
+	mes "I eat only the cards on my menu. Do not try to sneak me some weird boss scrap.";
+	next;
+	switch (select("Feed you a card.:Which cards do you eat?:Why do you like eating cards?:Leave.")) {
+	case 1:
+		goto L_Feed;
+	case 2:
+		goto L_Catalog;
+	case 3:
+		goto L_WhyCards;
+	default:
+		close;
+	}
+
+L_WhyCards:
+	mes "[Card Eater]";
+	mes "I dunno. Cards taste bland.";
+	mes "Not bad-bland. Paper-bland. Flat, dry, a little dusty... very respectable.";
+	next;
+	mes "A card is paper, right? Or is paper just a card that has not tried hard enough?";
+	mes "Hmm... no, that went in a circle.";
+	mes "Anyway, I like eating paper. Cards are just paper pretending to be important.";
+	mes "That is the whole answer. Do not make it complicated.";
+	next;
+	goto L_Main;
+
+L_Feed:
+	getinventorylist;
+	deletearray .@card_ids[0], getarraysize(.@card_ids);
+	.@card_count = 0;
+	for (.@i = 0; .@i < @inventorylist_count; ++.@i) {
+		.@item_id = @inventorylist_id[.@i];
+		if (inarray(.AllCards[0], .@item_id) == -1)
+			continue;
+		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
+			getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL)
+			continue;
+		if (inarray(.@card_ids[0], .@item_id) == -1)
+			.@card_ids[.@card_count++] = .@item_id;
+	}
+
+	if (!.@card_count) {
+		mes "[Card Eater]";
+		mes "Mrr? You called me over with no snacks? Rude.";
+		mes "Bring me one of the cards from my menu. I do not eat cards already stuck in equipment, either.";
+		goto L_Main;
+	}
+
+	.@page = 0;
+	while (true) {
+		.@start = .@page * .PageSize;
+		.@end = min(.@start + .PageSize, .@card_count);
+
+		mes "[Card Eater]";
+		mes "Pick my dinner by number. Use the blue number, not your paws.";
+		mes "^777777Page " + (.@page + 1) + " / " + ((.@card_count + .PageSize - 1) / .PageSize) + "^000000";
+		for (.@i = .@start; .@i < .@end; ++.@i)
+			mes "^0055FF" + (.@i + 1) + ".^000000 " + mesitemlink(.@card_ids[.@i], false) + " x" + countitem(.@card_ids[.@i]);
+		next;
+
+		.@menu$ = "Choose a card.";
+		.@next_option = 0;
+		.@previous_option = 0;
+		.@option = 2;
+		if (.@end < .@card_count) {
+			.@menu$ += ":Next page.";
+			.@next_option = .@option++;
+		}
+		if (.@page > 0) {
+			.@menu$ += ":Previous page.";
+			.@previous_option = .@option++;
+		}
+		.@cancel_option = .@option;
+		.@menu$ += ":Cancel.";
+
+		.@action = select(.@menu$);
+		if (.@action == 1)
+			break;
+		if (.@action == .@next_option) {
+			++.@page;
+			continue;
+		}
+		if (.@action == .@previous_option) {
+			--.@page;
+			continue;
+		}
+		if (.@action == .@cancel_option)
+			goto L_Main;
+	}
+
+	mes "[Card Eater]";
+	mes "Enter the number shown beside the card.";
+	input .@selection, .@start + 1, .@end;
+	.@selected_id = .@card_ids[.@selection - 1];
+	.@owned = countitem(.@selected_id);
+	if (.@owned < 1)
+		goto L_Feed;
+
+	mes "[Card Eater]";
+	mes "You have " + .@owned + " " + mesitemlink(.@selected_id, false) + ".";
+	mes "How many should I crunch?";
+	input .@amount, 1, .@owned;
+
+	.@card_class = callsub(S_GetCardClass, .@selected_id);
+	.@normal_fruit = .NormalFruit[.@card_class - 1] * .@amount;
+	.@extra_fruit = .ExtraFruit[.@card_class - 1] * .@amount;
+	.@extra_coin = .ExtraCoin[.@card_class - 1] * .@amount;
+
+	mes "[Card Eater]";
+	mes "Choose your reward. I do not serve both plates for free.";
+	next;
+	switch (select("Normal serving:Extras serving:Keep the card.")) {
+	case 1:
+		.@extras = 0;
+		.@fruit_reward = .@normal_fruit;
+		.@coin_reward = 0;
+		break;
+	case 2:
+		.@extras = 1;
+		.@fruit_reward = .@extra_fruit;
+		.@coin_reward = .@extra_coin;
+		break;
+	default:
+		goto L_Feed;
+	}
+
+	mes "[Card Eater]";
+	mes "^0055FF" + mesitemlink(.@selected_id, false) + " x" + .@amount + "^000000?";
+	mes "I will eat them and give you ^0055FF" + .@fruit_reward + " Silvervine Fruit^000000";
+	if (.@coin_reward)
+		mes "Plus ^0055FF" + .@coin_reward + " Event Stone Coin^000000. Shiny crumbs!";
+	else if (.@extras)
+		mes "No Event Stone Coin for Class 1. Your crumbs are not shiny enough yet.";
+	mes "Once I crunch, there are no refunds. My stomach has no undo button.";
+	next;
+	if (select("Let the cat eat.:Keep the card.") != 1)
+		goto L_Feed;
+
+	// Revalidate the card, amount, card class, and reward capacity immediately
+	// before changing inventory. No card is deleted when any check fails.
+	if (getiteminfo(.@selected_id, ITEMINFO_TYPE) != IT_CARD ||
+		getiteminfo(.@selected_id, ITEMINFO_SUBTYPE) != CARD_NORMAL ||
+		inarray(.AllCards[0], .@selected_id) == -1 ||
+		countitem(.@selected_id) < .@amount ||
+		callsub(S_GetCardClass, .@selected_id) != .@card_class) {
+		mes "[Card Eater]";
+		mes "Mrr. Something changed while you were staring at the menu.";
+		mes "I refuse uncertain food. Nothing was eaten.";
+		goto L_Feed;
+	}
+
+	setarray .@reward_ids[0], 6417;
+	setarray .@reward_amounts[0], .@fruit_reward;
+	.@reward_count = 1;
+	if (.@coin_reward) {
+		.@reward_ids[.@reward_count] = 7000;
+		.@reward_amounts[.@reward_count++] = .@coin_reward;
+	}
+	if (!checkweight2(.@reward_ids, .@reward_amounts)) {
+		mes "[Card Eater]";
+		mes "Your fruit bowl or shiny-crumb jar cannot hold that much.";
+		mes "Choose fewer cards, or make room first. I will not eat anything yet.";
+		goto L_Feed;
+	}
+
+	delitem .@selected_id, .@amount;
+	getitem 6417, .@fruit_reward;
+	if (.@coin_reward)
+		getitem 7000, .@coin_reward;
+	logmes "Card Eater: ate " + .@amount + " x item " + .@selected_id + "; card class " + .@card_class + "; extras " + .@extras + "; Silvervine " + .@fruit_reward + "; Event Stone Coin " + .@coin_reward;
+
+	mes "[Card Eater]";
+	mes "Crunch. Crunch. Delicious paper.";
+	mes "There. Your reward. Now show me what else you are hiding.";
+	next;
+	goto L_Feed;
+
+L_Catalog:
+	mes "[Card Eater]";
+	mes "These are the cards I want. Pick a level range; do not make me read all 120 at once.";
+	next;
+	switch (select("Card level 1-50.:Card level 51-99.:Card level 100-199.:Card level 200+.:Back.")) {
+	case 1:
+		.@catalog_group = 1;
+		.@range$ = "Card level 1-50";
+		break;
+	case 2:
+		.@catalog_group = 2;
+		.@range$ = "Card level 51-99";
+		break;
+	case 3:
+		.@catalog_group = 3;
+		.@range$ = "Card level 100-199";
+		break;
+	case 4:
+		.@catalog_group = 4;
+		.@range$ = "Card level 200+";
+		break;
+	default:
+		goto L_Main;
+	}
+
+	deletearray .@catalog_ids[0], getarraysize(.@catalog_ids);
+	switch (.@catalog_group) {
+	case 1: copyarray .@catalog_ids[0], .Class1[0], getarraysize(.Class1); break;
+	case 2: copyarray .@catalog_ids[0], .Class2[0], getarraysize(.Class2); break;
+	case 3: copyarray .@catalog_ids[0], .Class3[0], getarraysize(.Class3); break;
+	case 4: copyarray .@catalog_ids[0], .Class4[0], getarraysize(.Class4); break;
+	}
+
+	.@page = 0;
+	while (true) {
+		.@start = .@page * .PageSize;
+		.@end = min(.@start + .PageSize, getarraysize(.@catalog_ids));
+		mes "[Card Eater]";
+		mes "Cards I want from card level range ^0055FF" + .@range$ + "^000000:";
+		mes "^777777Page " + (.@page + 1) + " / " + ((getarraysize(.@catalog_ids) + .PageSize - 1) / .PageSize) + "^000000";
+		for (.@i = .@start; .@i < .@end; ++.@i)
+			mes "^0055FF" + (.@i + 1) + ".^000000 " + mesitemlink(.@catalog_ids[.@i], false);
+		next;
+
+		.@next_option = 0;
+		.@previous_option = 0;
+		.@option = 1;
+		if (.@end < getarraysize(.@catalog_ids)) {
+			.@menu$ = "Next page.";
+			.@next_option = .@option++;
+		}
+		if (.@page > 0) {
+			if (.@option == 1)
+				.@menu$ = "Previous page.";
+			else
+				.@menu$ += ":Previous page.";
+			.@previous_option = .@option++;
+		}
+		.@back_option = .@option;
+		if (.@option == 1)
+			.@menu$ = "Back to ranges.";
+		else
+			.@menu$ += ":Back to ranges.";
+		.@action = select(.@menu$);
+		if (.@action == .@back_option)
+			goto L_Catalog;
+		if (.@action == .@next_option) {
+			++.@page;
+			continue;
+		}
+		if (.@action == .@previous_option) {
+			--.@page;
+			continue;
+		}
+	}
+
+S_GetCardClass:
+	.@item_id = getarg(0);
+	if (inarray(.Class1[0], .@item_id) != -1)
+		return 1;
+	if (inarray(.Class2[0], .@item_id) != -1)
+		return 2;
+	if (inarray(.Class3[0], .@item_id) != -1)
+		return 3;
+	if (inarray(.Class4[0], .@item_id) != -1)
+		return 4;
+	return 0;
+
+OnInit:
+	freeloop 1;
+	.PageSize = 10;
+	setarray .NormalFruit[0], 2,8,14,30;
+	setarray .ExtraFruit[0], 2,6,10,20;
+	setarray .ExtraCoin[0], 0,2,4,10;
+
+	setarray .Class1[0], 4659,4663,4664,4021,4017,4022,4037,4034,4031,4036,4007,4006,4009,4030,4040,4014,4032,4020,4025,4033,4013,4074,4039,4063,4048,4044,4052,4041,4045,4066;
+	setarray .Class2[0], 4104,4064,4117,4079,4114,4120,4118,27122,27123,27124,4325,4150,4161,4228,4299,4313,4185,4268,4194,4222,4171,4422,4082,4091,4167,4124,4166,4158,4432,4369;
+	setarray .Class3[0], 4404,4405,300001,300005,300006,300004,27347,27352,27354,27356,4411,4412,4380,4378,4448,4469,4442,4447,4640,4638,300211,300215,27085,27102,27101,27110,27115,300140,300148,300106;
+	setarray .Class4[0], 300240,300241,300242,300243,300244,300246,300247,300245,300249,300250,300252,300251,300253,300254,300255,300256,300257,300258,300259,300260,300261,300146,300147,300149,300150,27355,27357,27358,27359,27360;
+
+	deletearray .AllCards[0], getarraysize(.AllCards);
+	copyarray .AllCards[0], .Class1[0], getarraysize(.Class1);
+	copyarray .AllCards[30], .Class2[0], getarraysize(.Class2);
+	copyarray .AllCards[60], .Class3[0], getarraysize(.Class3);
+	copyarray .AllCards[90], .Class4[0], getarraysize(.Class4);
+
+	.Valid = 1;
+	if (getarraysize(.Class1) != 30 || getarraysize(.Class2) != 30 || getarraysize(.Class3) != 30 || getarraysize(.Class4) != 30 || getarraysize(.AllCards) != 120) {
+		debugmes "Card Eater: whitelist must contain 30 cards per class and 120 cards total.";
+		.Valid = 0;
+	}
+	for (.@i = 0; .@i < getarraysize(.AllCards); ++.@i) {
+		.@item_id = .AllCards[.@i];
+		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD || getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL) {
+			debugmes "Card Eater: whitelist item " + .@item_id + " is not a Normal card.";
+			.Valid = 0;
+		}
+		if (inarray(.AllCards[0], .@item_id) != .@i) {
+			debugmes "Card Eater: duplicate whitelist item " + .@item_id + ".";
+			.Valid = 0;
+		}
+	}
+	if (!.Valid)
+		debugmes "Card Eater: disabled interaction because whitelist validation failed.";
+	else
+		debugmes "Card Eater: loaded 120 whitelist cards (30/30/30/30).";
+	freeloop 0;
+	end;
+}

@@ -48,6 +48,7 @@ Header:
 
 Footer:
   Imports:
+  - Path: npc/re/merchants/barters/costume_catalog.yml
   - Path: npc/re/merchants/barters/cashmall.yml
   - Path: npc/re/merchants/barters/enchan_illusion_dungeons.yml
   - Path: npc/re/merchants/barters/enchantgrade.yml
@@ -64,4 +65,3 @@ Footer:
   - Path: npc/re/merchants/barters/refine.yml
   - Path: npc/re/merchants/barters/rgsr_in.yml
   - Path: npc/re/merchants/barters/Pet_Groomer.yml
-

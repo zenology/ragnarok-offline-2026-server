@@ -1,0 +1,72 @@
+//===== Ragnarok Offline =====================================
+//= Generated Costume Curator catalog
+//= Source: Costume Roulette pool, client itemInfo, server item scripts/combos,
+//= and the resumable Divine Pride Added-date cache.
+//= Regenerate with Knowledge Base/tools/generate_costume_catalog.py.
+//============================================================
+
+malangdo,116,169,6	script	#offline	4_DR_OLIO,{
+	mes "[Costume Curator]";
+	mes "The catalog is sorted. The curator is still being assembled.";
+	mes "Bring " + mesitemlink(7000) + " if you find something that belongs in your wardrobe.";
+	next;
+	.@slot = select("Top:Mid:Low / Mouth:Garment:Cancel") - 1;
+	if (.@slot < 0 || .@slot >= 4) close;
+	.@ordinary = getelementofarray(.LetterCount[0], .@slot * 2);
+	.@special = getelementofarray(.LetterCount[0], .@slot * 2 + 1);
+	.@catmenu$ = "";
+	if (.@ordinary > 0) .@catmenu$ += "Ordinary Costumes:";
+	if (.@special > 0) .@catmenu$ += "Special Costumes:";
+	.@catmenu$ += "Cancel";
+	.@catpick = select(.@catmenu$) - 1;
+	if (.@catpick < 0) close;
+	.@category = -1;
+	if (.@ordinary > 0) {
+		if (.@catpick == 0) .@category = 0;
+		else if (.@special > 0 && .@catpick == 1) .@category = 1;
+	} else if (.@special > 0 && .@catpick == 0)
+		.@category = 1;
+	if (.@category < 0) close;
+	callsub S_OpenLetters, .@slot, .@category;
+	end;
+
+S_OpenLetters:
+	.@key = getarg(0) * 2 + getarg(1);
+	.@start = getelementofarray(.LetterStart[0], .@key);
+	.@count = getelementofarray(.LetterCount[0], .@key);
+	if (.@count <= 0) close;
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@count; .@i++)
+		.@menu$ += getelementofarray(.LetterLabels$[0], .@start + .@i) + ":";
+	.@choice = select(.@menu$) - 1;
+	if (.@choice < 0 || .@choice >= .@count) close;
+	.@letter_index = .@start + .@choice;
+	.@group_start = getelementofarray(.LetterGroupStart[0], .@letter_index);
+	.@group_count = getelementofarray(.LetterGroupCount[0], .@letter_index);
+	if (.@group_count <= 0) close;
+	if (.@group_count == 1) {
+		.@group_choice = 0;
+	} else {
+		.@menu$ = "";
+		for (.@i = 0; .@i < .@group_count; .@i++)
+			.@menu$ += getelementofarray(.GroupLabels$[0], .@group_start + .@i) + ":";
+		.@group_choice = select(.@menu$) - 1;
+		if (.@group_choice < 0 || .@group_choice >= .@group_count) close;
+	}
+	close2;
+	.@shop$ = getelementofarray(.GroupNames$[0], .@group_start + .@group_choice);
+	callshop(.@shop$);
+	return;
+
+OnInit:
+	setarray .LetterStart[0], 0,27,50,75,92,116,131,155;
+	setarray .LetterCount[0], 27,23,25,17,24,15,24,0;
+	setarray .LetterGroupStart[0], 0,16,25,34,41,42,49,58,64,65,66,67,72,78,79,80,87,88,96,112,120,121,122,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,164,173,174,175,176,177,178,179,180,181,186,187,188,189,190,191,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,236,245,246,247,253,254,259,260,261,262,267,268,269,270,276,277,283,297,298,299,300,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345;
+	setarray .LetterGroupCount[0], 16,9,9,7,1,7,9,6,1,1,1,5,6,1,1,7,1,8,16,8,1,1,7,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,7,9,1,1,1,1,1,1,1,1,5,1,1,1,1,1,13,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,7,9,1,1,6,1,5,1,1,1,5,1,1,1,6,1,6,14,1,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1;
+	setarray .LetterLabels$[0], "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0-9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","V","W","Y","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","Y","Z","0-9","B","C","D","E","F","G","H","J","K","L","M","Q","R","S","T","W","Y","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Y","A","C","D","E","H","I","J","K","L","M","O","P","Q","R","S","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","Y","0-9";
+	setarray .GroupLabels$[0], "AC","AD","AE","AF","AI","AL","AM","AN","AP","AQ","AR","AS","AT","AU","AW","AY","BA","BE","BF","BI","BJ","BL","BO","BR","BU","CA","CE","CH","CI","CL","CO","CR","CU","CY","DA","DE","DI","DO","DR","DU","DY","E","FA","FE","FI","FL","FO","FR","FU","GA","GE","GF","GH","GI","GL","GO","GR","GU","HA","HE","HI","HO","HU","HY","I","J","K","LA","LE","LI","LO","LU","MA","ME","MI","MO","MU","MY","N","O","PA","PE","PH","PI","PO","PR","PU","Q","RA","RE","RH","RI","RO","RT","RU","RW","SA","SC","SE","SH","SI","SK","SL","SM","SN","SO","SP","SQ","ST","SU","SW","SY","TA","TE","TH","TI","TO","TR","TU","TW","U","V","WA","WE","WH","WI","WO","WR","WU","X","Y","Z","0-9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","V","W","Y","A","BA","BE","BI","BL","BO","BR","BU","CA","CE","CH","CI","CL","CO","CR","CU","CY","D","E","F","G","H","I","J","K","LA","LE","LI","LO","LU","M","N","O","P","R","SA","SC","SE","SH","SI","SK","SM","SN","SO","SP","ST","SU","SW","T","U","V","W","Y","Z","0-9","B","C","D","E","F","G","H","J","K","L","M","Q","R","S","T","W","Y","A","BA","BE","BI","BL","BO","BR","BU","CA","CD","CE","CH","CI","CL","CO","CR","CU","D","E","FA","FE","FI","FL","FO","FR","G","HA","HE","HI","HO","HY","I","J","K","LA","LE","LI","LO","LU","M","N","O","PA","PE","PI","PO","PR","PU","Q","RA","RE","RG","RI","RO","RU","SA","SC","SE","SH","SI","SK","SL","SM","SN","SO","SP","ST","SU","SW","T","U","V","WA","WE","WH","WI","WO","WU","Y","A","C","D","E","H","I","J","K","L","M","O","P","Q","R","S","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","R","S","T","U","V","W","Y","0-9";
+	setarray .GroupNames$[0], "costume_catalog_0_0_0","costume_catalog_0_0_1","costume_catalog_0_0_2","costume_catalog_0_0_3","costume_catalog_0_0_4","costume_catalog_0_0_5","costume_catalog_0_0_6","costume_catalog_0_0_7","costume_catalog_0_0_8","costume_catalog_0_0_9","costume_catalog_0_0_10","costume_catalog_0_0_11","costume_catalog_0_0_12","costume_catalog_0_0_13","costume_catalog_0_0_14","costume_catalog_0_0_15","costume_catalog_0_0_16","costume_catalog_0_0_17","costume_catalog_0_0_18","costume_catalog_0_0_19","costume_catalog_0_0_20","costume_catalog_0_0_21","costume_catalog_0_0_22","costume_catalog_0_0_23","costume_catalog_0_0_24","costume_catalog_0_0_25","costume_catalog_0_0_26","costume_catalog_0_0_27","costume_catalog_0_0_28","costume_catalog_0_0_29","costume_catalog_0_0_30","costume_catalog_0_0_31","costume_catalog_0_0_32","costume_catalog_0_0_33","costume_catalog_0_0_34","costume_catalog_0_0_35","costume_catalog_0_0_36","costume_catalog_0_0_37","costume_catalog_0_0_38","costume_catalog_0_0_39","costume_catalog_0_0_40","costume_catalog_0_0_41","costume_catalog_0_0_42","costume_catalog_0_0_43","costume_catalog_0_0_44","costume_catalog_0_0_45","costume_catalog_0_0_46","costume_catalog_0_0_47","costume_catalog_0_0_48","costume_catalog_0_0_49","costume_catalog_0_0_50","costume_catalog_0_0_51","costume_catalog_0_0_52","costume_catalog_0_0_53","costume_catalog_0_0_54","costume_catalog_0_0_55","costume_catalog_0_0_56","costume_catalog_0_0_57","costume_catalog_0_0_58","costume_catalog_0_0_59","costume_catalog_0_0_60","costume_catalog_0_0_61","costume_catalog_0_0_62","costume_catalog_0_0_63","costume_catalog_0_0_64","costume_catalog_0_0_65","costume_catalog_0_0_66","costume_catalog_0_0_67","costume_catalog_0_0_68","costume_catalog_0_0_69","costume_catalog_0_0_70","costume_catalog_0_0_71","costume_catalog_0_0_72","costume_catalog_0_0_73","costume_catalog_0_0_74","costume_catalog_0_0_75","costume_catalog_0_0_76","costume_catalog_0_0_77","costume_catalog_0_0_78","costume_catalog_0_0_79","costume_catalog_0_0_80","costume_catalog_0_0_81","costume_catalog_0_0_82","costume_catalog_0_0_83","costume_catalog_0_0_84","costume_catalog_0_0_85","costume_catalog_0_0_86","costume_catalog_0_0_87","costume_catalog_0_0_88","costume_catalog_0_0_89","costume_catalog_0_0_90","costume_catalog_0_0_91","costume_catalog_0_0_92","costume_catalog_0_0_93","costume_catalog_0_0_94","costume_catalog_0_0_95","costume_catalog_0_0_96","costume_catalog_0_0_97","costume_catalog_0_0_98","costume_catalog_0_0_99","costume_catalog_0_0_100","costume_catalog_0_0_101","costume_catalog_0_0_102","costume_catalog_0_0_103","costume_catalog_0_0_104","costume_catalog_0_0_105","costume_catalog_0_0_106","costume_catalog_0_0_107","costume_catalog_0_0_108","costume_catalog_0_0_109","costume_catalog_0_0_110","costume_catalog_0_0_111","costume_catalog_0_0_112","costume_catalog_0_0_113","costume_catalog_0_0_114","costume_catalog_0_0_115","costume_catalog_0_0_116","costume_catalog_0_0_117","costume_catalog_0_0_118","costume_catalog_0_0_119","costume_catalog_0_0_120","costume_catalog_0_0_121","costume_catalog_0_0_122","costume_catalog_0_0_123","costume_catalog_0_0_124","costume_catalog_0_0_125","costume_catalog_0_0_126","costume_catalog_0_0_127","costume_catalog_0_0_128","costume_catalog_0_0_129","costume_catalog_0_0_130","costume_catalog_0_0_131","costume_catalog_0_0_132","costume_catalog_0_1_0","costume_catalog_0_1_1","costume_catalog_0_1_2","costume_catalog_0_1_3","costume_catalog_0_1_4","costume_catalog_0_1_5","costume_catalog_0_1_6","costume_catalog_0_1_7","costume_catalog_0_1_8","costume_catalog_0_1_9","costume_catalog_0_1_10","costume_catalog_0_1_11","costume_catalog_0_1_12","costume_catalog_0_1_13","costume_catalog_0_1_14","costume_catalog_0_1_15","costume_catalog_0_1_16","costume_catalog_0_1_17","costume_catalog_0_1_18","costume_catalog_0_1_19","costume_catalog_0_1_20","costume_catalog_0_1_21","costume_catalog_0_1_22","costume_catalog_1_0_0","costume_catalog_1_0_1","costume_catalog_1_0_2","costume_catalog_1_0_3","costume_catalog_1_0_4","costume_catalog_1_0_5","costume_catalog_1_0_6","costume_catalog_1_0_7","costume_catalog_1_0_8","costume_catalog_1_0_9","costume_catalog_1_0_10","costume_catalog_1_0_11","costume_catalog_1_0_12","costume_catalog_1_0_13","costume_catalog_1_0_14","costume_catalog_1_0_15","costume_catalog_1_0_16","costume_catalog_1_0_17","costume_catalog_1_0_18","costume_catalog_1_0_19","costume_catalog_1_0_20","costume_catalog_1_0_21","costume_catalog_1_0_22","costume_catalog_1_0_23","costume_catalog_1_0_24","costume_catalog_1_0_25","costume_catalog_1_0_26","costume_catalog_1_0_27","costume_catalog_1_0_28","costume_catalog_1_0_29","costume_catalog_1_0_30","costume_catalog_1_0_31","costume_catalog_1_0_32","costume_catalog_1_0_33","costume_catalog_1_0_34","costume_catalog_1_0_35","costume_catalog_1_0_36","costume_catalog_1_0_37","costume_catalog_1_0_38","costume_catalog_1_0_39","costume_catalog_1_0_40","costume_catalog_1_0_41","costume_catalog_1_0_42","costume_catalog_1_0_43","costume_catalog_1_0_44","costume_catalog_1_0_45","costume_catalog_1_0_46","costume_catalog_1_0_47","costume_catalog_1_0_48","costume_catalog_1_0_49","costume_catalog_1_0_50","costume_catalog_1_0_51","costume_catalog_1_0_52","costume_catalog_1_0_53","costume_catalog_1_0_54","costume_catalog_1_1_0","costume_catalog_1_1_1","costume_catalog_1_1_2","costume_catalog_1_1_3","costume_catalog_1_1_4","costume_catalog_1_1_5","costume_catalog_1_1_6","costume_catalog_1_1_7","costume_catalog_1_1_8","costume_catalog_1_1_9","costume_catalog_1_1_10","costume_catalog_1_1_11","costume_catalog_1_1_12","costume_catalog_1_1_13","costume_catalog_1_1_14","costume_catalog_1_1_15","costume_catalog_1_1_16","costume_catalog_2_0_0","costume_catalog_2_0_1","costume_catalog_2_0_2","costume_catalog_2_0_3","costume_catalog_2_0_4","costume_catalog_2_0_5","costume_catalog_2_0_6","costume_catalog_2_0_7","costume_catalog_2_0_8","costume_catalog_2_0_9","costume_catalog_2_0_10","costume_catalog_2_0_11","costume_catalog_2_0_12","costume_catalog_2_0_13","costume_catalog_2_0_14","costume_catalog_2_0_15","costume_catalog_2_0_16","costume_catalog_2_0_17","costume_catalog_2_0_18","costume_catalog_2_0_19","costume_catalog_2_0_20","costume_catalog_2_0_21","costume_catalog_2_0_22","costume_catalog_2_0_23","costume_catalog_2_0_24","costume_catalog_2_0_25","costume_catalog_2_0_26","costume_catalog_2_0_27","costume_catalog_2_0_28","costume_catalog_2_0_29","costume_catalog_2_0_30","costume_catalog_2_0_31","costume_catalog_2_0_32","costume_catalog_2_0_33","costume_catalog_2_0_34","costume_catalog_2_0_35","costume_catalog_2_0_36","costume_catalog_2_0_37","costume_catalog_2_0_38","costume_catalog_2_0_39","costume_catalog_2_0_40","costume_catalog_2_0_41","costume_catalog_2_0_42","costume_catalog_2_0_43","costume_catalog_2_0_44","costume_catalog_2_0_45","costume_catalog_2_0_46","costume_catalog_2_0_47","costume_catalog_2_0_48","costume_catalog_2_0_49","costume_catalog_2_0_50","costume_catalog_2_0_51","costume_catalog_2_0_52","costume_catalog_2_0_53","costume_catalog_2_0_54","costume_catalog_2_0_55","costume_catalog_2_0_56","costume_catalog_2_0_57","costume_catalog_2_0_58","costume_catalog_2_0_59","costume_catalog_2_0_60","costume_catalog_2_0_61","costume_catalog_2_0_62","costume_catalog_2_0_63","costume_catalog_2_0_64","costume_catalog_2_0_65","costume_catalog_2_0_66","costume_catalog_2_0_67","costume_catalog_2_0_68","costume_catalog_2_0_69","costume_catalog_2_0_70","costume_catalog_2_0_71","costume_catalog_2_0_72","costume_catalog_2_0_73","costume_catalog_2_0_74","costume_catalog_2_0_75","costume_catalog_2_0_76","costume_catalog_2_0_77","costume_catalog_2_0_78","costume_catalog_2_1_0","costume_catalog_2_1_1","costume_catalog_2_1_2","costume_catalog_2_1_3","costume_catalog_2_1_4","costume_catalog_2_1_5","costume_catalog_2_1_6","costume_catalog_2_1_7","costume_catalog_2_1_8","costume_catalog_2_1_9","costume_catalog_2_1_10","costume_catalog_2_1_11","costume_catalog_2_1_12","costume_catalog_2_1_13","costume_catalog_2_1_14","costume_catalog_3_0_0","costume_catalog_3_0_1","costume_catalog_3_0_2","costume_catalog_3_0_3","costume_catalog_3_0_4","costume_catalog_3_0_5","costume_catalog_3_0_6","costume_catalog_3_0_7","costume_catalog_3_0_8","costume_catalog_3_0_9","costume_catalog_3_0_10","costume_catalog_3_0_11","costume_catalog_3_0_12","costume_catalog_3_0_13","costume_catalog_3_0_14","costume_catalog_3_0_15","costume_catalog_3_0_16","costume_catalog_3_0_17","costume_catalog_3_0_18","costume_catalog_3_0_19","costume_catalog_3_0_20","costume_catalog_3_0_21","costume_catalog_3_0_22","costume_catalog_3_0_23";
+	setunittitle(getnpcid(0), "Costume Curator");
+	end;
+}
+
