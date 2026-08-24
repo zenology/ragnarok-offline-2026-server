@@ -1467,8 +1467,9 @@ Body:
       Raises VIT by given amount.
   - Command: where
     Help: |
-      Params: <char name>
-      Tells you the location of a character.
+      Params: [<char name>]
+      With no character name, shows your current map and coordinates.
+      With a character name, tells you that character's location.
   - Command: whereis
     Help: |
       Params: <monster name/ID>
