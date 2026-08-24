@@ -284,7 +284,7 @@ moc_para01,106,42,4	script	Market Group Hustler#ent	4_M_YOYOROGUE,{
 	mes "Hey, adventurer.";
 	mes "I can take you to somewhere nice. Are you interested?";
 	next;
-	switch (select("Move to Eden Market Group!:About Eden Market Group.:Cancel.")) {
+	switch (select("Move to Eden Market Group!:A more discreet destination.:About Eden Market Group.:Cancel.")) {
 	case 1:
 		mes "[Hustler]";
 		mes "Moving~!";
@@ -292,6 +292,17 @@ moc_para01,106,42,4	script	Market Group Hustler#ent	4_M_YOYOROGUE,{
 		warp "paramk",97,17;
 		end;
 	case 2:
+		mes "[Hustler]";
+		mes "Are you sure you want to go?";
+		next;
+		if (select("Yes:No") == 2)
+			close;
+		mes "[Hustler]";
+		mes "Watch your step.";
+		close2;
+		warp "paramk",11,171;
+		end;
+	case 3:
 		mes "[Hustler]";
 		mes "Hahaha... The Eden Market Group is a place where merchants gather around to sell various items.";
 		mes "And I don't mean common stuff like Jellopy, which you can acquire anywhere. Here, we only deal in real goods.";
@@ -329,11 +340,25 @@ moc_para01,106,42,4	script	Market Group Hustler#ent	4_M_YOYOROGUE,{
 		mes "Isn't it worth paying a visit?";
 		mes "Hahahahaha!";
 		close;
-	case 3:
+	case 4:
 		mes "[Hustler]";
 		mes "Come by anytime, if you want to go to the Eden Market Group!";
 		close;
 	}
+}
+
+// Black Market exit
+paramk,8,171,4	script	Market Group Hustler#exit	4_M_YOYOROGUE,{
+	mes "[Hustler]";
+	mes "Need a way out?";
+	next;
+	if (select("Take me back to Eden.:Stay here.") == 2)
+		close;
+	mes "[Hustler]";
+	mes "Stay close.";
+	close2;
+	warp "moc_para01",106,35;
+	end;
 }
 
 // Eden Market Group Guide
