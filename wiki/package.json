@@ -1,0 +1,35 @@
+{
+  "name": "ragnarok-offline-player-guide",
+  "private": true,
+  "version": "0.0.0",
+  "engines": {
+    "bun": ">=1.4.0 <1.5.0"
+  },
+  "scripts": {
+    "start": "docusaurus start",
+    "dev": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear",
+    "prepare": "panda codegen",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.10.2",
+    "@docusaurus/preset-classic": "3.10.2",
+    "@shadow-panda/style-context": "0.7.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.10.2",
+    "@docusaurus/tsconfig": "3.10.2",
+    "@docusaurus/types": "3.10.2",
+    "@pandacss/dev": "0.15.5",
+    "@shadow-panda/preset": "0.7.1",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "postcss": "8.5.26",
+    "typescript": "^5.8.3"
+  }
+}
