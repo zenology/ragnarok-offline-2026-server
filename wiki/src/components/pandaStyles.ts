@@ -1,4 +1,4 @@
-import {css} from '@shadow-panda/styled-system/css/css';
+import { css } from 'styled-system/css/css'
 
 // These recipes mirror the existing market CSS values. The semantic class names
 // remain in place as a visual fallback while Panda owns reusable component rules.
@@ -7,16 +7,16 @@ export const pandaStyles = {
     display: 'flex',
     gap: '1.25rem',
     alignItems: 'flex-start',
-    marginBottom: '2.25rem',
+    marginBottom: '2.25rem'
   }),
   guideSection: css({
-    scrollMarginTop: '1.5rem',
+    scrollMarginTop: '1.5rem'
   }),
   contactCard: css({
     border: '1px solid',
     borderColor: 'marketLine',
     borderRadius: '0.35rem',
-    backgroundColor: 'marketPanel',
+    backgroundColor: 'marketPanel'
   }),
   priceCard: css({
     display: 'grid',
@@ -25,14 +25,14 @@ export const pandaStyles = {
     border: '1px solid',
     borderColor: 'marketLine',
     borderRadius: '0.4rem',
-    backgroundColor: 'marketPanel',
+    backgroundColor: 'marketPanel'
   }),
   serviceCard: css({
     padding: '1.35rem',
     border: '1px solid',
     borderColor: 'marketLine',
     borderRadius: '0.4rem',
-    backgroundColor: 'marketPanel',
+    backgroundColor: 'marketPanel'
   }),
   itemCard: css({
     display: 'grid',
@@ -41,6 +41,6 @@ export const pandaStyles = {
     border: '1px solid',
     borderColor: 'marketLine',
     borderRadius: '0.4rem',
-    backgroundColor: 'marketPanel',
-  }),
-};
+    backgroundColor: 'marketPanel'
+  })
+}

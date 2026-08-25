@@ -1,14 +1,15 @@
-import type {ReactNode} from 'react';
-import {pandaStyles} from '../pandaStyles';
+import type { ReactNode } from 'react'
+
+import { pandaStyles } from '../pandaStyles'
 
 type SectionHeadingProps = {
-  number: string;
-  kicker: string;
-  title: string;
-  id: string;
-};
+  number: string
+  kicker: string
+  title: string
+  id: string
+}
 
-export function SectionHeading({number, kicker, title, id}: SectionHeadingProps): ReactNode {
+export function SectionHeading({ number, kicker, title, id }: SectionHeadingProps): ReactNode {
   return (
     <div className={`section-heading ${pandaStyles.sectionHeading}`}>
       <span className="section-number">{number}</span>
@@ -17,5 +18,5 @@ export function SectionHeading({number, kicker, title, id}: SectionHeadingProps)
         <h2 id={id}>{title}</h2>
       </div>
     </div>
-  );
+  )
 }

@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "types": ["vite/client", "node"],
     "paths": {
-      "@shadow-panda/styled-system/*": ["@shadow-panda/styled-system/*"]
+      "styled-system/*": ["styled-system/*"]
     }
   },
   "exclude": ["node_modules"]

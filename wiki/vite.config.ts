@@ -1,24 +1,25 @@
-import {defineConfig} from 'vite';
-import {fileURLToPath} from 'node:url';
+import { fileURLToPath } from 'node:url'
+
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   build: {
     outDir: 'build',
-    emptyOutDir: true,
+    emptyOutDir: true
   },
   server: {
     host: '0.0.0.0',
     watch: {
       usePolling: true,
-      interval: 500,
-    },
+      interval: 500
+    }
   },
   preview: {
-    host: '0.0.0.0',
+    host: '0.0.0.0'
   },
   resolve: {
     alias: {
-      '@shadow-panda/styled-system': fileURLToPath(new URL('./@shadow-panda/styled-system', import.meta.url)),
-    },
-  },
-});
+      'styled-system': fileURLToPath(new URL('./styled-system', import.meta.url))
+    }
+  }
+})
