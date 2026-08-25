@@ -1,16 +1,17 @@
 import type { ReactNode } from 'react'
 
-import { Callout } from './components/callout'
+import { Text } from '@/components/atoms'
+import { Callout } from '@/components/molecules'
+import { GuideSection, HeaderSection } from '@/components/templates'
+
 import { CatalogStrip } from './components/catalog-strip'
 import { ContactCard } from './components/contact-card'
 import { ExchangeCard } from './components/exchange-card'
-import { GuideSection } from './components/guide-section'
 import { ItemCard } from './components/item-card'
+import { JumpNavigation } from './components/jump-navigation'
 import { LoopCard } from './components/loop-card'
-import { MarketHero } from './components/market-hero'
 import { PriceCard } from './components/price-card'
 import { ServiceCard } from './components/service-card'
-import { Text } from './components/text'
 import {
   blackMarketContacts,
   cardPriceBands,
@@ -19,22 +20,28 @@ import {
   harlanCatalogs,
   rookeShelves
 } from './data/black-market'
-import { contactList, grids, page } from './styles/recipes'
+import { blackMarketPage, contactList, grids } from './styles/recipes'
 
 export default function BlackMarketPage(): ReactNode {
-  const pageStyles = page()
+  const pageStyles = blackMarketPage()
   const gridStyles = grids()
 
   return (
     <main className={pageStyles.root} aria-label="Black Market player guide">
-      <MarketHero />
+      <HeaderSection
+        image="../../src/assets/black-market/header.png"
+        eyebrow="RAGNAROK OFFLINE · PLAYER GUIDE"
+        title="The Black Market"
+        description="A quiet network for turning cards, Zeny, and hard-won loot into useful tools, upgrades, and style."
+      >
+        <JumpNavigation />
+      </HeaderSection>
 
       <div className={pageStyles.content}>
         <GuideSection
           id="enter"
-          titleId="enter-title"
           number="01"
-          kicker="Find the quiet door"
+          eyebrow="Find the quiet door"
           title="Enter the Black Market"
         >
           <div className={pageStyles.sectionIntro}>
@@ -56,9 +63,8 @@ export default function BlackMarketPage(): ReactNode {
 
         <GuideSection
           id="earn"
-          titleId="earn-title"
           number="02"
-          kicker="Turn your drops into options"
+          eyebrow="Turn your drops into options"
           title="Earn Cash Points"
         >
           <LoopCard />
@@ -76,9 +82,8 @@ export default function BlackMarketPage(): ReactNode {
 
         <GuideSection
           id="spend"
-          titleId="spend-title"
           number="03"
-          kicker="Useful things, carefully curated"
+          eyebrow="Useful things, carefully curated"
           title="Spend Cash Points"
         >
           <div className={gridStyles.service}>
@@ -124,12 +129,11 @@ export default function BlackMarketPage(): ReactNode {
 
         <GuideSection
           id="featured"
-          titleId="featured-title"
           number="04"
-          kicker="A few things worth knowing"
+          eyebrow="A few things worth knowing"
           title="Featured Items"
         >
-          <Callout notice>
+          <Callout variant="notice">
             <strong>Small sample, not the full inventory.</strong> These examples show the range of
             the market. Check the NPC shop in-game for the current complete selection.
           </Callout>

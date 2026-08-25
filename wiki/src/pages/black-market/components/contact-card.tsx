@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { Text } from './text'
+import { Text } from '@/components/atoms'
 import type { BlackMarketContact } from '../data/black-market'
 import { disclosure } from '../styles/recipes'
 

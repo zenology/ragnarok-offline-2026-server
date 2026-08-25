@@ -1,18 +1,18 @@
 import type { ReactNode } from 'react'
 
-import { link } from '../styles/recipes'
+import { link } from './link.recipe'
 
 type LinkProps = {
   href: string
   children: ReactNode
-  kind: 'jump' | 'external'
+  variant: 'jump' | 'external'
   external?: boolean
 }
 
-export function Link({ href, children, kind, external = false }: LinkProps): ReactNode {
+export function Link({ href, children, variant, external = false }: LinkProps): ReactNode {
   return (
     <a
-      className={link({ kind })}
+      className={link({ variant })}
       href={href}
       {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
     >

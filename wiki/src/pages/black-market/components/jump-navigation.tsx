@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react'
 
-import { link, page } from '../styles/recipes'
+import { Link } from '@/components/atoms'
+
+import { blackMarketPage } from '../styles/recipes'
 
 const links = [
   ['#enter', 'Enter'],
@@ -10,14 +12,14 @@ const links = [
 ] as const
 
 export function JumpNavigation(): ReactNode {
-  const styles = page()
+  const styles = blackMarketPage()
 
   return (
     <nav className={styles.jump} aria-label="Black Market guide sections">
       {links.map(([href, label]) => (
-        <a className={link({ kind: 'jump' })} href={href} key={href}>
+        <Link variant="jump" href={href} key={href}>
           {label}
-        </a>
+        </Link>
       ))}
     </nav>
   )

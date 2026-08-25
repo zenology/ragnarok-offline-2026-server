@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { Heading } from './heading'
-import { Text } from './text'
+import { Heading, Text } from '@/components/atoms'
 import { cashPointRules } from '../data/black-market'
 import { exchange } from '../styles/recipes'
 
@@ -11,10 +10,10 @@ export function ExchangeCard({ rules }: { rules: typeof cashPointRules }): React
   return (
     <div className={styles.root}>
       <div>
-        <Text as="p" kind="kicker" tone="gold">
+        <Text as="p" kind="kicker" tone="accent">
           Coin Exchange
         </Text>
-        <Heading as="h3" level="exchange">
+        <Heading as="h3" level="card">
           Choose the conversion that fits your run
         </Heading>
       </div>

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
-import { ExternalLink } from './external-link'
+import { Link } from '@/components/atoms'
+
 import type { FeaturedItem } from '../data/black-market'
 import { card } from '../styles/recipes'
 
@@ -18,7 +19,9 @@ export function ItemCard({ item }: { item: FeaturedItem }): ReactNode {
         <strong className={styles.value}>
           {item.price} <small>CP</small>
         </strong>
-        <ExternalLink href={item.divinePrideUrl}>View on Divine Pride ↗</ExternalLink>
+        <Link variant="external" external href={item.divinePrideUrl}>
+          View on Divine Pride ↗
+        </Link>
       </div>
     </article>
   )

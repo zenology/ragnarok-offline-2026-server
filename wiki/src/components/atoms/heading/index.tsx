@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react'
 
-import { heading } from '../styles/recipes'
+import { heading } from './heading.recipe'
 
 type HeadingProps = {
   as: 'h1' | 'h2' | 'h3'
-  level: 'hero' | 'section' | 'card' | 'service' | 'exchange'
+  level: 'hero' | 'section' | 'card'
   children: ReactNode
   id?: string
 }
