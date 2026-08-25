@@ -35,6 +35,11 @@ export default defineConfig(
     settings: {
       react: {
         version: '19'
+      },
+      'import-x/resolver': {
+        typescript: {
+          project: './tsconfig.json'
+        }
       }
     }
   },
@@ -105,6 +110,11 @@ export default defineConfig(
               position: 'before'
             },
             {
+              pattern: '@/**',
+              group: 'internal',
+              position: 'after'
+            },
+            {
               pattern: 'components/**',
               group: 'parent',
               position: 'after'
@@ -126,6 +136,19 @@ export default defineConfig(
             order: 'asc',
             caseInsensitive: true
           }
+        }
+      ],
+      'import-x/no-restricted-paths': [
+        'error',
+        {
+          basePath: '.',
+          zones: [
+            {
+              target: './src/components',
+              from: './src/pages',
+              message: 'Shared Atomic components must not import Page feature code.'
+            }
+          ]
         }
       ]
     }

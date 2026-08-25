@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react'
 
-import { Heading } from '../atoms/Heading'
-import { Text } from '../atoms/Text'
-import { JumpNavigation } from '../molecules/JumpNavigation'
-import { page } from '../recipes/market'
+import { Heading } from './heading'
+import { JumpNavigation } from './jump-navigation'
+import { Text } from './text'
+import { page } from '../styles/recipes'
 
 export function MarketHero(): ReactNode {
   const styles = page()

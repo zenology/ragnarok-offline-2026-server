@@ -2,11 +2,11 @@ import { StrictMode } from 'react'
 
 import { createRoot } from 'react-dom/client'
 
-import Home from './pages'
-import './css/custom.css'
+import BlackMarketPage from '@/pages/black-market'
+import '@/css/custom.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Home />
+    <BlackMarketPage />
   </StrictMode>
 )

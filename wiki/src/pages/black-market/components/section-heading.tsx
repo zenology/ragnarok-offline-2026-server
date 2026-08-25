@@ -1,9 +1,8 @@
 import type { ReactNode } from 'react'
 
-import { guideSection } from '../recipes/market'
-
-import { Heading } from './Heading'
-import { Text } from './Text'
+import { Heading } from './heading'
+import { Text } from './text'
+import { guideSection } from '../styles/recipes'
 
 type SectionHeadingProps = {
   number: string

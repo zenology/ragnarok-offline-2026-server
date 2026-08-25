@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { page } from '../recipes/market'
+import { page } from '../styles/recipes'
 
 export function Callout({
   children,

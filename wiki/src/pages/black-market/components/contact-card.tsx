@@ -1,9 +1,8 @@
 import type { ReactNode } from 'react'
 
-import { Text } from '../atoms/Text'
-import { disclosure } from '../recipes/market'
-
-import type { BlackMarketContact } from '../../data/blackMarket'
+import { Text } from './text'
+import type { BlackMarketContact } from '../data/black-market'
+import { disclosure } from '../styles/recipes'
 
 export function ContactCard({ contact }: { contact: BlackMarketContact }): ReactNode {
   const styles = disclosure()

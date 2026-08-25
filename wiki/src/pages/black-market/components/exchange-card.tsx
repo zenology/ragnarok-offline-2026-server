@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react'
 
-import { cashPointRules } from '../../data/blackMarket'
-import { Heading } from '../atoms/Heading'
-import { Text } from '../atoms/Text'
-import { exchange } from '../recipes/market'
+import { Heading } from './heading'
+import { Text } from './text'
+import { cashPointRules } from '../data/black-market'
+import { exchange } from '../styles/recipes'
 
 export function ExchangeCard({ rules }: { rules: typeof cashPointRules }): ReactNode {
   const styles = exchange()

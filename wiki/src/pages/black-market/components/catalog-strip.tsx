@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { catalog as catalogStyles } from '../recipes/market'
+import { catalog as catalogStyles } from '../styles/recipes'
 
 type CatalogStripProps = {
   rookeShelves: string[]

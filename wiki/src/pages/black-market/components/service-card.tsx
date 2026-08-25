@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { card } from '../recipes/market'
+import { card } from '../styles/recipes'
 
 type ServiceCardProps = {
   icon: string

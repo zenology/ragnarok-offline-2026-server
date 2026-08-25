@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { link, page } from '../recipes/market'
+import { link, page } from '../styles/recipes'
 
 const links = [
   ['#enter', 'Enter'],

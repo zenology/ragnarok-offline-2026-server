@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { heading } from '../recipes/market'
+import { heading } from '../styles/recipes'
 
 type HeadingProps = {
   as: 'h1' | 'h2' | 'h3'

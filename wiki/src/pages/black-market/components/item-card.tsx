@@ -1,9 +1,8 @@
 import type { ReactNode } from 'react'
 
-import { ExternalLink } from '../atoms/ExternalLink'
-import { card } from '../recipes/market'
-
-import type { FeaturedItem } from '../../data/blackMarket'
+import { ExternalLink } from './external-link'
+import type { FeaturedItem } from '../data/black-market'
+import { card } from '../styles/recipes'
 
 export function ItemCard({ item }: { item: FeaturedItem }): ReactNode {
   const styles = card({ kind: 'item' })

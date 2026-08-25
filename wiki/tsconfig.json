@@ -10,6 +10,7 @@
     "skipLibCheck": true,
     "types": ["vite/client", "node"],
     "paths": {
+      "@/*": ["src/*"],
       "styled-system/*": ["styled-system/*"]
     }
   },

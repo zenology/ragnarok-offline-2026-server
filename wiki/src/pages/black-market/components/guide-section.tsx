@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
-import { SectionHeading } from '../atoms/SectionHeading'
-import { guideSection } from '../recipes/market'
+import { SectionHeading } from './section-heading'
+import { guideSection } from '../styles/recipes'
 
 type GuideSectionProps = {
   id: string

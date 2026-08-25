@@ -1,6 +1,6 @@
 import { Fragment, type ReactNode } from 'react'
 
-import { loop } from '../recipes/market'
+import { loop } from '../styles/recipes'
 
 const steps = [
   ['01', 'Farm', 'Find monster cards'],

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { link } from '../recipes/market'
+import { link } from '../styles/recipes'
 
 type LinkProps = {
   href: string

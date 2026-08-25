@@ -1,19 +1,16 @@
 import type { ReactNode } from 'react'
 
-import {
-  CatalogStrip,
-  ContactCard,
-  ExchangeCard,
-  GuideSection,
-  ItemCard,
-  LoopCard,
-  PriceCard,
-  ServiceCard
-} from '../components'
-import { Text } from '../components/atoms/Text'
-import { Callout } from '../components/molecules/Callout'
-import { MarketHero } from '../components/organisms/MarketHero'
-import { contactList, grids, page } from '../components/recipes/market'
+import { Callout } from './components/callout'
+import { CatalogStrip } from './components/catalog-strip'
+import { ContactCard } from './components/contact-card'
+import { ExchangeCard } from './components/exchange-card'
+import { GuideSection } from './components/guide-section'
+import { ItemCard } from './components/item-card'
+import { LoopCard } from './components/loop-card'
+import { MarketHero } from './components/market-hero'
+import { PriceCard } from './components/price-card'
+import { ServiceCard } from './components/service-card'
+import { Text } from './components/text'
 import {
   blackMarketContacts,
   cardPriceBands,
@@ -21,9 +18,10 @@ import {
   featuredItems,
   harlanCatalogs,
   rookeShelves
-} from '../data/blackMarket'
+} from './data/black-market'
+import { contactList, grids, page } from './styles/recipes'
 
-export default function Home(): ReactNode {
+export default function BlackMarketPage(): ReactNode {
   const pageStyles = page()
   const gridStyles = grids()
 
