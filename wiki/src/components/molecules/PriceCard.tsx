@@ -1,15 +1,17 @@
 import type { ReactNode } from 'react'
 
-import { pandaStyles } from '../pandaStyles'
+import { card } from '../recipes/market'
 
 import type { CardPriceBand } from '../../data/blackMarket'
 
 export function PriceCard({ band }: { band: CardPriceBand }): ReactNode {
+  const styles = card({ kind: 'price' })
+
   return (
-    <div className={`price-card ${pandaStyles.priceCard}`}>
-      <span className="price-card__label">{band.catalog}</span>
-      <strong>{band.range}</strong>
-      <small>{band.source}</small>
+    <div className={styles.root}>
+      <span className={styles.label}>{band.catalog}</span>
+      <strong className={styles.value}>{band.range}</strong>
+      <small className={styles.small}>{band.source}</small>
     </div>
   )
 }

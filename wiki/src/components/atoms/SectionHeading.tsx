@@ -1,6 +1,9 @@
 import type { ReactNode } from 'react'
 
-import { pandaStyles } from '../pandaStyles'
+import { guideSection } from '../recipes/market'
+
+import { Heading } from './Heading'
+import { Text } from './Text'
 
 type SectionHeadingProps = {
   number: string
@@ -10,12 +13,20 @@ type SectionHeadingProps = {
 }
 
 export function SectionHeading({ number, kicker, title, id }: SectionHeadingProps): ReactNode {
+  const styles = guideSection()
+
   return (
-    <div className={`section-heading ${pandaStyles.sectionHeading}`}>
-      <span className="section-number">{number}</span>
+    <div className={styles.heading}>
+      <Text kind="meta" tone="gold" className={styles.number}>
+        {number}
+      </Text>
       <div>
-        <p className="section-kicker">{kicker}</p>
-        <h2 id={id}>{title}</h2>
+        <Text as="p" kind="kicker" tone="gold">
+          {kicker}
+        </Text>
+        <Heading as="h2" level="section" id={id}>
+          {title}
+        </Heading>
       </div>
     </div>
   )

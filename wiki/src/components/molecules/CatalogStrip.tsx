@@ -1,20 +1,24 @@
 import type { ReactNode } from 'react'
 
+import { catalog as catalogStyles } from '../recipes/market'
+
 type CatalogStripProps = {
   rookeShelves: string[]
   harlanCatalogs: Array<{ name: string; count: number }>
 }
 
 export function CatalogStrip({ rookeShelves, harlanCatalogs }: CatalogStripProps): ReactNode {
+  const styles = catalogStyles()
+
   return (
-    <div className="catalog-strip">
-      <div>
-        <strong>Rooke’s shelves</strong>
-        <span>{rookeShelves.join(' · ')}</span>
+    <div className={styles.root}>
+      <div className={styles.column}>
+        <strong className={styles.label}>Rooke’s shelves</strong>
+        <span className={styles.value}>{rookeShelves.join(' · ')}</span>
       </div>
-      <div>
-        <strong>Harlan’s catalogs</strong>
-        <span>
+      <div className={styles.column}>
+        <strong className={styles.label}>Harlan’s catalogs</strong>
+        <span className={styles.value}>
           {harlanCatalogs.map((catalog) => `${catalog.name} ${catalog.count}`).join(' · ')}
         </span>
       </div>

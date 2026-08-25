@@ -10,6 +10,10 @@ import {
   PriceCard,
   ServiceCard
 } from '../components'
+import { Text } from '../components/atoms/Text'
+import { Callout } from '../components/molecules/Callout'
+import { MarketHero } from '../components/organisms/MarketHero'
+import { contactList, grids, page } from '../components/recipes/market'
 import {
   blackMarketContacts,
   cardPriceBands,
@@ -20,24 +24,14 @@ import {
 } from '../data/blackMarket'
 
 export default function Home(): ReactNode {
-  return (
-    <main className="market-page" aria-label="Black Market player guide">
-      <header className="market-hero">
-        <div className="market-hero__eyebrow">RAGNAROK OFFLINE · PLAYER GUIDE</div>
-        <h1>The Black Market</h1>
-        <p className="market-hero__lead">
-          A quiet network for turning cards, Zeny, and hard-won loot into useful tools, upgrades,
-          and style.
-        </p>
-        <nav className="market-jump" aria-label="Black Market guide sections">
-          <a href="#enter">Enter</a>
-          <a href="#earn">Earn Cash Points</a>
-          <a href="#spend">Spend Cash Points</a>
-          <a href="#featured">Featured Items</a>
-        </nav>
-      </header>
+  const pageStyles = page()
+  const gridStyles = grids()
 
-      <div className="market-content">
+  return (
+    <main className={pageStyles.root} aria-label="Black Market player guide">
+      <MarketHero />
+
+      <div className={pageStyles.content}>
         <GuideSection
           id="enter"
           titleId="enter-title"
@@ -45,17 +39,17 @@ export default function Home(): ReactNode {
           kicker="Find the quiet door"
           title="Enter the Black Market"
         >
-          <div className="section-intro two-column">
-            <p>
+          <div className={pageStyles.sectionIntro}>
+            <Text as="p" tone="muted">
               Speak to any <strong>Black Market Contact</strong> in the world. Entry is free for
               now, and the Contact sends you directly to the market hall.
-            </p>
-            <p>
+            </Text>
+            <Text as="p" tone="muted">
               When you are done, use the Contact inside the hall to leave. You return to the most
               recently used Contact, so you do not have to retrace your route.
-            </p>
+            </Text>
           </div>
-          <div className="contact-list" aria-label="Black Market Contact locations">
+          <div className={contactList()} aria-label="Black Market Contact locations">
             {blackMarketContacts.map((contact) => (
               <ContactCard contact={contact} key={contact.city} />
             ))}
@@ -70,11 +64,11 @@ export default function Home(): ReactNode {
           title="Earn Cash Points"
         >
           <LoopCard />
-          <p className="callout">
+          <Callout>
             The Card Collector buys standalone cards from your inventory. Cards already placed into
             equipment are not part of the sale.
-          </p>
-          <div className="card-price-grid">
+          </Callout>
+          <div className={gridStyles.price}>
             {cardPriceBands.map((band) => (
               <PriceCard band={band} key={`${band.catalog}-${band.source}`} />
             ))}
@@ -89,7 +83,7 @@ export default function Home(): ReactNode {
           kicker="Useful things, carefully curated"
           title="Spend Cash Points"
         >
-          <div className="service-grid">
+          <div className={gridStyles.service}>
             <ServiceCard
               featured
               icon="◆"
@@ -137,11 +131,11 @@ export default function Home(): ReactNode {
           kicker="A few things worth knowing"
           title="Featured Items"
         >
-          <div className="notice">
+          <Callout notice>
             <strong>Small sample, not the full inventory.</strong> These examples show the range of
             the market. Check the NPC shop in-game for the current complete selection.
-          </div>
-          <div className="item-grid">
+          </Callout>
+          <div className={gridStyles.item}>
             {featuredItems.map((item) => (
               <ItemCard item={item} key={item.itemId} />
             ))}

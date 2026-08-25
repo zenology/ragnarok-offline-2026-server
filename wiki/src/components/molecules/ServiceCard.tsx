@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 
-import { pandaStyles } from '../pandaStyles'
+import { card } from '../recipes/market'
 
 type ServiceCardProps = {
   icon: string
@@ -19,17 +19,17 @@ export function ServiceCard({
   tag,
   featured = false
 }: ServiceCardProps): ReactNode {
+  const styles = card({ kind: 'service', featured })
+
   return (
-    <article
-      className={`service-card ${pandaStyles.serviceCard}${featured ? ' service-card--featured' : ''}`}
-    >
-      <div className="service-card__top">
-        <span className="service-icon">{icon}</span>
-        <span className="service-location">{location}</span>
+    <article className={styles.root}>
+      <div className={styles.top}>
+        <span className={styles.icon}>{icon}</span>
+        <span className={styles.location}>{location}</span>
       </div>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <span className="service-tag">{tag}</span>
+      <h3 className={styles.title}>{title}</h3>
+      <p className={styles.description}>{description}</p>
+      <span className={styles.tag}>{tag}</span>
     </article>
   )
 }

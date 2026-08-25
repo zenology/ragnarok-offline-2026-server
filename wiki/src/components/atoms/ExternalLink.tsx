@@ -1,14 +1,13 @@
 import type { ReactNode } from 'react'
 
-type ExternalLinkProps = {
-  href: string
-  children: ReactNode
-}
+import { Link } from './Link'
+
+type ExternalLinkProps = { href: string; children: ReactNode }
 
 export function ExternalLink({ href, children }: ExternalLinkProps): ReactNode {
   return (
-    <a href={href} target="_blank" rel="noreferrer">
+    <Link href={href} kind="external" external>
       {children}
-    </a>
+    </Link>
   )
 }

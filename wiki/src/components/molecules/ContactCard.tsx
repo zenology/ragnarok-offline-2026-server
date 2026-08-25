@@ -1,21 +1,24 @@
 import type { ReactNode } from 'react'
 
-import { pandaStyles } from '../pandaStyles'
+import { Text } from '../atoms/Text'
+import { disclosure } from '../recipes/market'
 
 import type { BlackMarketContact } from '../../data/blackMarket'
 
 export function ContactCard({ contact }: { contact: BlackMarketContact }): ReactNode {
+  const styles = disclosure()
+
   return (
-    <details className={`contact-card ${pandaStyles.contactCard}`}>
-      <summary>
+    <details className={styles.root}>
+      <summary className={styles.summary}>
         <span>{contact.city}</span>
-        <span className="contact-card__chevron" aria-hidden="true">
+        <span className={styles.chevron} aria-hidden="true">
           +
         </span>
       </summary>
-      <div className="contact-card__details">
+      <div className={styles.details}>
         <span>{contact.location}</span>
-        <span className="muted">Contact position: {contact.coordinates}</span>
+        <Text tone="muted">Contact position: {contact.coordinates}</Text>
       </div>
     </details>
   )

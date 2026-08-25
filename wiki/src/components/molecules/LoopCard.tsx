@@ -1,5 +1,7 @@
 import { Fragment, type ReactNode } from 'react'
 
+import { loop } from '../recipes/market'
+
 const steps = [
   ['01', 'Farm', 'Find monster cards'],
   ['02', 'Sell', 'Visit the Card Collector'],
@@ -7,19 +9,21 @@ const steps = [
 ] as const
 
 export function LoopCard(): ReactNode {
+  const styles = loop()
+
   return (
-    <div className="loop-card" aria-label="Cash Point gameplay loop">
+    <div className={styles.root} aria-label="Cash Point gameplay loop">
       {steps.map(([number, title, description], index) => (
         <Fragment key={number}>
           {index > 0 && (
-            <div className="loop-arrow" aria-hidden="true">
+            <div className={styles.arrow} aria-hidden="true">
               →
             </div>
           )}
-          <div className="loop-step">
-            <span>{number}</span>
+          <div className={styles.step}>
+            <span className={styles.number}>{number}</span>
             <strong>{title}</strong>
-            <small>{description}</small>
+            <small className={styles.small}>{description}</small>
           </div>
         </Fragment>
       ))}

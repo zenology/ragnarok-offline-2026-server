@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { SectionHeading } from '../atoms/SectionHeading'
-import { pandaStyles } from '../pandaStyles'
+import { guideSection } from '../recipes/market'
 
 type GuideSectionProps = {
   id: string
@@ -20,12 +20,10 @@ export function GuideSection({
   title,
   children
 }: GuideSectionProps): ReactNode {
+  const styles = guideSection()
+
   return (
-    <section
-      id={id}
-      className={`market-section ${pandaStyles.guideSection}`}
-      aria-labelledby={titleId}
-    >
+    <section id={id} className={styles.root} aria-labelledby={titleId}>
       <SectionHeading number={number} kicker={kicker} title={title} id={titleId} />
       {children}
     </section>

@@ -16,9 +16,25 @@ export default defineConfig({
           marketMuted: { value: '#a9a79f' },
           marketGold: { value: '#e7b96d' },
           marketGoldSoft: { value: '#f2d7a7' },
-          marketGreen: { value: '#93b79a' }
+          marketGreen: { value: '#93b79a' },
+          marketPanelRaised: { value: '#20231e' }
+        },
+        fonts: {
+          marketBody: {
+            value:
+              'Rubik, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif'
+          },
+          marketHeading: { value: 'Georgia, Times New Roman, serif' }
+        },
+        sizes: {
+          marketMax: { value: '1180px' }
         }
       }
+    }
+  },
+  conditions: {
+    extend: {
+      mobile: '@media (max-width: 760px)'
     }
   }
 })
