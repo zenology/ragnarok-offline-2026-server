@@ -1,36 +1,30 @@
 import { cva, sva } from 'styled-system/css'
 
 export const blackMarketPage = sva({
-  slots: [
-    'root',
-    'content',
-    'jump',
-    'sectionIntro',
-    'muted'
-  ],
+  slots: ['root', 'content', 'jump', 'sectionIntro', 'muted'],
   base: {
     root: {
       minHeight: '100vh',
       background:
-        'radial-gradient(circle at 80% -10%, rgba(231, 185, 109, 0.11), transparent 30rem), #10110f'
+        'radial-gradient(circle at 80% -10%, var(--colors-accent-emphasis), transparent 480px), var(--colors-surface-canvas)'
     },
     content: {
-      width: 'min(calc(100% - 3rem), 1180px)',
+      width: 'min(calc(100% - 48px), 1180px)',
       margin: '0 auto',
-      paddingBottom: '6rem',
-      _mobile: { width: 'min(calc(100% - 2rem), 1180px)' }
+      paddingBottom: '96px',
+      _mobile: { width: 'min(calc(100% - 32px), 1180px)' }
     },
-    jump: { display: 'flex', flexWrap: 'wrap', gap: '0.65rem', marginTop: '3rem' },
+    jump: { display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '48px' },
     sectionIntro: {
       display: 'grid',
       gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-      gap: '2rem',
-      color: 'siteTextMuted',
+      gap: '32px',
+      color: 'text.muted',
       lineHeight: 1.7,
-      '& strong': { color: 'siteText' },
+      '& strong': { color: 'text.default' },
       _mobile: { gridTemplateColumns: '1fr' }
     },
-    muted: { color: 'siteTextMuted' }
+    muted: { color: 'text.muted' }
   },
   variants: {},
   defaultVariants: {}
@@ -41,8 +35,8 @@ export const contactList = cva({
     display: 'grid',
     gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
     alignItems: 'start',
-    gap: '0.65rem',
-    marginTop: '2rem',
+    gap: '10px',
+    marginTop: '32px',
     _mobile: { gridTemplateColumns: '1fr' }
   }
 })
@@ -51,32 +45,32 @@ export const disclosure = sva({
   slots: ['root', 'summary', 'chevron', 'details'],
   base: {
     root: {
-      border: '1px solid var(--colors-site-border)',
-      borderRadius: '0.35rem',
-      backgroundColor: 'siteSurface'
+      border: '1px solid var(--colors-line-default)',
+      borderRadius: '6px',
+      backgroundColor: 'surface.default'
     },
     summary: {
       display: 'flex',
       justifyContent: 'space-between',
-      padding: '1rem 1.1rem',
+      padding: '16px 18px',
       cursor: 'pointer',
       listStyle: 'none',
       fontWeight: 600,
       '&::-webkit-details-marker': { display: 'none' }
     },
     chevron: {
-      color: 'siteAccent',
-      fontSize: '1.2rem',
+      color: 'accent.default',
+      fontSize: '20px',
       lineHeight: 1,
       '[open] &': { transform: 'rotate(45deg)' }
     },
     details: {
       display: 'flex',
       flexWrap: 'wrap',
-      gap: '0.5rem 1rem',
-      padding: '0 1.1rem 1rem',
-      color: 'siteTextMuted',
-      fontSize: '0.85rem'
+      gap: '8px 16px',
+      padding: '0 18px 16px',
+      color: 'text.muted',
+      fontSize: '14px'
     }
   },
   variants: {},
@@ -90,21 +84,22 @@ export const loop = sva({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      gap: '1rem',
-      padding: '1.5rem',
-      border: '1px solid var(--colors-site-border)',
-      borderRadius: '0.4rem',
-      background: 'linear-gradient(100deg, rgba(231, 185, 109, 0.11), rgba(255, 255, 255, 0.025))',
+      gap: '16px',
+      padding: '24px',
+      border: '1px solid var(--colors-line-default)',
+      borderRadius: '6px',
+      background:
+        'linear-gradient(100deg, var(--colors-accent-emphasis), var(--colors-surface-highlight))',
       _mobile: { alignItems: 'stretch', flexDirection: 'column' }
     },
-    step: { display: 'grid', gap: '0.25rem' },
-    number: { color: 'siteAccent', fontSize: '0.7rem', letterSpacing: '0.12em' },
+    step: { display: 'grid', gap: '4px' },
+    number: { color: 'accent.default', fontSize: '12px', letterSpacing: '0.12em' },
     arrow: {
-      color: 'siteAccent',
-      fontSize: '1.5rem',
+      color: 'accent.default',
+      fontSize: '24px',
       _mobile: { transform: 'rotate(90deg)', alignSelf: 'center' }
     },
-    small: { color: 'siteTextMuted' }
+    small: { color: 'text.muted' }
   },
   variants: {},
   defaultVariants: {}
@@ -116,20 +111,20 @@ export const grids = sva({
     price: {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-      gap: '0.75rem',
+      gap: '12px',
       _mobile: { gridTemplateColumns: '1fr' }
     },
     service: {
       display: 'grid',
       gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-      gap: '0.75rem',
+      gap: '12px',
       _mobile: { gridTemplateColumns: '1fr' }
     },
     item: {
       display: 'grid',
       gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-      gap: '0.75rem',
-      marginTop: '1.5rem',
+      gap: '12px',
+      marginTop: '24px',
       _mobile: { gridTemplateColumns: '1fr' }
     }
   },
@@ -155,62 +150,62 @@ export const card = sva({
   ],
   base: {
     root: {
-      border: '1px solid var(--colors-site-border)',
-      borderRadius: '0.4rem',
-      backgroundColor: 'siteSurface'
+      border: '1px solid var(--colors-border-default)',
+      borderRadius: '6px',
+      backgroundColor: 'surface.default'
     },
-    label: { color: 'siteTextMuted', fontSize: '0.85rem' },
-    value: { color: 'siteAccentSoft', fontSize: '1.25rem' },
-    small: { color: 'siteTextMuted' },
+    label: { color: 'text.muted', fontSize: '14px' },
+    value: { color: 'accent.soft', fontSize: '20px' },
+    small: { color: 'text.muted' },
     meta: {
       display: 'flex',
       justifyContent: 'space-between',
-      gap: '1rem',
-      color: 'siteSuccess',
-      fontSize: '0.62rem',
+      gap: '16px',
+      color: 'status.success.foreground',
+      fontSize: '10px',
       letterSpacing: '0.08em',
       textTransform: 'uppercase'
     },
-    footer: { display: 'flex', justifyContent: 'space-between', alignItems: 'end', gap: '1rem' },
-    top: { display: 'flex', justifyContent: 'space-between', gap: '1rem' },
-    icon: { color: 'siteAccent' },
+    footer: { display: 'flex', justifyContent: 'space-between', alignItems: 'end', gap: '16px' },
+    top: { display: 'flex', justifyContent: 'space-between', gap: '16px' },
+    icon: { color: 'accent.default' },
     location: {
-      color: 'siteTextMuted',
-      fontSize: '0.62rem',
+      color: 'text.muted',
+      fontSize: '10px',
       letterSpacing: '0.08em',
       textAlign: 'right',
       textTransform: 'uppercase'
     },
     tag: {
-      color: 'siteSuccess',
-      fontSize: '0.62rem',
+      color: 'status.success.foreground',
+      fontSize: '10px',
       letterSpacing: '0.08em',
       textTransform: 'uppercase'
     },
     description: {
-      minHeight: '3.4rem',
-      margin: '0.7rem 0 1rem',
-      color: 'siteTextMuted',
+      minHeight: '56px',
+      margin: '12px 0 16px',
+      color: 'text.muted',
       lineHeight: 1.6
     },
     link: {},
-    title: { margin: 0, color: 'siteText', fontFamily: 'siteHeading' }
+    title: { margin: 0, color: 'text.default', fontFamily: 'siteHeading' }
   },
   variants: {
     kind: {
-      price: { root: { display: 'grid', gap: '0.45rem', padding: '1.1rem' } },
+      price: { root: { display: 'grid', gap: '8px', padding: '18px' } },
       service: {
-        root: { padding: '1.35rem' },
-        title: { marginTop: '1.25rem', fontSize: '1.3rem' }
+        root: { padding: '22px' },
+        title: { marginTop: '20px', fontSize: '20px' }
       },
       item: {
-        root: { display: 'grid', gap: '1.5rem', padding: '1.25rem' },
-        title: { minHeight: '2.8rem', fontSize: '1.1rem' },
-        value: { fontSize: '1.45rem', '& small': { fontSize: '0.65rem', letterSpacing: '0.08em' } }
+        root: { display: 'grid', gap: '24px', padding: '20px' },
+        title: { minHeight: '44px', fontSize: '18px' },
+        value: { fontSize: '24px', '& small': { fontSize: '10px', letterSpacing: '0.08em' } }
       }
     },
     featured: {
-      true: { root: { border: '1px solid rgba(231, 185, 109, 0.45)' } },
+      true: { root: { border: '1px solid var(--colors-line-accent)' } },
       false: {}
     }
   },
@@ -223,29 +218,29 @@ export const exchange = sva({
     root: {
       display: 'grid',
       gridTemplateColumns: '0.8fr 1.2fr',
-      gap: '1.5rem',
-      marginTop: '1.5rem',
-      padding: '1.5rem',
-      border: '1px solid var(--colors-site-border)',
-      borderRadius: '0.4rem',
-      backgroundColor: 'siteSurfaceRaised',
+      gap: '24px',
+      marginTop: '24px',
+      padding: '24px',
+      border: '1px solid var(--colors-line-default)',
+      borderRadius: '6px',
+      backgroundColor: 'surface.raised',
       _mobile: { gridTemplateColumns: '1fr' }
     },
-    rates: { display: 'grid', gap: '0.7rem' },
+    rates: { display: 'grid', gap: '12px' },
     rate: {
       display: 'flex',
       justifyContent: 'space-between',
-      gap: '1rem',
-      paddingBottom: '0.7rem',
-      borderBottom: '1px solid var(--colors-site-border)'
+      gap: '16px',
+      paddingBottom: '12px',
+      borderBottom: '1px solid var(--colors-line-default)'
     },
-    label: { color: 'siteTextMuted' },
-    value: { color: 'siteAccentSoft', textAlign: 'right' },
+    label: { color: 'text.muted' },
+    value: { color: 'accent.soft', textAlign: 'right' },
     note: {
       gridColumn: '1 / -1',
       margin: 0,
-      color: 'siteTextMuted',
-      fontSize: '0.85rem',
+      color: 'text.muted',
+      fontSize: '14px',
       _mobile: { gridColumn: 'auto' }
     }
   },
@@ -259,17 +254,17 @@ export const catalog = sva({
     root: {
       display: 'grid',
       gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-      gap: '1rem',
-      marginTop: '1rem',
-      padding: '1rem 1.25rem',
-      border: '1px solid var(--colors-site-border)',
-      color: 'siteTextMuted',
-      fontSize: '0.83rem',
+      gap: '16px',
+      marginTop: '16px',
+      padding: '16px 20px',
+      border: '1px solid var(--colors-line-default)',
+      color: 'text.muted',
+      fontSize: '14px',
       lineHeight: 1.6,
       _mobile: { gridTemplateColumns: '1fr' }
     },
-    column: { display: 'grid', gap: '0.25rem' },
-    label: { color: 'siteAccentSoft' },
+    column: { display: 'grid', gap: '4px' },
+    label: { color: 'accent.soft' },
     value: {}
   },
   variants: {},

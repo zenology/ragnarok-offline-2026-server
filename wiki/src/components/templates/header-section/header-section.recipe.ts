@@ -5,13 +5,13 @@ export const headerSection = sva({
   base: {
     root: {
       width: '100%',
-      padding: '6.5rem 4.5rem',
-      _mobile: { padding: '4rem 0 3rem 1rem' }
+      padding: '104px 72px',
+      _mobile: { padding: '64px 0 48px 16px' }
     },
     description: {
       maxWidth: '560px',
       margin: 0,
-      fontSize: 'clamp(1.05rem, 2vw, 1.35rem)',
+      fontSize: 'clamp(18px, 2vw, 22px)',
       lineHeight: 1.6
     }
   },
@@ -20,11 +20,11 @@ export const headerSection = sva({
       true: {
         root: {
           backgroundImage:
-            'linear-gradient(90deg, #10110f 0%, rgba(16, 17, 15, 0.94) 35%, rgba(16, 17, 15, 0.45) 75%, transparent 100%), var(--header-image)',
+            'linear-gradient(90deg, var(--colors-surface-canvas) 0%, color-mix(in srgb, var(--colors-surface-canvas) 94%, transparent) 35%, color-mix(in srgb, var(--colors-surface-canvas) 45%, transparent) 75%, transparent 100%), var(--header-image)',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
-          backdropFilter: 'blur(10px)'
+          backdropFilter: 'blur(12px)'
         }
       },
       false: {}

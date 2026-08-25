@@ -2,25 +2,25 @@ import { cva } from 'styled-system/css'
 
 export const link = cva({
   base: {
-    color: 'siteAccentSoft',
+    color: 'accent.soft',
     textDecoration: 'none',
-    _focusVisible: { outline: '2px solid', outlineColor: 'siteAccent', outlineOffset: '3px' }
+    _focusVisible: { outline: '2px solid', outlineColor: 'accent.default', outlineOffset: '4px' }
   },
   variants: {
     variant: {
       jump: {
-        padding: '0.65rem 1rem',
-        border: '1px solid var(--colors-site-border)',
-        borderRadius: '999px',
-        background: 'rgba(231, 185, 109, 0.05)',
-        fontSize: '0.84rem',
-        backdropFilter: 'blur(10px)',
-        _hover: { borderColor: 'siteAccent', background: 'rgba(231, 185, 109, 0.15)' }
+        padding: '10px 16px',
+        border: '1px solid var(--colors-line-default)',
+        borderRadius: '100px',
+        background: 'var(--colors-accent-muted)',
+        fontSize: '14px',
+        backdropFilter: 'blur(12px)',
+        _hover: { borderColor: 'accent.default', background: 'var(--colors-accent-hover)' }
       },
       external: {
-        fontSize: '0.75rem',
+        fontSize: '12px',
         textAlign: 'right',
-        _hover: { color: 'siteText', textDecoration: 'underline' }
+        _hover: { color: 'text.default', textDecoration: 'underline' }
       }
     }
   },

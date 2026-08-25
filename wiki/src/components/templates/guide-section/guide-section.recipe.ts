@@ -4,16 +4,16 @@ export const guideSection = sva({
   slots: ['root', 'heading', 'number'],
   base: {
     root: {
-      padding: '4.5rem 0',
-      borderTop: '1px solid var(--colors-site-border)',
-      scrollMarginTop: '1.5rem',
-      _mobile: { padding: '3.5rem 0' }
+      padding: '72px 0',
+      borderTop: '1px solid var(--colors-line-default)',
+      scrollMarginTop: '24px',
+      _mobile: { padding: '56px 0' }
     },
-    heading: { display: 'flex', gap: '1.25rem', alignItems: 'flex-start', marginBottom: '2.25rem' },
+    heading: { display: 'flex', gap: '20px', alignItems: 'flex-start', marginBottom: '36px' },
     number: {
-      paddingTop: '0.35rem',
-      color: 'siteAccent',
-      fontSize: '0.7rem',
+      paddingTop: '6px',
+      color: 'accent.default',
+      fontSize: '12px',
       letterSpacing: '0.14em',
       textTransform: 'uppercase'
     }

@@ -1,21 +1,21 @@
 import { cva } from 'styled-system/css'
 
 export const heading = cva({
-  base: { margin: 0, color: 'siteText', fontFamily: 'siteHeading' },
+  base: { margin: 0, color: 'text.default', fontFamily: 'siteHeading' },
   variants: {
     level: {
       hero: {
         maxWidth: '760px',
-        margin: '0.75rem 0 1rem',
-        fontSize: 'clamp(3.5rem, 9vw, 7.5rem)',
+        margin: '12px 0 16px',
+        fontSize: 'clamp(56px, 9vw, 120px)',
         lineHeight: 0.9,
         letterSpacing: '-0.065em'
       },
       section: {
-        fontSize: 'clamp(2rem, 4vw, 3.25rem)',
+        fontSize: 'clamp(32px, 4vw, 52px)',
         letterSpacing: '-0.04em'
       },
-      card: { fontSize: '1.1rem' }
+      card: { fontSize: '18px' }
     }
   },
   defaultVariants: { level: 'card' }
