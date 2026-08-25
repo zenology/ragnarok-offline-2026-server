@@ -5,6 +5,7 @@ export default defineConfig({
   preflight: false,
   jsxFramework: 'react',
   include: ['./src/**/*.{js,jsx,ts,tsx}'],
+  hash: process.env.NODE_ENV === 'production',
   theme: {
     extend: {
       tokens: {
