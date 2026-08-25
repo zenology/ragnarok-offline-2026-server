@@ -1,7 +1,17 @@
 {
-  "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
-    "noEmit": true
-  }
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ES2020",
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@shadow-panda/styled-system/*": ["@shadow-panda/styled-system/*"]
+    }
+  },
+  "exclude": ["node_modules"]
 }
