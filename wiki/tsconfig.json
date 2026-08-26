@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "ignoreDeprecations": "6.0",
     "noEmit": true,
     "jsx": "react-jsx",
@@ -11,8 +10,8 @@
     "skipLibCheck": true,
     "types": ["vite/client", "node"],
     "paths": {
-      "@/*": ["src/*"],
-      "styled-system/*": ["styled-system/*"]
+      "@/*": ["./src/*"],
+      "styled-system/*": ["./styled-system/*"]
     }
   },
   "exclude": ["node_modules"]

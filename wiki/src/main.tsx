@@ -2,11 +2,13 @@ import { StrictMode } from 'react'
 
 import { createRoot } from 'react-dom/client'
 
-import BlackMarketPage from '@/pages/black-market'
 import '@/css/custom.css'
+import { RouterProvider } from '@tanstack/react-router'
+
+import { router } from '@/router'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BlackMarketPage />
+    <RouterProvider router={router} />
   </StrictMode>
 )
