@@ -8,7 +8,7 @@ export const heading = cva({
         maxWidth: '760px',
         margin: '12px 0 16px',
         fontSize: 'clamp(56px, 9vw, 120px)',
-        lineHeight: 0.9,
+        lineHeight: 1,
         letterSpacing: '-0.065em'
       },
       section: {

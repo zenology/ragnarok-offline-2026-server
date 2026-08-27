@@ -1,8 +1,9 @@
 import type { ReactNode } from 'react'
 
+import { Link } from '@tanstack/react-router'
+
 import { Heading, Text } from '@/components/atoms'
 import { HeaderSection } from '@/components/templates'
-import { Link } from '@tanstack/react-router'
 
 import { landingPage } from './landing.recipe'
 
