@@ -1,5 +1,8 @@
 import type { ReactNode } from 'react'
 
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { Text } from '@/components/atoms'
 import { ImageViewer } from '@/components/molecules'
 
@@ -15,7 +18,7 @@ export function ContactCard({ contact }: { contact: BlackMarketContact }): React
       <summary className={styles.summary}>
         <span>{contact.city}</span>
         <span className={styles.chevron} aria-hidden="true">
-          +
+          <FontAwesomeIcon icon={faChevronDown} />
         </span>
       </summary>
       <div className={styles.details}>

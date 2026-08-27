@@ -1,5 +1,13 @@
 import type { ReactNode } from 'react'
 
+import {
+  faBoxArchive,
+  faCoins,
+  faGem,
+  faHatWizard,
+  faStore
+} from '@fortawesome/free-solid-svg-icons'
+
 import { Text } from '@/components/atoms'
 import { Callout } from '@/components/molecules'
 import { GuideSection, HeaderSection } from '@/components/templates'
@@ -89,35 +97,35 @@ export default function BlackMarketPage(): ReactNode {
           <div className={gridStyles.service}>
             <ServiceCard
               featured
-              icon="◆"
+              icon={faStore}
               location="Market hall · 41, 159"
               title="Black Market Boss"
               description="Sell accepted monster cards and check your Cash Point balance and loyalty progress."
               tag="Card exchange"
             />
             <ServiceCard
-              icon="◎"
+              icon={faCoins}
               location="Market hall · 26, 181"
               title="Coin Exchange"
               description="Convert Zeny into Cash Points, cash points back into Zeny, or try the optional gacha."
               tag="Currency"
             />
             <ServiceCard
-              icon="✦"
+              icon={faGem}
               location="Market hall · 39, 185"
               title="Rooke"
               description="Browse 94 curated consumables across seven shelves, from EXP and recovery to upgrades and style."
               tag="94 items · CP"
             />
             <ServiceCard
-              icon="◇"
+              icon={faHatWizard}
               location="Market hall · 41, 173"
               title="Harlan"
               description="Browse equipment, rentals, specialty circlets, and event headgear. Every hat costs 100 CP."
               tag="495 hats · 100 CP"
             />
             <ServiceCard
-              icon="▣"
+              icon={faBoxArchive}
               location="Market hall · 48, 161"
               title="Kafra Storage"
               description="Store and retrieve your items inside the market. This service is Storage-only."

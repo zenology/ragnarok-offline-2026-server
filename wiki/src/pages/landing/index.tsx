@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from '@tanstack/react-router'
 
 import { Heading, Text } from '@/components/atoms'
@@ -50,7 +52,9 @@ export default function LandingPage(): ReactNode {
               <Text as="p" tone="muted">
                 {guide.description}
               </Text>
-              <span className={styles.cardAction}>Open guide →</span>
+              <span className={styles.cardAction}>
+                Open guide <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
+              </span>
             </Link>
           ))}
         </div>

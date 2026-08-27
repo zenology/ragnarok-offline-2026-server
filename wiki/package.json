@@ -18,6 +18,9 @@
     "format:check": "prettier . --check"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
+    "@fortawesome/react-fontawesome": "^3.5.0",
     "@tanstack/react-router": "^1.170.32",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

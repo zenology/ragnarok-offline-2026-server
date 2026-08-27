@@ -1,9 +1,13 @@
 import type { ReactNode } from 'react'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { card } from '../styles/recipes'
 
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+
 type ServiceCardProps = {
-  icon: string
+  icon: IconDefinition
   location: string
   title: string
   description: string
@@ -24,7 +28,9 @@ export function ServiceCard({
   return (
     <article className={styles.root}>
       <div className={styles.top}>
-        <span className={styles.icon}>{icon}</span>
+        <span className={styles.icon} aria-hidden="true">
+          <FontAwesomeIcon icon={icon} />
+        </span>
         <span className={styles.location}>{location}</span>
       </div>
       <h3 className={styles.title}>{title}</h3>

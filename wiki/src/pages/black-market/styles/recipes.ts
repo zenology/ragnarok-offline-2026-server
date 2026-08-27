@@ -62,7 +62,8 @@ export const disclosure = sva({
       color: 'accent.default',
       fontSize: '20px',
       lineHeight: 1,
-      '[open] &': { transform: 'rotate(45deg)' }
+      transition: 'transform 160ms ease',
+      '[open] &': { transform: 'rotate(180deg)' }
     },
     details: {
       display: 'grid',
@@ -96,6 +97,7 @@ export const loop = sva({
     arrow: {
       color: 'accent.default',
       fontSize: '24px',
+      lineHeight: 1,
       _mobile: { transform: 'rotate(90deg)', alignSelf: 'center' }
     },
     small: { color: 'text.muted' }
