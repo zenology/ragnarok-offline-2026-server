@@ -1,15 +1,12 @@
-
 import eslint from '@eslint/js'
+import { defineConfig } from 'eslint/config'
+import importPlugin from 'eslint-plugin-import-x'
 import prettierPlugin from 'eslint-plugin-prettier/recommended'
 import reactPlugin from 'eslint-plugin-react'
+import hookPlugin from 'eslint-plugin-react-hooks'
 import securityPlugin from 'eslint-plugin-security'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
-import importPlugin from 'eslint-plugin-import-x'
-import hookPlugin from 'eslint-plugin-react-hooks'
-
-import {defineConfig} from 'eslint/config'
-
 
 export default defineConfig(
   eslint.configs.recommended,
@@ -154,6 +151,12 @@ export default defineConfig(
     }
   },
   {
-    ignores: ['**/node_modules/**', '**/styled-system/**', '**/dist/**', '**/build/**']
+    ignores: [
+      '**/node_modules/**',
+      '**/styled-system/**',
+      '**/dist/**',
+      '**/build/**',
+      '**/.vite/**'
+    ]
   }
 )

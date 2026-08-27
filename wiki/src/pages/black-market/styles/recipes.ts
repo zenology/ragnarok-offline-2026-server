@@ -65,8 +65,7 @@ export const disclosure = sva({
       '[open] &': { transform: 'rotate(45deg)' }
     },
     details: {
-      display: 'flex',
-      flexWrap: 'wrap',
+      display: 'grid',
       gap: '8px 16px',
       padding: '0 18px 16px',
       color: 'text.muted',

@@ -2,8 +2,9 @@ import type { ReactNode } from 'react'
 
 import { Link } from '@/components/atoms'
 
-import type { FeaturedItem } from '../data/black-market'
 import { card } from '../styles/recipes'
+
+import type { FeaturedItem } from '../data/black-market'
 
 export function ItemCard({ item }: { item: FeaturedItem }): ReactNode {
   const styles = card({ kind: 'item' })
