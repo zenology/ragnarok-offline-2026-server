@@ -1,0 +1,635 @@
+//===== Ragnarok Offline =====================================
+//= Black-Market Arms Importer
+//= Soren imports proven iRO weapons from every direction.
+//= Browse is weapon type, then Equipment / Rental / Event, then
+//= 0-9 or A-Z by client identifiedDisplayName, server Name, ID.
+//= Every SKU costs 100 Cash Points. Missing client assets do not
+//= remove stock; this pass changes server data only.
+//============================================================
+
+paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
+	.@eac = eaclass();
+	if ((.@eac&EAJ_BASEMASK) == EAJ_SUMMONER) {
+		mes "[Soren]";
+		mes "A talking cat with opinions about weapons. Good.";
+		mes "I import for discerning customers.";
+		next;
+	} else if (.@eac&EAJL_BABY) {
+		mes "[Soren]";
+		mes "Small frame. Serious stance. I know the difference.";
+		mes "A weapon does not care how young its wielder looks.";
+		next;
+	} else if (.@eac&EAJL_UPPER) {
+		mes "[Soren]";
+		mes "You have the posture of someone who has survived old battles.";
+		mes "Then you already know why good steel is worth finding.";
+		next;
+	}
+	mes "[Soren]";
+	mes "Weapons from every port, ruin, and battlefield I can reach.";
+	mes "I trust what I import, and I will tell you when I do not.";
+	mes "No boasting. No mystery eggs. Just proven weapons.";
+	.@shop$ = "";
+	.@type = select("Book:Bow:Dagger:Gatling Gun:Grenade Launcher:Huuma Shuriken:Instrument:Katar:Knuckle:Mace:One-Handed Axe:One-Handed Spear:One-Handed Sword:Revolver:Rifle:Shotgun:Staff:Two-Handed Axe:Two-Handed Spear:Two-Handed Staff:Two-Handed Sword:Whip:") - 1;
+	if (.@type == 0) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("B:C:D:E:F:I:O:P:R:S:V:") - 1;
+			if (.@letter == 0) .@shop$ = "wep0_0#B";
+			else if (.@letter == 1) .@shop$ = "wep0_0#C";
+			else if (.@letter == 2) .@shop$ = "wep0_0#D";
+			else if (.@letter == 3) .@shop$ = "wep0_0#E";
+			else if (.@letter == 4) .@shop$ = "wep0_0#F";
+			else if (.@letter == 5) .@shop$ = "wep0_0#I";
+			else if (.@letter == 6) .@shop$ = "wep0_0#O";
+			else if (.@letter == 7) .@shop$ = "wep0_0#P";
+			else if (.@letter == 8) .@shop$ = "wep0_0#R";
+			else if (.@letter == 9) .@shop$ = "wep0_0#S";
+			else if (.@letter == 10) .@shop$ = "wep0_0#V";
+		}
+	}
+	if (.@type == 1) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("A:B:C:D:E:F:G:I:M:P:R:S:V:") - 1;
+			if (.@letter == 0) .@shop$ = "wep1_0#A";
+			else if (.@letter == 1) .@shop$ = "wep1_0#B";
+			else if (.@letter == 2) .@shop$ = "wep1_0#C";
+			else if (.@letter == 3) .@shop$ = "wep1_0#D";
+			else if (.@letter == 4) .@shop$ = "wep1_0#E";
+			else if (.@letter == 5) .@shop$ = "wep1_0#F";
+			else if (.@letter == 6) .@shop$ = "wep1_0#G";
+			else if (.@letter == 7) .@shop$ = "wep1_0#I";
+			else if (.@letter == 8) .@shop$ = "wep1_0#M";
+			else if (.@letter == 9) .@shop$ = "wep1_0#P";
+			else if (.@letter == 10) .@shop$ = "wep1_0#R";
+			else if (.@letter == 11) .@shop$ = "wep1_0#S";
+			else if (.@letter == 12) .@shop$ = "wep1_0#V";
+		}
+	}
+	if (.@type == 2) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("A:B:C:D:E:F:G:H:I:J:K:M:R:S:U:V:W:") - 1;
+			if (.@letter == 0) .@shop$ = "wep2_0#A";
+			else if (.@letter == 1) .@shop$ = "wep2_0#B";
+			else if (.@letter == 2) .@shop$ = "wep2_0#C";
+			else if (.@letter == 3) .@shop$ = "wep2_0#D";
+			else if (.@letter == 4) .@shop$ = "wep2_0#E";
+			else if (.@letter == 5) .@shop$ = "wep2_0#F";
+			else if (.@letter == 6) .@shop$ = "wep2_0#G";
+			else if (.@letter == 7) .@shop$ = "wep2_0#H";
+			else if (.@letter == 8) .@shop$ = "wep2_0#I";
+			else if (.@letter == 9) .@shop$ = "wep2_0#J";
+			else if (.@letter == 10) .@shop$ = "wep2_0#K";
+			else if (.@letter == 11) .@shop$ = "wep2_0#M";
+			else if (.@letter == 12) .@shop$ = "wep2_0#R";
+			else if (.@letter == 13) .@shop$ = "wep2_0#S";
+			else if (.@letter == 14) .@shop$ = "wep2_0#U";
+			else if (.@letter == 15) .@shop$ = "wep2_0#V";
+			else if (.@letter == 16) .@shop$ = "wep2_0#W";
+		}
+	}
+	if (.@type == 3) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("C:F:L:R:") - 1;
+			if (.@letter == 0) .@shop$ = "wep3_0#C";
+			else if (.@letter == 1) .@shop$ = "wep3_0#F";
+			else if (.@letter == 2) .@shop$ = "wep3_0#L";
+			else if (.@letter == 3) .@shop$ = "wep3_0#R";
+		}
+	}
+	if (.@type == 4) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("C:D:J:L:") - 1;
+			if (.@letter == 0) .@shop$ = "wep4_0#C";
+			else if (.@letter == 1) .@shop$ = "wep4_0#D";
+			else if (.@letter == 2) .@shop$ = "wep4_0#J";
+			else if (.@letter == 3) .@shop$ = "wep4_0#L";
+		}
+	}
+	if (.@type == 5) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("D:F:H:I:V:W:") - 1;
+			if (.@letter == 0) .@shop$ = "wep5_0#D";
+			else if (.@letter == 1) .@shop$ = "wep5_0#F";
+			else if (.@letter == 2) .@shop$ = "wep5_0#H";
+			else if (.@letter == 3) .@shop$ = "wep5_0#I";
+			else if (.@letter == 4) .@shop$ = "wep5_0#V";
+			else if (.@letter == 5) .@shop$ = "wep5_0#W";
+		}
+	}
+	if (.@type == 6) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("B:C:F:G:H:I:L:N:P:V:") - 1;
+			if (.@letter == 0) .@shop$ = "wep6_0#B";
+			else if (.@letter == 1) .@shop$ = "wep6_0#C";
+			else if (.@letter == 2) .@shop$ = "wep6_0#F";
+			else if (.@letter == 3) .@shop$ = "wep6_0#G";
+			else if (.@letter == 4) .@shop$ = "wep6_0#H";
+			else if (.@letter == 5) .@shop$ = "wep6_0#I";
+			else if (.@letter == 6) .@shop$ = "wep6_0#L";
+			else if (.@letter == 7) .@shop$ = "wep6_0#N";
+			else if (.@letter == 8) .@shop$ = "wep6_0#P";
+			else if (.@letter == 9) .@shop$ = "wep6_0#V";
+		}
+	}
+	if (.@type == 7) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("A:B:C:D:F:G:I:J:K:S:T:U:V:W:") - 1;
+			if (.@letter == 0) .@shop$ = "wep7_0#A";
+			else if (.@letter == 1) .@shop$ = "wep7_0#B";
+			else if (.@letter == 2) .@shop$ = "wep7_0#C";
+			else if (.@letter == 3) .@shop$ = "wep7_0#D";
+			else if (.@letter == 4) .@shop$ = "wep7_0#F";
+			else if (.@letter == 5) .@shop$ = "wep7_0#G";
+			else if (.@letter == 6) .@shop$ = "wep7_0#I";
+			else if (.@letter == 7) .@shop$ = "wep7_0#J";
+			else if (.@letter == 8) .@shop$ = "wep7_0#K";
+			else if (.@letter == 9) .@shop$ = "wep7_0#S";
+			else if (.@letter == 10) .@shop$ = "wep7_0#T";
+			else if (.@letter == 11) .@shop$ = "wep7_0#U";
+			else if (.@letter == 12) .@shop$ = "wep7_0#V";
+			else if (.@letter == 13) .@shop$ = "wep7_0#W";
+		}
+	}
+	if (.@type == 8) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("B:D:F:H:I:K:S:V:") - 1;
+			if (.@letter == 0) .@shop$ = "wep8_0#B";
+			else if (.@letter == 1) .@shop$ = "wep8_0#D";
+			else if (.@letter == 2) .@shop$ = "wep8_0#F";
+			else if (.@letter == 3) .@shop$ = "wep8_0#H";
+			else if (.@letter == 4) .@shop$ = "wep8_0#I";
+			else if (.@letter == 5) .@shop$ = "wep8_0#K";
+			else if (.@letter == 6) .@shop$ = "wep8_0#S";
+			else if (.@letter == 7) .@shop$ = "wep8_0#V";
+		}
+	}
+	if (.@type == 9) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("B:C:E:F:G:I:L:M:N:P:Q:R:S:T:V:W:") - 1;
+			if (.@letter == 0) .@shop$ = "wep9_0#B";
+			else if (.@letter == 1) .@shop$ = "wep9_0#C";
+			else if (.@letter == 2) .@shop$ = "wep9_0#E";
+			else if (.@letter == 3) .@shop$ = "wep9_0#F";
+			else if (.@letter == 4) .@shop$ = "wep9_0#G";
+			else if (.@letter == 5) .@shop$ = "wep9_0#I";
+			else if (.@letter == 6) .@shop$ = "wep9_0#L";
+			else if (.@letter == 7) .@shop$ = "wep9_0#M";
+			else if (.@letter == 8) .@shop$ = "wep9_0#N";
+			else if (.@letter == 9) .@shop$ = "wep9_0#P";
+			else if (.@letter == 10) .@shop$ = "wep9_0#Q";
+			else if (.@letter == 11) .@shop$ = "wep9_0#R";
+			else if (.@letter == 12) .@shop$ = "wep9_0#S";
+			else if (.@letter == 13) .@shop$ = "wep9_0#T";
+			else if (.@letter == 14) .@shop$ = "wep9_0#V";
+			else if (.@letter == 15) .@shop$ = "wep9_0#W";
+		}
+	}
+	if (.@type == 10) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("D:G:I:P:S:V:") - 1;
+			if (.@letter == 0) .@shop$ = "wep10_0#D";
+			else if (.@letter == 1) .@shop$ = "wep10_0#G";
+			else if (.@letter == 2) .@shop$ = "wep10_0#I";
+			else if (.@letter == 3) .@shop$ = "wep10_0#P";
+			else if (.@letter == 4) .@shop$ = "wep10_0#S";
+			else if (.@letter == 5) .@shop$ = "wep10_0#V";
+		}
+	}
+	if (.@type == 11) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("B:C:F:G:H:I:L:M:P:V:") - 1;
+			if (.@letter == 0) .@shop$ = "wep11_0#B";
+			else if (.@letter == 1) .@shop$ = "wep11_0#C";
+			else if (.@letter == 2) .@shop$ = "wep11_0#F";
+			else if (.@letter == 3) .@shop$ = "wep11_0#G";
+			else if (.@letter == 4) .@shop$ = "wep11_0#H";
+			else if (.@letter == 5) .@shop$ = "wep11_0#I";
+			else if (.@letter == 6) .@shop$ = "wep11_0#L";
+			else if (.@letter == 7) .@shop$ = "wep11_0#M";
+			else if (.@letter == 8) .@shop$ = "wep11_0#P";
+			else if (.@letter == 9) .@shop$ = "wep11_0#V";
+		}
+	}
+	if (.@type == 12) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("B:C:D:E:F:G:H:I:N:O:P:R:S:T:V:") - 1;
+			if (.@letter == 0) .@shop$ = "wep12_0#B";
+			else if (.@letter == 1) .@shop$ = "wep12_0#C";
+			else if (.@letter == 2) .@shop$ = "wep12_0#D";
+			else if (.@letter == 3) .@shop$ = "wep12_0#E";
+			else if (.@letter == 4) .@shop$ = "wep12_0#F";
+			else if (.@letter == 5) .@shop$ = "wep12_0#G";
+			else if (.@letter == 6) .@shop$ = "wep12_0#H";
+			else if (.@letter == 7) .@shop$ = "wep12_0#I";
+			else if (.@letter == 8) .@shop$ = "wep12_0#N";
+			else if (.@letter == 9) .@shop$ = "wep12_0#O";
+			else if (.@letter == 10) .@shop$ = "wep12_0#P";
+			else if (.@letter == 11) .@shop$ = "wep12_0#R";
+			else if (.@letter == 12) .@shop$ = "wep12_0#S";
+			else if (.@letter == 13) .@shop$ = "wep12_0#T";
+			else if (.@letter == 14) .@shop$ = "wep12_0#V";
+		}
+	}
+	if (.@type == 13) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("C:D:S:V:W:") - 1;
+			if (.@letter == 0) .@shop$ = "wep13_0#C";
+			else if (.@letter == 1) .@shop$ = "wep13_0#D";
+			else if (.@letter == 2) .@shop$ = "wep13_0#S";
+			else if (.@letter == 3) .@shop$ = "wep13_0#V";
+			else if (.@letter == 4) .@shop$ = "wep13_0#W";
+		}
+	}
+	if (.@type == 14) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("C:F:L:S:") - 1;
+			if (.@letter == 0) .@shop$ = "wep14_0#C";
+			else if (.@letter == 1) .@shop$ = "wep14_0#F";
+			else if (.@letter == 2) .@shop$ = "wep14_0#L";
+			else if (.@letter == 3) .@shop$ = "wep14_0#S";
+		}
+	}
+	if (.@type == 15) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("C:G:I:L:O:") - 1;
+			if (.@letter == 0) .@shop$ = "wep15_0#C";
+			else if (.@letter == 1) .@shop$ = "wep15_0#G";
+			else if (.@letter == 2) .@shop$ = "wep15_0#I";
+			else if (.@letter == 3) .@shop$ = "wep15_0#L";
+			else if (.@letter == 4) .@shop$ = "wep15_0#O";
+		}
+	}
+	if (.@type == 16) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("A:C:D:E:F:G:H:I:L:M:R:S:T:V:W:") - 1;
+			if (.@letter == 0) .@shop$ = "wep16_0#A";
+			else if (.@letter == 1) .@shop$ = "wep16_0#C";
+			else if (.@letter == 2) .@shop$ = "wep16_0#D";
+			else if (.@letter == 3) .@shop$ = "wep16_0#E";
+			else if (.@letter == 4) .@shop$ = "wep16_0#F";
+			else if (.@letter == 5) .@shop$ = "wep16_0#G";
+			else if (.@letter == 6) .@shop$ = "wep16_0#H";
+			else if (.@letter == 7) .@shop$ = "wep16_0#I";
+			else if (.@letter == 8) .@shop$ = "wep16_0#L";
+			else if (.@letter == 9) .@shop$ = "wep16_0#M";
+			else if (.@letter == 10) .@shop$ = "wep16_0#R";
+			else if (.@letter == 11) .@shop$ = "wep16_0#S";
+			else if (.@letter == 12) .@shop$ = "wep16_0#T";
+			else if (.@letter == 13) .@shop$ = "wep16_0#V";
+			else if (.@letter == 14) .@shop$ = "wep16_0#W";
+		}
+	}
+	if (.@type == 17) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("B:C:D:E:F:G:H:I:L:M:R:T:V:Y:") - 1;
+			if (.@letter == 0) .@shop$ = "wep17_0#B";
+			else if (.@letter == 1) .@shop$ = "wep17_0#C";
+			else if (.@letter == 2) .@shop$ = "wep17_0#D";
+			else if (.@letter == 3) .@shop$ = "wep17_0#E";
+			else if (.@letter == 4) .@shop$ = "wep17_0#F";
+			else if (.@letter == 5) .@shop$ = "wep17_0#G";
+			else if (.@letter == 6) .@shop$ = "wep17_0#H";
+			else if (.@letter == 7) .@shop$ = "wep17_0#I";
+			else if (.@letter == 8) .@shop$ = "wep17_0#L";
+			else if (.@letter == 9) .@shop$ = "wep17_0#M";
+			else if (.@letter == 10) .@shop$ = "wep17_0#R";
+			else if (.@letter == 11) .@shop$ = "wep17_0#T";
+			else if (.@letter == 12) .@shop$ = "wep17_0#V";
+			else if (.@letter == 13) .@shop$ = "wep17_0#Y";
+		}
+	}
+	if (.@type == 18) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("B:C:F:G:H:I:J:L:M:R:S:T:V:Z:") - 1;
+			if (.@letter == 0) .@shop$ = "wep18_0#B";
+			else if (.@letter == 1) .@shop$ = "wep18_0#C";
+			else if (.@letter == 2) .@shop$ = "wep18_0#F";
+			else if (.@letter == 3) .@shop$ = "wep18_0#G";
+			else if (.@letter == 4) .@shop$ = "wep18_0#H";
+			else if (.@letter == 5) .@shop$ = "wep18_0#I";
+			else if (.@letter == 6) .@shop$ = "wep18_0#J";
+			else if (.@letter == 7) .@shop$ = "wep18_0#L";
+			else if (.@letter == 8) .@shop$ = "wep18_0#M";
+			else if (.@letter == 9) .@shop$ = "wep18_0#R";
+			else if (.@letter == 10) .@shop$ = "wep18_0#S";
+			else if (.@letter == 11) .@shop$ = "wep18_0#T";
+			else if (.@letter == 12) .@shop$ = "wep18_0#V";
+			else if (.@letter == 13) .@shop$ = "wep18_0#Z";
+		}
+	}
+	if (.@type == 19) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("A:B:C:D:F:G:H:I:K:P:S:V:W:") - 1;
+			if (.@letter == 0) .@shop$ = "wep19_0#A";
+			else if (.@letter == 1) .@shop$ = "wep19_0#B";
+			else if (.@letter == 2) .@shop$ = "wep19_0#C";
+			else if (.@letter == 3) .@shop$ = "wep19_0#D";
+			else if (.@letter == 4) .@shop$ = "wep19_0#F";
+			else if (.@letter == 5) .@shop$ = "wep19_0#G";
+			else if (.@letter == 6) .@shop$ = "wep19_0#H";
+			else if (.@letter == 7) .@shop$ = "wep19_0#I";
+			else if (.@letter == 8) .@shop$ = "wep19_0#K";
+			else if (.@letter == 9) .@shop$ = "wep19_0#P";
+			else if (.@letter == 10) .@shop$ = "wep19_0#S";
+			else if (.@letter == 11) .@shop$ = "wep19_0#V";
+			else if (.@letter == 12) .@shop$ = "wep19_0#W";
+		}
+	}
+	if (.@type == 20) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:R:S:T:V:") - 1;
+			if (.@letter == 0) .@shop$ = "wep20_0#A";
+			else if (.@letter == 1) .@shop$ = "wep20_0#B";
+			else if (.@letter == 2) .@shop$ = "wep20_0#C";
+			else if (.@letter == 3) .@shop$ = "wep20_0#D";
+			else if (.@letter == 4) .@shop$ = "wep20_0#E";
+			else if (.@letter == 5) .@shop$ = "wep20_0#F";
+			else if (.@letter == 6) .@shop$ = "wep20_0#G";
+			else if (.@letter == 7) .@shop$ = "wep20_0#H";
+			else if (.@letter == 8) .@shop$ = "wep20_0#I";
+			else if (.@letter == 9) .@shop$ = "wep20_0#K";
+			else if (.@letter == 10) .@shop$ = "wep20_0#L";
+			else if (.@letter == 11) .@shop$ = "wep20_0#M";
+			else if (.@letter == 12) .@shop$ = "wep20_0#R";
+			else if (.@letter == 13) .@shop$ = "wep20_0#S";
+			else if (.@letter == 14) .@shop$ = "wep20_0#T";
+			else if (.@letter == 15) .@shop$ = "wep20_0#V";
+		}
+	}
+	if (.@type == 21) {
+		.@cat = select("Equipment:") - 1;
+		if (.@cat == 0) {
+			.@letter = select("A:C:F:H:I:L:P:R:S:V:") - 1;
+			if (.@letter == 0) .@shop$ = "wep21_0#A";
+			else if (.@letter == 1) .@shop$ = "wep21_0#C";
+			else if (.@letter == 2) .@shop$ = "wep21_0#F";
+			else if (.@letter == 3) .@shop$ = "wep21_0#H";
+			else if (.@letter == 4) .@shop$ = "wep21_0#I";
+			else if (.@letter == 5) .@shop$ = "wep21_0#L";
+			else if (.@letter == 6) .@shop$ = "wep21_0#P";
+			else if (.@letter == 7) .@shop$ = "wep21_0#R";
+			else if (.@letter == 8) .@shop$ = "wep21_0#S";
+			else if (.@letter == 9) .@shop$ = "wep21_0#V";
+		}
+	}
+	if (.@shop$ == "") { mes "[Soren]"; mes "That crate is empty. Try another drawer."; close; }
+	close2;
+	callshop .@shop$, 1;
+	end;
+
+OnInit:
+	setunittitle(getnpcid(0), "<Arms Importer>");
+	end;
+}
+
+-	pointshop	wep0_0#B	-1,#CASHPOINTS,1586:100,1587:100,540060:100,1557:100,28618:100,540057:100
+-	pointshop	wep0_0#C	-1,#CASHPOINTS,1584:100
+-	pointshop	wep0_0#D	-1,#CASHPOINTS,540054:100,1565:100,540059:100
+-	pointshop	wep0_0#E	-1,#CASHPOINTS,28608:100
+-	pointshop	wep0_0#F	-1,#CASHPOINTS,540091:100,540090:100,540088:100,540086:100,540087:100
+-	pointshop	wep0_0#I	-1,#CASHPOINTS,28612:100,28626:100
+-	pointshop	wep0_0#O	-1,#CASHPOINTS,540055:100
+-	pointshop	wep0_0#P	-1,#CASHPOINTS,28619:100
+-	pointshop	wep0_0#R	-1,#CASHPOINTS,1567:100
+-	pointshop	wep0_0#S	-1,#CASHPOINTS,1563:100,540053:100,540005:100,540004:100
+-	pointshop	wep0_0#V	-1,#CASHPOINTS,28605:100
+-	pointshop	wep1_0#A	-1,#CASHPOINTS,700065:100
+-	pointshop	wep1_0#B	-1,#CASHPOINTS,1722:100,1727:100,1728:100,18114:100,18110:100,18123:100,1730:100
+-	pointshop	wep1_0#C	-1,#CASHPOINTS,18109:100,18111:100,18130:100,1741:100
+-	pointshop	wep1_0#D	-1,#CASHPOINTS,700066:100,700109:100,1736:100
+-	pointshop	wep1_0#E	-1,#CASHPOINTS,1732:100,1746:100
+-	pointshop	wep1_0#F	-1,#CASHPOINTS,1745:100,700100:100,700101:100
+-	pointshop	wep1_0#G	-1,#CASHPOINTS,1716:100,18122:100,700008:100
+-	pointshop	wep1_0#I	-1,#CASHPOINTS,18149:100,18174:100,1737:100
+-	pointshop	wep1_0#M	-1,#CASHPOINTS,18107:100,700078:100,18103:100
+-	pointshop	wep1_0#P	-1,#CASHPOINTS,700009:100
+-	pointshop	wep1_0#R	-1,#CASHPOINTS,1729:100
+-	pointshop	wep1_0#S	-1,#CASHPOINTS,700021:100,18108:100,700007:100
+-	pointshop	wep1_0#V	-1,#CASHPOINTS,18121:100,18145:100
+-	pointshop	wep2_0#A	-1,#CASHPOINTS,13062:100,1232:100,13023:100,13011:100,13069:100
+-	pointshop	wep2_0#B	-1,#CASHPOINTS,13061:100
+-	pointshop	wep2_0#C	-1,#CASHPOINTS,1228:100,13021:100,13004:100,28705:100,1241:100,1206:100
+-	pointshop	wep2_0#D	-1,#CASHPOINTS,1242:100,13022:100,13038:100,13034:100,13001:100
+-	pointshop	wep2_0#E	-1,#CASHPOINTS,1233:100
+-	pointshop	wep2_0#F	-1,#CASHPOINTS,13089:100,13090:100,510151:100,510150:100
+-	pointshop	wep2_0#G	-1,#CASHPOINTS,13002:100,510009:100
+-	pointshop	wep2_0#H	-1,#CASHPOINTS,13015:100,510092:100
+-	pointshop	wep2_0#I	-1,#CASHPOINTS,1230:100,13017:100,510034:100,28745:100,28725:100,13039:100
+-	pointshop	wep2_0#J	-1,#CASHPOINTS,13008:100
+-	pointshop	wep2_0#K	-1,#CASHPOINTS,13046:100
+-	pointshop	wep2_0#M	-1,#CASHPOINTS,13025:100,28721:100,1234:100,13026:100
+-	pointshop	wep2_0#R	-1,#CASHPOINTS,13092:100
+-	pointshop	wep2_0#S	-1,#CASHPOINTS,13035:100,13068:100,13027:100,13070:100,13024:100
+-	pointshop	wep2_0#U	-1,#CASHPOINTS,510091:100
+-	pointshop	wep2_0#V	-1,#CASHPOINTS,28717:100,28706:100,13085:100
+-	pointshop	wep2_0#W	-1,#CASHPOINTS,13047:100,510008:100
+-	pointshop	wep3_0#C	-1,#CASHPOINTS,28241:100
+-	pointshop	wep3_0#F	-1,#CASHPOINTS,830038:100
+-	pointshop	wep3_0#L	-1,#CASHPOINTS,830026:100,830001:100
+-	pointshop	wep3_0#R	-1,#CASHPOINTS,830025:100
+-	pointshop	wep4_0#C	-1,#CASHPOINTS,28243:100
+-	pointshop	wep4_0#D	-1,#CASHPOINTS,840020:100
+-	pointshop	wep4_0#J	-1,#CASHPOINTS,840021:100
+-	pointshop	wep4_0#L	-1,#CASHPOINTS,840000:100
+-	pointshop	wep5_0#D	-1,#CASHPOINTS,650033:100
+-	pointshop	wep5_0#F	-1,#CASHPOINTS,610072:100,650049:100
+-	pointshop	wep5_0#H	-1,#CASHPOINTS,13303:100,13314:100,650034:100,13332:100,13313:100,13315:100,13300:100
+-	pointshop	wep5_0#I	-1,#CASHPOINTS,13337:100,13338:100
+-	pointshop	wep5_0#V	-1,#CASHPOINTS,13328:100
+-	pointshop	wep5_0#W	-1,#CASHPOINTS,650003:100
+-	pointshop	wep6_0#B	-1,#CASHPOINTS,1920:100
+-	pointshop	wep6_0#C	-1,#CASHPOINTS,1925:100,1934:100,570036:100,1939:100
+-	pointshop	wep6_0#F	-1,#CASHPOINTS,570073:100,570072:100
+-	pointshop	wep6_0#G	-1,#CASHPOINTS,1930:100
+-	pointshop	wep6_0#H	-1,#CASHPOINTS,1910:100,1944:100
+-	pointshop	wep6_0#I	-1,#CASHPOINTS,570008:100
+-	pointshop	wep6_0#L	-1,#CASHPOINTS,570037:100
+-	pointshop	wep6_0#N	-1,#CASHPOINTS,1935:100
+-	pointshop	wep6_0#P	-1,#CASHPOINTS,570005:100
+-	pointshop	wep6_0#V	-1,#CASHPOINTS,1900:100
+-	pointshop	wep7_0#A	-1,#CASHPOINTS,1290:100,610006:100,610029:100
+-	pointshop	wep7_0#B	-1,#CASHPOINTS,1273:100,1271:100,1295:100
+-	pointshop	wep7_0#C	-1,#CASHPOINTS,1285:100
+-	pointshop	wep7_0#D	-1,#CASHPOINTS,1270:100
+-	pointshop	wep7_0#F	-1,#CASHPOINTS,610071:100
+-	pointshop	wep7_0#G	-1,#CASHPOINTS,1281:100,1291:100
+-	pointshop	wep7_0#I	-1,#CASHPOINTS,28022:100,610012:100,28023:100,1266:100,1267:100,1269:100,1297:100
+-	pointshop	wep7_0#J	-1,#CASHPOINTS,28010:100
+-	pointshop	wep7_0#K	-1,#CASHPOINTS,1256:100,1258:100,1284:100
+-	pointshop	wep7_0#S	-1,#CASHPOINTS,1260:100,610045:100
+-	pointshop	wep7_0#T	-1,#CASHPOINTS,610044:100
+-	pointshop	wep7_0#U	-1,#CASHPOINTS,1274:100
+-	pointshop	wep7_0#V	-1,#CASHPOINTS,1264:100,28008:100
+-	pointshop	wep7_0#W	-1,#CASHPOINTS,1268:100
+-	pointshop	wep8_0#B	-1,#CASHPOINTS,1832:100
+-	pointshop	wep8_0#D	-1,#CASHPOINTS,560036:100
+-	pointshop	wep8_0#F	-1,#CASHPOINTS,560068:100,560067:100
+-	pointshop	wep8_0#H	-1,#CASHPOINTS,1815:100,1825:100
+-	pointshop	wep8_0#I	-1,#CASHPOINTS,1846:100,560004:100,1837:100
+-	pointshop	wep8_0#K	-1,#CASHPOINTS,1817:100
+-	pointshop	wep8_0#S	-1,#CASHPOINTS,1835:100,1830:100
+-	pointshop	wep8_0#V	-1,#CASHPOINTS,1800:100
+-	pointshop	wep9_0#B	-1,#CASHPOINTS,16017:100
+-	pointshop	wep9_0#C	-1,#CASHPOINTS,16003:100,16040:100
+-	pointshop	wep9_0#E	-1,#CASHPOINTS,590006:100,16000:100
+-	pointshop	wep9_0#F	-1,#CASHPOINTS,590087:100
+-	pointshop	wep9_0#G	-1,#CASHPOINTS,1524:100
+-	pointshop	wep9_0#I	-1,#CASHPOINTS,16065:100,16063:100
+-	pointshop	wep9_0#L	-1,#CASHPOINTS,1525:100,1544:100
+-	pointshop	wep9_0#M	-1,#CASHPOINTS,16018:100
+-	pointshop	wep9_0#N	-1,#CASHPOINTS,1541:100,16022:100,16029:100
+-	pointshop	wep9_0#P	-1,#CASHPOINTS,16031:100,590045:100
+-	pointshop	wep9_0#Q	-1,#CASHPOINTS,1527:100,16024:100
+-	pointshop	wep9_0#R	-1,#CASHPOINTS,16010:100,16001:100,16033:100,16026:100
+-	pointshop	wep9_0#S	-1,#CASHPOINTS,16039:100
+-	pointshop	wep9_0#T	-1,#CASHPOINTS,16016:100
+-	pointshop	wep9_0#V	-1,#CASHPOINTS,16051:100,1548:100,16041:100
+-	pointshop	wep9_0#W	-1,#CASHPOINTS,1534:100
+-	pointshop	wep10_0#D	-1,#CASHPOINTS,1341:100
+-	pointshop	wep10_0#G	-1,#CASHPOINTS,1310:100
+-	pointshop	wep10_0#I	-1,#CASHPOINTS,1326:100
+-	pointshop	wep10_0#P	-1,#CASHPOINTS,520002:100
+-	pointshop	wep10_0#S	-1,#CASHPOINTS,520003:100
+-	pointshop	wep10_0#V	-1,#CASHPOINTS,1311:100
+-	pointshop	wep11_0#B	-1,#CASHPOINTS,1436:100
+-	pointshop	wep11_0#C	-1,#CASHPOINTS,1435:100
+-	pointshop	wep11_0#F	-1,#CASHPOINTS,530057:100
+-	pointshop	wep11_0#G	-1,#CASHPOINTS,1414:100,1449:100,1426:100,530002:100,1413:100
+-	pointshop	wep11_0#H	-1,#CASHPOINTS,530045:100
+-	pointshop	wep11_0#I	-1,#CASHPOINTS,530015:100,32005:100,1433:100
+-	pointshop	wep11_0#L	-1,#CASHPOINTS,1420:100
+-	pointshop	wep11_0#M	-1,#CASHPOINTS,32013:100
+-	pointshop	wep11_0#P	-1,#CASHPOINTS,1447:100,1419:100
+-	pointshop	wep11_0#V	-1,#CASHPOINTS,1400:100
+-	pointshop	wep12_0#B	-1,#CASHPOINTS,500065:100,1140:100
+-	pointshop	wep12_0#C	-1,#CASHPOINTS,13431:100,13454:100,13402:100,1135:100
+-	pointshop	wep12_0#D	-1,#CASHPOINTS,500062:100,500072:100,500009:100
+-	pointshop	wep12_0#E	-1,#CASHPOINTS,1132:100,1137:100,13401:100
+-	pointshop	wep12_0#F	-1,#CASHPOINTS,500101:100,500102:100,500103:100
+-	pointshop	wep12_0#G	-1,#CASHPOINTS,500063:100
+-	pointshop	wep12_0#H	-1,#CASHPOINTS,1128:100,500007:100
+-	pointshop	wep12_0#I	-1,#CASHPOINTS,500030:100,13469:100,1141:100,13409:100,500005:100,500008:100
+-	pointshop	wep12_0#N	-1,#CASHPOINTS,13407:100
+-	pointshop	wep12_0#O	-1,#CASHPOINTS,13442:100
+-	pointshop	wep12_0#P	-1,#CASHPOINTS,13404:100
+-	pointshop	wep12_0#R	-1,#CASHPOINTS,1111:100,1125:100,13421:100
+-	pointshop	wep12_0#S	-1,#CASHPOINTS,1127:100,13465:100,1114:100,1134:100,13461:100,13460:100,13462:100,1136:100,13403:100,1148:100
+-	pointshop	wep12_0#T	-1,#CASHPOINTS,13412:100,13413:100
+-	pointshop	wep12_0#V	-1,#CASHPOINTS,13455:100,500066:100
+-	pointshop	wep13_0#C	-1,#CASHPOINTS,13146:100
+-	pointshop	wep13_0#D	-1,#CASHPOINTS,800027:100,800026:100
+-	pointshop	wep13_0#S	-1,#CASHPOINTS,13100:100
+-	pointshop	wep13_0#V	-1,#CASHPOINTS,13128:100
+-	pointshop	wep13_0#W	-1,#CASHPOINTS,13107:100
+-	pointshop	wep14_0#C	-1,#CASHPOINTS,28240:100
+-	pointshop	wep14_0#F	-1,#CASHPOINTS,810042:100
+-	pointshop	wep14_0#L	-1,#CASHPOINTS,810027:100,13170:100,810000:100
+-	pointshop	wep14_0#S	-1,#CASHPOINTS,810026:100
+-	pointshop	wep15_0#C	-1,#CASHPOINTS,28242:100
+-	pointshop	wep15_0#G	-1,#CASHPOINTS,13167:100
+-	pointshop	wep15_0#I	-1,#CASHPOINTS,28244:100
+-	pointshop	wep15_0#L	-1,#CASHPOINTS,820021:100,820000:100
+-	pointshop	wep15_0#O	-1,#CASHPOINTS,820020:100
+-	pointshop	wep16_0#A	-1,#CASHPOINTS,550009:100,1643:100
+-	pointshop	wep16_0#C	-1,#CASHPOINTS,1680:100,1647:100
+-	pointshop	wep16_0#D	-1,#CASHPOINTS,550115:100
+-	pointshop	wep16_0#E	-1,#CASHPOINTS,1637:100,1615:100,1696:100,1697:100
+-	pointshop	wep16_0#F	-1,#CASHPOINTS,550143:100,550144:100,550141:100,550145:100,550150:100,550146:100,550148:100
+-	pointshop	wep16_0#G	-1,#CASHPOINTS,1629:100,550008:100
+-	pointshop	wep16_0#H	-1,#CASHPOINTS,1631:100
+-	pointshop	wep16_0#I	-1,#CASHPOINTS,550031:100,26109:100,550030:100
+-	pointshop	wep16_0#L	-1,#CASHPOINTS,1646:100,1659:100,550116:100
+-	pointshop	wep16_0#M	-1,#CASHPOINTS,1692:100,1693:100,1661:100,1654:100,1623:100
+-	pointshop	wep16_0#R	-1,#CASHPOINTS,1670:100
+-	pointshop	wep16_0#S	-1,#CASHPOINTS,1672:100,550088:100,550093:100,550094:100,1648:100,1665:100,1668:100
+-	pointshop	wep16_0#T	-1,#CASHPOINTS,1636:100
+-	pointshop	wep16_0#V	-1,#CASHPOINTS,1600:100
+-	pointshop	wep16_0#W	-1,#CASHPOINTS,1660:100,1614:100,1616:100
+-	pointshop	wep17_0#B	-1,#CASHPOINTS,1396:100,1375:100,1385:100
+-	pointshop	wep17_0#C	-1,#CASHPOINTS,28106:100
+-	pointshop	wep17_0#D	-1,#CASHPOINTS,620022:100,1370:100
+-	pointshop	wep17_0#E	-1,#CASHPOINTS,1393:100
+-	pointshop	wep17_0#F	-1,#CASHPOINTS,620040:100
+-	pointshop	wep17_0#G	-1,#CASHPOINTS,1387:100,1369:100
+-	pointshop	wep17_0#H	-1,#CASHPOINTS,1376:100,1377:100
+-	pointshop	wep17_0#I	-1,#CASHPOINTS,620010:100
+-	pointshop	wep17_0#L	-1,#CASHPOINTS,1372:100
+-	pointshop	wep17_0#M	-1,#CASHPOINTS,28116:100
+-	pointshop	wep17_0#R	-1,#CASHPOINTS,1373:100
+-	pointshop	wep17_0#T	-1,#CASHPOINTS,1368:100,1374:100,28101:100,1361:100
+-	pointshop	wep17_0#V	-1,#CASHPOINTS,1384:100,28107:100
+-	pointshop	wep17_0#Y	-1,#CASHPOINTS,1392:100
+-	pointshop	wep18_0#B	-1,#CASHPOINTS,1492:100,1470:100
+-	pointshop	wep18_0#C	-1,#CASHPOINTS,1484:100,1466:100,1476:100,1498:100
+-	pointshop	wep18_0#F	-1,#CASHPOINTS,630045:100
+-	pointshop	wep18_0#G	-1,#CASHPOINTS,1474:100,1490:100,1455:100
+-	pointshop	wep18_0#H	-1,#CASHPOINTS,1471:100
+-	pointshop	wep18_0#I	-1,#CASHPOINTS,630006:100,26007:100,630007:100,1483:100
+-	pointshop	wep18_0#J	-1,#CASHPOINTS,630027:100
+-	pointshop	wep18_0#L	-1,#CASHPOINTS,1411:100,1469:100,630003:100
+-	pointshop	wep18_0#M	-1,#CASHPOINTS,1489:100
+-	pointshop	wep18_0#R	-1,#CASHPOINTS,26016:100
+-	pointshop	wep18_0#S	-1,#CASHPOINTS,1477:100
+-	pointshop	wep18_0#T	-1,#CASHPOINTS,1461:100
+-	pointshop	wep18_0#V	-1,#CASHPOINTS,1450:100
+-	pointshop	wep18_0#Z	-1,#CASHPOINTS,1468:100
+-	pointshop	wep19_0#A	-1,#CASHPOINTS,2012:100
+-	pointshop	wep19_0#B	-1,#CASHPOINTS,2049:100
+-	pointshop	wep19_0#C	-1,#CASHPOINTS,2025:100,2013:100
+-	pointshop	wep19_0#D	-1,#CASHPOINTS,2005:100,640037:100,640036:100,2001:100
+-	pointshop	wep19_0#F	-1,#CASHPOINTS,2014:100,640053:100
+-	pointshop	wep19_0#G	-1,#CASHPOINTS,2011:100
+-	pointshop	wep19_0#H	-1,#CASHPOINTS,26138:100
+-	pointshop	wep19_0#I	-1,#CASHPOINTS,26139:100,2051:100,2039:100
+-	pointshop	wep19_0#K	-1,#CASHPOINTS,2004:100
+-	pointshop	wep19_0#P	-1,#CASHPOINTS,640005:100
+-	pointshop	wep19_0#S	-1,#CASHPOINTS,1472:100,2000:100,2027:100
+-	pointshop	wep19_0#V	-1,#CASHPOINTS,2026:100
+-	pointshop	wep19_0#W	-1,#CASHPOINTS,1473:100
+-	pointshop	wep20_0#A	-1,#CASHPOINTS,1191:100
+-	pointshop	wep20_0#B	-1,#CASHPOINTS,21001:100,1182:100,1162:100
+-	pointshop	wep20_0#C	-1,#CASHPOINTS,1196:100,21015:100
+-	pointshop	wep20_0#D	-1,#CASHPOINTS,1186:100
+-	pointshop	wep20_0#E	-1,#CASHPOINTS,600041:100,1174:100
+-	pointshop	wep20_0#F	-1,#CASHPOINTS,21053:100,600059:100
+-	pointshop	wep20_0#G	-1,#CASHPOINTS,21011:100
+-	pointshop	wep20_0#H	-1,#CASHPOINTS,1198:100,600008:100
+-	pointshop	wep20_0#I	-1,#CASHPOINTS,600011:100
+-	pointshop	wep20_0#K	-1,#CASHPOINTS,1170:100,1189:100
+-	pointshop	wep20_0#L	-1,#CASHPOINTS,21018:100
+-	pointshop	wep20_0#M	-1,#CASHPOINTS,1173:100,21003:100,1176:100
+-	pointshop	wep20_0#R	-1,#CASHPOINTS,21039:100
+-	pointshop	wep20_0#S	-1,#CASHPOINTS,1167:100
+-	pointshop	wep20_0#T	-1,#CASHPOINTS,1181:100
+-	pointshop	wep20_0#V	-1,#CASHPOINTS,1188:100,21016:100
+-	pointshop	wep21_0#A	-1,#CASHPOINTS,1990:100
+-	pointshop	wep21_0#C	-1,#CASHPOINTS,580037:100
+-	pointshop	wep21_0#F	-1,#CASHPOINTS,580072:100,580073:100
+-	pointshop	wep21_0#H	-1,#CASHPOINTS,26200:100
+-	pointshop	wep21_0#I	-1,#CASHPOINTS,580008:100
+-	pointshop	wep21_0#L	-1,#CASHPOINTS,580038:100
+-	pointshop	wep21_0#P	-1,#CASHPOINTS,580005:100
+-	pointshop	wep21_0#R	-1,#CASHPOINTS,1989:100,1985:100
+-	pointshop	wep21_0#S	-1,#CASHPOINTS,1984:100
+-	pointshop	wep21_0#V	-1,#CASHPOINTS,1996:100

@@ -315,7 +315,7 @@ OnInit:
 function	script	F_OfflineMvpCardAlbum	{
 	.@size = getarraysize($@CC_MvpAlbumCards);
 	if (.@size <= 0) {
-		displaymessage strcharinfo(0), "The MVP Card Album is not ready yet.";
+		message strcharinfo(0), "The MVP Card Album is not ready yet.";
 		getitem 35000,1;
 		return;
 	}
