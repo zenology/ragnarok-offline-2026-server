@@ -226572,10 +226572,12 @@ Body:
       bonus2 bAddRace,RC_Demon,50;
       bonus2 bAddRace,RC_Undead,50;
       bonus3 bAutoSpell,"ASC_BREAKER",max(getskilllv("ASC_BREAKER"),3),100+(30*.@r);
-      if (.@r>=8) {
+      if (.@r>=11) {
          skill "ASC_BREAKER",5;
          bonus bNoSizeFix;
       }
+      if (.@r>=12)
+         bonus bAtkRate,20;
   - Id: 500006
     AegisName: Woe_Onehand_Sword2_Z
     Name: Intermediate Guild Member's Flamberge
@@ -236799,6 +236801,10 @@ Body:
       bonus2 bSkillAtk,"MG_COLDBOLT",25*.@r;
       bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",25*.@r;
       bonus2 bSkillAtk,"WZ_EARTHSPIKE",25*.@r;
+      if (.@r>=11) {
+         bonus bAspd,2;
+         bonus bMatkRate,20;
+      }
   - Id: 540058
     AegisName: F_Ein_1HBOOK
     Name: Flush Safety Manual
@@ -253647,7 +253653,7 @@ Body:
       }
   - Id: 610029
     AegisName: Kings_Double_Edge_A
-    Name: Awakened Old King's Double Edge
+    Name: Awakened Old King's Twin Blades
     Type: Weapon
     SubType: Katar
     Buy: 20
@@ -253667,16 +253673,16 @@ Body:
     Refineable: true
     Script: |
       .@r = getrefine();
-      .@b = BaseLevel;
-      if (.@r>=9)
+      .@b = min(BaseLevel,240);
+      if (.@r>=13)
          .@b *= 3;
-      else if (.@r>=7)
+      else if (.@r>=11)
          .@b *= 2;
       bonus2 bSubRace,RC_Player_Human,30;
       bonus2 bSkillAtk,"GC_CROSSIMPACT",.@b;
       bonus2 bSkillAtk,"GC_CROSSRIPPERSLASHER",.@b;
       bonus2 bSkillAtk,"GC_ROLLINGCUTTER",.@b;
-      if (.@r>=10) {
+      if (.@r>=14) {
          bonus bDefRatioAtkClass,Class_All;
          bonus2 bSkillCooldown,"GC_ROLLINGCUTTER",-200;
       }
