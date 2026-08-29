@@ -121,8 +121,8 @@ export default function BlackMarketPage(): ReactNode {
               icon={faHatWizard}
               location="Market hall · 41, 173"
               title="Harlan"
-              description="Browse equipment, rentals, specialty circlets, and event headgear. Every hat costs 100 CP."
-              tag="495 hats · 100 CP"
+              description="Browse equipment, rentals, specialty circlets, and event headgear. Prices reflect each hat's abilities, so a higher price is a quick clue that it offers more."
+              tag="495 hats · priced by power"
             />
             <ServiceCard
               icon={faBoxArchive}
@@ -132,6 +132,13 @@ export default function BlackMarketPage(): ReactNode {
               tag="Storage"
             />
           </div>
+          <Callout variant="notice">
+            <strong>Harlan&apos;s prices are a useful hint.</strong> Hats with stronger combat
+            effects, useful casting bonuses, or powerful combinations cost more Cash Points.
+            Requirements such as refinement, level, and grading are considered too, but the effect
+            itself remains the main signal. A higher price can point you toward a valuable hat for
+            your build, but always check the item description before you buy.
+          </Callout>
           <CatalogStrip rookeShelves={rookeShelves} harlanCatalogs={harlanCatalogs} />
         </GuideSection>
 

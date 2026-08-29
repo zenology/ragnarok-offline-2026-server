@@ -215,7 +215,7 @@ export const featuredItems: FeaturedItem[] = [
   {
     name: 'Issgard Helmet',
     itemId: 401019,
-    price: 100,
+    price: 2100,
     category: 'Harlan · Equipment',
     divinePrideUrl: 'https://www.divine-pride.net/database/item/401019/s2-issgard-helmet'
   }
