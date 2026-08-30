@@ -1,9 +1,9 @@
 //===== Ragnarok Offline =====================================
 //= Black-Market Arms Importer
 //= Soren imports proven iRO weapons from every direction.
-//= Browse is weapon type, then Equipment / Rental / Event, then
+//= Browse is weapon type, then Equipment / Specialty / Rental / Event, then
 //= 0-9 or A-Z by client identifiedDisplayName, server Name, ID.
-//= Every SKU costs 100 Cash Points. Missing client assets do not
+//= Every SKU uses the audited Cash Point price. Missing client assets do not
 //= remove stock; this pass changes server data only.
 //============================================================
 
@@ -32,24 +32,35 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	.@shop$ = "";
 	.@type = select("Book:Bow:Dagger:Gatling Gun:Grenade Launcher:Huuma Shuriken:Instrument:Katar:Knuckle:Mace:One-Handed Axe:One-Handed Spear:One-Handed Sword:Revolver:Rifle:Shotgun:Staff:Two-Handed Axe:Two-Handed Spear:Two-Handed Staff:Two-Handed Sword:Whip:") - 1;
 	if (.@type == 0) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:D:E:F:I:O:P:R:S:V:") - 1;
+			.@letter = select("B:C:D:E:F:O:P:R:S:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep0_0#B";
 			else if (.@letter == 1) .@shop$ = "wep0_0#C";
 			else if (.@letter == 2) .@shop$ = "wep0_0#D";
 			else if (.@letter == 3) .@shop$ = "wep0_0#E";
 			else if (.@letter == 4) .@shop$ = "wep0_0#F";
-			else if (.@letter == 5) .@shop$ = "wep0_0#I";
-			else if (.@letter == 6) .@shop$ = "wep0_0#O";
-			else if (.@letter == 7) .@shop$ = "wep0_0#P";
-			else if (.@letter == 8) .@shop$ = "wep0_0#R";
-			else if (.@letter == 9) .@shop$ = "wep0_0#S";
-			else if (.@letter == 10) .@shop$ = "wep0_0#V";
+			else if (.@letter == 5) .@shop$ = "wep0_0#O";
+			else if (.@letter == 6) .@shop$ = "wep0_0#P";
+			else if (.@letter == 7) .@shop$ = "wep0_0#R";
+			else if (.@letter == 8) .@shop$ = "wep0_0#S";
+			else if (.@letter == 9) .@shop$ = "wep0_0#V";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep0_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep0_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep0_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep0_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep0_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep0_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep0_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep0_1#S7";
+			else if (.@letter == 8) .@shop$ = "wep0_1#S8";
 		}
 	}
 	if (.@type == 1) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("A:B:C:D:E:F:G:I:M:P:R:S:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep1_0#A";
@@ -66,9 +77,21 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 11) .@shop$ = "wep1_0#S";
 			else if (.@letter == 12) .@shop$ = "wep1_0#V";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep1_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep1_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep1_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep1_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep1_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep1_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep1_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep1_1#S7";
+			else if (.@letter == 8) .@shop$ = "wep1_1#S8";
+		}
 	}
 	if (.@type == 2) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("A:B:C:D:E:F:G:H:I:J:K:M:R:S:U:V:W:") - 1;
 			if (.@letter == 0) .@shop$ = "wep2_0#A";
@@ -89,9 +112,21 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 15) .@shop$ = "wep2_0#V";
 			else if (.@letter == 16) .@shop$ = "wep2_0#W";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep2_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep2_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep2_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep2_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep2_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep2_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep2_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep2_1#S7";
+			else if (.@letter == 8) .@shop$ = "wep2_1#S8";
+		}
 	}
 	if (.@type == 3) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("C:F:L:R:") - 1;
 			if (.@letter == 0) .@shop$ = "wep3_0#C";
@@ -99,9 +134,18 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 2) .@shop$ = "wep3_0#L";
 			else if (.@letter == 3) .@shop$ = "wep3_0#R";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Glacier:Illusion:Poenitentia:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep3_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep3_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep3_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep3_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep3_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep3_1#S5";
+		}
 	}
 	if (.@type == 4) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("C:D:J:L:") - 1;
 			if (.@letter == 0) .@shop$ = "wep4_0#C";
@@ -109,37 +153,66 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 2) .@shop$ = "wep4_0#J";
 			else if (.@letter == 3) .@shop$ = "wep4_0#L";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Glacier:Poenitentia:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep4_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep4_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep4_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep4_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep4_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep4_1#S5";
+		}
 	}
 	if (.@type == 5) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("D:F:H:I:V:W:") - 1;
+			.@letter = select("D:F:H:V:W:") - 1;
 			if (.@letter == 0) .@shop$ = "wep5_0#D";
 			else if (.@letter == 1) .@shop$ = "wep5_0#F";
 			else if (.@letter == 2) .@shop$ = "wep5_0#H";
-			else if (.@letter == 3) .@shop$ = "wep5_0#I";
-			else if (.@letter == 4) .@shop$ = "wep5_0#V";
-			else if (.@letter == 5) .@shop$ = "wep5_0#W";
+			else if (.@letter == 3) .@shop$ = "wep5_0#V";
+			else if (.@letter == 4) .@shop$ = "wep5_0#W";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep5_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep5_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep5_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep5_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep5_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep5_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep5_1#S6";
 		}
 	}
 	if (.@type == 6) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:F:G:H:I:L:N:P:V:") - 1;
+			.@letter = select("B:C:F:G:H:L:N:P:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep6_0#B";
 			else if (.@letter == 1) .@shop$ = "wep6_0#C";
 			else if (.@letter == 2) .@shop$ = "wep6_0#F";
 			else if (.@letter == 3) .@shop$ = "wep6_0#G";
 			else if (.@letter == 4) .@shop$ = "wep6_0#H";
-			else if (.@letter == 5) .@shop$ = "wep6_0#I";
-			else if (.@letter == 6) .@shop$ = "wep6_0#L";
-			else if (.@letter == 7) .@shop$ = "wep6_0#N";
-			else if (.@letter == 8) .@shop$ = "wep6_0#P";
-			else if (.@letter == 9) .@shop$ = "wep6_0#V";
+			else if (.@letter == 5) .@shop$ = "wep6_0#L";
+			else if (.@letter == 6) .@shop$ = "wep6_0#N";
+			else if (.@letter == 7) .@shop$ = "wep6_0#P";
+			else if (.@letter == 8) .@shop$ = "wep6_0#V";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep6_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep6_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep6_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep6_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep6_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep6_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep6_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep6_1#S7";
+			else if (.@letter == 8) .@shop$ = "wep6_1#S8";
 		}
 	}
 	if (.@type == 7) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("A:B:C:D:F:G:I:J:K:S:T:U:V:W:") - 1;
 			if (.@letter == 0) .@shop$ = "wep7_0#A";
@@ -157,9 +230,20 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 12) .@shop$ = "wep7_0#V";
 			else if (.@letter == 13) .@shop$ = "wep7_0#W";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep7_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep7_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep7_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep7_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep7_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep7_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep7_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep7_1#S7";
+		}
 	}
 	if (.@type == 8) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("B:D:F:H:I:K:S:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep8_0#B";
@@ -171,43 +255,72 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 6) .@shop$ = "wep8_0#S";
 			else if (.@letter == 7) .@shop$ = "wep8_0#V";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep8_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep8_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep8_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep8_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep8_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep8_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep8_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep8_1#S7";
+			else if (.@letter == 8) .@shop$ = "wep8_1#S8";
+		}
 	}
 	if (.@type == 9) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:E:F:G:I:L:M:N:P:Q:R:S:T:V:W:") - 1;
+			.@letter = select("B:C:E:F:G:L:M:N:P:Q:R:S:T:V:W:") - 1;
 			if (.@letter == 0) .@shop$ = "wep9_0#B";
 			else if (.@letter == 1) .@shop$ = "wep9_0#C";
 			else if (.@letter == 2) .@shop$ = "wep9_0#E";
 			else if (.@letter == 3) .@shop$ = "wep9_0#F";
 			else if (.@letter == 4) .@shop$ = "wep9_0#G";
-			else if (.@letter == 5) .@shop$ = "wep9_0#I";
-			else if (.@letter == 6) .@shop$ = "wep9_0#L";
-			else if (.@letter == 7) .@shop$ = "wep9_0#M";
-			else if (.@letter == 8) .@shop$ = "wep9_0#N";
-			else if (.@letter == 9) .@shop$ = "wep9_0#P";
-			else if (.@letter == 10) .@shop$ = "wep9_0#Q";
-			else if (.@letter == 11) .@shop$ = "wep9_0#R";
-			else if (.@letter == 12) .@shop$ = "wep9_0#S";
-			else if (.@letter == 13) .@shop$ = "wep9_0#T";
-			else if (.@letter == 14) .@shop$ = "wep9_0#V";
-			else if (.@letter == 15) .@shop$ = "wep9_0#W";
+			else if (.@letter == 5) .@shop$ = "wep9_0#L";
+			else if (.@letter == 6) .@shop$ = "wep9_0#M";
+			else if (.@letter == 7) .@shop$ = "wep9_0#N";
+			else if (.@letter == 8) .@shop$ = "wep9_0#P";
+			else if (.@letter == 9) .@shop$ = "wep9_0#Q";
+			else if (.@letter == 10) .@shop$ = "wep9_0#R";
+			else if (.@letter == 11) .@shop$ = "wep9_0#S";
+			else if (.@letter == 12) .@shop$ = "wep9_0#T";
+			else if (.@letter == 13) .@shop$ = "wep9_0#V";
+			else if (.@letter == 14) .@shop$ = "wep9_0#W";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep9_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep9_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep9_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep9_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep9_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep9_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep9_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep9_1#S7";
 		}
 	}
 	if (.@type == 10) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("D:G:I:P:S:V:") - 1;
+			.@letter = select("D:G:P:S:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep10_0#D";
 			else if (.@letter == 1) .@shop$ = "wep10_0#G";
-			else if (.@letter == 2) .@shop$ = "wep10_0#I";
-			else if (.@letter == 3) .@shop$ = "wep10_0#P";
-			else if (.@letter == 4) .@shop$ = "wep10_0#S";
-			else if (.@letter == 5) .@shop$ = "wep10_0#V";
+			else if (.@letter == 2) .@shop$ = "wep10_0#P";
+			else if (.@letter == 3) .@shop$ = "wep10_0#S";
+			else if (.@letter == 4) .@shop$ = "wep10_0#V";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Glacier:Illusion:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep10_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep10_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep10_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep10_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep10_1#S4";
 		}
 	}
 	if (.@type == 11) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("B:C:F:G:H:I:L:M:P:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep11_0#B";
@@ -221,9 +334,21 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 8) .@shop$ = "wep11_0#P";
 			else if (.@letter == 9) .@shop$ = "wep11_0#V";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep11_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep11_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep11_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep11_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep11_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep11_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep11_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep11_1#S7";
+			else if (.@letter == 8) .@shop$ = "wep11_1#S8";
+		}
 	}
 	if (.@type == 12) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("B:C:D:E:F:G:H:I:N:O:P:R:S:T:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep12_0#B";
@@ -242,9 +367,20 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 13) .@shop$ = "wep12_0#T";
 			else if (.@letter == 14) .@shop$ = "wep12_0#V";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep12_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep12_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep12_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep12_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep12_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep12_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep12_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep12_1#S7";
+		}
 	}
 	if (.@type == 13) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("C:D:S:V:W:") - 1;
 			if (.@letter == 0) .@shop$ = "wep13_0#C";
@@ -253,9 +389,19 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 3) .@shop$ = "wep13_0#V";
 			else if (.@letter == 4) .@shop$ = "wep13_0#W";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep13_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep13_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep13_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep13_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep13_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep13_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep13_1#S6";
+		}
 	}
 	if (.@type == 14) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("C:F:L:S:") - 1;
 			if (.@letter == 0) .@shop$ = "wep14_0#C";
@@ -263,22 +409,39 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 2) .@shop$ = "wep14_0#L";
 			else if (.@letter == 3) .@shop$ = "wep14_0#S";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Poenitentia:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep14_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep14_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep14_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep14_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep14_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep14_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep14_1#S6";
+		}
 	}
 	if (.@type == 15) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("C:G:I:L:O:") - 1;
+			.@letter = select("C:G:L:O:") - 1;
 			if (.@letter == 0) .@shop$ = "wep15_0#C";
 			else if (.@letter == 1) .@shop$ = "wep15_0#G";
-			else if (.@letter == 2) .@shop$ = "wep15_0#I";
-			else if (.@letter == 3) .@shop$ = "wep15_0#L";
-			else if (.@letter == 4) .@shop$ = "wep15_0#O";
+			else if (.@letter == 2) .@shop$ = "wep15_0#L";
+			else if (.@letter == 3) .@shop$ = "wep15_0#O";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Glacier:Illusion:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep15_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep15_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep15_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep15_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep15_1#S4";
 		}
 	}
 	if (.@type == 16) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("A:C:D:E:F:G:H:I:L:M:R:S:T:V:W:") - 1;
+			.@letter = select("A:C:D:E:F:G:H:L:M:R:S:T:V:W:") - 1;
 			if (.@letter == 0) .@shop$ = "wep16_0#A";
 			else if (.@letter == 1) .@shop$ = "wep16_0#C";
 			else if (.@letter == 2) .@shop$ = "wep16_0#D";
@@ -286,20 +449,31 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 4) .@shop$ = "wep16_0#F";
 			else if (.@letter == 5) .@shop$ = "wep16_0#G";
 			else if (.@letter == 6) .@shop$ = "wep16_0#H";
-			else if (.@letter == 7) .@shop$ = "wep16_0#I";
-			else if (.@letter == 8) .@shop$ = "wep16_0#L";
-			else if (.@letter == 9) .@shop$ = "wep16_0#M";
-			else if (.@letter == 10) .@shop$ = "wep16_0#R";
-			else if (.@letter == 11) .@shop$ = "wep16_0#S";
-			else if (.@letter == 12) .@shop$ = "wep16_0#T";
-			else if (.@letter == 13) .@shop$ = "wep16_0#V";
-			else if (.@letter == 14) .@shop$ = "wep16_0#W";
+			else if (.@letter == 7) .@shop$ = "wep16_0#L";
+			else if (.@letter == 8) .@shop$ = "wep16_0#M";
+			else if (.@letter == 9) .@shop$ = "wep16_0#R";
+			else if (.@letter == 10) .@shop$ = "wep16_0#S";
+			else if (.@letter == 11) .@shop$ = "wep16_0#T";
+			else if (.@letter == 12) .@shop$ = "wep16_0#V";
+			else if (.@letter == 13) .@shop$ = "wep16_0#W";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep16_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep16_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep16_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep16_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep16_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep16_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep16_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep16_1#S7";
+			else if (.@letter == 8) .@shop$ = "wep16_1#S8";
 		}
 	}
 	if (.@type == 17) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:D:E:F:G:H:I:L:M:R:T:V:Y:") - 1;
+			.@letter = select("B:C:D:E:F:G:H:L:M:R:T:V:Y:") - 1;
 			if (.@letter == 0) .@shop$ = "wep17_0#B";
 			else if (.@letter == 1) .@shop$ = "wep17_0#C";
 			else if (.@letter == 2) .@shop$ = "wep17_0#D";
@@ -307,17 +481,26 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 4) .@shop$ = "wep17_0#F";
 			else if (.@letter == 5) .@shop$ = "wep17_0#G";
 			else if (.@letter == 6) .@shop$ = "wep17_0#H";
-			else if (.@letter == 7) .@shop$ = "wep17_0#I";
-			else if (.@letter == 8) .@shop$ = "wep17_0#L";
-			else if (.@letter == 9) .@shop$ = "wep17_0#M";
-			else if (.@letter == 10) .@shop$ = "wep17_0#R";
-			else if (.@letter == 11) .@shop$ = "wep17_0#T";
-			else if (.@letter == 12) .@shop$ = "wep17_0#V";
-			else if (.@letter == 13) .@shop$ = "wep17_0#Y";
+			else if (.@letter == 7) .@shop$ = "wep17_0#L";
+			else if (.@letter == 8) .@shop$ = "wep17_0#M";
+			else if (.@letter == 9) .@shop$ = "wep17_0#R";
+			else if (.@letter == 10) .@shop$ = "wep17_0#T";
+			else if (.@letter == 11) .@shop$ = "wep17_0#V";
+			else if (.@letter == 12) .@shop$ = "wep17_0#Y";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:") - 1;
+			if (.@letter == 0) .@shop$ = "wep17_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep17_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep17_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep17_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep17_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep17_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep17_1#S6";
 		}
 	}
 	if (.@type == 18) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("B:C:F:G:H:I:J:L:M:R:S:T:V:Z:") - 1;
 			if (.@letter == 0) .@shop$ = "wep18_0#B";
@@ -335,9 +518,20 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 12) .@shop$ = "wep18_0#V";
 			else if (.@letter == 13) .@shop$ = "wep18_0#Z";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep18_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep18_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep18_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep18_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep18_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep18_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep18_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep18_1#S7";
+		}
 	}
 	if (.@type == 19) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
 			.@letter = select("A:B:C:D:F:G:H:I:K:P:S:V:W:") - 1;
 			if (.@letter == 0) .@shop$ = "wep19_0#A";
@@ -354,11 +548,23 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 11) .@shop$ = "wep19_0#V";
 			else if (.@letter == 12) .@shop$ = "wep19_0#W";
 		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep19_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep19_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep19_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep19_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep19_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep19_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep19_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep19_1#S7";
+			else if (.@letter == 8) .@shop$ = "wep19_1#S8";
+		}
 	}
 	if (.@type == 20) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:R:S:T:V:") - 1;
+			.@letter = select("A:B:C:D:E:F:G:H:K:L:M:R:S:T:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep20_0#A";
 			else if (.@letter == 1) .@shop$ = "wep20_0#B";
 			else if (.@letter == 2) .@shop$ = "wep20_0#C";
@@ -367,30 +573,51 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 5) .@shop$ = "wep20_0#F";
 			else if (.@letter == 6) .@shop$ = "wep20_0#G";
 			else if (.@letter == 7) .@shop$ = "wep20_0#H";
-			else if (.@letter == 8) .@shop$ = "wep20_0#I";
-			else if (.@letter == 9) .@shop$ = "wep20_0#K";
-			else if (.@letter == 10) .@shop$ = "wep20_0#L";
-			else if (.@letter == 11) .@shop$ = "wep20_0#M";
-			else if (.@letter == 12) .@shop$ = "wep20_0#R";
-			else if (.@letter == 13) .@shop$ = "wep20_0#S";
-			else if (.@letter == 14) .@shop$ = "wep20_0#T";
-			else if (.@letter == 15) .@shop$ = "wep20_0#V";
+			else if (.@letter == 8) .@shop$ = "wep20_0#K";
+			else if (.@letter == 9) .@shop$ = "wep20_0#L";
+			else if (.@letter == 10) .@shop$ = "wep20_0#M";
+			else if (.@letter == 11) .@shop$ = "wep20_0#R";
+			else if (.@letter == 12) .@shop$ = "wep20_0#S";
+			else if (.@letter == 13) .@shop$ = "wep20_0#T";
+			else if (.@letter == 14) .@shop$ = "wep20_0#V";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep20_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep20_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep20_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep20_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep20_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep20_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep20_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep20_1#S7";
 		}
 	}
 	if (.@type == 21) {
-		.@cat = select("Equipment:") - 1;
+		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("A:C:F:H:I:L:P:R:S:V:") - 1;
+			.@letter = select("A:C:F:H:L:P:R:S:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep21_0#A";
 			else if (.@letter == 1) .@shop$ = "wep21_0#C";
 			else if (.@letter == 2) .@shop$ = "wep21_0#F";
 			else if (.@letter == 3) .@shop$ = "wep21_0#H";
-			else if (.@letter == 4) .@shop$ = "wep21_0#I";
-			else if (.@letter == 5) .@shop$ = "wep21_0#L";
-			else if (.@letter == 6) .@shop$ = "wep21_0#P";
-			else if (.@letter == 7) .@shop$ = "wep21_0#R";
-			else if (.@letter == 8) .@shop$ = "wep21_0#S";
-			else if (.@letter == 9) .@shop$ = "wep21_0#V";
+			else if (.@letter == 4) .@shop$ = "wep21_0#L";
+			else if (.@letter == 5) .@shop$ = "wep21_0#P";
+			else if (.@letter == 6) .@shop$ = "wep21_0#R";
+			else if (.@letter == 7) .@shop$ = "wep21_0#S";
+			else if (.@letter == 8) .@shop$ = "wep21_0#V";
+		}
+		if (.@cat == 1) {
+			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Frontier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
+			if (.@letter == 0) .@shop$ = "wep21_1#S0";
+			else if (.@letter == 1) .@shop$ = "wep21_1#S1";
+			else if (.@letter == 2) .@shop$ = "wep21_1#S2";
+			else if (.@letter == 3) .@shop$ = "wep21_1#S3";
+			else if (.@letter == 4) .@shop$ = "wep21_1#S4";
+			else if (.@letter == 5) .@shop$ = "wep21_1#S5";
+			else if (.@letter == 6) .@shop$ = "wep21_1#S6";
+			else if (.@letter == 7) .@shop$ = "wep21_1#S7";
+			else if (.@letter == 8) .@shop$ = "wep21_1#S8";
 		}
 	}
 	if (.@shop$ == "") { mes "[Soren]"; mes "That crate is empty. Try another drawer."; close; }
@@ -403,233 +630,394 @@ OnInit:
 	end;
 }
 
--	pointshop	wep0_0#B	-1,#CASHPOINTS,1586:100,1587:100,540060:100,1557:100,28618:100,540057:100
--	pointshop	wep0_0#C	-1,#CASHPOINTS,1584:100
--	pointshop	wep0_0#D	-1,#CASHPOINTS,540054:100,1565:100,540059:100
--	pointshop	wep0_0#E	-1,#CASHPOINTS,28608:100
--	pointshop	wep0_0#F	-1,#CASHPOINTS,540091:100,540090:100,540088:100,540086:100,540087:100
--	pointshop	wep0_0#I	-1,#CASHPOINTS,28612:100,28626:100
--	pointshop	wep0_0#O	-1,#CASHPOINTS,540055:100
--	pointshop	wep0_0#P	-1,#CASHPOINTS,28619:100
--	pointshop	wep0_0#R	-1,#CASHPOINTS,1567:100
--	pointshop	wep0_0#S	-1,#CASHPOINTS,1563:100,540053:100,540005:100,540004:100
--	pointshop	wep0_0#V	-1,#CASHPOINTS,28605:100
--	pointshop	wep1_0#A	-1,#CASHPOINTS,700065:100
--	pointshop	wep1_0#B	-1,#CASHPOINTS,1722:100,1727:100,1728:100,18114:100,18110:100,18123:100,1730:100
--	pointshop	wep1_0#C	-1,#CASHPOINTS,18109:100,18111:100,18130:100,1741:100
--	pointshop	wep1_0#D	-1,#CASHPOINTS,700066:100,700109:100,1736:100
--	pointshop	wep1_0#E	-1,#CASHPOINTS,1732:100,1746:100
--	pointshop	wep1_0#F	-1,#CASHPOINTS,1745:100,700100:100,700101:100
--	pointshop	wep1_0#G	-1,#CASHPOINTS,1716:100,18122:100,700008:100
--	pointshop	wep1_0#I	-1,#CASHPOINTS,18149:100,18174:100,1737:100
--	pointshop	wep1_0#M	-1,#CASHPOINTS,18107:100,700078:100,18103:100
--	pointshop	wep1_0#P	-1,#CASHPOINTS,700009:100
--	pointshop	wep1_0#R	-1,#CASHPOINTS,1729:100
--	pointshop	wep1_0#S	-1,#CASHPOINTS,700021:100,18108:100,700007:100
--	pointshop	wep1_0#V	-1,#CASHPOINTS,18121:100,18145:100
--	pointshop	wep2_0#A	-1,#CASHPOINTS,13062:100,1232:100,13023:100,13011:100,13069:100
--	pointshop	wep2_0#B	-1,#CASHPOINTS,13061:100
--	pointshop	wep2_0#C	-1,#CASHPOINTS,1228:100,13021:100,13004:100,28705:100,1241:100,1206:100
--	pointshop	wep2_0#D	-1,#CASHPOINTS,1242:100,13022:100,13038:100,13034:100,13001:100
--	pointshop	wep2_0#E	-1,#CASHPOINTS,1233:100
--	pointshop	wep2_0#F	-1,#CASHPOINTS,13089:100,13090:100,510151:100,510150:100
--	pointshop	wep2_0#G	-1,#CASHPOINTS,13002:100,510009:100
--	pointshop	wep2_0#H	-1,#CASHPOINTS,13015:100,510092:100
--	pointshop	wep2_0#I	-1,#CASHPOINTS,1230:100,13017:100,510034:100,28745:100,28725:100,13039:100
--	pointshop	wep2_0#J	-1,#CASHPOINTS,13008:100
--	pointshop	wep2_0#K	-1,#CASHPOINTS,13046:100
--	pointshop	wep2_0#M	-1,#CASHPOINTS,13025:100,28721:100,1234:100,13026:100
--	pointshop	wep2_0#R	-1,#CASHPOINTS,13092:100
--	pointshop	wep2_0#S	-1,#CASHPOINTS,13035:100,13068:100,13027:100,13070:100,13024:100
--	pointshop	wep2_0#U	-1,#CASHPOINTS,510091:100
--	pointshop	wep2_0#V	-1,#CASHPOINTS,28717:100,28706:100,13085:100
--	pointshop	wep2_0#W	-1,#CASHPOINTS,13047:100,510008:100
--	pointshop	wep3_0#C	-1,#CASHPOINTS,28241:100
--	pointshop	wep3_0#F	-1,#CASHPOINTS,830038:100
--	pointshop	wep3_0#L	-1,#CASHPOINTS,830026:100,830001:100
--	pointshop	wep3_0#R	-1,#CASHPOINTS,830025:100
--	pointshop	wep4_0#C	-1,#CASHPOINTS,28243:100
--	pointshop	wep4_0#D	-1,#CASHPOINTS,840020:100
--	pointshop	wep4_0#J	-1,#CASHPOINTS,840021:100
--	pointshop	wep4_0#L	-1,#CASHPOINTS,840000:100
--	pointshop	wep5_0#D	-1,#CASHPOINTS,650033:100
--	pointshop	wep5_0#F	-1,#CASHPOINTS,610072:100,650049:100
--	pointshop	wep5_0#H	-1,#CASHPOINTS,13303:100,13314:100,650034:100,13332:100,13313:100,13315:100,13300:100
--	pointshop	wep5_0#I	-1,#CASHPOINTS,13337:100,13338:100
--	pointshop	wep5_0#V	-1,#CASHPOINTS,13328:100
--	pointshop	wep5_0#W	-1,#CASHPOINTS,650003:100
--	pointshop	wep6_0#B	-1,#CASHPOINTS,1920:100
--	pointshop	wep6_0#C	-1,#CASHPOINTS,1925:100,1934:100,570036:100,1939:100
--	pointshop	wep6_0#F	-1,#CASHPOINTS,570073:100,570072:100
--	pointshop	wep6_0#G	-1,#CASHPOINTS,1930:100
--	pointshop	wep6_0#H	-1,#CASHPOINTS,1910:100,1944:100
--	pointshop	wep6_0#I	-1,#CASHPOINTS,570008:100
--	pointshop	wep6_0#L	-1,#CASHPOINTS,570037:100
--	pointshop	wep6_0#N	-1,#CASHPOINTS,1935:100
--	pointshop	wep6_0#P	-1,#CASHPOINTS,570005:100
--	pointshop	wep6_0#V	-1,#CASHPOINTS,1900:100
--	pointshop	wep7_0#A	-1,#CASHPOINTS,1290:100,610006:100,610029:100
--	pointshop	wep7_0#B	-1,#CASHPOINTS,1273:100,1271:100,1295:100
--	pointshop	wep7_0#C	-1,#CASHPOINTS,1285:100
--	pointshop	wep7_0#D	-1,#CASHPOINTS,1270:100
--	pointshop	wep7_0#F	-1,#CASHPOINTS,610071:100
--	pointshop	wep7_0#G	-1,#CASHPOINTS,1281:100,1291:100
--	pointshop	wep7_0#I	-1,#CASHPOINTS,28022:100,610012:100,28023:100,1266:100,1267:100,1269:100,1297:100
--	pointshop	wep7_0#J	-1,#CASHPOINTS,28010:100
--	pointshop	wep7_0#K	-1,#CASHPOINTS,1256:100,1258:100,1284:100
--	pointshop	wep7_0#S	-1,#CASHPOINTS,1260:100,610045:100
--	pointshop	wep7_0#T	-1,#CASHPOINTS,610044:100
--	pointshop	wep7_0#U	-1,#CASHPOINTS,1274:100
--	pointshop	wep7_0#V	-1,#CASHPOINTS,1264:100,28008:100
--	pointshop	wep7_0#W	-1,#CASHPOINTS,1268:100
--	pointshop	wep8_0#B	-1,#CASHPOINTS,1832:100
--	pointshop	wep8_0#D	-1,#CASHPOINTS,560036:100
--	pointshop	wep8_0#F	-1,#CASHPOINTS,560068:100,560067:100
--	pointshop	wep8_0#H	-1,#CASHPOINTS,1815:100,1825:100
--	pointshop	wep8_0#I	-1,#CASHPOINTS,1846:100,560004:100,1837:100
--	pointshop	wep8_0#K	-1,#CASHPOINTS,1817:100
--	pointshop	wep8_0#S	-1,#CASHPOINTS,1835:100,1830:100
--	pointshop	wep8_0#V	-1,#CASHPOINTS,1800:100
--	pointshop	wep9_0#B	-1,#CASHPOINTS,16017:100
--	pointshop	wep9_0#C	-1,#CASHPOINTS,16003:100,16040:100
--	pointshop	wep9_0#E	-1,#CASHPOINTS,590006:100,16000:100
--	pointshop	wep9_0#F	-1,#CASHPOINTS,590087:100
--	pointshop	wep9_0#G	-1,#CASHPOINTS,1524:100
--	pointshop	wep9_0#I	-1,#CASHPOINTS,16065:100,16063:100
--	pointshop	wep9_0#L	-1,#CASHPOINTS,1525:100,1544:100
--	pointshop	wep9_0#M	-1,#CASHPOINTS,16018:100
--	pointshop	wep9_0#N	-1,#CASHPOINTS,1541:100,16022:100,16029:100
--	pointshop	wep9_0#P	-1,#CASHPOINTS,16031:100,590045:100
--	pointshop	wep9_0#Q	-1,#CASHPOINTS,1527:100,16024:100
--	pointshop	wep9_0#R	-1,#CASHPOINTS,16010:100,16001:100,16033:100,16026:100
--	pointshop	wep9_0#S	-1,#CASHPOINTS,16039:100
--	pointshop	wep9_0#T	-1,#CASHPOINTS,16016:100
--	pointshop	wep9_0#V	-1,#CASHPOINTS,16051:100,1548:100,16041:100
--	pointshop	wep9_0#W	-1,#CASHPOINTS,1534:100
--	pointshop	wep10_0#D	-1,#CASHPOINTS,1341:100
--	pointshop	wep10_0#G	-1,#CASHPOINTS,1310:100
--	pointshop	wep10_0#I	-1,#CASHPOINTS,1326:100
--	pointshop	wep10_0#P	-1,#CASHPOINTS,520002:100
--	pointshop	wep10_0#S	-1,#CASHPOINTS,520003:100
--	pointshop	wep10_0#V	-1,#CASHPOINTS,1311:100
--	pointshop	wep11_0#B	-1,#CASHPOINTS,1436:100
--	pointshop	wep11_0#C	-1,#CASHPOINTS,1435:100
--	pointshop	wep11_0#F	-1,#CASHPOINTS,530057:100
--	pointshop	wep11_0#G	-1,#CASHPOINTS,1414:100,1449:100,1426:100,530002:100,1413:100
--	pointshop	wep11_0#H	-1,#CASHPOINTS,530045:100
--	pointshop	wep11_0#I	-1,#CASHPOINTS,530015:100,32005:100,1433:100
--	pointshop	wep11_0#L	-1,#CASHPOINTS,1420:100
--	pointshop	wep11_0#M	-1,#CASHPOINTS,32013:100
--	pointshop	wep11_0#P	-1,#CASHPOINTS,1447:100,1419:100
--	pointshop	wep11_0#V	-1,#CASHPOINTS,1400:100
--	pointshop	wep12_0#B	-1,#CASHPOINTS,500065:100,1140:100
--	pointshop	wep12_0#C	-1,#CASHPOINTS,13431:100,13454:100,13402:100,1135:100
--	pointshop	wep12_0#D	-1,#CASHPOINTS,500062:100,500072:100,500009:100
--	pointshop	wep12_0#E	-1,#CASHPOINTS,1132:100,1137:100,13401:100
--	pointshop	wep12_0#F	-1,#CASHPOINTS,500101:100,500102:100,500103:100
--	pointshop	wep12_0#G	-1,#CASHPOINTS,500063:100
--	pointshop	wep12_0#H	-1,#CASHPOINTS,1128:100,500007:100
--	pointshop	wep12_0#I	-1,#CASHPOINTS,500030:100,13469:100,1141:100,13409:100,500005:100,500008:100
--	pointshop	wep12_0#N	-1,#CASHPOINTS,13407:100
--	pointshop	wep12_0#O	-1,#CASHPOINTS,13442:100
--	pointshop	wep12_0#P	-1,#CASHPOINTS,13404:100
--	pointshop	wep12_0#R	-1,#CASHPOINTS,1111:100,1125:100,13421:100
--	pointshop	wep12_0#S	-1,#CASHPOINTS,1127:100,13465:100,1114:100,1134:100,13461:100,13460:100,13462:100,1136:100,13403:100,1148:100
--	pointshop	wep12_0#T	-1,#CASHPOINTS,13412:100,13413:100
--	pointshop	wep12_0#V	-1,#CASHPOINTS,13455:100,500066:100
--	pointshop	wep13_0#C	-1,#CASHPOINTS,13146:100
--	pointshop	wep13_0#D	-1,#CASHPOINTS,800027:100,800026:100
--	pointshop	wep13_0#S	-1,#CASHPOINTS,13100:100
--	pointshop	wep13_0#V	-1,#CASHPOINTS,13128:100
--	pointshop	wep13_0#W	-1,#CASHPOINTS,13107:100
--	pointshop	wep14_0#C	-1,#CASHPOINTS,28240:100
--	pointshop	wep14_0#F	-1,#CASHPOINTS,810042:100
--	pointshop	wep14_0#L	-1,#CASHPOINTS,810027:100,13170:100,810000:100
--	pointshop	wep14_0#S	-1,#CASHPOINTS,810026:100
--	pointshop	wep15_0#C	-1,#CASHPOINTS,28242:100
--	pointshop	wep15_0#G	-1,#CASHPOINTS,13167:100
--	pointshop	wep15_0#I	-1,#CASHPOINTS,28244:100
--	pointshop	wep15_0#L	-1,#CASHPOINTS,820021:100,820000:100
--	pointshop	wep15_0#O	-1,#CASHPOINTS,820020:100
--	pointshop	wep16_0#A	-1,#CASHPOINTS,550009:100,1643:100
--	pointshop	wep16_0#C	-1,#CASHPOINTS,1680:100,1647:100
--	pointshop	wep16_0#D	-1,#CASHPOINTS,550115:100
--	pointshop	wep16_0#E	-1,#CASHPOINTS,1637:100,1615:100,1696:100,1697:100
--	pointshop	wep16_0#F	-1,#CASHPOINTS,550143:100,550144:100,550141:100,550145:100,550150:100,550146:100,550148:100
--	pointshop	wep16_0#G	-1,#CASHPOINTS,1629:100,550008:100
--	pointshop	wep16_0#H	-1,#CASHPOINTS,1631:100
--	pointshop	wep16_0#I	-1,#CASHPOINTS,550031:100,26109:100,550030:100
--	pointshop	wep16_0#L	-1,#CASHPOINTS,1646:100,1659:100,550116:100
--	pointshop	wep16_0#M	-1,#CASHPOINTS,1692:100,1693:100,1661:100,1654:100,1623:100
--	pointshop	wep16_0#R	-1,#CASHPOINTS,1670:100
--	pointshop	wep16_0#S	-1,#CASHPOINTS,1672:100,550088:100,550093:100,550094:100,1648:100,1665:100,1668:100
--	pointshop	wep16_0#T	-1,#CASHPOINTS,1636:100
--	pointshop	wep16_0#V	-1,#CASHPOINTS,1600:100
--	pointshop	wep16_0#W	-1,#CASHPOINTS,1660:100,1614:100,1616:100
--	pointshop	wep17_0#B	-1,#CASHPOINTS,1396:100,1375:100,1385:100
--	pointshop	wep17_0#C	-1,#CASHPOINTS,28106:100
--	pointshop	wep17_0#D	-1,#CASHPOINTS,620022:100,1370:100
--	pointshop	wep17_0#E	-1,#CASHPOINTS,1393:100
--	pointshop	wep17_0#F	-1,#CASHPOINTS,620040:100
--	pointshop	wep17_0#G	-1,#CASHPOINTS,1387:100,1369:100
--	pointshop	wep17_0#H	-1,#CASHPOINTS,1376:100,1377:100
--	pointshop	wep17_0#I	-1,#CASHPOINTS,620010:100
--	pointshop	wep17_0#L	-1,#CASHPOINTS,1372:100
--	pointshop	wep17_0#M	-1,#CASHPOINTS,28116:100
--	pointshop	wep17_0#R	-1,#CASHPOINTS,1373:100
--	pointshop	wep17_0#T	-1,#CASHPOINTS,1368:100,1374:100,28101:100,1361:100
--	pointshop	wep17_0#V	-1,#CASHPOINTS,1384:100,28107:100
--	pointshop	wep17_0#Y	-1,#CASHPOINTS,1392:100
--	pointshop	wep18_0#B	-1,#CASHPOINTS,1492:100,1470:100
--	pointshop	wep18_0#C	-1,#CASHPOINTS,1484:100,1466:100,1476:100,1498:100
--	pointshop	wep18_0#F	-1,#CASHPOINTS,630045:100
--	pointshop	wep18_0#G	-1,#CASHPOINTS,1474:100,1490:100,1455:100
--	pointshop	wep18_0#H	-1,#CASHPOINTS,1471:100
--	pointshop	wep18_0#I	-1,#CASHPOINTS,630006:100,26007:100,630007:100,1483:100
--	pointshop	wep18_0#J	-1,#CASHPOINTS,630027:100
--	pointshop	wep18_0#L	-1,#CASHPOINTS,1411:100,1469:100,630003:100
--	pointshop	wep18_0#M	-1,#CASHPOINTS,1489:100
--	pointshop	wep18_0#R	-1,#CASHPOINTS,26016:100
--	pointshop	wep18_0#S	-1,#CASHPOINTS,1477:100
--	pointshop	wep18_0#T	-1,#CASHPOINTS,1461:100
--	pointshop	wep18_0#V	-1,#CASHPOINTS,1450:100
--	pointshop	wep18_0#Z	-1,#CASHPOINTS,1468:100
--	pointshop	wep19_0#A	-1,#CASHPOINTS,2012:100
--	pointshop	wep19_0#B	-1,#CASHPOINTS,2049:100
--	pointshop	wep19_0#C	-1,#CASHPOINTS,2025:100,2013:100
--	pointshop	wep19_0#D	-1,#CASHPOINTS,2005:100,640037:100,640036:100,2001:100
--	pointshop	wep19_0#F	-1,#CASHPOINTS,2014:100,640053:100
--	pointshop	wep19_0#G	-1,#CASHPOINTS,2011:100
--	pointshop	wep19_0#H	-1,#CASHPOINTS,26138:100
--	pointshop	wep19_0#I	-1,#CASHPOINTS,26139:100,2051:100,2039:100
--	pointshop	wep19_0#K	-1,#CASHPOINTS,2004:100
--	pointshop	wep19_0#P	-1,#CASHPOINTS,640005:100
--	pointshop	wep19_0#S	-1,#CASHPOINTS,1472:100,2000:100,2027:100
--	pointshop	wep19_0#V	-1,#CASHPOINTS,2026:100
--	pointshop	wep19_0#W	-1,#CASHPOINTS,1473:100
--	pointshop	wep20_0#A	-1,#CASHPOINTS,1191:100
--	pointshop	wep20_0#B	-1,#CASHPOINTS,21001:100,1182:100,1162:100
--	pointshop	wep20_0#C	-1,#CASHPOINTS,1196:100,21015:100
--	pointshop	wep20_0#D	-1,#CASHPOINTS,1186:100
--	pointshop	wep20_0#E	-1,#CASHPOINTS,600041:100,1174:100
--	pointshop	wep20_0#F	-1,#CASHPOINTS,21053:100,600059:100
--	pointshop	wep20_0#G	-1,#CASHPOINTS,21011:100
--	pointshop	wep20_0#H	-1,#CASHPOINTS,1198:100,600008:100
--	pointshop	wep20_0#I	-1,#CASHPOINTS,600011:100
--	pointshop	wep20_0#K	-1,#CASHPOINTS,1170:100,1189:100
--	pointshop	wep20_0#L	-1,#CASHPOINTS,21018:100
--	pointshop	wep20_0#M	-1,#CASHPOINTS,1173:100,21003:100,1176:100
--	pointshop	wep20_0#R	-1,#CASHPOINTS,21039:100
--	pointshop	wep20_0#S	-1,#CASHPOINTS,1167:100
--	pointshop	wep20_0#T	-1,#CASHPOINTS,1181:100
--	pointshop	wep20_0#V	-1,#CASHPOINTS,1188:100,21016:100
--	pointshop	wep21_0#A	-1,#CASHPOINTS,1990:100
--	pointshop	wep21_0#C	-1,#CASHPOINTS,580037:100
--	pointshop	wep21_0#F	-1,#CASHPOINTS,580072:100,580073:100
--	pointshop	wep21_0#H	-1,#CASHPOINTS,26200:100
--	pointshop	wep21_0#I	-1,#CASHPOINTS,580008:100
--	pointshop	wep21_0#L	-1,#CASHPOINTS,580038:100
--	pointshop	wep21_0#P	-1,#CASHPOINTS,580005:100
--	pointshop	wep21_0#R	-1,#CASHPOINTS,1989:100,1985:100
--	pointshop	wep21_0#S	-1,#CASHPOINTS,1984:100
--	pointshop	wep21_0#V	-1,#CASHPOINTS,1996:100
+-	pointshop	wep0_0#B	-1,#CASHPOINTS,1586:1200,1587:2160,540060:5780,1557:800,28618:2700,540057:3150
+-	pointshop	wep0_0#C	-1,#CASHPOINTS,1584:1200
+-	pointshop	wep0_0#D	-1,#CASHPOINTS,540054:6180,1565:4200,540059:5780
+-	pointshop	wep0_0#E	-1,#CASHPOINTS,28608:440
+-	pointshop	wep0_0#F	-1,#CASHPOINTS,540091:5380,540090:5380,540088:5580,540086:5980,540087:5980
+-	pointshop	wep0_0#O	-1,#CASHPOINTS,540055:4635
+-	pointshop	wep0_0#P	-1,#CASHPOINTS,28619:1700
+-	pointshop	wep0_0#R	-1,#CASHPOINTS,1567:200
+-	pointshop	wep0_0#S	-1,#CASHPOINTS,1563:1500,540053:5235,540005:5600,540004:3300
+-	pointshop	wep0_0#V	-1,#CASHPOINTS,28605:1300
+-	pointshop	wep0_1#S0	-1,#CASHPOINTS,540021:5400,540019:3500,540022:3800,540020:3500,540023:3800
+-	pointshop	wep0_1#S1	-1,#CASHPOINTS,540056:1620
+-	pointshop	wep0_1#S2	-1,#CASHPOINTS,540079:7380,540080:7380,540082:7580,540083:8380,540081:8380
+-	pointshop	wep0_1#S3	-1,#CASHPOINTS,540110:7380,540111:7580
+-	pointshop	wep0_1#S4	-1,#CASHPOINTS,540049:1440
+-	pointshop	wep0_1#S5	-1,#CASHPOINTS,28612:1600,28626:1600
+-	pointshop	wep0_1#S6	-1,#CASHPOINTS,540014:7180,540015:7780,540044:7980
+-	pointshop	wep0_1#S7	-1,#CASHPOINTS,540096:7380,540094:7580
+-	pointshop	wep0_1#S8	-1,#CASHPOINTS,540026:8180,540024:7380,540046:8180,540025:7380,540045:8180
+-	pointshop	wep1_0#A	-1,#CASHPOINTS,700065:4635
+-	pointshop	wep1_0#B	-1,#CASHPOINTS,1722:100,1727:3900,1728:1200,18114:900,18110:2970,18123:5100,1730:900
+-	pointshop	wep1_0#C	-1,#CASHPOINTS,18109:1000,18111:1680,18130:2400,1741:340
+-	pointshop	wep1_0#D	-1,#CASHPOINTS,700066:4635,700109:5580,1736:1920
+-	pointshop	wep1_0#E	-1,#CASHPOINTS,1732:750,1746:300
+-	pointshop	wep1_0#F	-1,#CASHPOINTS,1745:1100,700100:5980,700101:5980
+-	pointshop	wep1_0#G	-1,#CASHPOINTS,1716:700,18122:2550,700008:2200
+-	pointshop	wep1_0#I	-1,#CASHPOINTS,1737:2250
+-	pointshop	wep1_0#M	-1,#CASHPOINTS,18107:314,700078:1450,18103:3000
+-	pointshop	wep1_0#P	-1,#CASHPOINTS,700009:2200
+-	pointshop	wep1_0#R	-1,#CASHPOINTS,1729:320
+-	pointshop	wep1_0#S	-1,#CASHPOINTS,700021:3300,18108:1755,700007:2200
+-	pointshop	wep1_0#V	-1,#CASHPOINTS,18121:1300,18145:440
+-	pointshop	wep1_1#S0	-1,#CASHPOINTS,700032:3600,700031:3600,700030:3600
+-	pointshop	wep1_1#S1	-1,#CASHPOINTS,700059:2700
+-	pointshop	wep1_1#S2	-1,#CASHPOINTS,700092:8380,700094:8380,700093:8380
+-	pointshop	wep1_1#S3	-1,#CASHPOINTS,700119:7980
+-	pointshop	wep1_1#S4	-1,#CASHPOINTS,700052:2400
+-	pointshop	wep1_1#S5	-1,#CASHPOINTS,18149:1500,18174:5100
+-	pointshop	wep1_1#S6	-1,#CASHPOINTS,700024:7580,700023:7580,700022:8380,700025:7580
+-	pointshop	wep1_1#S7	-1,#CASHPOINTS,700108:8380
+-	pointshop	wep1_1#S8	-1,#CASHPOINTS,700035:7780,700034:7780,700033:7780
+-	pointshop	wep2_0#A	-1,#CASHPOINTS,13062:1440,1232:3000,13023:1000,13011:800,13069:3600
+-	pointshop	wep2_0#B	-1,#CASHPOINTS,13061:2100
+-	pointshop	wep2_0#C	-1,#CASHPOINTS,1228:4800,13021:1600,13004:1400,28705:1600,1241:3600,1206:1500
+-	pointshop	wep2_0#D	-1,#CASHPOINTS,1242:1500,13022:1500,13038:2640,13034:800,13001:900
+-	pointshop	wep2_0#E	-1,#CASHPOINTS,1233:4800
+-	pointshop	wep2_0#F	-1,#CASHPOINTS,13089:1560,13090:4200,510151:5380,510150:5580
+-	pointshop	wep2_0#G	-1,#CASHPOINTS,13002:600,510009:2200
+-	pointshop	wep2_0#H	-1,#CASHPOINTS,13015:1560,510092:4635
+-	pointshop	wep2_0#I	-1,#CASHPOINTS,1230:3000,13017:3900,13039:2400
+-	pointshop	wep2_0#J	-1,#CASHPOINTS,13008:780
+-	pointshop	wep2_0#K	-1,#CASHPOINTS,13046:6600
+-	pointshop	wep2_0#M	-1,#CASHPOINTS,13025:600,28721:1200,1234:3000,13026:1000
+-	pointshop	wep2_0#R	-1,#CASHPOINTS,13092:2040
+-	pointshop	wep2_0#S	-1,#CASHPOINTS,13035:1000,13068:1200,13027:1000,13070:3600,13024:600
+-	pointshop	wep2_0#U	-1,#CASHPOINTS,510091:6180
+-	pointshop	wep2_0#V	-1,#CASHPOINTS,28717:4200,28706:1300,13085:1300
+-	pointshop	wep2_0#W	-1,#CASHPOINTS,13047:4200,510008:4400
+-	pointshop	wep2_1#S0	-1,#CASHPOINTS,510032:3800
+-	pointshop	wep2_1#S1	-1,#CASHPOINTS,510076:1350,510075:1350
+-	pointshop	wep2_1#S2	-1,#CASHPOINTS,510139:7580
+-	pointshop	wep2_1#S3	-1,#CASHPOINTS,510192:7380
+-	pointshop	wep2_1#S4	-1,#CASHPOINTS,510062:1200,510061:1200
+-	pointshop	wep2_1#S5	-1,#CASHPOINTS,510034:4200,28762:740,28745:5550,28725:2700
+-	pointshop	wep2_1#S6	-1,#CASHPOINTS,510028:7180,510057:7580,510027:8380,510056:7980
+-	pointshop	wep2_1#S7	-1,#CASHPOINTS,28785:7380,28789:7180,510172:7180,510165:7180,510166:7180
+-	pointshop	wep2_1#S8	-1,#CASHPOINTS,510033:8180
+-	pointshop	wep3_0#C	-1,#CASHPOINTS,28241:520
+-	pointshop	wep3_0#F	-1,#CASHPOINTS,830038:5580
+-	pointshop	wep3_0#L	-1,#CASHPOINTS,830026:4635,830001:3300
+-	pointshop	wep3_0#R	-1,#CASHPOINTS,830025:4635
+-	pointshop	wep3_1#S0	-1,#CASHPOINTS,830003:3800
+-	pointshop	wep3_1#S1	-1,#CASHPOINTS,830015:2700
+-	pointshop	wep3_1#S2	-1,#CASHPOINTS,830013:2400
+-	pointshop	wep3_1#S3	-1,#CASHPOINTS,28254:3800
+-	pointshop	wep3_1#S4	-1,#CASHPOINTS,830010:7980
+-	pointshop	wep3_1#S5	-1,#CASHPOINTS,830011:8180
+-	pointshop	wep4_0#C	-1,#CASHPOINTS,28243:3900
+-	pointshop	wep4_0#D	-1,#CASHPOINTS,840020:4635
+-	pointshop	wep4_0#J	-1,#CASHPOINTS,840021:4635
+-	pointshop	wep4_0#L	-1,#CASHPOINTS,840000:3300
+-	pointshop	wep4_1#S0	-1,#CASHPOINTS,840002:3600
+-	pointshop	wep4_1#S1	-1,#CASHPOINTS,840010:2700
+-	pointshop	wep4_1#S2	-1,#CASHPOINTS,840032:7580
+-	pointshop	wep4_1#S3	-1,#CASHPOINTS,840009:2400
+-	pointshop	wep4_1#S4	-1,#CASHPOINTS,840006:7980
+-	pointshop	wep4_1#S5	-1,#CASHPOINTS,840007:7780
+-	pointshop	wep5_0#D	-1,#CASHPOINTS,650033:5780
+-	pointshop	wep5_0#F	-1,#CASHPOINTS,610072:5580,650049:5380
+-	pointshop	wep5_0#H	-1,#CASHPOINTS,13303:1200,13314:1200,650034:4635,13332:1200,13313:1000,13315:3600,13300:200
+-	pointshop	wep5_0#V	-1,#CASHPOINTS,13328:1300
+-	pointshop	wep5_0#W	-1,#CASHPOINTS,650003:4400
+-	pointshop	wep5_1#S0	-1,#CASHPOINTS,650009:3600,650008:3600
+-	pointshop	wep5_1#S1	-1,#CASHPOINTS,650028:1620
+-	pointshop	wep5_1#S2	-1,#CASHPOINTS,650046:8380,650047:7380
+-	pointshop	wep5_1#S3	-1,#CASHPOINTS,650058:7980
+-	pointshop	wep5_1#S4	-1,#CASHPOINTS,650025:1440
+-	pointshop	wep5_1#S5	-1,#CASHPOINTS,13337:3000,13338:680
+-	pointshop	wep5_1#S6	-1,#CASHPOINTS,650021:7780,650022:7780
+-	pointshop	wep6_0#B	-1,#CASHPOINTS,1920:1500
+-	pointshop	wep6_0#C	-1,#CASHPOINTS,1925:320,1934:800,570036:5780,1939:1600
+-	pointshop	wep6_0#F	-1,#CASHPOINTS,570073:5580,570072:5380
+-	pointshop	wep6_0#G	-1,#CASHPOINTS,1930:650
+-	pointshop	wep6_0#H	-1,#CASHPOINTS,1910:280,1944:2400
+-	pointshop	wep6_0#L	-1,#CASHPOINTS,570037:6180
+-	pointshop	wep6_0#N	-1,#CASHPOINTS,1935:2400
+-	pointshop	wep6_0#P	-1,#CASHPOINTS,570005:4400
+-	pointshop	wep6_0#V	-1,#CASHPOINTS,1900:1300
+-	pointshop	wep6_1#S0	-1,#CASHPOINTS,570018:3500,570017:3600
+-	pointshop	wep6_1#S1	-1,#CASHPOINTS,570032:1350
+-	pointshop	wep6_1#S2	-1,#CASHPOINTS,570063:7580,570062:7380
+-	pointshop	wep6_1#S3	-1,#CASHPOINTS,570087:7580
+-	pointshop	wep6_1#S4	-1,#CASHPOINTS,570029:1200
+-	pointshop	wep6_1#S5	-1,#CASHPOINTS,570008:3700
+-	pointshop	wep6_1#S6	-1,#CASHPOINTS,570013:7180
+-	pointshop	wep6_1#S7	-1,#CASHPOINTS,570075:7380
+-	pointshop	wep6_1#S8	-1,#CASHPOINTS,570020:7380,570019:7780
+-	pointshop	wep7_0#A	-1,#CASHPOINTS,1290:1300,610006:3300,610029:1250
+-	pointshop	wep7_0#B	-1,#CASHPOINTS,1273:1920,1271:1680,1295:1920
+-	pointshop	wep7_0#C	-1,#CASHPOINTS,1285:2200
+-	pointshop	wep7_0#D	-1,#CASHPOINTS,1270:1560
+-	pointshop	wep7_0#F	-1,#CASHPOINTS,610071:5980
+-	pointshop	wep7_0#G	-1,#CASHPOINTS,1281:2700,1291:6300
+-	pointshop	wep7_0#I	-1,#CASHPOINTS,1266:2250,1267:1800,1269:1440,1297:1680
+-	pointshop	wep7_0#J	-1,#CASHPOINTS,28010:4800
+-	pointshop	wep7_0#K	-1,#CASHPOINTS,1256:600,1258:600,1284:2640
+-	pointshop	wep7_0#S	-1,#CASHPOINTS,1260:100,610045:4635
+-	pointshop	wep7_0#T	-1,#CASHPOINTS,610044:4635
+-	pointshop	wep7_0#U	-1,#CASHPOINTS,1274:720
+-	pointshop	wep7_0#V	-1,#CASHPOINTS,1264:1000,28008:1300
+-	pointshop	wep7_0#W	-1,#CASHPOINTS,1268:1560
+-	pointshop	wep7_1#S0	-1,#CASHPOINTS,610020:3600,610021:3600
+-	pointshop	wep7_1#S1	-1,#CASHPOINTS,610041:1350
+-	pointshop	wep7_1#S2	-1,#CASHPOINTS,610065:8380,610064:8380
+-	pointshop	wep7_1#S3	-1,#CASHPOINTS,610085:7980
+-	pointshop	wep7_1#S4	-1,#CASHPOINTS,610037:1200
+-	pointshop	wep7_1#S5	-1,#CASHPOINTS,28022:4500,610012:5550,28023:3120
+-	pointshop	wep7_1#S6	-1,#CASHPOINTS,610016:7180
+-	pointshop	wep7_1#S7	-1,#CASHPOINTS,610022:7780,610023:7780
+-	pointshop	wep8_0#B	-1,#CASHPOINTS,1832:3600
+-	pointshop	wep8_0#D	-1,#CASHPOINTS,560036:4635
+-	pointshop	wep8_0#F	-1,#CASHPOINTS,560068:5580,560067:5980
+-	pointshop	wep8_0#H	-1,#CASHPOINTS,1815:5100,1825:1920
+-	pointshop	wep8_0#I	-1,#CASHPOINTS,560004:2200,1837:1950
+-	pointshop	wep8_0#K	-1,#CASHPOINTS,1817:1950
+-	pointshop	wep8_0#S	-1,#CASHPOINTS,1835:840,1830:950
+-	pointshop	wep8_0#V	-1,#CASHPOINTS,1800:1300
+-	pointshop	wep8_1#S0	-1,#CASHPOINTS,560019:3600,560018:3600
+-	pointshop	wep8_1#S1	-1,#CASHPOINTS,560037:1350
+-	pointshop	wep8_1#S2	-1,#CASHPOINTS,560061:8380,560060:7580
+-	pointshop	wep8_1#S3	-1,#CASHPOINTS,560081:7580
+-	pointshop	wep8_1#S4	-1,#CASHPOINTS,560032:1200
+-	pointshop	wep8_1#S5	-1,#CASHPOINTS,1846:1700
+-	pointshop	wep8_1#S6	-1,#CASHPOINTS,560012:7180,560013:7180
+-	pointshop	wep8_1#S7	-1,#CASHPOINTS,560072:8380
+-	pointshop	wep8_1#S8	-1,#CASHPOINTS,560021:7780,560020:7780
+-	pointshop	wep9_0#B	-1,#CASHPOINTS,16017:1440
+-	pointshop	wep9_0#C	-1,#CASHPOINTS,16003:800,16040:1600
+-	pointshop	wep9_0#E	-1,#CASHPOINTS,590006:3300,16000:6000
+-	pointshop	wep9_0#F	-1,#CASHPOINTS,590087:5580
+-	pointshop	wep9_0#G	-1,#CASHPOINTS,1524:4500
+-	pointshop	wep9_0#L	-1,#CASHPOINTS,1525:3600,1544:2655
+-	pointshop	wep9_0#M	-1,#CASHPOINTS,16018:5100
+-	pointshop	wep9_0#N	-1,#CASHPOINTS,1541:1560,16022:2040,16029:2250
+-	pointshop	wep9_0#P	-1,#CASHPOINTS,16031:3000,590045:4635
+-	pointshop	wep9_0#Q	-1,#CASHPOINTS,1527:4500,16024:5700
+-	pointshop	wep9_0#R	-1,#CASHPOINTS,16010:950,16001:6510,16033:4200,16026:2040
+-	pointshop	wep9_0#S	-1,#CASHPOINTS,16039:2250
+-	pointshop	wep9_0#T	-1,#CASHPOINTS,16016:1404
+-	pointshop	wep9_0#V	-1,#CASHPOINTS,16051:3600,1548:2400,16041:1300
+-	pointshop	wep9_0#W	-1,#CASHPOINTS,1534:600
+-	pointshop	wep9_1#S0	-1,#CASHPOINTS,590021:5400,590022:3600
+-	pointshop	wep9_1#S1	-1,#CASHPOINTS,590047:1620,590048:1620
+-	pointshop	wep9_1#S2	-1,#CASHPOINTS,590080:7580,590079:8380
+-	pointshop	wep9_1#S3	-1,#CASHPOINTS,590107:7580
+-	pointshop	wep9_1#S4	-1,#CASHPOINTS,590038:1440,590039:1440
+-	pointshop	wep9_1#S5	-1,#CASHPOINTS,16065:5100,16063:1400
+-	pointshop	wep9_1#S6	-1,#CASHPOINTS,590016:7580,590017:7580
+-	pointshop	wep9_1#S7	-1,#CASHPOINTS,590023:7780,590024:7780
+-	pointshop	wep10_0#D	-1,#CASHPOINTS,1341:5235
+-	pointshop	wep10_0#G	-1,#CASHPOINTS,1310:2700
+-	pointshop	wep10_0#P	-1,#CASHPOINTS,520002:2200
+-	pointshop	wep10_0#S	-1,#CASHPOINTS,520003:4050
+-	pointshop	wep10_0#V	-1,#CASHPOINTS,1311:2955
+-	pointshop	wep10_1#S0	-1,#CASHPOINTS,520008:3800
+-	pointshop	wep10_1#S1	-1,#CASHPOINTS,520021:1620
+-	pointshop	wep10_1#S2	-1,#CASHPOINTS,520017:1440
+-	pointshop	wep10_1#S3	-1,#CASHPOINTS,1326:680
+-	pointshop	wep10_1#S4	-1,#CASHPOINTS,520009:8180
+-	pointshop	wep11_0#B	-1,#CASHPOINTS,1436:900
+-	pointshop	wep11_0#C	-1,#CASHPOINTS,1435:1900
+-	pointshop	wep11_0#F	-1,#CASHPOINTS,530057:5580
+-	pointshop	wep11_0#G	-1,#CASHPOINTS,1414:1200,1449:1800,1426:2700,530002:4400,1413:3600
+-	pointshop	wep11_0#H	-1,#CASHPOINTS,530045:4635
+-	pointshop	wep11_0#I	-1,#CASHPOINTS,1433:1050
+-	pointshop	wep11_0#L	-1,#CASHPOINTS,1420:1020
+-	pointshop	wep11_0#M	-1,#CASHPOINTS,32013:6600
+-	pointshop	wep11_0#P	-1,#CASHPOINTS,1447:5400,1419:200
+-	pointshop	wep11_0#V	-1,#CASHPOINTS,1400:1300
+-	pointshop	wep11_1#S0	-1,#CASHPOINTS,530013:3600
+-	pointshop	wep11_1#S1	-1,#CASHPOINTS,530034:1350
+-	pointshop	wep11_1#S2	-1,#CASHPOINTS,530054:7580
+-	pointshop	wep11_1#S3	-1,#CASHPOINTS,530072:7580
+-	pointshop	wep11_1#S4	-1,#CASHPOINTS,530025:1200
+-	pointshop	wep11_1#S5	-1,#CASHPOINTS,530015:6000,32005:560
+-	pointshop	wep11_1#S6	-1,#CASHPOINTS,530010:7580
+-	pointshop	wep11_1#S7	-1,#CASHPOINTS,530060:8380
+-	pointshop	wep11_1#S8	-1,#CASHPOINTS,530014:7780
+-	pointshop	wep12_0#B	-1,#CASHPOINTS,500065:5235,1140:6600
+-	pointshop	wep12_0#C	-1,#CASHPOINTS,13431:1000,13454:1600,13402:1000,1135:3000
+-	pointshop	wep12_0#D	-1,#CASHPOINTS,500062:4335,500072:5780,500009:2180
+-	pointshop	wep12_0#E	-1,#CASHPOINTS,1132:3600,1137:200,13401:1000
+-	pointshop	wep12_0#F	-1,#CASHPOINTS,500101:5580,500102:5980,500103:5580
+-	pointshop	wep12_0#G	-1,#CASHPOINTS,500063:6180
+-	pointshop	wep12_0#H	-1,#CASHPOINTS,1128:4200,500007:3300
+-	pointshop	wep12_0#I	-1,#CASHPOINTS,1141:3000,13409:600,500005:3450,500008:3300
+-	pointshop	wep12_0#N	-1,#CASHPOINTS,13407:1200
+-	pointshop	wep12_0#O	-1,#CASHPOINTS,13442:5400
+-	pointshop	wep12_0#P	-1,#CASHPOINTS,13404:1950
+-	pointshop	wep12_0#R	-1,#CASHPOINTS,1111:2400,1125:4800,13421:2280
+-	pointshop	wep12_0#S	-1,#CASHPOINTS,1127:800,13465:3600,1114:2400,1134:900,13461:4800,13460:4800,13462:4800,1136:3000,13403:1500,1148:1020
+-	pointshop	wep12_0#T	-1,#CASHPOINTS,13412:5400,13413:5400
+-	pointshop	wep12_0#V	-1,#CASHPOINTS,13455:1300,500066:4635
+-	pointshop	wep12_1#S0	-1,#CASHPOINTS,500025:3500,500026:7200
+-	pointshop	wep12_1#S1	-1,#CASHPOINTS,500055:1350,500054:1350
+-	pointshop	wep12_1#S2	-1,#CASHPOINTS,500093:8380,500094:8380,500092:7380
+-	pointshop	wep12_1#S3	-1,#CASHPOINTS,500050:1200,500049:1200
+-	pointshop	wep12_1#S4	-1,#CASHPOINTS,500030:7400,13469:1680
+-	pointshop	wep12_1#S5	-1,#CASHPOINTS,500019:7380,500020:7580,500046:7580
+-	pointshop	wep12_1#S6	-1,#CASHPOINTS,500107:7580
+-	pointshop	wep12_1#S7	-1,#CASHPOINTS,500027:7380,500028:7780
+-	pointshop	wep13_0#C	-1,#CASHPOINTS,13146:3600
+-	pointshop	wep13_0#D	-1,#CASHPOINTS,800027:5235,800026:4635
+-	pointshop	wep13_0#S	-1,#CASHPOINTS,13100:3900
+-	pointshop	wep13_0#V	-1,#CASHPOINTS,13128:1300
+-	pointshop	wep13_0#W	-1,#CASHPOINTS,13107:2100
+-	pointshop	wep13_1#S0	-1,#CASHPOINTS,800003:4200
+-	pointshop	wep13_1#S1	-1,#CASHPOINTS,800015:2700
+-	pointshop	wep13_1#S2	-1,#CASHPOINTS,800014:2400
+-	pointshop	wep13_1#S3	-1,#CASHPOINTS,32301:3600
+-	pointshop	wep13_1#S4	-1,#CASHPOINTS,800011:7980
+-	pointshop	wep13_1#S5	-1,#CASHPOINTS,800042:8380
+-	pointshop	wep13_1#S6	-1,#CASHPOINTS,800012:8980
+-	pointshop	wep14_0#C	-1,#CASHPOINTS,28240:3300
+-	pointshop	wep14_0#F	-1,#CASHPOINTS,810042:5980
+-	pointshop	wep14_0#L	-1,#CASHPOINTS,810027:4635,13170:2100,810000:3300
+-	pointshop	wep14_0#S	-1,#CASHPOINTS,810026:4635
+-	pointshop	wep14_1#S0	-1,#CASHPOINTS,810002:3600
+-	pointshop	wep14_1#S1	-1,#CASHPOINTS,810015:2700
+-	pointshop	wep14_1#S2	-1,#CASHPOINTS,810040:8380
+-	pointshop	wep14_1#S3	-1,#CASHPOINTS,810049:7980
+-	pointshop	wep14_1#S4	-1,#CASHPOINTS,810010:2400
+-	pointshop	wep14_1#S5	-1,#CASHPOINTS,810007:7580
+-	pointshop	wep14_1#S6	-1,#CASHPOINTS,810008:7780
+-	pointshop	wep15_0#C	-1,#CASHPOINTS,28242:2880
+-	pointshop	wep15_0#G	-1,#CASHPOINTS,13167:1200
+-	pointshop	wep15_0#L	-1,#CASHPOINTS,820021:4635,820000:3300
+-	pointshop	wep15_0#O	-1,#CASHPOINTS,820020:4635
+-	pointshop	wep15_1#S0	-1,#CASHPOINTS,820002:4320
+-	pointshop	wep15_1#S1	-1,#CASHPOINTS,820011:3240
+-	pointshop	wep15_1#S2	-1,#CASHPOINTS,820008:2880
+-	pointshop	wep15_1#S3	-1,#CASHPOINTS,28244:4500
+-	pointshop	wep15_1#S4	-1,#CASHPOINTS,820006:7780
+-	pointshop	wep16_0#A	-1,#CASHPOINTS,550009:5600,1643:1200
+-	pointshop	wep16_0#C	-1,#CASHPOINTS,1680:1600,1647:1800
+-	pointshop	wep16_0#D	-1,#CASHPOINTS,550115:5780
+-	pointshop	wep16_0#E	-1,#CASHPOINTS,1637:1500,1615:240,1696:1600,1697:1800
+-	pointshop	wep16_0#F	-1,#CASHPOINTS,550143:5980,550144:5380,550141:5380,550145:5380,550150:5380,550146:5380,550148:5380
+-	pointshop	wep16_0#G	-1,#CASHPOINTS,1629:300,550008:4400
+-	pointshop	wep16_0#H	-1,#CASHPOINTS,1631:4500
+-	pointshop	wep16_0#L	-1,#CASHPOINTS,1646:4400,1659:1800,550116:4635
+-	pointshop	wep16_0#M	-1,#CASHPOINTS,1692:1600,1693:1800,1661:1500,1654:2100,1623:1000
+-	pointshop	wep16_0#R	-1,#CASHPOINTS,1670:2040
+-	pointshop	wep16_0#S	-1,#CASHPOINTS,1672:2280,550088:4335,550093:5780,550094:5780,1648:3000,1665:440,1668:2400
+-	pointshop	wep16_0#T	-1,#CASHPOINTS,1636:360
+-	pointshop	wep16_0#V	-1,#CASHPOINTS,1600:1300
+-	pointshop	wep16_0#W	-1,#CASHPOINTS,1660:4500,1614:200,1616:2400
+-	pointshop	wep16_1#S0	-1,#CASHPOINTS,550026:3700,550028:3800,550027:3500,550025:7000,550024:3700
+-	pointshop	wep16_1#S1	-1,#CASHPOINTS,550090:1620,550089:1620
+-	pointshop	wep16_1#S2	-1,#CASHPOINTS,550133:7380,550130:7380,550132:7380,550131:7380,550134:8380,550135:7380
+-	pointshop	wep16_1#S3	-1,#CASHPOINTS,550177:7380,550176:7380,550178:7380
+-	pointshop	wep16_1#S4	-1,#CASHPOINTS,550070:1440,550069:1440
+-	pointshop	wep16_1#S5	-1,#CASHPOINTS,550031:4440,26109:600,550030:6600
+-	pointshop	wep16_1#S6	-1,#CASHPOINTS,550020:7580,550062:7580,550060:7580,550061:7580,550019:7180
+-	pointshop	wep16_1#S7	-1,#CASHPOINTS,550152:7380,550156:7380,550155:7380,550159:8380
+-	pointshop	wep16_1#S8	-1,#CASHPOINTS,550063:7780,550066:8180,550065:7380,550064:7380,550029:7780
+-	pointshop	wep17_0#B	-1,#CASHPOINTS,1396:1440,1375:1000,1385:100
+-	pointshop	wep17_0#C	-1,#CASHPOINTS,28106:1600
+-	pointshop	wep17_0#D	-1,#CASHPOINTS,620022:4635,1370:1755
+-	pointshop	wep17_0#E	-1,#CASHPOINTS,1393:4500
+-	pointshop	wep17_0#F	-1,#CASHPOINTS,620040:5580
+-	pointshop	wep17_0#G	-1,#CASHPOINTS,1387:6210,1369:3000
+-	pointshop	wep17_0#H	-1,#CASHPOINTS,1376:1950,1377:5700
+-	pointshop	wep17_0#L	-1,#CASHPOINTS,1372:1200
+-	pointshop	wep17_0#M	-1,#CASHPOINTS,28116:3000
+-	pointshop	wep17_0#R	-1,#CASHPOINTS,1373:1800
+-	pointshop	wep17_0#T	-1,#CASHPOINTS,1368:3000,1374:100,28101:4500,1361:700
+-	pointshop	wep17_0#V	-1,#CASHPOINTS,1384:1920,28107:1300
+-	pointshop	wep17_0#Y	-1,#CASHPOINTS,1392:4500
+-	pointshop	wep17_1#S0	-1,#CASHPOINTS,620019:1620
+-	pointshop	wep17_1#S1	-1,#CASHPOINTS,620037:7580
+-	pointshop	wep17_1#S2	-1,#CASHPOINTS,620058:7980
+-	pointshop	wep17_1#S3	-1,#CASHPOINTS,620017:1440
+-	pointshop	wep17_1#S4	-1,#CASHPOINTS,620010:6760
+-	pointshop	wep17_1#S5	-1,#CASHPOINTS,620006:7580
+-	pointshop	wep17_1#S6	-1,#CASHPOINTS,620043:7580
+-	pointshop	wep18_0#B	-1,#CASHPOINTS,1492:2160,1470:1200
+-	pointshop	wep18_0#C	-1,#CASHPOINTS,1484:1950,1466:3000,1476:3900,1498:1600
+-	pointshop	wep18_0#F	-1,#CASHPOINTS,630045:5580
+-	pointshop	wep18_0#G	-1,#CASHPOINTS,1474:7200,1490:1770,1455:800
+-	pointshop	wep18_0#H	-1,#CASHPOINTS,1471:1200
+-	pointshop	wep18_0#I	-1,#CASHPOINTS,1483:2250
+-	pointshop	wep18_0#J	-1,#CASHPOINTS,630027:4335
+-	pointshop	wep18_0#L	-1,#CASHPOINTS,1411:3000,1469:3600,630003:2200
+-	pointshop	wep18_0#M	-1,#CASHPOINTS,1489:1770
+-	pointshop	wep18_0#R	-1,#CASHPOINTS,26016:1000
+-	pointshop	wep18_0#S	-1,#CASHPOINTS,1477:7800
+-	pointshop	wep18_0#T	-1,#CASHPOINTS,1461:800
+-	pointshop	wep18_0#V	-1,#CASHPOINTS,1450:1300
+-	pointshop	wep18_0#Z	-1,#CASHPOINTS,1468:1440
+-	pointshop	wep18_1#S0	-1,#CASHPOINTS,630012:3600
+-	pointshop	wep18_1#S1	-1,#CASHPOINTS,630019:1350
+-	pointshop	wep18_1#S2	-1,#CASHPOINTS,630041:7580
+-	pointshop	wep18_1#S3	-1,#CASHPOINTS,630018:1200
+-	pointshop	wep18_1#S4	-1,#CASHPOINTS,630006:2000,26007:6150,630007:3800
+-	pointshop	wep18_1#S5	-1,#CASHPOINTS,630009:7180
+-	pointshop	wep18_1#S6	-1,#CASHPOINTS,630049:8380
+-	pointshop	wep18_1#S7	-1,#CASHPOINTS,630013:7780
+-	pointshop	wep19_0#A	-1,#CASHPOINTS,2012:6300
+-	pointshop	wep19_0#B	-1,#CASHPOINTS,2049:6900
+-	pointshop	wep19_0#C	-1,#CASHPOINTS,2025:1600,2013:6300
+-	pointshop	wep19_0#D	-1,#CASHPOINTS,2005:4500,640037:5780,640036:5780,2001:360
+-	pointshop	wep19_0#F	-1,#CASHPOINTS,2014:6300,640053:5380
+-	pointshop	wep19_0#G	-1,#CASHPOINTS,2011:6300
+-	pointshop	wep19_0#H	-1,#CASHPOINTS,26138:1500
+-	pointshop	wep19_0#I	-1,#CASHPOINTS,26139:1500
+-	pointshop	wep19_0#K	-1,#CASHPOINTS,2004:1680
+-	pointshop	wep19_0#P	-1,#CASHPOINTS,640005:4600
+-	pointshop	wep19_0#S	-1,#CASHPOINTS,1472:240,2000:5100,2027:5400
+-	pointshop	wep19_0#V	-1,#CASHPOINTS,2026:1300
+-	pointshop	wep19_0#W	-1,#CASHPOINTS,1473:240
+-	pointshop	wep19_1#S0	-1,#CASHPOINTS,640020:3700,640019:3700
+-	pointshop	wep19_1#S1	-1,#CASHPOINTS,640034:1620
+-	pointshop	wep19_1#S2	-1,#CASHPOINTS,640050:7380,640049:7380
+-	pointshop	wep19_1#S3	-1,#CASHPOINTS,640064:7780,640065:7780
+-	pointshop	wep19_1#S4	-1,#CASHPOINTS,640033:1440
+-	pointshop	wep19_1#S5	-1,#CASHPOINTS,2051:4100,2059:3280,2039:560
+-	pointshop	wep19_1#S6	-1,#CASHPOINTS,640014:7380,640015:7380
+-	pointshop	wep19_1#S7	-1,#CASHPOINTS,640054:7380
+-	pointshop	wep19_1#S8	-1,#CASHPOINTS,640022:7780,640021:7780
+-	pointshop	wep20_0#A	-1,#CASHPOINTS,1191:3000
+-	pointshop	wep20_0#B	-1,#CASHPOINTS,21001:2160,1182:2100,1162:4200
+-	pointshop	wep20_0#C	-1,#CASHPOINTS,1196:1000,21015:1600
+-	pointshop	wep20_0#D	-1,#CASHPOINTS,1186:2400
+-	pointshop	wep20_0#E	-1,#CASHPOINTS,600041:4635,1174:900
+-	pointshop	wep20_0#F	-1,#CASHPOINTS,21053:2850,600059:5980
+-	pointshop	wep20_0#G	-1,#CASHPOINTS,21011:5100
+-	pointshop	wep20_0#H	-1,#CASHPOINTS,1198:2355,600008:2200
+-	pointshop	wep20_0#K	-1,#CASHPOINTS,1170:1000,1189:4710
+-	pointshop	wep20_0#L	-1,#CASHPOINTS,21018:4800
+-	pointshop	wep20_0#M	-1,#CASHPOINTS,1173:1500,21003:2400,1176:1920
+-	pointshop	wep20_0#R	-1,#CASHPOINTS,21039:1800
+-	pointshop	wep20_0#S	-1,#CASHPOINTS,1167:3000
+-	pointshop	wep20_0#T	-1,#CASHPOINTS,1181:4200
+-	pointshop	wep20_0#V	-1,#CASHPOINTS,1188:420,21016:1300
+-	pointshop	wep20_1#S0	-1,#CASHPOINTS,600017:3600
+-	pointshop	wep20_1#S1	-1,#CASHPOINTS,600030:1350
+-	pointshop	wep20_1#S2	-1,#CASHPOINTS,600054:8380
+-	pointshop	wep20_1#S3	-1,#CASHPOINTS,600071:7980
+-	pointshop	wep20_1#S4	-1,#CASHPOINTS,600027:1200
+-	pointshop	wep20_1#S5	-1,#CASHPOINTS,600011:5700,21050:4500
+-	pointshop	wep20_1#S6	-1,#CASHPOINTS,600014:7180
+-	pointshop	wep20_1#S7	-1,#CASHPOINTS,600018:7780
+-	pointshop	wep21_0#A	-1,#CASHPOINTS,1990:2400
+-	pointshop	wep21_0#C	-1,#CASHPOINTS,580037:5780
+-	pointshop	wep21_0#F	-1,#CASHPOINTS,580072:5380,580073:5580
+-	pointshop	wep21_0#H	-1,#CASHPOINTS,26200:2400
+-	pointshop	wep21_0#L	-1,#CASHPOINTS,580038:6180
+-	pointshop	wep21_0#P	-1,#CASHPOINTS,580005:4400
+-	pointshop	wep21_0#R	-1,#CASHPOINTS,1989:2400,1985:3000
+-	pointshop	wep21_0#S	-1,#CASHPOINTS,1984:650
+-	pointshop	wep21_0#V	-1,#CASHPOINTS,1996:1300
+-	pointshop	wep21_1#S0	-1,#CASHPOINTS,580017:3600,580018:3500
+-	pointshop	wep21_1#S1	-1,#CASHPOINTS,580033:1350
+-	pointshop	wep21_1#S2	-1,#CASHPOINTS,580061:7380,580062:7580
+-	pointshop	wep21_1#S3	-1,#CASHPOINTS,580087:7580
+-	pointshop	wep21_1#S4	-1,#CASHPOINTS,580030:1200
+-	pointshop	wep21_1#S5	-1,#CASHPOINTS,580008:3700
+-	pointshop	wep21_1#S6	-1,#CASHPOINTS,580013:7180
+-	pointshop	wep21_1#S7	-1,#CASHPOINTS,580075:7380
+-	pointshop	wep21_1#S8	-1,#CASHPOINTS,580019:7780,580020:7380

@@ -6,7 +6,7 @@
 //= Eye / Mouth, then 0-9 (when a display name starts with a digit)
 //= then A-Z by client identifiedDisplayName. Letter shops are
 //= filled in that display-name order, then ID.
-//= Specialty is Temporal Circlets and Frontier Rune Crowns.
+//= Specialty is grouped by its named equipment family.
 //= Event is Racing Caps, RWC/RTC/RCC tournament hats, and iRO-history
 //= create-pass leftovers. Display names do not keep [Event]/[S2]/[S3]
 //= prefixes. Hats that exist
@@ -475,14 +475,18 @@ OnInit:
 	setarray .RentPrice[0], 700,70,70,70,70,70,70,630,1050,168,140,70,140,700,700,840,700,840,840;
 	setarray .RentPrice[0], 700,70,70,70,70,70,70,630,1400,168,140,70,140,700,700,840,1400,840,840;
 	setarray .RentDisp$[0], "3D Glasses Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Freya's Crown Box","Pecopeco Hairband Box","Hockey Mask Box","Observer Box","Bubble Gum Box","Freya's Spiritual Circlet Box","Four Leaf Clover in Mouth R Box III","Chewing Bubble Gum R Box III","Spiked Scarf BoxIII","Rainbow Scarf BoxIII","Life Ribbon BoxIII","Umbala Spirit 7days Box";
-	// Temporal Circlets and Frontier Rune Crowns. Official late-game routes exist; the milliner stocks them because the grind is extreme for one player, and the Chapter 1 Frontier shop is not implemented locally. Time Dimensions Rune Crowns stay out.
-	setarray .SpecId[0], 19474,19475,19476,19477,19478,19479,19480,19481,19482,19483,19484,19485,19486,19487,19488,19489,19490,19491,19492,400975;
-	setarray .SpecId[20], 400976,400977,400978,400979,400980,400981,400982,400983,400984,400985,400986,400987,400988,400989,400990,400991,400992;
-	.SpecCount = 37;
-	setarray .SpecPrice[0], 2300,3750,3450,3450,3450,3450,2400,2500,2400,2400,2700,2400,3750,2400,3450,3600,3750,3000,3600,6600,5800,5800,5800,6600,5600,5600,5600,5600,6600,6600,5800,5800,6600,6600,5600,5600,5600;
-	setarray .SpecPrice[0], 2300,3750,3450,3450,3450,3450,4800,2500,4800,4800,2700,4800,3750,4800,3450,3600,3750,4000,3600,6580,5780,5780,5780,6580,5580,5580,5580,5580,6580,6580,5780,5780,6580,6580,5580,5580,5580;
-	setarray .SpecDisp$[0], "Temporal Circlet(Rune Knight)","Temporal Circlet(Royal Guard)","Temporal Circlet(Mechanic)","Temporal Circlet(Genetic)","Temporal Circlet(Guillotine Cross)","Temporal Circlet(Shadow Chaser)","Temporal Circlet(Archbishop)","Temporal Circlet(Sura)","Temporal Circlet(Warlock)","Temporal Circlet(Sorcerer)","Temporal Circlet(Ranger)","Temporal Circlet(Wanderer&Minstrel)","Temporal Circlet(Star Emperor)","Temporal Circlet(Soul Reaper)","Temporal Circlet(Rebellion)","Temporal Circlet(Oboro)","Temporal Circlet(Kagerou)","Temporal Circlet(Super Novice)","Temporal Circlet(Summoner)","Frontier Rune Crown(Dragon Knight)";
-	setarray .SpecDisp$[20], "Frontier Rune Crown(Imperial Guard)","Frontier Rune Crown(Meister)","Frontier Rune Crown(Biolo)","Frontier Rune Crown(Shadow Cross)","Frontier Rune Crown(Abyss Chaser)","Frontier Rune Crown(Arch Mage)","Frontier Rune Crown(Elemental Master)","Frontier Rune Crown(Cardinal)","Frontier Rune Crown(Inquisitor)","Frontier Rune Crown(Windhawk)","Frontier Rune Crown(Troubadour & Trouvere)","Frontier Rune Crown(Shinkiro & Shiranui)","Frontier Rune Crown(Night Watch)","Frontier Rune Crown(Sky Emperor)","Frontier Rune Crown(Soul Ascetic)","Frontier Rune Crown(Hyper Novice)","Frontier Rune Crown(Spirit Handler)";
+	// Confirmed endgame quest/exchange headgear: Temporal Circlets, Time Dimensions Rune Crowns, and Frontier Rune Crowns. The matching manifest drives the +120% acquisition modifier in the KB audit.
+	setarray .SpecId[0], 19474,19475,19476,19477,19478,19479,19480,19481,19482,19483,19484,19485,19486,19487,19488,19489,19490,19491,19492,400529;
+	setarray .SpecId[20], 400530,400531,400532,400533,400534,400535,400536,400537,400538,400539,400540,400541,400542,400543,400544,400545,400546,400975,400976,400977;
+	setarray .SpecId[40], 400978,400979,400980,400981,400982,400983,400984,400985,400986,400987,400988,400989,400990,400991,400992;
+	.SpecCount = 55;
+	setarray .SpecPrice[0], 3500,5550,5250,5250,5250,5250,7200,3700,7200,7200,3900,7200,5550,7200,5250,5400,5550,6400,5400,8580,8780,8580,8580,8180,8580,7980,7980,8780,8580,8180,8780,8780,8180,8180,7980,8780,8780,8980,8180,8180,8180,8980,7980,7980,7980,7980,8980,8980,8180,8180,8980,8980,7980,7980,7980;
+	setarray .SpecDisp$[0], "Temporal Circlet(Rune Knight)","Temporal Circlet(Royal Guard)","Temporal Circlet(Mechanic)","Temporal Circlet(Genetic)","Temporal Circlet(Guillotine Cross)","Temporal Circlet(Shadow Chaser)","Temporal Circlet(Archbishop)","Temporal Circlet(Sura)","Temporal Circlet(Warlock)","Temporal Circlet(Sorcerer)","Temporal Circlet(Ranger)","Temporal Circlet(Wanderer&Minstrel)","Temporal Circlet(Star Emperor)","Temporal Circlet(Soul Reaper)","Temporal Circlet(Rebellion)","Temporal Circlet(Oboro)","Temporal Circlet(Kagerou)","Temporal Circlet(Super Novice)","Temporal Circlet(Summoner)","Time Dimensions Rune Crown(Dragon Knight)";
+	setarray .SpecDisp$[20], "Time Dimensions Rune Crown(Imperial Guard)","Time Dimensions Rune Crown(Meister)","Time Dimensions Rune Crown(Biolo)","Time Dimensions Rune Crown(Shadow Cross)","Time Dimensions Rune Crown(Abyss Chaser)","Time Dimensions Rune Crown(Arch Mage)","Time Dimensions Rune Crown(Elemental Master)","Time Dimensions Rune Crown(Cardinal)","Time Dimensions Rune Crown(Inquisitor)","Time Dimensions Rune Crown(Windhawk)","Time Dimensions Rune Crown(Troubadour & Trouvere)","Time Dimensions Rune Crown(Shinkiro & Shiranui)","Time Dimensions Rune Crown(Night Watch)","Time Dimensions Rune Crown(Sky Emperor)","Time Dimensions Rune Crown(Soul Ascetic)","Time Dimensions Rune Crown(Hyper Novice)","Time Dimensions Rune Crown(Spirit Handler)","Frontier Rune Crown(Dragon Knight)","Frontier Rune Crown(Imperial Guard)","Frontier Rune Crown(Meister)";
+	setarray .SpecDisp$[40], "Frontier Rune Crown(Biolo)","Frontier Rune Crown(Shadow Cross)","Frontier Rune Crown(Abyss Chaser)","Frontier Rune Crown(Arch Mage)","Frontier Rune Crown(Elemental Master)","Frontier Rune Crown(Cardinal)","Frontier Rune Crown(Inquisitor)","Frontier Rune Crown(Windhawk)","Frontier Rune Crown(Troubadour & Trouvere)","Frontier Rune Crown(Shinkiro & Shiranui)","Frontier Rune Crown(Night Watch)","Frontier Rune Crown(Sky Emperor)","Frontier Rune Crown(Soul Ascetic)","Frontier Rune Crown(Hyper Novice)","Frontier Rune Crown(Spirit Handler)";
+	setarray .SpecFamily$[0], "Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Time Dimensions Rune Crowns";
+	setarray .SpecFamily$[20], "Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns";
+	setarray .SpecFamily$[40], "Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns";
 	// Racing Caps, RWC/RTC/RCC tournament hats, and iRO-history create-pass leftovers. Display names drop [Event]/[S2]/[S3] prefixes. Missing client itemInfo is not a cut. Custom-imported hats with no worn accessory model were removed from item_db on 2026-08-20: 19416, 400938, 420569. Official rAthena rows 5895, 400088, 400089, 400090 still exist upstream and stay off this stall. Gold Dragon Helm 5451 stays on Equipment. Comp_Happy_Balloon_K 15972 sits on Event beside Equipment Happy_Balloon_K 19095 (same View and EXP/drop script; 19102 is Pale Moon Hat). RCC 2013 1st/2nd/3rd crowns stay.
 	setarray .EvtId[0], 5428,5452,5453,5603,5604,5605,5892,5893,5894,18779,18780,18781,18796,18828,18829,18830,19189,19190,19191,19192;
 	setarray .EvtId[20], 19193,19194,19195,19196,19197,19198,19199,19200,19201,19202,19203,19204,19205,19396,19397,401146,420513,420701,420884,420898;
@@ -721,6 +725,7 @@ OnInit:
 		if (.@disp$ == "")
 			.@disp$ = .@name$;
 		.SpecDisp$[.@kept] = .@disp$;
+		.SpecFamily$[.@kept] = .SpecFamily$[.@i];
 		.@specname$[.@kept] = strtolower(.@disp$);
 		.@kept += 1;
 	}
@@ -741,6 +746,9 @@ OnInit:
 				.@tmp$ = .SpecDisp$[.@i];
 				.SpecDisp$[.@i] = .SpecDisp$[.@j];
 				.SpecDisp$[.@j] = .@tmp$;
+				.@tmp$ = .SpecFamily$[.@i];
+				.SpecFamily$[.@i] = .SpecFamily$[.@j];
+				.SpecFamily$[.@j] = .@tmp$;
 				.@tmp$ = .@specname$[.@i];
 				.@specname$[.@i] = .@specname$[.@j];
 				.@specname$[.@j] = .@tmp$;
@@ -752,17 +760,9 @@ OnInit:
 		.@price = .SpecPrice[.@i];
 		.@name$ = .SpecDisp$[.@i];
 		.@loc = getiteminfo(.@id, ITEMINFO_LOCATIONS);
-		.@letter$ = strtoupper(charat(.@name$, 0));
-		.@letter_index = strpos(.@alphabet$, .@letter$);
-		if (.@letter_index < 0) {
-			if (strpos("0123456789", .@letter$) >= 0) {
-				.@letter$ = "0";
-				.@letter_index = -2;
-			} else {
-				.@letter$ = "A";
-				.@letter_index = 0;
-			}
-		}
+		if (.SpecFamily$[.@i] == "Temporal Circlets") { .@letter$ = "T"; .@letter_index = 19; }
+		else if (.SpecFamily$[.@i] == "Time Dimensions Rune Crowns") { .@letter$ = "D"; .@letter_index = 3; }
+		else { .@letter$ = "F"; .@letter_index = 5; }
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
 				if (.@letter_index == -2)
@@ -872,11 +872,9 @@ OnInit:
 			.RentMenu$[.@slot] += "0-9:";
 			.RentLetterCount[.@slot] = 1;
 		}
-		if (.SpecHasNum[.@slot]) {
-			.SpecLetter$[.@slot * 27] = "0";
-			.SpecMenu$[.@slot] += "0-9:";
-			.SpecLetterCount[.@slot] = 1;
-		}
+		if (.SpecHas[.@slot * 26 + 19]) { .SpecLetter$[.@slot * 27 + .SpecLetterCount[.@slot]] = "T"; .SpecMenu$[.@slot] += "Temporal Circlets:"; .SpecLetterCount[.@slot] += 1; }
+		if (.SpecHas[.@slot * 26 + 3]) { .SpecLetter$[.@slot * 27 + .SpecLetterCount[.@slot]] = "D"; .SpecMenu$[.@slot] += "Time Dimensions Rune Crowns:"; .SpecLetterCount[.@slot] += 1; }
+		if (.SpecHas[.@slot * 26 + 5]) { .SpecLetter$[.@slot * 27 + .SpecLetterCount[.@slot]] = "F"; .SpecMenu$[.@slot] += "Frontier Rune Crowns:"; .SpecLetterCount[.@slot] += 1; }
 		if (.EvtHasNum[.@slot]) {
 			.EvtLetter$[.@slot * 27] = "0";
 			.EvtMenu$[.@slot] += "0-9:";
@@ -896,13 +894,6 @@ OnInit:
 				.RentLetter$[.@slot * 27 + .@n] = .@letter$;
 				.RentMenu$[.@slot] += .@letter$ + ":";
 				.RentLetterCount[.@slot] = .@n + 1;
-			}
-			if (.SpecHas[.@slot * 26 + .@i]) {
-				.@letter$ = charat(.@alphabet$, .@i);
-				.@n = .SpecLetterCount[.@slot];
-				.SpecLetter$[.@slot * 27 + .@n] = .@letter$;
-				.SpecMenu$[.@slot] += .@letter$ + ":";
-				.SpecLetterCount[.@slot] = .@n + 1;
 			}
 			if (.EvtHas[.@slot * 26 + .@i]) {
 				.@letter$ = charat(.@alphabet$, .@i);
