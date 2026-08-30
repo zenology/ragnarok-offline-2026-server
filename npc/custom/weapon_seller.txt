@@ -34,7 +34,7 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 0) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:D:E:F:O:P:R:S:V:") - 1;
+			.@letter = select("B:C:D:E:F:O:P:S:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep0_0#B";
 			else if (.@letter == 1) .@shop$ = "wep0_0#C";
 			else if (.@letter == 2) .@shop$ = "wep0_0#D";
@@ -42,9 +42,8 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 4) .@shop$ = "wep0_0#F";
 			else if (.@letter == 5) .@shop$ = "wep0_0#O";
 			else if (.@letter == 6) .@shop$ = "wep0_0#P";
-			else if (.@letter == 7) .@shop$ = "wep0_0#R";
-			else if (.@letter == 8) .@shop$ = "wep0_0#S";
-			else if (.@letter == 9) .@shop$ = "wep0_0#V";
+			else if (.@letter == 7) .@shop$ = "wep0_0#S";
+			else if (.@letter == 8) .@shop$ = "wep0_0#V";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Edda Biolab:Frontier:Glacier:Illusion:OS Weapons:Poenitentia:Time Gap:Vivatus Fides:") - 1;
@@ -64,7 +63,7 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 1) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("A:B:C:D:E:F:G:I:M:P:R:S:V:") - 1;
+			.@letter = select("A:B:C:D:E:F:G:I:M:P:S:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep1_0#A";
 			else if (.@letter == 1) .@shop$ = "wep1_0#B";
 			else if (.@letter == 2) .@shop$ = "wep1_0#C";
@@ -75,9 +74,8 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 7) .@shop$ = "wep1_0#I";
 			else if (.@letter == 8) .@shop$ = "wep1_0#M";
 			else if (.@letter == 9) .@shop$ = "wep1_0#P";
-			else if (.@letter == 10) .@shop$ = "wep1_0#R";
-			else if (.@letter == 11) .@shop$ = "wep1_0#S";
-			else if (.@letter == 12) .@shop$ = "wep1_0#V";
+			else if (.@letter == 10) .@shop$ = "wep1_0#S";
+			else if (.@letter == 11) .@shop$ = "wep1_0#V";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Edda Biolab:Frontier:Glacier:Illusion:OS Weapons:Poenitentia:Time Gap:Vivatus Fides:") - 1;
@@ -221,7 +219,7 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 7) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("A:B:C:D:F:G:I:J:K:S:T:U:V:W:") - 1;
+			.@letter = select("A:B:C:D:F:G:I:J:K:S:T:V:W:") - 1;
 			if (.@letter == 0) .@shop$ = "wep7_0#A";
 			else if (.@letter == 1) .@shop$ = "wep7_0#B";
 			else if (.@letter == 2) .@shop$ = "wep7_0#C";
@@ -233,9 +231,8 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 8) .@shop$ = "wep7_0#K";
 			else if (.@letter == 9) .@shop$ = "wep7_0#S";
 			else if (.@letter == 10) .@shop$ = "wep7_0#T";
-			else if (.@letter == 11) .@shop$ = "wep7_0#U";
-			else if (.@letter == 12) .@shop$ = "wep7_0#V";
-			else if (.@letter == 13) .@shop$ = "wep7_0#W";
+			else if (.@letter == 11) .@shop$ = "wep7_0#V";
+			else if (.@letter == 12) .@shop$ = "wep7_0#W";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Edda Biolab:Frontier:Glacier:Illusion:OS Weapons:Poenitentia:Vivatus Fides:") - 1;
@@ -254,15 +251,14 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 8) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:D:F:H:I:K:S:V:") - 1;
+			.@letter = select("B:D:F:H:I:S:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep8_0#B";
 			else if (.@letter == 1) .@shop$ = "wep8_0#D";
 			else if (.@letter == 2) .@shop$ = "wep8_0#F";
 			else if (.@letter == 3) .@shop$ = "wep8_0#H";
 			else if (.@letter == 4) .@shop$ = "wep8_0#I";
-			else if (.@letter == 5) .@shop$ = "wep8_0#K";
-			else if (.@letter == 6) .@shop$ = "wep8_0#S";
-			else if (.@letter == 7) .@shop$ = "wep8_0#V";
+			else if (.@letter == 5) .@shop$ = "wep8_0#S";
+			else if (.@letter == 6) .@shop$ = "wep8_0#V";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Edda Biolab:Frontier:Glacier:Illusion:OS Weapons:Poenitentia:Time Gap:Vivatus Fides:") - 1;
@@ -282,7 +278,7 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 9) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:E:F:G:L:M:N:P:Q:R:S:T:V:W:") - 1;
+			.@letter = select("B:C:E:F:G:L:M:N:P:Q:R:S:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep9_0#B";
 			else if (.@letter == 1) .@shop$ = "wep9_0#C";
 			else if (.@letter == 2) .@shop$ = "wep9_0#E";
@@ -295,9 +291,7 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 9) .@shop$ = "wep9_0#Q";
 			else if (.@letter == 10) .@shop$ = "wep9_0#R";
 			else if (.@letter == 11) .@shop$ = "wep9_0#S";
-			else if (.@letter == 12) .@shop$ = "wep9_0#T";
-			else if (.@letter == 13) .@shop$ = "wep9_0#V";
-			else if (.@letter == 14) .@shop$ = "wep9_0#W";
+			else if (.@letter == 12) .@shop$ = "wep9_0#V";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Edda Biolab:Frontier:Glacier:Illusion:OS Weapons:Poenitentia:Vivatus Fides:") - 1;
@@ -366,7 +360,7 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 12) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:D:E:F:G:H:I:N:O:P:R:S:T:V:") - 1;
+			.@letter = select("B:C:D:E:F:G:H:I:O:P:R:S:T:V:") - 1;
 			if (.@letter == 0) .@shop$ = "wep12_0#B";
 			else if (.@letter == 1) .@shop$ = "wep12_0#C";
 			else if (.@letter == 2) .@shop$ = "wep12_0#D";
@@ -375,13 +369,12 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 5) .@shop$ = "wep12_0#G";
 			else if (.@letter == 6) .@shop$ = "wep12_0#H";
 			else if (.@letter == 7) .@shop$ = "wep12_0#I";
-			else if (.@letter == 8) .@shop$ = "wep12_0#N";
-			else if (.@letter == 9) .@shop$ = "wep12_0#O";
-			else if (.@letter == 10) .@shop$ = "wep12_0#P";
-			else if (.@letter == 11) .@shop$ = "wep12_0#R";
-			else if (.@letter == 12) .@shop$ = "wep12_0#S";
-			else if (.@letter == 13) .@shop$ = "wep12_0#T";
-			else if (.@letter == 14) .@shop$ = "wep12_0#V";
+			else if (.@letter == 8) .@shop$ = "wep12_0#O";
+			else if (.@letter == 9) .@shop$ = "wep12_0#P";
+			else if (.@letter == 10) .@shop$ = "wep12_0#R";
+			else if (.@letter == 11) .@shop$ = "wep12_0#S";
+			else if (.@letter == 12) .@shop$ = "wep12_0#T";
+			else if (.@letter == 13) .@shop$ = "wep12_0#V";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Edda Biolab:Glacier:Illusion:OS Weapons:Poenitentia:Time Gap:Vivatus Fides:") - 1;
@@ -494,7 +487,7 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 17) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:D:E:F:G:H:L:M:R:T:V:Y:") - 1;
+			.@letter = select("B:C:D:E:F:G:H:M:T:V:Y:") - 1;
 			if (.@letter == 0) .@shop$ = "wep17_0#B";
 			else if (.@letter == 1) .@shop$ = "wep17_0#C";
 			else if (.@letter == 2) .@shop$ = "wep17_0#D";
@@ -502,12 +495,10 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 4) .@shop$ = "wep17_0#F";
 			else if (.@letter == 5) .@shop$ = "wep17_0#G";
 			else if (.@letter == 6) .@shop$ = "wep17_0#H";
-			else if (.@letter == 7) .@shop$ = "wep17_0#L";
-			else if (.@letter == 8) .@shop$ = "wep17_0#M";
-			else if (.@letter == 9) .@shop$ = "wep17_0#R";
-			else if (.@letter == 10) .@shop$ = "wep17_0#T";
-			else if (.@letter == 11) .@shop$ = "wep17_0#V";
-			else if (.@letter == 12) .@shop$ = "wep17_0#Y";
+			else if (.@letter == 7) .@shop$ = "wep17_0#M";
+			else if (.@letter == 8) .@shop$ = "wep17_0#T";
+			else if (.@letter == 9) .@shop$ = "wep17_0#V";
+			else if (.@letter == 10) .@shop$ = "wep17_0#Y";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Dim Glacier:Dimensions:Edda Biolab:Frontier:Glacier:Illusion:OS Weapons:Poenitentia:Time Gap:") - 1;
@@ -525,7 +516,7 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 18) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:F:G:H:I:J:L:M:R:S:T:V:Z:") - 1;
+			.@letter = select("B:C:F:G:H:I:J:L:R:S:T:V:Z:") - 1;
 			if (.@letter == 0) .@shop$ = "wep18_0#B";
 			else if (.@letter == 1) .@shop$ = "wep18_0#C";
 			else if (.@letter == 2) .@shop$ = "wep18_0#F";
@@ -534,12 +525,11 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 5) .@shop$ = "wep18_0#I";
 			else if (.@letter == 6) .@shop$ = "wep18_0#J";
 			else if (.@letter == 7) .@shop$ = "wep18_0#L";
-			else if (.@letter == 8) .@shop$ = "wep18_0#M";
-			else if (.@letter == 9) .@shop$ = "wep18_0#R";
-			else if (.@letter == 10) .@shop$ = "wep18_0#S";
-			else if (.@letter == 11) .@shop$ = "wep18_0#T";
-			else if (.@letter == 12) .@shop$ = "wep18_0#V";
-			else if (.@letter == 13) .@shop$ = "wep18_0#Z";
+			else if (.@letter == 8) .@shop$ = "wep18_0#R";
+			else if (.@letter == 9) .@shop$ = "wep18_0#S";
+			else if (.@letter == 10) .@shop$ = "wep18_0#T";
+			else if (.@letter == 11) .@shop$ = "wep18_0#V";
+			else if (.@letter == 12) .@shop$ = "wep18_0#Z";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
@@ -664,8 +654,7 @@ OnInit:
 -	pointshop	wep0_0#F	-1,#CASHPOINTS,540091:5380,540090:5380,540088:5580,540086:5980,540087:5980
 -	pointshop	wep0_0#O	-1,#CASHPOINTS,540055:4635
 -	pointshop	wep0_0#P	-1,#CASHPOINTS,28619:1700
--	pointshop	wep0_0#R	-1,#CASHPOINTS,1567:200
--	pointshop	wep0_0#S	-1,#CASHPOINTS,1563:1500,540053:5235,540005:5600,540004:3300
+-	pointshop	wep0_0#S	-1,#CASHPOINTS,540053:5235,540005:5600,540004:3300
 -	pointshop	wep0_0#V	-1,#CASHPOINTS,28605:1300
 -	pointshop	wep0_1#S0	-1,#CASHPOINTS,540021:5400,540019:3500,540022:3800,540020:3500,540023:3800
 -	pointshop	wep0_1#S1	-1,#CASHPOINTS,540056:1620
@@ -679,17 +668,16 @@ OnInit:
 -	pointshop	wep0_1#S9	-1,#CASHPOINTS,540096:7380,540094:7580
 -	pointshop	wep0_1#S10	-1,#CASHPOINTS,540026:8180,540024:7380,540046:8180,540025:7380,540045:8180
 -	pointshop	wep1_0#A	-1,#CASHPOINTS,700065:4635
--	pointshop	wep1_0#B	-1,#CASHPOINTS,1722:100,1727:3900,1728:1200,18114:900,18110:2970,18123:5100,1730:900
+-	pointshop	wep1_0#B	-1,#CASHPOINTS,1722:100,1727:3900,18114:900,18110:2970,18123:5100,1730:900
 -	pointshop	wep1_0#C	-1,#CASHPOINTS,18109:1000,18111:1680,18130:2400,1741:340
 -	pointshop	wep1_0#D	-1,#CASHPOINTS,700066:4635,700109:5580,1736:1920
 -	pointshop	wep1_0#E	-1,#CASHPOINTS,1732:750,1746:300
 -	pointshop	wep1_0#F	-1,#CASHPOINTS,1745:1100,700100:5980,700101:5980
 -	pointshop	wep1_0#G	-1,#CASHPOINTS,1716:700,18122:2550,700008:2200
 -	pointshop	wep1_0#I	-1,#CASHPOINTS,1737:2250
--	pointshop	wep1_0#M	-1,#CASHPOINTS,18107:314,700078:1450,18103:3000
+-	pointshop	wep1_0#M	-1,#CASHPOINTS,700078:1450,18103:3000
 -	pointshop	wep1_0#P	-1,#CASHPOINTS,700009:2200
--	pointshop	wep1_0#R	-1,#CASHPOINTS,1729:320
--	pointshop	wep1_0#S	-1,#CASHPOINTS,700021:3300,18108:1755,700007:2200
+-	pointshop	wep1_0#S	-1,#CASHPOINTS,700021:3300,700007:2200
 -	pointshop	wep1_0#V	-1,#CASHPOINTS,18121:1300,18145:440
 -	pointshop	wep1_1#S0	-1,#CASHPOINTS,700032:3600,700031:3600,700030:3600
 -	pointshop	wep1_1#S1	-1,#CASHPOINTS,700059:2700
@@ -702,10 +690,10 @@ OnInit:
 -	pointshop	wep1_1#S8	-1,#CASHPOINTS,700024:7580,700023:7580,700022:8380,700025:7580
 -	pointshop	wep1_1#S9	-1,#CASHPOINTS,700108:8380
 -	pointshop	wep1_1#S10	-1,#CASHPOINTS,700035:7780,700034:7780,700033:7780
--	pointshop	wep2_0#A	-1,#CASHPOINTS,13062:1440,1232:3000,13023:1000,13011:800,13069:3600
+-	pointshop	wep2_0#A	-1,#CASHPOINTS,13062:1440,1232:3000,13011:800,13069:3600
 -	pointshop	wep2_0#B	-1,#CASHPOINTS,13061:2100
--	pointshop	wep2_0#C	-1,#CASHPOINTS,1228:4800,13021:1600,13004:1400,28705:1600,1241:3600,1206:1500
--	pointshop	wep2_0#D	-1,#CASHPOINTS,1242:1500,13022:1500,13038:2640,13034:800,13001:900
+-	pointshop	wep2_0#C	-1,#CASHPOINTS,1228:4800,13004:1400,28705:1600,1241:3600,1206:1500
+-	pointshop	wep2_0#D	-1,#CASHPOINTS,1242:1500,13038:2640,13034:800,13001:900
 -	pointshop	wep2_0#E	-1,#CASHPOINTS,1233:4800
 -	pointshop	wep2_0#F	-1,#CASHPOINTS,13089:1560,13090:4200,510151:5380,510150:5580
 -	pointshop	wep2_0#G	-1,#CASHPOINTS,13002:600,510009:2200
@@ -713,9 +701,9 @@ OnInit:
 -	pointshop	wep2_0#I	-1,#CASHPOINTS,1230:3000,13017:3900,13039:2400
 -	pointshop	wep2_0#J	-1,#CASHPOINTS,13008:780
 -	pointshop	wep2_0#K	-1,#CASHPOINTS,13046:6600
--	pointshop	wep2_0#M	-1,#CASHPOINTS,13025:600,28721:1200,1234:3000,13026:1000
+-	pointshop	wep2_0#M	-1,#CASHPOINTS,28721:1200,1234:3000
 -	pointshop	wep2_0#R	-1,#CASHPOINTS,13092:2040
--	pointshop	wep2_0#S	-1,#CASHPOINTS,13035:1000,13068:1200,13027:1000,13070:3600,13024:600
+-	pointshop	wep2_0#S	-1,#CASHPOINTS,13035:1000,13027:1000,13070:3600
 -	pointshop	wep2_0#U	-1,#CASHPOINTS,510091:6180
 -	pointshop	wep2_0#V	-1,#CASHPOINTS,28717:4200,28706:1300,13085:1300
 -	pointshop	wep2_0#W	-1,#CASHPOINTS,13047:4200,510008:4400
@@ -782,17 +770,16 @@ OnInit:
 -	pointshop	wep6_1#S8	-1,#CASHPOINTS,570075:7380
 -	pointshop	wep6_1#S9	-1,#CASHPOINTS,570020:7380,570019:7780
 -	pointshop	wep7_0#A	-1,#CASHPOINTS,1290:1300,610006:3300,610029:1250
--	pointshop	wep7_0#B	-1,#CASHPOINTS,1273:1920,1271:1680,1295:1920
+-	pointshop	wep7_0#B	-1,#CASHPOINTS,1271:1680,1295:1920
 -	pointshop	wep7_0#C	-1,#CASHPOINTS,1285:2200
 -	pointshop	wep7_0#D	-1,#CASHPOINTS,1270:1560
 -	pointshop	wep7_0#F	-1,#CASHPOINTS,610071:5980
 -	pointshop	wep7_0#G	-1,#CASHPOINTS,1281:2700,1291:6300
--	pointshop	wep7_0#I	-1,#CASHPOINTS,1266:2250,1267:1800,1269:1440,1297:1680
+-	pointshop	wep7_0#I	-1,#CASHPOINTS,1266:2250,1269:1440,1297:1680
 -	pointshop	wep7_0#J	-1,#CASHPOINTS,28010:4800
 -	pointshop	wep7_0#K	-1,#CASHPOINTS,1256:600,1258:600,1284:2640
 -	pointshop	wep7_0#S	-1,#CASHPOINTS,1260:100,610045:4635
 -	pointshop	wep7_0#T	-1,#CASHPOINTS,610044:4635
--	pointshop	wep7_0#U	-1,#CASHPOINTS,1274:720
 -	pointshop	wep7_0#V	-1,#CASHPOINTS,1264:1000,28008:1300
 -	pointshop	wep7_0#W	-1,#CASHPOINTS,1268:1560
 -	pointshop	wep7_1#S0	-1,#CASHPOINTS,610020:3600,610021:3600
@@ -810,7 +797,6 @@ OnInit:
 -	pointshop	wep8_0#F	-1,#CASHPOINTS,560068:5580,560067:5980
 -	pointshop	wep8_0#H	-1,#CASHPOINTS,1815:5100,1825:1920
 -	pointshop	wep8_0#I	-1,#CASHPOINTS,560004:2200,1837:1950
--	pointshop	wep8_0#K	-1,#CASHPOINTS,1817:1950
 -	pointshop	wep8_0#S	-1,#CASHPOINTS,1835:840,1830:950
 -	pointshop	wep8_0#V	-1,#CASHPOINTS,1800:1300
 -	pointshop	wep8_1#S0	-1,#CASHPOINTS,560019:3600,560018:3600
@@ -836,9 +822,7 @@ OnInit:
 -	pointshop	wep9_0#Q	-1,#CASHPOINTS,1527:4500,16024:5700
 -	pointshop	wep9_0#R	-1,#CASHPOINTS,16010:950,16001:6510,16033:4200,16026:2040
 -	pointshop	wep9_0#S	-1,#CASHPOINTS,16039:2250
--	pointshop	wep9_0#T	-1,#CASHPOINTS,16016:1404
 -	pointshop	wep9_0#V	-1,#CASHPOINTS,16051:3600,1548:2400,16041:1300
--	pointshop	wep9_0#W	-1,#CASHPOINTS,1534:600
 -	pointshop	wep9_1#S0	-1,#CASHPOINTS,590021:5400,590022:3600
 -	pointshop	wep9_1#S1	-1,#CASHPOINTS,590047:1620,590048:1620
 -	pointshop	wep9_1#S2	-1,#CASHPOINTS,590080:7580,590079:8380
@@ -868,7 +852,7 @@ OnInit:
 -	pointshop	wep11_0#I	-1,#CASHPOINTS,1433:1050
 -	pointshop	wep11_0#L	-1,#CASHPOINTS,1420:1020
 -	pointshop	wep11_0#M	-1,#CASHPOINTS,32013:6600
--	pointshop	wep11_0#P	-1,#CASHPOINTS,1447:5400,1419:200
+-	pointshop	wep11_0#P	-1,#CASHPOINTS,1447:5400
 -	pointshop	wep11_0#V	-1,#CASHPOINTS,1400:1300
 -	pointshop	wep11_1#S0	-1,#CASHPOINTS,530013:3600
 -	pointshop	wep11_1#S1	-1,#CASHPOINTS,530034:1350
@@ -882,18 +866,17 @@ OnInit:
 -	pointshop	wep11_1#S9	-1,#CASHPOINTS,530060:8380
 -	pointshop	wep11_1#S10	-1,#CASHPOINTS,530014:7780
 -	pointshop	wep12_0#B	-1,#CASHPOINTS,500065:5235,1140:6600
--	pointshop	wep12_0#C	-1,#CASHPOINTS,13431:1000,13454:1600,13402:1000,1135:3000
+-	pointshop	wep12_0#C	-1,#CASHPOINTS,13431:1000,13454:1600,1135:3000
 -	pointshop	wep12_0#D	-1,#CASHPOINTS,500062:4335,500072:5780,500009:2180
--	pointshop	wep12_0#E	-1,#CASHPOINTS,1132:3600,1137:200,13401:1000
+-	pointshop	wep12_0#E	-1,#CASHPOINTS,1132:3600,1137:200
 -	pointshop	wep12_0#F	-1,#CASHPOINTS,500101:5580,500102:5980,500103:5580
 -	pointshop	wep12_0#G	-1,#CASHPOINTS,500063:6180
 -	pointshop	wep12_0#H	-1,#CASHPOINTS,1128:4200,500007:3300
--	pointshop	wep12_0#I	-1,#CASHPOINTS,1141:3000,13409:600,500005:3450,500008:3300
--	pointshop	wep12_0#N	-1,#CASHPOINTS,13407:1200
+-	pointshop	wep12_0#I	-1,#CASHPOINTS,1141:3000,500005:3450,500008:3300
 -	pointshop	wep12_0#O	-1,#CASHPOINTS,13442:5400
 -	pointshop	wep12_0#P	-1,#CASHPOINTS,13404:1950
 -	pointshop	wep12_0#R	-1,#CASHPOINTS,1111:2400,1125:4800,13421:2280
--	pointshop	wep12_0#S	-1,#CASHPOINTS,1127:800,13465:3600,1114:2400,1134:900,13461:4800,13460:4800,13462:4800,1136:3000,13403:1500,1148:1020
+-	pointshop	wep12_0#S	-1,#CASHPOINTS,1127:800,13465:3600,1114:2400,1134:900,13461:4800,13460:4800,13462:4800,1136:3000,1148:1020
 -	pointshop	wep12_0#T	-1,#CASHPOINTS,13412:5400,13413:5400
 -	pointshop	wep12_0#V	-1,#CASHPOINTS,13455:1300,500066:4635
 -	pointshop	wep12_1#S0	-1,#CASHPOINTS,500025:3500,500026:7200
@@ -947,7 +930,7 @@ OnInit:
 -	pointshop	wep16_0#G	-1,#CASHPOINTS,1629:300,550008:4400
 -	pointshop	wep16_0#H	-1,#CASHPOINTS,1631:4500
 -	pointshop	wep16_0#L	-1,#CASHPOINTS,1646:4400,1659:1800,550116:4635
--	pointshop	wep16_0#M	-1,#CASHPOINTS,1692:1600,1693:1800,1661:1500,1654:2100,1623:1000
+-	pointshop	wep16_0#M	-1,#CASHPOINTS,1692:1600,1693:1800,1661:1500,1654:2100
 -	pointshop	wep16_0#R	-1,#CASHPOINTS,1670:2040
 -	pointshop	wep16_0#S	-1,#CASHPOINTS,1672:2280,550088:4335,550093:5780,550094:5780,1648:3000,1665:440,1668:2400
 -	pointshop	wep16_0#T	-1,#CASHPOINTS,1636:360
@@ -971,10 +954,8 @@ OnInit:
 -	pointshop	wep17_0#F	-1,#CASHPOINTS,620040:5580
 -	pointshop	wep17_0#G	-1,#CASHPOINTS,1387:6210,1369:3000
 -	pointshop	wep17_0#H	-1,#CASHPOINTS,1376:1950,1377:5700
--	pointshop	wep17_0#L	-1,#CASHPOINTS,1372:1200
 -	pointshop	wep17_0#M	-1,#CASHPOINTS,28116:3000
--	pointshop	wep17_0#R	-1,#CASHPOINTS,1373:1800
--	pointshop	wep17_0#T	-1,#CASHPOINTS,1368:3000,1374:100,28101:4500,1361:700
+-	pointshop	wep17_0#T	-1,#CASHPOINTS,1368:3000,28101:4500,1361:700
 -	pointshop	wep17_0#V	-1,#CASHPOINTS,1384:1920,28107:1300
 -	pointshop	wep17_0#Y	-1,#CASHPOINTS,1392:4500
 -	pointshop	wep17_1#S0	-1,#CASHPOINTS,620019:1620
@@ -994,7 +975,6 @@ OnInit:
 -	pointshop	wep18_0#I	-1,#CASHPOINTS,1483:2250
 -	pointshop	wep18_0#J	-1,#CASHPOINTS,630027:4335
 -	pointshop	wep18_0#L	-1,#CASHPOINTS,1411:3000,1469:3600,630003:2200
--	pointshop	wep18_0#M	-1,#CASHPOINTS,1489:1770
 -	pointshop	wep18_0#R	-1,#CASHPOINTS,26016:1000
 -	pointshop	wep18_0#S	-1,#CASHPOINTS,1477:7800
 -	pointshop	wep18_0#T	-1,#CASHPOINTS,1461:800
@@ -1035,13 +1015,13 @@ OnInit:
 -	pointshop	wep20_0#B	-1,#CASHPOINTS,21001:2160,1182:2100,1162:4200
 -	pointshop	wep20_0#C	-1,#CASHPOINTS,1196:1000,21015:1600
 -	pointshop	wep20_0#D	-1,#CASHPOINTS,1186:2400
--	pointshop	wep20_0#E	-1,#CASHPOINTS,600041:4635,1174:900
+-	pointshop	wep20_0#E	-1,#CASHPOINTS,600041:4635
 -	pointshop	wep20_0#F	-1,#CASHPOINTS,21053:2850,600059:5980
 -	pointshop	wep20_0#G	-1,#CASHPOINTS,21011:5100
--	pointshop	wep20_0#H	-1,#CASHPOINTS,1198:2355,600008:2200
+-	pointshop	wep20_0#H	-1,#CASHPOINTS,600008:2200
 -	pointshop	wep20_0#K	-1,#CASHPOINTS,1170:1000,1189:4710
 -	pointshop	wep20_0#L	-1,#CASHPOINTS,21018:4800
--	pointshop	wep20_0#M	-1,#CASHPOINTS,1173:1500,21003:2400,1176:1920
+-	pointshop	wep20_0#M	-1,#CASHPOINTS,21003:2400,1176:1920
 -	pointshop	wep20_0#R	-1,#CASHPOINTS,21039:1800
 -	pointshop	wep20_0#S	-1,#CASHPOINTS,1167:3000
 -	pointshop	wep20_0#T	-1,#CASHPOINTS,1181:4200
