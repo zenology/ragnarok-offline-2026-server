@@ -2,11 +2,11 @@
 //= Black-Market Hat Seller
 //===== Description: =========================================
 //= Sells reviewed iRO cash/event headgear for Cash Points.
-//= Browse is Equipment, Rental, Specialty, or Event, then Top /
-//= Eye / Mouth, then 0-9 (when a display name starts with a digit)
+//= Browse Equipment, Rental, or Event by Top / Eye / Mouth, then 0-9
+//= (when a display name starts with a digit)
 //= then A-Z by client identifiedDisplayName. Letter shops are
 //= filled in that display-name order, then ID.
-//= Specialty is grouped by its named equipment family.
+//= Specialty opens its named equipment-family drawer directly.
 //= Event is Racing Caps, RWC/RTC/RCC tournament hats, and iRO-history
 //= create-pass leftovers. Display names do not keep [Event]/[S2]/[S3]
 //= prefixes. Hats that exist
@@ -62,7 +62,11 @@ paramk,41,173,2	script	Harlan#offline	897,{
 
 S_OpenCatalog:
 	.@kind = getarg(0);
-	.@slot = select("Top:Eye:Mouth:") - 1;
+	// Specialty has only top headgear and groups by family, so do not make
+	// players select a meaningless Top / Eye / Mouth menu first.
+	.@slot = 0;
+	if (.@kind != 2)
+		.@slot = select("Top:Eye:Mouth:") - 1;
 	if (.@kind == 0) {
 		.@menu$ = getvariableofnpc(.HatMenu$[.@slot], "hat_seller_db");
 		.@prefix$ = "hat";
@@ -431,23 +435,59 @@ OnInit:
 OnInit:
 	freeloop 1;
 	// iRO cash-shop real hats, plus easy/medium/hard real hats from the iRO-history create pass. Ordinary farmable and city hats are omitted even if they appeared in a Kafra package or lucky scroll. _C copies and rental SKUs are omitted. Dedicated getitem originals such as Robo Eye 5325 are included. Hats with no client itemInfo stay on the shelf. Create-pass hats whose names used to start with [Event]/[S2]/[S3] sit on Event.
-	setarray .IroId[0], 5038,5077,5098,5099,5101,5102,5105,5117,5133,5137,5138,5139,5140,5142,5163,5182,5184,5188,5193,5208,5210,5211,5214,5217,5218,5219,5220,5221,5222,5226,5228,5229,5233,5237,5242,5245,5255,5269,5276,5283,5284,5285,5287,5288,5289,5290,5291,5292,5293,5294,5307,5324,5325,5335,5340,5341,5342,5343,5344,5345,5359,5360,5361,5371,5372,5373,5374,5375,5376,5377,5378,5380,5381,5382,5384,5387,5389,5396,5397,5401,5403,5405,5411,5420,5421,5451,5454,5459,5464,5490,5497,5500,5501,5502,5505,5508,5509,5514,5515,5529;
-	setarray .IroId[100], 5531,5532,5537,5538,5539,5545,5546,5548,5549,5550,5564,5569,5570,5574,5581,5582,5585,5611,5662,5663,5676,5677,5683,5690,5738,5744,5745,5761,5762,5763,5775,5778,5783,5785,5801,5878,5916,5918,5921,5924,5933,5937,5938,5945,5963,5966,5967,5968,5969,5971,5972,5973,5975,5978,15165,15166,18507,18508,18518,18519,18522,18539,18543,18563,18564,18565,18580,18591,18599,18600,18601,18603,18611,18613,18616,18651,18653,18656,18657,18662,18666,18670,18673,18676,18678,18697,18720,18729,18746,18754,18787,18799,18813,18823,18842,18845,18858,18877,18878,18887;
-	setarray .IroId[200], 18909,18916,18917,18933,18937,18959,18968,19010,19020,19024,19079,19082,19083,19086,19087,19095,19102,19114,19116,19125,19129,19130,19135,19137,19138,19139,19141,19156,19162,19163,19170,19171,19172,19181,19244,19246,19249,19263,19264,19268,19269,19285,19296,19299,19300,19306,19308,19326,19327,19329,19337,19342,19343,19364,19379,19380,19381,19387,19391,19407,19409,19426,19437,19444,19446,19451,19469,19495,19498,19499,28502,400001,400002,400011,400022,400023,400049,400054,400059,400061,400078,400396,400408,400506,410012,410016,410071,410079,410120,410130,410215,410216,410333,410342,410345,420003,420093,420160,420182,420187;
-	setarray .IroId[300], 420199,420236,19460,19468,400006,400052,400077,400416,400421,400437,400438,400453,400454,400481,400505,400697,400710,410254,410348,410362,420068,420110,420223,420329;
-	setarray .IroId[324], 5860,5861,5862,5863,5876,5877,5948,5949,18837,18886,18907,18911,18944,18945,18946,18961,18963,18964,18967,18986,18994,18996,19005,19335,19355,19413,19458,400937,420388,420605,420863,420931;
-	setarray .IroId[356], 19315,400603,400625,400718,400738,400936,400948,400974,401002,401012,401043,401238,401290,401307,401459,401466,401467,410380,410381,410434,410531,410539,410544,410545,410550,410553,410615,410616,410622,410652,420245,420311,420438,420503,420590,420777,18794,18795;
-	.IroCount = 394;
+	setarray .IroId[0], 5038,5077,5098,5099,5101,5102,5105,5117,5133,5137,5138,5139,5140,5142,5163,5182,5184,5188,5193,5208;
+	setarray .IroId[20], 5210,5211,5214,5217,5218,5219,5220,5221,5222,5226,5228,5229,5233,5237,5242,5245,5255,5269,5276,5283;
+	setarray .IroId[40], 5284,5285,5287,5288,5289,5290,5291,5292,5293,5294,5307,5324,5325,5335,5340,5341,5342,5343,5344,5345;
+	setarray .IroId[60], 5359,5360,5361,5371,5372,5373,5374,5375,5376,5377,5378,5380,5381,5382,5384,5387,5389,5396,5397,5401;
+	setarray .IroId[80], 5403,5405,5411,5420,5421,5451,5454,5459,5464,5490,5497,5500,5501,5502,5505,5508,5509,5514,5515,5529;
+	setarray .IroId[100], 5531,5532,5537,5538,5539,5545,5546,5548,5549,5550,5564,5569,5570,5574,5581,5582,5585,5611,5662,5663;
+	setarray .IroId[120], 5676,5677,5683,5690,5738,5744,5745,5761,5762,5763,5775,5778,5783,5785,5801,5878,5916,5918,5921,5924;
+	setarray .IroId[140], 5933,5937,5938,5945,5963,5966,5967,5968,5969,5971,5972,5973,5975,5978,15165,15166,18507,18508,18518,18519;
+	setarray .IroId[160], 18522,18539,18543,18563,18564,18565,18580,18591,18599,18600,18601,18603,18611,18613,18616,18651,18653,18656,18657,18662;
+	setarray .IroId[180], 18666,18670,18673,18676,18678,18697,18720,18729,18746,18754,18787,18799,18813,18823,18842,18845,18858,18877,18878,18887;
+	setarray .IroId[200], 18909,18916,18917,18933,18937,18959,18968,19010,19020,19024,19079,19082,19083,19086,19087,19095,19102,19114,19116,19125;
+	setarray .IroId[220], 19129,19130,19135,19137,19138,19139,19141,19156,19162,19163,19170,19171,19172,19181,19244,19246,19249,19263,19264,19268;
+	setarray .IroId[240], 19269,19285,19296,19299,19300,19306,19308,19326,19327,19329,19337,19342,19343,19364,19379,19380,19381,19387,19391,19407;
+	setarray .IroId[260], 19409,19426,19437,19444,19446,19451,19469,19495,19498,19499,28502,400001,400002,400011,400022,400023,400049,400054,400059,400061;
+	setarray .IroId[280], 400396,400408,400506,410012,410016,410071,410079,410120,410130,410215,410216,410333,410342,410345,420003,420093,420160,420182,420187,420199;
+	setarray .IroId[300], 420236,19460,19468,400006,400052,400077,400416,400421,400437,400438,400453,400454,400481,400505,400697,400710,410254,410348,410362,420068;
+	setarray .IroId[320], 420110,420223,420329,5860,5861,5862,5863,5876,5877,5948,5949,18837,18886,18907,18911,18944,18945,18946,18961,18963;
+	setarray .IroId[340], 18964,18967,18986,18994,18996,19005,19335,19355,19413,19458,400937,420388,420605,420863,420931,19315,400718,400738,400936,400948;
+	setarray .IroId[360], 400974,401002,401012,401043,401238,401290,401307,401459,401466,401467,410380,410381,410434,410531,410539,410544,410545,410550,410553,410615;
+	setarray .IroId[380], 410616,410622,410652,420245,420311,420438,420503,420590,420777,18794,18795,400078,400079,400094,400095,400098,400099,400116,400117,400118;
+	setarray .IroId[400], 400119,400120,400121,400529,400530,400531,400532,400533,400534,400535,400536,400537,400538,400539,400540,400541,400542,400543,400544,400545;
+	setarray .IroId[420], 400546,400105,400106,400107,400134,400135,400141,400142,400145,400146,400150,400151,400178,400179,400180,400181,400189,400190,400191,400192;
+	setarray .IroId[440], 400198,400199,400200,400201,400216,400217,400218,400219,400226,400227,400228,400229,400230,400231,400233,400234,400235,400236,400237,400238;
+	setarray .IroId[460], 400239,400240,400241,400242,400243,400244,400336,400337,400338,400339,400340,401239,401240,401241,401242,401243,400440,400447,400457,400469;
+	setarray .IroId[480], 400474,400482,400603,400625,400723,400724,401055,401056,401057,401058,401059,401060,401115,401116,401117,401118,401119,401120;
+	.IroCount = 498;
 	// Generated by KB tools/audit_harlan_hat_prices.py from the confirmed pricing taxonomy.
-	setarray .IroPrice[0], 200,100,1000,1600,1000,100,1000,800,100,340,1000,1000,950,380,260,1200,650,200,1000,2250,1500,1800,1200,200,200,1000,320,1000,240,1000,200,200,1600,200,1000,800,1200,1500,1000,1600,1560,260,260,200,1200,1000,1200,800,1200,260,1600,1200,240,600,2280,2850,2280,2280,2850,1050,1500,2640,1500,1000,1200,1300,1200,1560,1500,800,1200,1200,1700,260,1950,1500,1000,400,900,1200,1440,100,200,2040,2200,1050,2850,1000,1800,1920,1800,1000,1050,1300,200,1400,1560,1500,1500,1300;
-	setarray .IroPrice[100], 260,100,300,1950,1300,1300,2550,1400,280,1800,1500,1600,1600,1200,1800,1300,2400,1200,1800,1200,1950,1300,100,1440,1920,1560,1560,1560,1600,1000,1000,1950,200,200,1920,1200,900,2400,900,900,320,2850,1560,1200,420,2200,3000,1800,260,900,240,1500,1900,1200,1560,1800,750,1600,260,260,1900,850,1300,750,720,1300,1560,650,200,1050,2300,260,1300,780,600,1800,1300,1400,1500,200,1440,320,2040,1080,800,100,700,2280,200,1500,600,550,600,2250,1900,1600,1500,100,960,1500;
-	setarray .IroPrice[200], 2100,1000,600,2400,1200,1200,1000,800,340,2700,2850,1800,1000,300,1300,100,2100,1620,1900,380,1900,1300,1920,1300,1440,700,1900,1800,1500,1950,900,3150,420,750,1440,1800,1600,3150,1680,650,1350,2850,2850,800,3450,800,2000,1300,1440,4500,1200,1200,2200,2500,2550,1600,1200,1200,2200,2800,4200,2200,1400,500,2850,1800,3600,340,2400,1800,600,1200,1500,2550,1900,2200,1900,1800,1800,1900,2850,3900,4050,4050,100,1200,300,600,1150,1200,1800,1800,2400,300,3450,1560,1200,600,1800,650;
-	setarray .IroPrice[300], 600,5600,1200,3900,2800,960,3300,4050,4050,4050,4050,4050,4050,4050,4050,3600,4500,2200,2640,3450,240,600,600,1400,800,800,800,800,300,1300,2100,800,200,1000,1050,380,240,1000,1000,100,200,200,200,260,1300,1300,800,100,100,100,100,1300,2100,1000,1500,1950,400,3300,3450,5600,4800,6400,4800,5400,6400,4200,5400,4650,4800,6600,6200,3200,3200,900,900,2250,1700,1700,1700,1700,4350,6400,3000,2400,4350,2100,2100,600,2100,1400,2100,3150,1350,1900;
 	// Generated by KB tools/audit_harlan_hat_prices.py from the condition-aware pricing taxonomy.
-	setarray .IroPrice[0], 200,100,1000,1600,1000,100,1000,800,100,340,2000,1000,950,380,260,1200,650,200,1000,2250,2000,1800,1200,200,200,1000,320,1000,240,2000,200,200,1600,200,1000,800,1200,2000,1000,1600,1560,260,260,200,1200,1000,1200,800,1200,260,1600,1200,240,600,2280,2850,2280,2280,2850,1050,1500,2640,1500,1000,1200,1300,1200,1560,1500,800,1200,1200,1700,260,2600,1500,1000,400,900,1200,1440,100,200,2040,2200,1050,2850,1000,3000,1920,1800,1000,1050,2600,200,1400,1560,1500,1500,1300;
-	setarray .IroPrice[100], 260,100,300,1950,1300,1300,2550,1400,280,1800,3000,1600,1600,1200,1800,1300,2400,1200,1800,1200,1950,1300,100,1440,1920,1560,2600,1560,1600,1000,1000,1950,200,200,1920,1200,900,2400,900,900,316,2850,1560,1200,420,4400,3000,1800,260,900,2400,1500,1900,1200,1560,1800,750,1600,260,260,1900,850,2600,750,720,1300,1560,650,200,1050,2300,260,1300,780,2400,1800,1300,1400,1500,200,1440,320,2040,1080,800,100,700,3800,200,1500,600,550,600,2220,1900,1600,1500,100,960,3000;
-	setarray .IroPrice[200], 2100,1000,600,2400,1200,1200,1000,800,334,2700,2850,2400,1000,300,1300,100,2100,1620,1900,3800,1900,2600,1920,1000,2400,2800,1900,1800,1500,1950,900,3150,420,750,1440,1800,3200,4200,1680,650,1350,2850,3800,3200,4600,800,4000,1300,1440,6000,1200,1200,4400,2500,2550,1580,1200,1200,4400,5600,4200,4400,1380,500,2850,2400,4800,340,2400,1800,600,1200,1500,2550,3800,4400,3800,3600,3600,3800,2850,3900,4050,4050,100,1200,300,2400,1150,4800,1800,1800,2370,300,3420,1560,1200,600,2400,650;
-	setarray .IroPrice[300], 2400,5600,1200,5200,2800,960,4400,4050,4050,4050,4050,4050,4050,4050,4050,4800,6000,2200,4340,3420,240,600,600,1400,800,800,800,800,300,1300,2100,800,200,1000,1050,380,240,1000,1000,100,200,200,200,260,1300,1300,800,100,100,100,100,1300,2100,1000,1500,1950,4000,4400,4600,5580,4780,6380,4780,5380,6380,4180,5380,6200,4780,6580,6180,3180,3180,900,900,2250,1700,1700,1700,1700,4350,6400,2970,4760,4350,2070,2100,600,2100,1400,2100,3150,1350,3800;
+	setarray .IroPrice[0], 200,100,1000,1600,1000,100,1000,800,100,340,2000,1000,950,380,260,1200,650,200,1000,2250;
+	setarray .IroPrice[20], 2000,1800,1200,200,200,1000,320,1000,240,2000,200,200,1600,200,1000,800,1200,2000,1000,1600;
+	setarray .IroPrice[40], 1560,260,260,200,1200,1000,1200,800,1200,260,1600,1200,240,600,2280,2850,2280,2280,2850,1050;
+	setarray .IroPrice[60], 1500,2640,1500,1000,1200,1300,1200,1560,1500,800,1200,1200,1700,260,2600,1500,1000,400,900,1200;
+	setarray .IroPrice[80], 1440,100,200,2040,2200,1050,2850,1000,3000,1920,1800,1000,1050,2600,200,1400,1560,1500,1500,1300;
+	setarray .IroPrice[100], 260,100,300,1950,1300,1300,2550,1400,280,1800,3000,1600,1600,1200,1800,1300,2400,1200,1800,1200;
+	setarray .IroPrice[120], 1950,1300,100,1440,1920,1560,2600,1560,1600,1000,1000,1950,200,200,1920,1200,900,2400,900,900;
+	setarray .IroPrice[140], 316,2850,1560,1200,420,4400,3000,1800,260,900,2400,1500,1900,1200,1560,1800,750,1600,260,260;
+	setarray .IroPrice[160], 1900,850,2600,750,720,1300,1560,650,200,1050,2300,260,1300,780,2400,1800,1300,1400,1500,200;
+	setarray .IroPrice[180], 1440,320,2040,1080,800,100,700,3800,200,1500,600,550,600,2220,1900,1600,1500,100,960,3000;
+	setarray .IroPrice[200], 2100,1000,600,2400,1200,1200,1000,800,334,2700,2850,2400,1000,300,1300,100,2100,1620,1900,3800;
+	setarray .IroPrice[220], 1900,2600,1920,1000,2400,2800,1900,1800,1500,1950,900,3150,420,750,1440,1800,3200,4200,1680,650;
+	setarray .IroPrice[240], 1350,2850,3800,3200,4600,800,4000,1300,1440,6000,1200,1200,4400,2500,2550,1580,1200,1200,4400,5600;
+	setarray .IroPrice[260], 4200,4400,1380,500,2850,2400,4800,340,2400,1800,600,1200,1500,2550,3800,4400,3800,3600,3600,3800;
+	setarray .IroPrice[280], 3900,4050,4050,100,1200,300,2400,1150,4800,1800,1800,2370,300,3420,1560,1200,600,2400,650,2400;
+	setarray .IroPrice[300], 5600,1200,5200,2800,960,4400,4050,4050,4050,4050,4050,4050,4050,4050,4800,6000,2200,4340,3420,240;
+	setarray .IroPrice[320], 600,600,1400,800,800,800,800,300,1300,2100,800,200,1000,1050,380,240,1000,1000,100,200;
+	setarray .IroPrice[340], 200,200,260,1300,1300,800,100,100,100,100,1300,2100,1000,1500,1950,4000,5580,4780,6380,4780;
+	setarray .IroPrice[360], 5380,6380,4180,5380,6200,4780,6580,6180,3180,3180,900,900,2250,1700,1700,1700,1700,4350,6400,2970;
+	setarray .IroPrice[380], 4760,4350,2070,2100,600,2100,1400,2100,3150,1350,3800,2850,4000,2160,3600,2850,2850,2850,4000,4400;
+	setarray .IroPrice[400], 2550,3150,2850,6180,6380,6180,6180,5780,6180,5580,5580,6380,6180,5780,6380,6380,5780,5780,5580,6380;
+	setarray .IroPrice[420], 6380,4180,3980,4180,3000,3980,3000,3980,3580,3600,3000,3980,4780,4780,4980,4980,4780,5380,5380,4980;
+	setarray .IroPrice[440], 5380,4980,4780,5380,5380,4980,4780,4780,5380,5380,4780,4980,5380,5380,5380,5380,5380,5380,5380,5380;
+	setarray .IroPrice[460], 4780,5180,5380,5380,5380,4780,2100,2100,2300,2600,1440,2300,2100,2300,1440,2100,4000,4000,4600,4600;
+	setarray .IroPrice[480], 4600,4400,4400,4600,4980,5580,5380,4580,3980,5180,5580,6380,5580,6380,5180,5180,5580,5580;
 	setarray .IroDisp$[0], "Deviruchi Hat","Tulip Hairpin","Tiger Mask","Neko Mimi","Takius Blindfold","Blank Eyes","2nd Anniversary Hat","Mystic Rose","Sheep Hat","Alice Doll","Magic Eyes","Hibiscus","Charming Ribbon","Crescent Helm","Corsair","Puppy Hat","Captain's Hat","Wandering Minstrel Hat","Green Ribbon","Rideword Hat";
 	setarray .IroDisp$[20], "Flapping Angel Wings","Dress Hat","Moonlight Flower Hat","Evolved Majestic Goat","Evolved Bunny Band","Evolved Drooping Kitty","Evolved Pipe","Evolved Pair of Red Ribbon","Evolved Blue Fish","Mini Propeller","Gray Deviruchi Hat","Brown Deviruchi Hat","Blue Drooping Kitty","Pink Beanie","Yellow Magician Hat","Elven Sunglasses","Triple Poring Hat","Flapping Angel Wings","Fantastic Wig","Chick Hat";
 	setarray .IroDisp$[40], "Water Lily Crown","Vane Hairpin","Vacation Hat","Red Glasses","Vanilmirth Hat","Drooping Bunny","Kettle Hat","Dragon Skull","Ramen Hat","Whisper Mask","Tropical Fruit Hat","Little Angel Doll","Robo Eyes","Jumping Poring","Defolty Doll Hat","Glaris Doll Hat","Sorin Doll Hat","Telling Doll Hat","Bennit Doll Hat","W Doll Hat";
@@ -462,37 +502,45 @@ OnInit:
 	setarray .IroDisp$[220], "Chick Hat","Magic Eyes","Spirit of Green Maiden","Strawberry in Mouth","Seraphim Coronet","Orbs of Survival","Dolor Thanatos Mask","Lunar Rainbow","Scuba Mask","Catharina Von Brad 60th","Guardian Processor","Magician Knit Hat","Sitting Pope(Casual)","New Wave Sunglasses","Rosario Necklace","Royal Guard Necklace","Spell Circuit","General's Helm","Gold Fish Head Hat","Gigant Snake's Breath";
 	setarray .IroDisp$[240], "Happy Flapping Angel Wings","Siegfried's Helmet","Classical Feather Hat","Giant Tree's Young Leaves","Dog Officer","Heart Card in Mouth","Amistr Beret","Book of Soyga","Feather of Seraphim","Demon's Hand","Safety Glasses","Taurus Hat","Phoenix Crown","Engineer Cap","Striking Hat","Floating Tai-Chi Spheres","Protect Cloth","Experimental Goat Cap","Eyes of Illusion","Work Cap";
 	setarray .IroDisp$[260], "Black Feather","King Of Spirit Circlet","Little Garden","Star Eyepatch","Injured Soldier's Eyepatch","Heavenly Order","Crown of Saint","Diabolus Wing","Citrus Ribbon","Eight Trigrams Seal","Mob Scarf","Victory Wing Ears","Victory Wing Ears","Officer's Hat","Ignis Cap Type K","Drooping Thanatos's Dolor","Stripe Hat","Great Magician's Ceremonial Crown","Scorpio Celestial Coronet","Sagittarius Celestial Coronet";
-	setarray .IroDisp$[280], "Goral Crown","Ghost Whisper","Clockwise","Altair Hat","EXP Advisor","Battle Processor","Demon's Familiar","Deep Blue Sunglasses","Guardian Helm","Phantom Beast Ears","Ear of Spirit","Ears of Abyss","Crow Tengu Mask","Purified Pigeon","Smiling Eyes","Disk in Mouth","Einherjar's Mantle","Tyrant of Earth","Book of Sorcery","Sacred Lapel";
-	setarray .IroDisp$[300], "Ghost Fire","Loyal Servant of Morroc","Black Veil","Libra Diadem","Heritage Symbol of the Orcs","Duel Dragon Hat","Splash Cat Hat","Squirrel Ear Hood (Albino)","Two Tone Cap","Chic Peony","Bobcat Knit Hat (White)","Invincible Crest Hat","Khalitzburg Knight White Helm","The Brandishing","Striped Ribbon Hat","Full Faith Crown","Snake Queen Crown","Ancient Morocc Noble Jewelry","Divine Protect Shield";
-	setarray .IroDisp$[319], "Exiled Ninja's Eyes","Lord of Royals","Old Camouflage Scarf","Consecrate Fides Aureola","Twinhead Dragon Scale","Siege Army Cap","Siege Kafra Band","Siege Sweet Gent","Siege Zoro Mask","Star-Spangled Bandana","Merica Hat","Loki's Assassin Mask","Bra Hat","Cheering Whistle","Rainbow Long Octopus","Drooping Panda","Red Flower Hat","Deviruchi Balloon","Super Cute Doll Hat","Very Cute Doll Hat";
-	setarray .IroDisp$[339], "Refined Lunatic Hat","Happy Parrot","Crown of Saint","Jinn Poring Balloon","Happy Parrot","Black Veil","Lady's Ribbon","Party Balloon","Sweets Bonbon","Egg Minihat","Snow Flower","Lunatic on Shoulder","USA Flag Hat","Grey Wolf Cub in Mouth","True Gangster Scarf","Von Blood Brothers","Gangster Tactician Headset","Special Garden of Eden","Poenetentia Spirit Crown","Poenetentia Willful Crown";
-	setarray .IroDisp$[359], "Rekenber's Celestial Hat","Disciple of Bijou","Queen Bee Jeweled Crown","Robotic Valkyrie Hairband","Future Yoyo King Hat","Boitata Cap","Future Wolf King Hat","Kiel Successor Doll","Umbala Utan Helmet","Bankrupt Headgear","Future Gryphon Hat","Eddga Follower Doll","Focused Cat Paw Physical Hat","Focused Cat Paw Magical Hat","Bone Detardeurus Wing","Angelgolt's Wing","Vampire Von Blood","Hero Follower Mask","OS Follower Mask","Poenitentia Follower Mask";
-	setarray .IroDisp$[379], "Thanatos Follower Mask","Kitsune Gaze","Ancient Morroc Noble Jewelry-LT","Little Garden-LT","Floating Ball-LT","Ranger's Binoculars","Moon Follower Eyepatch","Moon God Lapel","Special Bear Balloon","Constellation Orb","Biosphere Scarf","Frosty Breath","Buffalo Bandit Scarf","Plain Black Magician Hat","Night Sparrow Hat";
+	setarray .IroDisp$[280], "Ghost Whisper","Clockwise","Altair Hat","EXP Advisor","Battle Processor","Demon's Familiar","Deep Blue Sunglasses","Guardian Helm","Phantom Beast Ears","Ear of Spirit","Ears of Abyss","Crow Tengu Mask","Purified Pigeon","Smiling Eyes","Disk in Mouth","Einherjar's Mantle","Tyrant of Earth","Book of Sorcery","Sacred Lapel","Ghost Fire";
+	setarray .IroDisp$[300], "Loyal Servant of Morroc","Black Veil","Libra Diadem","Heritage Symbol of the Orcs","Duel Dragon Hat","Splash Cat Hat","Squirrel Ear Hood (Albino)","Two Tone Cap","Chic Peony","Bobcat Knit Hat (White)","Invincible Crest Hat","Khalitzburg Knight White Helm","The Brandishing","Striped Ribbon Hat","Full Faith Crown","Snake Queen Crown","Ancient Morocc Noble Jewelry","Divine Protect Shield","Exiled Ninja's Eyes","Lord of Royals";
+	setarray .IroDisp$[320], "Old Camouflage Scarf","Consecrate Fides Aureola","Twinhead Dragon Scale","Siege Army Cap","Siege Kafra Band","Siege Sweet Gent","Siege Zoro Mask","Star-Spangled Bandana","Merica Hat","Loki's Assassin Mask","Bra Hat","Cheering Whistle","Rainbow Long Octopus","Drooping Panda","Red Flower Hat","Deviruchi Balloon","Super Cute Doll Hat","Very Cute Doll Hat","Refined Lunatic Hat","Happy Parrot";
+	setarray .IroDisp$[340], "Crown of Saint","Jinn Poring Balloon","Happy Parrot","Black Veil","Lady's Ribbon","Party Balloon","Sweets Bonbon","Egg Minihat","Snow Flower","Lunatic on Shoulder","USA Flag Hat","Grey Wolf Cub in Mouth","True Gangster Scarf","Von Blood Brothers","Gangster Tactician Headset","Special Garden of Eden","Rekenber's Celestial Hat","Disciple of Bijou","Queen Bee Jeweled Crown","Robotic Valkyrie Hairband";
+	setarray .IroDisp$[360], "Future Yoyo King Hat","Boitata Cap","Future Wolf King Hat","Kiel Successor Doll","Umbala Utan Helmet","Bankrupt Headgear","Future Gryphon Hat","Eddga Follower Doll","Focused Cat Paw Physical Hat","Focused Cat Paw Magical Hat","Bone Detardeurus Wing","Angelgolt's Wing","Vampire Von Blood","Hero Follower Mask","OS Follower Mask","Poenitentia Follower Mask","Thanatos Follower Mask","Kitsune Gaze","Ancient Morroc Noble Jewelry-LT","Little Garden-LT";
+	setarray .IroDisp$[380], "Floating Ball-LT","Ranger's Binoculars","Moon Follower Eyepatch","Moon God Lapel","Special Bear Balloon","Constellation Orb","Biosphere Scarf","Frosty Breath","Buffalo Bandit Scarf","Plain Black Magician Hat","Night Sparrow Hat","Goral Crown","Trial Diadem","Jade Crown","Spinel Diadem","Bull Crown","Taurus Diadem","Celestial Jewel Crown","Libra Crown","Saint Crown";
+	setarray .IroDisp$[400], "Lion Crown","Goat Crown","Twin Crown","Time Dimensions Rune Crown (Dragon Knight)","Time Dimensions Rune Crown (Imperial Guard)","Time Dimensions Rune Crown (Meister)","Time Dimensions Rune Crown (Biolo)","Time Dimensions Rune Crown (Shadow Cross)","Time Dimensions Rune Crown (Abyss Chaser)","Time Dimensions Rune Crown (Arch Mage)","Time Dimensions Rune Crown (Elemental Master)","Time Dimensions Rune Crown (Cardinal)","Time Dimensions Rune Crown (Inquisitor)","Time Dimensions Rune Crown (Windhawk)","Time Dimensions Rune Crown (Troubadour & Trouvere)","Time Dimensions Rune Crown (Shinkiro & Shiranui)","Time Dimensions Rune Crown (Night Watch)","Time Dimensions Rune Crown (Sky Emperor)","Time Dimensions Rune Crown (Soul Ascetic)","Time Dimensions Rune Crown (Hyper Novice)";
+	setarray .IroDisp$[420], "Time Dimensions Rune Crown (Spirit Handler)","Issgard Warrior Crown","Issgard Magician Crown","Issgard Ranger Crown","Thanos Warrior Helmet","Thanos Warrior Helmet-LT","Thanos Shooter Helmet","Thanos Shooter Helmet-LT","Thanos Magic Helmet-LT","Thanos Magic Helmet","Thanos Fighter Helmet","Thanos Fighter Helmet-LT","Helm of Faith (Warlock)","Helm of Faith II (Warlock)","Helm of Faith (Sura)","Helm of Faith II (Sura)","Helm of Faith (Archbishop)","Helm of Faith II (Archbishop)","Helm of Faith (Shadow Chaser)","Helm of Faith II (Shadow Chaser)";
+	setarray .IroDisp$[440], "Helm of Faith (Ranger)","Helm of Faith II (Ranger)","Helm of Faith (Royal Guard)","Helm of Faith II (Royal Guard)","Helm of Faith (Guillotine Cross)","Helm of Faith II (Guillotine Cross)","Helm of Faith (Sorcerer)","Helm of Faith II (Sorcerer)","Helm of Faith (Rune Knight)","Helm of Faith II (Rune Knight)","Helm of Faith (Minstrel & Wanderer)","Helm of Faith II (Minstrel & Wanderer)","Helm of Faith (Mechanic)","Helm of Faith II (Mechanic)","Helm of Faith (Genetic)","Helm of Faith II (Genetic)","Helm of Faith (Kagerou & Oboro)","Helm of Faith II (Kagerou & Oboro)","Helm of Faith (Rebellion)","Helm of Faith II (Rebellion)";
+	setarray .IroDisp$[460], "Helm of Faith (Soul Reaper)","Helm of Faith II (Soul Reaper)","Helm of Faith (Star Emperor)","Helm of Faith II (Star Emperor)","Helm of Faith (Summoner)","Helm of Faith II (Summoner)","Herosria Helm","Herosria Apple of Archer","Herosria Mage Hat","Herosria Beret","Herosria Biretta","Herosria Hat of Sun God","Herosria Grand Circlet","Herosria Crown","Herosria Majestic Goat","Herosria Corsair","Penance Charm Crown","Confession Courage Crown","Confession Domineering Crown","Penance Crown";
+	setarray .IroDisp$[480], "Remorse Crown","Penance Glory Crown","Poenetentia Spirit Crown","Poenetentia Willful Crown","Yorscalp Crown of Execution","Yorscalp Crown of Judgment","Silver Stardust Crown","Scarlet Stardust Crown","Violet Stardust Crown","Celestial Rune Crown (Imperial Guard)","Celestial Rune Crown (Abyss Chaser)","Rune Crown of the Sky (Spiritualist)","Sky Rune Crown (Meister)","Sky Rune Crown (Windhawk)","Sky Rune Crown (Hyper Novice)","Sky Rune Crown (Cardinal)","Sky Rune Crown (Inquisitor)","Sky Rune Crown (Sky Emperor)";
 	// Duration boxes for client-tagged rental hats. Slot follows the hat.
 	setarray .RentBoxId[0], 12564,12565,12567,12568,12569,12570,12571,13694,13722,13864,13865,13968,16212,16386,16390,16636,16637,16640,16762;
 	setarray .RentHatId[0],  5794, 5796, 5798, 5799,18500,18501,18502, 5306, 5286, 5314, 5315, 5394, 5540, 5596, 5597, 5462, 5463, 5793,18505;
 	.RentCount = 19;
-	setarray .RentPrice[0], 700,70,70,70,70,70,70,630,1050,168,140,70,140,700,700,840,700,840,840;
 	setarray .RentPrice[0], 700,70,70,70,70,70,70,630,1400,168,140,70,140,700,700,840,1400,840,840;
 	setarray .RentDisp$[0], "3D Glasses Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Freya's Crown Box","Pecopeco Hairband Box","Hockey Mask Box","Observer Box","Bubble Gum Box","Freya's Spiritual Circlet Box","Four Leaf Clover in Mouth R Box III","Chewing Bubble Gum R Box III","Spiked Scarf BoxIII","Rainbow Scarf BoxIII","Life Ribbon BoxIII","Umbala Spirit 7days Box";
-	// Confirmed endgame quest/exchange headgear: Temporal Circlets, Time Dimensions Rune Crowns, and Frontier Rune Crowns. The matching manifest drives the +120% acquisition modifier in the KB audit.
-	setarray .SpecId[0], 19474,19475,19476,19477,19478,19479,19480,19481,19482,19483,19484,19485,19486,19487,19488,19489,19490,19491,19492,400529;
-	setarray .SpecId[20], 400530,400531,400532,400533,400534,400535,400536,400537,400538,400539,400540,400541,400542,400543,400544,400545,400546,400975,400976,400977;
-	setarray .SpecId[40], 400978,400979,400980,400981,400982,400983,400984,400985,400986,400987,400988,400989,400990,400991,400992;
-	.SpecCount = 55;
-	setarray .SpecPrice[0], 3500,5550,5250,5250,5250,5250,7200,3700,7200,7200,3900,7200,5550,7200,5250,5400,5550,6400,5400,8580,8780,8580,8580,8180,8580,7980,7980,8780,8580,8180,8780,8780,8180,8180,7980,8780,8780,8980,8180,8180,8180,8980,7980,7980,7980,7980,8980,8980,8180,8180,8980,8980,7980,7980,7980;
-	setarray .SpecDisp$[0], "Temporal Circlet(Rune Knight)","Temporal Circlet(Royal Guard)","Temporal Circlet(Mechanic)","Temporal Circlet(Genetic)","Temporal Circlet(Guillotine Cross)","Temporal Circlet(Shadow Chaser)","Temporal Circlet(Archbishop)","Temporal Circlet(Sura)","Temporal Circlet(Warlock)","Temporal Circlet(Sorcerer)","Temporal Circlet(Ranger)","Temporal Circlet(Wanderer&Minstrel)","Temporal Circlet(Star Emperor)","Temporal Circlet(Soul Reaper)","Temporal Circlet(Rebellion)","Temporal Circlet(Oboro)","Temporal Circlet(Kagerou)","Temporal Circlet(Super Novice)","Temporal Circlet(Summoner)","Time Dimensions Rune Crown(Dragon Knight)";
-	setarray .SpecDisp$[20], "Time Dimensions Rune Crown(Imperial Guard)","Time Dimensions Rune Crown(Meister)","Time Dimensions Rune Crown(Biolo)","Time Dimensions Rune Crown(Shadow Cross)","Time Dimensions Rune Crown(Abyss Chaser)","Time Dimensions Rune Crown(Arch Mage)","Time Dimensions Rune Crown(Elemental Master)","Time Dimensions Rune Crown(Cardinal)","Time Dimensions Rune Crown(Inquisitor)","Time Dimensions Rune Crown(Windhawk)","Time Dimensions Rune Crown(Troubadour & Trouvere)","Time Dimensions Rune Crown(Shinkiro & Shiranui)","Time Dimensions Rune Crown(Night Watch)","Time Dimensions Rune Crown(Sky Emperor)","Time Dimensions Rune Crown(Soul Ascetic)","Time Dimensions Rune Crown(Hyper Novice)","Time Dimensions Rune Crown(Spirit Handler)","Frontier Rune Crown(Dragon Knight)","Frontier Rune Crown(Imperial Guard)","Frontier Rune Crown(Meister)";
-	setarray .SpecDisp$[40], "Frontier Rune Crown(Biolo)","Frontier Rune Crown(Shadow Cross)","Frontier Rune Crown(Abyss Chaser)","Frontier Rune Crown(Arch Mage)","Frontier Rune Crown(Elemental Master)","Frontier Rune Crown(Cardinal)","Frontier Rune Crown(Inquisitor)","Frontier Rune Crown(Windhawk)","Frontier Rune Crown(Troubadour & Trouvere)","Frontier Rune Crown(Shinkiro & Shiranui)","Frontier Rune Crown(Night Watch)","Frontier Rune Crown(Sky Emperor)","Frontier Rune Crown(Soul Ascetic)","Frontier Rune Crown(Hyper Novice)","Frontier Rune Crown(Spirit Handler)";
-	setarray .SpecFamily$[0], "Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Time Dimensions Rune Crowns";
-	setarray .SpecFamily$[20], "Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Time Dimensions Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns";
-	setarray .SpecFamily$[40], "Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns";
+	// Confirmed endgame headgear families. Families already sold by the imported Cash Mall exchange (Good and Evil and Furious) stay out of Harlan.
+	setarray .SpecId[0], 19474,19475,19476,19477,19478,19479,19480,19481,19482,19483,19484,19485,19486,19487,19488,19489,19490,19491,19492,18971;
+	setarray .SpecId[20], 18972,18973,18974,18975,18976,18977,18978,18979,18980,18981,18982,18983,18984,400975,400976,400977,400978,400979,400980,400981;
+	setarray .SpecId[40], 400982,400983,400984,400985,400986,400987,400988,400989,400990,400991,400992,19144,410088,410089;
+	.SpecCount = 54;
+	setarray .SpecPrice[0], 3500,5550,5250,5250,5250,5250,7200,3700,7200,7200,3900,7200,5550,7200,5250,5400,5550,6400,5400,4950;
+	setarray .SpecPrice[20], 3960,4950,4950,3300,3500,3500,4200,4950,3500,3500,5550,4950,5250,8980,8180,8180,8180,8980,7980,7980;
+	setarray .SpecPrice[40], 7980,7980,8980,8980,8180,8180,8980,8980,7980,7980,7980,1250,7200,7800;
+	setarray .SpecDisp$[0], "Temporal Circlet (Rune Knight)","Temporal Circlet (Royal Guard)","Temporal Circlet (Mechanic)","Temporal Circlet (Genetic)","Temporal Circlet (Guillotine Cross)","Temporal Circlet (Shadow Chaser)","Temporal Circlet (Archbishop)","Temporal Circlet (Sura)","Temporal Circlet (Warlock)","Temporal Circlet (Sorcerer)","Temporal Circlet (Ranger)","Temporal Circlet (Wanderer & Minstrel)","Temporal Circlet (Star Emperor)","Temporal Circlet (Soul Reaper)","Temporal Circlet (Rebellion)","Temporal Circlet (Oboro)","Temporal Circlet (Kagerou)","Temporal Circlet (Super Novice)","Temporal Circlet (Summoner)","Old Rune Circlet";
+	setarray .SpecDisp$[20], "Old Mitra","Old Driver Band","Old Driver Band(Yellow)","Old Shadow Handicraft","Old Minstrel Song's Hat","Old Midas Whisper","Old Magic Stone Hat","Old Blazing Soul","Old Wind Whisper","Old Dying Swan","Old Circlet Of Bones","Old Casket of Protection","Old Camouflage Rabbit Hood","Frontier Rune Crown (Dragon Knight)","Frontier Rune Crown (Imperial Guard)","Frontier Rune Crown (Meister)","Frontier Rune Crown (Biolo)","Frontier Rune Crown (Shadow Cross)","Frontier Rune Crown (Abyss Chaser)","Frontier Rune Crown (Arch Mage)";
+	setarray .SpecDisp$[40], "Frontier Rune Crown (Elemental Master)","Frontier Rune Crown (Cardinal)","Frontier Rune Crown (Inquisitor)","Frontier Rune Crown (Windhawk)","Frontier Rune Crown (Troubadour & Trouvere)","Frontier Rune Crown (Shinkiro & Shiranui)","Frontier Rune Crown (Night Watch)","Frontier Rune Crown (Sky Emperor)","Frontier Rune Crown (Leader)","Frontier Rune Crown (Hyper Novice)","Frontier Rune Crown (Spirit Master)","Ferlock's Hat","Powered Income","Powered Income";
+	setarray .SpecFamily$[0], "Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Temporal Circlets","Old Bio Lab Headgear";
+	setarray .SpecFamily$[20], "Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Old Bio Lab Headgear","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns";
+	setarray .SpecFamily$[40], "Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Frontier Rune Crowns","Ferlock Equipment","Supplement Part Equipment","Supplement Part Equipment";
+	.SpecFamilyCount = 5;
+	setarray .SpecFamilyName$[0], "Temporal Circlets","Old Bio Lab Headgear","Frontier Rune Crowns","Ferlock Equipment","Supplement Part Equipment";
+	setarray .SpecFamilyCode$[0], "A","B","C","D","E";
 	// Racing Caps, RWC/RTC/RCC tournament hats, and iRO-history create-pass leftovers. Display names drop [Event]/[S2]/[S3] prefixes. Missing client itemInfo is not a cut. Custom-imported hats with no worn accessory model were removed from item_db on 2026-08-20: 19416, 400938, 420569. Official rAthena rows 5895, 400088, 400089, 400090 still exist upstream and stay off this stall. Gold Dragon Helm 5451 stays on Equipment. Comp_Happy_Balloon_K 15972 sits on Event beside Equipment Happy_Balloon_K 19095 (same View and EXP/drop script; 19102 is Pale Moon Hat). RCC 2013 1st/2nd/3rd crowns stay.
 	setarray .EvtId[0], 5428,5452,5453,5603,5604,5605,5892,5893,5894,18779,18780,18781,18796,18828,18829,18830,19189,19190,19191,19192;
 	setarray .EvtId[20], 19193,19194,19195,19196,19197,19198,19199,19200,19201,19202,19203,19204,19205,19396,19397,401146,420513,420701,420884,420898;
 	setarray .EvtId[40], 401091,401019,401460,420899,15972;
 	.EvtCount = 45;
-	setarray .EvtPrice[0], 800,1050,1050,2250,2250,2250,1000,1000,1000,1900,1900,1900,1140,1300,1300,1300,2850,3150,2850,2250,2250,3150,2850,3150,3150,3150,3150,2250,2250,2250,3450,2850,2250,2850,1900,100,1700,100,2600,1500,2100,2100,2100,2250,100;
 	setarray .EvtPrice[0], 800,1050,1050,3000,3000,3000,1000,1000,1000,1900,1900,1900,1140,1300,1300,1300,2850,3150,2850,2250,3000,3150,2850,3150,3150,3150,3150,2250,2250,2250,3450,2850,2250,2850,3800,100,1700,100,2600,1500,2100,2100,2100,2250,100;
 	setarray .EvtDisp$[0], "RWC Anniversary Bread Envelope","Silver Dragon Helm","Copper Dragon Helm","RWC Statue(Winner)","RWC Statue(2nd)","RWC Statue(3rd)","RCC2013 1st Crown","RCC2013 2nd Crown","RCC2013 3rd Crown","RWC Champ Crown(1st)","RWC Champ Crown(2nd)","RWC Champ Crown(3rd)","RWC Crown of Victory(8th)","RMSC2012 Champion Headgear","RMSC2012 1st Runner Headgear","RMSC2012 2nd Runner Headgear","Racing Cap(Mechanic)","Racing Cap(Genetic)","Racing Cap(Guillotine Cross)","Racing Cap(Shadow Chaser)";
 	setarray .EvtDisp$[20], "Racing Cap(Warlock)","Racing Cap(Sorcerer)","Racing Cap(Rune Knight)","Racing Cap(Royal Guard)","Racing Cap(Archbishop)","Racing Cap(Sura)","Racing Cap(Ranger)","Racing Cap(Minstrel)","Racing Cap(Wanderer)","Racing Cap(Gunslinger)","Racing Cap(Ninja)","Racing Cap(Super Novice)","Racing Cap(Summoner)","Racing Cap(Star Gladiator)","Racing Cap(Soul Linker)","Santa Claus Hat","Chewy Seaweed","Santa Claus Beard","23rd Anniversary Scarf","Nyar's Familiar";
@@ -760,9 +808,19 @@ OnInit:
 		.@price = .SpecPrice[.@i];
 		.@name$ = .SpecDisp$[.@i];
 		.@loc = getiteminfo(.@id, ITEMINFO_LOCATIONS);
-		if (.SpecFamily$[.@i] == "Temporal Circlets") { .@letter$ = "T"; .@letter_index = 19; }
-		else if (.SpecFamily$[.@i] == "Time Dimensions Rune Crowns") { .@letter$ = "D"; .@letter_index = 3; }
-		else { .@letter$ = "F"; .@letter_index = 5; }
+		.@family = -1;
+		for (.@j = 0; .@j < .SpecFamilyCount; ++.@j) {
+			if (.SpecFamily$[.@i] == .SpecFamilyName$[.@j]) {
+				.@family = .@j;
+				break;
+			}
+		}
+		if (.@family < 0) {
+			debugmes "Hat Seller: unknown specialty family for item " + .@id + ".";
+			continue;
+		}
+		.@letter$ = .SpecFamilyCode$[.@family];
+		.@letter_index = strpos(.@alphabet$, .@letter$);
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
 				if (.@letter_index == -2)
@@ -872,9 +930,15 @@ OnInit:
 			.RentMenu$[.@slot] += "0-9:";
 			.RentLetterCount[.@slot] = 1;
 		}
-		if (.SpecHas[.@slot * 26 + 19]) { .SpecLetter$[.@slot * 27 + .SpecLetterCount[.@slot]] = "T"; .SpecMenu$[.@slot] += "Temporal Circlets:"; .SpecLetterCount[.@slot] += 1; }
-		if (.SpecHas[.@slot * 26 + 3]) { .SpecLetter$[.@slot * 27 + .SpecLetterCount[.@slot]] = "D"; .SpecMenu$[.@slot] += "Time Dimensions Rune Crowns:"; .SpecLetterCount[.@slot] += 1; }
-		if (.SpecHas[.@slot * 26 + 5]) { .SpecLetter$[.@slot * 27 + .SpecLetterCount[.@slot]] = "F"; .SpecMenu$[.@slot] += "Frontier Rune Crowns:"; .SpecLetterCount[.@slot] += 1; }
+		for (.@family = 0; .@family < .SpecFamilyCount; ++.@family) {
+			.@letter$ = .SpecFamilyCode$[.@family];
+			.@letter_index = strpos(.@alphabet$, .@letter$);
+			if (.SpecHas[.@slot * 26 + .@letter_index]) {
+				.SpecLetter$[.@slot * 27 + .SpecLetterCount[.@slot]] = .@letter$;
+				.SpecMenu$[.@slot] += .SpecFamilyName$[.@family] + ":";
+				.SpecLetterCount[.@slot] += 1;
+			}
+		}
 		if (.EvtHasNum[.@slot]) {
 			.EvtLetter$[.@slot * 27] = "0";
 			.EvtMenu$[.@slot] += "0-9:";
