@@ -5,7 +5,8 @@ import {
   faCoins,
   faGem,
   faHatWizard,
-  faStore
+  faStore,
+  faWandMagic
 } from '@fortawesome/free-solid-svg-icons'
 
 import { Text } from '@/components/atoms'
@@ -121,8 +122,15 @@ export default function BlackMarketPage(): ReactNode {
               icon={faHatWizard}
               location="Market hall · 41, 173"
               title="Harlan"
-              description="Browse equipment, rentals, specialty circlets, and event headgear. Prices reflect each hat's abilities, so a higher price is a quick clue that it offers more."
+              description="Browse equipment, rentals, specialty circlets, and event headgear. Specialty opens by set: Temporal Circlets, Time Dimensions Rune Crowns, or Frontier Rune Crowns."
               tag="495 hats · priced by power"
+            />
+            <ServiceCard
+              icon={faWandMagic}
+              location="Market hall · 51, 175"
+              title="Soren"
+              description="Browse 706 weapons by type. Specialty drawers use the weapon family name, so you can go straight to a set such as Illusion, Frontier, Glacier, or Fides."
+              tag="706 weapons · CP"
             />
             <ServiceCard
               icon={faBoxArchive}
