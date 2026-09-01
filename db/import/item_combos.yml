@@ -34,6 +34,13 @@ Header:
   Version: 1
 
 Body:
+  # Divine Pride item 2515: Eagle Wing gains movement speed with Wing Staff.
+  - Combos:
+      - Combo:
+          - Wing_Of_Eagle
+          - Staff_Of_Wing
+    Script: |
+      bonus bSpeedRate,25;
   # iRO History Garment import: Constellation Blessing set partners.
   - Combos:
       - Combo:
