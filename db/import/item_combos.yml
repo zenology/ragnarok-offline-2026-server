@@ -34,6 +34,43 @@ Header:
   Version: 1
 
 Body:
+  # iRO History Garment import: Constellation Blessing set partners.
+  - Combos:
+      - Combo:
+          - IRO_History_Garment_480527
+          - Signet_Of_Pow_Star
+    Script: |
+      bonus bPow,15;
+  - Combos:
+      - Combo:
+          - IRO_History_Garment_480527
+          - Signet_Of_Sta_Star
+    Script: |
+      bonus bSta,15;
+  - Combos:
+      - Combo:
+          - IRO_History_Garment_480527
+          - Signet_Of_Con_Star
+    Script: |
+      bonus bCon,15;
+  - Combos:
+      - Combo:
+          - IRO_History_Garment_480527
+          - Signet_Of_Crt_Star
+    Script: |
+      bonus bCrt,15;
+  - Combos:
+      - Combo:
+          - IRO_History_Garment_480527
+          - Signet_Of_Spl_Star
+    Script: |
+      bonus bSpl,15;
+  - Combos:
+      - Combo:
+          - IRO_History_Garment_480527
+          - Signet_Of_Wis_Star
+    Script: |
+      bonus bWis,15;
   # Divine Pride 2026-08-18: Grey Wolf Cub in Mouth set bonuses.
   - Combos:
       - Combo:

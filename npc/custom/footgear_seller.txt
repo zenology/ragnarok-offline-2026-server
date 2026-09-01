@@ -5,7 +5,10 @@
 
 paramk,45,163,2	script	Tess#offline	4_F_JOB_BLACKSMITH,{
 	mes "[Tess]";
-	mes "Boots, shoes, and every hard road between them.";
+	mes "My father is the Card Collector.";
+	mes "Everyone expected me to learn his trade. I never wanted to spend my life counting cards behind his table.";
+	mes "So I chose leather, thread, and a proper sole. I make shoes, repair them, and send people back onto the road.";
+	mes "If you want something for your feet, speak to me. If you want a card appraised, ask my father.";
 	.@cat = select("Equipment:Specialty:") - 1;
 	.@shop$ = "";
 	if (.@cat == 0) {

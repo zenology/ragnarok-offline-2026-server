@@ -1,0 +1,523 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+Body:
+- Id: 20752
+  AegisName: IRO_History_Garment_20752
+  Name: Golden Wing
+  Type: Armor
+  Weight: 10
+  Defense: 15
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bStr,1; bonus bAgi,1; bonus bVit,1; bonus bInt,1; bonus bDex,1; bonus bLuk,1; bonus bSta,1;
+- Id: 20757
+  AegisName: IRO_History_Garment_20757
+  Name: Heavenly Wings
+  Type: Armor
+  Weight: 0
+  Defense: 10
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bSta,3;
+- Id: 20758
+  AegisName: IRO_History_Garment_20758
+  Name: Heavenly Wings
+  Type: Armor
+  Weight: 0
+  Defense: 10
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bSta,3;
+- Id: 480070
+  AegisName: IRO_History_Garment_480070
+  Name: Wings of Olympus
+  Type: Armor
+  Weight: 30
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bStr,1; bonus bAgi,1; bonus bVit,1; bonus bInt,1; bonus bDex,1; bonus bLuk,1; bonus bPow,1; bonus bSta,1; bonus bWis,1; bonus bSpl,1; bonus bCon,1;
+    bonus bCrt,1; bonus bMdef,10; bonus bDelayrate,-10;
+- Id: 480341
+  AegisName: IRO_History_Garment_480341
+  Name: Kiel Hyre's Darkness
+  Type: Armor
+  Weight: 20
+  Defense: 20
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bPow,3; bonus bCon,50; bonus bMdef,10; bonus bAtk,10; bonus bDelayrate,-30;
+- Id: 480369
+  AegisName: IRO_History_Garment_480369
+  Name: Scarlet Hero Cape
+  Type: Armor
+  Weight: 90
+  Defense: 60
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bAtk,10;
+- Id: 480399
+  AegisName: IRO_History_Garment_480399
+  Name: Devil Flame Manteau-LT
+  Type: Armor
+  Weight: 10
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 150
+  Script: bonus bAgi,20; bonus bSpl,1; bonus bCon,20; bonus bMdef,10; bonus bMatk,15; bonus bAtk,15;
+- Id: 480417
+  AegisName: IRO_History_Garment_480417
+  Name: Bear Aimed Bag
+  Type: Armor
+  Weight: 150
+  Defense: 50
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus2 bAddSize,Size_All,10; bonus bLongAtkRate,20; bonus2 bAddClass,Class_Boss,15; bonus bDelayrate,-12;
+- Id: 480428
+  AegisName: IRO_History_Garment_480428
+  Name: Ultio Magic Cloak-LT
+  Type: Armor
+  Weight: 10
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 150
+  Script: bonus bMdef,10; bonus bMatk,15; bonus bAtk,15;
+- Id: 480452
+  AegisName: IRO_History_Garment_480452
+  Name: Tristan Imperial Cape
+  Type: Armor
+  Weight: 10
+  Defense: 20
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bAtk,10; bonus bNoKnockback;
+- Id: 480455
+  AegisName: IRO_History_Garment_480455
+  Name: Legendary Performer Manteau
+  Type: Armor
+  Weight: 30
+  Defense: 38
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,10; bonus bAgi,10; bonus bVit,10; bonus bInt,200; bonus bDex,200; bonus bLuk,200; bonus bPow,10; bonus bSta,10; bonus bWis,10; bonus bSpl,10;
+    bonus bCon,10; bonus bCrt,10; bonus bMatk,15; bonus bAtk,15;
+- Id: 480465
+  AegisName: IRO_History_Garment_480465
+  Name: Melody Wing
+  Type: Armor
+  Weight: 80
+  Defense: 20
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus2 bAddSize,Size_All,10; bonus bDelayrate,-12;
+- Id: 480527
+  AegisName: IRO_History_Garment_480527
+  Name: Constellation Blessing
+  Type: Armor
+  Weight: 100
+  Defense: 100
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,1; bonus bAgi,1; bonus bVit,1; bonus bInt,1; bonus bDex,1; bonus bLuk,1; bonus bPow,15; bonus bSta,15; bonus bWis,15; bonus bSpl,15; bonus bCon,15;
+    bonus bCrt,15; bonus bMatk,150; bonus bAtk,150; bonus bMaxSPrate,2;
+- Id: 480536
+  AegisName: IRO_History_Garment_480536
+  Name: Will of Karasu
+  Type: Armor
+  Weight: 10
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,15; bonus bAgi,15; bonus bVit,15; bonus bInt,15; bonus bDex,15; bonus bLuk,15; bonus bPow,15; bonus bSta,15; bonus bWis,15; bonus bSpl,15; bonus
+    bCon,15; bonus bCrt,15; bonus bMatk,100; bonus bAtk,100;
+- Id: 480543
+  AegisName: IRO_History_Garment_480543
+  Name: Will of Ingrid
+  Type: Armor
+  Weight: 10
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,15; bonus bAgi,15; bonus bVit,15; bonus bInt,15; bonus bDex,15; bonus bLuk,15; bonus bPow,15; bonus bSta,15; bonus bWis,15; bonus bSpl,15; bonus
+    bCon,250; bonus bCrt,15; bonus bAtk,100; bonus2 bAddSize,Size_All,30; bonus bDelayrate,-1;
+- Id: 480557
+  AegisName: IRO_History_Garment_480557
+  Name: Black Cat Backpack
+  Type: Armor
+  Weight: 10
+  Defense: 50
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,77; bonus bDex,77; bonus bLuk,77; bonus bPow,10; bonus bCrt,10; bonus bAtk,30; bonus2 bAddSize,Size_All,15; bonus bDelayrate,-15;
+- Id: 480564
+  AegisName: IRO_History_Garment_480564
+  Name: Doram Mink Coat
+  Type: Armor
+  Weight: 10
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 150
+  Script: bonus bPow,15; bonus bSpl,15; bonus bMatk,15; bonus bAtk,15;
+- Id: 480583
+  AegisName: IRO_History_Garment_480583
+  Name: Angel Ribbon Wing (Red)
+  Type: Armor
+  Weight: 10
+  Defense: 10
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 160
+  Script: bonus bAtk,20; bonus bDelayrate,-8;
+- Id: 480584
+  AegisName: IRO_History_Garment_480584
+  Name: Angel Ribbon Wing (White)
+  Type: Armor
+  Weight: 10
+  Defense: 10
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 160
+  Script: bonus bSta,15; bonus bMatk,20; bonus bAtk,20; bonus bDelayrate,-8;
+- Id: 480593
+  AegisName: IRO_History_Garment_480593
+  Name: Colorful Potion Cape
+  Type: Armor
+  Weight: 20
+  Defense: 20
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bAtk,10;
+- Id: 480594
+  AegisName: IRO_History_Garment_480594
+  Name: Colorful Potion Cape-LT
+  Type: Armor
+  Weight: 20
+  Defense: 20
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 190
+  Script: bonus bPow,1; bonus bCon,1; bonus bAtk,10;
+- Id: 480597
+  AegisName: IRO_History_Garment_480597
+  Name: Royal Morroc Cape
+  Type: Armor
+  Weight: 70
+  Defense: 100
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,250; bonus bDex,250; bonus bLuk,250; bonus bPow,3; bonus bSta,15; bonus bCon,3; bonus bAtk,20; bonus bMaxHPrate,20;
+- Id: 480598
+  AegisName: IRO_History_Garment_480598
+  Name: Costume Shark
+  Type: Armor
+  Weight: 0
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMatk,50; bonus bAtk,50;
+- Id: 480599
+  AegisName: IRO_History_Garment_480599
+  Name: Giant Mad Bunny-LT
+  Type: Armor
+  Weight: 20
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bPow,3; bonus bSpl,3; bonus bCon,3; bonus bMatk,10; bonus bAtk,10;
+- Id: 480604
+  AegisName: IRO_History_Garment_480604
+  Name: Wings of Melody
+  Type: Armor
+  Weight: 120
+  Defense: 20
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 1
+  Script: bonus bSpl,15; bonus bCon,15; bonus bMdef,10; bonus bMatk,15; bonus bAtk,15;
+- Id: 480607
+  AegisName: IRO_History_Garment_480607
+  Name: White Knight Cape
+  Type: Armor
+  Weight: 50
+  Defense: 80
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bAgi,150; bonus bInt,150; bonus bSpl,15; bonus bMatk,200; bonus bAtk,200; bonus bMaxHPrate,3; bonus bMaxSPrate,3; bonus bUnbreakableArmor;
+- Id: 480615
+  AegisName: IRO_History_Garment_480615
+  Name: Royal Monastery Muffler
+  Type: Armor
+  Weight: 70
+  Defense: 100
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,250; bonus bAgi,250; bonus bInt,250; bonus bDex,250; bonus bPow,15; bonus bSta,15; bonus bSpl,15; bonus bMatk,20; bonus bAtk,20; bonus bMaxHPrate,20;
+    bonus bNoKnockback; bonus bUnbreakableArmor;
+- Id: 480621
+  AegisName: IRO_History_Garment_480621
+  Name: Comet Cavalry
+  Type: Armor
+  Weight: 300
+  Defense: 400
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bPow,20; bonus bSta,25; bonus bSpl,20; bonus bMatk,250; bonus bAtk,250; bonus bUnbreakableArmor;
+- Id: 480639
+  AegisName: IRO_History_Garment_480639
+  Name: Boreas Wings
+  Type: Armor
+  Weight: 100
+  Defense: 200
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,200; bonus bAgi,200; bonus bInt,200; bonus bDex,200; bonus bPow,20; bonus bSta,200; bonus bSpl,20; bonus bMatk,250; bonus bAtk,250;
+- Id: 480650
+  AegisName: IRO_History_Garment_480650
+  Name: Avenger Cloak of Naght Sieger-LT
+  Type: Armor
+  Weight: 20
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 190
+  Script: bonus bPow,1; bonus bCon,1; bonus bAtk,10;
+- Id: 480651
+  AegisName: IRO_History_Garment_480651
+  Name: Spirit Cloak of Naght Sieger-LT
+  Type: Armor
+  Weight: 20
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 190
+  Script: bonus bSpl,1; bonus bCon,1; bonus bMatk,10; bonus bAtk,10;
+- Id: 480663
+  AegisName: IRO_History_Garment_480663
+  Name: Fallen Valkyrie
+  Type: Armor
+  Weight: 100
+  Defense: 200
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,25; bonus bAgi,40; bonus bVit,25; bonus bInt,25; bonus bDex,25; bonus bLuk,25; bonus bPow,25; bonus bSta,25; bonus bWis,25; bonus bSpl,25; bonus
+    bCon,25; bonus bCrt,25; bonus bMdef,20; bonus bMatk,250; bonus bAtk,250; bonus bDelayrate,-20;
+- Id: 480681
+  AegisName: IRO_History_Garment_480681
+  Name: Juncea Follower Wing
+  Type: Armor
+  Weight: 200
+  Defense: 50
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,20; bonus bAgi,20; bonus bVit,20; bonus bInt,20; bonus bDex,20; bonus bLuk,20; bonus bPow,20; bonus bSta,20; bonus bWis,20; bonus bSpl,20; bonus
+    bCon,20; bonus bCrt,20; bonus bMdef,10; bonus bMatk,30; bonus bAtk,30; bonus bUnbreakableArmor;
+- Id: 480696
+  AegisName: IRO_History_Garment_480696
+  Name: '[Event] Winter Christmas Wings'
+  Type: Armor
+  Weight: 10
+  Defense: 30
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bStr,10; bonus bAgi,10; bonus bVit,10; bonus bInt,10; bonus bDex,10; bonus bLuk,10; bonus bPow,10; bonus bSta,10; bonus bWis,10; bonus bSpl,10; bonus
+    bCon,10; bonus bCrt,10; bonus bMatk,30; bonus bAtk,30;
+- Id: 480697
+  AegisName: IRO_History_Garment_480697
+  Name: Royal Moscovia Cape
+  Type: Armor
+  Weight: 70
+  Defense: 100
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,250; bonus bAgi,15; bonus bVit,15; bonus bInt,15; bonus bDex,250; bonus bLuk,250; bonus bPow,15; bonus bSta,15; bonus bWis,15; bonus bSpl,15;
+    bonus bCon,15; bonus bCrt,15; bonus bMatk,75; bonus bAtk,150; bonus bDelayrate,-15; bonus bNoKnockback; bonus bUnbreakableArmor; bonus2 bAddSize,Size_All,7; bonus2
+    bAddEle,Ele_All,20;
+- Id: 480698
+  AegisName: IRO_History_Garment_480698
+  Name: Royal Dragon Cape
+  Type: Armor
+  Weight: 70
+  Defense: 100
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,250; bonus bAgi,15; bonus bVit,250; bonus bInt,15; bonus bDex,250; bonus bLuk,15; bonus bPow,15; bonus bSta,15; bonus bWis,15; bonus bSpl,15;
+    bonus bCon,15; bonus bCrt,15; bonus bMatk,75; bonus bAtk,20; bonus bMaxHPrate,15; bonus bMaxSPrate,15; bonus bDelayrate,-15; bonus bNoKnockback; bonus bUnbreakableArmor;
+    bonus2 bAddSize,Size_All,15; bonus2 bAddEle,Ele_All,20;
+- Id: 480734
+  AegisName: IRO_History_Garment_480734
+  Name: Heart Choco Bag
+  Type: Armor
+  Weight: 0
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bSta,10; bonus bMatk,10; bonus bAtk,10;
+- Id: 480737
+  AegisName: IRO_History_Garment_480737
+  Name: Mecha Engine Wing
+  Type: Armor
+  Weight: 10
+  Defense: 10
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bAtk,10; bonus bNoKnockback;
+- Id: 480759
+  AegisName: IRO_History_Garment_480759
+  Name: Enhanced Reforming Magic Cloak
+  Type: Armor
+  Weight: 10
+  Defense: 0
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 150
+  Script: bonus bSpl,1; bonus bMatk,10; bonus bAtk,10;
+- Id: 480823
+  AegisName: IRO_History_Garment_480823
+  Name: Abysmal Follower Cape
+  Type: Armor
+  Weight: 100
+  Defense: 100
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bAgi,150; bonus bSta,10; bonus bWis,4; bonus bSpl,150; bonus bCon,30; bonus bMdef,15; bonus bMatk,50; bonus bAtk,50; bonus bMaxHPrate,20; bonus bMaxSPrate,20;
+    bonus bNoKnockback; bonus bUnbreakableArmor;
+- Id: 480869
+  AegisName: IRO_History_Garment_480869
+  Name: Enhanced Battle Aura Manteau
+  Type: Armor
+  Weight: 10
+  Defense: 20
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 190
+  Script: bonus bPow,1; bonus bSta,50; bonus bCon,200; bonus bAtk,8; bonus bMaxHPrate,25; bonus bDelayrate,-7; bonus bNoKnockback;
+- Id: 480899
+  AegisName: IRO_History_Garment_480899
+  Name: Dark Scientist Robe
+  Type: Armor
+  Weight: 50
+  Defense: 150
+  Slots: 1
+  Locations:
+    Garment: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bAgi,33; bonus bPow,10; bonus bSta,20; bonus bSpl,10; bonus bMdef,20; bonus bMatk,50; bonus bAtk,50; bonus bMaxHPrate,30; bonus bMaxSPrate,30; bonus
+    bUnbreakableArmor; bonus2 bAddEle,Ele_All,30;
