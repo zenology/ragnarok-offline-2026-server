@@ -1,0 +1,87 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 35000
+    AegisName: Offline_MVP_Card_Album
+    Name: MVP Card Album
+    Type: Usable
+    Weight: 50
+    Flags:
+      Container: true
+    Script: |
+      callfunc("F_OfflineMvpCardAlbum");
+  - Id: 12977
+    Name: Teleport Scroll (Rune-Midgarts - Central)
+  - Id: 12978
+    Name: Teleport Scroll (Rune-Midgarts - South)
+  - Id: 12980
+    Name: Teleport Scroll (Rune-Midgarts - Other)
+  - Id: 12981
+    Name: Teleport Scroll (Lighthalzen)
+  - Id: 12982
+    Name: Teleport Scroll (Rachel)
+  - Id: 12979
+    Name: Teleport Scroll (Localizing Region)
+  - Id: 4446
+    Name: Powerful Skeleton Card
+  - Id: 4633
+    Name: Powerful Archer Skeleton Card
+  - Id: 4634
+    Name: Powerful Soldier Skeleton Card
+  - Id: 6909
+    Name: Nyangvine
+  - Id: 23148
+    Script: |
+      callfunc("F_PremiumSubscription",2880);
+  - Id: 23149
+    Script: |
+      callfunc("F_PremiumSubscription",4320);
+  - Id: 23165
+    Name: Premium Service Staff
+    Flags:
+      NoConsume: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      callfunc("F_PremiumServiceStaff");
+  - Id: 23207
+    Script: |
+      callfunc("F_PremiumSubscription",43200);
+  - Id: 23209
+    Script: |
+      callfunc("F_PremiumSubscription",1440);
+  - Id: 23210
+    Script: |
+      callfunc("F_PremiumSubscription",5760);
+  - Id: 23211
+    Script: |
+      callfunc("F_PremiumSubscription",7200);
+  - Id: 23212
+    Script: |
+      callfunc("F_PremiumSubscription",8640);
+  - Id: 23213
+    Script: |
+      callfunc("F_PremiumSubscription",10080);
+  - Id: 23214
+    Script: |
+      callfunc("F_PremiumSubscription",11520);
+  - Id: 23215
+    Script: |
+      callfunc("F_PremiumSubscription",12960);
+  - Id: 23216
+    Script: |
+      callfunc("F_PremiumSubscription",14400);
+
+Footer:
+  Imports:
+    - Path: db/import/item_db_iro_hats.yml
+    - Path: db/import/item_db_iro_hats_hard.yml
+    - Path: db/import/item_db_iro_shields.yml

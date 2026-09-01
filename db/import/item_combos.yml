@@ -1,0 +1,1612 @@
+# This file is a part of rAthena.
+#   Copyright(C) 2022 rAthena Development Team
+#   https://rathena.org - https://github.com/rathena
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+###########################################################################
+# Item Combo Database
+###########################################################################
+#
+# Settings
+#
+###########################################################################
+# - Combos:                 List of combo sets.
+#    - Combo:               Sequence of items to define a combo (minimum of 2 items).
+#       - <item name>       AEGIS name of the item
+#   Script                  Script to execute when one of the combos is equipped. (Default: null)
+#   Clear                   Remove the defined combos from database. (Default: false)
+###########################################################################
+
+Header:
+  Type: COMBO_DB
+  Version: 1
+
+Body:
+  # Divine Pride 2026-08-18: Grey Wolf Cub in Mouth set bonuses.
+  - Combos:
+      - Combo:
+          - Grey_Cub_US    # 420388
+          - Gray_W_Suits   # 450177
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bPAtk,25;
+      bonus bBaseAtk,75*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Grey_Cub_US    # 420388
+          - Gray_W_Robe    # 450178
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bSMatk,25;
+      bonus bMatk,75*(getequiprefinerycnt(EQI_ARMOR)/3);
+
+  # Divine Pride 2026-08-18 text; wired 2026-08-20. Partners already in db/re.
+  # Unnamed movement speed is bSpeedRate,25, same as Grey Cub / Nebula Orb.
+  - Combos:
+      - Combo:
+          - Frosty_Breath_US    # 420590
+          - Snowflower_Armor    # 450206
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bPAtk,30;
+      bonus bPow,getequiprefinerycnt(EQI_ARMOR)/3;
+      bonus bBaseAtk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Frosty_Breath_US    # 420590
+          - Snowflower_Robe    # 450207
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bSMatk,30;
+      bonus bSpl,getequiprefinerycnt(EQI_ARMOR)/3;
+      bonus bMatk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+
+  # Divine Pride 2026-08-18: hard iRO-history hat set bonuses. Partners verified in local item_db.
+  - Combos:
+      - Combo:
+          - Garden_Of_Eden_BR
+          - B_Katrinn_Card
+    Script: |
+      bonus2 bSkillCooldown,"HW_MAGICPOWER",-120000;
+  - Combos:
+      - Combo:
+          - Poenetentia_S_Crown
+          - Poenitentia_Ramus
+    Script: |
+      bonus bSMatk,10;
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",8*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_WHITE_TIGER",8*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Poenetentia_S_Crown
+          - Poenitentia_Jana
+    Script: |
+      bonus bSMatk,10;
+      bonus2 bSkillAtk,"SS_SEKIENHOU",10*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",10*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Poenetentia_S_Crown
+          - Poenitentia_Ferrum
+    Script: |
+      bonus bSMatk,10;
+      bonus2 bSkillAtk,"HN_HELLS_DRIVE",8*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"HN_METEOR_STORM_BUSTER",8*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Poenetentia_S_Crown
+          - Poenitentia_Planta
+    Script: |
+      bonus bSMatk,10;
+      bonus2 bSkillAtk,"SU_CN_METEOR",12*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",8*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Poenetentia_M_Crown
+          - Poenitentia_Penet
+    Script: |
+      bonus bLongAtkRate,15;
+      bonus bCritAtkRate,6*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"NW_SPIRAL_SHOOTING",8*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Poenetentia_M_Crown
+          - Poenitentia_Veloci
+    Script: |
+      bonus bLongAtkRate,15;
+      bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",7*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",7*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Poenetentia_M_Crown
+          - Poenitentia_Ruina
+    Script: |
+      bonus bLongAtkRate,15;
+      bonus2 bSkillAtk,"NW_WILD_FIRE",7*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"NW_SPIRAL_SHOOTING",7*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Poenetentia_M_Crown    # 400625
+          - Poenitentia_Foramen    # 800011 iRO English: Poenitentia Flamen
+    Script: |
+      bonus bLongAtkRate,15;
+      bonus2 bSkillAtk,"NW_ONLY_ONE_BULLET",10*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",6*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo:
+          - Rekenber_Celestial_US
+          - Reken_Guard_Card
+    Script: |
+      bonus bPAtk,10;
+      bonus bShortAtkRate,10*(getequiprefinerycnt(EQI_HEAD_TOP)/3);
+  - Combos:
+      - Combo:
+          - Rekenber_Celestial_US
+          - Reken_H_Guard_Card
+    Script: |
+      bonus bPAtk,10;
+      bonus bLongAtkRate,10*(getequiprefinerycnt(EQI_HEAD_TOP)/3);
+  - Combos:
+      - Combo:
+          - Rekenber_Celestial_US
+          - Eremes_Card
+    Script: |
+      bonus bPAtk,10;
+      bonus bCritAtkRate,10*(getequiprefinerycnt(EQI_HEAD_TOP)/3);
+  - Combos:
+      - Combo:
+          - Bijou_Hat_US
+          - Bijou_Card
+    Script: |
+      bonus bMatkRate,30;
+      bonus2 bAddClass,Class_All,30;
+      bonus2 bSubEle,Ele_Dark,30;
+      bonus2 bSubEle,Ele_Undead,30;
+      if (getequiprefinerycnt(EQI_HAND_L)>=13)
+         autobonus "{ bonus bPow,40; bonus bSpl,40; }",50,15000,BF_WEAPON|BF_MAGIC;
+  - Combos:
+      - Combo:
+          - Bijou_Hat_US
+          - P_Archer_Skeleton_Card
+    Script: |
+      bonus bLongAtkRate,15;
+  - Combos:
+      - Combo:
+          - Bijou_Hat_US
+          - P_Skeleton_Card
+    Script: |
+      bonus bBaseAtk,40;
+      bonus3 bAddEff,Eff_Stun,800,ATF_SHORT|ATF_LONG;
+  - Combos:
+      - Combo:
+          - Bijou_Hat_US
+          - P_Soldier_Skeleton_Card
+    Script: |
+      bonus bCritAtkRate,25;
+  - Combos:
+      - Combo:
+          - Misst_J_Tiara
+          - Mistress_Card
+    Script: |
+      bonus bFixedCast,-200;
+      bonus bUseSPrate,-25;
+      bonus2 bMagicAddClass,Class_Boss,12;
+  - Combos:
+      - Combo:
+          - Misst_J_Tiara
+          - Sealed_Mistress_Card
+    Script: |
+      bonus bFixedCast,-100;
+      bonus bUseSPrate,-25;
+      bonus2 bMagicAddClass,Class_Boss,7;
+  - Combos:
+      - Combo:
+          - Robotic_Valk_US
+          - RepairRobot_T_Card
+    Script: |
+      bonus bPow,15;
+      bonus bHPrecovRate,100;
+      bonus bSPrecovRate,100;
+      bonus bDelayrate,-20;
+  - Combos:
+      - Combo:
+          - Great_Yoyo_US
+          - Lady_Tanee_Card
+    Script: |
+      bonus bMaxHPrate,150;
+      bonus bMaxSPrate,50;
+      bonus bAllTraitStats,25;
+  - Combos:
+      - Combo:
+          - Boitata_Cap_US
+          - Boitata_Card
+    Script: |
+      bonus bPow,15;
+      bonus bCrt,15;
+      bonus bCritAtkRate,40;
+  - Combos:
+      - Combo:
+          - Boitata_Cap_US
+          - Iara_Card
+      - Combo:
+          - Boitata_Cap_US
+          - Piranha_Card
+    Script: |
+      bonus bPow,3;
+      bonus bCritAtkRate,10;
+  - Combos:
+      - Combo:
+          - Great_Wolf_US
+          - Cutie_Card
+    Script: |
+      bonus bMaxHPrate,100;
+      bonus bMaxSPrate,50;
+      bonus bAllTraitStats,25;
+  - Combos:
+      - Combo:
+          - Great_Kiel_US
+          - Kiel_Card
+    Script: |
+      bonus bMaxHPrate,70;
+      bonus bMaxSPrate,30;
+      bonus bLongAtkRate,20;
+      bonus bAllTraitStats,20;
+  - Combos:
+      - Combo:
+          - Great_Kiel_US
+          - Sealed_Kiel_Card
+    Script: |
+      bonus bMaxHPrate,35;
+      bonus bMaxSPrate,15;
+      bonus bLongAtkRate,10;
+      bonus bAllTraitStats,10;
+  - Combos:
+      - Combo:
+          - Umbala_Utan_Helmet
+          - Ancient_Tao_Gunka_Card
+    Script: |
+      bonus bPow,5;
+      bonus bCon,5;
+      bonus2 bAddSize,Size_All,8*(getequiprefinerycnt(EQI_HEAD_TOP)/3);
+  - Combos:
+      - Combo:
+          - Umbala_Utan_Helmet
+          - Ancient_W_Deffend_Card
+    Script: |
+      bonus2 bAddClass,Class_Boss,25;
+      bonus2 bIgnoreResRaceRate,RC_All,15;
+  - Combos:
+      - Combo:
+          - Umbala_Utan_Helmet
+          - Ancient_Sta_Golem_Card
+      - Combo:
+          - Umbala_Utan_Helmet
+          - Ancient_W_Shooter_Card
+      - Combo:
+          - Umbala_Utan_Helmet
+          - Ancient_S_Shooter_Card
+    Script: |
+      bonus2 bAddSize,Size_All,5;
+      bonus2 bAddSize,Size_All,5*(getequiprefinerycnt(EQI_GARMENT)/2);
+  - Combos:
+      - Combo:
+          - Bankrupt_Headgear_US
+          - Zipper_Bear_Card
+    Script: |
+      bonus bPow,10;
+      bonus4 bAutoSpellOnSkill,"MC_MAMMONITE","LG_EARTHDRIVE",5,200;
+  - Combos:
+      - Combo:
+          - Bankrupt_Headgear_US
+          - Mole_Card
+    Script: |
+      bonus2 bSkillAtk,"MC_MAMMONITE",100*getequiprefinerycnt(EQI_HEAD_TOP);
+  - Combos:
+      - Combo:
+          - Great_Gryphon_US
+          - Gryphon_Card
+    Script: |
+      bonus bAllStats,7;
+      bonus bAllTraitStats,7;
+      bonus bCritical,30;
+  # Divine Pride 2026-08-18 text; wired 2026-08-20. Partner already in db/re.
+  # DP English Toxic Enhancement Chimera Card is local Venom_Kimera_Card 27150.
+  - Combos:
+      - Combo:
+          - Great_Gryphon_US    # 401307
+          - Venom_Kimera_Card    # 27150 client: Venom Enchanted Chimera Card
+    Script: |
+      bonus bMaxHPrate,150;
+      bonus bMaxSPrate,50;
+      bonus bAllTraitStats,25;
+  - Combos:
+      - Combo:
+          - Future_Tiger_US
+          - Sealed_Eddga_Card
+    Script: |
+      bonus bAllTraitStats,10;
+      bonus bMaxHPrate,60;
+      bonus bMaxSPrate,25;
+      bonus2 bAddClass,Class_Normal,15;
+      bonus2 bAddClass,Class_Boss,15;
+  # Divine Pride 2026-08-18: Eddga Card or Infinite Eddga Card, not a three-item set.
+  - Combos:
+      - Combo:
+          - Future_Tiger_US    # 401459
+          - Eddga_Card    # 4123
+      - Combo:
+          - Future_Tiger_US    # 401459
+          - IFN_Eddga_Card    # 4648
+    Script: |
+      bonus bAllTraitStats,25;
+      bonus bMaxHPrate,120;
+      bonus bMaxSPrate,50;
+      bonus2 bAddClass,Class_Normal,30;
+      bonus2 bAddClass,Class_Boss,30;
+  # Divine Pride 2026-08-18 text; wired 2026-08-20. Aegis is Tendrilion_Card.
+  - Combos:
+      - Combo:
+          - Future_Tiger_US    # 401459
+          - Tendrilion_Card    # 4463 client: Tendrillion Card
+    Script: |
+      bonus bPAtk,5;
+      bonus2 bAddSize,Size_All,20;
+  - Combos:
+      - Combo:
+          - Bonedetale_Wings_BR
+          - DragonA_Blue
+      - Combo:
+          - Bonedetale_Wings_BR
+          - DragonA_Gold
+      - Combo:
+          - Bonedetale_Wings_BR
+          - DragonA_Green
+      - Combo:
+          - Bonedetale_Wings_BR
+          - DragonA_Purple
+      - Combo:
+          - Bonedetale_Wings_BR
+          - DragonA_Red
+      - Combo:
+          - Bonedetale_Wings_BR
+          - DragonA_Silver
+    Script: |
+      bonus bBaseAtk,200;
+      bonus bMatk,200;
+      bonus2 bHPDrainRate,60,6;
+      bonus2 bSPDrainRate,50,5;
+  - Combos:
+      - Combo:
+          - Angelgolt_Wings_BR
+          - CassockA_STR
+      - Combo:
+          - Angelgolt_Wings_BR
+          - CassockA_AGI
+      - Combo:
+          - Angelgolt_Wings_BR
+          - CassockA_VIT
+      - Combo:
+          - Angelgolt_Wings_BR
+          - CassockA_DEX
+      - Combo:
+          - Angelgolt_Wings_BR
+          - CassockA_INT
+      - Combo:
+          - Angelgolt_Wings_BR
+          - CassockA_LUK
+    Script: |
+      bonus bBaseAtk,200;
+      bonus bMatk,200;
+      bonus bFixedCast,-200;
+      bonus bNoCastCancel;
+      bonus3 bAutoSpell,"MG_ENERGYCOAT",1,30;
+  - Combos:
+      - Combo:
+          - Vampire_Ear_US
+          - Red_Bat_US
+    Script: |
+      bonus2 bSubSize,Size_Medium,20;
+      bonus2 bSubRace,RC_DemiHuman,20;
+      bonus2 bSubRace,RC_Player_Human,20;
+      bonus bRestartFullRecover;
+  - Combos:
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Sword
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_B_Sword
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_R_Knife
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_B_Knife
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Axe
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Spear
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Book
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Wand
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Foxtail
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Knuckle
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Violin
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Whip
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Mace
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_M_Mace
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_T_Sword
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Katar
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_T_Axe
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Lance
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Staff
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Humma
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Bow
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Revolver
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Rifle
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Shotgun
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Gatling
+      - Combo:
+          - BP3_Lower_LT_US
+          - Glacier_Launcher
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Sword
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_B_Sword
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_R_Knife
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_B_Knife
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Axe
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Spear
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Book
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Wand
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Foxtail
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Knuckle
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Violin
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Whip
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Mace
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_M_Mace
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_T_Sword
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Katar
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_T_Axe
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Lance
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Staff
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Humma
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Bow
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Revolver
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Rifle
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Shotgun
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Gatling
+      - Combo:
+          - BP3_Lower_LT_US
+          - D_Glacier_Launcher
+    Script: |
+      bonus bBaseAtk,300;
+      bonus bMatk,300;
+      bonus bPow,15;
+      bonus bSpl,15;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Gladius
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Ligula
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Orbis
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Mucro
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Sol
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Jana
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Hasta
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Codex
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Liber
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Radius
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Scipio
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Crystallum
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Ramus
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Planta
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Ferrum
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Caestus
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Ungula
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Chorda
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Flagellum
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Clava
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Pendulus
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Ensis
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Manus
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Ascia
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Catapulta
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Termes
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Virga
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Tenon
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Nervus
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Foramen
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Penet
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Veloci
+      - Combo:
+          - Poenitentia_Follower_US
+          - Poenitentia_Ruina
+    Script: |
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Sword_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Dagger_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Spear_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Staff_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Knuckle_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Violin_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Whip_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Hammer_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_TSword_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Katar_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Axe_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Rod_AD
+      - Combo:
+          - Thanos_Follower_US
+          - Thanos_Bow_AD
+    Script: |
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  # Divine Pride 2026-08-20: Hero Follower Mask + all 36 Hero-LT weapons.
+  - Combos:
+      - Combo:
+          - Hero_Follower_US
+          - Light_Blade_LT
+      - Combo:
+          - Hero_Follower_US
+          - Sword_Of_Bluefire_LT
+      - Combo:
+          - Hero_Follower_US
+          - Slate_Sword_LT
+      - Combo:
+          - Hero_Follower_US
+          - Magic_Sword_LT
+      - Combo:
+          - Hero_Follower_US
+          - Fatalist_LT
+      - Combo:
+          - Hero_Follower_US
+          - Blessed_Knife_LT
+      - Combo:
+          - Hero_Follower_US
+          - Undine_Spear_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Demon_Hunting_Bible_LT
+      - Combo:
+          - Hero_Follower_US
+          - OneSkyOneSun_LT
+      - Combo:
+          - Hero_Follower_US
+          - Shadow_Staff_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Freezing_Rod_LT
+      - Combo:
+          - Hero_Follower_US
+          - MeawFoxtail_LT
+      - Combo:
+          - Hero_Follower_US
+          - SoulWeight_LT
+      - Combo:
+          - Hero_Follower_US
+          - Freedom_Stick_LT
+      - Combo:
+          - Hero_Follower_US
+          - Iron_Nail_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Ray_Knuckle_LT
+      - Combo:
+          - Hero_Follower_US
+          - Trumpet_Shell_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Barb_Wire_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Saint_Hall_LT
+      - Combo:
+          - Hero_Follower_US
+          - Meteor_Striker_LT
+      - Combo:
+          - Hero_Follower_US
+          - Oriental_Sword_LT
+      - Combo:
+          - Hero_Follower_US
+          - Dragonic_Slayer_LT
+      - Combo:
+          - Hero_Follower_US
+          - Shiver_Katar_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Blade_Katar_LT
+      - Combo:
+          - Hero_Follower_US
+          - Avenger_LT
+      - Combo:
+          - Hero_Follower_US
+          - Iron_Staff_LT
+      - Combo:
+          - Hero_Follower_US
+          - Blue_Crystal_Staff_LT
+      - Combo:
+          - Hero_Follower_US
+          - Humma_Clear_LT
+      - Combo:
+          - Hero_Follower_US
+          - Royal_Bow_K_LT
+      - Combo:
+          - Hero_Follower_US
+          - Scalet_Dragon_L_Bow_LT
+      - Combo:
+          - Hero_Follower_US
+          - Narcis_Bow_LT
+      - Combo:
+          - Hero_Follower_US
+          - Crimson_Rose_LT
+      - Combo:
+          - Hero_Follower_US
+          - Master_Soul_Rifle_LT
+      - Combo:
+          - Hero_Follower_US
+          - Demon_S_Shot_LT
+      - Combo:
+          - Hero_Follower_US
+          - The_Black_Gatling_LT
+      - Combo:
+          - Hero_Follower_US
+          - Golden_L_Launcher_LT
+    Script: |
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  # Divine Pride 2026-08-20: OS Follower Mask + all 16 OS-AD weapons.
+  - Combos:
+      - Combo:
+          - OS_Follower_US
+          - Cannon_Rapier_AD
+      - Combo:
+          - OS_Follower_US
+          - Kuroiro_AD
+      - Combo:
+          - OS_Follower_US
+          - Boost_Lance_AD
+      - Combo:
+          - OS_Follower_US
+          - Circuit_Board_AD
+      - Combo:
+          - OS_Follower_US
+          - Rutilus_Stick_AD
+      - Combo:
+          - OS_Follower_US
+          - ElectricFox_AD
+      - Combo:
+          - OS_Follower_US
+          - Burning_Knuckle_AD
+      - Combo:
+          - OS_Follower_US
+          - Saphir_Hall_AD
+      - Combo:
+          - OS_Follower_US
+          - Ultio_Spes_AD
+      - Combo:
+          - OS_Follower_US
+          - Beam_Claymore_AD
+      - Combo:
+          - OS_Follower_US
+          - Meuchler_AD
+      - Combo:
+          - OS_Follower_US
+          - Blasti_AD
+      - Combo:
+          - OS_Follower_US
+          - Virtual_Bow_AD
+      - Combo:
+          - OS_Follower_US
+          - MH_P89_AD
+      - Combo:
+          - OS_Follower_US
+          - AC_B44_AD
+      - Combo:
+          - OS_Follower_US
+          - HR_S55_AD
+    Script: |
+      bonus bAllStats,10;
+      bonus bAllTraitStats,10;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - Kitsune_Gaze_US
+          - Mythical_Moonlight_US
+    Script: |
+      .@sr = getequiprefinerycnt(EQI_SHOES);
+      .@sg = getenchantgrade(EQI_SHOES);
+      bonus2 bMagicAddSize,Size_All,7*.@sr;
+      if (.@sr>=13) {
+         skill "SA_FREECAST",10;
+         bonus bAllStats,10;
+         bonus bAllTraitStats,10;
+      }
+      if (.@sg>=ENCHANTGRADE_B) {
+         bonus bDelayrate,-20;
+         bonus bMaxHPrate,20;
+         bonus bMaxSPrate,20;
+      }
+      if (.@sg>=ENCHANTGRADE_A) {
+         bonus2 bMagicAtkEle,Ele_Holy,50;
+         bonus2 bMagicAtkEle,Ele_Fire,50;
+      }
+  - Combos:
+      - Combo:
+          - Old_Moroc_Acc_LT
+          - Marduk_Card
+    Script: |
+      bonus bDelayrate,-10;
+      bonus bAllStats,10;
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bMagicAddEle,Ele_All,15;
+  - Combos:
+      - Combo:
+          - Old_Moroc_Acc_LT
+          - Pharaoh_Card
+    Script: |
+      bonus bIntravision;
+      bonus bAllTraitStats,10;
+      bonus bDelayrate,-20;
+      bonus2 bAddEle,Ele_All,30;
+      bonus2 bMagicAddEle,Ele_All,30;
+  - Combos:
+      - Combo:
+          - LittleGarden_LT
+          - Orc_Hero_Card
+    Script: |
+      bonus bDelayrate,-15;
+      bonus bPAtk,15;
+      bonus2 bAddEle,Ele_All,20;
+  - Combos:
+      - Combo:
+          - Floating_Ball_LT
+          - Mistress_Card
+    Script: |
+      bonus bDelayrate,-15;
+      bonus bSMatk,15;
+      bonus2 bMagicAddEle,Ele_All,20;
+  - Combos:
+      - Combo:
+          - Ranger_Binoculars_US
+          - Ranger_Shoes_US
+    Script: |
+      .@sr = getequiprefinerycnt(EQI_SHOES);
+      .@sg = getenchantgrade(EQI_SHOES);
+      bonus bLongAtkRate,10*.@sr;
+      if (.@sr>=12) {
+         skill "SC_TRIANGLESHOT",10;
+         bonus bAllStats,10;
+         bonus bAllTraitStats,10;
+      }
+      if (.@sg>=ENCHANTGRADE_D)
+         bonus bLongAtkRate,10;
+      if (.@sg>=ENCHANTGRADE_C)
+         bonus bLongAtkRate,20;
+      if (.@sg>=ENCHANTGRADE_B)
+         bonus bDelayrate,-20;
+      if (.@sg>=ENCHANTGRADE_A)
+         bonus bCon,20;
+  - Combos:
+      - Combo:
+          - Teddybear_US
+          - Counter_Dagger_IL
+          - Clack_Of_Servival_IL
+    Script: |
+      .@gr = getequiprefinerycnt(EQI_GARMENT);
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      if (.@gr>=9) {
+         bonus2 bSubEle,Ele_Water,10;
+         bonus2 bSubEle,Ele_Earth,10;
+         bonus2 bSubEle,Ele_Fire,10;
+         bonus2 bSubEle,Ele_Wind,10;
+         bonus2 bSubEle,Ele_Poison,10;
+         bonus2 bSubEle,Ele_Holy,10;
+         bonus2 bSubEle,Ele_Dark,10;
+         bonus2 bSubEle,Ele_Ghost,10;
+         bonus2 bSubEle,Ele_Undead,10;
+      }
+      if (.@gr>=11)
+         bonus bShortAtkRate,20;
+      if (.@gr>=12)
+         bonus bSplashRange,1;
+
+  # Selected iRO-English DP set bonuses for Tess imported footgear.  Each
+  # partner below is an exact checked-out local Aegis row.
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_22264
+          - B_Ygnizem_Card
+      - Combo:
+          - IRO_History_Footgear_22264
+          - Sealed_B_Ygnizem_Card
+    Script: |
+      bonus2 bHPRegenRate,5000,10000;
+      bonus2 bSPRegenRate,50,10000;
+      .@r = getequiprefinerycnt(EQI_SHOES)/3;
+      bonus bStr,20*.@r;
+      bonus bFlee,15*.@r;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470114
+          - B_Ygnizem_Card
+    Script: |
+      bonus bExpAddRace,RC_All,12;
+      bonus2 bSubRace,RC_All,10;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470343
+          - Zombie_Slaughter_Card
+    Script: |
+      bonus2 bMagicAddEle,Ele_All,15;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470343
+          - Fallen_Bishop_Card
+    Script: |
+      bonus2 bMagicAddClass,Class_Boss,40;
+      if (getequiprefinerycnt(EQI_SHOES) >= 14)
+         autobonus "{ bonus bInt,200; bonus bDex,200; bonus bLuk,200; bonus bSpl,50; }",5,10000,BF_MAGIC;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470349
+          - Hell_Poodle_Card
+    Script: |
+      bonus bMatk,100;
+      bonus bSpl,10;
+      bonus2 bMagicAddEle,Ele_All,20;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470354
+          - Osiris_Card
+    Script: |
+      bonus bDelayrate,-10;
+      .@r = getequiprefinerycnt(EQI_SHOES);
+      bonus bAllStats,.@r;
+      bonus bAtkRate,.@r;
+      bonus bMatkRate,.@r;
+      bonus bPow,2*(.@r/2);
+      bonus bSta,2*(.@r/2);
+      bonus bWis,2*(.@r/2);
+      bonus bSpl,2*(.@r/2);
+      bonus bCon,2*(.@r/2);
+      bonus bCrt,2*(.@r/2);
+      bonus bPatk,2*(.@r/2);
+      bonus bSmatk,2*(.@r/2);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470354
+          - Amon_Ra_Card
+    Script: |
+      bonus bShortAtkRate,25;
+      bonus bLongAtkRate,25;
+      bonus2 bMagicAddEle,Ele_All,25;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470354
+          - Pharaoh_Card
+    Script: |
+      bonus2 bAddClass,Class_Boss,25;
+      bonus2 bMagicAddClass,Class_Boss,25;
+  - Combos:
+      - Combo:
+          - GEMS_DarkBlood_UPD
+          - Mysteltainn_Card
+      - Combo:
+          - GEMS_DarkBlood_UPD
+          - Executioner_Card
+    Script: |
+      bonus2 bAddSize,Size_All,20;
+      bonus2 bMagicAddSize,Size_All,20;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470355
+          - Ceres_Armor_TW_LT
+      - Combo:
+          - IRO_History_Footgear_470355
+          - Jupiter_Armor_TW_LT
+      - Combo:
+          - IRO_History_Footgear_470355
+          - Apollo_Armor_TW_LT
+      - Combo:
+          - IRO_History_Footgear_470355
+          - Mars_Armor_TW_LT
+      - Combo:
+          - IRO_History_Footgear_470355
+          - Vinus_Armor_TW_LT
+      - Combo:
+          - IRO_History_Footgear_470355
+          - Vulcan_Armor_TW_LT
+    Script: |
+      bonus bAtk,200;
+      bonus bMatk,200;
+      bonus2 bAddEle,Ele_All,20;
+      bonus2 bMagicAddEle,Ele_All,20;
+      if (getequiprefinerycnt(EQI_SHOES) >= 14) {
+         bonus bAllStats,10;
+         bonus bAllTraitStats,10;
+         bonus2 bAddClass,Class_Normal,30;
+         bonus2 bAddClass,Class_Boss,30;
+         bonus2 bMagicAddClass,Class_Normal,30;
+         bonus2 bMagicAddClass,Class_Boss,30;
+      }
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470362
+          - F_Ein_BHAXE
+    Script: |
+      bonus bPow,15;
+      bonus bPatk,15;
+      bonus2 bSkillAtk,"MT_SPARK_BLASTER",20;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470362
+          - F_Ein_1HSWORD
+    Script: |
+      bonus bPow,15;
+      bonus bPatk,15;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",20;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470362
+          - F_Ein_BHKATAR
+    Script: |
+      bonus bPow,15;
+      bonus bPatk,15;
+      bonus2 bSkillAtk,"SHC_IMPACT_CRATER",20;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470362
+          - F_Ein_1HMAGGER
+    Script: |
+      bonus bSpl,15;
+      bonus bSmatk,15;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",20;
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470362
+          - F_Ein_1HDAGGER
+    Script: |
+      bonus bPow,15;
+      bonus bPatk,15;
+      bonus2 bSkillAtk,"SHC_SHADOW_STAB",20;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470363
+          - Mocadas_G_Sword
+    Script: |
+      bonus bSpl,15;
+      bonus bSmatk,15;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",20;
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470363
+          - Mocadas_Spear
+    Script: |
+      bonus bPow,15;
+      bonus bPatk,15;
+      bonus2 bSkillAtk,"DK_MADNESS_CRUSHER",20;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470363
+          - Mocadas_Rod
+    Script: |
+      bonus bSpl,15;
+      bonus bSmatk,15;
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470363
+          - Mocadas_Knuckle
+    Script: |
+      bonus bPow,15;
+      bonus bPatk,15;
+      bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",20;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470382
+          - Poison_Toad_Card
+    Script: |
+      bonus bAllStats,15;
+      bonus bAtk,150;
+      bonus bMatk,150;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470372
+          - Goblin_King_Card
+    Script: |
+      bonus2 bAddClass,Class_Normal,30;
+      bonus2 bAddClass,Class_Boss,30;
+      if (getequiprefinerycnt(EQI_SHOES) >= 14)
+         autobonus "{ bonus bStr,300; bonus bDex,300; bonus bLuk,300; }",7,10000,BF_WEAPON;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470372
+          - Goblin_Leader_Card
+    Script: |
+      if (getenchantgrade(EQI_SHOES) >= ENCHANTGRADE_B) {
+         bonus bPow,15;
+         bonus bCon,15;
+         bonus bSpeedRate,25;
+      }
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470417
+          - Nightmare_Card
+    Script: |
+      bonus2 bAddEle,Ele_All,10;
+      bonus2 bMagicAddEle,Ele_All,10;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470417
+          - SweetNightM_Card
+    Script: |
+      bonus bSmatk,8;
+      bonus2 bMagicAddEle,Ele_All,30;
+      if (getequiprefinerycnt(EQI_SHOES) >= 12)
+         bonus2 bMagicAddSize,Size_All,30;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470417
+          - Nightmare_Terror_Card
+    Script: |
+      bonus bPatk,8;
+      bonus bShortAtkRate,30;
+      bonus bLongAtkRate,30;
+      if (getequiprefinerycnt(EQI_SHOES) >= 12)
+         bonus2 bAddSize,Size_All,30;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470426
+          - Bomi_Card
+    Script: |
+      bonus bMatk,250;
+      bonus2 bMagicAddEle,Ele_Ghost,25;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470426
+          - Death_Witch_Card
+    Script: |
+      bonus bSpl,30;
+      bonus2 bMagicAddEle,Ele_Ghost,100;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470426
+          - R001_Bestia_Card
+    Script: |
+      bonus bSpl,30;
+      bonus2 bMagicAddEle,Ele_Wind,100;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470443
+          - Rechenier_Card
+    Script: |
+      bonus bSmatk,15;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470443
+          - Fenrir_Card_
+      - Combo:
+          - IRO_History_Footgear_470451
+          - Fenrir_Card_
+      - Combo:
+          - IRO_History_Footgear_470457
+          - Fenrir_Card_
+      - Combo:
+          - IRO_History_Footgear_470461
+          - Fenrir_Card_
+      - Combo:
+          - IRO_History_Footgear_470467
+          - Fenrir_Card_
+    Script: |
+      bonus bPatk,15;
+      bonus bSmatk,15;
+      bonus bDelayrate,-15;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470451
+          - Blut_Hase_Card
+    Script: |
+      bonus bSmatk,15;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",50;
+      bonus2 bSkillCooldown,"IG_CROSS_RAIN",-2000;
+  - Combos:
+      - Combo:
+          - IRO_History_Footgear_470457
+          - Geffen_Gang_Card
+    Script: |
+      bonus bPatk,15;
+  - Combos:
+      - Combo:
+          - Apostate_Shield_US
+          - Dark_Priest_Card
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_L) >= 11) {
+         bonus bPatk,25;
+         bonus bSmatk,25;
+      }
+  - Combos:
+      - Combo:
+          - Apostate_Shield_US
+          - Dark_Priest_Egg
+    Script: |
+      bonus bAtk,150;
+      bonus bMatk,150;
+      bonus2 bSubClass,Class_Normal,15;
+  - Combos:
+      - Combo:
+          - Wind_Insect_Shield_US
+          - Luciola_Vespa_Card
+    Script: |
+      bonus2 bMagicAddEle,Ele_Wind,15;
+      bonus4 bAutoSpellOnSkill,"MG_LIGHTNINGBOLT","WZ_VERMILION",10,10;
+  - Combos:
+      - Combo:
+          - Wind_Insect_Shield_US
+          - Renire_Card
+    Script: |
+      bonus bSpl,30;
+      bonus2 bMagicAddEle,Ele_Wind,40;
+      bonus4 bAutoSpellOnSkill,"MG_LIGHTNINGBOLT","WL_CHAINLIGHTNING",5,100;
+  - Combos:
+      - Combo:
+          - Teddybear_US
+          - Survival_Staff_IL
+    Script: |
+      .@wr = getequiprefinerycnt(EQI_HAND_R);
+      bonus bMaxHP,400;
+      bonus2 bMagicAtkEle,Ele_Poison,4*(.@wr/2);
+      if (.@wr>=9)
+         bonus2 bSkillCooldown,"SO_POISON_BUSTER",-1000;
+      if (.@wr>=11) {
+         bonus2 bSkillAtk,"SO_POISON_BUSTER",30;
+         bonus2 bSkillAtk,"SO_CLOUD_KILL",30;
+      }
+      if (.@wr>=13)
+         bonus2 bSubClass,Class_Boss,40;
+  - Combos:
+      - Combo:
+          - Teddybear_US
+          - Gate_KeeperDD_IL
+    Script: |
+      .@wr = getequiprefinerycnt(EQI_HAND_R);
+      bonus bAspd,2;
+      bonus2 bSkillAtk,"GS_SPREADATTACK",5*(.@wr/2);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US
+          - Star_Armor_Of_Pow
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bPow,10;
+      bonus bPAtk,15;
+      bonus2 bAddSize,Size_All,12*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US
+          - Star_Armor_Of_Sta
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bSta,10;
+      bonus bMaxHPrate,20;
+      bonus bMaxHPrate,12*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US
+          - Star_Suit_Of_Con
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bCon,10;
+      bonus bPAtk,15;
+      bonus bLongAtkRate,12*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US
+          - Star_Suit_Of_Crt
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bCrt,10;
+      bonus bPAtk,15;
+      bonus bCritAtkRate,12*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US
+          - Star_Robe_Of_Spl
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bSpl,10;
+      bonus bSMatk,15;
+      bonus2 bMagicAddSize,Size_All,12*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Nebula_Orb_US
+          - Star_Robe_Of_Wis
+    Script: |
+      bonus bSpeedRate,25;
+      bonus bWis,10;
+      bonus bHplus,15;
+      bonus bMaxSPrate,20;
+      bonus bMatk,120*(getequiprefinerycnt(EQI_ARMOR)/3);
+  - Combos:
+      - Combo:
+          - Bios_Scarf_US
+          - Flame_Rune_Armor
+    Script: |
+      bonus bDelayrate,-20;
+      if (getequiprefinerycnt(EQI_ARMOR)>=11) {
+         bonus bPAtk,30;
+         bonus bBaseAtk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+      }
+  # Divine Pride 2026-08-18 Grass Rune Armor; wired 2026-08-20 to existing Plain_Rune_Armor 450243.
+  # This client's English is Glade Rune Armor. Do not create a duplicate row.
+  - Combos:
+      - Combo:
+          - Bios_Scarf_US    # 420503
+          - Plain_Rune_Armor    # 450243
+    Script: |
+      bonus bDelayrate,-20;
+      if (getequiprefinerycnt(EQI_ARMOR)>=11) {
+         bonus bPAtk,30;
+         bonus bMaxHPrate,25*(getequiprefinerycnt(EQI_ARMOR)/3);
+      }
+  - Combos:
+      - Combo:
+          - Bios_Scarf_US
+          - Ice_Rune_Armor
+    Script: |
+      bonus bDelayrate,-20;
+      if (getequiprefinerycnt(EQI_ARMOR)>=11) {
+         bonus bPAtk,30;
+         bonus bBaseAtk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+      }
+  - Combos:
+      - Combo:
+          - Bios_Scarf_US
+          - Death_Rune_Armor
+    Script: |
+      bonus bDelayrate,-20;
+      if (getequiprefinerycnt(EQI_ARMOR)>=11) {
+         bonus bSMatk,30;
+         bonus bMatk,100*(getequiprefinerycnt(EQI_ARMOR)/3);
+      }
+  # Divine Pride 2026-08-18 Mine Cowraiders Class 1/2; wired 2026-08-20 to existing Cowraiders cards.
+  # Client English: Shotgun / Revolver Buffalo Bandit Card. Do not add the IDs to card shops again.
+  - Combos:
+      - Combo:
+          - Buffalo_Bandit_US    # 420777
+          - Cowraiders1_Card    # 27170
+    Script: |
+      bonus bBaseAtk,200;
+      bonus2 bSkillAtk,"GS_SPREADATTACK",20*(BaseLevel/5);
+      bonus2 bSkillAtk,"GS_FULLBUSTER",20*(BaseLevel/5);
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_B) {
+         bonus bLongAtkRate,20;
+         bonus2 bSkillCooldown,"NW_WILD_FIRE",-400;
+      }
+  - Combos:
+      - Combo:
+          - Buffalo_Bandit_US    # 420777
+          - Cowraiders2_Card    # 27171
+    Script: |
+      bonus bBaseAtk,200;
+      bonus2 bSkillAtk,"GS_RAPIDSHOWER",20*(BaseLevel/5);
+      bonus2 bSkillAtk,"GS_DESPERADO",20*(BaseLevel/5);
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_B) {
+         bonus bLongAtkRate,20;
+         bonus2 bSkillCooldown,"NW_MAGAZINE_FOR_ONE",-200;
+      }
+  - Combos:
+      - Combo:
+          - Tele_WG_Cape_LT    # 480482
+          - Ceila_Card    # 4568
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bMagicAtkEle,Ele_Wind,10+3*(.@r/2);
+      if (.@r>=12)
+         bonus5 bAutoSpell,"SA_VIOLENTGALE",3,10,BF_MAGIC,0;
+  - Combos:
+      - Combo:
+          - Tele_WG_Cape_LT    # 480482
+          - Katrinn_Card    # 4366
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bMagicAtkEle,Ele_Ghost,10+3*(.@r/2);
+      if (.@r>=12)
+         bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo:
+          - C_Dancing_Octo_US    # 400915
+          - Seaweed_In_Mouth_US    # 420513
+    Script: |
+      if (vip_status(VIP_STATUS_ACTIVE) || getstatus(SC_AID_PERIOD_PLUSEXP)) {
+         if (BaseLevel <= 200) {
+            bonus bBaseAtk,50;
+            bonus bMatk,50;
+            bonus bMaxHP,10000;
+            bonus2 bExpAddRace,RC_All,50;
+         }
+      }
+
+  # Divine Pride 2026-08-20: Moon God Lapel + imported Moonflower Bow.
+  - Combos:
+      - Combo:
+          - MoonGod_Lapel_US    # 420245
+          - MoonGod_Bow_J    # 700078
+    Script: |
+      .@wr = getequiprefinerycnt(EQI_HAND_R);
+      bonus bLongAtkRate,10;
+      bonus2 bSkillAtk,"WH_FLAMETRAP",30;
+      bonus2 bSkillAtk,"WH_SWIFTTRAP",30;
+      bonus2 bSkillAtk,"WH_SOLIDTRAP",30;
+      bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",30;
+      if (.@wr>=11) {
+         bonus2 bAddSize,Size_All,20;
+         bonus2 bMagicAddSize,Size_All,20;
+      }
+      if (.@wr>=12) {
+         bonus2 bSkillCooldown,"WH_GALESTORM",-1500;
+         bonus2 bSkillAtk,"WH_GALESTORM",30;
+      }
+      if (.@wr>=13) {
+         bonus bFixedCast,-200;
+         bonus2 bSkillAtk,"WH_GALESTORM",min(BaseLevel,240)/3;
+      }
+  # Divine Pride 2026-08-20: Arjuna Bow Thimble + Moonflower Bow or existing Gandiva.
+  - Combos:
+      - Combo:
+          - Arjuna_Follower_US    # 490889
+          - MoonGod_Bow_J    # 700078
+      - Combo:
+          - Arjuna_Follower_US    # 490889
+          - Gandiva_Bow_US    # 700109
+    Script: |
+      bonus2 bSkillCooldown,"WH_CRESCIVE_BOLT",-300;
+      bonus bLongAtkRate,30;
+      if (getequiprefinerycnt(EQI_HAND_R)>=14)
+         bonus4 bAutoSpellOnSkill,"WH_CRESCIVE_BOLT","WH_GALESTORM",10,500;
+
+  # Divine Pride 2026-08-20: Issgard Helmet + imported VG Armor/Robe.
+  # Named-boss lines on the armor rows stay omitted (EP19 mobs are stubs).
+  - Combos:
+      - Combo:
+          - BP2_Helm_US    # 401019
+          - BP2_Armor_LT_US    # 450498
+    Script: |
+      bonus bBaseAtk,150;
+      bonus bPow,7;
+      bonus2 bAddClass,Class_Normal,30;
+  - Combos:
+      - Combo:
+          - BP2_Helm_US    # 401019
+          - BP2_Robe_LT_US    # 450499
+    Script: |
+      bonus bMatk,150;
+      bonus bSpl,7;
+      bonus2 bMagicAddClass,Class_Normal,30;
+  # Divine Pride 2026-08-20: Serpent Knight Helm + imported VG Boots/Shoes.
+  # Named-boss lines on the shoe rows stay omitted (EP20 mobs are stubs).
+  - Combos:
+      - Combo:
+          - BP3_Helm_US    # 401460
+          - BP3_Boots_LT_US    # 470453
+    Script: |
+      bonus bBaseAtk,150;
+      bonus bPow,10;
+      bonus bPAtk,10;
+      bonus2 bAddClass,Class_Normal,30;
+  - Combos:
+      - Combo:
+          - BP3_Helm_US    # 401460
+          - BP3_Shoes_LT_US    # 470455
+    Script: |
+      bonus bMatk,150;
+      bonus bSpl,10;
+      bonus bSMatk,10;
+      bonus2 bMagicAddClass,Class_Normal,30;
