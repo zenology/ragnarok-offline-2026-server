@@ -2660,15 +2660,6 @@ void npc_shop_currency_type( const map_session_data* sd, const npc_data* nd, int
 		}
 			break;
 		case NPCTYPE_POINTSHOP:
-			if (display) {
-				char output[CHAT_SIZE_MAX];
-
-				memset(output, '\0', sizeof(output));
-
-				sprintf(output, msg_txt(sd, 715), nd->u.shop.pointshop_str); // Point Shop List: '%s'
-				clif_broadcast(sd, output, strlen(output) + 1, BC_BLUE,SELF);
-			}
-			
 			cost[0] = static_cast<int32>(pc_readreg2(sd, nd->u.shop.pointshop_str));
 			break;
 	}
