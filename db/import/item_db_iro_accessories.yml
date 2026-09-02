@@ -1,0 +1,156 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+Body:
+- Id: 32235
+  AegisName: IRO_History_Accessory_32235
+  Name: Dragon Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 80
+  Script: bonus bAllStats,1;
+- Id: 490553
+  AegisName: IRO_History_Accessory_490553
+  Name: Divine Bell
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bAtk,30; bonus bMatk,30; bonus bMatkRate,10; bonus2 bMagicAddSize,Size_All,10; bonus2 bSkillAtk,"WM_REVERBERATION",4*getskilllv("WM_METALICSOUND");
+    bonus2 bSkillAtk,"WM_METALICSOUND",30*getskilllv("WM_GREAT_ECHO"); if (getskilllv("WM_DANCE_WITH_WUG") >= 5) { bonus2 bVariableCastrate,"WM_REVERBERATION",-50;
+    bonus2 bVariableCastrate,"WM_METALICSOUND",-50; }
+- Id: 490627
+  AegisName: IRO_History_Accessory_490627
+  Name: Haunted Talisman
+  Type: Armor
+  Weight: 0
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bAtk,30; bonus bMatk,30; bonus bFlee,30;
+- Id: 490681
+  AegisName: IRO_History_Accessory_490681
+  Name: Love Ring
+  Type: Armor
+  Weight: 0
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMaxHPrate,20; bonus bMaxSPrate,20; bonus2 bAddSize,Size_All,20; bonus2 bMagicAddSize,Size_All,20; bonus2 bExpAddRace,RC_All,20;
+- Id: 490684
+  AegisName: IRO_History_Accessory_490684
+  Name: '[Event] Wooden Snake Sigil'
+  Type: Armor
+  Weight: 0
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bAtk,30; bonus bMatk,30; bonus bFlee,30; bonus bMaxHP,3000;
+- Id: 490705
+  AegisName: IRO_History_Accessory_490705
+  Name: Floppy Kitty's Cozy Socks
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bSpl,3; bonus bMatkRate,40; bonus2 bMagicAddSize,Size_All,15; bonus2 bSubRace,RC_Player_Human,3; bonus2 bSubRace,RC_Player_Doram,3; skill "MG_FIREWALL",10;
+    .@lv5 = BaseLevel/5; .@lv10 = BaseLevel/10; bonus2 bSkillAtk,"SU_CN_METEOR",.@lv5; bonus2 bSkillAtk,"SU_SV_STEMSPEAR",.@lv5; bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",.@lv10;
+    bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",.@lv10;
+- Id: 490707
+  AegisName: IRO_History_Accessory_490707
+  Name: Consecrate Fides Monile
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bAspdRate,15; bonus2 bSubRace,RC_Player_Human,3; bonus2 bSubRace,RC_Player_Doram,3; bonus bAtk,BaseLevel; bonus bMatk,BaseLevel; bonus bMaxHP,BaseLevel*50;
+    bonus bMaxSP,BaseLevel*5; .@lv = BaseLevel/5; bonus2 bAddClass,Class_All,.@lv; bonus bMatkRate,.@lv;
+- Id: 490733
+  AegisName: IRO_History_Accessory_490733
+  Name: Khalitzburg White Gauntlets
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bSpl,3; bonus bMatkRate,40; bonus2 bSubRace,RC_Player_Human,3; bonus2 bSubRace,RC_Player_Doram,3; skill "MG_FIREWALL",10; .@lv3 = BaseLevel/3; .@lv10
+    = BaseLevel/10; bonus2 bSkillAtk,"LG_RAYOFGENESIS",.@lv3; bonus2 bSkillAtk,"IG_CROSS_RAIN",.@lv10; bonus2 bSkillAtk,"IG_JUDGEMENT_CROSS",.@lv10;
+- Id: 490740
+  AegisName: IRO_History_Accessory_490740
+  Name: Tetra Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bAllStats,20; bonus2 bMagicAtkEle,Ele_All,20; bonus2 bResEff,Eff_WhiteImprison,10000; bonus2 bSkillAtk,"WL_TETRAVORTEX",BaseLevel; .@lv = BaseLevel/5;
+    bonus2 bSkillAtk,"AG_ALL_BLOOM",.@lv; bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",.@lv; bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",.@lv; bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT",.@lv;
+    bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT_ATK",.@lv; bonus2 bSkillAtk,"AG_DESTRUCTIVE_HURRICANE",.@lv; bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",.@lv; bonus2 bSkillAtk,"AG_VIOLENT_QUAKE_ATK",.@lv;
+- Id: 490780
+  AegisName: IRO_History_Accessory_490780
+  Name: Gloves of Light and Darkness
+  Type: Armor
+  Weight: 200
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bPow,7; bonus bSpl,7; bonus bDelayrate,-10; bonus bVariableCastrate,-10; .@lv = BaseLevel/2; bonus2 bSkillAtk,"ASC_METEORASSAULT",.@lv; bonus2 bSkillAtk,"AB_ADORAMUS",.@lv;
+- Id: 490940
+  AegisName: IRO_History_Accessory_490940
+  Name: '[Event] Fire Horse Charm'
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bAtk,50; bonus bMatk,50; bonus bAllStats,12;
+- Id: 491053
+  AegisName: IRO_History_Accessory_491053
+  Name: Focused Love Ring
+  Type: Armor
+  Weight: 0
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMaxHPrate,30; bonus bMaxSPrate,30; bonus2 bAddSize,Size_All,30; bonus2 bMagicAddSize,Size_All,30; bonus2 bExpAddRace,RC_All,20; bonus2 bDropAddRace,RC_All,15;
