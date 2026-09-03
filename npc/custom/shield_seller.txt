@@ -1,0 +1,100 @@
+//===== Ragnarok Offline =====================================
+//= Black-Market Shield Seller
+//= Kaedra offers exact Renewal shields in Equipment and Specialty catalogs.
+//= Equipment browses by client display name; Specialty by exact family.
+//============================================================
+
+paramk,33,166,4	script	Kaedra#offline	4_F_ESTLOVELOY,{
+	.@eac = eaclass();
+	if ((.@eac&EAJ_BASEMASK) == EAJ_SUMMONER) {
+		mes "[Kaedra]";
+		mes "A talking cat. Fine. If you can carry a shield, you can buy one.";
+		next;
+	} else if (.@eac&EAJL_BABY) {
+		mes "[Kaedra]";
+		mes "Small body. Dangerous hands. Do not waste my time.";
+		next;
+	} else if (.@eac&EAJL_UPPER) {
+		mes "[Kaedra]";
+		mes "You have survived long enough to know what a shield is worth.";
+		next;
+	}
+	mes "[Kaedra]";
+	mes "Shields do not win battles. They make sure you live to finish them.";
+	mes "Pick one.";
+	.@cat = select("Equipment:Specialty:") - 1;
+	.@shop$ = "";
+	if (.@cat == 0) {
+		.@letter = select("A:B:C:D:E:F:G:H:I:J:K:L:M:O:P:R:S:T:U:V:W:") - 1;
+		if (.@letter == 0) .@shop$ = "shd0#A";
+		if (.@letter == 1) .@shop$ = "shd0#B";
+		if (.@letter == 2) .@shop$ = "shd0#C";
+		if (.@letter == 3) .@shop$ = "shd0#D";
+		if (.@letter == 4) .@shop$ = "shd0#E";
+		if (.@letter == 5) .@shop$ = "shd0#F";
+		if (.@letter == 6) .@shop$ = "shd0#G";
+		if (.@letter == 7) .@shop$ = "shd0#H";
+		if (.@letter == 8) .@shop$ = "shd0#I";
+		if (.@letter == 9) .@shop$ = "shd0#J";
+		if (.@letter == 10) .@shop$ = "shd0#K";
+		if (.@letter == 11) .@shop$ = "shd0#L";
+		if (.@letter == 12) .@shop$ = "shd0#M";
+		if (.@letter == 13) .@shop$ = "shd0#O";
+		if (.@letter == 14) .@shop$ = "shd0#P";
+		if (.@letter == 15) .@shop$ = "shd0#R";
+		if (.@letter == 16) .@shop$ = "shd0#S";
+		if (.@letter == 17) .@shop$ = "shd0#T";
+		if (.@letter == 18) .@shop$ = "shd0#U";
+		if (.@letter == 19) .@shop$ = "shd0#V";
+		if (.@letter == 20) .@shop$ = "shd0#W";
+	}
+	if (.@cat == 1) {
+		.@letter = select("Automatic Equipment:Enhanced Time Guardian Equipment:Glacier Equipment:Gray Equipment:Illusion Equipment:Poenitentia Equipment:Royal Banquet / Royal Guard Shield:Upgrade Part Equipment:") - 1;
+		if (.@letter == 0) .@shop$ = "shd1#Automatic Equipment";
+		if (.@letter == 1) .@shop$ = "shd1#Enhanced Time Guardian Equipment";
+		if (.@letter == 2) .@shop$ = "shd1#Glacier Equipment";
+		if (.@letter == 3) .@shop$ = "shd1#Gray Equipment";
+		if (.@letter == 4) .@shop$ = "shd1#Illusion Equipment";
+		if (.@letter == 5) .@shop$ = "shd1#Poenitentia Equipment";
+		if (.@letter == 6) .@shop$ = "shd1#Royal Banquet / Royal Guard Shield";
+		if (.@letter == 7) .@shop$ = "shd1#Upgrade Part Equipment";
+	}
+	if (.@shop$ == "") { close; }
+	close2;
+	callshop .@shop$, 1;
+	end;
+
+OnInit:
+	setunittitle(getnpcid(0), "<Shield Mercenary>");
+	end;
+}
+
+-	pointshop	shd0#A	-1,#CASHPOINTS,2199:1000,2116:3150,460118:975,460119:975,2117:100,2118:975,28982:4050
+-	pointshop	shd0#B	-1,#CASHPOINTS,2162:1560,460146:975,28945:3300,2138:1900
+-	pointshop	shd0#C	-1,#CASHPOINTS,2173:1500,2130:3750,460006:3450
+-	pointshop	shd0#D	-1,#CASHPOINTS,460111:975,460117:975
+-	pointshop	shd0#E	-1,#CASHPOINTS,2140:1300,460022:3000,460021:3600,460153:975,460167:975,2129:1800
+-	pointshop	shd0#F	-1,#CASHPOINTS,460066:10580,460166:975,460003:1950,460177:975,28984:2250,28955:4940,2171:1500
+-	pointshop	shd0#G	-1,#CASHPOINTS,2161:1480,2160:8100,460107:975,2101:100,460081:975
+-	pointshop	shd0#H	-1,#CASHPOINTS,460114:975,460115:975,460100:975,460036:2200,460034:2200,460037:2200,460035:2200,2181:1600,2182:1920,2110:3000,2111:1000
+-	pointshop	shd0#I	-1,#CASHPOINTS,460178:975,2153:2100,2197:1950
+-	pointshop	shd0#J	-1,#CASHPOINTS,28959:975
+-	pointshop	shd0#K	-1,#CASHPOINTS,2170:1900,2169:5400,460106:975
+-	pointshop	shd0#L	-1,#CASHPOINTS,460130:975,2127:1200
+-	pointshop	shd0#M	-1,#CASHPOINTS,2183:4725,28931:975,28930:975,28932:975,460020:5380,460005:3400,2131:1500,2185:1300,460121:975,2121:1500
+-	pointshop	shd0#O	-1,#CASHPOINTS,2126:1000,460112:975,460113:975
+-	pointshop	shd0#P	-1,#CASHPOINTS,2122:4200,460142:975,28946:3300
+-	pointshop	shd0#R	-1,#CASHPOINTS,460012:975,2186:2250,460175:975
+-	pointshop	shd0#S	-1,#CASHPOINTS,2193:1500,2177:5775,460023:1800,460171:975,460052:1500,460122:975,2188:1900,460150:975,460050:1500
+-	pointshop	shd0#T	-1,#CASHPOINTS,460116:975,2124:1500,460136:975,2133:2250,460138:975
+-	pointshop	shd0#U	-1,#CASHPOINTS,28913:5400,28905:1300,28904:1300
+-	pointshop	shd0#V	-1,#CASHPOINTS,460143:975,2115:4050
+-	pointshop	shd0#W	-1,#CASHPOINTS,2172:1800
+-	pointshop	shd1#Automatic Equipment	-1,#CASHPOINTS,460015:3080,460016:3720
+-	pointshop	shd1#Enhanced Time Guardian Equipment	-1,#CASHPOINTS,28914:2500
+-	pointshop	shd1#Glacier Equipment	-1,#CASHPOINTS,460040:4980
+-	pointshop	shd1#Gray Equipment	-1,#CASHPOINTS,2187:2800
+-	pointshop	shd1#Illusion Equipment	-1,#CASHPOINTS,460017:4050,28922:3300,460004:2780,460014:2780,460018:5000
+-	pointshop	shd1#Poenitentia Equipment	-1,#CASHPOINTS,460013:6735
+-	pointshop	shd1#Royal Banquet / Royal Guard Shield	-1,#CASHPOINTS,28900:3000
+-	pointshop	shd1#Upgrade Part Equipment	-1,#CASHPOINTS,2150:2500,2149:2500,2151:2500

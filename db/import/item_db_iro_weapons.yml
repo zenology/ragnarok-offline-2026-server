@@ -1,0 +1,392 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 1338
+    AegisName: Duggan_Hacker
+    Name: Duggan Hacker
+    Type: Weapon
+    SubType: 1hAxe
+    Weight: 1
+    Attack: 245
+    Range: 1
+    Jobs:
+      Alchemist: true
+      Blacksmith: true
+      Crusader: true
+      Knight: true
+      Merchant: true
+      Swordman: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 18199
+    AegisName: The_Big_Bow
+    Name: The Big Bow
+    Type: Weapon
+    SubType: Bow
+    Weight: 1
+    Attack: 150
+    Range: 5
+    Jobs:
+      Archer: true
+      Assassin: true
+      BardDancer: true
+      Hunter: true
+      Rogue: true
+      Thief: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 21059
+    AegisName: The_Ultimate
+    Name: The Ultimate
+    Type: Weapon
+    SubType: 2hSword
+    Weight: 1
+    Attack: 225
+    Range: 1
+    Jobs:
+      Crusader: true
+      Knight: true
+      Swordman: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 26173
+    AegisName: The_Rowdy_Pipe
+    Name: The Rowdy Pipe
+    Type: Weapon
+    SubType: Staff
+    Weight: 1
+    Attack: 50
+    MagicAttack: 130
+    Range: 1
+    Jobs:
+      Acolyte: true
+      Mage: true
+      Monk: true
+      Priest: true
+      Sage: true
+      SoulLinker: true
+      Wizard: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bInt,5;
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bMatkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 26219
+    AegisName: The_Ol_Clothesline
+    Name: The Ol' Clothesline
+    Type: Weapon
+    SubType: Whip
+    Weight: 1
+    Attack: 125
+    Range: 2
+    Jobs:
+      BardDancer: true
+    Gender: Female
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 28050
+    AegisName: Frozen_Creul_Katar
+    Name: Frozen Creul Katar
+    Type: Weapon
+    SubType: Katar
+    Weight: 1
+    Attack: 175
+    Range: 1
+    Jobs:
+      Assassin: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 28260
+    AegisName: The_Fastest_Shooter
+    Name: The Fastest Shooter
+    Type: Weapon
+    SubType: Rifle
+    Weight: 1
+    Attack: 175
+    Range: 9
+    Jobs:
+      Gunslinger: true
+      Rebellion: true
+    Locations:
+      Both_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 28640
+    AegisName: Papa_HooDoo_Manual
+    Name: Papa HooDoo Manual
+    Type: Weapon
+    SubType: Book
+    Weight: 1
+    Attack: 80
+    MagicAttack: 145
+    Range: 1
+    Jobs:
+      Priest: true
+      Sage: true
+      StarGladiator: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bInt,5;
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bMatkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 28781
+    AegisName: The_Razor_of_Ramona
+    Name: The Razor of Ramona
+    Type: Weapon
+    SubType: Dagger
+    Weight: 1
+    Attack: 160
+    Range: 1
+    Jobs:
+      Alchemist: true
+      Archer: true
+      Assassin: true
+      BardDancer: true
+      Blacksmith: true
+      Crusader: true
+      Hunter: true
+      KagerouOboro: true
+      Knight: true
+      Mage: true
+      Merchant: true
+      Ninja: true
+      Novice: true
+      Rogue: true
+      Sage: true
+      SoulLinker: true
+      SuperNovice: true
+      Swordman: true
+      Thief: true
+      Wizard: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 32032
+    AegisName: The_Berg_Golden_Spear
+    Name: The Berg Golden Spear
+    Type: Weapon
+    SubType: 1hSpear
+    Weight: 1
+    Attack: 135
+    Range: 3
+    Jobs:
+      Crusader: true
+      Knight: true
+    Classes:
+      Upper: true
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 32114
+    AegisName: Accolade_Lute
+    Name: Accolade Lute
+    Type: Weapon
+    SubType: Musical
+    Weight: 1
+    Attack: 115
+    MagicAttack: 60
+    Range: 1
+    Jobs:
+      BardDancer: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Gender: Male
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }
+  - Id: 32356
+    AegisName: The_Twist_of_Fates
+    Name: The Twist of Fates
+    Type: Weapon
+    SubType: 1hSword
+    Weight: 1
+    Attack: 150
+    Range: 1
+    Jobs:
+      Alchemist: true
+      Assassin: true
+      Blacksmith: true
+      Crusader: true
+      Knight: true
+      Merchant: true
+      Rogue: true
+      Swordman: true
+      Thief: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 4
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      if (.@r >= 7) {
+         bonus bSPrecovRate,5;
+      }
+      if (.@r >= 9) {
+         bonus bMaxSPrate,10;
+      }
+      if (.@r >= 12) {
+         bonus bAtkRate,5;
+         bonus bDelayrate,-5;
+      }

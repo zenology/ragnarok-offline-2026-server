@@ -1,5 +1,6 @@
-import { Link } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
+
+import { Link } from '@tanstack/react-router'
 
 import { siteShell } from './site-shell.recipe'
 

@@ -1,5 +1,14 @@
 import type { ReactNode } from 'react'
 
+import {
+  faBoxArchive,
+  faCoins,
+  faGem,
+  faHatWizard,
+  faStore,
+  faWandMagic
+} from '@fortawesome/free-solid-svg-icons'
+
 import { Text } from '@/components/atoms'
 import { Callout } from '@/components/molecules'
 import { GuideSection, HeaderSection } from '@/components/templates'
@@ -89,41 +98,55 @@ export default function BlackMarketPage(): ReactNode {
           <div className={gridStyles.service}>
             <ServiceCard
               featured
-              icon="◆"
+              icon={faStore}
               location="Market hall · 41, 159"
               title="Black Market Boss"
               description="Sell accepted monster cards and check your Cash Point balance and loyalty progress."
               tag="Card exchange"
             />
             <ServiceCard
-              icon="◎"
+              icon={faCoins}
               location="Market hall · 26, 181"
               title="Coin Exchange"
               description="Convert Zeny into Cash Points, cash points back into Zeny, or try the optional gacha."
               tag="Currency"
             />
             <ServiceCard
-              icon="✦"
+              icon={faGem}
               location="Market hall · 39, 185"
               title="Rooke"
               description="Browse 94 curated consumables across seven shelves, from EXP and recovery to upgrades and style."
               tag="94 items · CP"
             />
             <ServiceCard
-              icon="◇"
+              icon={faHatWizard}
               location="Market hall · 41, 173"
               title="Harlan"
-              description="Browse equipment, rentals, specialty circlets, and event headgear. Every hat costs 100 CP."
-              tag="495 hats · 100 CP"
+              description="Browse equipment, rentals, specialty circlets, and event headgear. Specialty opens by endgame set, including Temporal, Helm of Faith, Glacier, Thanos, and Rune Crowns."
+              tag="613 hats · priced by power"
             />
             <ServiceCard
-              icon="▣"
+              icon={faWandMagic}
+              location="Market hall · 51, 175"
+              title="Soren"
+              description="Browse 745 weapons by type. Specialty drawers use the weapon family name, so you can go straight to a set such as EDDA Biolab, Illusion, Frontier, Glacier, or Fides."
+              tag="745 weapons · CP"
+            />
+            <ServiceCard
+              icon={faBoxArchive}
               location="Market hall · 48, 161"
               title="Kafra Storage"
               description="Store and retrieve your items inside the market. This service is Storage-only."
               tag="Storage"
             />
           </div>
+          <Callout variant="notice">
+            <strong>Harlan&apos;s prices are a useful hint.</strong> Hats with stronger combat
+            effects, useful casting bonuses, or powerful combinations cost more Cash Points.
+            Requirements such as refinement, level, and grading are considered too, but the effect
+            itself remains the main signal. A higher price can point you toward a valuable hat for
+            your build, but always check the item description before you buy.
+          </Callout>
           <CatalogStrip rookeShelves={rookeShelves} harlanCatalogs={harlanCatalogs} />
         </GuideSection>
 

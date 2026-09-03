@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react'
 
-import type { CardPriceBand } from '../data/black-market'
 import { card } from '../styles/recipes'
+
+import type { CardPriceBand } from '../data/black-market'
 
 export function PriceCard({ band }: { band: CardPriceBand }): ReactNode {
   const styles = card({ kind: 'price' })

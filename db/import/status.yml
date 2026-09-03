@@ -1,0 +1,38 @@
+Header:
+  Type: STATUS_DB
+  Version: 4
+
+Body:
+  # Offline Premium Buff display only. EXP/drop +20% still comes from VIP.
+  # CalcFlags All re-runs equipped vip_status / AID-icon hat extras.
+  # Do not add Script bonuses here or they will stack on vip_*_increase.
+  - Status: Aid_Period_Plusexp
+    Icon: EFST_AID_PERIOD_PLUSEXP
+    CalcFlags:
+      All: true
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoSave: true
+      SendVal1: true
+  - Status: Aid_Period_Receiveitem
+    Icon: EFST_AID_PERIOD_RECEIVEITEM
+    CalcFlags:
+      All: true
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoSave: true
+      SendVal1: true
+  # Wand extras keep SC_PERIOD_*_2ND rates. Client 2025-07-16 has no
+  # tooltip for EFST_PERIOD_*_2ND; AID_PERIOD_*_2ND has Improved EXP/drop text.
+  - Status: Period_Plusexp_2nd
+    Icon: EFST_AID_PERIOD_PLUSEXP_2ND
+  - Status: Period_Receiveitem_2nd
+    Icon: EFST_AID_PERIOD_RECEIVEITEM_2ND

@@ -1,0 +1,14 @@
+###########################################################################
+# Weaver garment effect overrides
+#
+# This additive database is intentionally kept separate from imported garment
+# definitions so local item rows can be overridden without copying their base
+# metadata.  Effect records are generated only from the source-backed mapping
+# maintained by KB tooling.
+###########################################################################
+
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body: []

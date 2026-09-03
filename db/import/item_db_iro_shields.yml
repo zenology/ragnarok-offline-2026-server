@@ -1,0 +1,498 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+Body:
+- Id: 28930
+  AegisName: MB_Guard_
+  Name: Mad Bunny Guard
+  Type: Armor
+  Weight: 30
+  Defense: 40
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  Script: bonus bStr,0;
+- Id: 28931
+  AegisName: MB_Buckler_
+  Name: Mad Bunny Buckler
+  Type: Armor
+  Weight: 60
+  Defense: 40
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  Script: bonus bStr,0;
+- Id: 28932
+  AegisName: MB_Shield_
+  Name: Mad Bunny Shield
+  Type: Armor
+  Weight: 130
+  Defense: 60
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  Script: bonus bStr,0;
+- Id: 28959
+  AegisName: Jericho_Wall
+  Name: Jericho Wall
+  Type: Armor
+  Weight: 1
+  Defense: 140
+  Slots: 0
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 130
+  Refineable: true
+  Script: bonus bMaxHP,1; bonus bMaxHP,getrefine()/3; if (getrefine() >= 7) bonus bSPrecovRate,1; if (getrefine() >= 9) bonus bMaxSP,10; if (getrefine() >= 12) {
+    bonus bSPrecovRate,1; bonus bMaxSP,5; } if (BaseLevel >= 150) bonus bMaxHP,1;
+- Id: 460081
+  AegisName: Guardian_Shield_TH
+  Name: Guardian's Shield
+  Type: Armor
+  Weight: 300
+  Defense: 250
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Refineable: true
+  Script: bonus bUnbreakableArmor; bonus bMaxHP,10; bonus bMaxSP,10; bonus2 bSkillAtk,"LG_CANNONSPEAR",30; bonus bAtk,10*(getrefine()/2); if (getrefine() >= 7) autobonus3
+    "{ bonus bAtk,90; }",1000,90000,"LG_SHIELDSPELL"; if (getrefine() >= 9) { bonus bLongAtkRate,10; bonus bDelayrate,-5; } if (getrefine() >= 11) bonus2 bSkillCooldown,"LG_CANNONSPEAR",-1000;
+- Id: 460100
+  AegisName: Pactum_Celestialis_TH
+  Name: Heavenly Oath
+  Type: Armor
+  Weight: 30
+  Defense: 40
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Script: bonus bVariableCastrate,-10; bonus2 bSubClass,Class_Normal,10; if (getrefine() >= 7) bonus bAspd,2; if (getrefine() >= 9) bonus2 bSkillCooldown,"CD_ARBITRIUM",-700;
+- Id: 460106
+  AegisName: Kitten_Shield_US
+  Name: Kitten Shield
+  Type: Armor
+  Weight: 10
+  Defense: 20
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Refineable: true
+  Gradable: true
+  Script: bonus bUnbreakableArmor; bonus bMaxHP,15000; bonus bMaxSP,3000; bonus bAtk,100; bonus bMatk,100; bonus bExpAddRace,RC_All,BaseLevel/10; bonus2 bDropAddRace,RC_All,BaseLevel/10;
+    if (getrefine() >= 12) bonus bFixedCastrate,-50;
+- Id: 460107
+  AegisName: Giant_Shield_TH
+  Name: Giant Shield
+  Type: Armor
+  Weight: 50
+  Defense: 40
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Script: bonus bCritical,5; bonus2 bSubClass,Class_Normal,10; if (getrefine() >= 7) bonus bAspd,2; if (getrefine() >= 9) bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-100;
+    if (getrefine() >= 11) { bonus bDelayrate,-5; bonus bCritAtkRate,10; }
+- Id: 460111
+  AegisName: Apostate_Shield_US
+  Name: Dark Apostate Shield
+  Type: Armor
+  Weight: 300
+  Defense: 100
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Refineable: true
+  Gradable: true
+  Script: bonus bAtk,100; bonus bMatk,100; bonus bPow,3*(getrefine()/3); bonus bSpl,3*(getrefine()/3); bonus bMaxHP,15*(getrefine()/4); bonus bMaxSP,15*(getrefine()/4);
+    if (getrefine() >= 10) { bonus bAtk,150; bonus bMatk,150; } if (getrefine() >= 11) bonus2 bAddSize,Size_All,15; if (getrefine() >= 12) { bonus2 bSkillAtk,"ASC_METEORASSAULT",2*BaseLevel;
+    bonus2 bSkillAtk,"WL_HELLINFERNO",2*BaseLevel; } if (getrefine() >= 13) { bonus2 bSkillAtk,"AB_ADORAMUS",BaseLevel/2; bonus2 bSkillAtk,"CD_PETITIO",BaseLevel/5;
+    }
+- Id: 460112
+  AegisName: Odin_Grace_Sheild
+  Name: Odin Grace Shield
+  Type: Armor
+  Weight: 350
+  Defense: 200
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 130
+  Refineable: true
+  Script: bonus bMdef,10; bonus bMatk,10*(getrefine()/2); if (getrefine() >= 7) bonus bVariableCastrate,-15; if (getrefine() >= 9) { bonus bMatk,30; bonus bMatkRate,5;
+    } if (getrefine() >= 11) { bonus2 bMagicAddEle,Ele_Neutral,8; bonus2 bMagicAddEle,Ele_Holy,8; }
+- Id: 460113
+  AegisName: Odin_Grace_Sheild_LT
+  Name: Odin Grace Shield-LT
+  Type: Armor
+  Weight: 350
+  Defense: 200
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 180
+  Refineable: true
+  Gradable: true
+  Script: bonus bMatk,15*(getrefine()/2); if (getrefine() >= 7) bonus bVariableCastrate,-15; if (getrefine() >= 9) { bonus bMatk,50; bonus bMatkRate,7; } if (getrefine()
+    >= 11) { bonus2 bMagicAddEle,Ele_Neutral,10; bonus2 bMagicAddEle,Ele_Holy,10; }
+- Id: 460114
+  AegisName: Hard_T_shell
+  Name: Hard Shell Shield
+  Type: Armor
+  Weight: 350
+  Defense: 100
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Refineable: true
+  Script: skill "WL_MARSHOFABYSS",1; skill "AL_DECAGI",5; bonus bAtk,10*(getrefine()/2); bonus2 bSubSize,Size_All,2*(getrefine()/3); if (getrefine() >= 7) { bonus
+    bDef,100; bonus bMdef,20; } if (getrefine() >= 9) bonus bDelayrate,-5; if (getrefine() >= 13) { bonus bLongAtkRate,10; bonus bShortAtkRate,10; }
+- Id: 460115
+  AegisName: Hard_T_shell_LT
+  Name: Hard Shell Shield-LT
+  Type: Armor
+  Weight: 350
+  Defense: 100
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Refineable: true
+  Gradable: true
+  Script: skill "WL_MARSHOFABYSS",3; skill "AL_DECAGI",10; bonus bAtk,10*(getrefine()/2); bonus2 bSubSize,Size_All,2*(getrefine()/3); if (getrefine() >= 7) { bonus
+    bDef,100; bonus bMdef,20; } if (getrefine() >= 9) bonus bDelayrate,-8; if (getrefine() >= 13) { bonus bLongAtkRate,10; bonus bShortAtkRate,10; }
+- Id: 460116
+  AegisName: Themis_Balance_TH_LT
+  Name: Themis Libra-LT
+  Type: Armor
+  Weight: 30
+  Defense: 90
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 180
+  Refineable: true
+  Gradable: true
+  Script: bonus bVariableCastrate,-15; bonus2 bSubClass,Class_Normal,15; bonus2 bSubClass,Class_Boss,15; if (getrefine() >= 7) { bonus bAspd,2; bonus bMaxHP,5; }
+    if (getrefine() >= 11) { bonus bDelayrate,-10; bonus bMatk,20; }
+- Id: 460117
+  AegisName: Dragonic_Shield_US
+  Name: Dragonic Shield
+  Type: Armor
+  Weight: 200
+  Defense: 200
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Refineable: true
+  Gradable: true
+  Script: bonus bPow,5; bonus bCon,5; bonus bAtk,50; bonus bPow,getrefine(); bonus bCon,getrefine(); bonus bAtk,15*getrefine(); bonus bStr,7*(getrefine()/2); bonus
+    bDex,7*(getrefine()/2); bonus bMaxHP,7*(getrefine()/2); bonus bMaxSP,7*(getrefine()/2); if (getrefine() >= 10) { bonus2 bSubClass,Class_Normal,20; bonus2 bSubClass,Class_Boss,20;
+    } if (getrefine() >= 11) { bonus bAspd,2; bonus bMdef,20; bonus bLongAtkRate,20; } if (getrefine() >= 12) { bonus bAllStats,10; bonus bLongAtkRate,30; bonus bDelayrate,-10;
+    } if (getrefine() >= 13) { bonus bPow,5; bonus bSta,5; bonus bWis,5; bonus bSpl,5; bonus bCon,5; bonus bCrt,5; bonus2 bSubSize,Size_All,30; }
+- Id: 460118
+  AegisName: Arc_A_G_Shield
+  Name: Archangel Aegis
+  Type: Armor
+  Weight: 200
+  Defense: 30
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 150
+  Refineable: true
+  Script: if (BaseLevel <= 200) bonus bMaxHP,15000; bonus bAtkRate,getskilllv("BS_WEAPONRESEARCH"); bonus bMaxHP,500*getskilllv("BS_WEAPONRESEARCH"); bonus bAtk,10*(getrefine()/2);
+    if (getrefine() >= 7) bonus bAspdRate,10; if (getrefine() >= 9) { bonus bAtk,30; bonus bAtkRate,5; } if (getrefine() >= 11) { bonus bShortAtkRate,8; bonus bLongAtkRate,8;
+    } if (getrefine() >= 12) { skill "SR_TIGERCANNON",10; bonus2 bSkillAtk,"SR_TIGERCANNON",10; bonus2 bSkillCooldown,"SR_TIGERCANNON",-1000; } if (getrefine() >=
+    13) { bonus2 bSkillAtk,"HN_DOUBLEBOWLINGBASH",15; bonus2 bSkillAtk,"HN_SHIELD_CHAIN_RUSH",15; bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",15; bonus2 bSkillAtk,"HN_SPIRAL_PIERCE_MAX",15;
+    }
+- Id: 460119
+  AegisName: Arc_A_G_Shield_LT
+  Name: Archangel's Aegis-LT
+  Type: Armor
+  Weight: 200
+  Defense: 30
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 150
+  Refineable: true
+  Gradable: true
+  Script: if (BaseLevel <= 200) bonus bMaxHP,15000; bonus bAtkRate,getskilllv("BS_WEAPONRESEARCH"); bonus bMaxHP,500*getskilllv("BS_WEAPONRESEARCH"); bonus bAtk,15*(getrefine()/2);
+    if (getrefine() >= 7) bonus bAspdRate,10; if (getrefine() >= 9) { bonus bAtk,50; bonus bAtkRate,7; } if (getrefine() >= 11) { bonus bShortAtkRate,8; bonus bLongAtkRate,8;
+    } if (getrefine() >= 12) { skill "SR_TIGERCANNON",10; bonus2 bSkillAtk,"SR_TIGERCANNON",10; bonus2 bSkillCooldown,"SR_TIGERCANNON",-1500; } if (getrefine() >=
+    13) { bonus2 bSkillAtk,"HN_DOUBLEBOWLINGBASH",20; bonus2 bSkillAtk,"HN_SHIELD_CHAIN_RUSH",20; bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",20; bonus2 bSkillAtk,"HN_SPIRAL_PIERCE_MAX",20;
+    }
+- Id: 460121
+  AegisName: Melody_Shield_TH
+  Name: Melody Rose Shield
+  Type: Armor
+  Weight: 50
+  Defense: 25
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Script: bonus bAspdRate,10; bonus bMaxHP,100*getrefine(); bonus2 bMagicAddEle,Ele_All,4*(getrefine()/3); if (getrefine() >= 7) bonus bAspd,2; if (getrefine() >=
+    9) bonus4 bAutoSpellOnSkill,"WM_METALICSOUND","TR_METALIC_FURY",5,20; if (getrefine() >= 11) autobonus "{ bonus bInt,150; bonus2 bHPRegenRate,-100,1000; bonus2
+    bSPRegenRate,-100,1000; }",4,10000,BF_MAGIC; if (getrefine() >= 12) bonus2 bSkillAtk,"TR_METALIC_FURY",15;
+- Id: 460122
+  AegisName: Novice_Shield_TH
+  Name: Super Novice Shield
+  Type: Armor
+  Weight: 150
+  Defense: 40
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 150
+  Refineable: true
+  Script: if (BaseLevel <= 200) bonus bMaxHP,15000; bonus bAtkRate,getskilllv("BS_WEAPONRESEARCH"); bonus bMaxHP,500*getskilllv("BS_WEAPONRESEARCH"); bonus bAtk,10*(getrefine()/2);
+    if (getrefine() >= 7) bonus bAspdRate,10; if (getrefine() >= 9) { bonus bAtk,30; bonus bAtkRate,5; } if (getrefine() >= 11) bonus bShortAtkRate,10; if (getrefine()
+    >= 12) { skill "SR_TIGERCANNON",10; bonus2 bSkillAtk,"SR_TIGERCANNON",10; bonus2 bSkillCooldown,"SR_TIGERCANNON",-1000; }
+- Id: 460130
+  AegisName: Stone_Shield_US
+  Name: Legendary Stone Shield
+  Type: Armor
+  Weight: 200
+  Defense: 200
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Refineable: true
+  Gradable: true
+  Script: bonus bUnbreakableArmor; bonus bWis,5; bonus bSta,5; bonus2 bSkillAtk,"GN_CARTCANNON",5; bonus bWis,2*getrefine(); bonus bSta,2*getrefine(); bonus2 bAddSize,Size_All,5*getrefine();
+    bonus bStr,5*(getrefine()/2); bonus bVit,5*(getrefine()/2); bonus bDef,50*(getrefine()/2); bonus bMaxHP,10*(getrefine()/2); if (getrefine() >= 10) { bonus bMaxHP,25;
+    bonus bMaxSP,25; } if (getrefine() >= 11) { bonus bStr,20; bonus bVit,20; } if (getrefine() >= 13) { bonus2 bSubEle,Ele_Neutral,30; bonus2 bSubEle,Ele_Water,30;
+    bonus2 bSubEle,Ele_Earth,30; bonus2 bSubEle,Ele_Fire,30; bonus2 bSubEle,Ele_Wind,30; }
+- Id: 460136
+  AegisName: Wind_Insect_Shield_US
+  Name: Thundershell Ward
+  Type: Armor
+  Weight: 150
+  Defense: 150
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Refineable: true
+  Gradable: true
+  Script: bonus bAspdRate,10; skill "MG_LIGHTNINGBOLT",10; if (BaseLevel < 100) { bonus bAtk,-200; bonus bMatk,-200; bonus2 bSubSize,Size_Medium,-50; } bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",10*min(BaseLevel,250);
+    bonus2 bSkillAtk,"WZ_VERMILION",10*min(BaseLevel,250); bonus bSpl,getrefine(); bonus2 bAddClass,Class_All,7*getrefine(); bonus bWis,3*(getrefine()/2); bonus bSta,3*(getrefine()/2);
+    bonus bMaxHP,15*(getrefine()/2); if (getrefine() >= 10) bonus bAllStats,15; if (getrefine() >= 11) { bonus bInt,25; bonus bDex,25; } if (getrefine() >= 12) {
+    bonus3 bAutoSpell,"MG_LIGHTNINGBOLT",10,20; bonus3 bAutoSpell,"WZ_VERMILION",10,20; } if (getrefine() >= 13) bonus2 bAddClass,Class_All,25;
+- Id: 460138
+  AegisName: Trap_Follower_US
+  Name: Trap Follower Shield
+  Type: Armor
+  Weight: 100
+  Defense: 100
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Refineable: true
+  Gradable: true
+  Script: bonus bUnbreakableArmor; bonus bAtk,50; bonus bPow,5; bonus bCon,5; bonus bPow,getrefine(); bonus bCon,getrefine(); bonus bAtk,15*getrefine(); bonus bStr,7*(getrefine()/2);
+    bonus bDex,7*(getrefine()/2); bonus bMaxHP,7*(getrefine()/2); bonus bMaxSP,7*(getrefine()/2); if (getrefine() >= 11) { bonus bAtkRate,15; bonus2 bSubClass,Class_Normal,20;
+    bonus2 bSubClass,Class_Boss,20; } if (getrefine() >= 12) { bonus bAspd,2; bonus bMdef,20; bonus bAtkRate,25; } if (getrefine() >= 13) { bonus bAtkRate,35; bonus
+    bAllStats,10; bonus bDelayrate,-10; } if (getrefine() >= 14) { bonus bAtkRate,40; bonus2 bSubSize,Size_All,30; }
+- Id: 460142
+  AegisName: Punish_Shield_TH
+  Name: Punishment Chain Shield
+  Type: Armor
+  Weight: 160
+  Defense: 50
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Script: bonus bCritical,5; if (getrefine() >= 7) bonus bAspd,2; if (getrefine() >= 11) { bonus bDelayrate,-5; bonus bCritAtkRate,10; } if (getrefine() >= 12) bonus2
+    bSkillAtk,"IQ_THIRD_FLAME_BOMB",15;
+- Id: 460143
+  AegisName: Valkyrie_Guard_TH
+  Name: Valkyrie Angel Guard
+  Type: Armor
+  Weight: 20
+  Defense: 25
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Script: bonus bAspdRate,10; bonus bMaxHP,100*getrefine(); bonus2 bMagicAddEle,Ele_All,4*(getrefine()/3); if (getrefine() >= 7) bonus bAspd,2; if (getrefine() >=
+    9) bonus2 bSkillCooldown,"HN_JUPITEL_THUNDER_STORM",-300; if (getrefine() >= 12) bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",15;
+- Id: 460146
+  AegisName: Biolab_Shield_US
+  Name: Biolab Shield
+  Type: Armor
+  Weight: 150
+  Defense: 300
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Refineable: true
+  Gradable: true
+  Script: bonus bUnbreakableArmor; bonus bMdef,20; bonus bPow,7; bonus bSta,7; bonus bWis,7; bonus bSpl,7; bonus bCon,7; bonus bCrt,7; bonus bAspd,1; bonus bDelayrate,-10;
+    bonus2 bSubSize,Size_All,15; bonus bMaxHP,5*(getrefine()/2); bonus bMaxSP,5*(getrefine()/2); bonus bPow,2*(getrefine()/3); bonus bSta,2*(getrefine()/3); bonus
+    bWis,2*(getrefine()/3); bonus bSpl,2*(getrefine()/3); bonus bCon,2*(getrefine()/3); bonus bCrt,2*(getrefine()/3); if (getrefine() >= 11) bonus bAllStats,20; if
+    (getrefine() >= 12) { bonus bDelayrate,-15; bonus2 bSubSize,Size_All,15; }
+- Id: 460150
+  AegisName: Sylvan_Guard_TH
+  Name: Sylvan Thorn Guard
+  Type: Armor
+  Weight: 50
+  Defense: 25
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Script: bonus bCritical,5; bonus2 bSubClass,Class_Normal,10; if (getrefine() >= 7) bonus bAspd,2; if (getrefine() >= 11) { bonus bDelayrate,-5; bonus bCritAtkRate,10;
+    }
+- Id: 460153
+  AegisName: Arc_A_G_Shield_Upd
+  Name: Enhanced Archangel's Shield
+  Type: Armor
+  Weight: 200
+  Defense: 30
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 150
+  Refineable: true
+  Gradable: true
+  Script: if (BaseLevel <= 200) bonus bMaxHP,12000; bonus bAtk,10*(getrefine()/2); if (getrefine() >= 7) bonus bDelayrate,-10; if (getrefine() >= 9) { bonus bAtk,40;
+    bonus bAtkRate,5; } if (getrefine() >= 11) { bonus bShortAtkRate,8; bonus bLongAtkRate,8; } if (getrefine() >= 12) { skill "SR_TIGERCANNON",10; bonus2 bSkillCooldown,"SR_TIGERCANNON",-1500;
+    }
+- Id: 460166
+  AegisName: Star_Dust_Shield_TH
+  Name: Falling Star Shield
+  Type: Armor
+  Weight: 50
+  Defense: 50
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Gradable: true
+  Script: bonus bCritical,15; bonus2 bSubClass,Class_Normal,15; bonus2 bSubClass,Class_Boss,15; if (getrefine() >= 7) { bonus bAspd,2; bonus bMaxHP,10; } if (getrefine()
+    >= 11) { bonus bDelayrate,-10; bonus bShortAtkRate,20; }
+- Id: 460167
+  AegisName: GEMS_DarkBlood_UPD
+  Name: Enhanced God-Devouring Demonic Shield
+  Type: Armor
+  Weight: 80
+  Defense: 100
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Refineable: true
+  Gradable: true
+  Script: bonus bMdef,10; bonus bNoKnockback; bonus bAspd,2; bonus bAtkRate,10; bonus bMatkRate,10; bonus bUseSPrate,-10; bonus2 bSubSize,Size_All,2*(getrefine()/3);
+    if (getrefine() >= 7) bonus bAspdRate,15; if (getrefine() >= 9) bonus bDelayrate,-5; if (getrefine() >= 11) { bonus bShortAtkRate,8; bonus bLongAtkRate,8; bonus2
+    bMagicAddEle,Ele_All,8; }
+- Id: 460171
+  AegisName: Soul_Shield_TH
+  Name: Soul Demon Shield
+  Type: Armor
+  Weight: 10
+  Defense: 20
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Script: bonus bUnbreakableArmor; bonus bAspdRate,10; bonus bMaxHP,100*getrefine(); bonus2 bMagicAddEle,Ele_All,4*(getrefine()/3); if (getrefine() >= 7) bonus bAspd,2;
+    if (getrefine() >= 9) bonus2 bSkillCooldown,"SOA_EXORCISM_OF_MALICIOUS_SOUL",-300; if (getrefine() >= 12) bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",15;
+- Id: 460175
+  AegisName: Robot_Shield_TH
+  Name: Robot Spark Shield
+  Type: Armor
+  Weight: 50
+  Defense: 50
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Gradable: true
+  Script: bonus bRes,15; bonus bMres,15; bonus2 bSubClass,Class_Normal,15; bonus2 bSubClass,Class_Boss,15; if (getrefine() >= 7) { bonus bAspd,2; bonus bMaxHP,10;
+    } if (getrefine() >= 9) bonus2 bSkillCooldown,"MT_SPARK_BLASTER",-100; if (getrefine() >= 11) { bonus bDelayrate,-10; bonus bLongAtkRate,20; } if (getrefine()
+    >= 12) bonus2 bSkillAtk,"MT_SPARK_BLASTER",20;
+- Id: 460177
+  AegisName: Kitten_Shield2_US
+  Name: Focused Kitten Shield
+  Type: Armor
+  Weight: 10
+  Defense: 20
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Refineable: true
+  Gradable: true
+  Script: bonus bUnbreakableArmor; bonus bMaxHP,15000; bonus bMaxSP,3000; bonus bAtk,250; bonus bMatk,250; bonus bDelayrate,-20; bonus2 bAddSize,Size_All,25; bonus
+    bPow,getrefine(); bonus bSta,getrefine(); bonus bWis,getrefine(); bonus bSpl,getrefine(); bonus bCon,getrefine(); bonus bCrt,getrefine(); if (getrefine() >= 10)
+    { bonus bPow,7; bonus bSta,7; bonus bWis,7; bonus bSpl,7; bonus bCon,7; bonus bCrt,7; } if (getrefine() >= 11) bonus bFixedCastrate,-50; if (getrefine() >= 12)
+    bonus bVariableCastrate,-50;
+- Id: 460178
+  AegisName: Ignis_Guard_TH
+  Name: Ignis Flame Guard
+  Type: Armor
+  Weight: 20
+  Defense: 25
+  Slots: 1
+  Locations:
+    Left_Hand: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Refineable: true
+  Script: bonus bAspdRate,10; bonus bMaxHP,100*getrefine(); bonus2 bMagicAddEle,Ele_All,4*(getrefine()/3); if (getrefine() >= 7) bonus bAspd,2; if (getrefine() >=
+    9) { bonus2 bSkillCooldown,"AG_FLORAL_FLARE_ROAD",-300; bonus2 bSkillCooldown,"AG_ALL_BLOOM",-300; } if (getrefine() >= 12) { bonus2 bSkillAtk,"AG_FLORAL_FLARE_ROAD",15;
+    bonus2 bSkillAtk,"AG_ALL_BLOOM",15; }

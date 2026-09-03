@@ -1,8 +1,14 @@
 import type { ReactNode } from 'react'
 
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { Text } from '@/components/atoms'
-import type { BlackMarketContact } from '../data/black-market'
+import { ImageViewer } from '@/components/molecules'
+
 import { disclosure } from '../styles/recipes'
+
+import type { BlackMarketContact } from '../data/black-market'
 
 export function ContactCard({ contact }: { contact: BlackMarketContact }): ReactNode {
   const styles = disclosure()
@@ -12,12 +18,13 @@ export function ContactCard({ contact }: { contact: BlackMarketContact }): React
       <summary className={styles.summary}>
         <span>{contact.city}</span>
         <span className={styles.chevron} aria-hidden="true">
-          +
+          <FontAwesomeIcon icon={faChevronDown} />
         </span>
       </summary>
       <div className={styles.details}>
         <span>{contact.location}</span>
         <Text tone="muted">Contact position: {contact.coordinates}</Text>
+        <ImageViewer images={contact.images} />
       </div>
     </details>
   )

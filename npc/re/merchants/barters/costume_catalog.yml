@@ -1322,150 +1322,144 @@ Body:
             Item: Evt_Cos_Coin
             Amount: 30
       - Index: 6
-        Item: C_Campus_Festival
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
         Item: C_Cancer_Diadem
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 8
+      - Index: 7
         Item: C_Candle
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 9
+      - Index: 8
         Item: C_Candy_Hat
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 10
+      - Index: 9
         Item: C_Cap
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 11
+      - Index: 10
         Item: C_Capricon_Crown
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 12
+      - Index: 11
         Item: C_Captain_Hat
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 10
-      - Index: 13
+      - Index: 12
         Item: C_Solo_Play_Box2
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 10
-      - Index: 14
+      - Index: 13
         Item: C_Carnation_Hairband
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 10
-      - Index: 15
+      - Index: 14
         Item: C_Carnival_Circlet
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 10
-      - Index: 16
+      - Index: 15
         Item: C_Carnival_Hat
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 10
-      - Index: 17
+      - Index: 16
         Item: C_Cassandra
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 18
+      - Index: 17
         Item: C_CatCoffeeCup_TW
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 19
+      - Index: 18
         Item: C_B_EarWitchHat
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 20
+      - Index: 19
         Item: C_Cat_Ear_Hat
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 20
-      - Index: 21
+      - Index: 20
         Item: C_Cat_Ear_LongK
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 22
+      - Index: 21
         Item: C_Cat_Ear_ShortK
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 23
+      - Index: 22
         Item: C_HeartOfCat_TW
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 24
+      - Index: 23
         Item: C_Cat_Lace_Hairband
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 20
-      - Index: 25
+      - Index: 24
         Item: C_PGstone_Knit_Hat_GR
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 26
+      - Index: 25
         Item: C_Cat_Foot_Hairpin
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 27
+      - Index: 26
         Item: C_PGstone_Knit_Hat_PK
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 30
-      - Index: 28
+      - Index: 27
         Item: C_PGstone_Knit_Hat_BW
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 30
-      - Index: 29
+      - Index: 28
         Item: C_Cat_Straw_Hat
         RequiredItems:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 30
+      - Index: 29
         Item: C_CatharinaPawnBrad60
         RequiredItems:
           - Index: 0
@@ -19397,3 +19391,33 @@ Body:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 30
+  - Name: costume_catalog_3_1_0
+    Items:
+      - Index: 0
+        Item: C_Darklord_Aura
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: costume_catalog_3_1_1
+    Items:
+      - Index: 0
+        Item: C_Garmbebe_Bag
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: costume_catalog_3_1_2
+    Items:
+      - Index: 0
+        Item: C_WOETE_2_US
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: C_WOETE_1_US
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50

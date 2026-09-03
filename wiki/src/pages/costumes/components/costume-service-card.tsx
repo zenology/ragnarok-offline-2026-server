@@ -2,8 +2,9 @@ import type { ReactNode } from 'react'
 
 import { Heading, Text } from '@/components/atoms'
 
-import type { CostumeService } from '../data/costumes'
 import { costumeCard } from '../styles/recipes'
+
+import type { CostumeService } from '../data/costumes'
 
 type CostumeServiceCardProps = {
   service: CostumeService

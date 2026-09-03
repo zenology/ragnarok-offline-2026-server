@@ -1,5 +1,8 @@
 import { Fragment, type ReactNode } from 'react'
 
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { loop } from '../styles/recipes'
 
 const steps = [
@@ -17,7 +20,7 @@ export function LoopCard(): ReactNode {
         <Fragment key={number}>
           {index > 0 && (
             <div className={styles.arrow} aria-hidden="true">
-              →
+              <FontAwesomeIcon icon={faArrowRight} />
             </div>
           )}
           <div className={styles.step}>

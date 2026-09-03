@@ -1,7 +1,44 @@
+import dimensionEntrance from '@/assets/warp/dimension-entrance.png'
+import dimension from '@/assets/warp/dimension.png'
+import geffenEntrance from '@/assets/warp/geffen-entrance.png'
+import geffen from '@/assets/warp/geffen.png'
+import glastheimMap from '@/assets/warp/glastheim-map.png'
+import glastheim from '@/assets/warp/glastheim.png'
+import hugelEntrance from '@/assets/warp/hugel-entrance.png'
+import hugel from '@/assets/warp/hugel.png'
+import lasagnaMap from '@/assets/warp/lasagna-map.png'
+import lasagna from '@/assets/warp/lasagna.png'
+import lighthalzenMap from '@/assets/warp/lighthalzen-map.png'
+import lighthalzen from '@/assets/warp/lighthalzen.png'
+import moroccMap from '@/assets/warp/morocc-map.png'
+import morocc from '@/assets/warp/morocc.png'
+import payonEntrance from '@/assets/warp/payon-entrance.png'
+import payon from '@/assets/warp/payon.png'
+import pronteraMap from '@/assets/warp/prontera-map.png'
+import prontera from '@/assets/warp/prontera.png'
+import rachelMap from '@/assets/warp/rachel-map.png'
+import rachel from '@/assets/warp/rachel.png'
+import yunoMap from '@/assets/warp/yuno-map.png'
+import yuno from '@/assets/warp/yuno.png'
+import type { ImageViewerImage } from '@/components/molecules'
+
+function locationImages(
+  city: string,
+  location: string,
+  route: string,
+  routeLabel: string
+): readonly ImageViewerImage[] {
+  return [
+    { src: location, alt: `Black Market Contact in ${city}`, label: 'Contact location' },
+    { src: route, alt: `${city} Contact route reference`, label: routeLabel }
+  ]
+}
+
 export type BlackMarketContact = {
   city: string
   location: string
   coordinates: string
+  images: readonly ImageViewerImage[]
 }
 
 export type CardPriceBand = {
@@ -19,17 +56,72 @@ export type FeaturedItem = {
 }
 
 export const blackMarketContacts: BlackMarketContact[] = [
-  { city: 'Prontera', location: 'South gate area', coordinates: '195, 56' },
-  { city: 'Morocc', location: 'Town market', coordinates: '38, 153' },
-  { city: 'Payon', location: 'Payon Inn', coordinates: '182, 25' },
-  { city: 'Geffen', location: 'Geffen Tower', coordinates: '163, 173' },
-  { city: 'Yuno', location: 'Town street', coordinates: '117, 126' },
-  { city: 'Lighthalzen', location: 'Town street', coordinates: '320, 270' },
-  { city: 'Hugel', location: 'Hugel Inn', coordinates: '219, 385' },
-  { city: 'Rachel', location: 'Town street', coordinates: '175, 201' },
-  { city: 'Lasagna', location: 'Town street', coordinates: '160, 307' },
-  { city: 'Glast Heim', location: 'Ruins', coordinates: '192, 292' },
-  { city: 'Dimensional Rift', location: 'Rift entrance', coordinates: '80, 113' }
+  {
+    city: 'Prontera',
+    location: 'South gate area',
+    coordinates: '195, 56',
+    images: locationImages('Prontera', prontera, pronteraMap, 'Navigation map')
+  },
+  {
+    city: 'Morocc',
+    location: 'Town market',
+    coordinates: '38, 153',
+    images: locationImages('Morocc', morocc, moroccMap, 'Navigation map')
+  },
+  {
+    city: 'Payon',
+    location: 'Payon Inn',
+    coordinates: '182, 25',
+    images: locationImages('Payon', payon, payonEntrance, 'Route landmark')
+  },
+  {
+    city: 'Geffen',
+    location: 'Geffen Tower',
+    coordinates: '163, 173',
+    images: locationImages('Geffen', geffen, geffenEntrance, 'Route landmark')
+  },
+  {
+    city: 'Yuno',
+    location: 'Town street',
+    coordinates: '117, 126',
+    images: locationImages('Yuno', yuno, yunoMap, 'Navigation map')
+  },
+  {
+    city: 'Lighthalzen',
+    location: 'Town street',
+    coordinates: '320, 270',
+    images: locationImages('Lighthalzen', lighthalzen, lighthalzenMap, 'Navigation map')
+  },
+  {
+    city: 'Hugel',
+    location: 'Hugel Inn',
+    coordinates: '219, 385',
+    images: locationImages('Hugel', hugel, hugelEntrance, 'Route landmark')
+  },
+  {
+    city: 'Rachel',
+    location: 'Town street',
+    coordinates: '175, 201',
+    images: locationImages('Rachel', rachel, rachelMap, 'Navigation map')
+  },
+  {
+    city: 'Lasagna',
+    location: 'Town street',
+    coordinates: '160, 307',
+    images: locationImages('Lasagna', lasagna, lasagnaMap, 'Navigation map')
+  },
+  {
+    city: 'Glast Heim',
+    location: 'Ruins',
+    coordinates: '192, 292',
+    images: locationImages('Glast Heim', glastheim, glastheimMap, 'Navigation map')
+  },
+  {
+    city: 'Dimensional Rift',
+    location: 'Rift entrance',
+    coordinates: '80, 113',
+    images: locationImages('Dimensional Rift', dimension, dimensionEntrance, 'Route landmark')
+  }
 ]
 
 export const cashPointRules = {
@@ -123,7 +215,7 @@ export const featuredItems: FeaturedItem[] = [
   {
     name: 'Issgard Helmet',
     itemId: 401019,
-    price: 100,
+    price: 2100,
     category: 'Harlan · Equipment',
     divinePrideUrl: 'https://www.divine-pride.net/database/item/401019/s2-issgard-helmet'
   }

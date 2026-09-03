@@ -10,6 +10,7 @@ autom4te.cache/
 .local.vimrc
 .ycm_extra_conf.py*
 Thumbs.db
+.vite
 
 # /
 /*_fifo
@@ -62,13 +63,6 @@ Thumbs.db
 # /3rdparty/httplib/
 /3rdparty/httplib/Makefile
 /3rdparty/httplib/obj
-
-# /db/
-/db/import
-
-# /conf/
-/conf/import
-/conf/msg_conf/import
 
 # /lib
 /lib

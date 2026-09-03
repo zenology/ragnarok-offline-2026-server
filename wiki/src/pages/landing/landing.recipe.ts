@@ -28,6 +28,9 @@ export const landingPage = sva({
       '& h2': { marginTop: 'auto' }
     },
     cardAction: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '8px',
       color: 'primary.300',
       fontSize: '13px',
       letterSpacing: '0.08em',

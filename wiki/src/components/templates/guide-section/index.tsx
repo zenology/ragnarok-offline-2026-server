@@ -12,7 +12,13 @@ type GuideSectionProps = {
   children: ReactNode
 }
 
-export function GuideSection({ id, number, eyebrow, title, children }: GuideSectionProps): ReactNode {
+export function GuideSection({
+  id,
+  number,
+  eyebrow,
+  title,
+  children
+}: GuideSectionProps): ReactNode {
   const styles = guideSection()
   const titleId = `${id}-title`
 

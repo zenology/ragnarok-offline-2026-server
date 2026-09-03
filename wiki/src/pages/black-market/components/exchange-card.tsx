@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import { Heading, Text } from '@/components/atoms'
+
 import { cashPointRules } from '../data/black-market'
 import { exchange } from '../styles/recipes'
 
