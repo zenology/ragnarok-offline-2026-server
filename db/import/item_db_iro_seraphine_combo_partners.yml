@@ -1,0 +1,45 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+Body:
+- Id: 15361
+  AegisName: IRO_History_Armor_15361
+  Name: Jupiter Armor
+  Type: Armor
+  Weight: 0
+  Locations:
+    Armor: true
+  ArmorLevel: 1
+  Slots: 1
+  Refineable: true
+- Id: 15364
+  AegisName: IRO_History_Armor_15364
+  Name: Ceres Armor
+  Type: Armor
+  Weight: 0
+  Locations:
+    Armor: true
+  ArmorLevel: 1
+  Slots: 1
+  Refineable: true
+- Id: 15366
+  AegisName: IRO_History_Armor_15366
+  Name: Armor of Vulcanus
+  Type: Armor
+  Weight: 0
+  Locations:
+    Armor: true
+  ArmorLevel: 1
+  Slots: 1
+  Refineable: true
+- Id: 600055
+  AegisName: IRO_History_Weapon_600055
+  Name: Chaos Sword
+  Type: Weapon
+  Weight: 0
+  Locations:
+    Both_Hand: true
+  WeaponLevel: 4
+  Slots: 1
+  Refineable: true
+  Attack: 0

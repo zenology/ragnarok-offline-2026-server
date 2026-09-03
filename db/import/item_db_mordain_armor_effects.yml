@@ -1,0 +1,33 @@
+###########################################################################
+# Mordain body-armor effect overrides
+#
+# Additive Script/Gradable overrides for reviewed empty-script live SKUs.
+# Source: reference/mordain-body-armor-effect-mapping.json
+###########################################################################
+
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 450151
+    AegisName: Adv_Cotton_Shirt
+    Name: Reinforced Cotton Shirt
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bAllTraitStats,1;
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bWis,.@r;
+      }
+      if (.@g>=ENCHANTGRADE_C) {
+         bonus bCon,.@r;
+      }
+      if (.@g>=ENCHANTGRADE_B) {
+         bonus bCrt,.@r;
+         bonus bRes,2*.@r;
+         bonus bMres,.@r;
+         bonus bHPlus,2*.@r;
+      }

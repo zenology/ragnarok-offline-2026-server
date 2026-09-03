@@ -1654,3 +1654,2138 @@ Body:
       bonus bSpl,10;
       bonus bSMatk,10;
       bonus2 bMagicAddClass,Class_Normal,30;
+
+# Lady Seraphine accessory combo partners (wired 2026-09-03).
+  # Seraphine 32244 + Apollo Armor
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_32244    # 32244
+          - Apollo_Armor_TW    # 15362
+    Script: |
+      bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",10;
+      bonus2 bSkillAtk,"PA_SACRIFICE",20;
+      bonus bMaxHPrate,5;
+  # Seraphine 32244 + Jupiter Armor
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_32244    # 32244
+          - IRO_History_Armor_15361    # 15361
+    Script: |
+      bonus bAspdRate,5;
+      bonus2 bMagicAddSize,Size_All,8;
+  # Seraphine 32244 + Mars Armor
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_32244    # 32244
+          - Mars_Armor_TW    # 15363
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Rogue)) {
+      bonus bMatk,100;
+      }
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Assassin)) {
+      bonus2 bSkillAtk,"GC_ROLLINGCUTTER",20;
+      bonus bFlee,20;
+      }
+  # Seraphine 32244 + Ceres Armor
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_32244    # 32244
+          - IRO_History_Armor_15364    # 15364
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Hunter)) {
+      bonus bAspdRate,5;
+      bonus2 bSkillAtk,"RA_ARROWSTORM",15;
+      }
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Bard) || ((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Dancer)) {
+      bonus bAspdRate,5;
+      bonus2 bSkillCooldown,"WM_METALICSOUND",-3000;
+      }
+  # Seraphine 32244 + Venus Armor
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_32244    # 32244
+          - Vinus_Armor_TW    # 15365
+    Script: |
+      bonus2 bSubSize,Size_All,5;
+      bonus bMaxHPrate,5;
+  # Seraphine 32244 + Vulcanus Armor
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_32244    # 32244
+          - IRO_History_Armor_15366    # 15366
+    Script: |
+      bonus bDelayrate,-10;
+      bonus2 bSkillAtk,"NC_POWERSWING",25;
+      bonus2 bSkillAtk,"GN_CARTCANNON",15;
+  # Seraphine 490318 + Holy Skogul Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490318    # 490318
+          - Holy_Skogul_Card    # 300012
+    Script: |
+      bonus bAllStats,4;
+      bonus bFlee,8;
+  # Seraphine 490472 + Devil Flame Manteau [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490472    # 490472
+          - Devil_Flame_Manteau_TW    # 480154
+    Script: |
+      bonus2 bMagicAtkEle,Ele_All,8;
+  # Seraphine 490472 + Devil Flame Manteau-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490472    # 490472
+          - IRO_History_Garment_480399    # 480399
+    Script: |
+      bonus2 bMagicAtkEle,Ele_All,8;
+      if (getenchantgrade(EQI_GARMENT)>=ENCHANTGRADE_B) {
+      bonus2 bMagicAddSize,Size_All,15;
+      }
+      if (getenchantgrade(EQI_GARMENT)>=ENCHANTGRADE_A) {
+      bonus2 bSkillAtk,"AG_FLORAL_FLARE_ROAD",15;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",15;
+      }
+  # Seraphine 490500 + Unknown STR/AGI/VIT/DEX/INT/LUK Boots [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490500    # 490500
+          - MD_Airboat_Boots    # 470071
+      - Combo:
+          - IRO_History_Accessory_490500    # 490500
+          - MD_Airboat_Boots5    # 470076
+      - Combo:
+          - IRO_History_Accessory_490500    # 490500
+          - MD_Airboat_Boots3    # 470073
+      - Combo:
+          - IRO_History_Accessory_490500    # 490500
+          - MD_Airboat_Boots2    # 470072
+      - Combo:
+          - IRO_History_Accessory_490500    # 490500
+          - MD_Airboat_Boots4    # 470074
+      - Combo:
+          - IRO_History_Accessory_490500    # 490500
+          - MD_Airboat_Boots6    # 470077
+    Script: |
+      bonus bAllStats,10;
+      bonus bDelayrate,-10;
+      if (getequiprefinerycnt(EQI_SHOES)>=10) {
+      bonus bMaxHPrate,10;
+      bonus bMaxSPrate,10;
+      }
+      if (getequiprefinerycnt(EQI_SHOES)>=11) {
+      bonus bMatk,100;
+      bonus bBaseAtk,100;
+      }
+      if (getequiprefinerycnt(EQI_SHOES)>=12) {
+      bonus bAllTraitStats,3;
+      }
+  # Seraphine 490552 + Nebula Armor of Power [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490552    # 490552
+          - Star_Armor_Of_Pow    # 450169
+    Script: |
+      bonus bCritAtkRate,35;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_C) {
+      bonus2 bAddRace,RC_All,12;
+      }
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      bonus2 bAddRace,RC_All,15;
+      }
+  # Seraphine 490552 + Nebula Armor of Stamina [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490552    # 490552
+          - Star_Armor_Of_Sta    # 450170
+    Script: |
+      bonus bLongAtkDef,8;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_C) {
+      bonus bLongAtkDef,12;
+      }
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      bonus bLongAtkDef,15;
+      }
+  # Seraphine 490552 + Nebula Suit of Concentration [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490552    # 490552
+          - Star_Suit_Of_Con    # 450171
+    Script: |
+      bonus2 bAddSize,Size_All,12;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_C) {
+      bonus2 bAddRace,RC_All,12;
+      }
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      bonus2 bAddRace,RC_All,15;
+      }
+  # Seraphine 490552 + Nebula Suit of Creative [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490552    # 490552
+          - Star_Suit_Of_Crt    # 450172
+    Script: |
+      bonus bShortAtkRate,15;
+      bonus bLongAtkRate,15;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_C) {
+      bonus2 bAddEle,Ele_All,12;
+      }
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      bonus2 bAddRace,RC_All,15;
+      }
+  # Seraphine 490552 + Nebula Robe of Wisdom [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490552    # 490552
+          - Star_Robe_Of_Wis    # 450174
+    Script: |
+      bonus bNearAtkDef,8;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_C) {
+      bonus bNearAtkDef,12;
+      }
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      bonus bNearAtkDef,15;
+      }
+  # Seraphine 490552 + Nebula Robe of Spell [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490552    # 490552
+          - Star_Robe_Of_Spl    # 450173
+    Script: |
+      bonus2 bMagicAddSize,Size_All,12;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_C) {
+      bonus2 bMagicAddSize,Size_All,12;
+      }
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      bonus2 bMagicAddSize,Size_All,15;
+      }
+  # Seraphine 490614 + Seyren's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490614    # 490614
+          - Seyren_Memory    # 29594
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Knight)) {
+      bonus2 bSkillAtk,"RK_HUNDREDSPEAR",70;
+      bonus2 bSkillCooldown,"RK_HUNDREDSPEAR",-3000;
+      bonus3 bAutoSpell,"DK_HACKANDSLASHER",1,200;
+      }
+  # Seraphine 490614 + Howard's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490614    # 490614
+          - Harword_Memory    # 29595
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Blacksmith)) {
+      bonus2 bSkillAtk,"NC_POWERSWING",70;
+      bonus bPow,5;
+      bonus3 bAutoSpell,"MT_MIGHTY_SMASH",1,350;
+      }
+  # Seraphine 490614 + Eremes's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490614    # 490614
+          - Eremes_Memory    # 29596
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Assassin)) {
+      bonus2 bSkillAtk,"GC_COUNTERSLASH",70;
+      bonus3 bAutoSpell,"GC_ROLLINGCUTTER",1,100;
+      bonus3 bAutoSpell,"SHC_IMPACT_CRATER",1,200;
+      }
+  # Seraphine 490614 + Kathryne's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490614    # 490614
+          - Katrinn_Memory    # 29598
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Wizard)) {
+      bonus2 bSkillAtk,"WL_SOULEXPANSION",70;
+      bonus2 bSkillCooldown,"WL_TELEKINESIS_INTENSE",-60000;
+      bonus3 bAutoSpell,"AG_SOUL_VC_STRIKE",1,200;
+      }
+  # Seraphine 490614 + Margaretha's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490614    # 490614
+          - Magaleta_Memory    # 29599
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Priest)) {
+      bonus bDelayrate,-5;
+      bonus2 bSkillAtk,"AB_JUDEX",70;
+      bonus3 bAutoSpell,"CD_FRAMEN",1,400;
+      }
+  # Seraphine 490614 + Cecil's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490614    # 490614
+          - Shecil_Memory    # 29600
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Hunter)) {
+      bonus2 bSkillAtk,"RA_AIMEDBOLT",70;
+      bonus3 bAutoSpell,"RA_AIMEDBOLT",1,500;
+      bonus3 bAutoSpell,"WH_HAWKRUSH",1,500;
+      }
+  # Seraphine 490615 + Randel's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490615    # 490615
+          - Randel_Memory    # 29601
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Crusader)) {
+      bonus2 bSkillAtk,"LG_EARTHDRIVE",70;
+      bonus2 bSkillAtk,"LG_SHIELDPRESS",70;
+      bonus2 bSkillCooldown,"LG_SHIELDPRESS",-2000;
+      skill "IG_ATTACK_STANCE",1;
+      bonus3 bAutoSpell,"LG_EARTHDRIVE",1,800;
+      bonus3 bAutoSpell,"IG_SHIELD_SHOOTING",1,250;
+      }
+  # Seraphine 490615 + Flamel's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490615    # 490615
+          - Flamel_Memory    # 29602
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Alchemist)) {
+      bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",70;
+      bonus2 bSkillCooldown,"GN_SPORE_EXPLOSION",-5000;
+      bonus3 bAutoSpell,"BO_MAYHEMIC_THORNS",1,90;
+      }
+  # Seraphine 490615 + Gertie's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490615    # 490615
+          - Gertie_Memory    # 29603
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Rogue)) {
+      bonus2 bMagicAtkEle,Ele_Neutral,20;
+      bonus3 bAutoSpell,"WL_COMET",1,200;
+      bonus bAspdRate,10;
+      }
+  # Seraphine 490615 + Chen's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490615    # 490615
+          - Chen_Memory    # 29605
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Monk)) {
+      bonus bDelayrate,-5;
+      bonus2 bSkillAtk,"SR_KNUCKLEARROW",70;
+      bonus3 bAutoSpell,"IQ_EXPOSION_BLASTER",1,200;
+      }
+  # Seraphine 490615 + Trentini's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490615    # 490615
+          - Tren_Memory    # 29606
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Dancer)) {
+      bonus2 bSkillAtk,"CG_ARROWVULCAN",70;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",70;
+      bonus2 bSkillCooldown,"CG_ARROWVULCAN",-1500;
+      bonus3 bAutoSpell,"WM_SEVERE_RAINSTORM",1,150;
+      bonus3 bAutoSpell,"TR_RHYTHMSHOOTING",1,400;
+      }
+  # Seraphine 490615 + Alphoccio's Memory
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490615    # 490615
+          - Alpho_Memory    # 29607
+    Script: |
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Bard)) {
+      bonus2 bSkillAtk,"CG_ARROWVULCAN",70;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",70;
+      bonus2 bSkillCooldown,"CG_ARROWVULCAN",-1500;
+      bonus3 bAutoSpell,"WM_SEVERE_RAINSTORM",1,150;
+      bonus3 bAutoSpell,"TR_RHYTHMSHOOTING",1,400;
+      }
+  # Seraphine 490617 + Diana Suit-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490617    # 490617
+          - Diana_Suits_LT    # 450388
+    Script: |
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",10;
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",10;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      }
+  # Seraphine 490617 + Bacchus Armor-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490617    # 490617
+          - Bacchus_Armor_LT    # 450386
+    Script: |
+      bonus2 bAddSize,Size_All,10;
+      bonus2 bSkillAtk,"NW_ONLY_ONE_BULLET",10;
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",10;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      }
+  # Seraphine 490617 + Mercury Suit-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490617    # 490617
+          - Mercury_Suits_LT    # 450389
+    Script: |
+      bonus2 bSkillAtk,"SS_ANTENPOU",10;
+      bonus2 bSkillAtk,"SS_KAGEGISSEN",10;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      }
+  # Seraphine 490617 + Neptune Uniform-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490617    # 490617
+          - Neptune_Uniform_LT    # 450387
+    Script: |
+      bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",10;
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",10;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      }
+  # Seraphine 490617 + Janus Armor-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490617    # 490617
+          - Janus_Armor_LT    # 450391
+    Script: |
+      bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",10;
+      bonus2 bSkillAtk,"HN_DOUBLEBOWLINGBASH",10;
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_A) {
+      }
+  # Seraphine 490628 + Fake Alloy Pot [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490628    # 490628
+          - Fake_Alloy_Pot    # 460030
+    Script: |
+      bonus bNoKnockback;
+      bonus bDelayrate,-8;
+      bonus bCritAtkRate,20;
+      bonus bCritical,10;
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Alchemist)) {
+      bonus2 bSkillAtk,"GN_CARTCANNON",30;
+      bonus2 bSkillAtk,"GN_CART_TORNADO",30;
+      }
+      if (getequiprefinerycnt(EQI_HAND_L)>=12) {
+      bonus2 bSkillAtk,"GN_HELLS_PLANT",60;
+      bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",60;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",15;
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",15;
+      }
+      if (getequiprefinerycnt(EQI_HAND_L)>=13) {
+      }
+      if (getequiprefinerycnt(EQI_HAND_L)>=14) {
+      }
+  # Seraphine 490628 + Fake Alloy Pot-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490628    # 490628
+          - Fake_Alloy_Pot_LT    # 460066
+    Script: |
+      bonus bNoKnockback;
+      bonus bDelayrate,-12;
+      bonus bCritAtkRate,20;
+      bonus bCritical,10;
+      if (getenchantgrade(EQI_HAND_L)>=ENCHANTGRADE_D) {
+      bonus bAspdRate,15;
+      bonus bAtkRate,5;
+      bonus bBaseAtk,50;
+      }
+      if (getenchantgrade(EQI_HAND_L)>=ENCHANTGRADE_B) {
+      bonus bCritAtkRate,20;
+      bonus bCritical,5;
+      }
+      if (((eaclass()&(EAJL_THIRD|EAJL_FOURTH)) && BaseJob == Job_Alchemist)) {
+      bonus2 bSkillAtk,"GN_CARTCANNON",50;
+      bonus2 bSkillAtk,"GN_CART_TORNADO",50;
+      }
+      if (getequiprefinerycnt(EQI_HAND_L)>=12) {
+      bonus2 bSkillAtk,"GN_HELLS_PLANT",60;
+      bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",60;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",15;
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",15;
+      }
+      if (getequiprefinerycnt(EQI_HAND_L)>=13) {
+      }
+      if (getequiprefinerycnt(EQI_HAND_L)>=14) {
+      }
+      if (getenchantgrade(EQI_HAND_L)>=ENCHANTGRADE_C) {
+      bonus bAtkRate,5;
+      bonus bBaseAtk,50;
+      }
+      if (getenchantgrade(EQI_HAND_L)>=ENCHANTGRADE_A) {
+      bonus bCritAtkRate,20;
+      bonus bCritical,10;
+      }
+      if (getequiprefinerycnt(EQI_HAND_L)>=13) {
+      }
+  # Seraphine 490664 + Kuro Akuma Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490664    # 490664
+          - Kuro_Akuma_Card    # 27257
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus bLongAtkRate,15;
+      if (getequiprefinerycnt(EQI_SHOES)>=12) {
+      bonus bPow,20;
+      bonus bSpl,20;
+      }
+  # Seraphine 490664 + Circlet of Time(Kagerou) [1], Circlet of Time(Oboro) [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490664    # 490664
+          - S_Circlet_Of_Time_KG    # 19490
+          - S_Circlet_Of_Time_OB    # 19489
+    Script: |
+      bonus bMaxHPrate,15;
+      bonus bMaxSPrate,15;
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus bLongAtkRate,15;
+      if (getequiprefinerycnt(EQI_HEAD_TOP)>=11) {
+      bonus bMatk,175;
+      bonus bBaseAtk,175;
+      }
+      if (getequiprefinerycnt(EQI_HEAD_TOP)>=12) {
+      bonus2 bSkillAtk,"SS_KUNAIKAITEN",50;
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",50;
+      }
+  # Seraphine 490680 + Iron Staff-LT [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490680    # 490680
+          - Iron_Staff_LT    # 640027
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_ALL_BLOOM",10;
+      bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",10;
+      bonus bMatkRate,20;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,5;
+      }
+  # Seraphine 490690 + Y.S.F.Ring [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490690    # 490690
+          - YSF01_Ring    # 490319
+    Script: |
+      bonus bMaxHPrate,15;
+      bonus bLongAtkRate,15;
+      bonus2 bAddSize,Size_All,15;
+      if (getequiprefinerycnt(EQI_ARMOR)>=14) {
+      bonus bPow,15;
+      bonus bStr,150;
+      bonus bDex,150;
+      }
+  # Seraphine 490701 + Dragonic Slayer-LT [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490701    # 490701
+          - Dragonic_Slayer_LT    # 600024
+    Script: |
+      bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",10;
+      bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",10;
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",15;
+  # Seraphine 490702 + One Sky One Sun-LT [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490702    # 490702
+          - OneSkyOneSun_LT    # 540048
+    Script: |
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",10;
+      bonus2 bSkillAtk,"SKE_SUNSET_BLAST",10;
+      bonus bCritAtkRate,25;
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",10;
+      bonus2 bSkillAtk,"SKE_SUNSET_BLAST",10;
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",15;
+      bonus2 bSkillAtk,"SKE_SUNSET_BLAST",15;
+  # Seraphine 490704 + Elvira Card, Headless Mule Card, Dy Card, Mavka Card, Jennifer Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490704    # 490704
+          - Elvira_Card    # 4577
+          - Headless_Mule_Card    # 27125
+          - Dy_Card    # 27262
+          - Mavka_Card    # 27161
+          - Jeniffer_Card    # 300294
+    Script: |
+      bonus bSpl,5;
+  # Seraphine 490704 + Gioia Card, Polluted Queen Spider Card, Phantom of Himmelmez Card, Abysmal Witch Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490704    # 490704
+          - Gioia_Card    # 4576
+          - Polluted_Spi_Q_Card    # 27362
+          - C_Himel_Card    # 27381
+          - ILL_Abysmal_Witch_Card    # 300145
+    Script: |
+      bonus bSpl,10;
+  # Seraphine 490728 + Greater Papila Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490728    # 490728
+          - Papila_H_Card    # 300092
+    Script: |
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bBaseAtk,200;
+  # Seraphine 490728 + Bloody Butterfly Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490728    # 490728
+          - Blood_Butterfly_Card    # 4327
+    Script: |
+      bonus bBaseAtk,150;
+  # Seraphine 490741 + Poenitentia Planta [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490741    # 490741
+          - Poenitentia_Ramus    # 550060
+    Script: |
+      bonus bMatk,10;
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",35;
+      bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",35;
+  # Seraphine 490742 + Poenitentia Planta [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490742    # 490742
+          - Poenitentia_Ramus    # 550060
+    Script: |
+      bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-2000;
+  # Seraphine 490743 + Poenitentia Ungula [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490743    # 490743
+          - Poenitentia_Ungula    # 560013
+    Script: |
+      bonus bBaseAtk,10;
+  # Seraphine 490747 + Poenitentia Ferrum [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490747    # 490747
+          - Poenitentia_Ferrum    # 550062
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bSkillAtk,"HN_METEOR_STORM_BUSTER",35;
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",35;
+      bonus bMatk,10;
+      bonus2 bMagicAddEle,Ele_All,15;
+      }
+  # Seraphine 490748 + Poenitentia Ferrum [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490748    # 490748
+          - Poenitentia_Ferrum    # 550062
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bSkillCooldown,"HN_METEOR_STORM_BUSTER",-2000;
+      bonus2 bSkillCooldown,"HN_JACK_FROST_NOVA",-2000;
+      }
+  # Seraphine 490749 + Poenitentia Foramen [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490749    # 490749
+          - Poenitentia_Foramen    # 800011
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490749 + Poenitentia Veloci [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490749    # 490749
+          - Poenitentia_Veloci    # 830010
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490750 + Poenitentia Flamen [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490750    # 490750
+          - Poenitentia_Foramen    # 800011
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+  # Seraphine 490750 + Poenitentia Veloci [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490750    # 490750
+          - Poenitentia_Veloci    # 830010
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490751 + Poenitentia Manus [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490751    # 490751
+          - Poenitentia_Manus    # 610016
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bAddRace,RC_All,15;
+      bonus2 bSkillAtk,"SHC_IMPACT_CRATER",35;
+      bonus2 bSkillAtk,"GC_ROLLINGCUTTER",70;
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490752 + Poenitentia Manus [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490752    # 490752
+          - Poenitentia_Manus    # 610016
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bSkillCooldown,"SHC_IMPACT_CRATER",-1000;
+      }
+  # Seraphine 490753 + Poenitentia Gladius [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490753    # 490753
+          - Poenitentia_Gladius    # 500019
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",35;
+      bonus2 bSkillAtk,"LG_RAYOFGENESIS",70;
+      bonus bMatk,10;
+      }
+  # Seraphine 490754 + Poenitentia Gladius [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490754    # 490754
+          - Poenitentia_Gladius    # 500019
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bSkillCooldown,"IG_CROSS_RAIN",-2000;
+      }
+  # Seraphine 490765 + False Angel Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490765    # 490765
+          - Fake_Angel_Card    # 4316
+    Script: |
+      bonus bStr,10;
+      bonus bDex,10;
+      bonus2 bSkillAtk,"MO_EXTREMITYFIST",100;
+  # Seraphine 490766 + Injustice Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490766    # 490766
+          - Injustice_Card    # 4268
+    Script: |
+      bonus bFlee,15;
+      bonus bStr,15;
+      bonus2 bSkillAtk,"AS_SONICBLOW",200;
+  # Seraphine 490767 + Poenitentia Dilacero [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490767    # 490767
+          - Poenetentia_Dilacero    # 510028
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490768 + Poenitentia Dilacero [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490768    # 490768
+          - Poenetentia_Dilacero    # 510028
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490769 + Poenitentia Clava [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490769    # 490769
+          - Poenitentia_Clava    # 590016
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490769 + Poenitentia Axia [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490769    # 490769
+          - Poenitentia_Ascia    # 620006
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490770 + Poenitentia Clava [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490770    # 490770
+          - Poenitentia_Clava    # 590016
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+  # Seraphine 490770 + Poenitentia Axia [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490770    # 490770
+          - Poenitentia_Ascia    # 620006
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490771 + Poenitentia Nervus [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490771    # 490771
+          - Poenitentia_Nervus    # 700023
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490772 + Poenitentia Nervus [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490772    # 490772
+          - Poenitentia_Nervus    # 700023
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus3 bAutoSpell,"WH_CRESCIVE_BOLT",5,400;
+      }
+  # Seraphine 490773 + Poenitentia Jana [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490773    # 490773
+          - Poenitentia_Jana    # 510057
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bMatk,10;
+      }
+  # Seraphine 490774 + Poenitentia Jana [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490774    # 490774
+          - Poenitentia_Jana    # 510057
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus3 bAutoSpell,"SS_RAIDENPOU",10,300;
+      }
+  # Seraphine 490775 + Vivatus Fides Foxtail Model [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490775    # 490775
+          - Vivatus_F_F_model    # 550066
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SH_CHUL_HO_SONIC_CLAW",10;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bSkillAtk,"SH_CHUL_HO_SONIC_CLAW",10;
+      bonus bAtkRate,15;
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"SH_CHUL_HO_SONIC_CLAW",15;
+      }
+  # Seraphine 490776 + Helm of Faith (Summoner) [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490776    # 490776
+          - Viva_Adul_Hat_SU1    # 400243
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SH_CHUL_HO_SONIC_CLAW",5;
+      if (getequiprefinerycnt(EQI_HEAD_TOP)>=10) {
+      bonus bAtkRate,10;
+      bonus2 bSkillAtk,"SH_CHUL_HO_SONIC_CLAW",10;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"SH_CHUL_HO_SONIC_CLAW",10;
+      }
+  # Seraphine 490777 + Vivatus Fides Violin [2], or, Vivatus Fides Chain Rope [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490777    # 490777
+          - Vivatus_F_Violin    # 570019
+      - Combo:
+          - IRO_History_Accessory_490777    # 490777
+          - Vivatus_F_C_Rope    # 580019
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",30;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bAddRace,RC_All,15;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",30;
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",40;
+      }
+  # Seraphine 490778 + Helm of Faith II (Minstrel & Wanderer) [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490778    # 490778
+          - Viva_Adul_Hat_WM2    # 400229
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",10;
+      if (getequiprefinerycnt(EQI_HEAD_TOP)>=10) {
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",20;
+      }
+      if (getenchantgrade(EQI_HEAD_TOP)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      skill "RA_UNLIMIT",5;
+      }
+  # Seraphine 490782 + Kavach Icarus Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490782    # 490782
+          - Kavac_Card    # 4351
+    Script: |
+      bonus bLongAtkRate,30;
+      bonus bAgi,10;
+      bonus bDex,10;
+  # Seraphine 490783 + Wicked Katar [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490783    # 490783
+          - Wicked_Katar    # 610035
+    Script: |
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",10;
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",15;
+      }
+  # Seraphine 490784 + Solid Edge [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490784    # 490784
+          - Solid_Edge    # 500044
+    Script: |
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",10;
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",15;
+      }
+  # Seraphine 490785 + Wicked Dagger [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490785    # 490785
+          - Wicked_Dagger    # 510051
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",10;
+      bonus bMatkRate,20;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,5;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",15;
+      }
+  # Seraphine 490786 + Meteor Striker-LT [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490786    # 490786
+          - Meteor_Striker_LT    # 590034
+    Script: |
+      bonus2 bSkillAtk,"MT_TRIPLE_LASER",10;
+      bonus2 bSkillAtk,"MT_TRIPLE_LASER",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"MT_TRIPLE_LASER",15;
+      }
+  # Seraphine 490787 + Red Lotus Sword-LT [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490787    # 490787
+          - Sword_Of_Bluefire_LT    # 500039
+    Script: |
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",10;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",15;
+      }
+  # Seraphine 490791 + Giant Faceworm Snake Skin [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490791    # 490791
+          - FaceWorm_Skin    # 20717
+    Script: |
+      bonus bMaxSPrate,15;
+      bonus bPow,5;
+  # Seraphine 490791 + Faceworm Queen Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490791    # 490791
+          - Faceworm_Q_Card    # 27164
+    Script: |
+      bonus bPow,20;
+  # Seraphine 490791 + Faceworm Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490791    # 490791
+          - Faceworm_Card    # 27163
+    Script: |
+      bonus bPow,3;
+  # Seraphine 490794 + Bongun Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490794    # 490794
+          - Bon_Gun_Card    # 4212
+    Script: |
+      bonus2 bMagicAtkEle,Ele_All,20;
+      bonus2 bSkillAtk,"MG_SOULSTRIKE",300;
+      bonus bInt,10;
+      bonus bDex,10;
+  # Seraphine 490795 + Wicked Plant [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490795    # 490795
+          - Wicked_Plant    # 550056
+    Script: |
+      bonus2 bSkillAtk,"SH_HOWLING_OF_CHUL_HO",10;
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",10;
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"SH_HOWLING_OF_CHUL_HO",10;
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"SH_HOWLING_OF_CHUL_HO",15;
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",15;
+      }
+  # Seraphine 490796 + Precision Lute [2], or, Precision Whip [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490796    # 490796
+          - Precision_Lute    # 570028
+      - Combo:
+          - IRO_History_Accessory_490796    # 490796
+          - Precision_Whip    # 580028
+    Script: |
+      bonus2 bSkillAtk,"TR_ROSEBLOSSOM",10;
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      bonus bLongAtkRate,20;
+      bonus2 bSkillAtk,"TR_ROSEBLOSSOM",10;
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,5;
+      bonus2 bSkillAtk,"TR_ROSEBLOSSOM",15;
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",15;
+      }
+  # Seraphine 490797 + Solid Rod [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490797    # 490797
+          - Solid_Rod    # 550055
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",10;
+      bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",10;
+      bonus bMatkRate,20;
+      bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",10;
+      bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,5;
+      bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",15;
+      bonus2 bSkillAtk,"HN_JUPITEL_THUNDER_STORM",15;
+      }
+  # Seraphine 490798 + Solid Staff [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490798    # 490798
+          - Solid_Staff    # 640031
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW",10;
+      bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT",10;
+      bonus bMatkRate,20;
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW",10;
+      bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,5;
+      bonus2 bSkillAtk,"AG_CRIMSON_ARROW",15;
+      bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT",15;
+      }
+  # Seraphine 490799 + Solid Dagger [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490799    # 490799
+          - Solid_Dagger    # 510050
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",10;
+      bonus2 bSkillAtk,"SS_ANTENPOU",10;
+      bonus bMatkRate,20;
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",10;
+      bonus2 bSkillAtk,"SS_ANTENPOU",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,5;
+      bonus2 bSkillAtk,"SS_REIKETSUHOU",15;
+      bonus2 bSkillAtk,"SS_ANTENPOU",15;
+      }
+  # Seraphine 490800 + Solid Manual [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490800    # 490800
+          - Solid_Manual    # 540041
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",10;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",10;
+      bonus bMatkRate,20;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",10;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",10;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,5;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",15;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",15;
+      }
+  # Seraphine 490803 + Spore Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490803    # 490803
+          - Spore_Card    # 4022
+    Script: |
+      bonus bStr,10;
+      bonus bInt,10;
+      bonus2 bSkillAtk,"CR_ACIDDEMONSTRATION",100;
+      bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",40;
+  # Seraphine 490805 + Chaotic Acolyte Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490805    # 490805
+          - Chaos_Acolyte_Card    # 27343
+    Script: |
+      bonus bStr,10;
+      bonus bInt,10;
+      bonus2 bSkillAtk,"PR_MAGNUS",100;
+  # Seraphine 490807 + Sealed Bible [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490807    # 490807
+          - Sealed_Bible    # 540053
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"CD_PETITIO",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"CD_PETITIO",15;
+      bonus bCritical,30;
+      bonus bCritAtkRate,20;
+      bonus2 bSkillAtk,"CD_PETITIO",20;
+      }
+  # Seraphine 490807 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490807    # 490807
+          - Injustice_Power    # 312021
+    Script: |
+      bonus bShortAtkRate,20;
+  # Seraphine 490808 + Angel Wing Bow [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490808    # 490808
+          - Angel_Wing_Bow    # 700065
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",15;
+      bonus2 bSkillAtk,"WH_GALESTORM",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",15;
+      bonus2 bSkillAtk,"WH_GALESTORM",15;
+      bonus bCritical,30;
+      bonus2 bAddEle,Ele_All,20;
+      bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",20;
+      bonus2 bSkillAtk,"WH_GALESTORM",20;
+      }
+  # Seraphine 490808 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490808    # 490808
+          - Justice_Power    # 312014
+    Script: |
+      bonus3 bAutoSpell,"WH_CRESCIVE_BOLT",1,400;
+  # Seraphine 490812 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490812    # 490812
+          - Injustice_Power    # 312021
+    Script: |
+      bonus3 bAutoSpell,"DK_STORMSLASH",1,400;
+  # Seraphine 490813 + Holy Light Spear [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490813    # 490813
+          - Holy_Raise_Spear    # 530045
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"IG_OVERSLASH",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"IG_OVERSLASH",15;
+      bonus bShortAtkRate,20;
+      bonus2 bSkillAtk,"IG_OVERSLASH",20;
+      }
+  # Seraphine 490813 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490813    # 490813
+          - Justice_Power    # 312014
+    Script: |
+      bonus3 bAutoSpell,"IG_OVERSLASH",1,300;
+  # Seraphine 490814 + Crime Violin [2], or, Crime Whip [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490814    # 490814
+          - Crime_Whip    # 580037
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"TR_METALIC_FURY",15;
+      bonus2 bSkillAtk,"TR_SOUNDBLEND",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"TR_METALIC_FURY",15;
+      bonus2 bSkillAtk,"TR_SOUNDBLEND",15;
+      bonus bMatkRate,15;
+      bonus2 bMagicAtkEle,Ele_All,15;
+      bonus2 bSkillAtk,"TR_METALIC_FURY",20;
+      bonus2 bSkillAtk,"TR_SOUNDBLEND",20;
+      }
+  # Seraphine 490814 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490814    # 490814
+          - Injustice_Power    # 312021
+    Script: |
+      bonus bMatk,15;
+  # Seraphine 490815 + Underworld Knife [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490815    # 490815
+          - Underworld_Knife    # 510091
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"WH_FLAMETRAP",15;
+      bonus2 bSkillAtk,"WH_SOLIDTRAP",15;
+      bonus2 bSkillAtk,"WH_SWIFTTRAP",15;
+      bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"WH_FLAMETRAP",15;
+      bonus2 bSkillAtk,"WH_SOLIDTRAP",15;
+      bonus2 bSkillAtk,"WH_SWIFTTRAP",15;
+      bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",15;
+      bonus bAtkRate,10;
+      bonus bShortAtkRate,20;
+      bonus2 bSkillAtk,"WH_FLAMETRAP",20;
+      bonus2 bSkillAtk,"WH_SOLIDTRAP",20;
+      bonus2 bSkillAtk,"WH_SWIFTTRAP",20;
+      bonus2 bSkillAtk,"WH_DEEPBLINDTRAP",20;
+      }
+  # Seraphine 490816 + Saint Bringer [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490816    # 490816
+          - Saint_Bringer    # 550088
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"CD_FRAMEN",15;
+      bonus2 bSkillAtk,"CD_ARBITRIUM",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"CD_FRAMEN",15;
+      bonus2 bSkillAtk,"CD_ARBITRIUM",15;
+      bonus bMatkRate,15;
+      bonus2 bSkillAtk,"CD_FRAMEN",20;
+      bonus2 bSkillAtk,"CD_ARBITRIUM",20;
+      }
+  # Seraphine 490823 + Rescue Whistle-LT
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490823    # 490823
+          - Rescue_whistle_LT    # 420343
+    Script: |
+      bonus bBaseAtk,5;
+  # Seraphine 490823 + Portable Telescope-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490823    # 490823
+          - Handiness_Telescope_LT    # 410339
+    Script: |
+      bonus bBaseAtk,5;
+  # Seraphine 490832 + Muka Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490832    # 490832
+          - Muka_Card    # 4036
+    Script: |
+      bonus bMaxHPrate,20;
+  # Seraphine 490836 + Chaos Sword [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490836    # 490836
+          - IRO_History_Weapon_600055    # 600055
+    Script: |
+      bonus2 bSkillCooldown,"DK_HACKANDSLASHER",-500;
+      bonus2 bAddSize,Size_All,30;
+      if (getequiprefinerycnt(EQI_HAND_R)>=14) {
+      }
+  # Seraphine 490840 + Devil Guardian Sword [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490840    # 490840
+          - Devil_Guardian_Sword    # 500072
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bMatkRate,15;
+      }
+  # Seraphine 490840 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490840    # 490840
+          - Injustice_Power    # 312021
+    Script: |
+      bonus bMatk,10;
+      bonus bSpl,50;
+      bonus bInt,100;
+  # Seraphine 490841 + Light Power Harp [2], or, Light Power Spark [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490841    # 490841
+          - Light_Power_Harp    # 570037
+      - Combo:
+          - IRO_History_Accessory_490841    # 490841
+          - Light_Power_Spark    # 580038
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bLongAtkRate,20;
+      }
+  # Seraphine 490841 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490841    # 490841
+          - Justice_Power    # 312014
+    Script: |
+      bonus3 bAutoSpell,"TR_ROSEBLOSSOM",1,400;
+  # Seraphine 490842 + Costume Beret
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490842    # 490842
+          - C_Beret    # 31037
+    Script: |
+      bonus bAllStats,5;
+      bonus bMatk,30;
+      bonus bBaseAtk,30;
+  # Seraphine 490843 + Jupiter Spear [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490843    # 490843
+          - Luppiter_Spear    # 630027
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bLongAtkRate,20;
+      }
+  # Seraphine 490843 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490843    # 490843
+          - Justice_Power    # 312014
+    Script: |
+      bonus bMaxHPrate,30;
+      bonus bMaxSPrate,30;
+      bonus bBaseAtk,15;
+  # Seraphine 490844 + Doom Bible [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490844    # 490844
+          - Doom_Bible    # 540059
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bMatkRate,15;
+      }
+  # Seraphine 490844 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490844    # 490844
+          - Injustice_Power    # 312021
+    Script: |
+      bonus bMatk,10;
+  # Seraphine 490849 + Demonic Claw [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490849    # 490849
+          - Demonic_Claw    # 560036
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bCritical,30;
+      }
+  # Seraphine 490849 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490849    # 490849
+          - Injustice_Power    # 312021
+    Script: |
+      bonus bBaseAtk,10;
+      bonus bLongAtkRate,20;
+  # Seraphine 490850 + Brilliant Huuma Shuriken [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490850    # 490850
+          - Humma_Brilliance    # 650034
+    Script: |
+      bonus bLongAtkRate,20;
+  # Seraphine 490850 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490850    # 490850
+          - Justice_Power    # 312014
+    Script: |
+      bonus bBaseAtk,10;
+  # Seraphine 490851 + Holy Light Dagger [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490851    # 490851
+          - Holy_Light_Dagger    # 510092
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+  # Seraphine 490851 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490851    # 490851
+          - Justice_Power    # 312014
+    Script: |
+      bonus3 bAutoSpell,"ABC_DEFT_STAB",1,300;
+  # Seraphine 490852 + The Ripper [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490852    # 490852
+          - The_Reaper    # 610044
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bCritical,30;
+      }
+  # Seraphine 490852 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490852    # 490852
+          - Injustice_Power    # 312021
+    Script: |
+      bonus2 bSkillCooldown,"GC_DARKCROW",-30000;
+  # Seraphine 490853 + Destruction Axe [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490853    # 490853
+          - Destruction_Axe    # 1341
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bLongAtkRate,20;
+      }
+  # Seraphine 490853 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490853    # 490853
+          - Injustice_Power    # 312021
+    Script: |
+      bonus3 bAutoSpell,"BO_MAYHEMIC_THORNS",10,400;
+  # Seraphine 490854 + Heart Hunter AT Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490854    # 490854
+          - Heart_Hunter_AT_Card    # 300381
+    Script: |
+      if (getenchantgrade(EQI_ARMOR)>=ENCHANTGRADE_B) {
+      bonus bBaseAtk,15;
+      }
+  # Seraphine 490856 + Darkness Foxtail Model [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490856    # 490856
+          - Darkness_Foxtail_Model    # 550115
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",15;
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",15;
+      bonus bMatkRate,15;
+  # Seraphine 490856 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490856    # 490856
+          - Injustice_Power    # 312021
+    Script: |
+      bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-500;
+      bonus bMatk,10;
+      bonus2 bMagicAddEle,Ele_All,20;
+  # Seraphine 490857 + Blood Rapier [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490857    # 490857
+          - Blood_Rapier    # 500065
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",15;
+      bonus bCritical,30;
+  # Seraphine 490857 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490857    # 490857
+          - Injustice_Power    # 312021
+    Script: |
+      bonus3 bAutoSpell,"BO_MAYHEMIC_THORNS",1,300;
+  # Seraphine 490858 + Last Dawn [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490858    # 490858
+          - Last_Dawn    # 810027
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"NW_SPIRAL_SHOOTING",15;
+      bonus2 bSkillAtk,"NW_ONLY_ONE_BULLET",15;
+      bonus bCritical,30;
+  # Seraphine 490858 + Devil Hunter [2], or, Lightning Splatter [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490858    # 490858
+          - Devil_Hunter    # 800027
+      - Combo:
+          - IRO_History_Accessory_490858    # 490858
+          - Lighting_Splatter    # 830026
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",15;
+      bonus bCritical,30;
+  # Seraphine 490858 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490858    # 490858
+          - Justice_Power    # 312014
+    Script: |
+      bonus3 bAutoSpell,"NW_SPIRAL_SHOOTING",1,300;
+      bonus3 bAutoSpell,"NW_MAGAZINE_FOR_ONE",1,300;
+  # Seraphine 490859 + Lord of Glory [2], or, Justice Bomber[2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490859    # 490859
+          - Road_Of_Glory    # 820021
+      - Combo:
+          - IRO_History_Accessory_490859    # 490859
+          - Justice_Bomber    # 840021
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",15;
+      bonus2 bSkillAtk,"NW_WILD_FIRE",15;
+      bonus bLongAtkRate,20;
+  # Seraphine 490859 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490859    # 490859
+          - Justice_Power    # 312014
+    Script: |
+      bonus bBaseAtk,10;
+  # Seraphine 490862 + Punish Scepter [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490862    # 490862
+          - Punish_Hall    # 590045
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"IQ_FIRST_BRAND",15;
+      bonus2 bSkillAtk,"IQ_THIRD_PUNISH",15;
+      bonus bCritical,30;
+  # Seraphine 490866 + Evil Spirit Glove [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490866    # 490866
+          - Evilspirit_Gloves    # 2980
+    Script: |
+      bonus bMatk,250;
+      bonus bBaseAtk,250;
+  # Seraphine 490866 + Bloody Celine Dress-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490866    # 490866
+          - B_Celine_D_LT_TW    # 450272
+    Script: |
+      bonus2 bMagicAddEle,Ele_All,35;
+      bonus bMatk,200;
+  # Seraphine 490867 + Celine's Ribbon [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490867    # 490867
+          - Celines_Ribbon    # 18849
+    Script: |
+      bonus2 bMagicAddEle,Ele_All,25;
+  # Seraphine 490867 + Celine's Brooch-LT [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490867    # 490867
+          - IRO_History_Accessory_490866    # 490866
+    Script: |
+      bonus2 bMagicAtkEle,Ele_Dark,20;
+  # Seraphine 490868 + Soul Liberator [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490868    # 490868
+          - Soul_Liberator    # 550094
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",15;
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_RED_PHOENIX",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus bMatkRate,15;
+      }
+  # Seraphine 490868 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490868    # 490868
+          - Justice_Power    # 312014
+    Script: |
+      bonus3 bAutoSpell,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",1,300;
+  # Seraphine 490869 + Darkness Tablet [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490869    # 490869
+          - Darkness_Tablet    # 540054
+    Script: |
+      bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",15;
+      bonus2 bSkillAtk,"SKE_DAWN_BREAK",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+  # Seraphine 490869 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490869    # 490869
+          - Injustice_Power    # 312021
+    Script: |
+      bonus3 bAutoSpell,"SKE_DAWN_BREAK",1,400;
+  # Seraphine 490870 + Victory Sword [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490870    # 490870
+          - Victory_Sword    # 500066
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"BO_EXPLOSIVE_POWDER",15;
+  # Seraphine 490871 + Lightforce Fox Tail Wand [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490871    # 490871
+          - Lightforce_Foxtail_Wand    # 550116
+    Script: |
+      bonus2 bSkillAtk,"SH_CHUL_HO_SONIC_CLAW",15;
+      bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",15;
+      bonus bCritical,30;
+  # Seraphine 490871 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490871    # 490871
+          - Justice_Power    # 312014
+    Script: |
+      bonus bBaseAtk,10;
+      bonus bPow,50;
+      bonus3 bAutoSpell,"SH_CHUL_HO_SONIC_CLAW",1,300;
+  # Seraphine 490872 + RG-5649 [2], or, Outlaw Cursed Shotgun [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490872    # 490872
+          - RG_5649    # 830025
+      - Combo:
+          - IRO_History_Accessory_490872    # 490872
+          - Outlaw_Cursed_Shotgun    # 820020
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",15;
+      bonus2 bSkillAtk,"NW_WILD_FIRE",15;
+      bonus bLongAtkRate,20;
+  # Seraphine 490872 + Devil Lord Launcher [2], or, Screaming Rifle [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490872    # 490872
+          - Screaming_Rifle    # 810026
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"NW_SPIRAL_SHOOTING",15;
+      bonus2 bSkillAtk,"NW_HASTY_FIRE_IN_THE_HOLE",15;
+      bonus2 bSkillAtk,"NW_GRENADES_DROPPING",15;
+      bonus bLongAtkRate,20;
+  # Seraphine 490872 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490872    # 490872
+          - Injustice_Power    # 312021
+    Script: |
+      bonus bBaseAtk,10;
+  # Seraphine 490873 + Devil's Bullet [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490873    # 490873
+          - Devils_Bullet    # 800026
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"NW_ONLY_ONE_BULLET",15;
+      bonus bCritical,30;
+  # Seraphine 490873 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490873    # 490873
+          - Injustice_Power    # 312021
+    Script: |
+      bonus bBaseAtk,10;
+      bonus3 bAutoSpell,"NW_ONLY_ONE_BULLET",1,300;
+  # Seraphine 490874 + Devil Wing Staff [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490874    # 490874
+          - Devil_Wing_Staff    # 640036
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",15;
+      bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",15;
+      bonus bMatkRate,15;
+  # Seraphine 490874 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490874    # 490874
+          - Injustice_Power    # 312021
+    Script: |
+      bonus3 bAutoSpell,"AG_MYSTERY_ILLUSION",1,400;
+  # Seraphine 490882 + Soul Harvest [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490882    # 490882
+          - Soul_Harvest    # 550093
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",15;
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_SOUL_STEALING",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",15;
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_SOUL_STEALING",15;
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",20;
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_SOUL_STEALING",20;
+      bonus2 bSkillCooldown,"SOA_EXORCISM_OF_MALICIOUS_SOUL",-800;
+      bonus2 bSkillCooldown,"SOA_TALISMAN_OF_SOUL_STEALING",-800;
+      bonus bMatkRate,15;
+      }
+  # Seraphine 490882 + Evil Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490882    # 490882
+          - Injustice_Power    # 312021
+    Script: |
+      bonus3 bAutoSpell,"SOA_TALISMAN_OF_SOUL_STEALING",1,300;
+  # Seraphine 490883 + Origin of Life [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490883    # 490883
+          - Orign_Of_Life    # 540055
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",15;
+      bonus2 bSkillAtk,"SKE_SUNSET_BLAST",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",15;
+      bonus2 bSkillAtk,"SKE_SUNSET_BLAST",15;
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bShortAtkRate,20;
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",20;
+      bonus2 bSkillAtk,"SKE_SUNSET_BLAST",20;
+      bonus2 bSkillCooldown,"SKE_NOON_BLAST",-500;
+      }
+  # Seraphine 490883 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490883    # 490883
+          - Justice_Power    # 312014
+    Script: |
+      bonus3 bAutoSpell,"SKE_NOON_BLAST",1,300;
+  # Seraphine 490884 + Dim Glacier Rogue Knife [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490884    # 490884
+          - D_Glacier_R_Knife    # 510075
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,10;
+      }
+  # Seraphine 490885 + Dim Glacier Knuckle [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490885    # 490885
+          - D_Glacier_Knuckle    # 560037
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490886 + Devil Cursed Sword [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490886    # 490886
+          - Devil_Cursed_Sword    # 500062
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",15;
+      bonus2 bSkillAtk,"HN_GROUND_GRAVITATION",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",15;
+      bonus2 bSkillAtk,"HN_GROUND_GRAVITATION",15;
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",20;
+      bonus2 bSkillAtk,"HN_GROUND_GRAVITATION",20;
+      bonus bMatkRate,15;
+      }
+  # Seraphine 490886 + Evil Power
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490886    # 490886
+          - Injustice_Power    # 312021
+    Script: |
+      skill "WL_RECOGNIZEDSPELL",5;
+      bonus3 bAutoSpell,"HN_NAPALM_VULCAN_STRIKE",1,300;
+  # Seraphine 490887 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490887    # 490887
+          - Justice_Power    # 312014
+    Script: |
+      bonus3 bAutoSpell,"HN_SHIELD_CHAIN_RUSH",1,300;
+      skill "RK_FIGHTINGSPIRIT",4;
+  # Seraphine 490888 + Destiny Staff [2]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490888    # 490888
+          - Destiny_Staff    # 640037
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"AG_FROZEN_SLASH",15;
+      bonus2 bSkillAtk,"AG_RAIN_OF_CRYSTAL",15;
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"AG_FROZEN_SLASH",15;
+      bonus2 bSkillAtk,"AG_RAIN_OF_CRYSTAL",15;
+      bonus2 bSkillAtk,"AG_FROZEN_SLASH",20;
+      bonus2 bSkillAtk,"AG_RAIN_OF_CRYSTAL",20;
+      bonus bMatkRate,15;
+  # Seraphine 490888 + Good Spell
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490888    # 490888
+          - Justice_Power    # 312014
+    Script: |
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus3 bAutoSpell,"AG_RAIN_OF_CRYSTAL",1,400;
+  # Seraphine 490907 + Dim Glacier Bow [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490907    # 490907
+          - D_Glacier_Bow    # 700059
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,15;
+      }
+  # Seraphine 490908 + Dim Glacier Book [1], Dim Glacier Mace [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490908    # 490908
+          - D_Glacier_Book    # 540056
+          - D_Glacier_Mace    # 590047
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490909 + Dim Glacier Mechanic Mace [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490909    # 490909
+          - D_Glacier_M_Mace    # 590048
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490910 + Dim Glacier Violin [1], Dim Glacier Whip [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490910    # 490910
+          - D_Glacier_Violin    # 570032
+          - D_Glacier_Whip    # 580033
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,10;
+      }
+  # Seraphine 490920 + Dark Chaser Boots [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490920    # 490920
+          - IRO_History_Footgear_470349    # 470349
+    Script: |
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",7;
+      bonus2 bSkillAtk,"ABC_ABYSS_STRIKE",7;
+      bonus2 bSkillAtk,"WL_TETRAVORTEX",7;
+      if (getenchantgrade(EQI_SHOES)>=ENCHANTGRADE_B) {
+      bonus bMatk,200;
+      }
+      if (getenchantgrade(EQI_SHOES)>=ENCHANTGRADE_A) {
+      bonus2 bMagicAtkEle,Ele_All,25;
+      bonus bSpl,15;
+      }
+  # Seraphine 490927 + Royal Prontera Cape [1], Royal Payon Cape [1], Royal Geffen Cape [1], Royal Alberta Cape [1], Royal Morroc Cape [1], Royal Moscovia Cape [1], Royal Nightwatch Cape [1], Royal Dragon Cape [1], Royal Monastery Muffler [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490927    # 490927
+          - Royal_Prontera_US    # 480479
+          - Royal_Payon_US    # 480504
+          - Royal_Geffen_US    # 480520
+          - Royal_Alberta_US    # 480540
+          - IRO_History_Garment_480597    # 480597
+          - IRO_History_Garment_480697    # 480697
+          - Royal_Nightwatch_US    # 480539
+          - IRO_History_Garment_480698    # 480698
+          - IRO_History_Garment_480615    # 480615
+    Script: |
+      bonus bMatk,150;
+      bonus bBaseAtk,150;
+  # Seraphine 490941 + Dim Glacier Staff [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490941    # 490941
+          - D_Glacier_Staff    # 640034
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,15;
+      }
+  # Seraphine 490941 + Dim Glacier Wand [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490941    # 490941
+          - D_Glacier_Wand    # 550089
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,10;
+      }
+  # Seraphine 490942 + Dim Glacier Two-handed Sword [1], Dim Glacier Lance [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490942    # 490942
+          - D_Glacier_T_Sword    # 600030
+          - D_Glacier_Lance    # 630019
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,15;
+      }
+  # Seraphine 490943 + Dim Glacier Katar [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490943    # 490943
+          - D_Glacier_Katar    # 610041
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,15;
+      }
+  # Seraphine 490944 + Dim Glacier Huuma Shuriken [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490944    # 490944
+          - D_Glacier_Humma    # 650028
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,15;
+      }
+  # Seraphine 490957 + White Lady Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490957    # 490957
+          - Bacsojin_Card    # 4372
+    Script: |
+      skill "CD_ARGUTUS_TELUM",4;
+  # Seraphine 490969 + Dim Glacier Spear [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490969    # 490969
+          - D_Glacier_Spear    # 530034
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"IG_SHIELD_SHOOTING",15;
+      if (getequiprefinerycnt(EQI_HAND_L)>=10) {
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"IG_SHIELD_SHOOTING",15;
+      }
+      if (getenchantgrade(EQI_HAND_L)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,10;
+      bonus2 bSkillAtk,"IG_SHIELD_SHOOTING",20;
+      }
+  # Seraphine 490970 + Dim Glacier Basic Sword [1], Dim Glacier Basic Knife [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490970    # 490970
+          - D_Glacier_B_Sword    # 500055
+          - D_Glacier_B_Knife    # 510076
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",15;
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,10;
+      bonus2 bSkillAtk,"HN_MEGA_SONIC_BLOW",20;
+      }
+  # Seraphine 490970 + Dim Glacier Wand [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490970    # 490970
+          - D_Glacier_Wand    # 550089
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",15;
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,10;
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",20;
+      }
+  # Seraphine 490971 + Dim Glacier Book [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490971    # 490971
+          - D_Glacier_Book    # 540056
+    Script: |
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSkillAtk,"SKE_STAR_CANNON",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"SKE_STAR_CANNON",15;
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bBaseAtk,10;
+      bonus2 bSkillAtk,"SKE_STAR_CANNON",20;
+      }
+  # Seraphine 490972 + Dim Glacier Book [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_490972    # 490972
+          - D_Glacier_Book    # 540056
+    Script: |
+      bonus2 bMagicAddSize,Size_All,15;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",15;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+      bonus2 bMagicAddEle,Ele_All,15;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",15;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",15;
+      }
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_C) {
+      bonus bMatk,10;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",20;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",20;
+      }
+  # Seraphine 491009 + Dim Glacier Foxtail [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491009    # 491009
+          - D_Glacier_Foxtail    # 550090
+    Script: |
+      bonus bMatk,10;
+  # Seraphine 491010 + Dim Glacier Mace [1], Dim Glacier Sword [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491010    # 491010
+          - D_Glacier_Mace    # 590047
+          - D_Glacier_Sword    # 500054
+    Script: |
+      bonus bBaseAtk,10;
+  # Seraphine 491011 + Dim Glacier Revolver [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491011    # 491011
+          - D_Glacier_Revolver    # 800015
+    Script: |
+      bonus bBaseAtk,15;
+  # Seraphine 491011 + Dim Glacier Gatling Gun [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491011    # 491011
+          - D_Glacier_Gatling    # 830015
+    Script: |
+      bonus bBaseAtk,15;
+  # Seraphine 491012 + Dim Glacier Wand [1]
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491012    # 491012
+          - D_Glacier_Wand    # 550089
+    Script: |
+      bonus bMatk,10;
+  # Seraphine 491013 + Eremes Guile Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491013    # 491013
+          - Eremes_Card    # 4360
+    Script: |
+      bonus2 bSkillAtk,"GC_ROLLINGCUTTER",70;
+      bonus bPow,7;
+  # Seraphine 491013 + Howard Alt-Eisen Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491013    # 491013
+          - Harword_Card    # 4362
+    Script: |
+      bonus2 bSkillAtk,"NC_AXETORNADO",50;
+      bonus2 bSkillAtk,"GN_CART_TORNADO",50;
+      bonus bPow,5;
+  # Seraphine 491013 + Boss Egnigem Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491013    # 491013
+          - B_Ygnizem_Card    # 4352
+    Script: |
+      bonus bPow,30;
+  # Seraphine 491057 + Venedi Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491057    # 491057
+          - Venedi_Card    # 300253
+    Script: |
+      bonus bSpl,10;
+  # Seraphine 491057 + Powerful Amdarais Card
+  - Combos:
+      - Combo:
+          - IRO_History_Accessory_491057    # 491057
+          - P_Amdarais_Card    # 4635
+    Script: |
+      bonus2 bAddClass,Class_Boss,30;
+      bonus2 bAddClass,Class_Normal,30;
+      bonus2 bMagicAddClass,Class_Boss,30;
+      bonus2 bMagicAddClass,Class_Normal,30;
+      bonus bPow,15;
+      bonus bSpl,15;

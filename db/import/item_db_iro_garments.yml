@@ -14,46 +14,12 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 1
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bExpAddRace,RC_All,10;
-    bonus bDropAddRace,RC_All,10;
-    if (readparam(bStr) >= 90) {
-      bonus bAllStats,1;
-      bonus bMaxHPrate,1;
-      bonus bMaxSPrate,1;
-      bonus bStr,.@r;
-    }
-    if (readparam(bAgi) >= 90) {
-      bonus bAllStats,1;
-      bonus bMaxHPrate,1;
-      bonus bMaxSPrate,1;
-      bonus bAgi,.@r;
-    }
-    if (readparam(bVit) >= 90) {
-      bonus bAllStats,1;
-      bonus bMaxHPrate,1;
-      bonus bMaxSPrate,1;
-      bonus bVit,.@r;
-    }
-    if (readparam(bInt) >= 90) {
-      bonus bAllStats,1;
-      bonus bMaxHPrate,1;
-      bonus bMaxSPrate,1;
-      bonus bInt,.@r;
-    }
-    if (readparam(bDex) >= 90) {
-      bonus bAllStats,1;
-      bonus bMaxHPrate,1;
-      bonus bMaxSPrate,1;
-      bonus bDex,.@r;
-    }
-    if (readparam(bLuk) >= 90) {
-      bonus bAllStats,1;
-      bonus bMaxHPrate,1;
-      bonus bMaxSPrate,1;
-      bonus bLuk,.@r;
-    }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bExpAddRace,RC_All,10;\nbonus bDropAddRace,RC_All,10;\nif (readparam(bStr) >= 90) {\n  bonus bAllStats,1;\n\
+    \  bonus bMaxHPrate,1;\n  bonus bMaxSPrate,1;\n  bonus bStr,.@r;\n}\nif (readparam(bAgi) >= 90) {\n  bonus bAllStats,1;\n  bonus bMaxHPrate,1;\n  bonus bMaxSPrate,1;\n\
+    \  bonus bAgi,.@r;\n}\nif (readparam(bVit) >= 90) {\n  bonus bAllStats,1;\n  bonus bMaxHPrate,1;\n  bonus bMaxSPrate,1;\n  bonus bVit,.@r;\n}\nif (readparam(bInt)\
+    \ >= 90) {\n  bonus bAllStats,1;\n  bonus bMaxHPrate,1;\n  bonus bMaxSPrate,1;\n  bonus bInt,.@r;\n}\nif (readparam(bDex) >= 90) {\n  bonus bAllStats,1;\n  bonus\
+    \ bMaxHPrate,1;\n  bonus bMaxSPrate,1;\n  bonus bDex,.@r;\n}\nif (readparam(bLuk) >= 90) {\n  bonus bAllStats,1;\n  bonus bMaxHPrate,1;\n  bonus bMaxSPrate,1;\n\
+    \  bonus bLuk,.@r;\n}\n"
 - Id: 20757
   AegisName: IRO_History_Garment_20757
   Name: Heavenly Wings
@@ -90,14 +56,8 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bMdef,10;
-    skill "PA_GOSPEL",1;
-    bonus bAllStats,.@r/4;
-    bonus2 bSubClass,Class_Normal,3*(.@r/4);
-    if (.@r >= 13)
-      bonus bDelayrate,-10;
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bMdef,10;\nskill \"PA_GOSPEL\",1;\nbonus bAllStats,.@r/4;\nbonus2 bSubClass,Class_Normal,3*(.@r/4);\nif\
+    \ (.@r >= 13)\n  bonus bDelayrate,-10;\n"
 - Id: 480341
   AegisName: IRO_History_Garment_480341
   Name: Kiel Hyre's Darkness
@@ -110,21 +70,8 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 200
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bMdef,10;
-    bonus bPow,3;
-    bonus bCon,3;
-    bonus bUseSPrate,50;
-    bonus bAtk,10*(.@r/2);
-    bonus bPow,3*(.@r/3);
-    bonus bCon,3*(.@r/3);
-    if (.@r >= 9)
-      bonus bAtkRate,20;
-    if (.@r >= 11)
-      bonus2 bAddSize,Size_All,20;
-    if (.@r >= 13)
-      bonus2 bAddEle,Ele_All,15;
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bMdef,10;\nbonus bPow,3;\nbonus bCon,3;\nbonus bUseSPrate,50;\nbonus bAtk,10*(.@r/2);\nbonus bPow,3*(.@r/3);\n\
+    bonus bCon,3*(.@r/3);\nif (.@r >= 9)\n  bonus bAtkRate,20;\nif (.@r >= 11)\n  bonus2 bAddSize,Size_All,20;\nif (.@r >= 13)\n  bonus2 bAddEle,Ele_All,15;\n"
 - Id: 480369
   AegisName: IRO_History_Garment_480369
   Name: Scarlet Hero Cape
@@ -137,33 +84,11 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 1
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    skill "KN_BOWLINGBASH",10;
-    bonus bAtk,10*(.@r/2);
-    bonus bVariableCastrate,-3*(.@r/2);
-    bonus2 bAddSize,Size_All,4*(.@r/4);
-    if (.@r >= 7)
-      bonus bAspdRate,10;
-    if (.@r >= 9)
-      bonus bShortAtkRate,10;
-    if (.@r >= 11 && BaseLevel <= 99) {
-      bonus bAspdRate,10;
-      bonus2 bSkillCooldown,"KN_BOWLINGBASH",-1000;
-      bonus2 bSkillAtk,"KN_BOWLINGBASH",50;
-    }
-    if (BaseClass == Job_Swordman && BaseLevel >= 100 && BaseLevel <= 169) {
-      bonus bAtk,50;
-      bonus bVariableCastrate,-15;
-      bonus2 bSkillCooldown,"RK_IGNITIONBREAK",-1000;
-      bonus bShortAtkRate,10;
-    }
-    if (BaseClass == Job_Swordman && BaseLevel >= 170) {
-      bonus bAtk,50;
-      bonus bVariableCastrate,-15;
-      bonus2 bSkillCooldown,"RK_IGNITIONBREAK",-150;
-      bonus bShortAtkRate,30;
-    }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nskill \"KN_BOWLINGBASH\",10;\nbonus bAtk,10*(.@r/2);\nbonus bVariableCastrate,-3*(.@r/2);\nbonus2 bAddSize,Size_All,4*(.@r/4);\n\
+    if (.@r >= 7)\n  bonus bAspdRate,10;\nif (.@r >= 9)\n  bonus bShortAtkRate,10;\nif (.@r >= 11 && BaseLevel <= 99) {\n  bonus bAspdRate,10;\n  bonus2 bSkillCooldown,\"\
+    KN_BOWLINGBASH\",-1000;\n  bonus2 bSkillAtk,\"KN_BOWLINGBASH\",50;\n}\nif (BaseClass == Job_Swordman && BaseLevel >= 100 && BaseLevel <= 169) {\n  bonus bAtk,50;\n\
+    \  bonus bVariableCastrate,-15;\n  bonus2 bSkillCooldown,\"RK_IGNITIONBREAK\",-1000;\n  bonus bShortAtkRate,10;\n}\nif (BaseClass == Job_Swordman && BaseLevel\
+    \ >= 170) {\n  bonus bAtk,50;\n  bonus bVariableCastrate,-15;\n  bonus2 bSkillCooldown,\"RK_IGNITIONBREAK\",-150;\n  bonus bShortAtkRate,30;\n}\n"
 - Id: 480399
   AegisName: IRO_History_Garment_480399
   Name: Devil Flame Manteau-LT
@@ -176,19 +101,31 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 150
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bMdef,10;
+
     bonus bMatk,15*(.@r/2);
+
     bonus bSpl,.@r/2;
+
     bonus2 bMagicAddEle,Ele_Fire,10*(.@r/3);
+
     bonus2 bMagicAddEle,Ele_Shadow,10*(.@r/3);
+
     if (.@r >= 7) bonus bMatkRate,15;
+
     if (.@r >= 9) bonus2 bSkillAtk,"EM_CONFLAGRATION",20;
+
     if (.@r >= 9) bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",20;
+
     if (.@r >= 11) bonus bDelayrate,-12;
+
     if (.@r >= 12) bonus2 bMagicAddSize,Size_All,15;
+
     if (.@r >= 13) bonus2 bIgnoreMdefClassRate,Class_Boss,10;
+
+    '
 - Id: 480417
   AegisName: IRO_History_Garment_480417
   Name: Bear Aimed Bag
@@ -201,21 +138,10 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus2 bAddSize,Size_All,10;
-    bonus bLongAtkRate,20;
-    bonus bPerfectHitAddRate,10*getskilllv("RA_RANGERMAIN");
-    bonus2 bSkillAtk,"RA_ARROWSTORM",BaseLevel/10;
-    bonus2 bSkillAtk,"RA_AIMEDBOLT",BaseLevel/10;
-    if (.@r >= 7) bonus2 bSkillUseSPrate,"RA_AIMEDBOLT",-20;
-    if (.@r >= 9) bonus bDelayrate,-12;
-    if (.@r >= 11) bonus2 bAddClass,Class_Boss,15;
-    if (.@r >= 12) {
-      bonus2 bSkillAtk,"RA_ARROWSTORM",20;
-      bonus2 bSkillAtk,"RA_AIMEDBOLT",20;
-    }
-    if (.@r >= 13) bonus bNoSizeFix;
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus2 bAddSize,Size_All,10;\nbonus bLongAtkRate,20;\nbonus bPerfectHitAddRate,10*getskilllv(\"RA_RANGERMAIN\"\
+    );\nbonus2 bSkillAtk,\"RA_ARROWSTORM\",BaseLevel/10;\nbonus2 bSkillAtk,\"RA_AIMEDBOLT\",BaseLevel/10;\nif (.@r >= 7) bonus2 bSkillUseSPrate,\"RA_AIMEDBOLT\",-20;\n\
+    if (.@r >= 9) bonus bDelayrate,-12;\nif (.@r >= 11) bonus2 bAddClass,Class_Boss,15;\nif (.@r >= 12) {\n  bonus2 bSkillAtk,\"RA_ARROWSTORM\",20;\n  bonus2 bSkillAtk,\"\
+    RA_AIMEDBOLT\",20;\n}\nif (.@r >= 13) bonus bNoSizeFix;\n"
 - Id: 480428
   AegisName: IRO_History_Garment_480428
   Name: Ultio Magic Cloak-LT
@@ -228,17 +154,27 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 150
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bMdef,10;
+
     bonus bMatk,15*(.@r/2);
+
     bonus2 bMagicAddEle,Ele_Holy,10*(.@r/3);
+
     bonus2 bMagicAddEle,Ele_Neutral,10*(.@r/3);
+
     if (.@r >= 7) bonus bMatkRate,15;
+
     if (.@r >= 9) bonus2 bSkillAtk,"IG_CROSS_RAIN",20;
+
     if (.@r >= 11) bonus bDelayrate,-12;
+
     if (.@r >= 12) bonus2 bMagicAddSize,Size_All,15;
+
     if (.@r >= 13) bonus2 bIgnoreMdefClassRate,Class_Boss,10;
+
+    '
 - Id: 480452
   AegisName: IRO_History_Garment_480452
   Name: Tristan Imperial Cape
@@ -251,16 +187,25 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bNoKnockback;
+
     skill "MO_CALLSPIRITS",5;
+
     bonus bAtk,10*(.@r/2);
+
     bonus bLongAtkRate,3*(.@r/3);
+
     bonus bCritAtkRate,3*(.@r/3);
+
     if (.@r >= 7) bonus bCritical,8;
+
     if (.@r >= 9) bonus2 bAddEle,Ele_All,10;
+
     if (.@r >= 11) bonus bCritical,10;
+
+    '
 - Id: 480455
   AegisName: IRO_History_Garment_480455
   Name: Legendary Performer Manteau
@@ -273,24 +218,10 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus2 bSubClass,Class_Normal,-5;
-    bonus2 bSubClass,Class_Boss,-5;
-    bonus bInt,3*getskilllv("WM_LESSON");
-    bonus bMatk,15*getskilllv("WM_LESSON");
-    if (getskilllv("WM_REVERBERATION") >= 5) {
-      bonus2 bSkillAtk,"WM_METALICSOUND",25;
-      bonus2 bMagicAddEle,Ele_All,10;
-    }
-    if (.@r >= 11) {
-      bonus bMatkRate,10;
-      bonus2 bSkillAtk,"WM_METALICSOUND",25;
-    }
-    if (.@r >= 12) {
-      bonus bAllStats,10;
-      bonus2 bSkillAtk,"WM_METALICSOUND",75;
-    }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus2 bSubClass,Class_Normal,-5;\nbonus2 bSubClass,Class_Boss,-5;\nbonus bInt,3*getskilllv(\"WM_LESSON\");\n\
+    bonus bMatk,15*getskilllv(\"WM_LESSON\");\nif (getskilllv(\"WM_REVERBERATION\") >= 5) {\n  bonus2 bSkillAtk,\"WM_METALICSOUND\",25;\n  bonus2 bMagicAddEle,Ele_All,10;\n\
+    }\nif (.@r >= 11) {\n  bonus bMatkRate,10;\n  bonus2 bSkillAtk,\"WM_METALICSOUND\",25;\n}\nif (.@r >= 12) {\n  bonus bAllStats,10;\n  bonus2 bSkillAtk,\"WM_METALICSOUND\"\
+    ,75;\n}\n"
 - Id: 480465
   AegisName: IRO_History_Garment_480465
   Name: Melody Wing
@@ -303,16 +234,25 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus2 bAddSize,Size_All,10;
+
     bonus bPerfectHitAddRate,10*getskilllv("WM_LESSON");
+
     bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",2*(BaseLevel/10);
+
     bonus2 bSkillAtk,"CG_ARROWVULCAN",2*(BaseLevel/10);
+
     if (.@r >= 7) bonus2 bSkillUseSPrate,"WM_SEVERE_RAINSTORM",-20;
+
     if (.@r >= 9) bonus bDelayrate,-12;
+
     if (.@r >= 11) bonus2 bAddClass,Class_Boss,15;
+
     if (.@r >= 13) bonus bNoSizeFix;
+
+    '
 - Id: 480527
   AegisName: IRO_History_Garment_480527
   Name: Constellation Blessing
@@ -325,18 +265,29 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus2 bSubClass,Class_Normal,-5;
+
     bonus2 bSubClass,Class_Boss,-5;
+
     bonus2 bSubClass,Class_All,-5;
+
     bonus bMaxHPrate,2*.@r;
+
     bonus bMaxSPrate,2*.@r;
+
     bonus bAllStats,.@r;
+
     bonus bAllTraitStats,.@r;
+
     if (.@r >= 11) { bonus2 bAddEle,Ele_All,15; bonus2 bMagicAddEle,Ele_All,15; }
+
     if (.@r >= 12) { bonus2 bAddEle,Ele_All,25; bonus2 bMagicAddEle,Ele_All,25; bonus bHPDrainValue,250; bonus bSPDrainValue,25; }
+
     if (.@r >= 13) { bonus bDelayrate,-20; bonus bAtk,150; bonus bMatk,150; }
+
+    '
 - Id: 480536
   AegisName: IRO_History_Garment_480536
   Name: Will of Karasu
@@ -349,16 +300,25 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus2 bSubClass,Class_Normal,-10;
+
     bonus2 bSubClass,Class_Boss,-10;
+
     bonus2 bMagicAddEle,Ele_All,30;
+
     bonus bAllStats,2*.@r;
+
     bonus bDelayrate,-.@r;
+
     if (.@r >= 12) { bonus bMatk,100; bonus bSpl,5; }
+
     if (.@r >= 13) { bonus bAllStats,15; bonus bMatk,150; bonus bSpl,7; }
+
     if (.@r >= 14) { bonus bMatk,150; bonus bSpl,7; bonus bFixedCastrate,-500; }
+
+    '
 - Id: 480543
   AegisName: IRO_History_Garment_480543
   Name: Will of Ingrid
@@ -371,16 +331,25 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus2 bSubClass,Class_Normal,-10;
+
     bonus2 bSubClass,Class_Boss,-10;
+
     bonus2 bAddSize,Size_All,30;
+
     bonus bAllStats,2*.@r;
+
     bonus bDelayrate,-.@r;
+
     if (.@r >= 12) { bonus bAtk,100; bonus bPow,5; }
+
     if (.@r >= 13) { bonus bAllStats,15; bonus bAtk,150; bonus bPow,7; }
+
     if (.@r >= 14) { bonus bFixedCastrate,-500; bonus bAtk,250; bonus bPow,15; }
+
+    '
 - Id: 480557
   AegisName: IRO_History_Garment_480557
   Name: Black Cat Backpack
@@ -393,24 +362,11 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    if (BaseClass == Job_Thief)
-      skill "RK_IGNITIONBREAK",5;
-    bonus bAtk,30*(.@r/2);
-    bonus bPow,2*(.@r/2);
-    bonus bCrt,2*(.@r/2);
-    bonus bShortAtkRate,15*(.@r/3);
-    bonus bCritAtkRate,15*(.@r/3);
-    if (.@r >= 9) { bonus2 bAddSize,Size_All,15; bonus bAspdRate,15; }
-    if (.@r >= 10) bonus2 bAddEle,Ele_All,20;
-    if (.@r >= 11) { bonus bAtk,100; bonus bCritical,30; }
-    if (.@r >= 12) { bonus bShortAtkRate,20; bonus bCRateRate,10; }
-    if (.@r >= 13) {
-      bonus2 bSkillAtk,"RK_IGNITIONBREAK",40;
-      bonus2 bSkillAtk,"SC_FATALMENACE",40;
-      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",40;
-    }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nif (BaseClass == Job_Thief)\n  skill \"RK_IGNITIONBREAK\",5;\nbonus bAtk,30*(.@r/2);\nbonus bPow,2*(.@r/2);\n\
+    bonus bCrt,2*(.@r/2);\nbonus bShortAtkRate,15*(.@r/3);\nbonus bCritAtkRate,15*(.@r/3);\nif (.@r >= 9) { bonus2 bAddSize,Size_All,15; bonus bAspdRate,15; }\nif\
+    \ (.@r >= 10) bonus2 bAddEle,Ele_All,20;\nif (.@r >= 11) { bonus bAtk,100; bonus bCritical,30; }\nif (.@r >= 12) { bonus bShortAtkRate,20; bonus bCRateRate,10;\
+    \ }\nif (.@r >= 13) {\n  bonus2 bSkillAtk,\"RK_IGNITIONBREAK\",40;\n  bonus2 bSkillAtk,\"SC_FATALMENACE\",40;\n  bonus2 bSkillAtk,\"SHC_SAVAGE_IMPACT\",40;\n\
+    }\n"
 - Id: 480564
   AegisName: IRO_History_Garment_480564
   Name: Doram Mink Coat
@@ -423,27 +379,14 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 150
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bPow,15+.@r/2;
-    bonus bSpl,15+.@r/2;
-    bonus bAtk,15*(.@r/2);
-    bonus bMatk,15*(.@r/2);
-    bonus bLongAtkRate,8*(.@r/3);
-    bonus2 bMagicAddEle,Ele_All,8*(.@r/3);
-    if (.@r >= 7) bonus bAspdRate,15;
-    if (.@r >= 9) { bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",20; bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",20; }
-    if (.@r >= 11) { bonus bAtkRate,12; bonus bMatkRate,12; }
-    if (.@r >= 13) { bonus2 bAddRace,RC_All,15; bonus2 bMagicAddRace,RC_All,15; }
-    if (getskilllv("SH_HYUN_ROK_SPIRIT_POWER") > 0) { bonus2 bSkillAtk,"SH_HYUN_ROK_CANNON",30; bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-1500; }
-    if (getskilllv("SU_SPIRITOFLIFE") > 0) { bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",30; bonus2 bSkillCooldown,"SH_CHUL_HO_SONIC_CLAW",-500; }
-    if (getskilllv("SU_SPIRITOFSEA") > 0) {
-      bonus bLongAtkRate,15; bonus2 bMagicAddEle,Ele_All,15;
-      bonus3 bAutoSpell,"SU_CN_METEOR",max(getskilllv("SU_CN_METEOR"),4),8;
-      bonus3 bAutoSpell,"SU_LUNATICCARROTBEAT",max(getskilllv("SU_LUNATICCARROTBEAT"),4),25;
-      bonus3 bAutoSpell,"SH_HYUN_ROK_CANNON",max(getskilllv("SH_HYUN_ROK_CANNON"),4),25;
-      bonus3 bAutoSpell,"SH_CHUL_HO_SONIC_CLAW",max(getskilllv("SH_CHUL_HO_SONIC_CLAW"),4),25;
-    }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bPow,15+.@r/2;\nbonus bSpl,15+.@r/2;\nbonus bAtk,15*(.@r/2);\nbonus bMatk,15*(.@r/2);\nbonus bLongAtkRate,8*(.@r/3);\n\
+    bonus2 bMagicAddEle,Ele_All,8*(.@r/3);\nif (.@r >= 7) bonus bAspdRate,15;\nif (.@r >= 9) { bonus2 bSkillAtk,\"SH_HYUN_ROK_CANNON\",20; bonus2 bSkillAtk,\"SH_HOGOGONG_STRIKE\"\
+    ,20; }\nif (.@r >= 11) { bonus bAtkRate,12; bonus bMatkRate,12; }\nif (.@r >= 13) { bonus2 bAddRace,RC_All,15; bonus2 bMagicAddRace,RC_All,15; }\nif (getskilllv(\"\
+    SH_HYUN_ROK_SPIRIT_POWER\") > 0) { bonus2 bSkillAtk,\"SH_HYUN_ROK_CANNON\",30; bonus2 bSkillCooldown,\"SH_HYUN_ROKS_BREEZE\",-1500; }\nif (getskilllv(\"SU_SPIRITOFLIFE\"\
+    ) > 0) { bonus2 bSkillAtk,\"SH_HOGOGONG_STRIKE\",30; bonus2 bSkillCooldown,\"SH_CHUL_HO_SONIC_CLAW\",-500; }\nif (getskilllv(\"SU_SPIRITOFSEA\") > 0) {\n  bonus\
+    \ bLongAtkRate,15; bonus2 bMagicAddEle,Ele_All,15;\n  bonus3 bAutoSpell,\"SU_CN_METEOR\",max(getskilllv(\"SU_CN_METEOR\"),4),8;\n  bonus3 bAutoSpell,\"SU_LUNATICCARROTBEAT\"\
+    ,max(getskilllv(\"SU_LUNATICCARROTBEAT\"),4),25;\n  bonus3 bAutoSpell,\"SH_HYUN_ROK_CANNON\",max(getskilllv(\"SH_HYUN_ROK_CANNON\"),4),25;\n  bonus3 bAutoSpell,\"\
+    SH_CHUL_HO_SONIC_CLAW\",max(getskilllv(\"SH_CHUL_HO_SONIC_CLAW\"),4),25;\n}\n"
 - Id: 480583
   AegisName: IRO_History_Garment_480583
   Name: Angel Ribbon Wing (Red)
@@ -456,16 +399,25 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 160
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bAtk,20*(.@r/2);
+
     bonus2 bSubRace,RC_Dragon,3*(.@r/3);
+
     bonus2 bAddRace,RC_Dragon,8*(.@r/4);
+
     bonus2 bAddRace,RC_DemiHuman,8*(.@r/4);
+
     if (.@r >= 7) bonus bAspdRate,10;
+
     if (.@r >= 9) bonus bDelayrate,-8;
+
     if (.@r >= 11) { bonus bShortAtkRate,15; bonus bLongAtkRate,15; }
+
     if (.@r >= 12) bonus2 bAddEle,Ele_Neutral,15;
+
+    '
 - Id: 480584
   AegisName: IRO_History_Garment_480584
   Name: Angel Ribbon Wing (White)
@@ -478,16 +430,25 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 160
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bMatk,20*(.@r/2);
+
     bonus2 bSubRace,RC_Dragon,3*(.@r/3);
+
     bonus2 bMagicAddRace,RC_Dragon,8*(.@r/4);
+
     bonus2 bMagicAddRace,RC_DemiHuman,8*(.@r/4);
+
     if (.@r >= 7) bonus bVariableCastrate,-10;
+
     if (.@r >= 9) bonus bDelayrate,-8;
+
     if (.@r >= 11) bonus bMatkRate,15;
+
     if (.@r >= 12) bonus2 bMagicAddEle,Ele_Neutral,15;
+
+    '
 - Id: 480593
   AegisName: IRO_History_Garment_480593
   Name: Colorful Potion Cape
@@ -500,20 +461,9 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    skill "GN_CRAZYWEED",3;
-    if (BaseClass == Job_Merchant) {
-      bonus2 bSkillCooldown,"GN_CRAZYWEED",-1200;
-      bonus2 bSkillAtk,"GN_CARTCANNON",30;
-      bonus2 bSkillAtk,"GN_CART_TORNADO",30;
-    }
-    bonus bAtk,10*(.@r/2);
-    bonus bShortAtkRate,3*(.@r/3);
-    bonus bLongAtkRate,3*(.@r/3);
-    if (.@r >= 7) bonus bAspdRate,10;
-    if (.@r >= 9) bonus2 bAddEle,Ele_All,10;
-    if (.@r >= 11) bonus bAtk,50;
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nskill \"GN_CRAZYWEED\",3;\nif (BaseClass == Job_Merchant) {\n  bonus2 bSkillCooldown,\"GN_CRAZYWEED\",-1200;\n\
+    \  bonus2 bSkillAtk,\"GN_CARTCANNON\",30;\n  bonus2 bSkillAtk,\"GN_CART_TORNADO\",30;\n}\nbonus bAtk,10*(.@r/2);\nbonus bShortAtkRate,3*(.@r/3);\nbonus bLongAtkRate,3*(.@r/3);\n\
+    if (.@r >= 7) bonus bAspdRate,10;\nif (.@r >= 9) bonus2 bAddEle,Ele_All,10;\nif (.@r >= 11) bonus bAtk,50;\n"
 - Id: 480594
   AegisName: IRO_History_Garment_480594
   Name: Colorful Potion Cape-LT
@@ -526,18 +476,29 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 190
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     skill "GN_CRAZYWEED",7;
+
     bonus bAtk,10*(.@r/2);
+
     bonus bPow,.@r/2;
+
     bonus bCon,.@r/2;
+
     bonus bShortAtkRate,5*(.@r/3);
+
     bonus bLongAtkRate,5*(.@r/3);
+
     if (.@r >= 7) { bonus bAtkRate,15; bonus bAspdRate,15; }
+
     if (.@r >= 9) bonus2 bAddEle,Ele_All,10;
+
     if (.@r >= 11) bonus bAtk,60;
+
     if (.@r >= 13) { bonus bShortAtkRate,10; bonus bLongAtkRate,10; }
+
+    '
 - Id: 480597
   AegisName: IRO_History_Garment_480597
   Name: Royal Morroc Cape
@@ -550,29 +511,11 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bAtkRate,20;
-    bonus bNoKnockback;
-    bonus bAtk,30*(.@r/2);
-    bonus bCon,3*(.@r/2);
-    bonus bPow,3*(.@r/2);
-    bonus bShortAtkRate,10*(.@r/3);
-    bonus bCritAtkRate,10*(.@r/3);
-    if (.@r >= 7) { bonus bAtkRate,15; bonus bAspdRate,20; }
-    if (.@r >= 9) bonus2 bAddEle,Ele_All,20;
-    if (.@r >= 10) { bonus bCritical,30; bonus bCritAtkRate,15; }
-    if (.@r >= 11) bonus bAllStats,15;
-    if (.@r >= 12) { bonus bShortAtkRate,15; bonus bCritAtkRate,15; bonus bCRateRate,10; }
-    if (.@r >= 13) {
-      bonus2 bSkillAtk,"GC_CROSSIMPACT",50;
-      bonus2 bSkillAtk,"SC_FATALMENACE",50;
-      skill "SHC_DANCING_KNIFE",5;
-    }
-    if (.@r >= 14) {
-      skill "LG_SHIELDSPELL",3;
-      bonus2 bSkillAtk,"SHC_DANCING_KNIFE",100;
-    }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bAtkRate,20;\nbonus bNoKnockback;\nbonus bAtk,30*(.@r/2);\nbonus bCon,3*(.@r/2);\nbonus bPow,3*(.@r/2);\n\
+    bonus bShortAtkRate,10*(.@r/3);\nbonus bCritAtkRate,10*(.@r/3);\nif (.@r >= 7) { bonus bAtkRate,15; bonus bAspdRate,20; }\nif (.@r >= 9) bonus2 bAddEle,Ele_All,20;\n\
+    if (.@r >= 10) { bonus bCritical,30; bonus bCritAtkRate,15; }\nif (.@r >= 11) bonus bAllStats,15;\nif (.@r >= 12) { bonus bShortAtkRate,15; bonus bCritAtkRate,15;\
+    \ bonus bCRateRate,10; }\nif (.@r >= 13) {\n  bonus2 bSkillAtk,\"GC_CROSSIMPACT\",50;\n  bonus2 bSkillAtk,\"SC_FATALMENACE\",50;\n  skill \"SHC_DANCING_KNIFE\"\
+    ,5;\n}\nif (.@r >= 14) {\n  skill \"LG_SHIELDSPELL\",3;\n  bonus2 bSkillAtk,\"SHC_DANCING_KNIFE\",100;\n}\n"
 - Id: 480598
   AegisName: IRO_History_Garment_480598
   Name: Costume Shark
@@ -597,18 +540,29 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus2 bSubEle,Ele_Neutral,10;
+
     bonus bAtk,10*(.@r/2);
+
     bonus bMatk,10*(.@r/2);
+
     bonus bPow,3*(.@r/3);
+
     bonus bCon,3*(.@r/3);
+
     bonus bSpl,3*(.@r/3);
+
     if (.@r >= 7) { bonus bAtkRate,12; bonus bMatkRate,12; }
+
     if (.@r >= 9) { bonus bShortAtkRate,15; bonus bLongAtkRate,15; bonus2 bMagicAddEle,Ele_All,15; }
+
     if (.@r >= 11) bonus bDelayrate,-10;
+
     if (.@r >= 13) { bonus2 bAddRace,RC_All,15; bonus2 bMagicAddRace,RC_All,15; }
+
+    '
 - Id: 480604
   AegisName: IRO_History_Garment_480604
   Name: Wings of Melody
@@ -621,18 +575,29 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 1
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bMdef,10;
+
     bonus bAtk,15*(.@r/2);
+
     bonus bMatk,15*(.@r/2);
+
     bonus bCon,.@r/2;
+
     bonus bSpl,.@r/2;
+
     bonus bLongAtkRate,7*(.@r/3);
+
     bonus2 bMagicAddEle,Ele_All,7*(.@r/3);
+
     if (.@r >= 7) bonus bAspdRate,15;
+
     if (.@r >= 9) { bonus bAtkRate,10; bonus bMatkRate,10; }
+
     if (.@r >= 11) { bonus2 bAddRace,RC_All,10; bonus2 bMagicAddRace,RC_All,10; }
+
+    '
 - Id: 480607
   AegisName: IRO_History_Garment_480607
   Name: White Knight Cape
@@ -645,27 +610,11 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bUnbreakableArmor;
-    bonus bMatk,200;
-    bonus bDelayrate,-10;
-    bonus bLongAtkDef,10;
-    bonus bInt,3*.@r;
-    bonus bMaxHPrate,3*.@r;
-    bonus bMaxSPrate,3*.@r;
-    if (.@r >= 11) { bonus bSpl,5; bonus bDelayrate,-15; bonus2 bMagicAddSize,Size_All,15; }
-    if (.@r >= 12) {
-      bonus bLongAtkDef,20;
-      bonus2 bSubSize,Size_Small,20;
-      bonus2 bSubSize,Size_Medium,20;
-      bonus2 bSubRace,RC_Brute,20;
-      bonus2 bSubRace,RC_DemiHuman,20;
-      bonus2 bSubRace,RC_Player_Human,20;
-      bonus2 bSubRace,RC_Player_Doram,20;
-    }
-    if (.@r >= 13) { bonus bSpl,10; bonus2 bMagicAddEle,Ele_Holy,20; bonus2 bMagicAddEle,Ele_Ghost,20; }
-    if (.@r >= 14) { bonus bSpl,15; bonus2 bMagicAddEle,Ele_Holy,40; bonus2 bMagicAddEle,Ele_Ghost,40; }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bUnbreakableArmor;\nbonus bMatk,200;\nbonus bDelayrate,-10;\nbonus bLongAtkDef,10;\nbonus bInt,3*.@r;\n\
+    bonus bMaxHPrate,3*.@r;\nbonus bMaxSPrate,3*.@r;\nif (.@r >= 11) { bonus bSpl,5; bonus bDelayrate,-15; bonus2 bMagicAddSize,Size_All,15; }\nif (.@r >= 12) {\n\
+    \  bonus bLongAtkDef,20;\n  bonus2 bSubSize,Size_Small,20;\n  bonus2 bSubSize,Size_Medium,20;\n  bonus2 bSubRace,RC_Brute,20;\n  bonus2 bSubRace,RC_DemiHuman,20;\n\
+    \  bonus2 bSubRace,RC_Player_Human,20;\n  bonus2 bSubRace,RC_Player_Doram,20;\n}\nif (.@r >= 13) { bonus bSpl,10; bonus2 bMagicAddEle,Ele_Holy,20; bonus2 bMagicAddEle,Ele_Ghost,20;\
+    \ }\nif (.@r >= 14) { bonus bSpl,15; bonus2 bMagicAddEle,Ele_Holy,40; bonus2 bMagicAddEle,Ele_Ghost,40; }\n"
 - Id: 480615
   AegisName: IRO_History_Garment_480615
   Name: Royal Monastery Muffler
@@ -678,26 +627,13 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bAtkRate,20;
-    bonus bMatkRate,20;
-    bonus bUnbreakableArmor;
-    bonus bNoKnockback;
-    if (BaseClass == Job_Acolyte || BaseClass == Job_Swordman)
-      skill "LG_RAYOFGENESIS",10;
-    bonus bSpl,7*(.@r/2);
-    bonus bPow,7*(.@r/2);
-    bonus2 bAddSize,Size_All,7*(.@r/3);
-    bonus2 bMagicAddSize,Size_All,7*(.@r/3);
-    if (.@r >= 7) { bonus2 bAddSize,Size_All,10; bonus2 bMagicAddSize,Size_All,10; }
-    if (.@r >= 9) { bonus2 bAddEle,Ele_All,20; bonus2 bMagicAddEle,Ele_All,20; }
-    if (.@r >= 10) { bonus bAtk,150; bonus bMatk,150; }
-    if ((BaseClass == Job_Acolyte || BaseClass == Job_Swordman) && .@r >= 10) { bonus2 bAddEle,Ele_All,15; bonus2 bMagicAddEle,Ele_All,15; }
-    if (.@r >= 11) bonus bAllStats,15;
-    if (.@r >= 12) { bonus bSpl,15; bonus bPow,15; if (BaseClass == Job_Acolyte || BaseClass == Job_Swordman) { bonus bSpl,10; bonus bPow,10; } }
-    if (.@r >= 13) { bonus2 bSkillAtk,"AB_ADORAMUS",70; bonus2 bSkillAtk,"LG_RAYOFGENESIS",70; bonus2 bSkillAtk,"SR_TIGERCANNON",70; }
-    if (.@r >= 14) skill "LG_SHIELDSPELL",3;
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bAtkRate,20;\nbonus bMatkRate,20;\nbonus bUnbreakableArmor;\nbonus bNoKnockback;\nif (BaseClass == Job_Acolyte\
+    \ || BaseClass == Job_Swordman)\n  skill \"LG_RAYOFGENESIS\",10;\nbonus bSpl,7*(.@r/2);\nbonus bPow,7*(.@r/2);\nbonus2 bAddSize,Size_All,7*(.@r/3);\nbonus2 bMagicAddSize,Size_All,7*(.@r/3);\n\
+    if (.@r >= 7) { bonus2 bAddSize,Size_All,10; bonus2 bMagicAddSize,Size_All,10; }\nif (.@r >= 9) { bonus2 bAddEle,Ele_All,20; bonus2 bMagicAddEle,Ele_All,20; }\n\
+    if (.@r >= 10) { bonus bAtk,150; bonus bMatk,150; }\nif ((BaseClass == Job_Acolyte || BaseClass == Job_Swordman) && .@r >= 10) { bonus2 bAddEle,Ele_All,15; bonus2\
+    \ bMagicAddEle,Ele_All,15; }\nif (.@r >= 11) bonus bAllStats,15;\nif (.@r >= 12) { bonus bSpl,15; bonus bPow,15; if (BaseClass == Job_Acolyte || BaseClass ==\
+    \ Job_Swordman) { bonus bSpl,10; bonus bPow,10; } }\nif (.@r >= 13) { bonus2 bSkillAtk,\"AB_ADORAMUS\",70; bonus2 bSkillAtk,\"LG_RAYOFGENESIS\",70; bonus2 bSkillAtk,\"\
+    SR_TIGERCANNON\",70; }\nif (.@r >= 14) skill \"LG_SHIELDSPELL\",3;\n"
 - Id: 480621
   AegisName: IRO_History_Garment_480621
   Name: Comet Cavalry
@@ -710,23 +646,11 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bUnbreakableArmor;
-    bonus bAtk,250+30*(.@r/2);
-    bonus bMatk,250+30*(.@r/2);
-    bonus bPerfectHitAddRate,25;
-    bonus2 bSkillAtk,"WL_COMET",20;
-    bonus bPow,.@r/2;
-    bonus bSpl,.@r/2;
-    if (.@r >= 11) { bonus bPow,15; bonus bSpl,15; }
-    if (.@r >= 12) { bonus2 bSkillAtk,"RK_HUNDREDSPEAR",BaseLevel/2; bonus2 bSkillAtk,"LG_CANNONSPEAR",BaseLevel/2; }
-    if (.@r >= 13) {
-      bonus bAllStats,25; bonus bAtk,250; bonus bMatk,250;
-      bonus4 bAutoSpellOnSkill,"RK_HUNDREDSPEAR","WL_COMET",5,1000;
-      bonus4 bAutoSpellOnSkill,"LG_CANNONSPEAR","WL_COMET",5,1000;
-    }
-    if (.@r >= 14) { skill "LG_SHIELDSPELL",3; bonus2 bSkillAtk,"WL_COMET",50; }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bUnbreakableArmor;\nbonus bAtk,250+30*(.@r/2);\nbonus bMatk,250+30*(.@r/2);\nbonus bPerfectHitAddRate,25;\n\
+    bonus2 bSkillAtk,\"WL_COMET\",20;\nbonus bPow,.@r/2;\nbonus bSpl,.@r/2;\nif (.@r >= 11) { bonus bPow,15; bonus bSpl,15; }\nif (.@r >= 12) { bonus2 bSkillAtk,\"\
+    RK_HUNDREDSPEAR\",BaseLevel/2; bonus2 bSkillAtk,\"LG_CANNONSPEAR\",BaseLevel/2; }\nif (.@r >= 13) {\n  bonus bAllStats,25; bonus bAtk,250; bonus bMatk,250;\n\
+    \  bonus4 bAutoSpellOnSkill,\"RK_HUNDREDSPEAR\",\"WL_COMET\",5,1000;\n  bonus4 bAutoSpellOnSkill,\"LG_CANNONSPEAR\",\"WL_COMET\",5,1000;\n}\nif (.@r >= 14) {\
+    \ skill \"LG_SHIELDSPELL\",3; bonus2 bSkillAtk,\"WL_COMET\",50; }\n"
 - Id: 480639
   AegisName: IRO_History_Garment_480639
   Name: Boreas Wings
@@ -739,20 +663,33 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bAtk,250+30*(.@r/2);
+
     bonus bMatk,250+30*(.@r/2);
+
     skill "MG_FROSTDIVER",10;
+
     bonus2 bSkillAtk,"SO_DIAMONDDUST",20;
+
     bonus bPow,.@r/2;
+
     bonus bSpl,.@r/2;
+
     bonus2 bSkillAtk,"MG_FROSTDIVER",20*BaseLevel;
+
     if (.@r >= 10) { bonus3 bAutoSpell,"MG_FROSTDIVER",10,200; bonus4 bAutoSpellWhenHit,"MG_FROSTDIVER",10,200,BF_WEAPON,0; }
+
     if (.@r >= 11) { bonus bPow,15; bonus bSpl,15; }
+
     if (.@r >= 12) { bonus2 bSkillAtk,"SO_DIAMONDDUST",BaseLevel/2; bonus4 bAutoSpellOnSkill,"MG_FROSTDIVER","SO_DIAMONDDUST",5,1000; }
+
     if (.@r >= 13) { bonus bAllStats,25; bonus bAtk,250; bonus bMatk,250; }
+
     if (.@r >= 14) { skill "LG_SHIELDSPELL",3; bonus2 bSkillAtk,"SO_DIAMONDDUST",50; }
+
+    '
 - Id: 480650
   AegisName: IRO_History_Garment_480650
   Name: Avenger Cloak of Naght Sieger-LT
@@ -765,18 +702,29 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 190
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bAtk,10*(.@r/2);
+
     bonus bPow,.@r/2;
+
     bonus bCon,.@r/2;
+
     bonus2 bSubRace,RC_Dragon,4*(.@r/3);
+
     bonus2 bAddRace,RC_Dragon,8*(.@r/4);
+
     bonus2 bAddRace,RC_DemiHuman,8*(.@r/4);
+
     if (.@r >= 7) bonus bAtkRate,15;
+
     if (.@r >= 9) bonus bDelayrate,-8;
+
     if (.@r >= 11) bonus2 bAddEle,Ele_All,12;
+
     if (.@r >= 13) { bonus bShortAtkRate,25; bonus bLongAtkRate,25; }
+
+    '
 - Id: 480651
   AegisName: IRO_History_Garment_480651
   Name: Spirit Cloak of Naght Sieger-LT
@@ -789,18 +737,29 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 190
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bMatk,10*(.@r/2);
+
     bonus bSpl,.@r/2;
+
     bonus bCon,.@r/2;
+
     bonus2 bSubRace,RC_Dragon,4*(.@r/3);
+
     bonus2 bMagicAddRace,RC_Dragon,8*(.@r/4);
+
     bonus2 bMagicAddRace,RC_DemiHuman,8*(.@r/4);
+
     if (.@r >= 7) bonus bMatkRate,15;
+
     if (.@r >= 9) bonus bDelayrate,-8;
+
     if (.@r >= 11) bonus2 bMagicAddEle,Ele_All,12;
+
     if (.@r >= 13) bonus2 bMagicAddEle,Ele_All,25;
+
+    '
 - Id: 480663
   AegisName: IRO_History_Garment_480663
   Name: Fallen Valkyrie
@@ -813,21 +772,35 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bMdef,20;
+
     bonus bAtk,250;
+
     bonus bMatk,250;
+
     bonus bFlee2,25;
+
     bonus2 bSkillAtk,"CD_PETITIO",20;
+
     bonus bAtk,40*(.@r/2);
+
     bonus bMatk,40*(.@r/2);
+
     bonus bPow,.@r/2;
+
     bonus bSpl,.@r/2;
+
     if (.@r >= 11) { bonus bPow,15; bonus bSpl,15; }
+
     if (.@r >= 12) { skill "NC_POWERSWING",10; bonus2 bSkillAtk,"NC_POWERSWING",3*BaseLevel; }
+
     if (.@r >= 13) { bonus bAllStats,25; bonus bAtk,250; bonus bMatk,250; }
+
     if (.@r >= 14) { skill "LG_SHIELDSPELL",3; bonus2 bSkillAtk,"CD_PETITIO",40; bonus2 bSkillCooldown,"CD_PETITIO",-500; }
+
+    '
 - Id: 480681
   AegisName: IRO_History_Garment_480681
   Name: Juncea Follower Wing
@@ -840,25 +813,43 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bUnbreakableArmor;
+
     bonus bMdef,10;
+
     bonus bAllStats,20;
+
     bonus bMaxHPrate,20;
+
     bonus bMaxSPrate,20;
+
     bonus bAtk,30*(BaseLevel/10);
+
     bonus bMatk,30*(BaseLevel/10);
+
     bonus2 bAddEle,Ele_All,8*(.@r/2);
+
     bonus2 bMagicAddEle,Ele_All,8*(.@r/2);
+
     bonus bPow,4*(.@r/3);
+
     bonus bSpl,4*(.@r/3);
+
     bonus bCon,4*(.@r/3);
+
     if (.@r >= 11) { bonus2 bAddEle,Ele_All,15; bonus2 bMagicAddEle,Ele_All,15; }
+
     if (.@r >= 12) { bonus bPow,8; bonus bSpl,8; bonus bCon,8; }
+
     if (.@r >= 13) { bonus2 bAddEle,Ele_All,20; bonus2 bMagicAddEle,Ele_All,20; }
+
     if (.@r >= 14) bonus bDelayrate,-30;
+
     if (.@r >= 15) { bonus2 bAddEle,Ele_All,40; bonus2 bMagicAddEle,Ele_All,40; }
+
+    '
 - Id: 480696
   AegisName: IRO_History_Garment_480696
   Name: '[Event] Winter Christmas Wings'
@@ -884,23 +875,13 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bUnbreakableArmor;
-    bonus bNoKnockback;
-    bonus2 bAddSize,Size_All,20;
-    if (BaseClass == Job_Swordman || BaseClass == Job_Acolyte || BaseClass == Job_Thief)
-      skill "GN_HELLS_PLANT",5;
-    bonus bPow,7*(.@r/2);
-    bonus2 bSkillAtk,"GN_HELLS_PLANT",7*(.@r/2);
-    bonus2 bAddSize,Size_All,7*(.@r/3);
-    if (.@r >= 8) bonus2 bAddSize,Size_All,10;
-    if (.@r >= 9) bonus2 bAddEle,Ele_All,20;
-    if (.@r >= 10) { bonus bAtk,150; if (BaseClass == Job_Swordman || BaseClass == Job_Acolyte || BaseClass == Job_Thief) bonus2 bAddEle,Ele_All,15; }
-    if (.@r >= 11) bonus bAllStats,15;
-    if (.@r >= 12) { bonus bPow,15; if (BaseClass == Job_Swordman || BaseClass == Job_Acolyte || BaseClass == Job_Thief) bonus bPow,10; }
-    if (.@r >= 13) { bonus2 bSkillAtk,"GC_ROLLINGCUTTER",100; bonus2 bSkillAtk,"SR_GATEOFHELL",100; bonus2 bSkillAtk,"RK_HUNDREDSPEAR",100; }
-    if (.@r >= 14) { skill "LG_SHIELDSPELL",3; bonus2 bSkillAtk,"AG_ALL_BLOOM",50; }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bUnbreakableArmor;\nbonus bNoKnockback;\nbonus2 bAddSize,Size_All,20;\nif (BaseClass == Job_Swordman ||\
+    \ BaseClass == Job_Acolyte || BaseClass == Job_Thief)\n  skill \"GN_HELLS_PLANT\",5;\nbonus bPow,7*(.@r/2);\nbonus2 bSkillAtk,\"GN_HELLS_PLANT\",7*(.@r/2);\n\
+    bonus2 bAddSize,Size_All,7*(.@r/3);\nif (.@r >= 8) bonus2 bAddSize,Size_All,10;\nif (.@r >= 9) bonus2 bAddEle,Ele_All,20;\nif (.@r >= 10) { bonus bAtk,150; if\
+    \ (BaseClass == Job_Swordman || BaseClass == Job_Acolyte || BaseClass == Job_Thief) bonus2 bAddEle,Ele_All,15; }\nif (.@r >= 11) bonus bAllStats,15;\nif (.@r\
+    \ >= 12) { bonus bPow,15; if (BaseClass == Job_Swordman || BaseClass == Job_Acolyte || BaseClass == Job_Thief) bonus bPow,10; }\nif (.@r >= 13) { bonus2 bSkillAtk,\"\
+    GC_ROLLINGCUTTER\",100; bonus2 bSkillAtk,\"SR_GATEOFHELL\",100; bonus2 bSkillAtk,\"RK_HUNDREDSPEAR\",100; }\nif (.@r >= 14) { skill \"LG_SHIELDSPELL\",3; bonus2\
+    \ bSkillAtk,\"AG_ALL_BLOOM\",50; }\n"
 - Id: 480698
   AegisName: IRO_History_Garment_480698
   Name: Royal Dragon Cape
@@ -913,24 +894,42 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bUnbreakableArmor;
+
     bonus bNoKnockback;
+
     bonus bLongAtkRate,20;
+
     if (BaseClass == Job_Swordman) skill "WL_HELLINFERNO",5;
+
     if (getskilllv("RK_DRAGONTRAINING") >= 5) bonus bLongAtkRate,20;
+
     bonus bPow,2*(.@r/2);
+
     bonus bCon,2*(.@r/2);
+
     bonus bAtk,20*(.@r/2);
+
     bonus bLongAtkRate,15*(.@r/3);
+
     bonus2 bMagicAddEle,Ele_Fire,15*(.@r/3);
+
     if (.@r >= 9) bonus2 bAddSize,Size_All,15;
+
     if (.@r >= 10) { bonus2 bAddEle,Ele_All,20; bonus2 bSkillAtk,"RK_DRAGONBREATH",70; bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",70; }
+
     if (.@r >= 11) { bonus bAllStats,15; bonus bSpeedRate,25; }
+
     if (.@r >= 12) { bonus bPow,15; bonus bCon,15; if (BaseClass == Job_Swordman) { bonus bPow,10; bonus bCon,10; } }
+
     if (.@r >= 13) { bonus2 bSkillAtk,"DK_DRAGONIC_BREATH",30; bonus2 bSkillAtk,"DK_MADNESS_CRUSHER",30; }
-    if (.@r >= 14) { skill "LG_SHIELDSPELL",3; bonus2 bSkillAtk,"RK_DRAGONBREATH",70; bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",70; bonus4 bAutoSpellWhenHit,"DK_DRAGONIC_BREATH",10,50,BF_WEAPON,0; bonus4 bAutoSpellWhenHit,"RK_DRAGONBREATH_WATER",10,50,BF_WEAPON,0; }
+
+    if (.@r >= 14) { skill "LG_SHIELDSPELL",3; bonus2 bSkillAtk,"RK_DRAGONBREATH",70; bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",70; bonus4 bAutoSpellWhenHit,"DK_DRAGONIC_BREATH",10,50,BF_WEAPON,0;
+    bonus4 bAutoSpellWhenHit,"RK_DRAGONBREATH_WATER",10,50,BF_WEAPON,0; }
+
+    '
 - Id: 480734
   AegisName: IRO_History_Garment_480734
   Name: Heart Choco Bag
@@ -943,13 +942,19 @@ Body:
   ArmorLevel: 1
   EquipLevelMin: 1
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bAllStats,10+.@r;
+
     bonus bAtk,10+10*.@r;
+
     bonus bMatk,10+10*.@r;
+
     bonus bMaxHP,1000;
+
     bonus bMaxSP,100;
+
+    '
 - Id: 480737
   AegisName: IRO_History_Garment_480737
   Name: Mecha Engine Wing
@@ -962,15 +967,23 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bNoKnockback;
+
     bonus bAtk,10*(.@r/2);
+
     bonus2 bAddSize,Size_All,4*(.@r/3);
+
     if (.@r >= 7) bonus bPerfectHitAddRate,8;
+
     if (.@r >= 9) bonus2 bAddEle,Ele_All,10;
+
     if (.@r >= 11) bonus bPerfectHitAddRate,15;
+
     if (BaseClass == Job_Merchant) { bonus bShortAtkRate,15; bonus bLongAtkRate,15; bonus2 bAddSize,Size_All,15; }
+
+    '
 - Id: 480759
   AegisName: IRO_History_Garment_480759
   Name: Enhanced Reforming Magic Cloak
@@ -983,21 +996,10 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 150
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
-    bonus bMatk,10*(.@r/2);
-    bonus bSpl,.@r/2;
-    bonus2 bMagicAddEle,Ele_All,5*(.@r/3);
-    if (.@r >= 7) bonus bMatkRate,10;
-    if (.@r >= 9) { bonus3 bAutoSpell,"AB_JUDEX",7,200; bonus3 bAutoSpell,"LG_RAYOFGENESIS",5,200; }
-    if (.@r >= 11) bonus2 bMagicAddSize,Size_All,12;
-    if (.@r >= 13 && Class == Job_Shadow_Chaser) {
-      bonus bMatk,100; bonus2 bMagicAddRace,RC_All,12;
-      bonus3 bAutoSpell,"AG_CRIMSON_ARROW",4,120;
-      bonus3 bAutoSpell,"HN_HELLS_DRIVE",8,120;
-      bonus3 bAutoSpell,"HN_JACK_FROST_NOVA",8,30;
-      bonus3 bAutoSpell,"EM_LIGHTNING_LAND",4,120;
-    }
+  Script: ".@r = getequiprefinerycnt(EQI_GARMENT);\nbonus bMatk,10*(.@r/2);\nbonus bSpl,.@r/2;\nbonus2 bMagicAddEle,Ele_All,5*(.@r/3);\nif (.@r >= 7) bonus bMatkRate,10;\n\
+    if (.@r >= 9) { bonus3 bAutoSpell,\"AB_JUDEX\",7,200; bonus3 bAutoSpell,\"LG_RAYOFGENESIS\",5,200; }\nif (.@r >= 11) bonus2 bMagicAddSize,Size_All,12;\nif (.@r\
+    \ >= 13 && Class == Job_Shadow_Chaser) {\n  bonus bMatk,100; bonus2 bMagicAddRace,RC_All,12;\n  bonus3 bAutoSpell,\"AG_CRIMSON_ARROW\",4,120;\n  bonus3 bAutoSpell,\"\
+    HN_HELLS_DRIVE\",8,120;\n  bonus3 bAutoSpell,\"HN_JACK_FROST_NOVA\",8,30;\n  bonus3 bAutoSpell,\"EM_LIGHTNING_LAND\",4,120;\n}\n"
 - Id: 480823
   AegisName: IRO_History_Garment_480823
   Name: Abysmal Follower Cape
@@ -1010,24 +1012,41 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bUnbreakableArmor;
+
     bonus bMdef,15;
+
     bonus bAllStats,10;
+
     bonus bAllTraitStats,10;
+
     bonus bMaxHPrate,20;
+
     bonus bMaxSPrate,20;
+
     bonus bMatk,50*(BaseLevel/10);
+
     bonus2 bMagicAddEle,Ele_All,10*(.@r/2);
+
     bonus bSpl,4*(.@r/3);
+
     bonus bCon,4*(.@r/3);
+
     bonus bWis,4*(.@r/3);
+
     if (.@r >= 11) { bonus2 bSkillAtk,"AG_ALL_BLOOM",40; bonus2 bSkillAtk,"AG_MYSTERY_ILLUSION",40; }
+
     if (.@r >= 12) { bonus2 bSkillCooldown,"AG_ALL_BLOOM",-5500; bonus2 bSkillCooldown,"AG_MYSTERY_ILLUSION",-3500; }
+
     if (.@r >= 13) bonus2 bMagicAddEle,Ele_All,20;
+
     if (.@r >= 14) { bonus bSpl,15; bonus bDelayrate,-30; }
+
     if (.@r >= 15) bonus2 bMagicAddEle,Ele_All,40;
+
+    '
 - Id: 480869
   AegisName: IRO_History_Garment_480869
   Name: Enhanced Battle Aura Manteau
@@ -1040,19 +1059,31 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 190
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bNoKnockback;
+
     skill "MO_CALLSPIRITS",5;
+
     bonus bAtk,8*(.@r/2);
+
     bonus bPow,.@r/2;
+
     bonus bCon,.@r/2;
+
     bonus bShortAtkRate,6*(.@r/3);
+
     bonus bLongAtkRate,6*(.@r/3);
+
     if (.@r >= 7) { bonus bAtkRate,10; bonus bAspdRate,10; }
+
     if (.@r >= 9) bonus2 bAddEle,Ele_All,10;
+
     if (.@r >= 11) bonus bPerfectHitAddRate,20;
+
     if (.@r >= 13) { bonus bShortAtkRate,8; bonus bLongAtkRate,8; }
+
+    '
 - Id: 480899
   AegisName: IRO_History_Garment_480899
   Name: Dark Scientist Robe
@@ -1065,20 +1096,36 @@ Body:
   ArmorLevel: 2
   EquipLevelMin: 100
   Refineable: true
-  Script: |
-    .@r = getequiprefinerycnt(EQI_GARMENT);
+  Script: '.@r = getequiprefinerycnt(EQI_GARMENT);
+
     bonus bUnbreakableArmor;
+
     bonus bMdef,20;
+
     bonus bAtk,50+15*.@r;
+
     bonus bMatk,50+15*.@r;
+
     bonus bPow,5+.@r;
+
     bonus bSpl,5+.@r;
+
     bonus bDelayrate,-20;
+
     if (Class == Job_Mechanic || Class == Job_Meister) { bonus bPow,10; bonus bAtk,300; skill "GC_DARKCROW",5; }
+
     if (Class == Job_Shadow_Chaser || Class == Job_Abyss_Chaser) { bonus bSpl,10; bonus bMatk,300; skill "GC_DARKCROW",5; }
+
     bonus2 bAddSize,Size_All,15*(.@r/2);
+
     bonus2 bMagicAddSize,Size_All,15*(.@r/2);
+
     if (.@r >= 11) { bonus bAllStats,10; skill "AB_DUPLELIGHT",10; }
+
     if (.@r >= 12) bonus bDelayrate,-15;
+
     if (.@r >= 13) { bonus bAllStats,20; bonus bLongAtkRate,30; bonus2 bMagicAddEle,Ele_All,30; }
+
     if (.@r >= 14) bonus bAllTraitStats,15;
+
+    '

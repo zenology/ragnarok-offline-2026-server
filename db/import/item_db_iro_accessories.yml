@@ -9,11 +9,86 @@ Body:
   Weight: 100
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
+    Right_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 80
   Script: bonus bAllStats,1;
+- Id: 32236
+  AegisName: IRO_History_Accessory_32236
+  Name: Clergy's Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 90
+  Script: bonus bAllStats,1;
+  Refineable: true
+- Id: 32244
+  AegisName: IRO_History_Accessory_32244
+  Name: Dictator Necklace
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bAllStats,1; bonus bDelayrate,-3;
+- Id: 490318
+  AegisName: IRO_History_Accessory_490318
+  Name: Archangel Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bMdef,15; bonus bMaxHPrate,10; bonus bMaxSPrate,10; bonus2 bSubSize,Size_All,3; bonus bAllStats,6; bonus bVariableCastrate,-10; bonus bDelayrate,-10;
+    skill "LG_SHIELDSPELL",2;
+  Refineable: true
+- Id: 490472
+  AegisName: IRO_History_Accessory_490472
+  Name: Evil Purgatory Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 150
+  Script: bonus bMatkRate,10; bonus2 bMagicAtkEle,Ele_Fire,12; bonus2 bMagicAtkEle,Ele_Dark,12; bonus bVariableCastrate,-10;
+  Refineable: true
+- Id: 490500
+  AegisName: IRO_History_Accessory_490500
+  Name: Eroded Necklace
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMdef,10; bonus bMaxHPrate,10; bonus bMaxSPrate,10; bonus2 bHPRegenRate,200,5000; bonus2 bSPRegenRate,20,5000;
+- Id: 490552
+  AegisName: IRO_History_Accessory_490552
+  Name: Nebula Pendant
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bAtkRate,10; bonus bMatkRate,10; bonus bDelayrate,-8; bonus bAllTraitStats,15;
+  Refineable: true
 - Id: 490553
   AegisName: IRO_History_Accessory_490553
   Name: Divine Bell
@@ -21,13 +96,60 @@ Body:
   Weight: 100
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
+    Right_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 100
   Script: bonus bAtk,30; bonus bMatk,30; bonus bMatkRate,10; bonus2 bMagicAddSize,Size_All,10; bonus2 bSkillAtk,"WM_REVERBERATION",4*getskilllv("WM_METALICSOUND");
     bonus2 bSkillAtk,"WM_METALICSOUND",30*getskilllv("WM_GREAT_ECHO"); if (getskilllv("WM_DANCE_WITH_WUG") >= 5) { bonus2 bVariableCastrate,"WM_REVERBERATION",-50;
     bonus2 bVariableCastrate,"WM_METALICSOUND",-50; }
+- Id: 490614
+  AegisName: IRO_History_Accessory_490614
+  Name: Memory Records of Nostalgia
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bAllTraitStats,3; bonus bDelayrate,-6; bonus2 bAddEle,Ele_All,12; bonus2 bMagicAddEle,Ele_All,12;
+  Refineable: true
+- Id: 490615
+  AegisName: IRO_History_Accessory_490615
+  Name: Memory Records of Reminiscences
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bAllTraitStats,3; bonus bDelayrate,-6; bonus2 bAddEle,Ele_All,12; bonus2 bMagicAddEle,Ele_All,12;
+  Refineable: true
+- Id: 490617
+  AegisName: IRO_History_Accessory_490617
+  Name: Dictator Bracelet
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 205
+  Script: if (isequipped(450388)) { bonus2 bAddSize,Size_All,8; bonus2 bMagicAddSize,Size_All,8; bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",10; bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",10;
+    if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) { bonus2 bSkillAtk,"SH_HOGOGONG_STRIKE",10; bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",10; } } if (isequipped(450386))
+    { bonus2 bAddSize,Size_All,10; bonus2 bSkillAtk,"NW_ONLY_ONE_BULLET",10; bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",10; if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A)
+    { bonus2 bSkillAtk,"NW_ONLY_ONE_BULLET",10; bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",10; } } if (isequipped(450389)) { bonus2 bAddSize,Size_All,8; bonus2 bMagicAddSize,Size_All,8;
+    bonus2 bSkillAtk,"SS_ANTENPOU",10; bonus2 bSkillAtk,"SS_KAGEGISSEN",10; if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) { bonus2 bSkillAtk,"SS_ANTENPOU",10;
+    bonus2 bSkillAtk,"SS_KAGEGISSEN",10; } } if (isequipped(450387)) { bonus2 bAddSize,Size_All,8; bonus2 bMagicAddSize,Size_All,8; bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",10;
+    bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",10; if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) { bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",10; bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",10;
+    } } if (isequipped(450391)) { bonus2 bAddSize,Size_All,8; bonus2 bMagicAddSize,Size_All,8; bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",10; bonus2 bSkillAtk,"HN_DOUBLEBOWLINGBASH",10;
+    if (getenchantgrade(EQI_ARMOR) >= ENCHANTGRADE_A) { bonus2 bSkillAtk,"HN_NAPALM_VULCAN_STRIKE",10; bonus2 bSkillAtk,"HN_DOUBLEBOWLINGBASH",10; } }
+  Gradable: true
 - Id: 490627
   AegisName: IRO_History_Accessory_490627
   Name: Haunted Talisman
@@ -35,11 +157,61 @@ Body:
   Weight: 0
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
+    Right_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 1
   Script: bonus bAtk,30; bonus bMatk,30; bonus bFlee,30;
+- Id: 490628
+  AegisName: IRO_History_Accessory_490628
+  Name: Fake Alloy G Module
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: bonus bStr,5; bonus bInt,5; bonus bAtk,50; bonus bAtkRate,5; bonus bShortAtkRate,10; bonus bLongAtkRate,10; bonus2 bAddRace,RC_All,10; if (Class == Job_Genetic
+    || Class == Job_Genetic_T || Class == Job_Baby_Genetic || Class == Job_Biolo) { bonus bShortAtkRate,10; bonus bLongAtkRate,10; bonus2 bSkillAtk,"GN_CARTCANNON",30;
+    bonus2 bSkillAtk,"GN_CART_TORNADO",30; bonus2 bSkillCooldown,"GN_CART_TORNADO",-2000; bonus2 bVariableCastrate,"GN_CARTCANNON",-100; }
+  Refineable: true
+  Gradable: true
+- Id: 490657
+  AegisName: IRO_History_Accessory_490657
+  Name: '[Event] Christmas Music Box'
+  Type: Armor
+  Weight: 0
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: skill "ALL_WEWISH",1;
+- Id: 490664
+  AegisName: IRO_History_Accessory_490664
+  Name: Brave Heart (Shinkiro/Shiranui)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bMaxHPrate,15; bonus bMaxSPrate,15; bonus2 bAddSize,Size_All,15; bonus2 bMagicAddSize,Size_All,15;
+- Id: 490680
+  AegisName: IRO_History_Accessory_490680
+  Name: Volcano Hero Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 190
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
 - Id: 490681
   AegisName: IRO_History_Accessory_490681
   Name: Love Ring
@@ -47,7 +219,6 @@ Body:
   Weight: 0
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 1
@@ -60,10 +231,57 @@ Body:
   Slots: 1
   Locations:
     Right_Accessory: true
-    Left_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 1
   Script: bonus bAtk,30; bonus bMatk,30; bonus bFlee,30; bonus bMaxHP,3000;
+- Id: 490690
+  AegisName: IRO_History_Accessory_490690
+  Name: Dragon Eye Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bVit,20; bonus bMaxHPrate,20; bonus bLongAtkRate,20; bonus bPerfectHitAddRate,15; bonus2 bSubClass,Class_Normal,10; bonus2 bSubClass,Class_Boss,10;
+    bonus2 bSkillCooldown,"RK_HUNDREDSPEAR",-1000; bonus2 bSkillAtk,"RK_DRAGONBREATH",BaseLevel; bonus2 bSkillAtk,"RK_DRAGONBREATH_WATER",BaseLevel; bonus2 bSkillAtk,"RK_HUNDREDSPEAR",5*BaseLevel;
+- Id: 490701
+  AegisName: IRO_History_Accessory_490701
+  Name: Dragon Order's Hero
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 190
+  Script: bonus bAtk,100; bonus bMaxHP,5000; bonus bMaxSP,2000; bonus bVariableCastrate,-30; bonus2 bAddClass,Class_All,15;
+- Id: 490702
+  AegisName: IRO_History_Accessory_490702
+  Name: Hero Foot Stamp
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 190
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCritical,20; bonus2 bAddClass,Class_All,15;
+- Id: 490704
+  AegisName: IRO_History_Accessory_490704
+  Name: Miracle Stone
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 130
+  Script: bonus bMatkRate,10; bonus2 bMagicAtkEle,Ele_All,10; bonus bDelayrate,-5; bonus2 bMagicAddSize,Size_All,15;
+  Refineable: true
+  Gradable: true
 - Id: 490705
   AegisName: IRO_History_Accessory_490705
   Name: Floppy Kitty's Cozy Socks
@@ -71,7 +289,6 @@ Body:
   Weight: 100
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 200
@@ -85,12 +302,34 @@ Body:
   Weight: 100
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 200
   Script: bonus bAspdRate,15; bonus2 bSubRace,RC_Player_Human,3; bonus2 bSubRace,RC_Player_Doram,3; bonus bAtk,BaseLevel; bonus bMatk,BaseLevel; bonus bMaxHP,BaseLevel*50;
     bonus bMaxSP,BaseLevel*5; .@lv = BaseLevel/5; bonus2 bAddClass,Class_All,.@lv; bonus bMatkRate,.@lv;
+- Id: 490720
+  AegisName: IRO_History_Accessory_490720
+  Name: Ring of Hatred
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMaxHPrate,20; bonus bMaxSPrate,20; bonus2 bAddSize,Size_All,20; bonus2 bMagicAddSize,Size_All,20; bonus2 bExpAddRace,RC_All,20;
+- Id: 490728
+  AegisName: IRO_History_Accessory_490728
+  Name: Green Butterfly Clip
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bInt,10; bonus bPow,10; bonus bLongAtkRate,15; .@bl = min(BaseLevel,250); bonus2 bSkillAtk,"GN_SPORE_EXPLOSION",.@bl; bonus2 bSkillAtk,"GN_HELLS_PLANT",.@bl;
+    .@lv5 = .@bl/5; bonus2 bAddClass,Class_All,.@lv5;
 - Id: 490733
   AegisName: IRO_History_Accessory_490733
   Name: Khalitzburg White Gauntlets
@@ -98,8 +337,8 @@ Body:
   Weight: 100
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
+    Right_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 200
   Script: bonus bSpl,3; bonus bMatkRate,40; bonus2 bSubRace,RC_Player_Human,3; bonus2 bSubRace,RC_Player_Doram,3; skill "MG_FIREWALL",10; .@lv3 = BaseLevel/3; .@lv10
@@ -112,12 +351,307 @@ Body:
   Slots: 1
   Locations:
     Right_Accessory: true
-    Left_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 100
   Script: bonus bAllStats,20; bonus2 bMagicAtkEle,Ele_All,20; bonus2 bResEff,Eff_WhiteImprison,10000; bonus2 bSkillAtk,"WL_TETRAVORTEX",BaseLevel; .@lv = BaseLevel/5;
     bonus2 bSkillAtk,"AG_ALL_BLOOM",.@lv; bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK",.@lv; bonus2 bSkillAtk,"AG_ALL_BLOOM_ATK2",.@lv; bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT",.@lv;
     bonus2 bSkillAtk,"AG_CRYSTAL_IMPACT_ATK",.@lv; bonus2 bSkillAtk,"AG_DESTRUCTIVE_HURRICANE",.@lv; bonus2 bSkillAtk,"AG_VIOLENT_QUAKE",.@lv; bonus2 bSkillAtk,"AG_VIOLENT_QUAKE_ATK",.@lv;
+- Id: 490741
+  AegisName: IRO_History_Accessory_490741
+  Name: Gentle Breeze Fan
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bVariableCastrate,-15; bonus bDelayrate,-10; bonus2 bMagicAddSize,Size_All,15; bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",25; bonus2
+    bSkillAtk,"SH_HYUN_ROK_CANNON",25;
+- Id: 490742
+  AegisName: IRO_History_Accessory_490742
+  Name: Poenitentia Ring (Spirit Handler)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bVariableCastrate,-15; bonus bDelayrate,-10; bonus2 bMagicAddSize,Size_All,15; bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",25; bonus2
+    bSkillAtk,"SH_HYUN_ROK_CANNON",25;
+- Id: 490743
+  AegisName: IRO_History_Accessory_490743
+  Name: Regulus Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bUseSPrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",25; bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",35;
+- Id: 490744
+  AegisName: IRO_History_Accessory_490744
+  Name: Poenitentia Ring (Inquisitor)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bUseSPrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",25; bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",35;
+- Id: 490747
+  AegisName: IRO_History_Accessory_490747
+  Name: Hyper Novice Heart of Ice
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bVariableCastrate,-15; bonus bDelayrate,-10; bonus2 bMagicAddSize,Size_All,15; bonus2 bSkillAtk,"HN_METEOR_STORM_BUSTER",25; bonus2
+    bSkillAtk,"HN_JACK_FROST_NOVA",25;
+- Id: 490748
+  AegisName: IRO_History_Accessory_490748
+  Name: Poenitentia Ring (Hyper Novice)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bVariableCastrate,-15; bonus bDelayrate,-10; bonus2 bMagicAddSize,Size_All,15; bonus2 bSkillAtk,"HN_METEOR_STORM_BUSTER",25; bonus2
+    bSkillAtk,"HN_JACK_FROST_NOVA",25;
+- Id: 490749
+  AegisName: IRO_History_Accessory_490749
+  Name: Dual Coin
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",25; bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",25;
+- Id: 490750
+  AegisName: IRO_History_Accessory_490750
+  Name: Poenitentia Ring (Night Watch)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"NW_MAGAZINE_FOR_ONE",25; bonus2 bSkillAtk,"NW_THE_VIGILANTE_AT_NIGHT",25;
+- Id: 490751
+  AegisName: IRO_History_Accessory_490751
+  Name: Assassin Amulet
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"SHC_IMPACT_CRATER",25; bonus2 bSkillAtk,"GC_ROLLINGCUTTER",35;
+- Id: 490752
+  AegisName: IRO_History_Accessory_490752
+  Name: Poenitentia Ring (Shadow Cross)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"SHC_IMPACT_CRATER",25; bonus2 bSkillAtk,"GC_ROLLINGCUTTER",35;
+- Id: 490753
+  AegisName: IRO_History_Accessory_490753
+  Name: Fallen Seraphim Ring
+  Type: Armor
+  Weight: 0
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bVariableCastrate,-15; bonus bDelayrate,-10; bonus2 bMagicAddSize,Size_All,15; bonus2 bSkillAtk,"IG_CROSS_RAIN",25; bonus2 bSkillAtk,"LG_RAYOFGENESIS",35;
+- Id: 490754
+  AegisName: IRO_History_Accessory_490754
+  Name: Poenitentia Ring (Imperial Guard)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bVariableCastrate,-15; bonus bDelayrate,-10; bonus2 bMagicAddSize,Size_All,15; bonus2 bSkillAtk,"IG_CROSS_RAIN",25; bonus2 bSkillAtk,"LG_RAYOFGENESIS",35;
+- Id: 490765
+  AegisName: IRO_History_Accessory_490765
+  Name: Champion Glove
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bPow,5; bonus bSta,5; bonus bAtk,50; bonus bDelayrate,-15; if (BaseLevel < 100) { bonus bMaxHP,10000; bonus bMaxSP,2000; bonus2 bSubRace,RC_DemiHuman,15;
+    bonus2 bSubRace,RC_Player_Human,15; bonus2 bSubSize,Size_Medium,15; bonus bFixedCast,-300; bonus2 bSkillAtk,"MO_FINGEROFFENSIVE",150; } if (BaseLevel >= 100)
+    { bonus bPow,7; bonus bSta,7; bonus bWis,7; .@lv3 = BaseLevel/3; .@lv10 = BaseLevel/10; bonus2 bAddSize,Size_All,.@lv3; bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",3*.@lv10;
+    }
+- Id: 490766
+  AegisName: IRO_History_Accessory_490766
+  Name: Gloves of Hassan
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bPow,7; bonus bCrt,7; bonus bAtk,70; bonus bDelayrate,-10; if (BaseLevel < 100) { bonus bMaxHP,20000; bonus2 bSubRace,RC_DemiHuman,30; bonus2 bSubRace,RC_Player_Human,30;
+    bonus2 bSubSize,Size_Medium,30; bonus bFixedCast,-300; bonus2 bSkillAtk,"ASC_BREAKER",150; } if (BaseLevel >= 100) { bonus bPow,7; bonus bCrt,7; bonus bCritical,70;
+    .@lv3 = BaseLevel/3; .@lv10 = BaseLevel/10; bonus bCritAtkRate,.@lv3; bonus2 bSkillAtk,"SHC_IMPACT_CRATER",.@lv10; }
+- Id: 490767
+  AegisName: IRO_History_Accessory_490767
+  Name: Abyss Chaser Tail
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"ABC_DEFT_STAB",25; bonus2 bSkillAtk,"SC_FATALMENACE",35;
+- Id: 490768
+  AegisName: IRO_History_Accessory_490768
+  Name: Poenitentia Ring (Abyss Chaser)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"ABC_DEFT_STAB",25; bonus2 bSkillAtk,"SC_FATALMENACE",35;
+- Id: 490769
+  AegisName: IRO_History_Accessory_490769
+  Name: Machine Arm
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"NC_ARMSCANNON",35; bonus2 bSkillAtk,"MT_AXE_STOMP",25;
+- Id: 490770
+  AegisName: IRO_History_Accessory_490770
+  Name: Poenitentia Ring (Meister)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"NC_ARMSCANNON",35; bonus2 bSkillAtk,"MT_AXE_STOMP",25;
+- Id: 490771
+  AegisName: IRO_History_Accessory_490771
+  Name: Falcon Claw
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",25; bonus2 bSkillAtk,"RA_AIMEDBOLT",35;
+- Id: 490772
+  AegisName: IRO_History_Accessory_490772
+  Name: Poenitentia Ring (Wind Hawk)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,15; bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",25; bonus2 bSkillAtk,"RA_AIMEDBOLT",35;
+- Id: 490773
+  AegisName: IRO_History_Accessory_490773
+  Name: Haze of Dragon Necklace
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bVariableCastrate,-15; bonus bDelayrate,-10; bonus2 bMagicAddSize,Size_All,15; bonus2 bSkillAtk,"SS_RAIDENPOU",25; bonus2 bSkillAtk,"SS_KINRYUUHOU",25;
+- Id: 490774
+  AegisName: IRO_History_Accessory_490774
+  Name: Poenitentia Ring (Shinkiro&Shiranui)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bVariableCastrate,-15; bonus bDelayrate,-10; bonus2 bMagicAddSize,Size_All,15; bonus2 bSkillAtk,"SS_RAIDENPOU",25; bonus2 bSkillAtk,"SS_KINRYUUHOU",25;
+- Id: 490775
+  AegisName: IRO_History_Accessory_490775
+  Name: Lumora of Claw Ring (Spirit Handler)
+  Type: Armor
+  Weight: 0
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bAtk,100; bonus2 bSkillCooldown,"SH_HOWLING_OF_CHUL_HO",-500; bonus4 bAutoSpellOnSkill,"SH_CHUL_HO_SONIC_CLAW","SH_CHUL_HO_SONIC_CLAW",7,300; bonus
+    bPow,10; bonus2 bAddClass,Class_Normal,15; bonus2 bAddClass,Class_Boss,15;
+- Id: 490776
+  AegisName: IRO_History_Accessory_490776
+  Name: Aeternis of Claw Ring (Spirit Handler)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bAtk,50; bonus bDelayrate,-10; bonus bPow,5; bonus2 bAddClass,Class_Normal,10; bonus2 bAddClass,Class_Boss,10;
+- Id: 490777
+  AegisName: IRO_History_Accessory_490777
+  Name: Lumora of Rain Ring (Troubadour & Trouvere)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bAtk,100; bonus2 bSkillCooldown,"WM_SEVERE_RAINSTORM",-4000; bonus bCon,15; bonus2 bAddClass,Class_Normal,15; bonus2 bAddClass,Class_Boss,15;
+- Id: 490778
+  AegisName: IRO_History_Accessory_490778
+  Name: Aeternis of Rain Ring (Troubadour & Trouvere)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bAtk,50; bonus bDelayrate,-15; bonus bCon,10; bonus2 bAddClass,Class_Normal,10; bonus2 bAddClass,Class_Boss,10;
 - Id: 490780
   AegisName: IRO_History_Accessory_490780
   Name: Gloves of Light and Darkness
@@ -125,11 +659,841 @@ Body:
   Weight: 200
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
+    Right_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 1
   Script: bonus bPow,7; bonus bSpl,7; bonus bDelayrate,-10; bonus bVariableCastrate,-10; .@lv = BaseLevel/2; bonus2 bSkillAtk,"ASC_METEORASSAULT",.@lv; bonus2 bSkillAtk,"AB_ADORAMUS",.@lv;
+- Id: 490782
+  AegisName: IRO_History_Accessory_490782
+  Name: Icarus Gloves
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bPow,5; bonus bCon,5; bonus bAtk,50; bonus bDelayrate,-10; if (BaseLevel < 100) { bonus2 bSubSize,Size_Medium,20; bonus bLongAtkDef,20; bonus bMaxHP,15000;
+    bonus bFixedCast,-300; bonus2 bSkillAtk,"SN_FALCONASSAULT",200; } if (BaseLevel >= 100) { bonus bPow,7; bonus bCon,7; bonus bCrt,7; bonus bLongAtkRate,BaseLevel/3;
+    bonus2 bSkillAtk,"WH_GALESTORM",3*(BaseLevel/10); }
+- Id: 490783
+  AegisName: IRO_History_Accessory_490783
+  Name: Unknown Watch (Shadow Cross)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 220
+  Script: bonus bAtk,100; bonus bPow,10; bonus2 bAddClass,Class_All,15;
+- Id: 490784
+  AegisName: IRO_History_Accessory_490784
+  Name: Unknown Watch (Hyper Novice Physical)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 220
+  Script: bonus bAtk,100; bonus bPow,10; bonus2 bAddClass,Class_All,15;
+- Id: 490785
+  AegisName: IRO_History_Accessory_490785
+  Name: Unknown Watch (Abyss Chaser)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 220
+  Script: bonus bMatk,100; bonus bSpl,10; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490786
+  AegisName: IRO_History_Accessory_490786
+  Name: Laser Hero Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 190
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCritical,20; bonus2 bAddClass,Class_All,15;
+- Id: 490787
+  AegisName: IRO_History_Accessory_490787
+  Name: Dragon Thorns Plant Hero
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 190
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCritical,20; bonus2 bAddClass,Class_All,15;
+- Id: 490791
+  AegisName: IRO_History_Accessory_490791
+  Name: Faceworm Queen's Scale
+  Type: Armor
+  Weight: 1500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMdef,30; bonus bFlee2,30; bonus bPow,15; bonus bCon,15; bonus bAspdRate,15; bonus bShortAtkRate,15; bonus bLongAtkRate,15; .@bl = min(BaseLevel,250);
+    .@lv = .@bl/5; bonus bCritAtkRate,2*.@lv; bonus2 bAddClass,Class_All,.@lv;
+- Id: 490792
+  AegisName: IRO_History_Accessory_490792
+  Name: Survival Gloves
+  Type: Armor
+  Weight: 300
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bMaxSPrate,5; bonus bMaxHPrate,5; bonus bDelayrate,-5;
+  Refineable: true
+- Id: 490793
+  AegisName: IRO_History_Accessory_490793
+  Name: '[Event] Pope Commemorative Doll'
+  Type: Armor
+  Weight: 0
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMaxHP,2000; bonus bMaxSP,200; bonus bAtk,50; bonus bMatk,50; bonus bDelayrate,-5; bonus bVariableCastrate,-5;
+- Id: 490794
+  AegisName: IRO_History_Accessory_490794
+  Name: Mad Linker Glove
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bUnbreakableArmor; bonus bSpl,5; bonus bSta,5; bonus bMatk,50; bonus2 bMagicAtkEle,Ele_All,15; if (BaseLevel < 100) { bonus bMaxHP,20000; bonus2 bSubSize,Size_Medium,15;
+    bonus2 bSubRace,RC_DemiHuman,15; bonus2 bSubRace,RC_Player_Human,15; skill "MG_SOULSTRIKE",10; bonus2 bSkillAtk,"MG_SOULSTRIKE",300; bonus4 bAutoSpellOnSkill,"MG_SOULSTRIKE","WL_SOULEXPANSION",5,500;
+    bonus4 bAutoSpellOnSkill,"WL_SOULEXPANSION","KO_SETSUDAN",5,100; } if (BaseLevel >= 100) { bonus bSpl,10; bonus bSta,10; .@lv5 = BaseLevel/5; .@lv10 = BaseLevel/10;
+    bonus2 bMagicAtkEle,Ele_All,.@lv5; bonus2 bSkillAtk,"SOA_TALISMAN_OF_WHITE_TIGER",3*.@lv10; }
+- Id: 490795
+  AegisName: IRO_History_Accessory_490795
+  Name: Unknown Watch (Spirit Handler)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 220
+  Script: bonus bAtk,100; bonus bPow,10; bonus2 bAddClass,Class_All,15;
+- Id: 490796
+  AegisName: IRO_History_Accessory_490796
+  Name: Unknown Watch (Troubadour&Trouvere)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 220
+  Script: bonus bAtk,100; bonus bPow,10; bonus2 bAddClass,Class_All,15;
+- Id: 490797
+  AegisName: IRO_History_Accessory_490797
+  Name: Unknown Watch (Hyper Novice Magical)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 220
+  Script: bonus bMatk,100; bonus bSpl,10; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490798
+  AegisName: IRO_History_Accessory_490798
+  Name: Unknown Watch (Arch Mage)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 220
+  Script: bonus bMatk,100; bonus bSpl,10; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490799
+  AegisName: IRO_History_Accessory_490799
+  Name: Unknown Watch (Shinkiro & Shiranui)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 220
+  Script: bonus bMatk,100; bonus bSpl,10; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490800
+  AegisName: IRO_History_Accessory_490800
+  Name: Unknown Watch (Elemental Master)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 220
+  Script: bonus bMatk,100; bonus bSpl,10; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490803
+  AegisName: IRO_History_Accessory_490803
+  Name: Mad Alchemist Glove
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bPow,5; bonus bSta,5; bonus bAtk,50; bonus bLongAtkRate,15; if (BaseLevel < 100) { bonus bLongAtkDef,20; bonus2 bSubRace,RC_DemiHuman,20; bonus2 bSubRace,RC_Player_Human,20;
+    bonus2 bSubRace,RC_Player_Doram,20; bonus bMaxHP,10000; bonus2 bSkillAtk,"CR_ACIDDEMONSTRATION",200; bonus4 bAutoSpellOnSkill,"CR_ACIDDEMONSTRATION","GN_SPORE_EXPLOSION",10,1000;
+    } if (BaseLevel >= 100) { bonus bPow,10; bonus bSta,10; .@lv7 = BaseLevel/7; .@lv10 = BaseLevel/10; bonus bLongAtkRate,.@lv7; bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WATER",5*.@lv10;
+    bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_GROUND",5*.@lv10; bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND",5*.@lv10; bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",5*.@lv10;
+    bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WATER_ATK",5*.@lv10; bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_GROUND_ATK",5*.@lv10; bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND_ATK",5*.@lv10;
+    bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE_ATK",5*.@lv10; }
+- Id: 490805
+  AegisName: IRO_History_Accessory_490805
+  Name: Priest Glove
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bSpl,5; bonus bWis,5; bonus bMatk,50; bonus2 bMagicAddSize,Size_All,15; if (BaseLevel < 100) { bonus2 bSubEle,Ele_All,15; bonus2 bSubRace,RC_DemiHuman,15;
+    bonus2 bSubRace,RC_Player_Human,15; bonus2 bSubRace,RC_Player_Doram,15; bonus bMaxHP,15000; bonus bMaxSP,1000; bonus2 bSkillAtk,"PR_MAGNUS",300; bonus2 bSkillAtk,"HW_GRAVITATION",150;
+    bonus4 bAutoSpellOnSkill,"PR_MAGNUS","HW_GRAVITATION",5,1000; } if (BaseLevel >= 100) { bonus bSpl,10; bonus bWis,10; .@lv7 = BaseLevel/7; .@lv10 = BaseLevel/10;
+    bonus2 bMagicAddSize,Size_All,.@lv7; bonus2 bSkillAtk,"AB_ADORAMUS",3*.@lv10; bonus2 bSkillAtk,"CD_FRAMEN",2*.@lv10; }
+- Id: 490807
+  AegisName: IRO_History_Accessory_490807
+  Name: Ring of Evil (Cardinal)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bCritical,15; bonus2 bAddClass,Class_All,15;
+- Id: 490808
+  AegisName: IRO_History_Accessory_490808
+  Name: Ring of Good (Windhawk)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCon,10; bonus bFixedCast,-500; bonus2 bAddClass,Class_All,15;
+- Id: 490812
+  AegisName: IRO_History_Accessory_490812
+  Name: Ring of Evil (Dragon Knight)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bCritical,15; bonus2 bAddClass,Class_All,15;
+- Id: 490813
+  AegisName: IRO_History_Accessory_490813
+  Name: Ring of Good (Imperial Guard)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bAtkRate,6; bonus2 bAddClass,Class_All,15;
+- Id: 490814
+  AegisName: IRO_History_Accessory_490814
+  Name: Ring of Evil (Troubadour & Trouvere)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bVariableCastrate,-15; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490815
+  AegisName: IRO_History_Accessory_490815
+  Name: Ring of Evil (Windhawk)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCon,10; bonus bFixedCast,-500; bonus2 bAddClass,Class_All,15;
+- Id: 490816
+  AegisName: IRO_History_Accessory_490816
+  Name: Ring of Good (Cardinal)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bVariableCastrate,-15; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490817
+  AegisName: IRO_History_Accessory_490817
+  Name: Necklace of Alnilam
+  Type: Armor
+  Weight: 200
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bMdef,20; bonus bAllTraitStats,20; bonus2 bAddSize,Size_All,30; bonus2 bMagicAddSize,Size_All,30; bonus bDelayrate,-20; if (vip_status(VIP_STATUS_ACTIVE)
+    || getstatus(SC_AID_PERIOD_PLUSEXP)) { bonus bAllStats,25; bonus2 bExpAddRace,RC_All,25; bonus2 bDropAddRace,RC_All,25; }
+- Id: 490818
+  AegisName: IRO_History_Accessory_490818
+  Name: Enhanced Restoration Ring-LT
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 150
+  Script: .@r = getrefine(); .@g = getenchantgrade(); bonus bAllStats,12; bonus bMaxHPrate,15; bonus bMdef,10; bonus bShortAtkRate,5*(.@r/4); bonus bLongAtkRate,5*(.@r/4);
+    bonus2 bMagicAtkEle,Ele_All,5*(.@r/4); if (.@r >= 9) { bonus bHealPower,30; bonus bHealPower2,30; } if (.@r >= 12) { bonus2 bAddEle,Ele_All,10; bonus2 bMagicAddEle,Ele_All,10;
+    } if (.@g >= ENCHANTGRADE_D) { bonus bPAtk,12; bonus bSMatk,12; } if (.@g >= ENCHANTGRADE_C) { bonus bAtk,100; bonus bMatk,100; } if (.@g >= ENCHANTGRADE_B) {
+    bonus2 bAddSize,Size_All,15; bonus2 bMagicAddSize,Size_All,15; } if (.@g >= ENCHANTGRADE_A) { skill "CD_MEDIALE_VOTUM",5; if (Class != Job_Cardinal) bonus2 bSkillCooldown,"CD_MEDIALE_VOTUM",120000;
+    }
+  Refineable: true
+  Gradable: true
+- Id: 490823
+  AegisName: IRO_History_Accessory_490823
+  Name: Survival Glove-LT
+  Type: Armor
+  Weight: 300
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 150
+  Script: bonus bMaxSPrate,10; bonus bMaxHPrate,10; bonus bDelayrate,-10; bonus bShortAtkRate,10; bonus bLongAtkRate,10;
+  Refineable: true
+- Id: 490832
+  AegisName: IRO_History_Accessory_490832
+  Name: Paladin Glove
+  Type: Armor
+  Weight: 200
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bSpl,10; bonus bSta,10; bonus bMatk,50; bonus bMaxHPrate,30; if (BaseLevel < 100) { bonus bMaxHP,30000; bonus bLongAtkDef,40; bonus2 bSubEle,Ele_All,40;
+    bonus2 bSkillAtk,"PA_PRESSURE",200; bonus4 bAutoSpellOnSkill,"PA_PRESSURE","AB_ADORAMUS",10,1000; } if (BaseLevel >= 100) { bonus bSpl,10; bonus bSta,10; .@lv7
+    = BaseLevel/7; .@lv15 = BaseLevel/15; bonus2 bMagicAddSize,Size_All,.@lv7; bonus2 bSkillAtk,"IG_CROSS_RAIN",3*.@lv15; }
+- Id: 490836
+  AegisName: IRO_History_Accessory_490836
+  Name: Chaos Necklace
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bAtk,70; bonus bAllTraitStats,7; bonus bDelayrate,-15; bonus2 bAddSize,Size_All,20; if (BaseLevel < 100) { bonus bMaxHP,10000; bonus bMaxSP,2000;
+    bonus2 bSubRace,RC_DemiHuman,20; bonus2 bSubRace,RC_Player_Human,20; bonus2 bSubSize,Size_Medium,20; bonus bFixedCast,-300; bonus2 bSkillAtk,"KN_BOWLINGBASH",150;
+    } if (BaseLevel >= 100) { bonus bPow,7; bonus bCrt,7; bonus bCon,7; .@lv6 = BaseLevel/6; .@lv10 = BaseLevel/10; bonus2 bAddSize,Size_All,.@lv6; bonus2 bSkillAtk,"DK_HACKANDSLASHER",2*.@lv10;
+    bonus2 bSkillAtk,"DK_STORMSLASH",2*.@lv10; }
+- Id: 490840
+  AegisName: IRO_History_Accessory_490840
+  Name: Ring of Evil (Imperial Guard)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bSpl,10; bonus bDelayrate,-10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490841
+  AegisName: IRO_History_Accessory_490841
+  Name: Ring of Good (Troubadour & Trouvere)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bCon,10; bonus bAtkRate,6; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490842
+  AegisName: IRO_History_Accessory_490842
+  Name: Veteran Glove
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bAtk,30; bonus bMatk,30; bonus bMaxHP,1500; bonus bMaxSP,150; bonus bAllStats,5;
+- Id: 490843
+  AegisName: IRO_History_Accessory_490843
+  Name: Ring of Good (Dragon Knight)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bPow,10; bonus bMaxHPrate,6; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490844
+  AegisName: IRO_History_Accessory_490844
+  Name: Ring of Evil (Elemental Master)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bSpl,10; bonus bDelayrate,-10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490849
+  AegisName: IRO_History_Accessory_490849
+  Name: Ring of Evil (Inquisitor)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bPow,10; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490850
+  AegisName: IRO_History_Accessory_490850
+  Name: Ring of Good (Shinkiro & Shiranui)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bPow,10; bonus bAtkRate,6; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490851
+  AegisName: IRO_History_Accessory_490851
+  Name: Ring of Good (Abyss Chaser)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bPow,10; bonus bAtkRate,6; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490852
+  AegisName: IRO_History_Accessory_490852
+  Name: Ring of Evil (Shadow Cross)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bPow,10; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490853
+  AegisName: IRO_History_Accessory_490853
+  Name: Ring of Evil (Meister)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bPow,10; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490854
+  AegisName: IRO_History_Accessory_490854
+  Name: Hunter's Locket
+  Type: Armor
+  Weight: 200
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMdef,20; bonus bAllStats,20; bonus bAllTraitStats,20; bonus bVariableCastrate,-20; bonus bLongAtkRate,30;
+- Id: 490856
+  AegisName: IRO_History_Accessory_490856
+  Name: Ring of Evil (Spirit Handler)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490857
+  AegisName: IRO_History_Accessory_490857
+  Name: Ring of Evil (Biolo)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bCritical,15; bonus2 bAddClass,Class_All,15;
+- Id: 490858
+  AegisName: IRO_History_Accessory_490858
+  Name: Ring of Good (Night Watch)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCon,10; bonus bCritical,15; bonus2 bAddClass,Class_All,15;
+- Id: 490859
+  AegisName: IRO_History_Accessory_490859
+  Name: Ring of Good (Night Watch II)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCon,10; bonus bAtkRate,6; bonus2 bAddClass,Class_All,15;
+- Id: 490862
+  AegisName: IRO_History_Accessory_490862
+  Name: Ring of Good (Inquisitor)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bCritical,15; bonus2 bAddClass,Class_All,15;
+- Id: 490866
+  AegisName: IRO_History_Accessory_490866
+  Name: Celine's Brooch-LT
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 150
+  Script: .@r = getrefine(); .@g = getenchantgrade(); bonus bMatkRate,10; bonus bMaxHP,3000; bonus bMaxSP,500; bonus bVariableCastrate,-30; bonus bAspd,2; if (.@r
+    >= 7) bonus bDelayrate,-7; if (.@r >= 13) bonus2 bMagicAddEle,Ele_All,10; if (.@g >= ENCHANTGRADE_D) skill "WL_RECOGNIZEDSPELL",3; if (.@g >= ENCHANTGRADE_C)
+    bonus2 bMagicAtkEle,Ele_All,10; if (.@g >= ENCHANTGRADE_B) bonus bSpl,5; if (.@g >= ENCHANTGRADE_A) bonus2 bMagicAddClass,Class_Boss,10;
+  Refineable: true
+  Gradable: true
+- Id: 490867
+  AegisName: IRO_History_Accessory_490867
+  Name: Celine Kimi Pendant-LT
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+    Right_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 150
+  Script: .@r = getrefine(); .@g = getenchantgrade(); bonus2 bMagicAtkEle,Ele_All,15; bonus bSpl,5; if (.@r >= 7) bonus bDelayrate,-7; if (.@r >= 13) bonus2 bMagicAddSize,Size_All,12;
+    if (.@g >= ENCHANTGRADE_D) bonus bMatkRate,8; if (.@g >= ENCHANTGRADE_C) bonus2 bMagicAddEle,Ele_All,10; if (.@g >= ENCHANTGRADE_B) bonus bSpl,5; if (.@g >= ENCHANTGRADE_A)
+    bonus2 bMagicAddClass,Class_Boss,10;
+  Refineable: true
+  Gradable: true
+- Id: 490868
+  AegisName: IRO_History_Accessory_490868
+  Name: Ring of Good (Soul Ascetic)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490869
+  AegisName: IRO_History_Accessory_490869
+  Name: Ring of Evil (Sky Emperor)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bAtkRate,6; bonus2 bAddClass,Class_All,15;
+- Id: 490870
+  AegisName: IRO_History_Accessory_490870
+  Name: Ring of Good (Biolo)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bAtkRate,6; bonus2 bAddClass,Class_All,15;
+- Id: 490871
+  AegisName: IRO_History_Accessory_490871
+  Name: Ring of Good (Spirit Handler)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bCritical,15; bonus2 bAddClass,Class_All,15;
+- Id: 490872
+  AegisName: IRO_History_Accessory_490872
+  Name: Ring of Evil (Night Watch)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCon,10; bonus bAtkRate,6; bonus2 bAddClass,Class_All,15;
+- Id: 490873
+  AegisName: IRO_History_Accessory_490873
+  Name: Ring of Evil (Night Watch II)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCon,10; bonus bCritical,15; bonus2 bAddClass,Class_All,15;
+- Id: 490874
+  AegisName: IRO_History_Accessory_490874
+  Name: Ring of Evil (Arch Mage)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490875
+  AegisName: IRO_History_Accessory_490875
+  Name: False Document Thief I
+  Type: Armor
+  Weight: 200
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bMdef,20; bonus bMatk,200; bonus2 bMagicAddSize,Size_All,20; skill "SO_POISON_BUSTER",5; bonus2 bSkillAtk,"EM_VENOM_SWAMP",50; bonus3 bAutoSpellWhenHit,"EM_VENOM_SWAMP",5,100;
+    bonus3 bAutoSpellWhenHit,"SO_CLOUD_KILL",5,100; bonus2 bMagicAtkEle,Ele_Poison,BaseLevel/5;
+- Id: 490876
+  AegisName: IRO_History_Accessory_490876
+  Name: False Document Swordman I
+  Type: Armor
+  Weight: 200
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bMdef,20; bonus bMatk,200; bonus2 bMagicAddSize,Size_All,20; skill "WL_CRIMSONROCK",5; bonus2 bSkillAtk,"EM_CONFLAGRATION",50; bonus3 bAutoSpellWhenHit,"EM_CONFLAGRATION",5,50;
+    .@lv = BaseLevel/5; bonus2 bMagicAtkEle,Ele_Fire,.@lv;
+  Refineable: true
+- Id: 490877
+  AegisName: IRO_History_Accessory_490877
+  Name: False Document Mage I
+  Type: Armor
+  Weight: 200
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bMdef,20; bonus bAtk,200; bonus bAspd,2; bonus2 bAddSize,Size_All,20; skill "LG_EARTHDRIVE",5; bonus2 bSkillAtk,"LG_EARTHDRIVE",70; bonus3 bAutoSpellWhenHit,"LG_EARTHDRIVE",5,100;
+    .@lv = BaseLevel/5; bonus2 bAddSize,Size_All,.@lv;
+  Refineable: true
+- Id: 490882
+  AegisName: IRO_History_Accessory_490882
+  Name: Ring of Evil(Soul Ascetic)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bFixedCast,-500; bonus2 bMagicAddSize,Size_All,15;
+- Id: 490883
+  AegisName: IRO_History_Accessory_490883
+  Name: Ring of Good (Sky Emperor)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bCritical,15; bonus2 bAddClass,Class_All,15;
+- Id: 490884
+  AegisName: IRO_History_Accessory_490884
+  Name: Dim Glacier Ring of Resonance (Abyss Chaser)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bSpl,10; bonus bMatkRate,10; bonus bDelayrate,-10; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490885
+  AegisName: IRO_History_Accessory_490885
+  Name: Dim Glacier Ring of Resonance (Inquisitor)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bPow,10; bonus bMaxHPrate,10; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490886
+  AegisName: IRO_History_Accessory_490886
+  Name: Ring of Evil (Hyper Novice)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490887
+  AegisName: IRO_History_Accessory_490887
+  Name: Ring of Good (Hyper Novice)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bAtkRate,6; bonus2 bAddClass,Class_All,15;
+- Id: 490888
+  AegisName: IRO_History_Accessory_490888
+  Name: Ring of Good (Arch Mage)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 215
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490907
+  AegisName: IRO_History_Accessory_490907
+  Name: Dim Glacier Ring of Resonance (Windhawk)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCon,10; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490908
+  AegisName: IRO_History_Accessory_490908
+  Name: Dim Glacier Ring of Resonance (Cardinal)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bPow,10; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490909
+  AegisName: IRO_History_Accessory_490909
+  Name: Dim Glacier Ring of Resonance (Meister)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bPow,10; bonus bAtkRate,6; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490910
+  AegisName: IRO_History_Accessory_490910
+  Name: Dim Glacier Ring of Resonance (Troubadour & Trouvere))
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bCon,10; bonus bAtkRate,6; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490920
+  AegisName: IRO_History_Accessory_490920
+  Name: Dark Chaser Ring
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 200
+  Script: bonus bMdef,30; bonus bInt,15; bonus bSpl,15; .@lv = BaseLevel/5; bonus2 bMagicAddRace,RC_All,.@lv; if (getskilllv("ABC_FROM_THE_ABYSS") >= 5) { bonus2
+    bSkillCooldown,"ABC_ABYSS_SQUARE",-2000; }
+- Id: 490927
+  AegisName: IRO_History_Accessory_490927
+  Name: Royal Necklace
+  Type: Armor
+  Weight: 1000
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 100
+  Script: bonus bMdef,15; bonus bAtk,100; bonus bMatk,100; bonus bAllStats,10; bonus bAllTraitStats,10; bonus bDelayrate,-10; bonus2 bAddSize,Size_All,10; bonus2
+    bMagicAddSize,Size_All,10; .@lv = BaseLevel/5; bonus2 bAddSize,Size_All,.@lv; bonus2 bMagicAddSize,Size_All,.@lv;
 - Id: 490940
   AegisName: IRO_History_Accessory_490940
   Name: '[Event] Fire Horse Charm'
@@ -137,11 +1501,181 @@ Body:
   Weight: 100
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
+    Right_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 1
   Script: bonus bAtk,50; bonus bMatk,50; bonus bAllStats,12;
+- Id: 490941
+  AegisName: IRO_History_Accessory_490941
+  Name: Dim Glacier Ring of Resonance (Arch Mage)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bSpl,10; bonus bMatkRate,6; bonus bDelayrate,-10; bonus2 bMagicAddClass,Class_All,15;
+- Id: 490942
+  AegisName: IRO_History_Accessory_490942
+  Name: Dim Glacier Ring of Resonance (Dragon Knight)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bPow,10; bonus bMaxHPrate,10; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490943
+  AegisName: IRO_History_Accessory_490943
+  Name: Dim Glacier Ring of Resonance (Shadow Cross)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bPow,10; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490944
+  AegisName: IRO_History_Accessory_490944
+  Name: Dim Glacier Ring of Resonance (Shinkiro & Shiranui)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bPow,10; bonus bCritical,15; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490957
+  AegisName: IRO_History_Accessory_490957
+  Name: Enhanced Restoration Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 150
+  Script: .@r = getrefine(); .@g = getenchantgrade(); bonus bAllStats,10; bonus bMaxHPrate,12; bonus bMdef,10; bonus2 bAddEle,Ele_All,5*(.@r/4); bonus2 bMagicAddEle,Ele_All,5*(.@r/4);
+    if (.@r >= 9) { bonus bHealPower,30; bonus bHealPower2,30; } if (.@r >= 12) { bonus2 bAddEle,Ele_All,8; bonus2 bMagicAddEle,Ele_All,8; } if (.@g >= ENCHANTGRADE_D)
+    { bonus bPAtk,8; bonus bSMatk,8; } if (.@g >= ENCHANTGRADE_C) { bonus bAtk,80; bonus bMatk,80; } if (.@g >= ENCHANTGRADE_B) { bonus2 bAddSize,Size_All,12; bonus2
+    bMagicAddSize,Size_All,12; } if (.@g >= ENCHANTGRADE_A) { if (Class != Job_Cardinal) { skill "CD_MEDIALE_VOTUM",3; bonus2 bSkillCooldown,"CD_MEDIALE_VOTUM",160000;
+    } }
+  Refineable: true
+  Gradable: true
+- Id: 490969
+  AegisName: IRO_History_Accessory_490969
+  Name: Dim Glacier Ring of Resonance (Imperial Guard)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bPow,10; bonus bAtkRate,10; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490970
+  AegisName: IRO_History_Accessory_490970
+  Name: Dim Glacier Ring of Resonance (Hyper Novice))
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bMatk,100; bonus bPow,10; bonus bSpl,10; bonus bCritical,15; bonus bMatkRate,6; bonus bDelayrate,10; bonus2 bAddClass,Class_All,15;
+    bonus2 bMagicAddClass,Class_All,15;
+- Id: 490971
+  AegisName: IRO_History_Accessory_490971
+  Name: Dim Glacier Ring of Resonance (Sky Emperor)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bPow,10; bonus bAtkRate,10; bonus bDelayrate,-10; bonus2 bAddClass,Class_All,15;
+- Id: 490972
+  AegisName: IRO_History_Accessory_490972
+  Name: Dim Glacier Ring of Resonance (Elemental Master)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bSpl,10; bonus bMatkRate,6; bonus bDelayrate,-10; bonus2 bMagicAddClass,Class_All,15;
+- Id: 491009
+  AegisName: IRO_History_Accessory_491009
+  Name: Dim Glacier Ring of Resonance (Spirit Handler)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
+- Id: 491010
+  AegisName: IRO_History_Accessory_491010
+  Name: Dim Glacier Ring of Resonance (Biolo)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bPow,10; bonus bCritical,15; bonus2 bAddClass,Class_All,15;
+- Id: 491011
+  AegisName: IRO_History_Accessory_491011
+  Name: Dim Glacier Ring of Resonance (Night Watch)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bAtk,100; bonus bDelayrate,-10; bonus bCon,10; bonus bAtkRate,10; bonus2 bAddClass,Class_All,15;
+- Id: 491012
+  AegisName: IRO_History_Accessory_491012
+  Name: Dim Glacier Ring of Resonance (Soul Ascetic)
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 230
+  Script: bonus bMatk,100; bonus bDelayrate,-10; bonus bSpl,10; bonus bFixedCast,-500; bonus2 bMagicAddClass,Class_All,15;
+- Id: 491013
+  AegisName: IRO_History_Accessory_491013
+  Name: Spin Ball
+  Type: Armor
+  Weight: 1000
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: .@r = getrefine(); .@g = getenchantgrade(); bonus bUnbreakableArmor; bonus bPow,15; bonus bCon,15; bonus bFlee2,50; bonus2 bSkillAtk,"RK_WINDCUTTER",50;
+    bonus bPow,3*(.@r/2); bonus bCon,3*(.@r/2); if (.@r >= 7) { bonus bVariableCastrate,-15; bonus bDelayrate,-15; } if (.@r >= 8) { bonus2 bAddSize,Size_All,20;
+    bonus2 bSkillAtk,"GC_ROLLINGCUTTER",50; } if (.@r >= 9) { bonus bDelayrate,-15; bonus2 bSkillAtk,"NC_AXETORNADO",50; } if (.@r >= 10) { bonus2 bAddEle,Ele_All,25;
+    bonus2 bSkillAtk,"GN_CART_TORNADO",50; } if (.@r >= 11) { bonus bPow,8; bonus bCon,8; } if (.@r >= 12) { bonus4 bAutoSpellOnSkill,"GC_ROLLINGCUTTER","GC_ROLLINGCUTTER",5,800;
+    bonus4 bAutoSpellOnSkill,"NC_AXETORNADO","NC_AXETORNADO",5,800; bonus4 bAutoSpellOnSkill,"GN_CART_TORNADO","GN_CART_TORNADO",10,800; } if (.@r >= 13) { bonus4
+    bAutoSpellOnSkill,"GC_ROLLINGCUTTER","RK_WINDCUTTER",5,400; bonus4 bAutoSpellOnSkill,"NC_AXETORNADO","RK_WINDCUTTER",5,400; bonus4 bAutoSpellOnSkill,"GN_CART_TORNADO","RK_WINDCUTTER",5,400;
+    } if (.@r >= 14) { bonus2 bSkillAtk,"RK_WINDCUTTER",120; } if (.@g >= ENCHANTGRADE_D) { bonus2 bAddSize,Size_All,30; } if (.@g >= ENCHANTGRADE_C) { bonus bAllTraitStats,10;
+    } if (.@g >= ENCHANTGRADE_B) { bonus2 bSkillAtk,"RK_WINDCUTTER",150; }
+  Refineable: true
+  Gradable: true
 - Id: 491053
   AegisName: IRO_History_Accessory_491053
   Name: Focused Love Ring
@@ -149,8 +1683,51 @@ Body:
   Weight: 0
   Slots: 1
   Locations:
-    Right_Accessory: true
     Left_Accessory: true
   ArmorLevel: 1
   EquipLevelMin: 1
   Script: bonus bMaxHPrate,30; bonus bMaxSPrate,30; bonus2 bAddSize,Size_All,30; bonus2 bMagicAddSize,Size_All,30; bonus2 bExpAddRace,RC_All,20; bonus2 bDropAddRace,RC_All,15;
+- Id: 491054
+  AegisName: IRO_History_Accessory_491054
+  Name: Focused Hatred Ring
+  Type: Armor
+  Weight: 100
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMaxHPrate,30; bonus bMaxSPrate,30; bonus2 bAddSize,Size_All,30; bonus2 bMagicAddSize,Size_All,30; bonus2 bExpAddRace,RC_All,20; bonus2 bDropAddRace,RC_All,15;
+- Id: 491057
+  AegisName: IRO_History_Accessory_491057
+  Name: Purple Haze
+  Type: Armor
+  Weight: 500
+  Slots: 1
+  Locations:
+    Left_Accessory: true
+  ArmorLevel: 2
+  EquipLevelMin: 100
+  Script: .@r = getrefine(); .@g = getenchantgrade(); bonus2 bHPLossRate,666,5000; bonus bMdef,25; bonus bPow,15; bonus bSpl,15; bonus2 bSkillAtk,"GC_CROSSIMPACT",50;
+    bonus2 bSkillAtk,"SC_FATALMENACE",50; autobonus3 "{ bonus bSpeedRate,25; bonus bPAtk,20; bonus bSMatk,20; }",1000,20000,"SC_REPRODUCE"; autobonus3 "{ bonus bSpeedRate,25;
+    bonus bPAtk,20; bonus bSMatk,20; }",1000,20000,"GC_WEAPONBLOCKING"; bonus bPow,3*(.@r/2); bonus bSpl,3*(.@r/2); if (.@r >= 8) { bonus bVariableCastrate,-15; bonus
+    bDelayrate,-15; bonus bAspd,3; } if (.@r >= 9) { bonus2 bAddSize,Size_All,20; bonus2 bMagicAddSize,Size_All,20; bonus2 bMagicAtkEle,Ele_Poison,20; bonus2 bSkillAtk,"GC_CROSSIMPACT",50;
+    bonus2 bSkillAtk,"SC_FATALMENACE",50; } if (.@r >= 10) { bonus4 bAutoSpellOnSkill,"GC_CROSSIMPACT","SO_POISON_BUSTER",5,600; bonus4 bAutoSpellOnSkill,"SC_FATALMENACE","SO_POISON_BUSTER",5,600;
+    } if (.@r >= 11) { bonus3 bAutoSpell,"EM_VENOM_SWAMP",5,100; bonus3 bAutoSpellWhenHit,"EM_VENOM_SWAMP",5,100; } if (.@r >= 12) { bonus bPow,8; bonus bSpl,8; bonus4
+    bAutoSpellOnSkill,"EM_VENOM_SWAMP","SO_CLOUD_KILL",5,1000; } if (.@r >= 13) { bonus2 bAddEle,Ele_All,30; bonus2 bMagicAddEle,Ele_All,30; bonus2 bMagicAtkEle,Ele_Poison,30;
+    } if (.@r >= 14) { bonus2 bSkillAtk,"GC_CROSSIMPACT",70; bonus2 bSkillAtk,"SC_FATALMENACE",70; } if (.@g >= ENCHANTGRADE_D) { bonus2 bAddSize,Size_All,30; bonus2
+    bMagicAddSize,Size_All,30; } if (.@g >= ENCHANTGRADE_C) { bonus bAllTraitStats,10; } if (.@g >= ENCHANTGRADE_B) { bonus bPAtk,15; bonus bSMatk,15; } if (.@g >=
+    ENCHANTGRADE_A) { bonus2 bSkillAtk,"SO_POISON_BUSTER",100; bonus2 bSkillAtk,"EM_VENOM_SWAMP",100; }
+  Refineable: true
+  Gradable: true
+- Id: 491087
+  AegisName: IRO_History_Accessory_491087
+  Name: Necklace of Mintaka
+  Type: Armor
+  Weight: 200
+  Slots: 1
+  Locations:
+    Right_Accessory: true
+  ArmorLevel: 1
+  EquipLevelMin: 1
+  Script: bonus bMdef,40; bonus bAllTraitStats,25; bonus bDelayrate,-30; bonus2 bAddSize,Size_All,40; bonus2 bMagicAddSize,Size_All,40;

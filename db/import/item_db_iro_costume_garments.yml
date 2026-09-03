@@ -1,0 +1,94 @@
+###########################################################################
+# iRO history Costume_Garment rows admitted for Malangdo Roulette/Curator.
+# Not Weaver stock. Weaver keeps EXCLUDED_COSTUME_IDS for these IDs.
+# Scripts: costume-only DP English (no combat effect) -> durability.
+###########################################################################
+
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 480605
+    AegisName: C_WOETE_1_US
+    Name: Costume TE Conqueror
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Weight: 0
+    Defense: 0
+    View: 197
+    Script: |
+      bonus bUnbreakableArmor;
+
+  - Id: 480606
+    AegisName: C_WOETE_2_US
+    Name: Costume TE Challenger
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Weight: 0
+    Defense: 0
+    View: 198
+    Script: |
+      bonus bUnbreakableArmor;
+
+  - Id: 480800
+    AegisName: C_Darklord_Aura
+    Name: Costume Dark Lord Aura
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Weight: 0
+    Defense: 0
+    View: 305
+    Script: |
+      bonus bUnbreakableArmor;
+
+  - Id: 480801
+    AegisName: C_Garmbebe_Bag
+    Name: Costume Hatii Bebe Backpack
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Weight: 0
+    Defense: 0
+    View: 306
+    Script: |
+      bonus bUnbreakableArmor;
+
+  - Id: 480802
+    AegisName: C_Joyful_Taogunka
+    Name: Costume Joyful Taogunka
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Weight: 0
+    Defense: 0
+    View: 2827
+    Script: |
+      bonus bUnbreakableArmor;
+
+  - Id: 480803
+    AegisName: C_Cynic_Guard
+    Name: Costume Cynic Guard
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Weight: 0
+    Defense: 0
+    View: 2828
+    Script: |
+      bonus bUnbreakableArmor;
