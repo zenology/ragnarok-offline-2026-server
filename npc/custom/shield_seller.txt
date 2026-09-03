@@ -4,7 +4,7 @@
 //= Equipment browses by client display name; Specialty by exact family.
 //============================================================
 
-paramk,33,160,0	script	Kaedra#offline	4_F_ESTLOVELOY,{
+paramk,33,166,4	script	Kaedra#offline	4_F_ESTLOVELOY,{
 	.@eac = eaclass();
 	if ((.@eac&EAJ_BASEMASK) == EAJ_SUMMONER) {
 		mes "[Kaedra]";

@@ -46,13 +46,16 @@ paramk,23,160,4	script	Lady Seraphine Vellmont#offline	4_EP16_EGEO,{
 			if (.@letter == 22) .@shop$ = "acc0#W";
 		}
 		if (.@cat == 1) {
-			.@shop$ = "acc1#S00";
+			.@family = select("Heroic Tokens:Illusion Equipment:Varmundt Rune Accessories") - 1;
+			if (.@family == 0) .@shop$ = "acc1#S00";
+			if (.@family == 1) .@shop$ = "acc1#S01";
+			if (.@family == 2) .@shop$ = "acc1#S02";
 		}
 	}
 	if (.@slot == 1) {
 		.@cat = select("Equipment:Specialty") - 1;
 		if (.@cat == 0) {
-			.@letter = select("A:B:D:E:G:H:I:M:O:R:S:T:V:Y") - 1;
+			.@letter = select("A:B:D:E:G:H:I:M:O:R:S:Y") - 1;
 			if (.@letter == 0) .@shop$ = "acl0#A";
 			if (.@letter == 1) .@shop$ = "acl0#B";
 			if (.@letter == 2) .@shop$ = "acl0#D";
@@ -64,12 +67,10 @@ paramk,23,160,4	script	Lady Seraphine Vellmont#offline	4_EP16_EGEO,{
 			if (.@letter == 8) .@shop$ = "acl0#O";
 			if (.@letter == 9) .@shop$ = "acl0#R";
 			if (.@letter == 10) .@shop$ = "acl0#S";
-			if (.@letter == 11) .@shop$ = "acl0#T";
-			if (.@letter == 12) .@shop$ = "acl0#V";
-			if (.@letter == 13) .@shop$ = "acl0#Y";
+			if (.@letter == 11) .@shop$ = "acl0#Y";
 		}
 		if (.@cat == 1) {
-			.@family = select("Automatic Equipment:Einbech Dungeon Safety Accessories:Gray Wolf Equipment:Illusion Equipment:King Schmidt's Stat Insignias:Memories of Thanatos - Brilliant Light Accessories:Memories of Thanatos - Sinful Accessories") - 1;
+			.@family = select("Automatic Equipment:Einbech Dungeon Safety Accessories:Glacier Accessories:Gray Wolf Equipment:Illusion Equipment:King Schmidt's Stat Insignias:Memories of Thanatos - Brilliant Light Accessories:Memories of Thanatos - Sinful Accessories:Varmundt Rune Accessories") - 1;
 			if (.@family == 0) .@shop$ = "acl1#S00";
 			if (.@family == 1) .@shop$ = "acl1#S01";
 			if (.@family == 2) .@shop$ = "acl1#S02";
@@ -77,12 +78,14 @@ paramk,23,160,4	script	Lady Seraphine Vellmont#offline	4_EP16_EGEO,{
 			if (.@family == 4) .@shop$ = "acl1#S04";
 			if (.@family == 5) .@shop$ = "acl1#S05";
 			if (.@family == 6) .@shop$ = "acl1#S06";
+			if (.@family == 7) .@shop$ = "acl1#S07";
+			if (.@family == 8) .@shop$ = "acl1#S08";
 		}
 	}
 	if (.@slot == 2) {
 		.@cat = select("Equipment:Specialty") - 1;
 		if (.@cat == 0) {
-			.@letter = select("A:B:C:D:F:H:I:M:N:R:S:T:U:V") - 1;
+			.@letter = select("A:B:C:D:F:H:I:M:N:R:S:U") - 1;
 			if (.@letter == 0) .@shop$ = "acr0#A";
 			if (.@letter == 1) .@shop$ = "acr0#B";
 			if (.@letter == 2) .@shop$ = "acr0#C";
@@ -94,12 +97,10 @@ paramk,23,160,4	script	Lady Seraphine Vellmont#offline	4_EP16_EGEO,{
 			if (.@letter == 8) .@shop$ = "acr0#N";
 			if (.@letter == 9) .@shop$ = "acr0#R";
 			if (.@letter == 10) .@shop$ = "acr0#S";
-			if (.@letter == 11) .@shop$ = "acr0#T";
-			if (.@letter == 12) .@shop$ = "acr0#U";
-			if (.@letter == 13) .@shop$ = "acr0#V";
+			if (.@letter == 11) .@shop$ = "acr0#U";
 		}
 		if (.@cat == 1) {
-			.@family = select("Automatic Equipment:Constellation Tower Stellar Seals:Einbech Dungeon Safety Accessories:Grace Equipment:Gray Wolf Equipment:Illusion Equipment:Imperial Equipment:Memories of Thanatos - Brilliant Light Accessories:Memories of Thanatos - Sinful Accessories:Noblesse Equipment") - 1;
+			.@family = select("Automatic Equipment:Constellation Tower Stellar Seals:Einbech Dungeon Safety Accessories:Glacier Accessories:Grace Equipment:Gray Wolf Equipment:Illusion Equipment:Imperial Equipment:Memories of Thanatos - Brilliant Light Accessories:Memories of Thanatos - Sinful Accessories:Noblesse Equipment:Varmundt Rune Accessories") - 1;
 			if (.@family == 0) .@shop$ = "acr1#S00";
 			if (.@family == 1) .@shop$ = "acr1#S01";
 			if (.@family == 2) .@shop$ = "acr1#S02";
@@ -110,6 +111,8 @@ paramk,23,160,4	script	Lady Seraphine Vellmont#offline	4_EP16_EGEO,{
 			if (.@family == 7) .@shop$ = "acr1#S07";
 			if (.@family == 8) .@shop$ = "acr1#S08";
 			if (.@family == 9) .@shop$ = "acr1#S09";
+			if (.@family == 10) .@shop$ = "acr1#S10";
+			if (.@family == 11) .@shop$ = "acr1#S11";
 		}
 	}
 	if (.@shop$ == "") close;
@@ -143,9 +146,11 @@ OnInit:
 -	pointshop	acc0#S	-1,#CASHPOINTS,2637:240,2638:240,2642:120,2643:120,2653:120,2715:2280,2730:2340,2733:2880,2764:120,2766:1200,2777:1800,2778:288,2819:1200,2825:288,2886:1800,2894:1200,2899:4560,2917:1200,2923:1536,2949:1560,2979:1872,2995:3120,28422:4560,32263:1560,490038:6000,490079:4320,490102:4680,490130:2760,490561:2700,490640:14580
 -	pointshop	acc0#T	-1,#CASHPOINTS,2644:1680,2770:1800,2820:1200,2942:1200,28596:3000,32265:312,490030:312,490083:6000,490193:3420,490258:2700,490404:2550,490413:4824,490740:1776
 -	pointshop	acc0#U	-1,#CASHPOINTS,2828:1560,2883:1560,2996:2280,32234:6750,490471:9360
--	pointshop	acc0#V	-1,#CASHPOINTS,2920:1200,2926:1536,28303:1560,28441:1200,490297:120,490299:3600,490300:3600,490301:3360
+-	pointshop	acc0#V	-1,#CASHPOINTS,2920:1200,2926:1536,28303:1560,28441:1200
 -	pointshop	acc0#W	-1,#CASHPOINTS,2634:120,2635:120,2668:240,2673:1440,2798:120,2890:288,2981:120,2994:1440,490691:9180
--	pointshop	acc1#S00	-1,#CASHPOINTS,28509:2976
+-	pointshop	acc1#S00	-1,#CASHPOINTS,490152:6960,490153:6960,490155:6960,490156:6960,490164:6960,490165:6960,490166:6960,490167:6960,490171:6960,490172:6960,490180:6960,490181:6960,490184:6960,490185:6960,490186:6960,490187:6960,490188:6960,490220:6960
+-	pointshop	acc1#S01	-1,#CASHPOINTS,28509:2976
+-	pointshop	acc1#S02	-1,#CASHPOINTS,490297:1980,490299:6480,490300:6480,490301:6240
 -	pointshop	acl0#A	-1,#CASHPOINTS,490091:2040,490093:2040,490337:4500,490595:3420
 -	pointshop	acl0#B	-1,#CASHPOINTS,490586:1560
 -	pointshop	acl0#D	-1,#CASHPOINTS,490336:8100
@@ -156,17 +161,17 @@ OnInit:
 -	pointshop	acl0#M	-1,#CASHPOINTS,490644:2700,490660:2700,490676:2700
 -	pointshop	acl0#O	-1,#CASHPOINTS,490545:5940
 -	pointshop	acl0#R	-1,#CASHPOINTS,490376:6090,490394:5220,490411:6300,490418:6960,490427:5940,490430:5220,490436:7440,490633:11847
--	pointshop	acl0#S	-1,#CASHPOINTS,28310:120,28495:2004,490305:4080
--	pointshop	acl0#T	-1,#CASHPOINTS,490307:3840
--	pointshop	acl0#V	-1,#CASHPOINTS,490306:4080
+-	pointshop	acl0#S	-1,#CASHPOINTS,28310:120,28495:2004
 -	pointshop	acl0#Y	-1,#CASHPOINTS,490319:8100
 -	pointshop	acl1#S00	-1,#CASHPOINTS,490025:3240,490027:3240
 -	pointshop	acl1#S01	-1,#CASHPOINTS,32250:5220,32251:5220
--	pointshop	acl1#S02	-1,#CASHPOINTS,490107:3240,490109:3240
--	pointshop	acl1#S03	-1,#CASHPOINTS,490070:4860,490120:6480
--	pointshop	acl1#S04	-1,#CASHPOINTS,32228:4050,32229:4050,32230:4350,32231:3000,32232:4500,32233:4050
--	pointshop	acl1#S05	-1,#CASHPOINTS,490057:6960,490059:7440,490061:7440,490063:6960,490065:6960,490067:6960
--	pointshop	acl1#S06	-1,#CASHPOINTS,490045:6960,490047:6960,490049:7440,490051:7440,490053:6960,490055:6960
+-	pointshop	acl1#S02	-1,#CASHPOINTS,490327:3480,490329:3480
+-	pointshop	acl1#S03	-1,#CASHPOINTS,490107:3240,490109:3240
+-	pointshop	acl1#S04	-1,#CASHPOINTS,490070:4860,490120:6480
+-	pointshop	acl1#S05	-1,#CASHPOINTS,32228:4050,32229:4050,32230:4350,32231:3000,32232:4500,32233:4050
+-	pointshop	acl1#S06	-1,#CASHPOINTS,490057:6960,490059:7440,490061:7440,490063:6960,490065:6960,490067:6960
+-	pointshop	acl1#S07	-1,#CASHPOINTS,490045:6960,490047:6960,490049:7440,490051:7440,490053:6960,490055:6960
+-	pointshop	acl1#S08	-1,#CASHPOINTS,490305:6960,490306:6960,490307:6720
 -	pointshop	acr0#A	-1,#CASHPOINTS,28510:2340,490090:1680,490092:1680,490889:9504
 -	pointshop	acr0#B	-1,#CASHPOINTS,490101:2550,490383:2550
 -	pointshop	acr0#C	-1,#CASHPOINTS,32296:384
@@ -177,17 +182,17 @@ OnInit:
 -	pointshop	acr0#M	-1,#CASHPOINTS,490642:3600,490665:2160,490670:2700
 -	pointshop	acr0#N	-1,#CASHPOINTS,490206:3060
 -	pointshop	acr0#R	-1,#CASHPOINTS,28483:1560,28595:9360,490100:2550,490229:2040,490288:3600,490334:3060,490382:2550,490400:2550,490641:11847
--	pointshop	acr0#S	-1,#CASHPOINTS,28311:120,28496:3528,490302:4080
--	pointshop	acr0#T	-1,#CASHPOINTS,490304:3840
+-	pointshop	acr0#S	-1,#CASHPOINTS,28311:120,28496:3528
 -	pointshop	acr0#U	-1,#CASHPOINTS,490276:3576,490277:3576,490278:3576
--	pointshop	acr0#V	-1,#CASHPOINTS,490303:4080
 -	pointshop	acr1#S00	-1,#CASHPOINTS,490024:3240,490026:3240
 -	pointshop	acr1#S01	-1,#CASHPOINTS,490131:3000,490132:6480,490133:6000,490134:4500,490135:6960,490136:6240,490137:6000
 -	pointshop	acr1#S02	-1,#CASHPOINTS,32248:4860,32249:6480
--	pointshop	acr1#S03	-1,#CASHPOINTS,490019:6960,490020:6000
--	pointshop	acr1#S04	-1,#CASHPOINTS,490106:3240,490108:3240
--	pointshop	acr1#S05	-1,#CASHPOINTS,28508:5220,490069:3240,490121:4050
--	pointshop	acr1#S06	-1,#CASHPOINTS,490017:6960,490018:6000
--	pointshop	acr1#S07	-1,#CASHPOINTS,490056:5220,490058:5580,490060:5580,490062:5220,490064:5220,490066:5220
--	pointshop	acr1#S08	-1,#CASHPOINTS,490044:5220,490046:5220,490048:5580,490050:5580,490052:5220,490054:5220
--	pointshop	acr1#S09	-1,#CASHPOINTS,490014:6960,490015:6000
+-	pointshop	acr1#S03	-1,#CASHPOINTS,490328:3480,490330:3480
+-	pointshop	acr1#S04	-1,#CASHPOINTS,490019:6960,490020:6000
+-	pointshop	acr1#S05	-1,#CASHPOINTS,490106:3240,490108:3240
+-	pointshop	acr1#S06	-1,#CASHPOINTS,28508:5220,490069:3240,490121:4050
+-	pointshop	acr1#S07	-1,#CASHPOINTS,490017:6960,490018:6000
+-	pointshop	acr1#S08	-1,#CASHPOINTS,490056:5220,490058:5580,490060:5580,490062:5220,490064:5220,490066:5220
+-	pointshop	acr1#S09	-1,#CASHPOINTS,490044:5220,490046:5220,490048:5580,490050:5580,490052:5220,490054:5220
+-	pointshop	acr1#S10	-1,#CASHPOINTS,490014:6960,490015:6000
+-	pointshop	acr1#S11	-1,#CASHPOINTS,490302:6960,490303:6960,490304:6720

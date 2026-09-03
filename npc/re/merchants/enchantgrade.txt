@@ -69,52 +69,58 @@ OnInit:
 
 paramk,34,184,4	script	Suribell#suribell	4_F_FRUIT,{
 	mes "[Suribell]";
-	mes "May good luck always be with you!";
-	mes "Welcome to Paramarket's Grade Enhancement Center~";
+	mes "Welcome to Paramarket's Grade Enhancement Center.";
+	mes "...That is what I am supposed to say.";
+	mes "I am Suribell. The merchants brought me here for Grade Enhancement work.";
 	next;
 	switch( select( "Enhance the equipment's grade.", "Exchange Etel items", "What is Grade Enhancement?" )) {
 		case 1:
 			mes "[Suribell]";
-			mes "Do you want to unlock the potential of your favorite equipment?";
-			mes "Explosions may also occur in the process of dealing with magical powers.";
+			mes "You want to unlock the potential of your favorite equipment?";
+			mes "I can do it. That is why they keep me here.";
+			mes "Please understand... explosions may occur when unstable magical power is handled.";
 			next;
 			mes "[Suribell]";
-			mes "Still, if you're trying to enhance your grade... !";
-			mes "I, Suribell, will do my best!";
+			mes "If you still wish to proceed, I will do the work carefully.";
+			mes "The guards dislike delays, but I dislike ruined equipment more.";
 			next;
 			switch( select( "I'll still do it!", "I'll think about it." ) ){
 				case 1:
 					mes "[Suribell]";
-					mes "Let's hold hands and have faith! Try clenching your teeth!";
+					mes "Then stay close and do not look nervous.";
+					mes "I will open the grade interface before anyone decides we are wasting time.";
 					close2;
 					enchantgradeui();
 					end;
 				case 2:
 					mes "[Suribell]";
-					mes "Okay! Let's drink a glass of cold water!";
+					mes "That is wise.";
+					mes "Think carefully before trusting your equipment to this place.";
 					close;
 			}
 		case 2:
 			mes "[Suribell]";
-			mes "You need etheric gems to enhance grades!";
-			mes "If you combine Etel Dust and jewels to make it, it is fine! An Etel jewel for adventurers is complete!";
-			mes "Would you like to combine jewels and Etel Dust?";
+			mes "Grade Enhancement requires etheric gems.";
+			mes "Etel Dust and jewels can be combined into Etel jewels for adventurers.";
+			mes "The merchants keep the exchange stocked because they need my work to continue.";
+			mes "Would you like to combine jewels and Etel Dust now?";
 			close2;
 			callshop "EnchantGradeExchange";
 			end;
 		case 3:
 			mes "[Suribell]";
-			mes "Occasionally, unstable jewels with a lot of pure magical power are found.";
-			mes "I decided to call such gems etheric gems.";
-			mes "Who? I am Suribell!";
+			mes "Occasionally, unstable jewels with a great deal of pure magical power are found.";
+			mes "I call them etheric gems.";
+			mes "That name is mine, at least.";
 			next;
 			mes "[Suribell]";
 			mes "The magical power of etheric gems sometimes awakens the hidden potential of equipment.";
-			mes "We call it grade enhancement because it goes up one tier!";
+			mes "We call it Grade Enhancement because the equipment rises by one tier.";
 			next;
 			mes "[Suribell]";
-			mes "The adventurer may have a potential that is unknown to him.";
-			mes "There is a risk that it can be destroyed if done wrong, but try it with faith!";
+			mes "The process is useful, but dangerous.";
+			mes "If it fails, the equipment can be destroyed.";
+			mes "Please do not let their promises make you forget the risk.";
 			close;
 	}
 
