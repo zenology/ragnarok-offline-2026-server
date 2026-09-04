@@ -1,0 +1,7 @@
+# Shadow Gear Broker import placeholder.
+# DP-only candidates remain blocked until a source-backed server row exists.
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body: []

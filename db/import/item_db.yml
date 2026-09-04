@@ -94,3 +94,4 @@ Footer:
     - Path: db/import/item_db_mordain_armor_effects.yml
     - Path: db/import/item_db_iro_weapons.yml
     - Path: db/import/item_db_iro_seraphine_combo_partners.yml
+    - Path: db/import/item_db_iro_shadow_gear.yml

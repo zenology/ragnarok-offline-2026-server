@@ -1,0 +1,3267 @@
+Header:
+  Type: BARTER_DB
+  Version: 2
+
+Body:
+  - Name: sg_w_00
+    Items:
+      - Index: 0
+        Item: S_Aimed_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 1
+        Item: S_Corrupt_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_2Para_AB_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Archbishop_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 145
+      - Index: 4
+        Item: S_Arms_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+  - Name: sg_w_01
+    Items:
+      - Index: 0
+        Item: S_Bearers_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: Rebeginer_Weapon_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Blitz_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Boomerang_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+  - Name: sg_w_02
+    Items:
+      - Index: 0
+        Item: S_Caster_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Cloaking_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 2
+        Item: S_Cri_Hit_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+  - Name: sg_w_03
+    Items:
+      - Index: 0
+        Item: S_Executioner_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S_Dexterous_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_2Para_SU_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_DoramMagical_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 4
+        Item: S_DoramPhysical_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 5
+        Item: S_Dragon_Killer_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_w_04
+    Items:
+      - Index: 0
+        Item: S_Elegant_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: Enchanting_Weapone_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Enhance_Force_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Enhance_Spirit_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 4
+        Item: S_Exceed_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 60
+      - Index: 5
+        Item: S_Exe_Ho_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 6
+        Item: S_Exo_Co_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 7
+        Item: S_Exorcist_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_w_05
+    Items:
+      - Index: 0
+        Item: S_F_Breath_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 1
+        Item: S_Fis_In_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 2
+        Item: S_Fishing_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S2_Force_Ex_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 4
+        Item: S_Force_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: S_Vibration_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_w_06
+    Items:
+      - Index: 0
+        Item: S_Gemstone_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S2_Gemstone_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_2Para_GN_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Genetic_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 4
+        Item: S_Greed_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 5
+        Item: S_2Para_GC_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Guillotine_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 7
+        Item: S_Gunslinger_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+  - Name: sg_w_07
+    Items:
+      - Index: 0
+        Item: S_Hasty_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 70
+      - Index: 1
+        Item: S_Heal_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 2
+        Item: S_Healing_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Hiding_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 4
+        Item: S_Holy_Water_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 5
+        Item: S_Hunting_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_w_08
+    Items:
+      - Index: 0
+        Item: S_Ignition_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Infinity_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 100
+      - Index: 2
+        Item: S_Insect_Net_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_w_09
+    Items:
+      - Index: 0
+        Item: S_2Para_KO_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Kingbird_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+  - Name: sg_w_10
+    Items:
+      - Index: 0
+        Item: S_Big_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 1
+        Item: S_Lucky_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_w_11
+    Items:
+      - Index: 0
+        Item: S_Minstrel_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_M_Corrupt_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_M_Sci_Hu_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_M_Scissors_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_M_Executioner_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: S_M_Dragon_K_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_M_Exe_Ho_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 7
+        Item: S_M_Exo_Co_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 8
+        Item: S_M_Exorcist_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 9
+        Item: S_M_Fis_In_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 10
+        Item: S_M_Fishing_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 11
+        Item: S_M_Vibration_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 12
+        Item: S_M_Holy_Water_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 13
+        Item: S_M_Hunting_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 14
+        Item: S_M_Insect_Net_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 15
+        Item: S_M_Viv_Dr_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 16
+        Item: S_Magical_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 17
+        Item: S_2Para_NC_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 18
+        Item: S_Mechanic_weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 19
+        Item: S_Medium_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 20
+        Item: S_2Para_WM_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 21
+        Item: S_MortalBlow_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+  - Name: sg_w_12
+    Items:
+      - Index: 0
+        Item: S_Neutral_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S2_Neutral_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Ninja_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+  - Name: sg_w_13
+    Items:
+      - Index: 0
+        Item: S_1Para_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 100
+      - Index: 1
+        Item: S_Penetration_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_PerfectSize_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 3
+        Item: S_Physical_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Scissors_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_w_14
+    Items:
+      - Index: 0
+        Item: S_2Para_RA_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Ranger_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_2Para_RL_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_2Para_LG_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Royalguard_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 5
+        Item: S_2Para_RK_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Runeknight_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_w_15
+    Items:
+      - Index: 0
+        Item: S_Sci_Hu_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 1
+        Item: Sentimental_Weapone_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_2Para_SC_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Shadowchaser_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 4
+        Item: T_Dex1_Weapon_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 5
+        Item: T_Dex2_Weapon_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 6
+        Item: S_Promotion_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 7
+        Item: S_Shooting_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 8
+        Item: S_Small_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 9
+        Item: S_Solid_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 10
+        Item: S_2Para_SO_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 11
+        Item: S_Sorcerer_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 12
+        Item: S_2Para_SP_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 13
+        Item: S_Spirit_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 14
+        Item: S2_Spirit_M_E_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 15
+        Item: S_Spiritual_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 16
+        Item: S2_Spiritual_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 17
+        Item: S_2Para_SJ_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 18
+        Item: S_Steal_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 19
+        Item: S_2Para_NV_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 20
+        Item: S_SuperNovice_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 21
+        Item: S_2Para_SR_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 22
+        Item: S_Sura_weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_w_16
+    Items:
+      - Index: 0
+        Item: S_Taekwon_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 1
+        Item: S_Teleport_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 2
+        Item: S_Tempest_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S_Timeoverload_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 4
+        Item: S_Tension_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_w_17
+    Items:
+      - Index: 0
+        Item: Unfreez_Weapon_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: Unfreez_Weapon_S2
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_w_18
+    Items:
+      - Index: 0
+        Item: S_Viv_Dr_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_w_19
+    Items:
+      - Index: 0
+        Item: S_Wanderer_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_2Para_WL_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Warlock_Weapon
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_0_00
+    Items:
+      - Index: 0
+        Item: S_2Para_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Alchemist_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Ancient_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Adurate_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 4
+        Item: S_Arrow_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 5
+        Item: S_Assassin_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Attack_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_0_01
+    Items:
+      - Index: 0
+        Item: S_Bard_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Basis_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+      - Index: 2
+        Item: S_Bearers_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S2_Bearers_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: Rebeginer_Armor_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: S_Blacksmith_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 6
+        Item: S_Blitz_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 7
+        Item: S_Breezy_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_0_02
+    Items:
+      - Index: 0
+        Item: S_Caster_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S2_Caster_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Cloaking_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 3
+        Item: S_Cluster_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 4
+        Item: S_ColdBolt_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 5
+        Item: S_W_Breath_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 6
+        Item: S_CriticalHit_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 70
+      - Index: 7
+        Item: S_Critical_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 8
+        Item: S_Crusader_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_0_03
+    Items:
+      - Index: 0
+        Item: S_Damned_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+      - Index: 1
+        Item: S_Dancer_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Dexterous_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Divine_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+      - Index: 4
+        Item: S_DoramMagical_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 5
+        Item: S_DoramPhysical_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_0_04
+    Items:
+      - Index: 0
+        Item: S_EarthSpike_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_Envenom_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+      - Index: 2
+        Item: S_ExeHoly_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 3
+        Item: S_Geist_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+      - Index: 4
+        Item: S_ExoCorrupt_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_0_05
+    Items:
+      - Index: 0
+        Item: S_FireBolt_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_FishInsect_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 2
+        Item: S_Flam_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+  - Name: sg_0_06
+    Items:
+      - Index: 0
+        Item: S_Gemstone_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Greed_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_0_07
+    Items:
+      - Index: 0
+        Item: S_Hallowed_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+      - Index: 1
+        Item: S_Hard_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Plasterer's_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S_Hasty_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Heal_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 5
+        Item: S_Hiding_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 6
+        Item: S_Hunter_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_0_08
+    Items:
+      - Index: 0
+        Item: S_Immune_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+      - Index: 1
+        Item: S_Insomniac_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_0_09
+    Items:
+      - Index: 0
+        Item: S_Kagerou_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S_KingbirdAncient_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 60
+      - Index: 2
+        Item: S_Knight_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_0_10
+    Items:
+      - Index: 0
+        Item: S_Big_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+      - Index: 1
+        Item: S_LightingBolt_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 2
+        Item: S_Lucky_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_0_11
+    Items:
+      - Index: 0
+        Item: S_MagicCompose_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_M_ExeHoly_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_M_ExoCorrupt_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_M_FishInsect_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_M_SciHunting_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: S_M_DragonVib_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Magical_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 7
+        Item: S2_Malicious_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 8
+        Item: S_Malicious_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 9
+        Item: S_Medium_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+      - Index: 10
+        Item: S_Monk_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_0_12
+    Items:
+      - Index: 0
+        Item: S_Oboro_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+  - Name: sg_0_13
+    Items:
+      - Index: 0
+        Item: S_1Para_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Peerless_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S2_Peerless_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S_Penetration_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_PerfectSize_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+      - Index: 5
+        Item: S_Physical_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 6
+        Item: S2_Plasterer's_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 7
+        Item: S_Priest_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_0_14
+    Items:
+      - Index: 0
+        Item: S_Rebellion_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Reload_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S2_Reload_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Rogue_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_0_15
+    Items:
+      - Index: 0
+        Item: S_Sage_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_SciHunting_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 2
+        Item: S_Promotion_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: T_Str1_Armor_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 4
+        Item: T_Str2_Armor_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 5
+        Item: S_Sigrun_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 6
+        Item: S_Small_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+      - Index: 7
+        Item: S_Immortal_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 8
+        Item: S_Sonic_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 9
+        Item: S_Soul_Reaper_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 10
+        Item: S_Spell_Flow_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 11
+        Item: S_Star_Emperor_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 12
+        Item: S_Steal_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_0_16
+    Items:
+      - Index: 0
+        Item: S_Teleport_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_Tempest_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Timeoverload_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Tornado_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_0_17
+    Items:
+      - Index: 0
+        Item: S_Underneath_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+      - Index: 1
+        Item: S_Saharic_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+  - Name: sg_0_18
+    Items:
+      - Index: 0
+        Item: S_DragonVib_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 1
+        Item: S_Vulcan_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_0_19
+    Items:
+      - Index: 0
+        Item: S_Windy_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 80
+      - Index: 1
+        Item: S_Wizard_Armor
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_1_00
+    Items:
+      - Index: 0
+        Item: S_2Para_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Advanced_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_AllRace_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S_Archbishop_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 4
+        Item: S_Arrow_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 5
+        Item: S_Athena_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Athletic_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_1_01
+    Items:
+      - Index: 0
+        Item: S_Basis_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+      - Index: 1
+        Item: S_Bearers_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Beginner_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: Rebeginer_Shield_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Blitz_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: S_Brutal_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 255
+  - Name: sg_1_02
+    Items:
+      - Index: 0
+        Item: S_Cadi_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+      - Index: 1
+        Item: S_Caster_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Cloaking_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 3
+        Item: S_Cluster_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 4
+        Item: S_W_Breath_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 5
+        Item: S_Cranial_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 255
+      - Index: 6
+        Item: S_Critical_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 115
+  - Name: sg_1_03
+    Items:
+      - Index: 0
+        Item: S_Damned_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+      - Index: 1
+        Item: S_Divine_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+      - Index: 2
+        Item: S_DoramMagical_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 145
+      - Index: 3
+        Item: S_DoramPhysical_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 145
+      - Index: 4
+        Item: S_Dragoon_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+  - Name: sg_1_04
+    Items:
+      - Index: 0
+        Item: S_Envenom_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+      - Index: 1
+        Item: S_Geist_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+      - Index: 2
+        Item: S_Expert_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_1_05
+    Items:
+      - Index: 0
+        Item: S_Flam_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+      - Index: 1
+        Item: S_Flameguard_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+  - Name: sg_1_06
+    Items:
+      - Index: 0
+        Item: S_Gargantua_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+      - Index: 1
+        Item: S_Gemstone_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S2_Gemstone_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Genetic_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Greed_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 5
+        Item: S_Guillotine_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Gunslinger_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_1_07
+    Items:
+      - Index: 0
+        Item: S_Hallowed_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+      - Index: 1
+        Item: S_Heal_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 2
+        Item: S_Healing_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Hiding_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 4
+        Item: S_Homers_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+  - Name: sg_1_08
+    Items:
+      - Index: 0
+        Item: S_ImmunedAthena_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_1_09
+    Items:
+      - Index: 0
+        Item: S_Magical_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Malicious_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Mechanic_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S_Minstrel_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_1_10
+    Items:
+      - Index: 0
+        Item: S_Ninja_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_1_11
+    Items:
+      - Index: 0
+        Item: S_1Para_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Penetration_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Physical_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_1_12
+    Items:
+      - Index: 0
+        Item: S_Ranger_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Reload_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Requiem_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+      - Index: 3
+        Item: S_Rookie_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Royalguard_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 5
+        Item: S_Runeknight_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_1_13
+    Items:
+      - Index: 0
+        Item: S_Safeguard_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+      - Index: 1
+        Item: S_Saharic_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+      - Index: 2
+        Item: S_Satanic_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 165
+      - Index: 3
+        Item: S_Shadowchaser_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Promotion_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: T_Luk1_Shield_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 6
+        Item: T_Luk2_Shield_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 7
+        Item: S_Sigrun_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 8
+        Item: S_Sonic_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 9
+        Item: S_Sorcerer_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 10
+        Item: S_Spell_Flow_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 11
+        Item: S2_Spell_Flow_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 12
+        Item: S_Stability_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 315
+      - Index: 13
+        Item: S_Steal_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 14
+        Item: S_SuperNovice_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 115
+      - Index: 15
+        Item: S_Sura_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_1_14
+    Items:
+      - Index: 0
+        Item: S_Taekwon_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 125
+      - Index: 1
+        Item: S_Teleport_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 2
+        Item: S_Tempest_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S_Timeoverload_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Tornado_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+  - Name: sg_1_15
+    Items:
+      - Index: 0
+        Item: S_Underneath_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+  - Name: sg_1_16
+    Items:
+      - Index: 0
+        Item: S_Vital_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Vulcan_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+  - Name: sg_1_17
+    Items:
+      - Index: 0
+        Item: S_Wanderer_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Warlock_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Windy_Shield
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 90
+  - Name: sg_2_00
+    Items:
+      - Index: 0
+        Item: S2_Adurate_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S_2Para_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Advanced_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Alchemist_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_AllRace_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 5
+        Item: S_Adurate_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 6
+        Item: S_Arrow_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 7
+        Item: S_Assassin_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 8
+        Item: S_Athletic_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_2_01
+    Items:
+      - Index: 0
+        Item: S_Bard_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Bearers_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S2_Bearers_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Beginner_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: Rebeginer_Shoes_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: S_Beholder_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 6
+        Item: S_Blacksmith_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 7
+        Item: S_Blitz_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 8
+        Item: S_Bloody_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 195
+  - Name: sg_2_02
+    Items:
+      - Index: 0
+        Item: S_Caster_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Champion_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Chemical_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 3
+        Item: S_Clamorous_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 195
+      - Index: 4
+        Item: S_Cloaking_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 5
+        Item: S_Cluster_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 6
+        Item: S_W_Breath_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 7
+        Item: S_Critical_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 8
+        Item: S_Crusader_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_2_03
+    Items:
+      - Index: 0
+        Item: S_Dancer_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Divine_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 2
+        Item: S_DoramMagical_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_DoramPhysical_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Dragoon_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_2_04
+    Items:
+      - Index: 0
+        Item: S_Expert_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_2_05
+    Items:
+      - Index: 0
+        Item: S_Fisher_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_2_06
+    Items:
+      - Index: 0
+        Item: S_Gemstone_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Greed_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_2_07
+    Items:
+      - Index: 0
+        Item: S_HardChamption_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Plasterer's_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Hasty_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S2_Hasty_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 4
+        Item: S_Heal_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 5
+        Item: S_Healing_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Hiding_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 7
+        Item: S_Hunter_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+  - Name: sg_2_08
+    Items:
+      - Index: 0
+        Item: S_Insecticide_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 1
+        Item: S_Insomniac_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S2_Insomniac_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_2_09
+    Items:
+      - Index: 0
+        Item: S_Kagerou_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S_Knight_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_2_10
+    Items:
+      - Index: 0
+        Item: S_Liberation_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 195
+  - Name: sg_2_11
+    Items:
+      - Index: 0
+        Item: S_Magical_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Malicious_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Monk_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_2_12
+    Items:
+      - Index: 0
+        Item: S_Oboro_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_2_13
+    Items:
+      - Index: 0
+        Item: S_1Para_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Peerless_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Penetration_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Physical_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Priest_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_2_14
+    Items:
+      - Index: 0
+        Item: S_Rebellion_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S_Reload_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Rogue_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Rookie_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_2_15
+    Items:
+      - Index: 0
+        Item: S_Sage_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S_Seraphim_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 2
+        Item: S_Promotion_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: T_Agi1_Shoes_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 4
+        Item: T_Agi2_Shoes_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 5
+        Item: S_Sonic_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Soul_Reaper_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 7
+        Item: S_Spell_Flow_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 8
+        Item: S_Star_Emperor_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 9
+        Item: S_Steal_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_2_16
+    Items:
+      - Index: 0
+        Item: S_Teleport_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_Tempest_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Timeoverload_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Tornado_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_2_17
+    Items:
+      - Index: 0
+        Item: S_Vital_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Vulcan_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_2_18
+    Items:
+      - Index: 0
+        Item: S_Wizard_Shoes
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_3_00
+    Items:
+      - Index: 0
+        Item: S_Acolyte_earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_2Para_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Aimed_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 3
+        Item: S_AllMighty_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 4
+        Item: S_Archer_earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: S_Arms_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Athena_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_3_01
+    Items:
+      - Index: 0
+        Item: S_Bearers_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: Rebeginer_Earring_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Blitz_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Boned_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 4
+        Item: S_Boomerang_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_3_02
+    Items:
+      - Index: 0
+        Item: S_Caster_earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Cloaking_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_3_03
+    Items:
+      - Index: 0
+        Item: S_Elegant_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: Enchanting_Earring_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_3_04
+    Items:
+      - Index: 0
+        Item: S_F_Breath_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Force_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Curse_Lift_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_3_05
+    Items:
+      - Index: 0
+        Item: S_Gemstone_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S2_Gemstone_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Gigantic_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 3
+        Item: S_Greed_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_3_06
+    Items:
+      - Index: 0
+        Item: S_Hard_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_Heal_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 2
+        Item: S_Hiding_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_3_07
+    Items:
+      - Index: 0
+        Item: S_Ignition_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Infinity_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 135
+      - Index: 2
+        Item: S_Int_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_3_08
+    Items:
+      - Index: 0
+        Item: S_Magical_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Magician_earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Merchant_earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S_MortalBlow_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+  - Name: sg_3_09
+    Items:
+      - Index: 0
+        Item: S_Neutral_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_3_10
+    Items:
+      - Index: 0
+        Item: S_1Para_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Penetration_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Physical_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Power_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_3_11
+    Items:
+      - Index: 0
+        Item: S_Restore_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_3_12
+    Items:
+      - Index: 0
+        Item: Sentimental_Earring_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Promotion_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: T_Vit1_Acc_R_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 3
+        Item: T_Vit2_Acc_R_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 4
+        Item: S_Shooting_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: S_Solid_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Spirit_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 7
+        Item: S_Spiritual_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 8
+        Item: S_Steal_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 9
+        Item: S_Swordman_earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_3_13
+    Items:
+      - Index: 0
+        Item: S_Teleport_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_Tempest_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Timeoverload_Earing
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Tension_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Thief_earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 5
+        Item: S_Titan_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+  - Name: sg_3_14
+    Items:
+      - Index: 0
+        Item: Unfreeze_Earing_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_3_15
+    Items:
+      - Index: 0
+        Item: Vitality_Earing_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: Vitality_Earing_S2
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_3_16
+    Items:
+      - Index: 0
+        Item: S_Wise_Earring
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_4_00
+    Items:
+      - Index: 0
+        Item: S_Acolyte_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S_2Para_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Aimed_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S_AllMighty_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 4
+        Item: S_Archer_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 5
+        Item: S_Arms_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_4_01
+    Items:
+      - Index: 0
+        Item: S_Bearers_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S2_Bearers_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: Rebeginer_Pendant_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Blitz_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Boned_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 5
+        Item: S_Boomerang_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_4_02
+    Items:
+      - Index: 0
+        Item: S_Caster_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Cloaking_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_4_03
+    Items:
+      - Index: 0
+        Item: S_Elegant_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: Enchanting_Pendant_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_4_04
+    Items:
+      - Index: 0
+        Item: S_F_Breath_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S_Force_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Curse_Lift_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_4_05
+    Items:
+      - Index: 0
+        Item: S_Gemstone_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Gigantic_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+      - Index: 2
+        Item: S_Greed_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_4_06
+    Items:
+      - Index: 0
+        Item: S_Heal_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_Hiding_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+  - Name: sg_4_07
+    Items:
+      - Index: 0
+        Item: S_Ignition_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: S_Infinity_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Int_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_4_08
+    Items:
+      - Index: 0
+        Item: S_Magical_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Magician_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Merchant_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 3
+        Item: S_MortalBlow_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+  - Name: sg_4_09
+    Items:
+      - Index: 0
+        Item: S_Neutral_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_4_10
+    Items:
+      - Index: 0
+        Item: S_1Para_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Penetration_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Physical_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Power_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_4_11
+    Items:
+      - Index: 0
+        Item: S_Rapid_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_Resist_Spell_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: S_Restore_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+  - Name: sg_4_12
+    Items:
+      - Index: 0
+        Item: Sentimental_Pendant_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 1
+        Item: S_Promotion_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 2
+        Item: T_Int1_Acc_L_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 3
+        Item: T_Int2_Acc_L_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 4
+        Item: S_Shooting_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 5
+        Item: S_Immortal_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 6
+        Item: S_Spirit_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 85
+      - Index: 7
+        Item: S_Spiritual_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 8
+        Item: S_Steal_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 9
+        Item: S_Swordman_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_4_13
+    Items:
+      - Index: 0
+        Item: S_Teleport_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 50
+      - Index: 1
+        Item: S_Tempest_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 2
+        Item: S_Timeoverload_Pandent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 3
+        Item: S_Tension_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 75
+      - Index: 4
+        Item: S_Thief_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 5
+        Item: S_Titan_Pendant
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 95
+  - Name: sg_4_14
+    Items:
+      - Index: 0
+        Item: S2_Curse_Lift_Pendent
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+      - Index: 1
+        Item: Unfreeze_Pendent_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105
+  - Name: sg_4_15
+    Items:
+      - Index: 0
+        Item: Vitality_Pendant_S
+        RequiredItems:
+          - Index: 0
+            Item: Evt_Cos_Coin
+            Amount: 105

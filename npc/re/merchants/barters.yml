@@ -49,6 +49,7 @@ Header:
 Footer:
   Imports:
   - Path: npc/re/merchants/barters/costume_catalog.yml
+  - Path: npc/re/merchants/barters/shadow_gear_broker.yml
   - Path: npc/re/merchants/barters/cashmall.yml
   - Path: npc/re/merchants/barters/enchan_illusion_dungeons.yml
   - Path: npc/re/merchants/barters/enchantgrade.yml

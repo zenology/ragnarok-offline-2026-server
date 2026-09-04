@@ -2,7 +2,7 @@
 //= Black-Market Arms Importer
 //= Soren imports proven iRO weapons from every direction.
 //= Browse is weapon type, then Equipment / Specialty / Rental / Event, then
-//= 0-9 or A-Z by client identifiedDisplayName, server Name, ID.
+//= 0-9 or A-Z by stripped client identifiedDisplayName only, then ID.
 //= Every SKU uses the audited Cash Point price. Missing client assets do not
 //= remove stock; this pass changes server data only.
 //============================================================
@@ -397,12 +397,11 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 13) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("C:D:S:V:W:") - 1;
+			.@letter = select("C:D:V:W:") - 1;
 			if (.@letter == 0) .@shop$ = "wep13_0#C";
 			else if (.@letter == 1) .@shop$ = "wep13_0#D";
-			else if (.@letter == 2) .@shop$ = "wep13_0#S";
-			else if (.@letter == 3) .@shop$ = "wep13_0#V";
-			else if (.@letter == 4) .@shop$ = "wep13_0#W";
+			else if (.@letter == 2) .@shop$ = "wep13_0#V";
+			else if (.@letter == 3) .@shop$ = "wep13_0#W";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Adulter Fides:Dim Glacier:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
@@ -521,7 +520,7 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 	if (.@type == 18) {
 		.@cat = select("Equipment:Specialty:") - 1;
 		if (.@cat == 0) {
-			.@letter = select("B:C:F:G:H:I:J:L:R:S:T:V:Z:") - 1;
+			.@letter = select("B:C:F:G:H:I:J:L:R:S:V:Z:") - 1;
 			if (.@letter == 0) .@shop$ = "wep18_0#B";
 			else if (.@letter == 1) .@shop$ = "wep18_0#C";
 			else if (.@letter == 2) .@shop$ = "wep18_0#F";
@@ -532,9 +531,8 @@ paramk,51,175,2	script	Soren#offline	4_M_ROTERT,{
 			else if (.@letter == 7) .@shop$ = "wep18_0#L";
 			else if (.@letter == 8) .@shop$ = "wep18_0#R";
 			else if (.@letter == 9) .@shop$ = "wep18_0#S";
-			else if (.@letter == 10) .@shop$ = "wep18_0#T";
-			else if (.@letter == 11) .@shop$ = "wep18_0#V";
-			else if (.@letter == 12) .@shop$ = "wep18_0#Z";
+			else if (.@letter == 10) .@shop$ = "wep18_0#V";
+			else if (.@letter == 11) .@shop$ = "wep18_0#Z";
 		}
 		if (.@cat == 1) {
 			.@letter = select("Adulter Fides:Dim Glacier:Dimensions:Glacier:Illusion:Poenitentia:Time Gap:Vivatus Fides:") - 1;
@@ -679,7 +677,7 @@ OnInit:
 -	pointshop	wep1_0#D	-1,#CASHPOINTS,700066:12135,700109:8780,1736:1920
 -	pointshop	wep1_0#E	-1,#CASHPOINTS,1732:1500,1746:300
 -	pointshop	wep1_0#F	-1,#CASHPOINTS,1745:5950,700100:13180,700101:13180
--	pointshop	wep1_0#G	-1,#CASHPOINTS,1716:1050,18122:2550,700008:6800
+-	pointshop	wep1_0#G	-1,#CASHPOINTS,18122:2550,700008:6800
 -	pointshop	wep1_0#I	-1,#CASHPOINTS,1737:2250
 -	pointshop	wep1_0#M	-1,#CASHPOINTS,700078:36125,18103:3000
 -	pointshop	wep1_0#P	-1,#CASHPOINTS,700009:3400
@@ -699,7 +697,7 @@ OnInit:
 -	pointshop	wep1_1#S10	-1,#CASHPOINTS,700035:11380,700034:11380,700033:11380
 -	pointshop	wep2_0#A	-1,#CASHPOINTS,13062:1680,1232:3000,13011:1200,13069:3600
 -	pointshop	wep2_0#B	-1,#CASHPOINTS,13061:2700
--	pointshop	wep2_0#C	-1,#CASHPOINTS,1228:12000,13004:1400,28705:1600,1241:3600,1206:1500
+-	pointshop	wep2_0#C	-1,#CASHPOINTS,1228:12000,28705:1600,1241:3600
 -	pointshop	wep2_0#D	-1,#CASHPOINTS,1242:1500,13038:2640,13034:1600,13001:1800
 -	pointshop	wep2_0#E	-1,#CASHPOINTS,1233:10200
 -	pointshop	wep2_0#F	-1,#CASHPOINTS,13089:1560,13090:4200,510151:11580,510150:12380
@@ -763,7 +761,7 @@ OnInit:
 -	pointshop	wep6_0#C	-1,#CASHPOINTS,1925:320,1934:1600,570036:10780,1939:1600
 -	pointshop	wep6_0#F	-1,#CASHPOINTS,570073:19980,570072:15780
 -	pointshop	wep6_0#G	-1,#CASHPOINTS,1930:975
--	pointshop	wep6_0#H	-1,#CASHPOINTS,1910:280,1944:2400
+-	pointshop	wep6_0#H	-1,#CASHPOINTS,1944:2400
 -	pointshop	wep6_0#L	-1,#CASHPOINTS,570037:12580
 -	pointshop	wep6_0#N	-1,#CASHPOINTS,1935:2400
 -	pointshop	wep6_0#P	-1,#CASHPOINTS,570005:8000
@@ -784,9 +782,9 @@ OnInit:
 -	pointshop	wep7_0#D	-1,#CASHPOINTS,1270:1560
 -	pointshop	wep7_0#F	-1,#CASHPOINTS,28050:2400,610071:13180
 -	pointshop	wep7_0#G	-1,#CASHPOINTS,1281:6300,1291:6900
--	pointshop	wep7_0#I	-1,#CASHPOINTS,1266:2550,1269:1440,1297:1680
+-	pointshop	wep7_0#I	-1,#CASHPOINTS,1269:1440,1297:1680
 -	pointshop	wep7_0#J	-1,#CASHPOINTS,28010:4800
--	pointshop	wep7_0#K	-1,#CASHPOINTS,1256:900,1258:900,1284:2640
+-	pointshop	wep7_0#K	-1,#CASHPOINTS,1284:2640
 -	pointshop	wep7_0#S	-1,#CASHPOINTS,1260:100,610045:8535
 -	pointshop	wep7_0#T	-1,#CASHPOINTS,610044:7935
 -	pointshop	wep7_0#V	-1,#CASHPOINTS,1264:2000,28008:1300
@@ -810,7 +808,7 @@ OnInit:
 -	pointshop	wep8_0#V	-1,#CASHPOINTS,1800:1300
 -	pointshop	wep8_1#S0	-1,#CASHPOINTS,560019:4800,560018:4800
 -	pointshop	wep8_1#S1	-1,#CASHPOINTS,560037:3375
--	pointshop	wep8_1#S2	-1,#CASHPOINTS,560061:10780,560060:10380
+-	pointshop	wep8_1#S2	-1,#CASHPOINTS,560060:10380,560061:10780
 -	pointshop	wep8_1#S3	-1,#CASHPOINTS,1866:7200,1865:5200
 -	pointshop	wep8_1#S4	-1,#CASHPOINTS,560081:12380
 -	pointshop	wep8_1#S5	-1,#CASHPOINTS,560032:2400
@@ -881,12 +879,12 @@ OnInit:
 -	pointshop	wep12_0#E	-1,#CASHPOINTS,1132:3600,1137:200
 -	pointshop	wep12_0#F	-1,#CASHPOINTS,500101:12780,500102:13180,500103:12380
 -	pointshop	wep12_0#G	-1,#CASHPOINTS,500063:11380
--	pointshop	wep12_0#H	-1,#CASHPOINTS,1128:4200,500007:3600
+-	pointshop	wep12_0#H	-1,#CASHPOINTS,500007:3600
 -	pointshop	wep12_0#I	-1,#CASHPOINTS,1141:3000,500005:3750,500008:5100
 -	pointshop	wep12_0#O	-1,#CASHPOINTS,13442:5400
 -	pointshop	wep12_0#P	-1,#CASHPOINTS,13404:1950
--	pointshop	wep12_0#R	-1,#CASHPOINTS,1111:2400,1125:4800,13421:3000
--	pointshop	wep12_0#S	-1,#CASHPOINTS,1127:1200,13465:5400,1114:2400,1134:1800,13461:4800,13460:4800,13462:4800,1136:3000,1148:1020
+-	pointshop	wep12_0#R	-1,#CASHPOINTS,13421:3000
+-	pointshop	wep12_0#S	-1,#CASHPOINTS,13465:5400,1134:1800,13461:4800,13460:4800,13462:4800,1136:3000,1148:1020
 -	pointshop	wep12_0#T	-1,#CASHPOINTS,32356:2400,13412:5400,13413:5400
 -	pointshop	wep12_0#V	-1,#CASHPOINTS,13455:1300,500066:7935
 -	pointshop	wep12_1#S0	-1,#CASHPOINTS,500025:4800,500026:9600
@@ -901,7 +899,6 @@ OnInit:
 -	pointshop	wep12_1#S9	-1,#CASHPOINTS,500027:11180,500028:11380
 -	pointshop	wep13_0#C	-1,#CASHPOINTS,13146:3600
 -	pointshop	wep13_0#D	-1,#CASHPOINTS,800027:8235,800026:7935
--	pointshop	wep13_0#S	-1,#CASHPOINTS,13100:3900
 -	pointshop	wep13_0#V	-1,#CASHPOINTS,13128:1300
 -	pointshop	wep13_0#W	-1,#CASHPOINTS,13107:2100
 -	pointshop	wep13_1#S0	-1,#CASHPOINTS,800003:6600
@@ -943,7 +940,7 @@ OnInit:
 -	pointshop	wep16_0#L	-1,#CASHPOINTS,1646:4400,1659:1800,550116:8535
 -	pointshop	wep16_0#M	-1,#CASHPOINTS,1692:1600,1693:1800,1661:1500,1654:2100
 -	pointshop	wep16_0#R	-1,#CASHPOINTS,1670:2280
--	pointshop	wep16_0#S	-1,#CASHPOINTS,1672:3000,550088:11980,550093:10780,550094:10780,1648:3000,1665:560,1668:2400
+-	pointshop	wep16_0#S	-1,#CASHPOINTS,1672:3000,550088:11980,550093:10780,550094:10780,1648:3000,1668:2400
 -	pointshop	wep16_0#T	-1,#CASHPOINTS,26173:2400,1636:4800
 -	pointshop	wep16_0#V	-1,#CASHPOINTS,1600:1300
 -	pointshop	wep16_0#W	-1,#CASHPOINTS,1660:4500,1614:200,1616:2400
@@ -960,13 +957,13 @@ OnInit:
 -	pointshop	wep16_1#S10	-1,#CASHPOINTS,550063:11380,550066:11780,550065:10980,550064:12180,550029:11380
 -	pointshop	wep17_0#B	-1,#CASHPOINTS,1396:2520,1375:3250,1385:100
 -	pointshop	wep17_0#C	-1,#CASHPOINTS,28106:1600
--	pointshop	wep17_0#D	-1,#CASHPOINTS,620022:8535,1370:1755
+-	pointshop	wep17_0#D	-1,#CASHPOINTS,620022:8535
 -	pointshop	wep17_0#E	-1,#CASHPOINTS,1393:5100
 -	pointshop	wep17_0#F	-1,#CASHPOINTS,620040:12380
 -	pointshop	wep17_0#G	-1,#CASHPOINTS,1387:6210,1369:3000
 -	pointshop	wep17_0#H	-1,#CASHPOINTS,1376:1950,1377:5700
 -	pointshop	wep17_0#M	-1,#CASHPOINTS,28116:3600
--	pointshop	wep17_0#T	-1,#CASHPOINTS,1368:3000,28101:4500,1361:1050
+-	pointshop	wep17_0#T	-1,#CASHPOINTS,1368:3000,28101:4500
 -	pointshop	wep17_0#V	-1,#CASHPOINTS,1384:1920,28107:1300
 -	pointshop	wep17_0#Y	-1,#CASHPOINTS,1392:5100
 -	pointshop	wep17_1#S0	-1,#CASHPOINTS,620019:1620
@@ -981,14 +978,13 @@ OnInit:
 -	pointshop	wep18_0#B	-1,#CASHPOINTS,1492:3120,1470:1200
 -	pointshop	wep18_0#C	-1,#CASHPOINTS,1484:1950,1466:3000,1476:3900,1498:1600
 -	pointshop	wep18_0#F	-1,#CASHPOINTS,630045:12380
--	pointshop	wep18_0#G	-1,#CASHPOINTS,1474:7200,1490:1770,1455:1200
+-	pointshop	wep18_0#G	-1,#CASHPOINTS,1474:7200,1490:1770
 -	pointshop	wep18_0#H	-1,#CASHPOINTS,1471:1200
 -	pointshop	wep18_0#I	-1,#CASHPOINTS,1483:2250
 -	pointshop	wep18_0#J	-1,#CASHPOINTS,630027:10980
--	pointshop	wep18_0#L	-1,#CASHPOINTS,1411:3000,1469:4800,630003:3400
+-	pointshop	wep18_0#L	-1,#CASHPOINTS,1469:4800,630003:3400
 -	pointshop	wep18_0#R	-1,#CASHPOINTS,26016:3000
 -	pointshop	wep18_0#S	-1,#CASHPOINTS,1477:9900
--	pointshop	wep18_0#T	-1,#CASHPOINTS,1461:1200
 -	pointshop	wep18_0#V	-1,#CASHPOINTS,1450:1300
 -	pointshop	wep18_0#Z	-1,#CASHPOINTS,1468:1440
 -	pointshop	wep18_1#S0	-1,#CASHPOINTS,630012:4800
@@ -1023,7 +1019,7 @@ OnInit:
 -	pointshop	wep19_1#S8	-1,#CASHPOINTS,640054:9980
 -	pointshop	wep19_1#S9	-1,#CASHPOINTS,640022:11380,640021:11380
 -	pointshop	wep20_0#A	-1,#CASHPOINTS,1191:3000
--	pointshop	wep20_0#B	-1,#CASHPOINTS,21001:3600,1182:2100,1162:4200
+-	pointshop	wep20_0#B	-1,#CASHPOINTS,21001:3600,1182:2100
 -	pointshop	wep20_0#C	-1,#CASHPOINTS,1196:1000,21015:1600
 -	pointshop	wep20_0#D	-1,#CASHPOINTS,1186:2400
 -	pointshop	wep20_0#E	-1,#CASHPOINTS,600041:8535
@@ -1032,7 +1028,7 @@ OnInit:
 -	pointshop	wep20_0#H	-1,#CASHPOINTS,600008:6800
 -	pointshop	wep20_0#K	-1,#CASHPOINTS,1170:1000,1189:4710
 -	pointshop	wep20_0#L	-1,#CASHPOINTS,21018:4800
--	pointshop	wep20_0#M	-1,#CASHPOINTS,21003:2400,1176:1920
+-	pointshop	wep20_0#M	-1,#CASHPOINTS,1176:1920
 -	pointshop	wep20_0#R	-1,#CASHPOINTS,21039:1800
 -	pointshop	wep20_0#S	-1,#CASHPOINTS,1167:3000
 -	pointshop	wep20_0#T	-1,#CASHPOINTS,1181:4200,21059:2400

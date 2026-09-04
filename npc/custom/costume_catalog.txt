@@ -5,7 +5,7 @@
 //= Regenerate with Knowledge Base/tools/generate_costume_catalog.py.
 //============================================================
 
-malangdo,112,162,7	script	#offline	4_CAT_MERMASTER,{
+malangdo,116,169,6	script	#offline	4_CAT_MERMASTER,{
 	mes "[Costume Curator]";
 	mes "The catalog is sorted. The curator is still being assembled.";
 	mes "Bring " + mesitemlink(7000) + " if you find something that belongs in your wardrobe.";
