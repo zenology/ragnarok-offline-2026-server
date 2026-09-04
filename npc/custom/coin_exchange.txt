@@ -5,7 +5,7 @@
 //= Cash Points back into Zeny.
 //= Buy rate: 1,000 Zeny for 1 Cash Point.
 //= Buy promotion: every 10 purchased points awards 1 bonus point.
-//= Cash-out rate: 1 Cash Point for 750 Zeny. No cash-out bonus.
+//= Cash-out rate: 1 Cash Point for 500 Zeny. No cash-out bonus.
 //= Optional gacha: one 0-100 roll with a stake multiplier of
 //= 1 per 1,000 Zeny.
 //============================================================
@@ -214,7 +214,7 @@ paramk,26,181,4	script	Coin Exchange#offline	563,{
 
 OnInit:
 	.ZenyPerPoint = 1000;
-	.ZenyPerCashOut = 750;
+	.ZenyPerCashOut = 500;
 	.PromotionSize = 10;
 	setunittitle(getnpcid(0), "<Cash Point Exchange>");
 	end;
