@@ -5,6 +5,7 @@ import { createRootRoute, createRoute, createRouter, Link, Outlet } from '@tanst
 import { SiteShell } from '@/components/templates'
 import BlackMarketPage from '@/pages/black-market'
 import CostumePage from '@/pages/costumes'
+import JobChangesPage from '@/pages/job-changes'
 import LandingPage from '@/pages/landing'
 
 declare module '@tanstack/react-router' {
@@ -54,6 +55,17 @@ const costumesRoute = createRoute({
   component: CostumePage
 })
 
-const routeTree = rootRoute.addChildren([landingRoute, blackMarketRoute, costumesRoute])
+const jobChangesRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/job-changes',
+  component: JobChangesPage
+})
+
+const routeTree = rootRoute.addChildren([
+  landingRoute,
+  blackMarketRoute,
+  costumesRoute,
+  jobChangesRoute
+])
 
 export const router = createRouter({ routeTree })

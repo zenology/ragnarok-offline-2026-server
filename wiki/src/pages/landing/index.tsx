@@ -22,6 +22,12 @@ const guides = [
     title: 'Costumes in Malangdo',
     description:
       'Find every costume acquisition, Fashion Stone, and enhancement service in one route.'
+  },
+  {
+    to: '/job-changes',
+    number: '03',
+    title: 'Job Changes',
+    description: 'Find the NPC, guild, or fallback Job Master for every supported job path.'
   }
 ] as const
 

@@ -149,9 +149,9 @@ export const rookeShelves = [
 ]
 
 export const harlanCatalogs = [
-  { name: 'Equipment', count: 394 },
+  { name: 'Equipment', count: 498 },
   { name: 'Rental', count: 19 },
-  { name: 'Specialty', count: 37 },
+  { name: 'Specialty', count: 54 },
   { name: 'Event', count: 45 }
 ]
 

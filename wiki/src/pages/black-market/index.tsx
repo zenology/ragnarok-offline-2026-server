@@ -5,7 +5,12 @@ import {
   faCoins,
   faGem,
   faHatWizard,
+  faRing,
+  faShieldHalved,
+  faShirt,
+  faShoePrints,
   faStore,
+  faUserSecret,
   faWandMagic
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -123,14 +128,56 @@ export default function BlackMarketPage(): ReactNode {
               location="Market hall · 41, 173"
               title="Harlan"
               description="Browse equipment, rentals, specialty circlets, and event headgear. Specialty opens by endgame set, including Temporal, Helm of Faith, Glacier, Thanos, and Rune Crowns."
-              tag="613 hats · priced by power"
+              tag="616 hats · priced by power"
             />
             <ServiceCard
               icon={faWandMagic}
               location="Market hall · 51, 175"
               title="Soren"
-              description="Browse 745 weapons by type. Specialty drawers use the weapon family name, so you can go straight to a set such as EDDA Biolab, Illusion, Frontier, Glacier, or Fides."
-              tag="745 weapons · CP"
+              description="Browse 719 weapons by type. Specialty drawers use the weapon family name, so you can go straight to a set such as EDDA Biolab, Illusion, Frontier, Glacier, or Fides."
+              tag="719 weapons · CP"
+            />
+            <ServiceCard
+              icon={faShieldHalved}
+              location="Market hall · 37, 163"
+              title="Mordain"
+              description="Browse body armor in Equipment and Specialty catalogs, with Specialty families separated from ordinary gear."
+              tag="319 armor · CP"
+            />
+            <ServiceCard
+              icon={faShieldHalved}
+              location="Market hall · 33, 166"
+              title="Kaedra"
+              description="Recover shields through Equipment and Specialty drawers, organized for quick browsing."
+              tag="Shield recovery · CP"
+            />
+            <ServiceCard
+              icon={faShoePrints}
+              location="Market hall · 23, 185"
+              title="Tess"
+              description="Browse footgear recovery stock, including verified Specialty families and complete client-asset coverage."
+              tag="Footgear · CP"
+            />
+            <ServiceCard
+              icon={faShirt}
+              location="Market hall · 24, 160"
+              title="Weaver"
+              description="Browse garment recovery equipment with imported executable effects and verified client assets."
+              tag="326 garments · CP"
+            />
+            <ServiceCard
+              icon={faRing}
+              location="Market hall · 23, 160"
+              title="Lady Seraphine Vellmont"
+              description="Browse accessory recovery stock by letter and verified accessory family, including imported combo partners."
+              tag="Accessories · CP"
+            />
+            <ServiceCard
+              icon={faUserSecret}
+              location="Market hall · 47–51, 186"
+              title="Card Sellers"
+              description="Use the card-seller drawers to exchange monster cards for Cash Points and browse the available card catalog."
+              tag="Cards · CP"
             />
             <ServiceCard
               icon={faBoxArchive}
