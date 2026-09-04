@@ -1,0 +1,170 @@
+//===== Ragnarok Offline =====================================
+//= Generated Shadow Gear Broker
+//= All rows come from the audited local + Divine Pride Shadowgear universe.
+//= Currency: Event Stone Coin (7000). Base price: 50, rounded up.
+//============================================================
+
+malangdo,112,163,0	script	Shadow Gear Broker#offline	4_F_JOB_BLACKSMITH,{
+	mes "[Shadow Gear Broker]";
+	mes "Every verified Shadow weapon and armor, catalogued by name.";
+	mes "Bring Event Stone Coins if you want to take one with you.";
+	next;
+	.@type = select("Weapon:Armor:Cancel");
+	if (.@type == 3) close;
+	if (.@type == 1) {
+		.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:N:P:R:S:T:U:V:W:Cancel") - 1;
+		if (.@letter < 0 || .@letter >= 20) close;
+		switch (.@letter) {
+			case 0: .@shop$ = "sg_w_00"; break;
+			case 1: .@shop$ = "sg_w_01"; break;
+			case 2: .@shop$ = "sg_w_02"; break;
+			case 3: .@shop$ = "sg_w_03"; break;
+			case 4: .@shop$ = "sg_w_04"; break;
+			case 5: .@shop$ = "sg_w_05"; break;
+			case 6: .@shop$ = "sg_w_06"; break;
+			case 7: .@shop$ = "sg_w_07"; break;
+			case 8: .@shop$ = "sg_w_08"; break;
+			case 9: .@shop$ = "sg_w_09"; break;
+			case 10: .@shop$ = "sg_w_10"; break;
+			case 11: .@shop$ = "sg_w_11"; break;
+			case 12: .@shop$ = "sg_w_12"; break;
+			case 13: .@shop$ = "sg_w_13"; break;
+			case 14: .@shop$ = "sg_w_14"; break;
+			case 15: .@shop$ = "sg_w_15"; break;
+			case 16: .@shop$ = "sg_w_16"; break;
+			case 17: .@shop$ = "sg_w_17"; break;
+			case 18: .@shop$ = "sg_w_18"; break;
+			case 19: .@shop$ = "sg_w_19"; break;
+		}
+	} else {
+		.@part = select("Armor:Shield:Shoes:Right Accessory:Left Accessory:Cancel") - 1;
+		if (.@part < 0 || .@part >= 5) close;
+		// The generator emits one explicit part branch per location below.
+		if (.@part >= 0) {
+			if (.@part == 0) {
+				.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:O:P:R:S:T:U:V:W:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 20) close;
+				switch (.@letter) {
+					case 0: .@shop$ = "sg_0_0"; break;
+					case 1: .@shop$ = "sg_0_1"; break;
+					case 2: .@shop$ = "sg_0_2"; break;
+					case 3: .@shop$ = "sg_0_3"; break;
+					case 4: .@shop$ = "sg_0_4"; break;
+					case 5: .@shop$ = "sg_0_5"; break;
+					case 6: .@shop$ = "sg_0_6"; break;
+					case 7: .@shop$ = "sg_0_7"; break;
+					case 8: .@shop$ = "sg_0_8"; break;
+					case 9: .@shop$ = "sg_0_9"; break;
+					case 10: .@shop$ = "sg_0_10"; break;
+					case 11: .@shop$ = "sg_0_11"; break;
+					case 12: .@shop$ = "sg_0_12"; break;
+					case 13: .@shop$ = "sg_0_13"; break;
+					case 14: .@shop$ = "sg_0_14"; break;
+					case 15: .@shop$ = "sg_0_15"; break;
+					case 16: .@shop$ = "sg_0_16"; break;
+					case 17: .@shop$ = "sg_0_17"; break;
+					case 18: .@shop$ = "sg_0_18"; break;
+					case 19: .@shop$ = "sg_0_19"; break;
+				}
+			}
+			if (.@part == 1) {
+				.@letter = select("A:B:C:D:E:F:G:H:I:M:N:P:R:S:T:U:V:W:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 18) close;
+				switch (.@letter) {
+					case 0: .@shop$ = "sg_1_0"; break;
+					case 1: .@shop$ = "sg_1_1"; break;
+					case 2: .@shop$ = "sg_1_2"; break;
+					case 3: .@shop$ = "sg_1_3"; break;
+					case 4: .@shop$ = "sg_1_4"; break;
+					case 5: .@shop$ = "sg_1_5"; break;
+					case 6: .@shop$ = "sg_1_6"; break;
+					case 7: .@shop$ = "sg_1_7"; break;
+					case 8: .@shop$ = "sg_1_8"; break;
+					case 9: .@shop$ = "sg_1_9"; break;
+					case 10: .@shop$ = "sg_1_10"; break;
+					case 11: .@shop$ = "sg_1_11"; break;
+					case 12: .@shop$ = "sg_1_12"; break;
+					case 13: .@shop$ = "sg_1_13"; break;
+					case 14: .@shop$ = "sg_1_14"; break;
+					case 15: .@shop$ = "sg_1_15"; break;
+					case 16: .@shop$ = "sg_1_16"; break;
+					case 17: .@shop$ = "sg_1_17"; break;
+				}
+			}
+			if (.@part == 2) {
+				.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:O:P:R:S:T:V:W:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 19) close;
+				switch (.@letter) {
+					case 0: .@shop$ = "sg_2_0"; break;
+					case 1: .@shop$ = "sg_2_1"; break;
+					case 2: .@shop$ = "sg_2_2"; break;
+					case 3: .@shop$ = "sg_2_3"; break;
+					case 4: .@shop$ = "sg_2_4"; break;
+					case 5: .@shop$ = "sg_2_5"; break;
+					case 6: .@shop$ = "sg_2_6"; break;
+					case 7: .@shop$ = "sg_2_7"; break;
+					case 8: .@shop$ = "sg_2_8"; break;
+					case 9: .@shop$ = "sg_2_9"; break;
+					case 10: .@shop$ = "sg_2_10"; break;
+					case 11: .@shop$ = "sg_2_11"; break;
+					case 12: .@shop$ = "sg_2_12"; break;
+					case 13: .@shop$ = "sg_2_13"; break;
+					case 14: .@shop$ = "sg_2_14"; break;
+					case 15: .@shop$ = "sg_2_15"; break;
+					case 16: .@shop$ = "sg_2_16"; break;
+					case 17: .@shop$ = "sg_2_17"; break;
+					case 18: .@shop$ = "sg_2_18"; break;
+				}
+			}
+			if (.@part == 3) {
+				.@letter = select("A:B:C:E:F:G:H:I:M:N:P:R:S:T:U:V:W:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 17) close;
+				switch (.@letter) {
+					case 0: .@shop$ = "sg_3_0"; break;
+					case 1: .@shop$ = "sg_3_1"; break;
+					case 2: .@shop$ = "sg_3_2"; break;
+					case 3: .@shop$ = "sg_3_3"; break;
+					case 4: .@shop$ = "sg_3_4"; break;
+					case 5: .@shop$ = "sg_3_5"; break;
+					case 6: .@shop$ = "sg_3_6"; break;
+					case 7: .@shop$ = "sg_3_7"; break;
+					case 8: .@shop$ = "sg_3_8"; break;
+					case 9: .@shop$ = "sg_3_9"; break;
+					case 10: .@shop$ = "sg_3_10"; break;
+					case 11: .@shop$ = "sg_3_11"; break;
+					case 12: .@shop$ = "sg_3_12"; break;
+					case 13: .@shop$ = "sg_3_13"; break;
+					case 14: .@shop$ = "sg_3_14"; break;
+					case 15: .@shop$ = "sg_3_15"; break;
+					case 16: .@shop$ = "sg_3_16"; break;
+				}
+			}
+			if (.@part == 4) {
+				.@letter = select("A:B:C:E:F:G:H:I:M:N:P:R:S:T:U:V:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 16) close;
+				switch (.@letter) {
+					case 0: .@shop$ = "sg_4_0"; break;
+					case 1: .@shop$ = "sg_4_1"; break;
+					case 2: .@shop$ = "sg_4_2"; break;
+					case 3: .@shop$ = "sg_4_3"; break;
+					case 4: .@shop$ = "sg_4_4"; break;
+					case 5: .@shop$ = "sg_4_5"; break;
+					case 6: .@shop$ = "sg_4_6"; break;
+					case 7: .@shop$ = "sg_4_7"; break;
+					case 8: .@shop$ = "sg_4_8"; break;
+					case 9: .@shop$ = "sg_4_9"; break;
+					case 10: .@shop$ = "sg_4_10"; break;
+					case 11: .@shop$ = "sg_4_11"; break;
+					case 12: .@shop$ = "sg_4_12"; break;
+					case 13: .@shop$ = "sg_4_13"; break;
+					case 14: .@shop$ = "sg_4_14"; break;
+					case 15: .@shop$ = "sg_4_15"; break;
+				}
+			}
+		}
+	}
+	if (.@shop$ == "") close;
+	close2;
+	callshop(.@shop$);
+	end;
+}
