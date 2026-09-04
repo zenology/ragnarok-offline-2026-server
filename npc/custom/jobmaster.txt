@@ -139,6 +139,9 @@ function	Job_Options	{
 
 // Begin of the NPC
 	mes .NPCName$;
+	mes "I am the spirit of the true Doppelganger, lingering here in this place.";
+	mes "Your current path has reached its limit.";
+	mes "Step beyond that limit and ascend to a new level. I can guide you through the awakening.";
 	Check_Riding();
 	Check_SkillPoints();
 
@@ -247,6 +250,16 @@ function	Job_Menu	{
 function	Job_Change	{
 	.@previous_class = Class;
 	.@to_cls = getarg(0);
+	if (eaclass(.@to_cls)&EAJL_FOURTH) {
+		if (countitem(6417) < 100 || countitem(7000) < 200) {
+			mes "I can guide you beyond your current limits and into a new level, but you must give me " +
+				mesitemlink(6417, false) + " x100 and " + mesitemlink(7000, false) + " x200.";
+			mes "You can check for them in Malangdo.";
+			close;
+		}
+		delitem 6417,100; // Silvervine Fruit
+		delitem 7000,200; // Event Stone Coin (Malangdo cookie-shop currency)
+	}
 	next;
 	mes .NPCName$;
 	mes "You are now " + callfunc("F_InsertArticle", jobname(.@to_cls)) + "!";
@@ -278,6 +291,12 @@ function	Confirm_Change	{
 	if( .@class < 0 || eaclass(.@class) == -1 ) {
 		mes "Unknown Class Error.";
 		close;
+	}
+	if (eaclass(.@class)&EAJL_FOURTH) {
+		mes "I can guide you beyond your current limits and into a new level, but you must give me " +
+			mesitemlink(6417, false) + " x100 and " + mesitemlink(7000, false) + " x200.";
+		mes "You can check for them in Malangdo.";
+		next;
 	}
 	mes "Do you want to change into ^0055FF"+jobname(.@class)+"^000000 class?";
 	.@job_option$ = " ~ Change into ^0055FF"+jobname(.@class)+"^000000 class";
@@ -402,7 +421,7 @@ function	Get_Job_Equip	{
 
 OnInit:
 	// Initialisation, do not edit these
-	.NPCName$ = "[Job Master]";
+	.NPCName$ = "Doppelganger";
 
 	// Settings
 	.FourthClass = true;				// Enable fourth classes?
