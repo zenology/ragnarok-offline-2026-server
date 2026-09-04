@@ -16,7 +16,7 @@
 //= 2.0 Added 4th class [Lemongrass]
 //============================================================
 
-prontera,153,193,6	script	Job Master	123,{
+dali,65,113,4	script	Doppelganger	8_DOPPEL,{
 function Get_Job_Equip;
 // Checks if the Player has the required level.
 // closes if not, returns if yes
@@ -25,11 +25,11 @@ function	Require_Level	{
 		.@blvl = getarg(0) - BaseLevel;
 		.@jlvl = getarg(1) - JobLevel;
 		mes "Level requirement:";
-		mes ((getarg(0)>1)? 
+		mes ((getarg(0)>1)?
 			"^bb0000"+getarg(0)+"^000000 (^bb0000Base^000000) / ":"")+"^00bb00"+
 			getarg(1)+"^000000 (^00bb00Job^000000)";
 		mes "You need " +
-			((.@blvl > 0) ? "^bb0000"+.@blvl+"^000000 more base levels " + 
+			((.@blvl > 0) ? "^bb0000"+.@blvl+"^000000 more base levels " +
 				((.@jlvl > 0) ? "and " : "") : "") +
 			((.@jlvl > 0) ? "^00bb00"+.@jlvl+"^000000 more job levels " : "") +
 			"to continue.";
@@ -145,47 +145,22 @@ function	Job_Options	{
 	// initialisation
 	.@eac = eaclass();
 	.@fourth_possible = Can_Change_Fourth();
-	.@third_possible = Can_Change_Third();
-	.@rebirth_possible = Can_Rebirth();
-	.@first_eac = .@eac&EAJ_BASEMASK;
-	.@second_eac = .@eac&EAJ_UPPERMASK;
+	// Only Fourth Job fallback paths are offered here.
 	// Note: These are already set in pc.cpp
 	// BaseClass = roclass(.@eac&EAJ_BASEMASK) which is the players First Class
 	// BaseJob = roclass(.@eac&EAJ_UPPERMASK) which is the players Second Class
 	//dispbottom "Debug: eac ("+.@eac+"), third ("+.@third_possible+"), rebirth("+.@rebirth_possible+"), BaseClass ("+BaseClass+"), BaseJob ("+BaseJob+")";
-		
+
 	// From here on the jobmaster checks the current class
 	// and fills the array `.@job_opt` with possible
 	// job options for the player.
-	
-	if( .@rebirth_possible ) {
-		// Rebirth option (displayed on the top of the menu)
-		Require_Level(.Req_Rebirth[0], .Req_Rebirth[1]);
-		Job_Options(.@job_opt, Job_Novice_High);
-	}
-	if( .@third_possible ) {
-		// Third Job change (displayed below rebirth)
-		Require_Level(.Req_Third[0], .Req_Third[1]);
-		Job_Options(.@job_opt, roclass(.@eac|EAJL_THIRD));
-	}
+
 	if( .@fourth_possible ) {
 		// Fourth Job change (displayed below rebirth)
 		Require_Level(.Req_Fourth[0], .Req_Fourth[1]);
 		Job_Options(.@job_opt, roclass(.@eac|EAJL_FOURTH));
 	}
-	 
-	if (.SecondExpanded && 
-	   (.@eac&EAJ_UPPERMASK) == EAJ_SUPER_NOVICE && // is Super Novice
-	   !(eaclass()&EAJL_THIRD) ) {				 	// not already Expanded SN
-		// (Baby) Super Novice to Expanded (Baby) Super Novice
-	   	if( !Is_Baby(.@eac) || (.BabyClass && .BabyExpanded) ) {
-			// .BabyClass & .BabyExpanded must be enabled if the is a baby
-			Require_Level(.Req_Exp_SNOVI[0], .Req_Exp_SNOVI[1]);
-			Job_Options(.@job_opt,roclass(.@eac|EAJL_THIRD)); // Expanded SN is "third" cls
-		}
-	}
 
-	// babies don't get to become 4th jobs
 	if (.FourthExpanded && .@eac == EAJ_REBELLION) {
 		Require_Level(.Req_Fourth[0], .Req_Fourth[1]);
 		Job_Options(.@job_opt, roclass(EAJ_NIGHT_WATCH));
@@ -193,97 +168,24 @@ function	Job_Options	{
 
 	if (.FourthExpanded && .@eac == EAJ_KAGEROUOBORO) {
 		Require_Level(.Req_Fourth[0], .Req_Fourth[1]);
-		Job_Options(.@job_opt, roclass(EAJ_SHINKIRO_SHIRANUI));
+		Job_Options(.@job_opt, roclass(EAJ_SHINKIROSHIRANUI));
 	}
 
 	if (.FourthExpanded && .@eac == EAJ_SUPER_NOVICE_E) {
 		Require_Level(.Req_Fourth[0], .Req_Fourth[1]);
 		Job_Options(.@job_opt, roclass(EAJ_HYPER_NOVICE));
 	}
-	
-	if (.FourthExpanded && .@eac == EAJ_SUMMONER) {
-		Require_Level(.Req_SHandler[0], .Req_SHandler[1]);
-		Job_Options(.@job_opt, roclass(EAJ_SPIRIT_HANDLER));
+
+	if (.FourthExpanded && .@eac == EAJ_STAR_EMPEROR) {
+		Require_Level(.Req_Fourth[0], .Req_Fourth[1]);
+		Job_Options(.@job_opt, roclass(EAJ_SKY_EMPEROR));
 	}
 
-	if (.SecondExpanded && 
-		((.@eac&(~EAJL_BABY)) == EAJ_NINJA || 		// is (Baby) Ninja
-		(.@eac&(~EAJL_BABY)) == EAJ_GUNSLINGER)) {	// is (Baby) Gunslinger
-		// (Baby) Ninja to (Baby) Kagerou / Oboro
-		// (Baby) Gunslinger to (Baby) Rebellion
-		if( !Is_Baby(.@eac) || (.BabyClass && .BabyExpanded) ) {
-			// .BabyClass & .BabyExpanded must be enabled if the is a baby
-			Require_Level(.Req_Exp_NJ_GS[0], .Req_Exp_NJ_GS[1]);
-			// Kagerou, Oboro, Rebellion are considered as a 2-1 class
-			Job_Options(.@job_opt, roclass(.@eac|EAJL_2_1));
-		}
+	if (.FourthExpanded && .@eac == EAJ_SOUL_REAPER) {
+		Require_Level(.Req_Fourth[0], .Req_Fourth[1]);
+		Job_Options(.@job_opt, roclass(EAJ_SOUL_ASCETIC));
 	}
-	
-	// Player is Job_Novice, Job_Novice_High or Job_Baby
-	if (.@first_eac == EAJ_NOVICE && .@second_eac != EAJ_SUPER_NOVICE) {
-		// MAPID_NOVICE, MAPID_SUPER_NOVICE, MAPID_NOVICE_HIGH, MAPID_BABY
-		Require_Level(.Req_First[0], .Req_First[1]);
-		switch(Class) {
-			case Job_Novice:
-				// First job change
-				Job_Options(.@job_opt,Job_Swordman,
-					Job_Mage, Job_Archer, Job_Acolyte, Job_Merchant, Job_Thief,
-					Job_Super_Novice, Job_Taekwon, Job_Gunslinger, Job_Ninja);
-				if( .BabyNovice )
-					Job_Options(.@job_opt, Job_Baby);
-				break;
-			case Job_Novice_High:
-				// Job change after rebirth
-				if( .LastJob && lastJob )
-					Job_Options(.@job_opt,
-						roclass((eaclass(lastJob)&EAJ_BASEMASK)|EAJL_UPPER));
-				else
-					Job_Options(.@job_opt, 
-						Job_Swordman_High, Job_Mage_High, Job_Archer_High,
-						Job_Acolyte_High, Job_Merchant_High, Job_Thief_High);
-				break;
-			case Job_Baby:
-				if( !.BabyClass )
-					break;
-				// First job change as a baby
-				Job_Options(.@job_opt, Job_Baby_Swordman, Job_Baby_Mage,
-					Job_Baby_Archer,Job_Baby_Acolyte, Job_Baby_Merchant,
-					Job_Baby_Thief);
-				if( .BabyExpanded )
-					Job_Options(.@job_opt, Job_Super_Baby, Job_Baby_Taekwon,
-						Job_Baby_Gunslinger, Job_Baby_Ninja);
-				if( .BabySummoner )
-					Job_Options(.@job_opt, Job_Baby_Summoner);
-				break;
-			default:
-				mes "An error has occurred.";
-				close;
-		}
-	} else if( Is_First_Cls(.@eac) || 				// First Class
-			   Is_First_Cls(.@eac&(~EAJL_UPPER)) ||	// Trans. First Cls
-			   (.BabyClass && Is_First_Cls(.@eac&(~EAJL_BABY))) ) {	// Baby First Cls
-		// Player is First Class (not Novice)
-		// most jobs should have two options here  (2-1 and 2-2)
-		.@class1 = roclass(.@eac|EAJL_2_1); // 2-1
-		.@class2 = roclass(.@eac|EAJL_2_2); // 2-2
-		// dispbottom "Debug: Classes: class1 ("+.@class1+"), class2 ("+.@class2+")";
-		if(.LastJob && lastJob && (.@eac&EAJL_UPPER)) {
-			// Player is rebirth Cls and linear class changes are enforced
-			Require_Level(.Req_Second[0], .Req_Second[1]);
-			Job_Options(.@job_opt, lastJob + Job_Novice_High);
-		} else {
-			// Class is not enforced, player can decide.
-			if( .@class1 > 0 ) { // 2-1
-				Require_Level(.Req_Second[0], .Req_Second[1]);
-				Job_Options(.@job_opt, .@class1);
-			}
-			if( .@class2 > 0 ) { // 2-2
-				Require_Level(.Req_Second[0], .Req_Second[1]);
-				Job_Options(.@job_opt, .@class2);
-			}
-		}
-	}
-	
+
 	// Displaying the Job Menu defined by .@job_opt.
 	// .@job_opt should not be changed below this line.
 	function Job_Menu;
@@ -381,8 +283,8 @@ function	Confirm_Change	{
 	.@job_option$ = " ~ Change into ^0055FF"+jobname(.@class)+"^000000 class";
 	if( .@class == Job_Novice_High)
 		.@job_option$ = " ~ ^0055FFRebirth^000000";
-	
-	if (select(.@job_option$+": ~ ^777777" + 
+
+	if (select(.@job_option$+": ~ ^777777" +
 			((.@back) ?"Go back" : "Cancel") + "^000000") == 1) {
 		Job_Change(.@class);
 	}
@@ -501,7 +403,7 @@ function	Get_Job_Equip	{
 OnInit:
 	// Initialisation, do not edit these
 	.NPCName$ = "[Job Master]";
-	
+
 	// Settings
 	.FourthClass = true;				// Enable fourth classes?
 	.FourthExpanded = true;				// Enable new expanded fourth classes: Ex. Hyper Novice, Rebellion, Shinkiro/Shiranui?
@@ -528,7 +430,7 @@ OnInit:
 	setarray .Req_Exp_SNOVI[0],99,99; 	// Minimum base level, job level to turn into Expanded Super Novice
 	setarray .Req_SHandler[0],200,60;	// Minimum base level, job level to turn into Spirit Handler
 	.SNovice = 45;						// Minimum base level to turn into Super Novice
-	
+
 	// Setting adjustments by PACKETVER
 	if( PACKETVER < 20161207 ) {
 		if( .BabyExpanded )
