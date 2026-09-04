@@ -2,7 +2,7 @@
 //= Card Eater
 //===== Description: =========================================
 //= Feeds a curated 120-card Normal-monster whitelist into the
-//= Malangdo costume loop for Silvervine Fruit and Event Stone Coin.
+//= Malangdo costume loop for an exclusive Silvervine or Cookie reward.
 //= Payout is based on the whitelist card's level class.
 //============================================================
 
@@ -119,23 +119,22 @@ L_Feed:
 	input .@amount, 1, .@owned;
 
 	.@card_class = callsub(S_GetCardClass, .@selected_id);
-	.@normal_fruit = .NormalFruit[.@card_class - 1] * .@amount;
-	.@extra_fruit = .ExtraFruit[.@card_class - 1] * .@amount;
-	.@extra_coin = .ExtraCoin[.@card_class - 1] * .@amount;
+	.@silvervine_reward = .NormalFruit[.@card_class - 1] * .@amount;
+	.@cookie_reward = .CookieCoin[.@card_class - 1] * .@amount;
 
 	mes "[Card Eater]";
-	mes "Choose your reward. I do not serve both plates for free.";
+	mes "Choose one reward. I do not serve both plates at once.";
 	next;
-	switch (select("Normal serving:Extras serving:Keep the card.")) {
+	switch (select("Silvervine:Cookie:Keep the card.")) {
 	case 1:
-		.@extras = 0;
-		.@fruit_reward = .@normal_fruit;
-		.@coin_reward = 0;
+		.@reward_id = 6417;
+		.@reward_amount = .@silvervine_reward;
+		.@reward_name$ = "Silvervine Fruit";
 		break;
 	case 2:
-		.@extras = 1;
-		.@fruit_reward = .@extra_fruit;
-		.@coin_reward = .@extra_coin;
+		.@reward_id = 7000;
+		.@reward_amount = .@cookie_reward;
+		.@reward_name$ = "Event Stone Coin";
 		break;
 	default:
 		goto L_Feed;
@@ -143,11 +142,7 @@ L_Feed:
 
 	mes "[Card Eater]";
 	mes "^0055FF" + mesitemlink(.@selected_id, false) + " x" + .@amount + "^000000?";
-	mes "I will eat them and give you ^0055FF" + .@fruit_reward + " Silvervine Fruit^000000";
-	if (.@coin_reward)
-		mes "Plus ^0055FF" + .@coin_reward + " Event Stone Coin^000000. Shiny crumbs!";
-	else if (.@extras)
-		mes "No Event Stone Coin for Class 1. Your crumbs are not shiny enough yet.";
+	mes "I will eat them and give you ^0055FF" + .@reward_amount + " " + .@reward_name$ + "^000000.";
 	mes "Once I crunch, there are no refunds. My stomach has no undo button.";
 	next;
 	if (select("Let the cat eat.:Keep the card.") != 1)
@@ -166,13 +161,8 @@ L_Feed:
 		goto L_Feed;
 	}
 
-	setarray .@reward_ids[0], 6417;
-	setarray .@reward_amounts[0], .@fruit_reward;
-	.@reward_count = 1;
-	if (.@coin_reward) {
-		.@reward_ids[.@reward_count] = 7000;
-		.@reward_amounts[.@reward_count++] = .@coin_reward;
-	}
+	setarray .@reward_ids[0], .@reward_id;
+	setarray .@reward_amounts[0], .@reward_amount;
 	if (!checkweight2(.@reward_ids, .@reward_amounts)) {
 		mes "[Card Eater]";
 		mes "Your fruit bowl or shiny-crumb jar cannot hold that much.";
@@ -181,10 +171,8 @@ L_Feed:
 	}
 
 	delitem .@selected_id, .@amount;
-	getitem 6417, .@fruit_reward;
-	if (.@coin_reward)
-		getitem 7000, .@coin_reward;
-	logmes "Card Eater: ate " + .@amount + " x item " + .@selected_id + "; card class " + .@card_class + "; extras " + .@extras + "; Silvervine " + .@fruit_reward + "; Event Stone Coin " + .@coin_reward;
+	getitem .@reward_id, .@reward_amount;
+	logmes "Card Eater: ate " + .@amount + " x item " + .@selected_id + "; card class " + .@card_class + "; mode " + .@reward_name$ + "; reward item " + .@reward_id + "; reward amount " + .@reward_amount;
 
 	mes "[Card Eater]";
 	mes "Crunch. Crunch. Delicious paper.";
@@ -284,8 +272,7 @@ OnInit:
 	freeloop 1;
 	.PageSize = 10;
 	setarray .NormalFruit[0], 2,8,14,30;
-	setarray .ExtraFruit[0], 2,6,10,20;
-	setarray .ExtraCoin[0], 0,2,4,10;
+	setarray .CookieCoin[0], 10,30,50,90;
 
 	setarray .Class1[0], 4659,4663,4664,4021,4017,4022,4037,4034,4031,4036,4007,4006,4009,4030,4040,4014,4032,4020,4025,4033,4013,4074,4039,4063,4048,4044,4052,4041,4045,4066;
 	setarray .Class2[0], 4104,4064,4117,4079,4114,4120,4118,27122,27123,27124,4325,4150,4161,4228,4299,4313,4185,4268,4194,4222,4171,4422,4082,4091,4167,4124,4166,4158,4432,4369;
