@@ -11,7 +11,8 @@ type SiteShellProps = {
 const navigation = [
   { label: 'Home', to: '/' },
   { label: 'Black Market', to: '/black-market' },
-  { label: 'Costumes', to: '/costumes' }
+  { label: 'Costumes', to: '/costumes' },
+  { label: 'Job Changes', to: '/job-changes' }
 ] as const
 
 export function SiteShell({ children }: SiteShellProps): ReactNode {

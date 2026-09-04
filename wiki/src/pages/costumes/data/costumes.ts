@@ -7,6 +7,13 @@ export type CostumeService = {
 
 export const acquisitionServices: CostumeService[] = [
   {
+    name: 'Shadow Gear Broker',
+    location: 'Malangdo · 112, 162',
+    description:
+      'Browse Shadow Equipment through Event Stone Coin barter drawers. This is the offline recovery route for class and progression shadow gear.',
+    tag: 'Event Stone Coins'
+  },
+  {
     name: 'Costume Curator',
     location: 'Malangdo · 116, 169',
     description:
