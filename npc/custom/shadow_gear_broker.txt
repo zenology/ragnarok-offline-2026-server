@@ -4,10 +4,10 @@
 //= Currency: Event Stone Coin (7000). Base price: 50, rounded up.
 //============================================================
 
-malangdo,112,163,0	script	Shadow Gear Broker#offline	4_F_JOB_BLACKSMITH,{
+malangdo,112,162,6	script	Shadow Gear Broker#offline	4_EP17_BOY_B,{
 	mes "[Shadow Gear Broker]";
-	mes "Every verified Shadow weapon and armor, catalogued by name.";
-	mes "Bring Event Stone Coins if you want to take one with you.";
+	mes "E-every Shadow thing... weapon... armor... I-I put them in little name piles...";
+	mes "P-please bring Event Stone Coins... before the moon comes out... rrr...";
 	next;
 	.@type = select("Weapon:Armor:Cancel");
 	if (.@type == 3) close;
