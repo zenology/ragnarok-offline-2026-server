@@ -47,21 +47,48 @@ constexpr int32_t black_market_level_multiplier(int32_t base_level, bool reborn)
 	return 10;
 }
 
-constexpr int64_t black_market_player_price_unchecked(int64_t daily_adjusted_price, int32_t multiplier) {
-	return daily_adjusted_price * multiplier;
+struct black_market_price_ratio {
+	int32_t numerator;
+	int32_t denominator;
+};
+
+constexpr black_market_price_ratio black_market_normal_price_ratio(int32_t base_level, bool reborn) {
+	return { black_market_level_multiplier(base_level, reborn), 1 };
 }
 
-constexpr bool black_market_player_price_is_valid(int64_t daily_adjusted_price, int32_t multiplier) {
-	if (daily_adjusted_price <= 0 || multiplier <= 0)
+inline bool black_market_is_card_shop(const char* shop_name) {
+	return std::strncmp(shop_name, "card_mob#", 9) == 0 ||
+		std::strncmp(shop_name, "card_miniboss#", 14) == 0 ||
+		std::strncmp(shop_name, "card_mvp#", 9) == 0 ||
+		std::strncmp(shop_name, "card_special#", 13) == 0;
+}
+
+constexpr black_market_price_ratio black_market_card_price_ratio(int32_t base_level, bool reborn) {
+	const int32_t normal_multiplier = black_market_level_multiplier(base_level, reborn);
+	if (normal_multiplier <= 0)
+		return { 0, 1 };
+	if (normal_multiplier <= 2)
+		return { 1, 1 };
+	if (normal_multiplier == 3)
+		return { 3, 2 };
+	return { normal_multiplier / 2, 1 };
+}
+
+constexpr int64_t black_market_player_price_unchecked(int64_t daily_adjusted_price, black_market_price_ratio ratio) {
+	return (daily_adjusted_price * ratio.numerator + ratio.denominator / 2) / ratio.denominator;
+}
+
+constexpr bool black_market_player_price_is_valid(int64_t daily_adjusted_price, black_market_price_ratio ratio) {
+	if (daily_adjusted_price <= 0 || ratio.numerator <= 0 || ratio.denominator <= 0)
 		return false;
-	const int64_t result = black_market_player_price_unchecked(daily_adjusted_price, multiplier);
+	const int64_t result = black_market_player_price_unchecked(daily_adjusted_price, ratio);
 	return result > 0 && result <= std::numeric_limits<int32_t>::max();
 }
 
-constexpr bool black_market_player_price(int64_t daily_adjusted_price, int32_t multiplier, int32_t& player_price) {
-	if (!black_market_player_price_is_valid(daily_adjusted_price, multiplier))
+constexpr bool black_market_player_price(int64_t daily_adjusted_price, black_market_price_ratio ratio, int32_t& player_price) {
+	if (!black_market_player_price_is_valid(daily_adjusted_price, ratio))
 		return false;
-	const int64_t result = black_market_player_price_unchecked(daily_adjusted_price, multiplier);
+	const int64_t result = black_market_player_price_unchecked(daily_adjusted_price, ratio);
 	player_price = static_cast<int32_t>(result);
 	return true;
 }
@@ -85,14 +112,14 @@ static_assert(black_market_adjusted_price_unchecked(100, 0) == 100);
 static_assert(black_market_adjusted_price_unchecked(100, 30) == 130);
 static_assert(black_market_adjusted_price_unchecked(5, 10) == 6);
 static_assert(black_market_adjusted_price_unchecked(1, -10) == 1);
-static_assert(black_market_level_multiplier(1, false) == 1);
-static_assert(black_market_level_multiplier(50, true) == 3);
-static_assert(black_market_level_multiplier(51, false) == 2);
-static_assert(black_market_level_multiplier(99, true) == 4);
-static_assert(black_market_level_multiplier(100, false) == 6);
-static_assert(black_market_level_multiplier(200, true) == 6);
-static_assert(black_market_level_multiplier(201, false) == 10);
-static_assert(black_market_player_price_is_valid(214748364, 10));
-static_assert(!black_market_player_price_is_valid(214748365, 10));
+static_assert(black_market_card_price_ratio(1, false).numerator == 1 && black_market_card_price_ratio(1, false).denominator == 1);
+static_assert(black_market_card_price_ratio(99, false).numerator == 1 && black_market_card_price_ratio(99, false).denominator == 1);
+static_assert(black_market_card_price_ratio(50, true).numerator == 3 && black_market_card_price_ratio(50, true).denominator == 2);
+static_assert(black_market_card_price_ratio(99, true).numerator == 2 && black_market_card_price_ratio(99, true).denominator == 1);
+static_assert(black_market_card_price_ratio(100, false).numerator == 3 && black_market_card_price_ratio(100, false).denominator == 1);
+static_assert(black_market_card_price_ratio(201, false).numerator == 5 && black_market_card_price_ratio(201, false).denominator == 1);
+static_assert(black_market_player_price_unchecked(325, { 3, 2 }) == 488);
+static_assert(black_market_player_price_is_valid(214748364, { 10, 1 }));
+static_assert(!black_market_player_price_is_valid(214748365, { 10, 1 }));
 
 #endif

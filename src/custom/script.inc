@@ -30,7 +30,7 @@ BUILDIN_FUNC(blackmarketprice)
 
 	int32 price = 0;
 	if (!black_market_player_price(script_getnum(st, 2),
-		black_market_level_multiplier(sd->status.base_level, (sd->class_ & JOBL_UPPER) != 0), price)) {
+		black_market_normal_price_ratio(sd->status.base_level, (sd->class_ & JOBL_UPPER) != 0), price)) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -127,7 +127,7 @@ BUILDIN_FUNC(blackmarketenhance)
 		has_option = has_option || option.id != 0;
 	int32 price = 0;
 	if (!black_market_player_price(has_option ? 2000 : 1000,
-		black_market_level_multiplier(sd->status.base_level, (sd->class_ & JOBL_UPPER) != 0), price)) {
+		black_market_normal_price_ratio(sd->status.base_level, (sd->class_ & JOBL_UPPER) != 0), price)) {
 		script_pushint(st, 4);
 		return SCRIPT_CMD_SUCCESS;
 	}

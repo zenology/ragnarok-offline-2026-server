@@ -2520,14 +2520,15 @@ static bool npc_black_market_player_price(map_session_data* sd, npc_data* nd, in
 		player_price = catalog_price;
 		return true;
 	}
-	if (sd->black_market_shop_id != nd->id || sd->black_market_price_multiplier <= 0) {
-		ShowWarning("npc_black_market_player_price: Missing or mismatched Black Market price snapshot for shop '%s' (CID=%d, shop=%d, snapshot=%d).\n",
-			nd->exname, sd->status.char_id, nd->id, sd->black_market_shop_id);
+	const black_market_price_ratio ratio{ sd->black_market_price_numerator, sd->black_market_price_denominator };
+	if (sd->black_market_shop_id != nd->id || !black_market_player_price_is_valid(1, ratio)) {
+		ShowWarning("npc_black_market_player_price: Missing, invalid, or mismatched Black Market price snapshot for shop '%s' (CID=%d, shop=%d, snapshot=%d, ratio=%d/%d).\n",
+			nd->exname, sd->status.char_id, nd->id, sd->black_market_shop_id, ratio.numerator, ratio.denominator);
 		return false;
 	}
-	if (!black_market_player_price(catalog_price, sd->black_market_price_multiplier, player_price)) {
-		ShowError("npc_black_market_player_price: Black Market shop '%s' cannot price catalog value %d for CID=%d (multiplier=%d).\n",
-			nd->exname, catalog_price, sd->status.char_id, sd->black_market_price_multiplier);
+	if (!black_market_player_price(catalog_price, ratio, player_price)) {
+		ShowError("npc_black_market_player_price: Black Market shop '%s' cannot price catalog value %d for CID=%d (ratio=%d/%d).\n",
+			nd->exname, catalog_price, sd->status.char_id, ratio.numerator, ratio.denominator);
 		return false;
 	}
 	return true;
