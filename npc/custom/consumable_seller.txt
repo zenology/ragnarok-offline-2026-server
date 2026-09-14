@@ -103,13 +103,13 @@ OnInit:
 	end;
 }
 
--	pointshop	cons0	-1,#CASHPOINTS,501:2
--	pointshop	cons1	-1,#CASHPOINTS,501:2
--	pointshop	cons2	-1,#CASHPOINTS,501:2
--	pointshop	cons3	-1,#CASHPOINTS,501:2
--	pointshop	cons4	-1,#CASHPOINTS,501:2
--	pointshop	cons5	-1,#CASHPOINTS,501:2
--	pointshop	cons6	-1,#CASHPOINTS,501:2
+-	pointshop	cons0	-1,BlackMarketPoints,501:2
+-	pointshop	cons1	-1,BlackMarketPoints,501:2
+-	pointshop	cons2	-1,BlackMarketPoints,501:2
+-	pointshop	cons3	-1,BlackMarketPoints,501:2
+-	pointshop	cons4	-1,BlackMarketPoints,501:2
+-	pointshop	cons5	-1,BlackMarketPoints,501:2
+-	pointshop	cons6	-1,BlackMarketPoints,501:2
 
 -	script	cons_seller_db	-1,{
 	end;

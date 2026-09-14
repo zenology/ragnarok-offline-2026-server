@@ -20,9 +20,9 @@
 
 #include "black_market_cashshop.hpp"
 
-// Result codes: 1=success, 2=selected item changed, 3=insufficient Cash Points,
+// Result codes: 1=success, 2=selected item changed, 3=insufficient Black Market Points,
 // 4=invalid generated/script data. The NPC owns the roll; this command owns the
-// atomic validation, account-point debit, mutation, client refresh, and re-equip.
+// atomic validation, character-point debit, mutation, client refresh, and re-equip.
 BUILDIN_FUNC(blackmarketenhance)
 {
 	TBL_PC* sd = nullptr;
@@ -107,7 +107,10 @@ BUILDIN_FUNC(blackmarketenhance)
 	for (const auto& option : sd->inventory.u.items_inventory[inventory_index].option)
 		has_option = has_option || option.id != 0;
 	const int32 price = has_option ? 2000 : 1000;
-	if (sd->cashPoints < price || pc_paycash(sd, price, 0, LOG_TYPE_SCRIPT) < 0) {
+	const int32 black_market_points = static_cast<int32>(pc_readreg2(sd, BLACK_MARKET_POINT_VAR));
+	if (black_market_points < price ||
+		!set_reg_num(nullptr, sd, add_str(BLACK_MARKET_POINT_VAR), BLACK_MARKET_POINT_VAR,
+			black_market_points - price, nullptr)) {
 		script_pushint(st, 3);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -144,8 +147,8 @@ BUILDIN_FUNC(callblackmarketshop)
 		script_pushint(st, 0);
 		return SCRIPT_CMD_FAILURE;
 	}
-	if (std::strcmp(nd->u.shop.pointshop_str, "#CASHPOINTS") != 0) {
-		ShowError("buildin_callblackmarketshop: Shop [%s] does not use #CASHPOINTS (rate %d).\n", shopname, rate);
+	if (std::strcmp(nd->u.shop.pointshop_str, BLACK_MARKET_POINT_VAR) != 0) {
+		ShowError("buildin_callblackmarketshop: Shop [%s] does not use %s (rate %d).\n", shopname, BLACK_MARKET_POINT_VAR, rate);
 		script_pushint(st, 0);
 		return SCRIPT_CMD_FAILURE;
 	}

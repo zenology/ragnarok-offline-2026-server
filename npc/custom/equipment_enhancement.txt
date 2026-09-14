@@ -58,7 +58,7 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 
 	mes "[Vesper]";
 	mes "Ah, ^0055FF" + getitemname(.@item) + "^000000 (" + .@chosen_label$[.@choice] + "). A splendid specimen.";
-	mes "Current Random Options: " + .@existing + ". Price: ^0055FF" + .@price + " Cash Points^000000.";
+	mes "Current Random Options: " + .@existing + ". Price: ^0055FF" + .@price + " Black Market Points^000000.";
 	mes "This experiment replaces all five option slots. Every existing Random Option will be cleared.";
 	if (select("Replace all options:Cancel") == 2) close;
 	clear;
@@ -124,14 +124,14 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 	mes "[Vesper]";
 	if (.@result == 1) {
 		if (.@rolled == 0)
-			mes "Fascinating! The replacement yielded zero options. Your item is intact; a later attempt still costs 1,000 Cash Points while it has no options.";
+			mes "Fascinating! The replacement yielded zero options. Your item is intact; a later attempt still costs 1,000 Black Market Points while it has no options.";
 		else
 			mes "Magnificent! Your item now has " + .@rolled + " Random Option" + (.@rolled == 1 ? "." : "s.");
 	} else if (.@result == 2)
-		mes "The specimen changed before I could begin. No Cash Points were charged.";
+		mes "The specimen changed before I could begin. No Black Market Points were charged.";
 	else if (.@result == 3)
-		mes "Insufficient Cash Points. Science has standards; no changes were made.";
+		mes "Insufficient Black Market Points. Science has standards; no changes were made.";
 	else
-		mes "The generated option data was invalid. No Cash Points were charged and your item was not changed.";
+		mes "The generated option data was invalid. No Black Market Points were charged and your item was not changed.";
 	close;
 }

@@ -1,7 +1,7 @@
 //===== rAthena Script =======================================
 //= Monster Card Sellers A-Z
 //===== Description: =========================================
-//= Separate Normal, Miniboss, and MVP Card Sellers use Cash Points.
+//= Separate Normal, Miniboss, and MVP Card Sellers use character-local Black Market Points.
 //= Cards are grouped alphabetically. A 0-9 drawer appears before A
 //= when a display name starts with a digit. Normal, Miniboss, and MVP cards
 //= cost the Card Collector offer plus 30%, rounded to the nearest point.
@@ -12,8 +12,8 @@
 //= 1.0 First version [AnnieRuru]
 //= 1.1 Minor edits [Euphy]
 //= 1.2 Update for monster mode and enchants [Lemongrass]
-//= 2.0 Offline Cash Point catalog; Normal cards only
-//= 2.1 Level-based 10-50 Cash Point pricing
+//= 2.0 Offline Black Market Point catalog; Normal cards only
+//= 2.1 Level-based 10-50 Black Market Point pricing
 //= 3.0 Add Miniboss and MVP Card Sellers
 //= 3.1 Add curated special cards to the MVP Card Seller
 //= 3.2 Fix MVP shop initialization
@@ -237,7 +237,7 @@ paramk,51,186,4	script	Veynar#offline	10576,{
 		next;
 	}
 	.@min_look = 60000;
-	if (#CASHPOINTS < .@min_look) {
+	if (BlackMarketPoints < .@min_look) {
 		mes "[Veynar]";
 		mes "No. I do not open my collection for visitors with such an unimpressive purse.";
 		mes "Come back when your purse has learned some dignity.";
@@ -274,7 +274,7 @@ paramk,51,186,4	script	Veynar#offline	10576,{
 		mes "^777777...This one has taste.^000000";
 		mes "So, you know I keep something more valuable.";
 		.@special_look = 60000;
-		if (#CASHPOINTS < .@special_look) {
+		if (BlackMarketPoints < .@special_look) {
 			next;
 			mes "[Veynar]";
 			mes "Taste without the means to indulge it is merely appetite.";
@@ -438,33 +438,33 @@ OnInit:
 	freeloop 0;
 	end;
 }
--	pointshop	card_mob#0	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#A	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#B	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#C	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#D	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#E	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#F	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#G	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#H	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#I	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#J	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#K	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#L	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#M	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#N	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#O	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#P	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#Q	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#R	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#S	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#T	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#U	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#V	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#W	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#X	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#Y	-1,#CASHPOINTS,501:10
--	pointshop	card_mob#Z	-1,#CASHPOINTS,501:10
+-	pointshop	card_mob#0	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#A	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#B	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#C	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#D	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#E	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#F	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#G	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#H	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#I	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#J	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#K	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#L	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#M	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#N	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#O	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#P	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#Q	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#R	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#S	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#T	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#U	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#V	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#W	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#X	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#Y	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#Z	-1,BlackMarketPoints,501:10
 
 -	script	miniboss_card_seller_creation	-1,{
 	end;
@@ -538,33 +538,33 @@ OnInit:
 	freeloop 0;
 	end;
 }
--	pointshop	card_miniboss#0	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#A	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#B	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#C	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#D	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#E	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#F	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#G	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#H	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#I	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#J	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#K	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#L	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#M	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#N	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#O	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#P	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#Q	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#R	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#S	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#T	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#U	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#V	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#W	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#X	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#Y	-1,#CASHPOINTS,501:50
--	pointshop	card_miniboss#Z	-1,#CASHPOINTS,501:50
+-	pointshop	card_miniboss#0	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#A	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#B	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#C	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#D	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#E	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#F	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#G	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#H	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#I	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#J	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#K	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#L	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#M	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#N	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#O	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#P	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#Q	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#R	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#S	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#T	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#U	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#V	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#W	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#X	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#Y	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#Z	-1,BlackMarketPoints,501:50
 
 -	script	mvp_card_seller_creation	-1,{
 	end;
@@ -705,57 +705,57 @@ OnInit:
 	freeloop 0;
 	end;
 }
--	pointshop	card_mvp#0	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#A	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#B	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#C	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#D	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#E	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#F	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#G	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#H	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#I	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#J	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#K	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#L	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#M	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#N	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#O	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#P	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#Q	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#R	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#S	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#T	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#U	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#V	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#W	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#X	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#Y	-1,#CASHPOINTS,501:100
--	pointshop	card_mvp#Z	-1,#CASHPOINTS,501:100
--	pointshop	card_special#0	-1,#CASHPOINTS,501:120
--	pointshop	card_special#A	-1,#CASHPOINTS,501:120
--	pointshop	card_special#B	-1,#CASHPOINTS,501:120
--	pointshop	card_special#C	-1,#CASHPOINTS,501:120
--	pointshop	card_special#D	-1,#CASHPOINTS,501:120
--	pointshop	card_special#E	-1,#CASHPOINTS,501:120
--	pointshop	card_special#F	-1,#CASHPOINTS,501:120
--	pointshop	card_special#G	-1,#CASHPOINTS,501:120
--	pointshop	card_special#H	-1,#CASHPOINTS,501:120
--	pointshop	card_special#I	-1,#CASHPOINTS,501:120
--	pointshop	card_special#J	-1,#CASHPOINTS,501:120
--	pointshop	card_special#K	-1,#CASHPOINTS,501:120
--	pointshop	card_special#L	-1,#CASHPOINTS,501:120
--	pointshop	card_special#M	-1,#CASHPOINTS,501:120
--	pointshop	card_special#N	-1,#CASHPOINTS,501:120
--	pointshop	card_special#O	-1,#CASHPOINTS,501:120
--	pointshop	card_special#P	-1,#CASHPOINTS,501:120
--	pointshop	card_special#Q	-1,#CASHPOINTS,501:120
--	pointshop	card_special#R	-1,#CASHPOINTS,501:120
--	pointshop	card_special#S	-1,#CASHPOINTS,501:120
--	pointshop	card_special#T	-1,#CASHPOINTS,501:120
--	pointshop	card_special#U	-1,#CASHPOINTS,501:120
--	pointshop	card_special#V	-1,#CASHPOINTS,501:120
--	pointshop	card_special#W	-1,#CASHPOINTS,501:120
--	pointshop	card_special#X	-1,#CASHPOINTS,501:120
--	pointshop	card_special#Y	-1,#CASHPOINTS,501:120
--	pointshop	card_special#Z	-1,#CASHPOINTS,501:120
+-	pointshop	card_mvp#0	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#A	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#B	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#C	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#D	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#E	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#F	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#G	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#H	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#I	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#J	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#K	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#L	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#M	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#N	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#O	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#P	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#Q	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#R	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#S	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#T	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#U	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#V	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#W	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#X	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#Y	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#Z	-1,BlackMarketPoints,501:100
+-	pointshop	card_special#0	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#A	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#B	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#C	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#D	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#E	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#F	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#G	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#H	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#I	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#J	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#K	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#L	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#M	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#N	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#O	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#P	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#Q	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#R	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#S	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#T	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#U	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#V	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#W	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#X	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#Y	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#Z	-1,BlackMarketPoints,501:120

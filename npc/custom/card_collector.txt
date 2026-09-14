@@ -1,7 +1,7 @@
 //===== Ragnarok Offline =====================================
 //= Card Collector
 //===== Description: =========================================
-//= Buys standalone card items for account-wide Cash Points.
+//= Buys standalone card items for character-local Black Market Points.
 //= Offers scale with the canonical source monster level:
 //= Normal 1-50: 250-1000; 51-100: 2000-4000; 101+: 7000-15000;
 //= Miniboss: 7000-20000; MVP: 20000-100000.
@@ -15,7 +15,7 @@ paramk,41,159,4	script	Black Market Boss#offline	4_M_MANAGER,{
 	mes "[Black Market Boss]";
 	mes "So, you brought me cards.";
 	mes "Good. Every card that changes hands in this market eventually reaches my table.";
-	mes "I pay in ^0055FFCash Points^000000, not Zeny.";
+	mes "I pay in ^0055FFBlack Market Points^000000, not Zeny.";
 	mes "My offer depends on the monster behind each card.";
 	next;
 	switch (select("Sell one card type.:Sell every accepted card.:Check points and loyalty.:Leave.")) {
@@ -28,7 +28,7 @@ paramk,41,159,4	script	Black Market Boss#offline	4_M_MANAGER,{
 	case 3:
 		clear;
 		mes "[Black Market Boss]";
-		mes "Your account has ^0055FF" + #CASHPOINTS + " Cash Points^000000.";
+		mes "You have ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
 		mes "Normal-card loyalty: ^0055FF" + #CC_Normal + " / 30^000000.";
 		mes "Miniboss-card loyalty: ^0055FF" + #CC_Mini + " / 5^000000.";
 		mes "MVP-card loyalty: ^0055FF" + #CC_MVP + " / 5^000000.";
@@ -119,7 +119,7 @@ L_Single:
 
 		mes "[Black Market Boss]";
 		mes "^0055FF" + mesitemlink(.@selected_id, false) + "^000000 x" + .@amount;
-		mes "My offer: ^0055FF" + .@payment + " Cash Points^000000.";
+		mes "My offer: ^0055FF" + .@payment + " Black Market Points^000000.";
 		mes "Once they enter my collection, the deal is final.";
 		next;
 		if (select("Sell the cards.:Keep them.") != 1)
@@ -169,7 +169,7 @@ L_Single:
 			}
 			break;
 		case 4:
-			// Source-less and Special cards pay Cash Points only. They do
+			// Source-less and Special cards pay Black Market Points only. They do
 			// not participate in the monster-card loyalty promotions.
 			.@milestones = 0;
 			break;
@@ -226,7 +226,7 @@ L_Single:
 		}
 
 		delitem .@selected_id, .@amount;
-		#CASHPOINTS += .@payment;
+		BlackMarketPoints += .@payment;
 		switch (.@tier) {
 		case 1: #CC_Normal = .@remainder; break;
 		case 2: #CC_Mini = .@remainder; break;
@@ -234,12 +234,12 @@ L_Single:
 		}
 		for (.@i = 0; .@i < .@reward_count; ++.@i)
 			getitem .@reward_ids[.@i], .@reward_amounts[.@i];
-		logmes "Card Collector: sold " + .@amount + " x item " + .@selected_id + " for " + .@payment + " Cash Points; tier " + .@tier + "; milestones " + .@milestones + "; OCA " + .@old_card_albums + "; DB " + .@dead_branches + "; MCA " + .@magic_card_albums + "; MVP albums " + .@mvp_card_albums + "; BDB " + .@bloody_branches + "; bottles " + .@empty_bottles + "; backstabs " + .@backstabs + "; balance " + #CASHPOINTS;
+		logmes "Card Collector: sold " + .@amount + " x item " + .@selected_id + " for " + .@payment + " Black Market Points; tier " + .@tier + "; milestones " + .@milestones + "; OCA " + .@old_card_albums + "; DB " + .@dead_branches + "; MCA " + .@magic_card_albums + "; MVP albums " + .@mvp_card_albums + "; BDB " + .@bloody_branches + "; bottles " + .@empty_bottles + "; backstabs " + .@backstabs + "; balance " + BlackMarketPoints;
 
 		mes "[Black Market Boss]";
 		mes "A clean transaction. I expect nothing less.";
-		mes "You received ^0055FF" + .@payment + " Cash Points^000000.";
-		mes "Current balance: ^0055FF" + #CASHPOINTS + " Cash Points^000000.";
+		mes "You received ^0055FF" + .@payment + " Black Market Points^000000.";
+		mes "Current balance: ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
 		if (.@milestones) {
 			mes "^FF8800Loyalty reward:^000000";
 			if (.@old_card_albums) mes mesitemlink(616, false) + " x" + .@old_card_albums;
@@ -315,7 +315,7 @@ L_Bulk:
 	mes "^0055FF" + .@bulk_count + " card types, " + .@bulk_cards + " cards total.^000000";
 	mes "Normal: " + .@bulk_normal + "  Miniboss: " + .@bulk_mini + "  MVP: " + .@bulk_mvp;
 	mes "Special: " + .@bulk_special + " ^777777(no loyalty)^000000";
-	mes "My offer: ^0055FF" + .@bulk_payment + " Cash Points^000000.";
+	mes "My offer: ^0055FF" + .@bulk_payment + " Black Market Points^000000.";
 	mes "Once they enter my collection, the deal is final.";
 	next;
 	if (select("Sell every accepted card.:Keep everything.") != 1)
@@ -383,18 +383,18 @@ L_Bulk:
 	}
 	for (.@i = 0; .@i < .@bulk_count; ++.@i)
 		delitem .@bulk_ids[.@i], .@bulk_amounts[.@i];
-	#CASHPOINTS += .@bulk_payment;
+	BlackMarketPoints += .@bulk_payment;
 	#CC_Normal = .@normal_remainder;
 	#CC_Mini = .@mini_remainder;
 	#CC_MVP = .@mvp_remainder;
 	for (.@i = 0; .@i < .@reward_count; ++.@i)
 		getitem .@reward_ids[.@i], .@reward_amounts[.@i];
-	logmes "Card Collector: bulk sold " + .@bulk_cards + " cards across " + .@bulk_count + " item IDs for " + .@bulk_payment + " Cash Points; Normal " + .@bulk_normal + " (" + .@normal_milestones + " milestones); Miniboss " + .@bulk_mini + " (" + .@mini_milestones + " milestones); MVP " + .@bulk_mvp + " (" + .@mvp_milestones + " milestones); Special " + .@bulk_special + " (no loyalty); OCA " + .@old_card_albums + "; DB " + .@dead_branches + "; MCA " + .@magic_card_albums + "; MVP albums " + .@mvp_card_albums + "; BDB " + .@bloody_branches + "; bottles " + .@empty_bottles + "; backstabs " + .@backstabs + "; balance " + #CASHPOINTS;
+	logmes "Card Collector: bulk sold " + .@bulk_cards + " cards across " + .@bulk_count + " item IDs for " + .@bulk_payment + " Black Market Points; Normal " + .@bulk_normal + " (" + .@normal_milestones + " milestones); Miniboss " + .@bulk_mini + " (" + .@mini_milestones + " milestones); MVP " + .@bulk_mvp + " (" + .@mvp_milestones + " milestones); Special " + .@bulk_special + " (no loyalty); OCA " + .@old_card_albums + "; DB " + .@dead_branches + "; MCA " + .@magic_card_albums + "; MVP albums " + .@mvp_card_albums + "; BDB " + .@bloody_branches + "; bottles " + .@empty_bottles + "; backstabs " + .@backstabs + "; balance " + BlackMarketPoints;
 
 	mes "[Black Market Boss]";
 	mes "A clean transaction. I expect nothing less.";
-	mes "You received ^0055FF" + .@bulk_payment + " Cash Points^000000.";
-	mes "Current balance: ^0055FF" + #CASHPOINTS + " Cash Points^000000.";
+	mes "You received ^0055FF" + .@bulk_payment + " Black Market Points^000000.";
+	mes "Current balance: ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
 	if (.@reward_count) {
 		mes "^FF8800Loyalty reward:^000000";
 		if (.@old_card_albums) mes mesitemlink(616, false) + " x" + .@old_card_albums;
@@ -534,7 +534,7 @@ paramk,14,175,4	script	Guard#black_market_door	686,2,1,{
 	clear;
 
 	mes "[Guard]";
-	mes "The current adjustment is against each drawer's listed Cash Point price.";
+	mes "The current adjustment is against each drawer's listed Black Market Point price.";
 	mes "Harlan: " + $BlackMarketRateHarlan + "%";
 	mes "Soren: " + $BlackMarketRateSoren + "%";
 	mes "Mordain: " + $BlackMarketRateMordain + "%";

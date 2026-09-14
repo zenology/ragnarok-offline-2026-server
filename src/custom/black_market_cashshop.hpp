@@ -20,6 +20,11 @@ struct black_market_catalog_cache {
 
 inline std::unordered_map<std::string, black_market_catalog_cache> black_market_catalog_cache_by_shop;
 
+// Permanent character registry used by every Black Market pointshop and
+// service. Do not change this name without migrating the player-facing
+// currency contract.
+inline constexpr char BLACK_MARKET_POINT_VAR[] = "BlackMarketPoints";
+
 constexpr int64_t black_market_adjusted_price_unchecked(int64_t base_price, int32_t rate) {
 	return (base_price * (100 + rate) + 50) / 100;
 }

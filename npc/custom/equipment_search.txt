@@ -575,4 +575,4 @@ OnInit:
 	end;
 }
 
--	pointshop	Riven_SearchShop	-1,#CASHPOINTS,501:1
+-	pointshop	Riven_SearchShop	-1,BlackMarketPoints,501:1
