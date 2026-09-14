@@ -23,7 +23,7 @@ paramk,27,158,2	script	Madame Celestine#offline	4_EP21_GALAXIA_B,{
 	next;
 	mes "[Madame Celestine]";
 	mes "Which equipment set would you like to see?";
-	.@choice = select("Abyss Glastheim:Abyss Lake Equipment:Adulter and Vivatus Fides Weapons:Airship Set:Ancient Hero:Automatic Equipment:Biolab 5th Floor Equipment:Biolab Gear:Brave Heart:Brilliant Light:Circulation of Life:Clergy Equipment:Constellation Tower Gear:Convertible Gears:Dimension Equipment:Edda Equipment:Einbech Weapons:Engraved Equipment:Enhanced Time Guardian Equipment:Entwined Equipment:Evil Slayer:Excellion Gear:Ferlock Equipment:Fortified Weapons:Frontier:Frontier Rune Crowns:Furious Equipment:Gaebolg Equipment:Geffen Magic Tournament:Geffen Night Arena:Glacier Equipment:Godlike Equipment:Good and Evil:Grace Equipment:Gray Equipment:Gray Wolf Equipment:Helms of Faith:Heroic Equipment:Horror Toy Equipment:Illusion of Abyss:Illusion of Frozen:Illusion of Labyrinth:Illusion of Luanda:Illusion of Moonlight:Illusion of Teddy Bear:Illusion of Twins:Illusion of Underwater:Illusion of Vampire:Illusion/OS Gears:Imperial Equipment:Imperial Set:Infinity Weapons:Issgard Equipment:King Schmidt's Equipment:Magma Equipment:Mora Equipment:Muqaddas Weapons:Nightmarish Jitterburg Equipment:Noblesse Set:Poenitentia:Precision Weapons:Racing Caps:Royal Banquet / Royal Guard Shield:Sky Rune Crowns:Supplement Part Equipment:Temporal Circlets:Time Gap:Upgrade Part Equipment:Varmundt Rune Accessories:") - 1;
+	.@choice = select("Abyss Glastheim:Abyss Lake Equipment:Adulter and Vivatus Fides Weapons:Airship Set:Ancient Hero:Automatic Equipment:Biolab 5th Floor Equipment:Biolab Gear:Brave Heart:Brilliant Light:Circulation of Life:Clergy Equipment:Constellation Tower Gear:Convertible Gears:Dimension Equipment:Edda Equipment:Einbech Weapons:Engraved Equipment:Enhanced Time Guardian Equipment:Entwined Equipment:Evil Slayer:Excellion Gear:Ferlock Equipment:Fortified Weapons:Frontier:Frontier Rune Crowns:Furious Equipment:Gaebolg Equipment:Geffen Magic Tournament:Geffen Night Arena:Glacier Equipment:Godlike Equipment:Good and Evil:Grace Equipment:Gray Equipment:Gray Wolf Equipment:Helms of Faith:Heroic Equipment:Horror Toy Equipment:Illusion of Abyss:Illusion of Frozen:Illusion of Labyrinth:Illusion of Luanda:Illusion of Moonlight:Illusion of Teddy Bear:Illusion of Twins:Illusion of Underwater:Illusion of Vampire:Illusion/OS Gears:Imperial Equipment:Imperial Set:Infinity Weapons:Issgard Equipment:King Schmidt's Equipment:Magma Equipment:Mora Equipment:Muqaddas Weapons:Nightmarish Jitterburg Equipment:Noblesse Set:Poenitentia:Precision Weapons:Racing Caps:Relapse Weapons:Rift Armor:Royal and Guardian Weapons:Royal Banquet / Royal Guard Shield:Runaway Chips:Rune Equipment:Sky Rune Crowns:Supplement Part Equipment:Temporal Circlets:Time Gap:Upgrade Part Equipment:Varmundt Rune Accessories:") - 1;
 	.@shop$ = getvariableofnpc(.FamilyShop$[.@choice], "specialty_seller_db");
 	callfunc "F_BlackMarketDailyRemark", "Madame Celestine", $BlackMarketRateSpecialty;
 	close2;
@@ -33,7 +33,7 @@ paramk,27,158,2	script	Madame Celestine#offline	4_EP21_GALAXIA_B,{
 
 -	script	specialty_seller_db	-1,{
 OnInit:
-	.FamilyCount = 69;
+	.FamilyCount = 74;
 	setunittitle(getnpcid(0), "<Specialists>");
 	.FamilyShop$[0] = "spc#S00";
 	.FamilyShop$[1] = "spc#S01";
@@ -104,6 +104,11 @@ OnInit:
 	.FamilyShop$[66] = "spc#S66";
 	.FamilyShop$[67] = "spc#S67";
 	.FamilyShop$[68] = "spc#S68";
+	.FamilyShop$[69] = "spc#S69";
+	.FamilyShop$[70] = "spc#S70";
+	.FamilyShop$[71] = "spc#S71";
+	.FamilyShop$[72] = "spc#S72";
+	.FamilyShop$[73] = "spc#S73";
 	end;
 }
 
@@ -169,10 +174,15 @@ OnInit:
 -	pointshop	spc#S59	-1,#CASHPOINTS,460013:6435,620006:13180,700024:13180,560012:12780,630009:12780,570013:12780,590016:12380,540014:19980,550020:13980,510028:12780,600014:12780,550062:21180,580013:12780,800011:18380,500019:12980,530010:13180,510057:23580,540015:15780,500020:22780,610016:12780,510027:13980,700023:13180,500046:20380,590017:22780,810007:17980,550060:18780,540044:20780,550061:21180,840006:18380,550019:19980,510056:18380,700022:13980,640014:25180,560013:12780,700025:13180,830010:18380,640015:20380
 -	pointshop	spc#S60	-1,#CASHPOINTS,840004:9180,700050:9180,560030:12780,570028:13980,810005:9180,800009:9180,820004:9180,650019:9180,830008:9180,580028:13980
 -	pointshop	spc#S61	-1,#CASHPOINTS,19197:5550,19190:4650,19191:4950,19202:3750,19189:4350,19200:3750,19203:4950,19199:6200,19196:4650,19195:4350,19192:3750,19194:7350,19397:7400,19396:4650,19205:5000,19204:4350,19198:4650,19201:3750,19193:5000
--	pointshop	spc#S62	-1,#CASHPOINTS,28900:3000
--	pointshop	spc#S63	-1,#CASHPOINTS,401059:10780,401058:8980,401060:10780,401118:10980,401117:8980,401119:9980,401115:10780,401120:10780,401116:10780
--	pointshop	spc#S64	-1,#CASHPOINTS,410088:8400,410089:9000,15110:1650,15343:2500
--	pointshop	spc#S65	-1,#CASHPOINTS,19480:6800,19477:7800,19478:7800,19490:6150,19476:7800,19489:6150,19484:4300,19488:7800,19475:6150,19474:7800,19479:7800,19483:8200,19487:8000,19486:6150,19492:8000,19491:6000,19481:4100,19485:8000,19482:8200
--	pointshop	spc#S66	-1,#CASHPOINTS,28785:14780,640054:9580,500107:9980,630049:10380,540096:13580,540094:9980,530060:10380,550152:13580,560072:10380,28789:7980,510172:11980,620043:9980,580075:9580,570075:9580,800042:10380,550156:9980,510165:7980,510166:11580,550155:9580,550159:10380,700108:10380
--	pointshop	spc#S67	-1,#CASHPOINTS,15015:2500,2150:2500,15016:2500,15021:2500,2149:2500,15020:2500,15344:7525,15111:3120,15017:2500,2151:2500,15019:2500,15018:2500
--	pointshop	spc#S68	-1,#CASHPOINTS,490297:1650,490299:5400,490301:5200,490300:5400
+-	pointshop	spc#S62	-1,#CASHPOINTS,620005:2040,500018:7000,540043:2040,590015:3960,510026:4950,510055:5100,610015:5100,550058:2460
+-	pointshop	spc#S63	-1,#CASHPOINTS,15141:2500,19033:2500,20779:2500,22075:2500
+-	pointshop	spc#S64	-1,#CASHPOINTS,1336:2760,28141:3480,21055:5400,32353:4600,32027:7600,32403:3800,32111:4300,26165:3800,26172:4400,28775:2800,28774:3500,13347:3800,28046:4400,18198:7600,18191:3800,1870:3800,28776:3400,2060:4400,26166:4300,32401:2760,32304:3800,28636:4400,32402:2760,26216:4300
+-	pointshop	spc#S65	-1,#CASHPOINTS,28900:3000
+-	pointshop	spc#S66	-1,#CASHPOINTS,28326:500,28327:500,18997:2500
+-	pointshop	spc#S67	-1,#CASHPOINTS,470176:6380,480233:6580,450245:6580,450234:7780,470173:6580,480230:7380,450243:5580,470174:5380,480231:5380,450244:7780,470175:7380,480232:7780,490305:5400,490307:5200,490306:5400
+-	pointshop	spc#S68	-1,#CASHPOINTS,401059:10780,401058:8980,401060:10780,401118:10980,401117:8980,401119:9980,401115:10780,401120:10780,401116:10780
+-	pointshop	spc#S69	-1,#CASHPOINTS,410088:8400,410089:9000,15110:1650,15343:2500
+-	pointshop	spc#S70	-1,#CASHPOINTS,19480:6800,19477:7800,19478:7800,19490:6150,19476:7800,19489:6150,19484:4300,19488:7800,19475:6150,19474:7800,19479:7800,19483:8200,19487:8000,19486:6150,19492:8000,19491:6000,19481:4100,19485:8000,19482:8200
+-	pointshop	spc#S71	-1,#CASHPOINTS,28785:14780,640054:9580,500107:9980,630049:10380,540096:13580,540094:9980,530060:10380,550152:13580,560072:10380,28789:7980,510172:11980,620043:9980,580075:9580,570075:9580,800042:10380,550156:9980,510165:7980,510166:11580,550155:9580,550159:10380,700108:10380
+-	pointshop	spc#S72	-1,#CASHPOINTS,15015:2500,2150:2500,15016:2500,15021:2500,2149:2500,15020:2500,15344:7525,15111:3120,15017:2500,2151:2500,15019:2500,15018:2500
+-	pointshop	spc#S73	-1,#CASHPOINTS,490297:1650,490299:5400,490301:5200,490300:5400
