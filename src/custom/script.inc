@@ -20,6 +20,25 @@
 
 #include "black_market_cashshop.hpp"
 
+BUILDIN_FUNC(blackmarketprice)
+{
+	TBL_PC* sd = nullptr;
+	if (!script_rid2sd(sd)) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_FAILURE;
+	}
+
+	int32 price = 0;
+	if (!black_market_player_price(script_getnum(st, 2),
+		black_market_level_multiplier(sd->status.base_level, (sd->class_ & JOBL_UPPER) != 0), price)) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	script_pushint(st, price);
+	return SCRIPT_CMD_SUCCESS;
+}
+
 // Result codes: 1=success, 2=selected item changed, 3=insufficient Black Market Points,
 // 4=invalid generated/script data. The NPC owns the roll; this command owns the
 // atomic validation, character-point debit, mutation, client refresh, and re-equip.
@@ -106,7 +125,12 @@ BUILDIN_FUNC(blackmarketenhance)
 	bool has_option = false;
 	for (const auto& option : sd->inventory.u.items_inventory[inventory_index].option)
 		has_option = has_option || option.id != 0;
-	const int32 price = has_option ? 2000 : 1000;
+	int32 price = 0;
+	if (!black_market_player_price(has_option ? 2000 : 1000,
+		black_market_level_multiplier(sd->status.base_level, (sd->class_ & JOBL_UPPER) != 0), price)) {
+		script_pushint(st, 4);
+		return SCRIPT_CMD_SUCCESS;
+	}
 	const int32 black_market_points = static_cast<int32>(pc_readreg2(sd, BLACK_MARKET_POINT_VAR));
 	if (black_market_points < price ||
 		!set_reg_num(nullptr, sd, add_str(BLACK_MARKET_POINT_VAR), BLACK_MARKET_POINT_VAR,

@@ -20,6 +20,7 @@
 #include <common/utils.hpp>
 
 #include "battle.hpp"
+#include "../custom/black_market_cashshop.hpp"
 #include "chat.hpp"
 #include "clif.hpp"
 #include "date.hpp" // days of week enum
@@ -2514,6 +2515,24 @@ static enum e_CASHSHOP_ACK npc_cashshop_process_payment(npc_data *nd, int32 pric
 	return ERROR_TYPE_NONE;
 }
 
+static bool npc_black_market_player_price(map_session_data* sd, npc_data* nd, int32 catalog_price, int32& player_price) {
+	if (nd->subtype != NPCTYPE_POINTSHOP || std::strcmp(nd->u.shop.pointshop_str, BLACK_MARKET_POINT_VAR) != 0) {
+		player_price = catalog_price;
+		return true;
+	}
+	if (sd->black_market_shop_id != nd->id || sd->black_market_price_multiplier <= 0) {
+		ShowWarning("npc_black_market_player_price: Missing or mismatched Black Market price snapshot for shop '%s' (CID=%d, shop=%d, snapshot=%d).\n",
+			nd->exname, sd->status.char_id, nd->id, sd->black_market_shop_id);
+		return false;
+	}
+	if (!black_market_player_price(catalog_price, sd->black_market_price_multiplier, player_price)) {
+		ShowError("npc_black_market_player_price: Black Market shop '%s' cannot price catalog value %d for CID=%d (multiplier=%d).\n",
+			nd->exname, catalog_price, sd->status.char_id, sd->black_market_price_multiplier);
+		return false;
+	}
+	return true;
+}
+
 /**
  * Cash Shop Buy List for clients 2010-11-16 and newer
  * @param sd: Player data
@@ -2564,6 +2583,10 @@ int32 npc_cashshop_buylist( map_session_data *sd, int32 points, std::vector<s_np
 			continue;
 		}
 
+		int32 player_price = 0;
+		if (!npc_black_market_player_price(sd, nd, nd->u.shop.shop_item[j].value, player_price))
+			return ERROR_TYPE_ITEM_ID;
+
 		switch( pc_checkadditem(sd,nameid,amount) )
 		{
 			case CHKADDITEM_NEW:
@@ -2573,7 +2596,10 @@ int32 npc_cashshop_buylist( map_session_data *sd, int32 points, std::vector<s_np
 				return ERROR_TYPE_INVENTORY_WEIGHT;
 		}
 
-		vt += nd->u.shop.shop_item[j].value * amount;
+		if (static_cast<int64>(player_price) * amount > std::numeric_limits<int32>::max() ||
+			static_cast<int64>(vt) + static_cast<int64>(player_price) * amount > std::numeric_limits<int32>::max())
+			return ERROR_TYPE_ITEM_ID;
+		vt += player_price * amount;
 		w += itemdb_weight(nameid) * amount;
 	}
 
@@ -2725,15 +2751,19 @@ int32 npc_cashshop_buy(map_session_data *sd, t_itemid nameid, int32 amount, int3
 	if( w + sd->weight > sd->max_weight )
 		return ERROR_TYPE_INVENTORY_WEIGHT;
 
-	if( (double)nd->u.shop.shop_item[i].value * amount > INT_MAX )
+	int32 player_price = 0;
+	if (!npc_black_market_player_price(sd, nd, nd->u.shop.shop_item[i].value, player_price))
+		return ERROR_TYPE_ITEM_ID;
+
+	if( static_cast<int64>(player_price) * amount > std::numeric_limits<int32>::max() )
 	{
 		ShowWarning("npc_cashshop_buy: Item '%s' (%u) price overflow attempt!\n", id->name.c_str(), nameid);
 		ShowDebug("(NPC:'%s' (%s,%d,%d), player:'%s' (%d/%d), value:%d, amount:%d)\n",
-					nd->exname, map_mapid2mapname(nd->m), nd->x, nd->y, sd->status.name, sd->status.account_id, sd->status.char_id, nd->u.shop.shop_item[i].value, amount);
+					nd->exname, map_mapid2mapname(nd->m), nd->x, nd->y, sd->status.name, sd->status.account_id, sd->status.char_id, player_price, amount);
 		return ERROR_TYPE_ITEM_ID;
 	}
 
-	price = nd->u.shop.shop_item[i].value * amount;
+	price = player_price * amount;
 	if( points > price )
 		points = price;
 

@@ -10,4 +10,5 @@
 
 //BUILDIN_DEF(example,""),
 BUILDIN_DEF(callblackmarketshop,"sii"),
+BUILDIN_DEF(blackmarketprice,"i"),
 BUILDIN_DEF(blackmarketenhance,"isrrr"),
