@@ -39,6 +39,39 @@ BUILDIN_FUNC(blackmarketprice)
 	return SCRIPT_CMD_SUCCESS;
 }
 
+// Card Magnet is a Premi entitlement, not a new status-change enum.  The NPC
+// owns the account expiry; this command owns only the current session's card
+// autoloot bit and its matching client-side timed icon.
+BUILDIN_FUNC(premiumcardloot)
+{
+	TBL_PC* sd = nullptr;
+	if (!script_rid2sd(sd)) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_FAILURE;
+	}
+
+	const int32 enable = script_getnum(st, 2);
+	const int64 remaining_ms = script_getnum(st, 3);
+	if ((enable != 0 && enable != 1) || remaining_ms < 0 || remaining_ms > 86400000 ||
+		(enable == 1 && remaining_ms == 0) || (enable == 0 && remaining_ms != 0)) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	constexpr uint16 card_autoloot_mask = (1 << IT_CARD);
+	if (enable == 1) {
+		sd->state.autoloottype |= card_autoloot_mask;
+		clif_status_change(sd, EFST_AID_PERIOD_ADDSTOREITEMCOUNT, 1,
+			static_cast<t_tick>(remaining_ms), 0, 0, 0);
+	} else {
+		sd->state.autoloottype &= ~card_autoloot_mask;
+		clif_status_change(sd, EFST_AID_PERIOD_ADDSTOREITEMCOUNT, 0, 0, 0, 0, 0);
+	}
+
+	script_pushint(st, 1);
+	return SCRIPT_CMD_SUCCESS;
+}
+
 // Result codes: 1=success, 2=selected item changed, 3=insufficient Black Market Points,
 // 4=invalid generated/script data. The NPC owns the roll; this command owns the
 // atomic validation, character-point debit, mutation, client refresh, and re-equip.

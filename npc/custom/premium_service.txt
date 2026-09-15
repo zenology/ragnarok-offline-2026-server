@@ -131,6 +131,7 @@ function	script	F_PremiumExtraRunning	{
 	.@exp = (#PREMIUM_EXPUP > .@now || getstatus(SC_PERIOD_PLUSEXP_2ND));
 	.@item = (#PREMIUM_ITEMUP > .@now || getstatus(SC_PERIOD_RECEIVEITEM_2ND));
 	.@death = (#PREMIUM_DEATHDOWN > .@now || getstatus(SC_LIFEINSURANCE));
+	.@card = (#PREMIUM_CARDLOOT > .@now);
 	if (.@kind == 1)
 		return .@exp;
 	if (.@kind == 2)
@@ -138,8 +139,30 @@ function	script	F_PremiumExtraRunning	{
 	if (.@kind == 3)
 		return .@death;
 	if (.@kind == 4)
-		return (.@exp || .@item || .@death);
+		return .@card;
+	if (.@kind == 5)
+		return (.@exp || .@item || .@death || .@card);
 	return 0;
+}
+
+// Keep Card Magnet account-wide without creating a new SC_* enum. A nonzero
+// expired stamp is deliberately cleared here; a zero stamp must not disturb a
+// player's independent @aloottype +card choice.
+function	script	F_PremiumSyncCardLoot	{
+	deltimer "PremiumLogin#offline::OnCardLootExpire";
+	.@now = gettimetick(2);
+	if (#PREMIUM_CARDLOOT <= .@now) {
+		if (#PREMIUM_CARDLOOT > 0) {
+			#PREMIUM_CARDLOOT = 0;
+			premiumcardloot 0,0;
+		}
+		return 0;
+	}
+	.@ms = (#PREMIUM_CARDLOOT - .@now) * 1000;
+	if (premiumcardloot(1, .@ms) == 0)
+		return 0;
+	addtimer .@ms, "PremiumLogin#offline::OnCardLootExpire";
+	return 1;
 }
 
 function	script	F_PremiumApplyExtra	{
@@ -148,18 +171,25 @@ function	script	F_PremiumApplyExtra	{
 		return 0;
 	.@now = gettimetick(2);
 	.@until = .@now + 86400;
-	if (.@kind == 1 || .@kind == 4) {
+	if (.@kind == 4 || .@kind == 5) {
+		if (premiumcardloot(1, 86400000) == 0)
+			return 0;
+		#PREMIUM_CARDLOOT = .@until;
+	}
+	if (.@kind == 1 || .@kind == 5) {
 		#PREMIUM_EXPUP = .@until;
 		sc_start SC_PERIOD_PLUSEXP_2ND, 86400000, 30;
 	}
-	if (.@kind == 2 || .@kind == 4) {
+	if (.@kind == 2 || .@kind == 5) {
 		#PREMIUM_ITEMUP = .@until;
 		sc_start SC_PERIOD_RECEIVEITEM_2ND, 86400000, 30;
 	}
-	if (.@kind == 3 || .@kind == 4) {
+	if (.@kind == 3 || .@kind == 5) {
 		#PREMIUM_DEATHDOWN = .@until;
 		sc_start SC_LIFEINSURANCE, 86400000, 0;
 	}
+	if (.@kind == 4 || .@kind == 5)
+		callfunc("F_PremiumSyncCardLoot");
 	return 1;
 }
 
@@ -171,6 +201,7 @@ function	script	F_PremiumSyncExtras	{
 		sc_start SC_PERIOD_RECEIVEITEM_2ND, (#PREMIUM_ITEMUP - .@now) * 1000, 30;
 	if (#PREMIUM_DEATHDOWN > .@now)
 		sc_start SC_LIFEINSURANCE, (#PREMIUM_DEATHDOWN - .@now) * 1000, 0;
+	callfunc("F_PremiumSyncCardLoot");
 	return;
 }
 
@@ -235,6 +266,19 @@ function	script	F_PremiumSoulLinkSkill	{
 OnPCLoginEvent:
 	callfunc("F_PremiumSyncStaff");
 	callfunc("F_PremiumSyncExtras");
+	end;
+
+OnCardLootExpire:
+	.@now = gettimetick(2);
+	if (#PREMIUM_CARDLOOT > .@now) {
+		callfunc("F_PremiumSyncCardLoot");
+		end;
+	}
+	if (#PREMIUM_CARDLOOT > 0) {
+		#PREMIUM_CARDLOOT = 0;
+		premiumcardloot 0,0;
+		dispbottom "Card Magnet expired.";
+	}
 	end;
 
 OnGmVipSync:
@@ -408,7 +452,7 @@ S_ExtrasMenu:
 	mes "Extra options last 24 hours for every character on this account!";
 	mes "They cost Nyangvine, and I won't sell one that's already running.";
 	next;
-	.@menu$ = "EXP UP (4 Nyangvine):ITEM UP (2 Nyangvine):DEATH DOWN (1 Nyangvine):Advanced Package (6 Nyangvine):Just checking:";
+	.@menu$ = "EXP UP (4 Nyangvine):ITEM UP (2 Nyangvine):DEATH DOWN (1 Nyangvine):CARD MAGNET (1 Nyangvine):Advanced Package (8 Nyangvine):Just checking:";
 	switch (select(.@menu$)) {
 	case 1:
 		callsub S_RefuseIfRunning, 1;
@@ -424,7 +468,11 @@ S_ExtrasMenu:
 		end;
 	case 4:
 		callsub S_RefuseIfRunning, 4;
-		callsub S_Buy, 6, 4, "Advanced Package";
+		callsub S_Buy, 1, 4, "Card Magnet";
+		end;
+	case 5:
+		callsub S_RefuseIfRunning, 5;
+		callsub S_Buy, 8, 5, "Advanced Package";
 		end;
 	default:
 		cutin "prm_3",2;
@@ -509,15 +557,17 @@ S_RefuseIfRunning:
 		return;
 	cutin "prm_4",2;
 	mes "[Premi]";
-	if (.@kind == 4) {
+	if (.@kind == 5) {
 		mes "I can't sell extra options while one is already running...";
 	} else {
 		if (.@kind == 1)
 			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_EXPUP);
 		else if (.@kind == 2)
 			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_ITEMUP);
-		else
+		else if (.@kind == 3)
 			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_DEATHDOWN);
+		else
+			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_CARDLOOT);
 		if (.@left$ == "inactive")
 			mes "That extra is already running...";
 		else
