@@ -26,13 +26,21 @@ inline std::unordered_map<std::string, black_market_catalog_cache> black_market_
 inline constexpr char BLACK_MARKET_POINT_VAR[] = "BlackMarketPoints";
 
 inline bool black_market_is_rooke_shop(const char* shop_name) {
-	return std::strcmp(shop_name, "cons0") == 0 ||
+	const bool legacy_shop = std::strcmp(shop_name, "cons0") == 0 ||
 		std::strcmp(shop_name, "cons1") == 0 ||
 		std::strcmp(shop_name, "cons2") == 0 ||
 		std::strcmp(shop_name, "cons3") == 0 ||
 		std::strcmp(shop_name, "cons4") == 0 ||
 		std::strcmp(shop_name, "cons5") == 0 ||
 		std::strcmp(shop_name, "cons6") == 0;
+	if (legacy_shop)
+		return true;
+	// Rooke's six player-progression tiers use exactly cons[0-6]#T[0-5].
+	return std::strncmp(shop_name, "cons", 4) == 0 &&
+		shop_name[4] >= '0' && shop_name[4] <= '6' &&
+		shop_name[5] == '#' && shop_name[6] == 'T' &&
+		shop_name[7] >= '0' && shop_name[7] <= '5' &&
+		shop_name[8] == '\0';
 }
 
 constexpr int32_t black_market_level_multiplier(int32_t base_level, bool reborn) {
