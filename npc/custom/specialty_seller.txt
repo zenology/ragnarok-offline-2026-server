@@ -23,7 +23,7 @@ paramk,27,158,2	script	Madame Celestine#offline	4_EP21_GALAXIA_B,{
 	next;
 	mes "[Madame Celestine]";
 	mes "Which equipment set would you like to see?";
-	.@choice = select("Abyss Glastheim:Abyss Lake Equipment:Adulter and Vivatus Fides Weapons:Airship Set:Ancient Hero:Automatic Equipment:Biolab 5th Floor Equipment:Biolab Gear:Brave Heart:Brilliant Light:Charleston Crisis:Circulation of Life:Clergy Equipment:Constellation Tower Gear:Convertible Gears:Dimension Equipment:Edda Equipment:Einbech Weapons:Engraved Equipment:Enhanced Time Guardian Equipment:Entwined Equipment:Evil Slayer:Excellion Gear:Ferlock Equipment:Fortified Weapons:Frontier:Frontier Rune Crowns:Furious Equipment:Gaebolg Equipment:Geffen Magic Tournament:Geffen Night Arena:Glacier Equipment:Godlike Equipment:Good and Evil:Grace Equipment:Gray Equipment:Gray Wolf Equipment:Helms of Faith:Heroic Equipment:Horror Toy Equipment:Illusion of Abyss:Illusion of Frozen:Illusion of Labyrinth:Illusion of Luanda:Illusion of Moonlight:Illusion of Teddy Bear:Illusion of Twins:Illusion of Underwater:Illusion of Vampire:Illusion/OS Gears:Imperial Equipment:Imperial Set:Infinity Weapons:Issgard Equipment:King Schmidt's Equipment:Magma Equipment:Memories of Thanatos Equipment:Mora Equipment:Muqaddas Weapons:Nightmarish Jitterburg Equipment:Noblesse Set:Poenitentia:Precision Weapons:Racing Caps:Relapse Weapons:Rift Armor:Royal and Guardian Weapons:Royal Banquet / Royal Guard Shield:Runaway Chips:Rune Equipment:Sarah's Gear:Schwartz's Equipment:Scrap Weapons:Sin Weapons:Solid Weapons:Soutane Equipment:Stardust Equipment:Supplement Part Equipment:Sweet Candy Backpack:Temporal Armors:Thanatos Equipment:Time Dimension Rune Crown:Time Gap Weapons:Upgrade Part Equipment:Varmundt Equipment:Vicious Mind:Werner's Laboratory:Wicked Weapons:") - 1;
+	.@choice = select("Abyss Glastheim:Abyss Lake Equipment:Adulter and Vivatus Fides Weapons:Airship Set:Ancient Hero:Automatic Equipment:Biolab 5th Floor Equipment:Biolab Gear:Brave Heart:Brilliant Light:Charleston Crisis:Circulation of Life:Clergy Equipment:Constellation Tower Gear:Convertible Gears:Dimension Equipment:Edda Equipment:Einbech Weapons:Engraved Equipment:Enhanced Time Guardian Equipment:Entwined Equipment:Evil Slayer:Excellion Gear:Ferlock Equipment:Fortified Weapons:Frontier:Frontier Rune Crowns:Furious Equipment:Gaebolg Equipment:Geffen Magic Tournament:Geffen Night Arena:Glacier Equipment:Godlike Equipment:Good and Evil:Grace Equipment:Gray Equipment:Gray Wolf Equipment:Helms of Faith:Heroic Equipment:Horror Toy Equipment:Illusion of Abyss:Illusion of Frozen:Illusion of Labyrinth:Illusion of Luanda:Illusion of Moonlight:Illusion of Teddy Bear:Illusion of Twins:Illusion of Underwater:Illusion of Vampire:Illusion/OS Gears:Imperial Equipment:Imperial Set:Infinity Weapons:Issgard Equipment:King Schmidt's Equipment:Magma Equipment:Memories of Thanatos Equipment:Mora Equipment:Muqaddas Weapons:Nightmarish Jitterburg Equipment:Noblesse Set:Poenitentia:Precision Weapons:Racing Caps:Relapse Weapons:Rift Armor:Royal and Guardian Weapons:Royal Banquet / Royal Guard Shield:Runaway Chips:Rune Equipment:Sarah's Gear:Schwartz's Equipment:Scrap Weapons:Sin Weapons:Solid Weapons:Soutane Equipment:Stardust Equipment:Supplement Part Equipment:Sweet Candy Backpack:Temporal Armors:Thanatos Equipment:Time Dimension Rune Crown:Time Gap Weapons:Upgrade Part Equipment:Varmundt Equipment:Vicious Mind:Werner's Laboratory:Wicked Weapons:Y.S.F.01 Set:Yorscalp Equipment:") - 1;
 	.@shop$ = getvariableofnpc(.FamilyShop$[.@choice], "specialty_seller_db");
 	callfunc "F_BlackMarketDailyRemark", "Madame Celestine", $BlackMarketRateSpecialty;
 	close2;
@@ -33,7 +33,7 @@ paramk,27,158,2	script	Madame Celestine#offline	4_EP21_GALAXIA_B,{
 
 -	script	specialty_seller_db	-1,{
 OnInit:
-	.FamilyCount = 88;
+	.FamilyCount = 90;
 	setunittitle(getnpcid(0), "<Specialists>");
 	.FamilyShop$[0] = "spc#S00";
 	.FamilyShop$[1] = "spc#S01";
@@ -123,6 +123,8 @@ OnInit:
 	.FamilyShop$[85] = "spc#S85";
 	.FamilyShop$[86] = "spc#S86";
 	.FamilyShop$[87] = "spc#S87";
+	.FamilyShop$[88] = "spc#S88";
+	.FamilyShop$[89] = "spc#S89";
 	end;
 }
 
@@ -214,3 +216,5 @@ OnInit:
 -	pointshop	spc#S85	-1,BlackMarketPoints,20748:4605,19439:1650,28605:2500,18121:2500,28706:2500,1800:2500,13328:2500,28008:2500,1450:2500,16041:2500,13128:2500,1600:2500,13455:2500,1400:2500,2026:2500,28107:2500,21016:2500,1900:2500,1996:2500
 -	pointshop	spc#S86	-1,BlackMarketPoints,18570:3456,16017:2640,1584:2280,1490:3270,1291:3500,2582:1650
 -	pointshop	spc#S87	-1,BlackMarketPoints,620016:9180,500045:11580,540042:9180,590036:10180,510051:8980,510052:9180,610035:9180,550056:12980
+-	pointshop	spc#S88	-1,BlackMarketPoints,22141:4320,20856:4960,15212:3350
+-	pointshop	spc#S89	-1,BlackMarketPoints,450412:7380,470303:7380,400724:14380,490622:5400,400723:7780,490621:5400,480495:7380,480496:6780,490623:5400,490620:5400,450413:6180,470304:6180

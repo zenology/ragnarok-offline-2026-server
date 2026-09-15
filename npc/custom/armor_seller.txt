@@ -65,4 +65,3 @@ OnInit:
 -	pointshop	arm0#U	-1,BlackMarketPoints,15152:1300,15153:1300,15155:260,15154:1950,2370:1000
 -	pointshop	arm0#V	-1,BlackMarketPoints,2357:8100,15365:2400,15176:360
 -	pointshop	arm0#W	-1,BlackMarketPoints,2379:2700,15407:5400,15419:1300,450419:7800
--	pointshop	arm0#Y	-1,BlackMarketPoints,15212:2100

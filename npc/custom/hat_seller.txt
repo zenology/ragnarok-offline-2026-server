@@ -197,13 +197,13 @@ OnInit:
 	setarray .IroId[340], 400738,400936,400948,400974,401002,401012,401043,401238,401290,401307,401459,401466,401467,410380,410381,410434,410531,410539,410544,410545;
 	setarray .IroId[360], 410550,410553,410615,410616,410622,410652,420245,420311,420438,420503,420590,420777,18794,18795,400078,400079,400094,400095,400098,400099;
 	setarray .IroId[380], 400116,400117,400118,400119,400120,400121,400105,400106,400107,400336,400337,400338,400339,400340,400447,400457,400469,400482,400603,400625;
-	setarray .IroId[400], 400723,400724,5354,5365,5379,5383,5390,5388,5393,5802,5054,5107,2234,2235,2281,2292,2296,2210,2214,2246;
-	setarray .IroId[420], 2256,2280,5110,5206,5161,5104,2295,5026,5059,5235,5236,5303,5304,5312,5317,5319,5320,5323,5336,5337;
-	setarray .IroId[440], 5338,5339,5346,5181,5349,5013,5022,5171,5135,5029,5033,5040,5047,5065,5084,5086,5108,5121,5146,5151;
-	setarray .IroId[460], 5152,5170,5173,5174,5175,5185,5187,5191,5192,5194,5195,5196,5197,5200,5205,5238,5239,5240,5241,5243;
-	setarray .IroId[480], 5254,5257,5297,5258,5298,5273,5275,5274,5259,5271,5272,5352,5355,5800,410017,420076,410091,410092,410093,410094;
-	setarray .IroId[500], 5428,5452,5453,5603,5604,5605,5892,5893,5894,18779,18780,18781,18796,18828,18829,18830,401146,420513,420701,420884;
-	setarray .IroId[520], 420898,401091,401019,401460,420899,15972,5898,420030,410233;
+	setarray .IroId[400], 5354,5365,5379,5383,5390,5388,5393,5802,5054,5107,2234,2235,2281,2292,2296,2210,2214,2246,2256,2280;
+	setarray .IroId[420], 5110,5206,5161,5104,2295,5026,5059,5235,5236,5303,5304,5312,5317,5319,5320,5323,5336,5337,5338,5339;
+	setarray .IroId[440], 5346,5181,5349,5013,5022,5171,5135,5029,5033,5040,5047,5065,5084,5086,5108,5121,5146,5151,5152,5170;
+	setarray .IroId[460], 5173,5174,5175,5185,5187,5191,5192,5194,5195,5196,5197,5200,5205,5238,5239,5240,5241,5243,5254,5257;
+	setarray .IroId[480], 5297,5258,5298,5273,5275,5274,5259,5271,5272,5352,5355,5800,410017,420076,410091,410092,410093,410094,5428,5452;
+	setarray .IroId[500], 5453,5603,5604,5605,5892,5893,5894,18779,18780,18781,18796,18828,18829,18830,401146,420513,420701,420884,420898,401091;
+	setarray .IroId[520], 401019,401460,420899,15972,5898,420030,410233,5513,5588,5598,5662,5739;
 	setarray .IroPrice[0], 200,100,1000,2200,1000,100,1000,1200,100,380,1000,3125,500,260,975,200,1000,2250,2000,2040;
 	setarray .IroPrice[20], 1200,200,200,1000,440,1000,240,2000,200,200,1600,200,1000,1200,1200,2000,1000,1560,260,260;
 	setarray .IroPrice[40], 200,1200,1000,1200,1200,1200,260,1600,1200,600,3000,3750,3000,3000,3750,5075,1500,3360,1500,1000;
@@ -224,13 +224,13 @@ OnInit:
 	setarray .IroPrice[340], 4780,11780,11980,6180,9580,4980,6180,7000,5980,8180,6980,3180,3180,6250,6250,2250,1900,1900,1900,1900;
 	setarray .IroPrice[360], 8850,6400,4170,7160,8850,2070,2100,900,2400,1600,2400,4600,22425,3800,2850,4400,2640,4000,2850,2850;
 	setarray .IroPrice[380], 2850,4200,4400,2550,3450,2850,4580,4180,4580,2900,2900,3100,3800,3600,4400,5000,4600,4400,4400,4600;
-	setarray .IroPrice[400], 5780,12380,2000,1560,1500,420,1200,975,1000,975,100,900,240,240,900,975,200,100,200,600;
-	setarray .IroPrice[420], 200,200,100,1200,975,3000,1800,200,100,200,200,1000,2280,380,1200,1560,1200,200,100,100;
-	setarray .IroPrice[440], 100,100,100,260,975,1000,200,1500,1000,100,100,900,100,900,1200,1800,975,3900,440,2500;
-	setarray .IroPrice[460], 320,2400,1560,1560,1600,500,1560,1000,1000,1000,1000,1000,1000,100,1000,1000,1000,1000,1000,1900;
-	setarray .IroPrice[480], 1500,1200,1560,1920,3300,1000,1000,1000,1200,1900,1200,100,2000,2200,1300,2100,2000,2600,2100,2550;
-	setarray .IroPrice[500], 2200,5075,5075,4200,4200,4200,1000,1000,1000,3100,2500,1900,1140,1300,1300,1300,100,1700,100,2600;
-	setarray .IroPrice[520], 2000,2400,2100,2100,3000,100,3800,900,1500;
+	setarray .IroPrice[400], 2000,1560,1500,420,1200,975,1000,975,100,900,240,240,900,975,200,100,200,600,200,200;
+	setarray .IroPrice[420], 100,1200,975,3000,1800,200,100,200,200,1000,2280,380,1200,1560,1200,200,100,100,100,100;
+	setarray .IroPrice[440], 100,260,975,1000,200,1500,1000,100,100,900,100,900,1200,1800,975,3900,440,2500,320,2400;
+	setarray .IroPrice[460], 1560,1560,1600,500,1560,1000,1000,1000,1000,1000,1000,100,1000,1000,1000,1000,1000,1900,1500,1200;
+	setarray .IroPrice[480], 1560,1920,3300,1000,1000,1000,1200,1900,1200,100,2000,2200,1300,2100,2000,2600,2100,2550,2200,5075;
+	setarray .IroPrice[500], 5075,4200,4200,4200,1000,1000,1000,3100,2500,1900,1140,1300,1300,1300,100,1700,100,2600,2000,2400;
+	setarray .IroPrice[520], 2100,2100,3000,100,3800,900,1500,1300,1560,1950,2040,2700;
 	setarray .IroDisp$[0], "Snake Head Hat","Assassin Mask","Crunch Toast","Tiara","Crown","Opera Masque","Welding Mask","Binoculars","Hair Band","Bunny Band","Golden Gear","Majestic Goat","Sakkat","Baby Pacifier","Romantic White Flower","Spiky Band","Spiky Band","Dark Blinder","Blinker","Chef Hat";
 	setarray .IroDisp$[20], "Deviruchi Hat","Tulip Hairpin","Tiger Mask","Neko Mimi","Takius Blindfold","Blank Eyes","2nd Anniversary Hat","Mystic Rose","Sheep Hat","Alice Doll","Magic Eyes","Hibiscus","Charming Ribbon","Crescent Helm","Corsair","Puppy Hat","Captain's Hat","Wandering Minstrel Hat","Green Ribbon","Rideword Hat";
 	setarray .IroDisp$[40], "Flapping Angel Wings","Dress Hat","Moonlight Flower Hat","Evolved Majestic Goat","Evolved Bunny Band","Evolved Drooping Kitty","Evolved Pipe","Evolved Pair of Red Ribbon","Evolved Blue Fish","Mini Propeller","Gray Deviruchi Hat","Brown Deviruchi Hat","Blue Drooping Kitty","Pink Beanie","Yellow Magician Hat","Elven Sunglasses","Triple Poring Hat","Flapping Angel Wings","Fantastic Wig","Chick Hat";
@@ -264,7 +264,7 @@ OnInit:
 	setarray .IroDisp$[600], "Santa Claus Hat","Chewy Seaweed","Santa Claus Beard","23rd Anniversary Scarf","Nyar's Familiar","Sewer Warrior Hat","Issgard Helmet","Serpent Knight Helm","Nyar's Familiar-VG","Happy Balloon";
 	setarray .IroDisp$[614], "Autumn Headband";
 	setarray .IroDisp$[615], "Feather in Mouth";
-	.IroCount = 529;
+	.IroCount = 532;
 	setarray .IroClientDisp$[0], "Deviruchi Hat","Tulip Hairpin","Tiger Mask","Neko Mimi","Takius Blindfold","Blank Eyes","2nd Anniversary Hat","Mystic Rose","Sheep Hat","Alice Doll","Hibiscus","Charming Ribbon","Crescent Helm","Corsair","Captain's Hat","Wandering Minstrel Hat","Green Ribbon","Rideword Hat","Flapping Angel Wings","Dress Hat";
 	setarray .IroClientDisp$[20], "Moonlight Flower Hat","Evolved Majestic Goat","Evolved Bunny Band","Evolved Drooping Kitty","Evolved Pipe","Evolved Pair of Red Ribbon","Evolved Blue Fish","Mini Propeller","Gray Deviruchi Hat","Brown Deviruchi Hat","Blue Drooping Kitty","Pink Beanie","Yellow Magician Hat","Elven Sunglasses","Triple Poring Hat","Flapping Angel Wings","Fantastic Wig","Water Lily Crown","Vane Hairpin","Vacation Hat";
 	setarray .IroClientDisp$[40], "Red Glasses","Vanilmirth Hat","Drooping Bunny","Kettle Hat","Dragon Skull","Ramen Hat","Whisper Mask","Tropical Fruit Hat","Little Angel Doll","Jumping Poring","Defolty Doll Hat","Glaris Doll Hat","Sorin Doll Hat","Telling Doll Hat","Bennit Doll Hat","W Doll Hat","Captain's Hat","Wickebine's Black Cat Ears","Gangster Scarf","Judge Hat";
@@ -285,13 +285,13 @@ OnInit:
 	setarray .IroClientDisp$[340], "Disciple of Bijou","Queen Bee Jeweled Crown","Robotic Valkyrie Hairband","Future Yoyo King Hat","Boitata Cap","Future Wolf King Hat","Kiel Successor Doll","Umbala Utan Helmet","Bankrupt Headgear","Future Gryphon Hat","Eddga Follower Doll","Focused Cat Paw Physical Hat","Focused Cat Paw Magical Hat","Bone Detardeurus Wing","Angelgolt's Wing","Vampire Von Blood","Hero Follower Mask","OS Follower Mask","Poenitentia Follower Mask","Thanatos Follower Mask";
 	setarray .IroClientDisp$[360], "Kitsune Gaze","Ancient Morroc Noble Jewelry-LT","Little Garden-LT","Floating Ball-LT","Ranger's Binoculars","Moon Follower Eyepatch","Moon God Lapel","Special Bear Balloon","Constellation Orb","Biosphere Scarf","Frosty Breath","Buffalo Bandit Scarf","Plain Black Magician Hat","Night Sparrow Hat","Goral Crown","Trial Diadem","Jade Crown","Spinel Diadem","Bull Crown","Taurus Diadem";
 	setarray .IroClientDisp$[380], "Celestial Jewel Crown","Libra Crown","Saint Crown","Lion Crown","Goat Crown","Twins Crown","Issgard Warrior Crown","Issgard Magician Crown","Issgard Ranger Crown","Herosria Helm","Herosria Apple of Archer","Herosria Sorcerer's Hat","Herosria Beret","Herosria Biretta","Confession Courage Crown","Confession Domineering Crown","Penance Crown","Penance Glory Crown","Poenetentia Spirit Crown","Poenetentia Willful Crown";
-	setarray .IroClientDisp$[400], "Yorscalp Executioner's Circlet","Yorscalp Crown of Judgment","Songkok","Magnolia Hat","Balloon Hat","Hunting Cap","Twin Pom Blue Santa Hat","Snake Head","Valentine Hat","Upgrade Elephant Hat","Assassin Mask","Crunch Toast","Tiara","Crown","Opera Mask","Welding Mask","Binoculars","Hairband","Bunny Band","Golden Gear";
-	setarray .IroClientDisp$[420], "Majestic Goat","Sakkat","Baby Pacifier","Romantic White Flower","Spiky Band","Dark Blinkers","Blinkers","Chef Hat","Teddybear Hat","Brown Beanie","Blue Beanie","Flower Crown","Cap of Blindness","Ayothaya King's Hat","Fisherman Hat","Arc Angeling Hat","Champion Wreath","Mistress Crown","Guildsman Recruiter Hat","Party Recruiter Hat";
-	setarray .IroClientDisp$[440], "Battlefield Recruiter Hat","Friend Recruiter Hat","Gf Recruiter Hat","Helm of Darkness","Boy's Cap","Lord Kaho's Horn","Hat of the Sun God","Valkyrie Helm","Cyclop's Eye","Spore Hat","Raccoon Hat","Blush","Fashionable Glasses","Blue Fish","Lazy Smokie","Alarm Mask","Renown Detective's Cap","Zealotus Mask","Elephant Hat","Note Headphone";
-	setarray .IroClientDisp$[460], "Chinese Crown","Feather Beret","Magistrate Hat","Ayam","Censor Bar","Laurel Wreath","Twin Red Ribbon","Black Ribbon","Yellow Ribbon","Pink Ribbon","Red Ribbon","Orange Ribbon","White Ribbon","Coppola","Emperor's Laurel Crown","Red Magician Hat","Gray Magician Hat","Brown Magician Hat","Blue Magician Hat","Shafka";
-	setarray .IroClientDisp$[480], "Devilring Hat","Soulless Ring","Soul Wing","Afro Wig","Dokkaebi's Wig","Happy Wig","Marvelous Wig","Shiny Wig","Elephant Hat","Phoenix Crown","Tongue Mask","Poporing Hat","Selendang","Blush of Groom","Battle Processor","Bondage Necklace","Cor Core Booster","Cor Core Booster","Chain of Seals","Chain of Seals";
-	setarray .IroClientDisp$[500], "RWC Anniversary Bread Envelope","Silver Dragon Helm","Copper Dragon Helm","RWC Statue(Winner)","RWC Statue(2nd)","RWC Statue(3rd)","RCC2013 1st Crown","RCC2013 2nd Crown","RCC2013 3rd Crown","RWC Champ Crown(1st)","RWC Champ Crown(2nd)","RWC Champ Crown(3rd)","RWC Crown of Victory(8th)","RMSC2012 Champion Headgear","RMSC2012 1st Runner Headgear","RMSC2012 2nd Runner Headgear","Santa Claus Hat","Chewy Seaweed","Santa Claus Beard","23rd Anniversary Scarf";
-	setarray .IroClientDisp$[520], "Nyar's Familiar","Sewer Warrior Hat","Issgard Helmet","Serpent Knight Helm","Nyar's Familiar-VG","Happy Balloon","Autumn Headband","Feather in Mouth","Gambler's Seal";
+	setarray .IroClientDisp$[400], "Songkok","Magnolia Hat","Balloon Hat","Hunting Cap","Twin Pom Blue Santa Hat","Snake Head","Valentine Hat","Upgrade Elephant Hat","Assassin Mask","Crunch Toast","Tiara","Crown","Opera Mask","Welding Mask","Binoculars","Hairband","Bunny Band","Golden Gear","Majestic Goat","Sakkat";
+	setarray .IroClientDisp$[420], "Baby Pacifier","Romantic White Flower","Spiky Band","Dark Blinkers","Blinkers","Chef Hat","Teddybear Hat","Brown Beanie","Blue Beanie","Flower Crown","Cap of Blindness","Ayothaya King's Hat","Fisherman Hat","Arc Angeling Hat","Champion Wreath","Mistress Crown","Guildsman Recruiter Hat","Party Recruiter Hat","Battlefield Recruiter Hat","Friend Recruiter Hat";
+	setarray .IroClientDisp$[440], "Gf Recruiter Hat","Helm of Darkness","Boy's Cap","Lord Kaho's Horn","Hat of the Sun God","Valkyrie Helm","Cyclop's Eye","Spore Hat","Raccoon Hat","Blush","Fashionable Glasses","Blue Fish","Lazy Smokie","Alarm Mask","Renown Detective's Cap","Zealotus Mask","Elephant Hat","Note Headphone","Chinese Crown","Feather Beret";
+	setarray .IroClientDisp$[460], "Magistrate Hat","Ayam","Censor Bar","Laurel Wreath","Twin Red Ribbon","Black Ribbon","Yellow Ribbon","Pink Ribbon","Red Ribbon","Orange Ribbon","White Ribbon","Coppola","Emperor's Laurel Crown","Red Magician Hat","Gray Magician Hat","Brown Magician Hat","Blue Magician Hat","Shafka","Devilring Hat","Soulless Ring";
+	setarray .IroClientDisp$[480], "Soul Wing","Afro Wig","Dokkaebi's Wig","Happy Wig","Marvelous Wig","Shiny Wig","Elephant Hat","Phoenix Crown","Tongue Mask","Poporing Hat","Selendang","Blush of Groom","Battle Processor","Bondage Necklace","Cor Core Booster","Cor Core Booster","Chain of Seals","Chain of Seals","RWC Anniversary Bread Envelope","Silver Dragon Helm";
+	setarray .IroClientDisp$[500], "Copper Dragon Helm","RWC Statue(Winner)","RWC Statue(2nd)","RWC Statue(3rd)","RCC2013 1st Crown","RCC2013 2nd Crown","RCC2013 3rd Crown","RWC Champ Crown(1st)","RWC Champ Crown(2nd)","RWC Champ Crown(3rd)","RWC Crown of Victory(8th)","RMSC2012 Champion Headgear","RMSC2012 1st Runner Headgear","RMSC2012 2nd Runner Headgear","Santa Claus Hat","Chewy Seaweed","Santa Claus Beard","23rd Anniversary Scarf","Nyar's Familiar","Sewer Warrior Hat";
+	setarray .IroClientDisp$[520], "Issgard Helmet","Serpent Knight Helm","Nyar's Familiar-VG","Happy Balloon","Autumn Headband","Feather in Mouth","Gambler's Seal","Aquarius Crown","Leo Crown","Virgo Crown","Libra Crown","Sagittarius Crown";
 	// Generated by KB tools/audit_harlan_hat_prices.py from the confirmed pricing taxonomy.
 	// Generated by KB tools/audit_harlan_hat_prices.py from the condition-aware pricing taxonomy.
 	// Confirmed endgame headgear families. Families already sold by the imported Cash Mall exchange (Good and Evil and Furious) stay out of Harlan.
