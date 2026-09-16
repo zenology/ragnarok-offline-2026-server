@@ -1,4 +1,4 @@
-// Malangdo Silvervine card-slot enchant (Phase 1: Gray Wolf). Registry: silvervine_equipment_enchant_db.txt
+// Malangdo Silvervine enchant (card-slot + Random Options). Registry: silvervine_equipment_enchant_db.txt
 
 function	script	F_SVE_DbInt	{
 	.@idx = getarg(1);
@@ -25,9 +25,23 @@ function	script	F_SVE_DbInt	{
 
 function	script	F_SVE_FindRegistryIndex	{
 	.@item_id = getarg(0);
-	.@size = getarraysize(getvariableofnpc(.ItemId[0], "silvervine_equipment_enchant_db"));
+	.@size = getvariableofnpc(.ItemCount, "silvervine_equipment_enchant_db");
+	if (.@size < 1)
+		return -1;
 	for (.@i = 0; .@i < .@size; ++.@i) {
-		if (callfunc("F_SVE_DbInt", 0, .@i) == .@item_id)
+		if (getelementofarray(getvariableofnpc(.ItemId[0], "silvervine_equipment_enchant_db"), .@i) == .@item_id)
+			return .@i;
+	}
+	return -1;
+}
+
+function	script	F_SVE_FindRoIndex	{
+	.@item_id = getarg(0);
+	.@size = getvariableofnpc(.RoItemCount, "silvervine_equipment_enchant_db");
+	if (.@size < 1)
+		return -1;
+	for (.@i = 0; .@i < .@size; ++.@i) {
+		if (getelementofarray(getvariableofnpc(.RoItemId[0], "silvervine_equipment_enchant_db"), .@i) == .@item_id)
 			return .@i;
 	}
 	return -1;
@@ -35,14 +49,19 @@ function	script	F_SVE_FindRegistryIndex	{
 
 function	script	F_SVE_GroupEnabled	{
 	.@group_id = getarg(0);
-	return inarray(getvariableofnpc(.EnabledGroupId[0], "Silvervine Enchanter#sve"), .@group_id) != -1;
+	.@n = getvariableofnpc(.EnabledGroupCount, "silvervine_equipment_enchant_db");
+	for (.@i = 0; .@i < .@n; ++.@i) {
+		if (getelementofarray(getvariableofnpc(.EnabledGroupId[0], "silvervine_equipment_enchant_db"), .@i) == .@group_id)
+			return 1;
+	}
+	return 0;
 }
 
 function	script	F_SVE_FindPoolIndex	{
 	.@gidx = getarg(0);
 	.@card_slot = getarg(1);
 	.@grade = getarg(2);
-	.@size = getarraysize(getvariableofnpc(.PoolGroupIdx[0], "silvervine_equipment_enchant_db"));
+	.@size = getvariableofnpc(.PoolRowCount, "silvervine_equipment_enchant_db");
 	for (.@i = 0; .@i < .@size; ++.@i) {
 		if (callfunc("F_SVE_DbInt", 8, .@i) != .@gidx)
 			continue;
@@ -125,11 +144,10 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 		mes "Free some inventory space before we begin.";
 		close;
 	}
-	mes "[Silvervine Enchanter]";
-	mes "I can roll card-slot enchants on equipped gear you wear right now.";
-	mes "Each step costs Silvervine Fruit: new slot N costs N, rerolling that step costs N+1.";
-	next;
 
+	mes "[Silvervine Enchanter]";
+	mes "One moment while I check what you are wearing...";
+	freeloop(1);
 	.@count = 0;
 	for (.@scan = 0; .@scan < 10; ++.@scan) {
 		.@slot = (.@scan == 0 ? EQI_HEAD_TOP : .@scan == 1 ? EQI_HEAD_MID : .@scan == 2 ? EQI_HEAD_LOW : .@scan == 3 ? EQI_HAND_R : .@scan == 4 ? EQI_HAND_L : .@scan == 5 ? EQI_ARMOR : .@scan == 6 ? EQI_GARMENT : .@scan == 7 ? EQI_SHOES : .@scan == 8 ? EQI_ACC_L : EQI_ACC_R);
@@ -143,18 +161,21 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 			continue;
 		if (.@type == IT_ARMOR && .@slot == EQI_HAND_R)
 			continue;
-		.@reg = callfunc("F_SVE_FindRegistryIndex", .@item);
-		if (.@reg < 0)
-			continue;
-		.@group_id = callfunc("F_SVE_DbInt", 1, .@reg);
-		if (!callfunc("F_SVE_GroupEnabled", .@group_id))
-			continue;
-		if (!callfunc("F_SVE_HasActionableStep", .@slot, .@group_id))
-			continue;
 		.@uid$ = getequipuniqueid(.@slot);
 		if (.@uid$ == "")
 			continue;
 		.@label$ = (.@slot == EQI_HEAD_TOP ? "Top" : .@slot == EQI_HEAD_MID ? "Middle" : .@slot == EQI_HEAD_LOW ? "Lower" : .@slot == EQI_HAND_R ? "Weapon Right" : .@slot == EQI_HAND_L && .@type == IT_WEAPON ? "Weapon Left" : .@slot == EQI_HAND_L ? "Shield" : .@slot == EQI_ARMOR ? "Armor" : .@slot == EQI_GARMENT ? "Garment" : .@slot == EQI_SHOES ? "Shoes" : .@slot == EQI_ACC_L ? "Accessory Left" : "Accessory Right");
+		.@ro = callfunc("F_SVE_FindRoIndex", .@item);
+		if (.@ro < 0) {
+			.@reg = callfunc("F_SVE_FindRegistryIndex", .@item);
+			if (.@reg < 0)
+				continue;
+			.@group_id = callfunc("F_SVE_DbInt", 1, .@reg);
+			if (!callfunc("F_SVE_GroupEnabled", .@group_id))
+				continue;
+			if (!callfunc("F_SVE_HasActionableStep", .@slot, .@group_id))
+				continue;
+		}
 		.@found = -1;
 		for (.@i = 0; .@i < .@count; ++.@i) {
 			if (.@chosen_uid$[.@i] == .@uid$)
@@ -166,18 +187,30 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 		}
 		.@chosen_slot[.@count] = .@slot;
 		.@chosen_item[.@count] = .@item;
-		.@chosen_reg[.@count] = .@reg;
-		.@chosen_group[.@count] = .@group_id;
+		if (.@ro < 0) {
+			.@chosen_reg[.@count] = .@reg;
+			.@chosen_group[.@count] = .@group_id;
+		} else {
+			.@chosen_reg[.@count] = -1;
+			.@chosen_group[.@count] = 0;
+		}
 		.@chosen_uid$[.@count] = .@uid$;
 		.@chosen_label$[.@count] = .@label$;
 		++.@count;
 	}
+	freeloop(0);
 	if (.@count < 1) {
 		mes "[Silvervine Enchanter]";
-		mes "I do not see any supported equipped gear with an open enchant step right now.";
-		mes "Wear supported Gray Wolf gear with an open enchant step, or come back after the next registry update.";
+		mes "I do not see any supported equipped gear I can enchant right now.";
+		mes "Wear supported gear with an open enchant step, Imperial/OS gear for Random Options, or come back after the next registry update.";
 		close;
 	}
+
+	mes "[Silvervine Enchanter]";
+	mes "I can enchant equipped gear you wear right now.";
+	mes "Card-slot charms: step N costs N Silvervine Fruit, rerolling that step costs N+1.";
+	mes "Random Options (Imperial / OS): pick how many options you want; cost is 1+2+...+N fruit (double if the item already has options).";
+	next;
 
 	.@menu$ = "";
 	for (.@i = 0; .@i < .@count; ++.@i)
@@ -188,6 +221,93 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 
 	.@slot = .@chosen_slot[.@choice];
 	.@item = .@chosen_item[.@choice];
+	.@ro = callfunc("F_SVE_FindRoIndex", .@item);
+
+	if (.@ro >= 0) {
+		.@existing = 0;
+		for (.@i = 0; .@i < 5; ++.@i)
+			if (getequiprandomoption(.@slot, .@i, ROA_ID) != 0)
+				++.@existing;
+		.@mult = (.@existing > 0 ? 2 : 1);
+		.@n_menu$ = "";
+		for (.@n = 1; .@n <= 5; ++.@n) {
+			.@cost_n = .@n * (.@n + 1) / 2 * .@mult;
+			.@n_menu$ += .@n + " options - " + .@cost_n + " Fruit:";
+		}
+		mes "[Silvervine Enchanter]";
+		mes "^0055FF" + getitemname(.@item) + "^000000 — Random Options.";
+		mes "Current options on this item: " + .@existing + ".";
+		mes "All current Random Options will be removed and replaced.";
+		next;
+		.@n_pick = select(.@n_menu$ + "Cancel") - 1;
+		if (.@n_pick == 5)
+			close;
+		.@want = .@n_pick + 1;
+		.@cost = .@want * (.@want + 1) / 2 * .@mult;
+		mes "[Silvervine Enchanter]";
+		mes "Cost: ^0055FF" + .@cost + " Silvervine Fruit^000000 for " + .@want + " option" + (.@want == 1 ? "" : "s") + ".";
+		mes "Refine, cards, and enchant grade stay as they are.";
+		if (select("Proceed:Cancel") == 2)
+			close;
+		if (countitem(6417) < .@cost) {
+			mes "[Silvervine Enchanter]";
+			mes "You need " + .@cost + " Silvervine Fruit.";
+			close;
+		}
+		.@eq_id = getequipid(.@slot);
+		.@refine = getequiprefinerycnt(.@slot);
+		.@card[0] = getequipcardid(.@slot, 0);
+		.@card[1] = getequipcardid(.@slot, 1);
+		.@card[2] = getequipcardid(.@slot, 2);
+		.@card[3] = getequipcardid(.@slot, 3);
+		.@grade = getenchantgrade(.@slot);
+		if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine))
+			close;
+		for (.@i = 0; .@i < 5; ++.@i) {
+			.@roll_id[.@i] = 0;
+			.@roll_val[.@i] = 0;
+			.@roll_param[.@i] = 0;
+		}
+		.@fam = getelementofarray(getvariableofnpc(.RoFamily[0], "silvervine_equipment_enchant_db"), .@ro);
+		.@gstart = getelementofarray(getvariableofnpc(.RoFamGroupStart[0], "silvervine_equipment_enchant_db"), .@fam - 1);
+		.@gcount = getelementofarray(getvariableofnpc(.RoFamGroupCount[0], "silvervine_equipment_enchant_db"), .@fam - 1);
+		for (.@n = 0; .@n < .@want; ++.@n) {
+			.@picked = 0;
+			for (.@try = 0; .@try < 12 && !.@picked; ++.@try) {
+				.@g = getelementofarray(getvariableofnpc(.RoFamGroupId[0], "silvervine_equipment_enchant_db"), .@gstart + rand(.@gcount));
+				randomoptgroup(.@g);
+				.@cand = 0;
+				for (.@j = 0; .@j < 5; ++.@j) {
+					if (.@opt_id[.@j] == 0)
+						continue;
+					if (inarray(.@roll_id[0], .@opt_id[.@j]) != -1)
+						continue;
+					.@cand_idx[.@cand] = .@j;
+					++.@cand;
+				}
+				if (.@cand < 1)
+					continue;
+				.@pick = .@cand_idx[rand(.@cand)];
+				.@roll_id[.@n] = .@opt_id[.@pick];
+				.@roll_val[.@n] = .@opt_value[.@pick];
+				.@roll_param[.@n] = .@opt_param[.@pick];
+				.@picked = 1;
+			}
+			if (!.@picked) {
+				mes "[Silvervine Enchanter]";
+				mes "The random options failed to roll. No Silvervine was spent.";
+				close;
+			}
+		}
+		delitem 6417, .@cost;
+		delequip .@slot;
+		getitem4 .@eq_id, 1, 1, .@refine, 0, .@card[0], .@card[1], .@card[2], .@card[3], .@grade, .@roll_id, .@roll_val, .@roll_param;
+		mes "[Silvervine Enchanter]";
+		mes "Done! Your item now has " + .@want + " Random Option" + (.@want == 1 ? "" : "s") + ".";
+		specialeffect2 EF_REPAIRWEAPON;
+		close;
+	}
+
 	.@reg = .@chosen_reg[.@choice];
 	.@group_id = .@chosen_group[.@choice];
 	.@gidx = .@group_id - 1;
@@ -280,8 +400,4 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 	mes "Done! You received ^0055FF" + getitemname(.@enchant_id) + "^000000.";
 	specialeffect2 EF_REPAIRWEAPON;
 	close;
-
-OnInit:
-	setarray .EnabledGroupId[0], 1, 2, 3, 4, 5;
-	end;
 }
