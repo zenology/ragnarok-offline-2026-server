@@ -96,6 +96,52 @@ function	script	F_SVE_RollEnchant	{
 	return callfunc("F_SVE_DbInt", 14, .@row);
 }
 
+function	script	F_SVE_ChoosePoolEnchant	{
+	.@pool = getarg(0);
+	.@start = callfunc("F_SVE_DbInt", 11, .@pool);
+	.@count = callfunc("F_SVE_DbInt", 12, .@pool);
+	if (.@count < 1)
+		return 0;
+	freeloop(1);
+	.@n = 0;
+	for (.@r = 0; .@r < .@count; ++.@r) {
+		.@id = callfunc("F_SVE_DbInt", 14, .@start + .@r);
+		if (.@id < 1)
+			continue;
+		if (inarray(.@list[0], .@id) != -1)
+			continue;
+		.@list[.@n] = .@id;
+		++.@n;
+	}
+	freeloop(0);
+	if (.@n < 1)
+		return 0;
+	.@page_count = (.@n + 19) / 20;
+	for (.@page = 0; .@page < .@page_count; ++.@page) {
+		.@page_start = .@page * 20;
+		.@menu$ = "";
+		.@shown = 0;
+		for (.@j = .@page_start; .@j < .@n && .@shown < 20; ++.@j) {
+			.@menu$ += getitemname(.@list[.@j]) + ":";
+			++.@shown;
+		}
+		if (.@page_start + .@shown < .@n)
+			.@menu$ += "Next page:Cancel";
+		else
+			.@menu$ += "Cancel";
+		.@choice = select(.@menu$) - 1;
+		if (.@choice < 0 || .@choice > .@shown)
+			return 0;
+		if (.@choice == .@shown) {
+			if (.@page + 1 < .@page_count)
+				continue;
+			return 0;
+		}
+		return .@list[.@page_start + .@choice];
+	}
+	return 0;
+}
+
 function	script	F_SVE_StepState	{
 	// getarg(0)=equip_slot, getarg(1)=group_id, getarg(2)=ui_step (1-based)
 	// Returns: 0=hidden, 1=new, 2=reroll
@@ -351,15 +397,28 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 		close;
 	}
 
+	.@choose_cost = getvariableofnpc(.ChooseFruitCost, "silvervine_equipment_enchant_db");
+	if (.@choose_cost < 1)
+		.@choose_cost = 20;
 	mes "[Silvervine Enchanter]";
-	mes "Cost: ^0055FF" + .@cost + " Silvervine Fruit^000000.";
+	mes "Spin for a random charm from this step's pool (^0055FF" + .@cost + " Silvervine Fruit^000000).";
+	mes "Or choose the exact charm you want (^0055FF" + .@choose_cost + " Silvervine Fruit^000000).";
 	mes "Refine, cards, other enchants, random options, and enchant grade stay as they are.";
 	mes "Only the one enchant slot you pick is filled or rerolled.";
-	if (select("Proceed:Cancel") == 2)
+	next;
+	.@mode = select("Spin - " + .@cost + " Fruit:Choose enchant - " + .@choose_cost + " Fruit:Cancel");
+	if (.@mode == 3)
 		close;
-	if (countitem(6417) < .@cost) {
+	if (.@mode == 1) {
+		.@pay = .@cost;
+		.@pick = 0;
+	} else {
+		.@pay = .@choose_cost;
+		.@pick = 1;
+	}
+	if (countitem(6417) < .@pay) {
 		mes "[Silvervine Enchanter]";
-		mes "You need " + .@cost + " Silvervine Fruit.";
+		mes "You need " + .@pay + " Silvervine Fruit.";
 		close;
 	}
 
@@ -379,19 +438,25 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 	if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine))
 		close;
 
-	.@enchant_id = callfunc("F_SVE_RollEnchant", .@pool);
-	if (.@enchant_id < 0) {
-		mes "[Silvervine Enchanter]";
-		mes "The enchant fizzled out. No Silvervine was spent.";
-		close;
-	}
-	if (.@enchant_id == 0) {
-		mes "[Silvervine Enchanter]";
-		mes "The registry returned an invalid enchant. Nothing was changed.";
-		close;
+	if (.@pick) {
+		.@enchant_id = callfunc("F_SVE_ChoosePoolEnchant", .@pool);
+		if (.@enchant_id == 0)
+			close;
+	} else {
+		.@enchant_id = callfunc("F_SVE_RollEnchant", .@pool);
+		if (.@enchant_id < 0) {
+			mes "[Silvervine Enchanter]";
+			mes "The enchant fizzled out. No Silvervine was spent.";
+			close;
+		}
+		if (.@enchant_id == 0) {
+			mes "[Silvervine Enchanter]";
+			mes "The registry returned an invalid enchant. Nothing was changed.";
+			close;
+		}
 	}
 
-	delitem 6417, .@cost;
+	delitem 6417, .@pay;
 	delequip .@slot;
 	.@card[.@card_idx] = .@enchant_id;
 	getitem4 .@eq_id, 1, 1, .@refine, 0, .@card[0], .@card[1], .@card[2], .@card[3], .@grade, .@OptID, .@OptVal, .@OptParam;
