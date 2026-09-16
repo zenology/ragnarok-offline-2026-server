@@ -32,12 +32,14 @@ inline bool black_market_is_rooke_shop(const char* shop_name) {
 		std::strcmp(shop_name, "cons3") == 0 ||
 		std::strcmp(shop_name, "cons4") == 0 ||
 		std::strcmp(shop_name, "cons5") == 0 ||
-		std::strcmp(shop_name, "cons6") == 0;
+		std::strcmp(shop_name, "cons6") == 0 ||
+		std::strcmp(shop_name, "cons7") == 0 ||
+		std::strcmp(shop_name, "cons8") == 0;
 	if (legacy_shop)
 		return true;
-	// Rooke's six player-progression tiers use exactly cons[0-6]#T[0-5].
+	// Rooke's six player-progression tiers use exactly cons[0-8]#T[0-5].
 	return std::strncmp(shop_name, "cons", 4) == 0 &&
-		shop_name[4] >= '0' && shop_name[4] <= '6' &&
+		shop_name[4] >= '0' && shop_name[4] <= '8' &&
 		shop_name[5] == '#' && shop_name[6] == 'T' &&
 		shop_name[7] >= '0' && shop_name[7] <= '5' &&
 		shop_name[8] == '\0';
