@@ -4,6 +4,7 @@ import { createRootRoute, createRoute, createRouter, Link, Outlet } from '@tanst
 
 import { SiteShell } from '@/components/templates'
 import BlackMarketPage from '@/pages/black-market'
+import CardEaterPage from '@/pages/card-eater'
 import CostumePage from '@/pages/costumes'
 import JobChangesPage from '@/pages/job-changes'
 import LandingPage from '@/pages/landing'
@@ -55,6 +56,12 @@ const costumesRoute = createRoute({
   component: CostumePage
 })
 
+const cardEaterRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/card-eater',
+  component: CardEaterPage
+})
+
 const jobChangesRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/job-changes',
@@ -65,6 +72,7 @@ const routeTree = rootRoute.addChildren([
   landingRoute,
   blackMarketRoute,
   costumesRoute,
+  cardEaterRoute,
   jobChangesRoute
 ])
 

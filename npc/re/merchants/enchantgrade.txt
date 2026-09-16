@@ -75,6 +75,7 @@ paramk,34,184,4	script	Suribell#suribell	4_F_FRUIT,{
 	next;
 	switch( select( "Enhance the equipment's grade.", "Exchange Etel items", "What is Grade Enhancement?" )) {
 		case 1:
+			clear;
 			mes "[Suribell]";
 			mes "You want to unlock the potential of your favorite equipment?";
 			mes "I can do it. That is why they keep me here.";
@@ -86,6 +87,7 @@ paramk,34,184,4	script	Suribell#suribell	4_F_FRUIT,{
 			next;
 			switch( select( "I'll still do it!", "I'll think about it." ) ){
 				case 1:
+					clear;
 					mes "[Suribell]";
 					mes "Then stay close and do not look nervous.";
 					mes "I will open the grade interface before anyone decides we are wasting time.";
@@ -93,12 +95,14 @@ paramk,34,184,4	script	Suribell#suribell	4_F_FRUIT,{
 					enchantgradeui();
 					end;
 				case 2:
+					clear;
 					mes "[Suribell]";
 					mes "That is wise.";
 					mes "Think carefully before trusting your equipment to this place.";
 					close;
 			}
 		case 2:
+			clear;
 			mes "[Suribell]";
 			mes "Grade Enhancement requires etheric gems.";
 			mes "Etel Dust and jewels can be combined into Etel jewels for adventurers.";
@@ -108,6 +112,7 @@ paramk,34,184,4	script	Suribell#suribell	4_F_FRUIT,{
 			callshop "EnchantGradeExchange";
 			end;
 		case 3:
+			clear;
 			mes "[Suribell]";
 			mes "Occasionally, unstable jewels with a great deal of pure magical power are found.";
 			mes "I call them etheric gems.";

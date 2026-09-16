@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 
+import { Link } from '@tanstack/react-router'
+
 import { Heading, Text } from '@/components/atoms'
 
 import { costumeCard } from '../styles/recipes'
@@ -29,6 +31,7 @@ export function CostumeServiceCard({ service }: CostumeServiceCardProps): ReactN
       <Text as="p" tone="muted">
         {service.description}
       </Text>
+      {service.name === 'Card Eater' && <Link to="/card-eater">Search accepted cards →</Link>}
     </article>
   )
 }

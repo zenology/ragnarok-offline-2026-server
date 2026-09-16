@@ -42,6 +42,7 @@ paramk,48,161,2	script	Kafra Employee#offline	4_F_KAFRA5,{
 			callsub S_OpenStorage;
 			end;
 		case 2:
+			clear;
 			mes "[Kafra Employee]";
 			mes "N-no. I'm a Kafra Employee. That's all I've ever been.";
 			mes "They needed someone who could open Storage, so they took me.";
@@ -57,6 +58,7 @@ paramk,48,161,2	script	Kafra Employee#offline	4_F_KAFRA5,{
 	}
 
 S_OpenStorage:
+	clear;
 	if (!callfunc("F_CanOpenStorage")) {
 		mes "[Kafra Employee]";
 		mes "I-I'm sorry. You still need the Novice's Basic Skill Level 6.";

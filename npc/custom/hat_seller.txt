@@ -1,20 +1,9 @@
 //===== Ragnarok Offline =====================================
 //= Black-Market Hat Seller
 //===== Description: =========================================
-//= Sells reviewed iRO cash/event headgear for Cash Points.
-//= Browse Equipment, Rental, or Event by Top / Eye / Mouth, then 0-9
-//= (when a display name starts with a digit)
-//= then A-Z by client identifiedDisplayName. Letter shops are
-//= filled in that display-name order, then ID.
-//= Specialty opens its named equipment-family drawer directly.
-//= Event is Racing Caps, RWC/RTC/RCC tournament hats, and iRO-history
-//= create-pass leftovers. Display names do not keep [Event]/[S2]/[S3]
-//= prefixes. Hats that exist
-//= in item_db but have no client itemInfo.lua row stay on the
-//= shelf; client itemInfo is a later pass. Hats with no worn accessory
-//= model in the extracted trees are not stocked (2026-08-20). Client-tagged rental hats
-//= are sold as duration boxes, not the loose SKU. Every SKU uses the
-//= KB equipment-pricing taxonomy; Rental prices include its 30% discount.
+//= Sells reviewed iRO cash and formerly event-only headgear for Cash Points.
+//= Browse topology follows slot count and client identifiedDisplayName: direct under 30, ranges under 100, then A-Z and 0-9.
+//= Specialty stock is centralized at Madame Celestine.
 //============================================================
 
 paramk,41,173,2	script	Harlan#offline	897,{
@@ -39,304 +28,106 @@ paramk,41,173,2	script	Harlan#offline	897,{
 	mes "[Harlan]";
 	mes "Do not brush past. Hats are not an afterthought.";
 	mes "Crowns. Glasses. The little things people hide in their mouths.";
-	mes "I sell the hat itself. Timed boxes, if you only need it for a while.";
-	mes "Fitted circlets from harder work, if you would rather not fetch them.";
-	mes "Tournament leftovers, if you missed the crowd.";
+	mes "I sell the hat itself, from every collection worth keeping.";
 	mes "^0055FFCash Points^000000 only. No eggs.";
 	next;
-	switch (select("Equipment:Rental:Event:")) {
-	case 1:
-		callsub S_OpenCatalog, 0;
-		end;
-	case 2:
-		callsub S_OpenCatalog, 1;
-		end;
-	case 3:
-		callsub S_OpenCatalog, 2;
-		end;
-	}
-	end;
-
-S_OpenCatalog:
-	.@kind = getarg(0);
-	// Specialty has only top headgear and groups by family, so do not make
-	// players select a meaningless Top / Eye / Mouth menu first.
-	.@slot = 0;
-	if (.@kind != 2)
-		.@slot = select("Top:Eye:Mouth:") - 1;
-	if (.@kind == 0) {
-		.@menu$ = getvariableofnpc(.HatMenu$[.@slot], "hat_seller_db");
-		.@prefix$ = "hat";
-	} else if (.@kind == 1) {
-		.@menu$ = getvariableofnpc(.RentMenu$[.@slot], "hat_seller_db");
-		.@prefix$ = "rent";
-	} else {
-		.@menu$ = getvariableofnpc(.EvtMenu$[.@slot], "hat_seller_db");
-		.@prefix$ = "evt";
-	}
+	.@slot = select("Top:Middle:Lower:") - 1;
+	.@menu$ = getvariableofnpc(.HatMenu$[.@slot], "hat_seller_db");
 	if (.@menu$ == "") {
+		clear;
 		mes "[Harlan]";
 		mes "That drawer is empty. Try another.";
 		close;
 	}
 	.@s = select(.@menu$) - 1;
 	.@idx = .@slot * 27 + .@s;
-	if (.@kind == 0)
-		.@letter$ = getvariableofnpc(.HatLetter$[.@idx], "hat_seller_db");
-	else if (.@kind == 1)
-		.@letter$ = getvariableofnpc(.RentLetter$[.@idx], "hat_seller_db");
-	else
-		.@letter$ = getvariableofnpc(.EvtLetter$[.@idx], "hat_seller_db");
+	.@letter$ = getvariableofnpc(.HatLetter$[.@idx], "hat_seller_db");
 	callfunc "F_BlackMarketDailyRemark", "Harlan", $BlackMarketRateHarlan;
 	close2;
-	callblackmarketshop .@prefix$ + .@slot + "#" + .@letter$, 1, $BlackMarketRateHarlan;
+	callblackmarketshop "hat" + .@slot + "#" + .@letter$, 1, $BlackMarketRateHarlan;
 	end;
-
 }
-
--	pointshop	hat0#0	-1,#CASHPOINTS,501:100
--	pointshop	hat0#A	-1,#CASHPOINTS,501:100
--	pointshop	hat0#B	-1,#CASHPOINTS,501:100
--	pointshop	hat0#C	-1,#CASHPOINTS,501:100
--	pointshop	hat0#D	-1,#CASHPOINTS,501:100
--	pointshop	hat0#E	-1,#CASHPOINTS,501:100
--	pointshop	hat0#F	-1,#CASHPOINTS,501:100
--	pointshop	hat0#G	-1,#CASHPOINTS,501:100
--	pointshop	hat0#H	-1,#CASHPOINTS,501:100
--	pointshop	hat0#I	-1,#CASHPOINTS,501:100
--	pointshop	hat0#J	-1,#CASHPOINTS,501:100
--	pointshop	hat0#K	-1,#CASHPOINTS,501:100
--	pointshop	hat0#L	-1,#CASHPOINTS,501:100
--	pointshop	hat0#M	-1,#CASHPOINTS,501:100
--	pointshop	hat0#N	-1,#CASHPOINTS,501:100
--	pointshop	hat0#O	-1,#CASHPOINTS,501:100
--	pointshop	hat0#P	-1,#CASHPOINTS,501:100
--	pointshop	hat0#Q	-1,#CASHPOINTS,501:100
--	pointshop	hat0#R	-1,#CASHPOINTS,501:100
--	pointshop	hat0#S	-1,#CASHPOINTS,501:100
--	pointshop	hat0#T	-1,#CASHPOINTS,501:100
--	pointshop	hat0#U	-1,#CASHPOINTS,501:100
--	pointshop	hat0#V	-1,#CASHPOINTS,501:100
--	pointshop	hat0#W	-1,#CASHPOINTS,501:100
--	pointshop	hat0#X	-1,#CASHPOINTS,501:100
--	pointshop	hat0#Y	-1,#CASHPOINTS,501:100
--	pointshop	hat0#Z	-1,#CASHPOINTS,501:100
--	pointshop	hat1#0	-1,#CASHPOINTS,501:100
--	pointshop	hat1#A	-1,#CASHPOINTS,501:100
--	pointshop	hat1#B	-1,#CASHPOINTS,501:100
--	pointshop	hat1#C	-1,#CASHPOINTS,501:100
--	pointshop	hat1#D	-1,#CASHPOINTS,501:100
--	pointshop	hat1#E	-1,#CASHPOINTS,501:100
--	pointshop	hat1#F	-1,#CASHPOINTS,501:100
--	pointshop	hat1#G	-1,#CASHPOINTS,501:100
--	pointshop	hat1#H	-1,#CASHPOINTS,501:100
--	pointshop	hat1#I	-1,#CASHPOINTS,501:100
--	pointshop	hat1#J	-1,#CASHPOINTS,501:100
--	pointshop	hat1#K	-1,#CASHPOINTS,501:100
--	pointshop	hat1#L	-1,#CASHPOINTS,501:100
--	pointshop	hat1#M	-1,#CASHPOINTS,501:100
--	pointshop	hat1#N	-1,#CASHPOINTS,501:100
--	pointshop	hat1#O	-1,#CASHPOINTS,501:100
--	pointshop	hat1#P	-1,#CASHPOINTS,501:100
--	pointshop	hat1#Q	-1,#CASHPOINTS,501:100
--	pointshop	hat1#R	-1,#CASHPOINTS,501:100
--	pointshop	hat1#S	-1,#CASHPOINTS,501:100
--	pointshop	hat1#T	-1,#CASHPOINTS,501:100
--	pointshop	hat1#U	-1,#CASHPOINTS,501:100
--	pointshop	hat1#V	-1,#CASHPOINTS,501:100
--	pointshop	hat1#W	-1,#CASHPOINTS,501:100
--	pointshop	hat1#X	-1,#CASHPOINTS,501:100
--	pointshop	hat1#Y	-1,#CASHPOINTS,501:100
--	pointshop	hat1#Z	-1,#CASHPOINTS,501:100
--	pointshop	hat2#0	-1,#CASHPOINTS,501:100
--	pointshop	hat2#A	-1,#CASHPOINTS,501:100
--	pointshop	hat2#B	-1,#CASHPOINTS,501:100
--	pointshop	hat2#C	-1,#CASHPOINTS,501:100
--	pointshop	hat2#D	-1,#CASHPOINTS,501:100
--	pointshop	hat2#E	-1,#CASHPOINTS,501:100
--	pointshop	hat2#F	-1,#CASHPOINTS,501:100
--	pointshop	hat2#G	-1,#CASHPOINTS,501:100
--	pointshop	hat2#H	-1,#CASHPOINTS,501:100
--	pointshop	hat2#I	-1,#CASHPOINTS,501:100
--	pointshop	hat2#J	-1,#CASHPOINTS,501:100
--	pointshop	hat2#K	-1,#CASHPOINTS,501:100
--	pointshop	hat2#L	-1,#CASHPOINTS,501:100
--	pointshop	hat2#M	-1,#CASHPOINTS,501:100
--	pointshop	hat2#N	-1,#CASHPOINTS,501:100
--	pointshop	hat2#O	-1,#CASHPOINTS,501:100
--	pointshop	hat2#P	-1,#CASHPOINTS,501:100
--	pointshop	hat2#Q	-1,#CASHPOINTS,501:100
--	pointshop	hat2#R	-1,#CASHPOINTS,501:100
--	pointshop	hat2#S	-1,#CASHPOINTS,501:100
--	pointshop	hat2#T	-1,#CASHPOINTS,501:100
--	pointshop	hat2#U	-1,#CASHPOINTS,501:100
--	pointshop	hat2#V	-1,#CASHPOINTS,501:100
--	pointshop	hat2#W	-1,#CASHPOINTS,501:100
--	pointshop	hat2#X	-1,#CASHPOINTS,501:100
--	pointshop	hat2#Y	-1,#CASHPOINTS,501:100
--	pointshop	hat2#Z	-1,#CASHPOINTS,501:100
--	pointshop	rent0#0	-1,#CASHPOINTS,501:100
--	pointshop	rent0#A	-1,#CASHPOINTS,501:100
--	pointshop	rent0#B	-1,#CASHPOINTS,501:100
--	pointshop	rent0#C	-1,#CASHPOINTS,501:100
--	pointshop	rent0#D	-1,#CASHPOINTS,501:100
--	pointshop	rent0#E	-1,#CASHPOINTS,501:100
--	pointshop	rent0#F	-1,#CASHPOINTS,501:100
--	pointshop	rent0#G	-1,#CASHPOINTS,501:100
--	pointshop	rent0#H	-1,#CASHPOINTS,501:100
--	pointshop	rent0#I	-1,#CASHPOINTS,501:100
--	pointshop	rent0#J	-1,#CASHPOINTS,501:100
--	pointshop	rent0#K	-1,#CASHPOINTS,501:100
--	pointshop	rent0#L	-1,#CASHPOINTS,501:100
--	pointshop	rent0#M	-1,#CASHPOINTS,501:100
--	pointshop	rent0#N	-1,#CASHPOINTS,501:100
--	pointshop	rent0#O	-1,#CASHPOINTS,501:100
--	pointshop	rent0#P	-1,#CASHPOINTS,501:100
--	pointshop	rent0#Q	-1,#CASHPOINTS,501:100
--	pointshop	rent0#R	-1,#CASHPOINTS,501:100
--	pointshop	rent0#S	-1,#CASHPOINTS,501:100
--	pointshop	rent0#T	-1,#CASHPOINTS,501:100
--	pointshop	rent0#U	-1,#CASHPOINTS,501:100
--	pointshop	rent0#V	-1,#CASHPOINTS,501:100
--	pointshop	rent0#W	-1,#CASHPOINTS,501:100
--	pointshop	rent0#X	-1,#CASHPOINTS,501:100
--	pointshop	rent0#Y	-1,#CASHPOINTS,501:100
--	pointshop	rent0#Z	-1,#CASHPOINTS,501:100
--	pointshop	rent1#0	-1,#CASHPOINTS,501:100
--	pointshop	rent1#A	-1,#CASHPOINTS,501:100
--	pointshop	rent1#B	-1,#CASHPOINTS,501:100
--	pointshop	rent1#C	-1,#CASHPOINTS,501:100
--	pointshop	rent1#D	-1,#CASHPOINTS,501:100
--	pointshop	rent1#E	-1,#CASHPOINTS,501:100
--	pointshop	rent1#F	-1,#CASHPOINTS,501:100
--	pointshop	rent1#G	-1,#CASHPOINTS,501:100
--	pointshop	rent1#H	-1,#CASHPOINTS,501:100
--	pointshop	rent1#I	-1,#CASHPOINTS,501:100
--	pointshop	rent1#J	-1,#CASHPOINTS,501:100
--	pointshop	rent1#K	-1,#CASHPOINTS,501:100
--	pointshop	rent1#L	-1,#CASHPOINTS,501:100
--	pointshop	rent1#M	-1,#CASHPOINTS,501:100
--	pointshop	rent1#N	-1,#CASHPOINTS,501:100
--	pointshop	rent1#O	-1,#CASHPOINTS,501:100
--	pointshop	rent1#P	-1,#CASHPOINTS,501:100
--	pointshop	rent1#Q	-1,#CASHPOINTS,501:100
--	pointshop	rent1#R	-1,#CASHPOINTS,501:100
--	pointshop	rent1#S	-1,#CASHPOINTS,501:100
--	pointshop	rent1#T	-1,#CASHPOINTS,501:100
--	pointshop	rent1#U	-1,#CASHPOINTS,501:100
--	pointshop	rent1#V	-1,#CASHPOINTS,501:100
--	pointshop	rent1#W	-1,#CASHPOINTS,501:100
--	pointshop	rent1#X	-1,#CASHPOINTS,501:100
--	pointshop	rent1#Y	-1,#CASHPOINTS,501:100
--	pointshop	rent1#Z	-1,#CASHPOINTS,501:100
--	pointshop	rent2#0	-1,#CASHPOINTS,501:100
--	pointshop	rent2#A	-1,#CASHPOINTS,501:100
--	pointshop	rent2#B	-1,#CASHPOINTS,501:100
--	pointshop	rent2#C	-1,#CASHPOINTS,501:100
--	pointshop	rent2#D	-1,#CASHPOINTS,501:100
--	pointshop	rent2#E	-1,#CASHPOINTS,501:100
--	pointshop	rent2#F	-1,#CASHPOINTS,501:100
--	pointshop	rent2#G	-1,#CASHPOINTS,501:100
--	pointshop	rent2#H	-1,#CASHPOINTS,501:100
--	pointshop	rent2#I	-1,#CASHPOINTS,501:100
--	pointshop	rent2#J	-1,#CASHPOINTS,501:100
--	pointshop	rent2#K	-1,#CASHPOINTS,501:100
--	pointshop	rent2#L	-1,#CASHPOINTS,501:100
--	pointshop	rent2#M	-1,#CASHPOINTS,501:100
--	pointshop	rent2#N	-1,#CASHPOINTS,501:100
--	pointshop	rent2#O	-1,#CASHPOINTS,501:100
--	pointshop	rent2#P	-1,#CASHPOINTS,501:100
--	pointshop	rent2#Q	-1,#CASHPOINTS,501:100
--	pointshop	rent2#R	-1,#CASHPOINTS,501:100
--	pointshop	rent2#S	-1,#CASHPOINTS,501:100
--	pointshop	rent2#T	-1,#CASHPOINTS,501:100
--	pointshop	rent2#U	-1,#CASHPOINTS,501:100
--	pointshop	rent2#V	-1,#CASHPOINTS,501:100
--	pointshop	rent2#W	-1,#CASHPOINTS,501:100
--	pointshop	rent2#X	-1,#CASHPOINTS,501:100
--	pointshop	rent2#Y	-1,#CASHPOINTS,501:100
--	pointshop	rent2#Z	-1,#CASHPOINTS,501:100
--	pointshop	evt0#0	-1,#CASHPOINTS,501:100
--	pointshop	evt0#A	-1,#CASHPOINTS,501:100
--	pointshop	evt0#B	-1,#CASHPOINTS,501:100
--	pointshop	evt0#C	-1,#CASHPOINTS,501:100
--	pointshop	evt0#D	-1,#CASHPOINTS,501:100
--	pointshop	evt0#E	-1,#CASHPOINTS,501:100
--	pointshop	evt0#F	-1,#CASHPOINTS,501:100
--	pointshop	evt0#G	-1,#CASHPOINTS,501:100
--	pointshop	evt0#H	-1,#CASHPOINTS,501:100
--	pointshop	evt0#I	-1,#CASHPOINTS,501:100
--	pointshop	evt0#J	-1,#CASHPOINTS,501:100
--	pointshop	evt0#K	-1,#CASHPOINTS,501:100
--	pointshop	evt0#L	-1,#CASHPOINTS,501:100
--	pointshop	evt0#M	-1,#CASHPOINTS,501:100
--	pointshop	evt0#N	-1,#CASHPOINTS,501:100
--	pointshop	evt0#O	-1,#CASHPOINTS,501:100
--	pointshop	evt0#P	-1,#CASHPOINTS,501:100
--	pointshop	evt0#Q	-1,#CASHPOINTS,501:100
--	pointshop	evt0#R	-1,#CASHPOINTS,501:100
--	pointshop	evt0#S	-1,#CASHPOINTS,501:100
--	pointshop	evt0#T	-1,#CASHPOINTS,501:100
--	pointshop	evt0#U	-1,#CASHPOINTS,501:100
--	pointshop	evt0#V	-1,#CASHPOINTS,501:100
--	pointshop	evt0#W	-1,#CASHPOINTS,501:100
--	pointshop	evt0#X	-1,#CASHPOINTS,501:100
--	pointshop	evt0#Y	-1,#CASHPOINTS,501:100
--	pointshop	evt0#Z	-1,#CASHPOINTS,501:100
--	pointshop	evt1#0	-1,#CASHPOINTS,501:100
--	pointshop	evt1#A	-1,#CASHPOINTS,501:100
--	pointshop	evt1#B	-1,#CASHPOINTS,501:100
--	pointshop	evt1#C	-1,#CASHPOINTS,501:100
--	pointshop	evt1#D	-1,#CASHPOINTS,501:100
--	pointshop	evt1#E	-1,#CASHPOINTS,501:100
--	pointshop	evt1#F	-1,#CASHPOINTS,501:100
--	pointshop	evt1#G	-1,#CASHPOINTS,501:100
--	pointshop	evt1#H	-1,#CASHPOINTS,501:100
--	pointshop	evt1#I	-1,#CASHPOINTS,501:100
--	pointshop	evt1#J	-1,#CASHPOINTS,501:100
--	pointshop	evt1#K	-1,#CASHPOINTS,501:100
--	pointshop	evt1#L	-1,#CASHPOINTS,501:100
--	pointshop	evt1#M	-1,#CASHPOINTS,501:100
--	pointshop	evt1#N	-1,#CASHPOINTS,501:100
--	pointshop	evt1#O	-1,#CASHPOINTS,501:100
--	pointshop	evt1#P	-1,#CASHPOINTS,501:100
--	pointshop	evt1#Q	-1,#CASHPOINTS,501:100
--	pointshop	evt1#R	-1,#CASHPOINTS,501:100
--	pointshop	evt1#S	-1,#CASHPOINTS,501:100
--	pointshop	evt1#T	-1,#CASHPOINTS,501:100
--	pointshop	evt1#U	-1,#CASHPOINTS,501:100
--	pointshop	evt1#V	-1,#CASHPOINTS,501:100
--	pointshop	evt1#W	-1,#CASHPOINTS,501:100
--	pointshop	evt1#X	-1,#CASHPOINTS,501:100
--	pointshop	evt1#Y	-1,#CASHPOINTS,501:100
--	pointshop	evt1#Z	-1,#CASHPOINTS,501:100
--	pointshop	evt2#0	-1,#CASHPOINTS,501:100
--	pointshop	evt2#A	-1,#CASHPOINTS,501:100
--	pointshop	evt2#B	-1,#CASHPOINTS,501:100
--	pointshop	evt2#C	-1,#CASHPOINTS,501:100
--	pointshop	evt2#D	-1,#CASHPOINTS,501:100
--	pointshop	evt2#E	-1,#CASHPOINTS,501:100
--	pointshop	evt2#F	-1,#CASHPOINTS,501:100
--	pointshop	evt2#G	-1,#CASHPOINTS,501:100
--	pointshop	evt2#H	-1,#CASHPOINTS,501:100
--	pointshop	evt2#I	-1,#CASHPOINTS,501:100
--	pointshop	evt2#J	-1,#CASHPOINTS,501:100
--	pointshop	evt2#K	-1,#CASHPOINTS,501:100
--	pointshop	evt2#L	-1,#CASHPOINTS,501:100
--	pointshop	evt2#M	-1,#CASHPOINTS,501:100
--	pointshop	evt2#N	-1,#CASHPOINTS,501:100
--	pointshop	evt2#O	-1,#CASHPOINTS,501:100
--	pointshop	evt2#P	-1,#CASHPOINTS,501:100
--	pointshop	evt2#Q	-1,#CASHPOINTS,501:100
--	pointshop	evt2#R	-1,#CASHPOINTS,501:100
--	pointshop	evt2#S	-1,#CASHPOINTS,501:100
--	pointshop	evt2#T	-1,#CASHPOINTS,501:100
--	pointshop	evt2#U	-1,#CASHPOINTS,501:100
--	pointshop	evt2#V	-1,#CASHPOINTS,501:100
--	pointshop	evt2#W	-1,#CASHPOINTS,501:100
--	pointshop	evt2#X	-1,#CASHPOINTS,501:100
--	pointshop	evt2#Y	-1,#CASHPOINTS,501:100
--	pointshop	evt2#Z	-1,#CASHPOINTS,501:100
+-	pointshop	hat0#0	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#A	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#B	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#C	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#D	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#E	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#F	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#G	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#H	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#I	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#J	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#K	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#L	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#M	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#N	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#O	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#P	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#Q	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#R	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#S	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#T	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#U	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#V	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#W	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#X	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#Y	-1,BlackMarketPoints,501:100
+-	pointshop	hat0#Z	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#0	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#A	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#B	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#C	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#D	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#E	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#F	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#G	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#H	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#I	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#J	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#K	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#L	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#M	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#N	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#O	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#P	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#Q	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#R	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#S	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#T	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#U	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#V	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#W	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#X	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#Y	-1,BlackMarketPoints,501:100
+-	pointshop	hat1#Z	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#0	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#A	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#B	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#C	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#D	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#E	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#F	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#G	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#H	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#I	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#J	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#K	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#L	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#M	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#N	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#O	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#P	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#Q	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#R	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#S	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#T	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#U	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#V	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#W	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#X	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#Y	-1,BlackMarketPoints,501:100
+-	pointshop	hat2#Z	-1,BlackMarketPoints,501:100
 
 -	script	hat_seller_db	-1,{
 	end;
@@ -344,12 +135,45 @@ S_OpenCatalog:
 	setarray .IroId[520], 5040,5047,5065,5084,5086,5108,5121,5146,5151,5152,5170,5173,5174,5175,5185,5187,5191,5192,5194,5195;
 	setarray .IroId[540], 5196,5197,5200,5205,5238,5239,5240,5241,5243,5254,5257,5297,5258,5298,5273,5275,5274,5259,5271,5272;
 	setarray .IroId[560], 5352,5355,5800;
+	setarray .IroId[563], 410017,420076,410091,410092,410093,410094;
 	setarray .IroPrice[520], 900,100,900,1200,1800,975,3900,440,2500,320,2400,1560,1560,1600,500,1560,1000,1000,1000,1000;
 	setarray .IroPrice[540], 1000,1000,100,1000,1000,1000,1000,1000,1900,1500,1200,1560,1920,3300,1000,1000,1000,1200,1900,1200;
 	setarray .IroPrice[560], 100,2000,2200;
-	setarray .IroDisp$[520], "Party Recruiter Hat","BF Recruiter Hat","Friend Recruiter Hat","GF Recruiter Hat","Helm of Darkness","Boy's Cap","Boy's Cap","Lord Kaho's Horn","Hat of the Sun God","Valkyrie Helm","Cyclop's Eye","Spore Hat","Raccoon Hat","Blush","Fashionable Glasses","Blue Fish","Evil Wing Ears","Angel Wing Ears","Lazy Smokie","Alarm Mask";
-	setarray .IroDisp$[540], "Renown Detective's Cap","Zealotus Mask","Elephant Hat","Note Headphones","Chinese Crown","Feather Beret","Magistrate Hat","Ayam","Censor Bar","Laurel Wreath","Twin Ribbon","Black Ribbon","Yellow Ribbon","Pink Ribbon","Red Ribbon","Orange Ribbon","White Ribbon","Coppola","Emperor's Laurel Crown","Red Mage Hat";
-	setarray .IroDisp$[560], "Brown Mage Hat","Blue Mage Hat","Shafka";
+	setarray .IroPrice[563], 1300,2100,2000,2600,2100,2550;
+	setarray .IroDisp$[0], "Blush","Fashionable Glasses","Blue Fish","Lazy Smokie","Alarm Mask","Renown Detective's Cap","Zealotus Mask","Elephant Hat","Note Headphone","Chinese Crown","Feather Beret","Magistrate Hat","Ayam","Censor Bar","Laurel Wreath","Twin Red Ribbon","Black Ribbon","Yellow Ribbon","Pink Ribbon","Red Ribbon";
+	setarray .IroDisp$[20], "Orange Ribbon","White Ribbon","Coppola","Emperor's Laurel Crown","Red Magician Hat","Gray Magician Hat","Brown Magician Hat","Blue Magician Hat","Shafka","Devilring Hat","Soulless Ring","Soul Wing","Afro Wig","Dokkaebi's Wig","Happy Wig","Marvelous Wig","Shiny Wig","Elephant Hat","Phoenix Crown","Tongue Mask";
+	setarray .IroDisp$[40], "Poporing Hat","Selendang","Blush of Groom","Battle Processor","Bondage Necklace","Cor Core Booster","Cor Core Booster","Chain of Seals","Chain of Seals","Deviruchi Hat","Tulip Hairpin","Tiger Mask","Neko Mimi","Takius Blindfold","Blank Eyes","2nd Anniversary Hat","Mystic Rose","Sheep Hat","Alice Doll","Hibiscus";
+	setarray .IroDisp$[60], "Charming Ribbon","Crescent Helm","Corsair","Captain's Hat","Wandering Minstrel Hat","Green Ribbon","Rideword Hat","Flapping Angel Wings","Dress Hat","Moonlight Flower Hat","Evolved Majestic Goat","Evolved Bunny Band","Evolved Drooping Kitty","Evolved Pipe","Evolved Pair of Red Ribbon","Evolved Blue Fish","Mini Propeller","Gray Deviruchi Hat","Brown Deviruchi Hat","Blue Drooping Kitty";
+	setarray .IroDisp$[80], "Pink Beanie","Yellow Magician Hat","Elven Sunglasses","Triple Poring Hat","Flapping Angel Wings","Fantastic Wig","Water Lily Crown","Vane Hairpin","Vacation Hat","Red Glasses","Vanilmirth Hat","Drooping Bunny","Kettle Hat","Dragon Skull","Ramen Hat","Whisper Mask","Tropical Fruit Hat","Little Angel Doll","Jumping Poring","Defolty Doll Hat";
+	setarray .IroDisp$[100], "Glaris Doll Hat","Sorin Doll Hat","Telling Doll Hat","Bennit Doll Hat","W Doll Hat","Captain's Hat","Wickebine's Black Cat Ears","Gangster Scarf","Judge Hat","Koneko Hat","Dark Randgris Helm","Gigantic Majestic Goat","Large Orc Hero Helm","Satanic Chain","Antique Smoking Pipe","Bunny Ears Hat","Fish Head Hat","Santa Poring Hat","Bell Ribbon","Twin Pom Santa Hat";
+	setarray .IroDisp$[120], "Neko Mimi Kafra","Jasper Crest","Scuba Mask","Black Frame Glasses","Fish in Mouth","Filir Hat","White Snake Hat","Mask of Ifrit","Ears of Ifrit","Gold Dragon Helm","Puppy Hat","Drooping Bunny","Bacsojin Doll Hat","Anubis Helm","Tiger King Doll Hat","Ice Cream Hat","Pirate's Pride","Necromancer's Hood","Ashura Fairy Hat","Shark Hat";
+	setarray .IroDisp$[140], "Sting Hat","Pisces Diadem","Pisces Crown","Devil's Bone Helm","Baby Dragon Hat","Pirate Dagger","Coati Hat","Tucan Hat","Jaguar Hat","Aries Diadem","Aries Crown","Crimson Rose","Taurus Crown","Crown of Deceit","Gemini Diadem","Gemini Crown","Well-Chewed Pencil","Cancer Diadem","Cancer Crown","Rune Hairband";
+	setarray .IroDisp$[160], "Turtle Hat","Libra Diadem","Scorpio Crown","Scorpio Diadem","Majestic Goat Model","Red Wing Hat","Snowman Hat","Capricorn Crown","Capricorn Diadem","Sloth Hat","Duneyrr Hat","Red Bunny Band","Chocolate Donut","Blue Arara Hat","Yellow Bunny Band","Green Bunny Band","Red Tailed Ribbon","Miracle Blue Rose","Demon's Glasses","Gambler's Seal";
+	setarray .IroDisp$[180], "Fish Monster's Gill","Dragon Knight's Eyepatch","Crow Tengu Mask","Flight Hat","Octopus Hat","Red Pencil in Mouth","Wing Headphone","Kardui Ears","Flying Galapago","Divine Angel Nurse Cap","Queen Anne's Revenge","Moon Eyepatch","Talking Parrot","Ancient Elven Ears","Stahl Von Kaiser 61 II","Toy Syringe","Pure White Marching Hat","Rosario Necklace","Elven Ears","Garuda Hat";
+	setarray .IroDisp$[200], "Angel Wing Ears","Evil Wing Ears","Evil Marching Hat","Skull Cap","Witch Hat","Heart Wings Hairband","Fragment of Love","St Patrick's Hat","Yggdrasil Crown","Mini Glasses","Cat Ear Beret","Red Pom Band","Black Devil's Mask","Black Frame Glasses","Black Musang Hat","Long Tongue","Ignis Cap","Deviruchi Headphones","Witch's Pumpkin Hat","Pegasus Wing Ears";
+	setarray .IroDisp$[220], "Antler Fedora","CD in Mouth","Handkerchief in Mouth","Drooping Pope","Hexagon Spectacles","Leek in Mouth","Syringe in Mouth","Magical Booster","MVP Basketball Hat","Chilly Breath","Blood Sucker","Goaltender Mask","Mask of Nero","Imperial Feather","Hat of Girl","Banshee Master Kiss","Pink Angelring Bubble","Baron's Evil Eye","Palace Guard Cap","Aqua Bunny Band";
+	setarray .IroDisp$[240], "Piamette's Brown Ears","Bear Balloon","LoveLove Balloon","Mechanical Plant Hat","Memory of Lover","Pink Poo Poo Hat","Jinn Marin Balloon","Circlet of Survival","Protect Feathers","Celestial Woman's Flower","Bio Protector","Mask of Hero","Robo Eyes","Angel Spirit","Happy Balloon","Night Sparrow Hat","Sting Silk Ribbon","Red Baby Dragon","Cylinder Hairband","Chick Hat";
+	setarray .IroDisp$[260], "Magic Eyes","Spirit of Green Maiden","Strawberry in Mouth","Seraphim Coronet","Orbs of Survival","Dolor Thanatos Mask","Lunar Rainbow","Scuba Mask","Catharina Von Brad 60th","Guardian Processor","Magician Knit Hat","Sitting Pope(Casual)","New Wave Sunglasses","Rosario Necklace","Royal Guard Necklace","Spell Circuit","General's Helm","Gold Fish Head Hat","Gigant Snake's Breath","Happy Flapping Angel Wings";
+	setarray .IroDisp$[280], "Siegfried's Helmet","Classical Feather Hat","Giant Tree's Young Leaves","Dog Officer","Heart Card in Mouth","Amistr Beret","Book of Soyga","Feather of Seraphim","Demon's Hand","Safety Glasses","Taurus Hat","Phoenix Crown","Engineer Cap","Striking Hat","Floating Tai-Chi Spheres","Protect Cloth","Experimental Goat Cap","Eyes of Illusion","Work Cap","Black Feather";
+	setarray .IroDisp$[300], "King Of Spirit Circlet","Little Garden","Star Eyepatch","Injured Soldier's Eyepatch","Heavenly Order","Crown of Saint","Diabolus Wing","Citrus Ribbon","Eight Trigrams Seal","Mob Scarf","Victory Wing Ears","Officer's Hat","Ignis Cap Type K","Drooping Thanatos's Dolor","Stripe Hat","Great Magician's Ceremonial Crown","Scorpio Celestial Coronet","Sagittarius Celestial Coronet","Ghost Whisper","Clockwise";
+	setarray .IroDisp$[320], "Altair Hat","EXP Advisor","Battle Processor","Demon's Familiar","Deep Blue Sunglasses","Guardian Helm","Phantom Beast Ears","Ear of Spirit","Ears of Abyss","Crow Tengu Mask","Purified Pigeon","Smiling Eyes","Disk in Mouth","Einherjar's Mantle","Tyrant of Earth","Book of Sorcery","Sacred Lapel","Ghost Fire","Loyal Servant of Morroc","Black Veil";
+	setarray .IroDisp$[340], "Libra Diadem","Heritage Symbol of the Orcs","Duel Dragon Hat","Splash Cat Hat","Squirrel Ear Hood (Albino)","Two Tone Cap","Chic Peony","Bobcat Knit Hat (White)","Invincible Crest Hat","Khalitzburg Knight White Helm","The Brandishing","Striped Ribbon Hat","Full Faith Crown","Snake Queen Crown","Ancient Morocc Noble Jewelry","Divine Protect Shield","Exiled Ninja's Eyes","Lord of Royals","Old Camouflage Scarf","Consecrate Fides Aureola";
+	setarray .IroDisp$[360], "Twinhead Dragon Scale","Siege Army Cap","Siege Kafra Band","Siege Sweet Gent","Siege Zoro Mask","Star-Spangled Bandana","Merica Hat","Loki's Assassin Mask","Bra Hat","Cheering Whistle","Rainbow Long Octopus","Drooping Panda","Red Flower Hat","Deviruchi Balloon","Super Cute Doll Hat","Very Cute Doll Hat","Refined Lunatic Hat","Happy Parrot","Crown of Saint","Jinn Poring Balloon";
+	setarray .IroDisp$[380], "Happy Parrot","Black Veil","Lady's Ribbon","Party Balloon","Sweets Bonbon","Egg Minihat","Snow Flower","Lunatic on Shoulder","USA Flag Hat","Grey Wolf Cub in Mouth","True Gangster Scarf","Von Blood Brothers","Gangster Tactician Headset","Special Garden of Eden","Rekenber's Celestial Hat","Disciple of Bijou","Queen Bee Jeweled Crown","Robotic Valkyrie Hairband","Future Yoyo King Hat","Boitata Cap";
+	setarray .IroDisp$[400], "Future Wolf King Hat","Kiel Successor Doll","Umbala Utan Helmet","Bankrupt Headgear","Future Gryphon Hat","Eddga Follower Doll","Focused Cat Paw Physical Hat","Focused Cat Paw Magical Hat","Bone Detardeurus Wing","Angelgolt's Wing","Vampire Von Blood","Hero Follower Mask","OS Follower Mask","Poenitentia Follower Mask","Thanatos Follower Mask","Kitsune Gaze","Ancient Morroc Noble Jewelry-LT","Little Garden-LT","Floating Ball-LT","Ranger's Binoculars";
+	setarray .IroDisp$[420], "Moon Follower Eyepatch","Moon God Lapel","Special Bear Balloon","Constellation Orb","Biosphere Scarf","Frosty Breath","Buffalo Bandit Scarf","Plain Black Magician Hat","Night Sparrow Hat","Goral Crown","Trial Diadem","Jade Crown","Spinel Diadem","Bull Crown","Taurus Diadem","Celestial Jewel Crown","Libra Crown","Saint Crown","Lion Crown","Goat Crown";
+	setarray .IroDisp$[440], "Twins Crown","Time Dimensions Rune Crown (Dragon Knight)","Time Dimensions Rune Crown (Imperial Guard)","Time Dimensions Rune Crown (Meister)","Time Dimensions Rune Crown (Biolo)","Time Dimensions Rune Crown (Shadow Cross)","Time Dimensions Rune Crown (Abyss Chaser)","Time Dimensions Rune Crown (Arch Mage)","Time Dimensions Rune Crown (Elemental Master)","Time Dimensions Rune Crown (Cardinal)","Time Dimensions Rune Crown (Inquisitor)","Time Dimensions Rune Crown (Windhawk)","Time Dimensions Rune Crown (Troubadour & Trouvere)","Time Dimensions Rune Crown (Shinkiro & Shiranui)","Time Dimensions Rune Crown (Night Watch)","Time Dimensions Rune Crown (Sky Emperor)","Time Dimensions Rune Crown (Soul Ascetic)","Time Dimensions Rune Crown (Hyper Novice)","Time Dimensions Rune Crown (Spirit Handler)","Issgard Warrior Crown";
+	setarray .IroDisp$[460], "Issgard Magician Crown","Issgard Ranger Crown","Thanos' Warrior Helmet","Thanos' Warrior Helmet-LT","Thanos Shooter Helmet","Thanos Shooter Helmet-LT","Thanos Magic Helmet-LT","Thanos Magic Helmet","Thanos Fighter Helmet","Thanos Fighter Helmet-LT","Helm of Faith(Warlock)","Helm of Faith II(Warlock)","Helm of Faith(Sura)","Helm of Faith II(Sura)","Helm of Faith(Archbishop)","Helm of Faith II(Archbishop)","Helm of Faith(Shadow Chaser)","Helm of Faith II(Shadow Chaser)","Helm of Faith(Ranger)","Helm of Faith II(Ranger)";
+	setarray .IroDisp$[480], "Helm of Faith(Royal Guard)","Helm of Faith II(Royal Guard)","Helm of Faith(Guillotine Cross)","Helm of Faith II(Guillotine Cross)","Helm of Faith(Sorcerer)","Helm of Faith II(Sorcerer)","Helm of Faith(Rune Knight)","Helm of Faith II(Rune Knight)","Helm of Faith(Minstrel&Wanderer)","Helm of Faith II(Minstrel&Wanderer)","Helm of Faith(Mechanic)","Helm of Faith II(Mechanic)","Helm of Faith(Genetic)","Helm of Faith II(Genetic)","Helm of Faith(Kagerou&Oboro)","Helm of Faith II(Kagerou&Oboro)","Helm of Faith(Rebellion)","Helm of Faith II(Rebellion)","Helm of Faith(Soul Reaper)","Helm of Faith II(Soul Reaper)";
+	setarray .IroDisp$[500], "Helm of Faith(Star Emperor)","Helm of Faith II(Star Emperor)","Helm of Faith(Summoner)","Helm of Faith II(Summoner)","Herosria Helm","Herosria Apple of Archer","Herosria Sorcerer's Hat","Herosria Beret","Herosria Biretta","Confession Courage Crown","Confession Domineering Crown","Penance Crown","Penance Glory Crown","Poenetentia Spirit Crown","Poenetentia Willful Crown","Yorscalp Executioner's Circlet","Yorscalp Crown of Judgment","Silver Stardust Crown","Scarlet Stardust Crown","Violet Stardust Crown";
+	setarray .IroDisp$[520], "Songkok","Magnolia Hat","Balloon Hat","Hunting Cap","Twin Pom Blue Santa Hat","Snake Head","Valentine Hat","Upgrade Elephant Hat","Assassin Mask","Crunch Toast","Tiara","Crown","Opera Mask","Welding Mask","Binoculars","Hairband","Bunny Band","Golden Gear","Majestic Goat","Sakkat";
+	setarray .IroDisp$[540], "Baby Pacifier","Romantic White Flower","Spiky Band","Dark Blinkers","Blinkers","Chef Hat","Teddybear Hat","Brown Beanie","Blue Beanie","Flower Crown","Cap of Blindness","Ayothaya King's Hat","Fisherman Hat","Arc Angeling Hat","Champion Wreath","Mistress Crown","Guildsman Recruiter Hat","Party Recruiter Hat","Battlefield Recruiter Hat","Friend Recruiter Hat";
+	setarray .IroDisp$[560], "Gf Recruiter Hat","Helm of Darkness","Boy's Cap","Lord Kaho's Horn","Hat of the Sun God","Valkyrie Helm","Cyclop's Eye","Spore Hat","Raccoon Hat","Blush","Fashionable Glasses","Blue Fish","Lazy Smokie","Alarm Mask","Renown Detective's Cap","Zealotus Mask","Elephant Hat","Note Headphone","Chinese Crown","Feather Beret";
+	setarray .IroDisp$[580], "Magistrate Hat","Ayam","Censor Bar","Laurel Wreath","Twin Red Ribbon","Black Ribbon","Yellow Ribbon","Pink Ribbon","Red Ribbon","Orange Ribbon","White Ribbon","Coppola","Emperor's Laurel Crown","Red Magician Hat","Gray Magician Hat","Brown Magician Hat","Blue Magician Hat","Shafka","Devilring Hat","Soulless Ring";
+	setarray .IroDisp$[600], "Soul Wing","Afro Wig","Dokkaebi's Wig","Happy Wig","Marvelous Wig","Shiny Wig","Elephant Hat","Phoenix Crown","Tongue Mask","Poporing Hat","Selendang","Blush of Groom","Battle Processor","Bondage Necklace","Cor Core Booster","Cor Core Booster","Chain of Seals","Chain of Seals","RWC Anniversary Bread Envelope","Silver Dragon Helm";
+	setarray .IroDisp$[620], "Copper Dragon Helm","RWC Statue(Winner)","RWC Statue(2nd)","RWC Statue(3rd)","RCC2013 1st Crown","RCC2013 2nd Crown","RCC2013 3rd Crown","RWC Champ Crown(1st)","RWC Champ Crown(2nd)","RWC Champ Crown(3rd)","RWC Crown of Victory(8th)","RMSC2012 Champion Headgear","RMSC2012 1st Runner Headgear","RMSC2012 2nd Runner Headgear","Racing Cap(Mechanic)","Racing Cap(Genetic)","Racing Cap(Guillotine Cross)","Racing Cap(Shadow Chaser)","Racing Cap(Warlock)","Racing Cap(Sorcerer)";
+	setarray .IroDisp$[640], "Racing Cap(Rune Knight)","Racing Cap(Royal Guard)","Racing Cap(Archbishop)","Racing Cap(Sura)","Racing Cap(Ranger)","Racing Cap(Minstrel)","Racing Cap(Wanderer)","Racing Cap(Gunslinger)","Racing Cap(Ninja)","Racing Cap(Super Novice)","Racing Cap(Summoner)","Racing Cap(Star Gladiator)","Racing Cap(Soul Linker)","Santa Claus Hat","Chewy Seaweed","Santa Claus Beard","23rd Anniversary Scarf","Nyar's Familiar","Sewer Warrior Hat","Issgard Helmet";
+	setarray .IroDisp$[660], "Serpent Knight Helm","Nyar's Familiar-VG","Happy Balloon","Autumn Headband","Feather in Mouth","Gambler's Seal";
 OnInit:
 	freeloop 1;
 	// iRO cash-shop real hats, plus easy/medium/hard real hats from the iRO-history create pass and the migrated legacy Headgear 05 shop. Ordinary farmable and city hats are omitted even if they appeared in a Kafra package or lucky scroll. _C copies and rental SKUs are omitted. Dedicated getitem originals such as Robo Eye 5325 are included. Hats with no client itemInfo stay on the shelf. Create-pass hats whose names used to start with [Event]/[S2]/[S3] sit on Event.
@@ -366,19 +190,20 @@ OnInit:
 	setarray .IroId[200], 19079,19082,19083,19086,19087,19095,19102,19114,19116,19125,19129,19130,19135,19137,19138,19139,19141,19156,19162,19163;
 	setarray .IroId[220], 19170,19171,19172,19181,19244,19246,19249,19263,19264,19268,19269,19285,19296,19299,19300,19306,19308,19326,19327,19329;
 	setarray .IroId[240], 19337,19342,19343,19364,19379,19380,19381,19387,19391,19407,19409,19426,19437,19444,19446,19451,19469,19495,19498,19499;
-	setarray .IroId[260], 28502,400002,400011,400022,400023,400049,400054,400059,400061,400396,400408,400506,410012,410016,410071,410079,410120,410130,410215,410216;
-	setarray .IroId[280], 410333,410342,410345,420003,420093,420160,420182,420187,420199,420236,19460,19468,400006,400052,400077,400416,400421,400437,400438,400453;
-	setarray .IroId[300], 400454,400481,400505,400697,400710,410254,410348,410362,420068,420110,420223,420329,5860,5861,5862,5863,5876,5877,5948,5949;
-	setarray .IroId[320], 18837,18886,18907,18911,18944,18945,18946,18961,18963,18964,18967,18986,18994,18996,19005,19335,19355,19413,19458,400937;
-	setarray .IroId[340], 420388,420605,420863,420931,19315,400718,400738,400936,400948,400974,401002,401012,401043,401238,401290,401307,401459,401466,401467,410380;
-	setarray .IroId[360], 410381,410434,410531,410539,410544,410545,410550,410553,410615,410616,410622,410652,420245,420311,420438,420503,420590,420777,18794,18795;
-	setarray .IroId[380], 400078,400079,400094,400095,400098,400099,400116,400117,400118,400119,400120,400121,400529,400530,400531,400532,400533,400534,400535,400536;
-	setarray .IroId[400], 400537,400538,400539,400540,400541,400542,400543,400544,400545,400546,400105,400106,400107,400134,400135,400141,400142,400145,400146,400150;
-	setarray .IroId[420], 400151,400178,400179,400180,400181,400189,400190,400191,400192,400198,400199,400200,400201,400216,400217,400218,400219,400226,400227,400228;
-	setarray .IroId[440], 400229,400230,400231,400233,400234,400235,400236,400237,400238,400239,400240,400241,400242,400243,400244,400336,400337,400338,400339,400340;
-	setarray .IroId[460], 400447,400457,400469,400482,400603,400625,400723,400724,401055,401056,401057,5354,5365,5379,5383,5390,5388,5393,5802,5054;
-	setarray .IroId[480], 5107,2234,2235,2281,2292,2296,2210,2214,2246,2256,2280,5110,5206,5161,5104,2295,5026,5059,5235,5236;
-	setarray .IroId[500], 5303,5304,5312,5317,5319,5320,5323,5336,5337,5338,5339,5346,5181,5349,5013,5022,5171,5135,5029,5033;
+	setarray .IroId[260], 28502,400002,400011,400396,400408,400506,410012,410016,410071,410079,410120,410130,410215,410216,410333,410342,410345,420003,420093,420160;
+	setarray .IroId[280], 420182,420187,420199,420236,19460,19468,400006,400052,400077,400416,400421,400437,400438,400453,400454,400481,400505,400697,400710,410254;
+	setarray .IroId[300], 410348,410362,420068,420110,420223,420329,5860,5861,5862,5863,5876,5877,5948,5949,18837,18886,18907,18911,18944,18945;
+	setarray .IroId[320], 18946,18961,18963,18964,18967,18986,18994,18996,19005,19335,19355,19413,19458,400937,420388,420605,420863,420931,19315,400718;
+	setarray .IroId[340], 400738,400936,400948,400974,401002,401012,401043,401238,401290,401307,401459,401466,401467,410380,410381,410434,410531,410539,410544,410545;
+	setarray .IroId[360], 410550,410553,410615,410616,410622,410652,420245,420311,420438,420503,420590,420777,18794,18795,400078,400079,400094,400095,400098,400099;
+	setarray .IroId[380], 400116,400117,400118,400119,400120,400121,400105,400106,400107,400336,400337,400338,400339,400340,400447,400457,400469,400482,400603,400625;
+	setarray .IroId[400], 5354,5365,5379,5383,5390,5388,5393,5802,5054,5107,2234,2235,2281,2292,2296,2210,2214,2246,2256,2280;
+	setarray .IroId[420], 5110,5206,5161,5104,2295,5026,5059,5235,5236,5303,5304,5312,5317,5319,5320,5323,5336,5337,5338,5339;
+	setarray .IroId[440], 5346,5181,5349,5013,5022,5171,5135,5029,5033,5040,5047,5065,5084,5086,5108,5121,5146,5151,5152,5170;
+	setarray .IroId[460], 5173,5174,5175,5185,5187,5191,5192,5194,5195,5196,5197,5200,5205,5238,5239,5240,5241,5243,5254,5257;
+	setarray .IroId[480], 5297,5258,5298,5273,5275,5274,5259,5271,5272,5352,5355,5800,410017,420076,410091,410092,410093,410094,5428,5452;
+	setarray .IroId[500], 5453,5603,5604,5605,5892,5893,5894,18779,18780,18781,18796,18828,18829,18830,401146,420513,420701,420884,420898,401091;
+	setarray .IroId[520], 401019,401460,420899,15972,5898,420030,410233,5513,5588,5598,5662,5739;
 	setarray .IroPrice[0], 200,100,1000,2200,1000,100,1000,1200,100,380,1000,3125,500,260,975,200,1000,2250,2000,2040;
 	setarray .IroPrice[20], 1200,200,200,1000,440,1000,240,2000,200,200,1600,200,1000,1200,1200,2000,1000,1560,260,260;
 	setarray .IroPrice[40], 200,1200,1000,1200,1200,1200,260,1600,1200,600,3000,3750,3000,3000,3750,5075,1500,3360,1500,1000;
@@ -392,19 +217,20 @@ OnInit:
 	setarray .IroPrice[200], 3750,2400,1000,300,1300,100,5300,1980,2500,9800,3700,2600,1920,1000,2400,2800,3400,1800,1500,1950;
 	setarray .IroPrice[220], 3000,6450,4200,3000,1440,1800,4200,4200,1800,1300,5075,4650,4200,3200,4600,1600,4200,3900,1440,8400;
 	setarray .IroPrice[240], 5800,5800,4400,3100,4200,2780,1200,4550,5600,8000,6000,10400,2180,500,2850,2400,6400,380,2400,1800;
-	setarray .IroPrice[260], 900,3000,2550,4200,5800,4200,4000,4000,4200,8800,10350,7650,100,1200,300,2400,3450,6000,1800,1800;
-	setarray .IroPrice[280], 3160,3000,4020,1560,1200,1400,2400,1300,2400,12000,4550,5200,2800,1140,6800,7650,9450,11400,8550,6750;
-	setarray .IroPrice[300], 6750,8550,9450,5200,6000,2200,6740,6420,1400,1400,1400,1400,1200,1200,1200,1200,300,1300,2100,2200;
-	setarray .IroPrice[320], 200,1000,4050,500,280,1000,1000,100,200,200,200,260,1300,1300,2200,100,100,100,100,1300;
-	setarray .IroPrice[340], 2400,1000,1500,1950,4200,5980,4780,11780,11980,6180,9580,4980,6180,7000,5980,8180,6980,3180,3180,6250;
-	setarray .IroPrice[360], 6250,2250,1900,1900,1900,1900,8850,6400,4170,7160,8850,2070,2100,900,2400,1600,2400,4600,22425,3800;
-	setarray .IroPrice[380], 2850,4400,2640,4000,2850,2850,2850,4200,4400,2550,3450,2850,8980,10580,8980,8980,8180,8980,11380,10180;
-	setarray .IroPrice[400], 11780,8980,8180,11780,11980,8180,8180,10180,11780,10580,4580,4180,4580,3000,4380,3000,4380,3780,3600,3000;
-	setarray .IroPrice[420], 4380,4780,4980,4980,4980,4980,6580,5380,4980,5380,4980,4980,5380,5380,4980,4980,5180,6580,5380,4780;
-	setarray .IroPrice[440], 4980,6580,5380,5380,5380,5380,5380,7780,6580,5980,5180,6580,6580,6580,5980,2900,2900,3100,3800,3600;
-	setarray .IroPrice[460], 4400,5000,4600,4400,4400,4600,5780,12380,8180,6580,5180,2000,1560,1500,420,1200,975,1000,975,100;
-	setarray .IroPrice[480], 900,240,240,900,975,200,100,200,600,200,200,100,1200,975,3000,1800,200,100,200,200;
-	setarray .IroPrice[500], 1000,2280,380,1200,1560,1200,200,100,100,100,100,100,260,975,1000,200,1500,1000,100,100;
+	setarray .IroPrice[260], 900,3000,2550,8800,10350,7650,100,1200,300,2400,3450,6000,1800,1800,3160,3000,4020,1560,1200,1400;
+	setarray .IroPrice[280], 2400,1300,2400,12000,4550,5200,2800,1140,6800,7650,9450,11400,8550,6750,6750,8550,9450,5200,6000,2200;
+	setarray .IroPrice[300], 6740,6420,1400,1400,1400,1400,1200,1200,1200,1200,300,1300,2100,2200,200,1000,4050,500,280,1000;
+	setarray .IroPrice[320], 1000,100,200,200,200,260,1300,1300,2200,100,100,100,100,1300,2400,1000,1500,1950,4200,5980;
+	setarray .IroPrice[340], 4780,11780,11980,6180,9580,4980,6180,7000,5980,8180,6980,3180,3180,6250,6250,2250,1900,1900,1900,1900;
+	setarray .IroPrice[360], 8850,6400,4170,7160,8850,2070,2100,900,2400,1600,2400,4600,22425,3800,2850,4400,2640,4000,2850,2850;
+	setarray .IroPrice[380], 2850,4200,4400,2550,3450,2850,4580,4180,4580,2900,2900,3100,3800,3600,4400,5000,4600,4400,4400,4600;
+	setarray .IroPrice[400], 2000,1560,1500,420,1200,975,1000,975,100,900,240,240,900,975,200,100,200,600,200,200;
+	setarray .IroPrice[420], 100,1200,975,3000,1800,200,100,200,200,1000,2280,380,1200,1560,1200,200,100,100,100,100;
+	setarray .IroPrice[440], 100,260,975,1000,200,1500,1000,100,100,900,100,900,1200,1800,975,3900,440,2500,320,2400;
+	setarray .IroPrice[460], 1560,1560,1600,500,1560,1000,1000,1000,1000,1000,1000,100,1000,1000,1000,1000,1000,1900,1500,1200;
+	setarray .IroPrice[480], 1560,1920,3300,1000,1000,1000,1200,1900,1200,100,2000,2200,1300,2100,2000,2600,2100,2550,2200,5075;
+	setarray .IroPrice[500], 5075,4200,4200,4200,1000,1000,1000,3100,2500,1900,1140,1300,1300,1300,100,1700,100,2600,2000,2400;
+	setarray .IroPrice[520], 2100,2100,3000,100,3800,900,1500,1300,1560,1950,2040,2700;
 	setarray .IroDisp$[0], "Snake Head Hat","Assassin Mask","Crunch Toast","Tiara","Crown","Opera Masque","Welding Mask","Binoculars","Hair Band","Bunny Band","Golden Gear","Majestic Goat","Sakkat","Baby Pacifier","Romantic White Flower","Spiky Band","Spiky Band","Dark Blinder","Blinker","Chef Hat";
 	setarray .IroDisp$[20], "Deviruchi Hat","Tulip Hairpin","Tiger Mask","Neko Mimi","Takius Blindfold","Blank Eyes","2nd Anniversary Hat","Mystic Rose","Sheep Hat","Alice Doll","Magic Eyes","Hibiscus","Charming Ribbon","Crescent Helm","Corsair","Puppy Hat","Captain's Hat","Wandering Minstrel Hat","Green Ribbon","Rideword Hat";
 	setarray .IroDisp$[40], "Flapping Angel Wings","Dress Hat","Moonlight Flower Hat","Evolved Majestic Goat","Evolved Bunny Band","Evolved Drooping Kitty","Evolved Pipe","Evolved Pair of Red Ribbon","Evolved Blue Fish","Mini Propeller","Gray Deviruchi Hat","Brown Deviruchi Hat","Blue Drooping Kitty","Pink Beanie","Yellow Magician Hat","Elven Sunglasses","Triple Poring Hat","Flapping Angel Wings","Fantastic Wig","Chick Hat";
@@ -431,25 +257,44 @@ OnInit:
 	setarray .IroDisp$[460], "Helm of Faith(Ranger)","Helm of Faith II(Ranger)","Helm of Faith(Royal Guard)","Helm of Faith II(Royal Guard)","Helm of Faith(Guillotine Cross)","Helm of Faith II(Guillotine Cross)","Helm of Faith(Sorcerer)","Helm of Faith II(Sorcerer)","Helm of Faith(Rune Knight)","Helm of Faith II(Rune Knight)","Helm of Faith(Minstrel&Wanderer)","Helm of Faith(Soul Reaper)","Helm of Faith II(Soul Reaper)","Helm of Faith(Star Emperor)","Helm of Faith II(Star Emperor)","Helm of Faith(Summoner)","Helm of Faith II(Summoner)","Herosria Helm","Herosria Apple of Archer","Herosria Biretta";
 	setarray .IroDisp$[480], "Herosria Hat of Sun God","Herosria Grand Circlet","Herosria Crown","Herosria Majestic Goat","Herosria Corsair","Penance Charm Crown","Confession Courage Crown","Confession Domineering Crown","Penance Crown","Remorse Crown","Penance Glory Crown","Poenetentia Spirit Crown","Poenetentia Willful Crown","Yorscalp Executioner's Circlet","Yorscalp Crown of Judgment","Silver Stardust Crown","Scarlet Stardust Crown","Violet Stardust Crown","Celestial Rune Crown (Imperial Guard)","Celestial Rune Crown (Abyss Chaser)";
 	setarray .IroDisp$[500], "Rune Crown of the Sky (Spiritualist)","Sky Rune Crown (Meister)","Sky Rune Crown (Windhawk)","Sky Rune Crown (Cardinal)","Sky Rune Crown (Inquisitor)","Sky Rune Crown (Sky Emperor)","Muslim Hat M","Magnolia Hat","Teddybear Hat","Brown Beanie","Blue Beanie","Flower Crown","Cap Of Blindness","Ayothaya King's Hat","Observer","Fisherman's Hat","Hello Mother Hat","Champion Wreath","Misstrance Crown","Guildsman Recruiter Hat";
-	.IroCount = 563;
+	setarray .IroDisp$[520], "Party Recruiter Hat","BF Recruiter Hat","Friend Recruiter Hat","GF Recruiter Hat","Helm of Darkness","Boy's Cap","Boy's Cap","Lord Kaho's Horn","Hat of the Sun God","Valkyrie Helm","Cyclop's Eye","Spore Hat","Raccoon Hat","Blush","Fashionable Glasses","Blue Fish","Evil Wing Ears","Angel Wing Ears","Lazy Smokie","Alarm Mask";
+	setarray .IroDisp$[540], "Renown Detective's Cap","Zealotus Mask","Elephant Hat","Note Headphones","Chinese Crown","Feather Beret","Magistrate Hat","Ayam","Censor Bar","Laurel Wreath","Twin Ribbon","Black Ribbon","Yellow Ribbon","Pink Ribbon","Red Ribbon","Orange Ribbon","White Ribbon","Coppola","Emperor's Laurel Crown","Red Mage Hat";
+	setarray .IroDisp$[560], "Brown Mage Hat","Blue Mage Hat","Shafka","Battle Processor","Bondage Necklace","RWC Anniversary Bread Envelope","Silver Dragon Helm","Copper Dragon Helm","RWC Statue(Winner)","RWC Statue(2nd)","RWC Statue(3rd)","RCC2013 1st Crown","RCC2013 2nd Crown","RCC2013 3rd Crown","RWC Champ Crown(1st)","RWC Champ Crown(2nd)","RWC Champ Crown(3rd)","RWC Crown of Victory(8th)","RMSC2012 Champion Headgear","RMSC2012 1st Runner Headgear";
+	setarray .IroDisp$[580], "RMSC2012 2nd Runner Headgear","Racing Cap(Mechanic)","Racing Cap(Genetic)","Racing Cap(Guillotine Cross)","Racing Cap(Shadow Chaser)","Racing Cap(Warlock)","Racing Cap(Sorcerer)","Racing Cap(Rune Knight)","Racing Cap(Royal Guard)","Racing Cap(Archbishop)","Racing Cap(Sura)","Racing Cap(Ranger)","Racing Cap(Minstrel)","Racing Cap(Wanderer)","Racing Cap(Gunslinger)","Racing Cap(Ninja)","Racing Cap(Super Novice)","Racing Cap(Summoner)","Racing Cap(Star Gladiator)","Racing Cap(Soul Linker)";
+	setarray .IroDisp$[600], "Santa Claus Hat","Chewy Seaweed","Santa Claus Beard","23rd Anniversary Scarf","Nyar's Familiar","Sewer Warrior Hat","Issgard Helmet","Serpent Knight Helm","Nyar's Familiar-VG","Happy Balloon";
+	setarray .IroDisp$[614], "Autumn Headband";
+	setarray .IroDisp$[615], "Feather in Mouth";
+	.IroCount = 532;
+	setarray .IroClientDisp$[0], "Deviruchi Hat","Tulip Hairpin","Tiger Mask","Neko Mimi","Takius Blindfold","Blank Eyes","2nd Anniversary Hat","Mystic Rose","Sheep Hat","Alice Doll","Hibiscus","Charming Ribbon","Crescent Helm","Corsair","Captain's Hat","Wandering Minstrel Hat","Green Ribbon","Rideword Hat","Flapping Angel Wings","Dress Hat";
+	setarray .IroClientDisp$[20], "Moonlight Flower Hat","Evolved Majestic Goat","Evolved Bunny Band","Evolved Drooping Kitty","Evolved Pipe","Evolved Pair of Red Ribbon","Evolved Blue Fish","Mini Propeller","Gray Deviruchi Hat","Brown Deviruchi Hat","Blue Drooping Kitty","Pink Beanie","Yellow Magician Hat","Elven Sunglasses","Triple Poring Hat","Flapping Angel Wings","Fantastic Wig","Water Lily Crown","Vane Hairpin","Vacation Hat";
+	setarray .IroClientDisp$[40], "Red Glasses","Vanilmirth Hat","Drooping Bunny","Kettle Hat","Dragon Skull","Ramen Hat","Whisper Mask","Tropical Fruit Hat","Little Angel Doll","Jumping Poring","Defolty Doll Hat","Glaris Doll Hat","Sorin Doll Hat","Telling Doll Hat","Bennit Doll Hat","W Doll Hat","Captain's Hat","Wickebine's Black Cat Ears","Gangster Scarf","Judge Hat";
+	setarray .IroClientDisp$[60], "Koneko Hat","Dark Randgris Helm","Gigantic Majestic Goat","Large Orc Hero Helm","Satanic Chain","Antique Smoking Pipe","Bunny Ears Hat","Fish Head Hat","Santa Poring Hat","Bell Ribbon","Twin Pom Santa Hat","Neko Mimi Kafra","Jasper Crest","Scuba Mask","Black Frame Glasses","Fish in Mouth","Filir Hat","White Snake Hat","Mask of Ifrit","Ears of Ifrit";
+	setarray .IroClientDisp$[80], "Gold Dragon Helm","Puppy Hat","Drooping Bunny","Bacsojin Doll Hat","Anubis Helm","Tiger King Doll Hat","Ice Cream Hat","Pirate's Pride","Necromancer's Hood","Ashura Fairy Hat","Shark Hat","Sting Hat","Pisces Diadem","Pisces Crown","Devil's Bone Helm","Baby Dragon Hat","Pirate Dagger","Coati Hat","Tucan Hat","Jaguar Hat";
+	setarray .IroClientDisp$[100], "Aries Diadem","Aries Crown","Crimson Rose","Taurus Crown","Crown of Deceit","Gemini Diadem","Gemini Crown","Well-Chewed Pencil","Cancer Diadem","Cancer Crown","Rune Hairband","Turtle Hat","Libra Diadem","Scorpio Crown","Scorpio Diadem","Majestic Goat Model","Red Wing Hat","Snowman Hat","Capricorn Crown","Capricorn Diadem";
+	setarray .IroClientDisp$[120], "Sloth Hat","Duneyrr Hat","Red Bunny Band","Chocolate Donut","Blue Arara Hat","Yellow Bunny Band","Green Bunny Band","Red Tailed Ribbon","Miracle Blue Rose","Demon's Glasses","Gambler's Seal","Fish Monster's Gill","Dragon Knight's Eyepatch","Crow Tengu Mask","Flight Hat","Octopus Hat","Red Pencil in Mouth","Wing Headphone","Kardui Ears","Flying Galapago";
+	setarray .IroClientDisp$[140], "Divine Angel Nurse Cap","Queen Anne's Revenge","Moon Eyepatch","Talking Parrot","Ancient Elven Ears","Stahl Von Kaiser 61 II","Toy Syringe","Pure White Marching Hat","Rosario Necklace","Elven Ears","Garuda Hat","Angel Wing Ears","Evil Wing Ears","Evil Marching Hat","Skull Cap","Witch Hat","Heart Wings Hairband","Fragment of Love","St Patrick's Hat","Yggdrasil Crown";
+	setarray .IroClientDisp$[160], "Mini Glasses","Cat Ear Beret","Red Pom Band","Black Devil's Mask","Black Frame Glasses","Black Musang Hat","Long Tongue","Ignis Cap","Deviruchi Headphones","Witch's Pumpkin Hat","Pegasus Wing Ears","Antler Fedora","CD in Mouth","Handkerchief in Mouth","Drooping Pope","Hexagon Spectacles","Leek in Mouth","Syringe in Mouth","Magical Booster","MVP Basketball Hat";
+	setarray .IroClientDisp$[180], "Chilly Breath","Blood Sucker","Goaltender Mask","Mask of Nero","Imperial Feather","Hat of Girl","Banshee Master Kiss","Pink Angelring Bubble","Baron's Evil Eye","Palace Guard Cap","Aqua Bunny Band","Piamette's Brown Ears","Bear Balloon","LoveLove Balloon","Mechanical Plant Hat","Memory of Lover","Pink Poo Poo Hat","Jinn Marin Balloon","Circlet of Survival","Protect Feathers";
+	setarray .IroClientDisp$[200], "Celestial Woman's Flower","Bio Protector","Mask of Hero","Robo Eyes","Angel Spirit","Happy Balloon","Night Sparrow Hat","Sting Silk Ribbon","Red Baby Dragon","Cylinder Hairband","Chick Hat","Magic Eyes","Spirit of Green Maiden","Strawberry in Mouth","Seraphim Coronet","Orbs of Survival","Dolor Thanatos Mask","Lunar Rainbow","Scuba Mask","Catharina Von Brad 60th";
+	setarray .IroClientDisp$[220], "Guardian Processor","Magician Knit Hat","Sitting Pope(Casual)","New Wave Sunglasses","Rosario Necklace","Royal Guard Necklace","Spell Circuit","General's Helm","Gold Fish Head Hat","Gigant Snake's Breath","Happy Flapping Angel Wings","Siegfried's Helmet","Classical Feather Hat","Giant Tree's Young Leaves","Dog Officer","Heart Card in Mouth","Amistr Beret","Book of Soyga","Feather of Seraphim","Demon's Hand";
+	setarray .IroClientDisp$[240], "Safety Glasses","Taurus Hat","Phoenix Crown","Engineer Cap","Striking Hat","Floating Tai-Chi Spheres","Protect Cloth","Experimental Goat Cap","Eyes of Illusion","Work Cap","Black Feather","King Of Spirit Circlet","Little Garden","Star Eyepatch","Injured Soldier's Eyepatch","Heavenly Order","Crown of Saint","Diabolus Wing","Citrus Ribbon","Eight Trigrams Seal";
+	setarray .IroClientDisp$[260], "Mob Scarf","Victory Wing Ears","Officer's Hat","Ghost Whisper","Clockwise","Altair Hat","EXP Advisor","Battle Processor","Demon's Familiar","Deep Blue Sunglasses","Guardian Helm","Phantom Beast Ears","Ear of Spirit","Ears of Abyss","Crow Tengu Mask","Purified Pigeon","Smiling Eyes","Disk in Mouth","Einherjar's Mantle","Tyrant of Earth";
+	setarray .IroClientDisp$[280], "Book of Sorcery","Sacred Lapel","Ghost Fire","Loyal Servant of Morroc","Black Veil","Libra Diadem","Heritage Symbol of the Orcs","Duel Dragon Hat","Splash Cat Hat","Squirrel Ear Hood (Albino)","Two Tone Cap","Chic Peony","Bobcat Knit Hat (White)","Invincible Crest Hat","Khalitzburg Knight White Helm","The Brandishing","Striped Ribbon Hat","Full Faith Crown","Snake Queen Crown","Ancient Morocc Noble Jewelry";
+	setarray .IroClientDisp$[300], "Divine Protect Shield","Exiled Ninja's Eyes","Lord of Royals","Old Camouflage Scarf","Consecrate Fides Aureola","Twinhead Dragon Scale","Siege Army Cap","Siege Kafra Band","Siege Sweet Gent","Siege Zoro Mask","Star-Spangled Bandana","Merica Hat","Loki's Assassin Mask","Bra Hat","Cheering Whistle","Rainbow Long Octopus","Drooping Panda","Red Flower Hat","Deviruchi Balloon","Super Cute Doll Hat";
+	setarray .IroClientDisp$[320], "Very Cute Doll Hat","Refined Lunatic Hat","Happy Parrot","Crown of Saint","Jinn Poring Balloon","Happy Parrot","Black Veil","Lady's Ribbon","Party Balloon","Sweets Bonbon","Egg Minihat","Snow Flower","Lunatic on Shoulder","USA Flag Hat","Grey Wolf Cub in Mouth","True Gangster Scarf","Von Blood Brothers","Gangster Tactician Headset","Special Garden of Eden","Rekenber's Celestial Hat";
+	setarray .IroClientDisp$[340], "Disciple of Bijou","Queen Bee Jeweled Crown","Robotic Valkyrie Hairband","Future Yoyo King Hat","Boitata Cap","Future Wolf King Hat","Kiel Successor Doll","Umbala Utan Helmet","Bankrupt Headgear","Future Gryphon Hat","Eddga Follower Doll","Focused Cat Paw Physical Hat","Focused Cat Paw Magical Hat","Bone Detardeurus Wing","Angelgolt's Wing","Vampire Von Blood","Hero Follower Mask","OS Follower Mask","Poenitentia Follower Mask","Thanatos Follower Mask";
+	setarray .IroClientDisp$[360], "Kitsune Gaze","Ancient Morroc Noble Jewelry-LT","Little Garden-LT","Floating Ball-LT","Ranger's Binoculars","Moon Follower Eyepatch","Moon God Lapel","Special Bear Balloon","Constellation Orb","Biosphere Scarf","Frosty Breath","Buffalo Bandit Scarf","Plain Black Magician Hat","Night Sparrow Hat","Goral Crown","Trial Diadem","Jade Crown","Spinel Diadem","Bull Crown","Taurus Diadem";
+	setarray .IroClientDisp$[380], "Celestial Jewel Crown","Libra Crown","Saint Crown","Lion Crown","Goat Crown","Twins Crown","Issgard Warrior Crown","Issgard Magician Crown","Issgard Ranger Crown","Herosria Helm","Herosria Apple of Archer","Herosria Sorcerer's Hat","Herosria Beret","Herosria Biretta","Confession Courage Crown","Confession Domineering Crown","Penance Crown","Penance Glory Crown","Poenetentia Spirit Crown","Poenetentia Willful Crown";
+	setarray .IroClientDisp$[400], "Songkok","Magnolia Hat","Balloon Hat","Hunting Cap","Twin Pom Blue Santa Hat","Snake Head","Valentine Hat","Upgrade Elephant Hat","Assassin Mask","Crunch Toast","Tiara","Crown","Opera Mask","Welding Mask","Binoculars","Hairband","Bunny Band","Golden Gear","Majestic Goat","Sakkat";
+	setarray .IroClientDisp$[420], "Baby Pacifier","Romantic White Flower","Spiky Band","Dark Blinkers","Blinkers","Chef Hat","Teddybear Hat","Brown Beanie","Blue Beanie","Flower Crown","Cap of Blindness","Ayothaya King's Hat","Fisherman Hat","Arc Angeling Hat","Champion Wreath","Mistress Crown","Guildsman Recruiter Hat","Party Recruiter Hat","Battlefield Recruiter Hat","Friend Recruiter Hat";
+	setarray .IroClientDisp$[440], "Gf Recruiter Hat","Helm of Darkness","Boy's Cap","Lord Kaho's Horn","Hat of the Sun God","Valkyrie Helm","Cyclop's Eye","Spore Hat","Raccoon Hat","Blush","Fashionable Glasses","Blue Fish","Lazy Smokie","Alarm Mask","Renown Detective's Cap","Zealotus Mask","Elephant Hat","Note Headphone","Chinese Crown","Feather Beret";
+	setarray .IroClientDisp$[460], "Magistrate Hat","Ayam","Censor Bar","Laurel Wreath","Twin Red Ribbon","Black Ribbon","Yellow Ribbon","Pink Ribbon","Red Ribbon","Orange Ribbon","White Ribbon","Coppola","Emperor's Laurel Crown","Red Magician Hat","Gray Magician Hat","Brown Magician Hat","Blue Magician Hat","Shafka","Devilring Hat","Soulless Ring";
+	setarray .IroClientDisp$[480], "Soul Wing","Afro Wig","Dokkaebi's Wig","Happy Wig","Marvelous Wig","Shiny Wig","Elephant Hat","Phoenix Crown","Tongue Mask","Poporing Hat","Selendang","Blush of Groom","Battle Processor","Bondage Necklace","Cor Core Booster","Cor Core Booster","Chain of Seals","Chain of Seals","RWC Anniversary Bread Envelope","Silver Dragon Helm";
+	setarray .IroClientDisp$[500], "Copper Dragon Helm","RWC Statue(Winner)","RWC Statue(2nd)","RWC Statue(3rd)","RCC2013 1st Crown","RCC2013 2nd Crown","RCC2013 3rd Crown","RWC Champ Crown(1st)","RWC Champ Crown(2nd)","RWC Champ Crown(3rd)","RWC Crown of Victory(8th)","RMSC2012 Champion Headgear","RMSC2012 1st Runner Headgear","RMSC2012 2nd Runner Headgear","Santa Claus Hat","Chewy Seaweed","Santa Claus Beard","23rd Anniversary Scarf","Nyar's Familiar","Sewer Warrior Hat";
+	setarray .IroClientDisp$[520], "Issgard Helmet","Serpent Knight Helm","Nyar's Familiar-VG","Happy Balloon","Autumn Headband","Feather in Mouth","Gambler's Seal","Aquarius Crown","Leo Crown","Virgo Crown","Libra Crown","Sagittarius Crown";
 	// Generated by KB tools/audit_harlan_hat_prices.py from the confirmed pricing taxonomy.
 	// Generated by KB tools/audit_harlan_hat_prices.py from the condition-aware pricing taxonomy.
-	// Duration boxes for client-tagged rental hats. Slot follows the hat.
-	setarray .RentBoxId[0], 12564,12565,12567,12568,12569,12570,12571,13694,13722,13864,13865,13968,16212,16386,16390,16636,16637,16640,16762;
-	setarray .RentHatId[0],  5794, 5796, 5798, 5799,18500,18501,18502, 5306, 5286, 5314, 5315, 5394, 5540, 5596, 5597, 5462, 5463, 5793,18505;
-	.RentCount = 19;
-	setarray .RentPrice[0], 700,70,70,70,70,70,70,2100,1400,196,140,70,140,700,700,840,1400,840,840;
-	setarray .RentDisp$[0], "3D Glasses Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Cheering Scarf Box","Freya's Crown Box","Pecopeco Hairband Box","Hockey Mask Box","Observer Box","Bubble Gum Box","Freya's Spiritual Circlet Box","Four Leaf Clover in Mouth R Box III","Chewing Bubble Gum R Box III","Spiked Scarf BoxIII","Rainbow Scarf BoxIII","Life Ribbon BoxIII","Umbala Spirit 7days Box";
 	// Confirmed endgame headgear families. Families already sold by the imported Cash Mall exchange (Good and Evil and Furious) stay out of Harlan.
-	// Racing Caps, RWC/RTC/RCC tournament hats, and iRO-history create-pass leftovers. Display names drop [Event]/[S2]/[S3] prefixes. Missing client itemInfo is not a cut. Custom-imported hats with no worn accessory model were removed from item_db on 2026-08-20: 19416, 400938, 420569. Official rAthena rows 5895, 400088, 400089, 400090 still exist upstream and stay off this stall. Gold Dragon Helm 5451 stays on Equipment. Comp_Happy_Balloon_K 15972 sits on Event beside Equipment Happy_Balloon_K 19095 (same View and EXP/drop script; 19102 is Pale Moon Hat). RCC 2013 1st/2nd/3rd crowns stay.
-	setarray .EvtId[0], 5428,5452,5453,5603,5604,5605,5892,5893,5894,18779,18780,18781,18796,18828,18829,18830,19189,19190,19191,19192;
-	setarray .EvtId[20], 19193,19194,19195,19196,19197,19198,19199,19200,19201,19202,19203,19204,19205,19396,19397,401146,420513,420701,420884,420898;
-	setarray .EvtId[40], 401091,401019,401460,420899,15972;
-	.EvtCount = 45;
-	setarray .EvtPrice[0], 2200,5075,5075,4200,4200,4200,1000,1000,1000,3100,2500,1900,1140,1300,1300,1300,2850,3150,3450,2250,3000,5850,2850,3150,4050,3150,4200,2250,2250,2250,3450,2850,3000,2850,5000,100,1700,100,2600,2000,2400,2100,2100,3000,100;
-	setarray .EvtDisp$[0], "RWC Anniversary Bread Envelope","Silver Dragon Helm","Copper Dragon Helm","RWC Statue(Winner)","RWC Statue(2nd)","RWC Statue(3rd)","RCC2013 1st Crown","RCC2013 2nd Crown","RCC2013 3rd Crown","RWC Champ Crown(1st)","RWC Champ Crown(2nd)","RWC Champ Crown(3rd)","RWC Crown of Victory(8th)","RMSC2012 Champion Headgear","RMSC2012 1st Runner Headgear","RMSC2012 2nd Runner Headgear","Racing Cap(Mechanic)","Racing Cap(Genetic)","Racing Cap(Guillotine Cross)","Racing Cap(Shadow Chaser)";
-	setarray .EvtDisp$[20], "Racing Cap(Warlock)","Racing Cap(Sorcerer)","Racing Cap(Rune Knight)","Racing Cap(Royal Guard)","Racing Cap(Archbishop)","Racing Cap(Sura)","Racing Cap(Ranger)","Racing Cap(Minstrel)","Racing Cap(Wanderer)","Racing Cap(Gunslinger)","Racing Cap(Ninja)","Racing Cap(Super Novice)","Racing Cap(Summoner)","Racing Cap(Star Gladiator)","Racing Cap(Soul Linker)","Santa Claus Hat","Chewy Seaweed","Santa Claus Beard","23rd Anniversary Scarf","Nyar's Familiar";
-	setarray .EvtDisp$[40], "Sewer Warrior Hat","Issgard Helmet","Serpent Knight Helm","Nyar's Familiar-VG","Happy Balloon";
 	.@alphabet$ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	.@costume = EQP_COSTUME_HEAD_TOP | EQP_COSTUME_HEAD_MID | EQP_COSTUME_HEAD_LOW;
 	.@eqp[0] = EQP_HEAD_TOP;
@@ -457,32 +302,25 @@ OnInit:
 	.@eqp[2] = EQP_HEAD_LOW;
 
 	deletearray .HatHas[0], 78;
-	deletearray .RentHas[0], 78;
-	deletearray .EvtHas[0], 78;
 	deletearray .HatHasNum[0], 3;
-	deletearray .RentHasNum[0], 3;
-	deletearray .EvtHasNum[0], 3;
 	deletearray .HatLetter$[0], 81;
-	deletearray .RentLetter$[0], 81;
-	deletearray .EvtLetter$[0], 81;
 	deletearray .HatMenu$[0], 3;
-	deletearray .RentMenu$[0], 3;
-	deletearray .EvtMenu$[0], 3;
 	deletearray .HatLetterCount[0], 3;
-	deletearray .RentLetterCount[0], 3;
-	deletearray .EvtLetterCount[0], 3;
+	deletearray .HatSlotCount[0], 3;
+	deletearray .HatMode[0], 3;
 
 	for (.@slot = 0; .@slot < 3; ++.@slot) {
+		npcshopdelitem "hat" + .@slot + "#ALL", 501;
+		npcshopdelitem "hat" + .@slot + "#AH", 501;
+		npcshopdelitem "hat" + .@slot + "#IP", 501;
+		npcshopdelitem "hat" + .@slot + "#QZ9", 501;
 		npcshopdelitem "hat" + .@slot + "#0", 501;
-		npcshopdelitem "rent" + .@slot + "#0", 501;
-		npcshopdelitem "evt" + .@slot + "#0", 501;
 		for (.@i = 0; .@i < 26; ++.@i) {
 			npcshopdelitem "hat" + .@slot + "#" + charat(.@alphabet$, .@i), 501;
-			npcshopdelitem "rent" + .@slot + "#" + charat(.@alphabet$, .@i), 501;
-			npcshopdelitem "evt" + .@slot + "#" + charat(.@alphabet$, .@i), 501;
 		}
 	}
 
+	deletearray .IroSeen[0], .IroCount;
 	.@kept = 0;
 	for (.@i = 0; .@i < .IroCount; ++.@i) {
 		.@id = .IroId[.@i];
@@ -512,7 +350,7 @@ OnInit:
 		// repaired IroId arrays are not guaranteed to retain the historical
 		// IroDisp$ positional alignment; using that stale position can put an
 		// item into the wrong letter drawer.
-		.@disp$ = .@name$;
+		.@disp$ = .IroClientDisp$[.@i];
 		.IroDisp$[.@kept] = .@disp$;
 		.@hatname$[.@kept] = strtolower(.@disp$);
 		.@kept += 1;
@@ -541,6 +379,22 @@ OnInit:
 		}
 	}
 	for (.@i = 0; .@i < .IroCount; ++.@i) {
+		.@loc = getiteminfo(.IroId[.@i], ITEMINFO_LOCATIONS);
+		for (.@slot = 0; .@slot < 3; ++.@slot) {
+			if (.@loc & .@eqp[.@slot])
+				.HatSlotCount[.@slot] += 1;
+		}
+	}
+	for (.@slot = 0; .@slot < 3; ++.@slot) {
+		if (.HatSlotCount[.@slot] < 30)
+			.HatMode[.@slot] = 0;
+		else if (.HatSlotCount[.@slot] < 100)
+			.HatMode[.@slot] = 1;
+		else
+			.HatMode[.@slot] = 2;
+	}
+
+	for (.@i = 0; .@i < .IroCount; ++.@i) {
 		.@id = .IroId[.@i];
 		.@price = .IroPrice[.@i];
 		.@name$ = .IroDisp$[.@i];
@@ -558,220 +412,55 @@ OnInit:
 		}
 		for (.@slot = 0; .@slot < 3; ++.@slot) {
 			if (.@loc & .@eqp[.@slot]) {
-				if (.@letter_index == -2)
-					.HatHasNum[.@slot] = true;
-				else
-					.HatHas[.@slot * 26 + .@letter_index] = true;
-				npcshopadditem "hat" + .@slot + "#" + .@letter$, .@id, .@price;
+				if (.HatMode[.@slot] == 0) {
+					.@drawer$ = "ALL";
+				} else if (.HatMode[.@slot] == 1) {
+					if (.@letter_index >= 0 && .@letter_index <= 7)
+						.@drawer$ = "AH";
+					else if (.@letter_index >= 8 && .@letter_index <= 15)
+						.@drawer$ = "IP";
+					else
+						.@drawer$ = "QZ9";
+				} else {
+					.@drawer$ = .@letter$;
+					if (.@letter_index == -2)
+						.HatHasNum[.@slot] = true;
+					else
+						.HatHas[.@slot * 26 + .@letter_index] = true;
+				}
+				npcshopadditem "hat" + .@slot + "#" + .@drawer$, .@id, .@price;
 			}
 		}
 	}
-
-	.@kept = 0;
-	for (.@i = 0; .@i < .RentCount; ++.@i) {
-		.@id = .RentBoxId[.@i];
-		.@hat = .RentHatId[.@i];
-		.@name$ = getitemname(.@id);
-		// Empty / "Unknown Item" / "null" means the ID is missing from item_db. This checkout's getitemname returns "null" for a missing ID, not "Unknown Item". That is not a missing client itemInfo.lua row.
-		if (.@name$ == "" || .@name$ == "Unknown Item" || .@name$ == "null") {
-			debugmes "Hat Seller: missing rental box " + .@id + ".";
-			continue;
-		}
-		.@type = getiteminfo(.@id, ITEMINFO_TYPE);
-		if (.@type != IT_USABLE && .@type != IT_CASH) {
-			debugmes "Hat Seller: rejected rental box type for item " + .@id + " (" + .@name$ + ").";
-			continue;
-		}
-		.@loc = getiteminfo(.@hat, ITEMINFO_LOCATIONS);
-		if (.@loc & .@costume) {
-			debugmes "Hat Seller: rejected rental costume hat " + .@hat + ".";
-			continue;
-		}
-		.RentBoxId[.@kept] = .@id;
-		.RentPrice[.@kept] = .RentPrice[.@i];
-		.RentHatId[.@kept] = .@hat;
-		.RentAegis$[.@kept] = getiteminfo(.@id, ITEMINFO_AEGISNAME);
-		.@disp$ = .@name$;
-		.RentDisp$[.@kept] = .@disp$;
-		.@rentname$[.@kept] = strtolower(.@disp$);
-		.@kept += 1;
-	}
-	.RentCount = .@kept;
-	for (.@i = 0; .@i < .RentCount; ++.@i) {
-		for (.@j = .@i + 1; .@j < .RentCount; ++.@j) {
-			.@cmp = strcmp(.@rentname$[.@j], .@rentname$[.@i]);
-			if (.@cmp < 0 || (.@cmp == 0 && .RentBoxId[.@j] < .RentBoxId[.@i])) {
-				.@tmp = .RentBoxId[.@i];
-				.RentBoxId[.@i] = .RentBoxId[.@j];
-				.RentBoxId[.@j] = .@tmp;
-				.@tmp = .RentPrice[.@i];
-				.RentPrice[.@i] = .RentPrice[.@j];
-				.RentPrice[.@j] = .@tmp;
-				.@tmp = .RentHatId[.@i];
-				.RentHatId[.@i] = .RentHatId[.@j];
-				.RentHatId[.@j] = .@tmp;
-				.@tmp$ = .RentAegis$[.@i];
-				.RentAegis$[.@i] = .RentAegis$[.@j];
-				.RentAegis$[.@j] = .@tmp$;
-				.@tmp$ = .RentDisp$[.@i];
-				.RentDisp$[.@i] = .RentDisp$[.@j];
-				.RentDisp$[.@j] = .@tmp$;
-				.@tmp$ = .@rentname$[.@i];
-				.@rentname$[.@i] = .@rentname$[.@j];
-				.@rentname$[.@j] = .@tmp$;
-			}
-		}
-	}
-	for (.@i = 0; .@i < .RentCount; ++.@i) {
-		.@id = .RentBoxId[.@i];
-		.@price = .RentPrice[.@i];
-		.@hat = .RentHatId[.@i];
-		.@name$ = .RentDisp$[.@i];
-		.@loc = getiteminfo(.@hat, ITEMINFO_LOCATIONS);
-		.@letter$ = strtoupper(charat(.@name$, 0));
-		.@letter_index = strpos(.@alphabet$, .@letter$);
-		if (.@letter_index < 0) {
-			if (strpos("0123456789", .@letter$) >= 0) {
-				.@letter$ = "0";
-				.@letter_index = -2;
-			} else {
-				.@letter$ = "A";
-				.@letter_index = 0;
-			}
-		}
-		for (.@slot = 0; .@slot < 3; ++.@slot) {
-			if (.@loc & .@eqp[.@slot]) {
-				if (.@letter_index == -2)
-					.RentHasNum[.@slot] = true;
-				else
-					.RentHas[.@slot * 26 + .@letter_index] = true;
-				npcshopadditem "rent" + .@slot + "#" + .@letter$, .@id, .@price;
-			}
-		}
-	}
-
-
-	.@kept = 0;
-	for (.@i = 0; .@i < .EvtCount; ++.@i) {
-		.@id = .EvtId[.@i];
-		.@name$ = getitemname(.@id);
-		// Empty / "Unknown Item" / "null" means the ID is missing from item_db. This checkout's getitemname returns "null" for a missing ID, not "Unknown Item". That is not a missing client itemInfo.lua row.
-		if (.@name$ == "" || .@name$ == "Unknown Item" || .@name$ == "null") {
-			debugmes "Hat Seller: missing event item " + .@id + ".";
-			continue;
-		}
-		if (getiteminfo(.@id, ITEMINFO_TYPE) != IT_ARMOR) {
-			debugmes "Hat Seller: rejected type for event item " + .@id + " (" + .@name$ + ").";
-			continue;
-		}
-		.@loc = getiteminfo(.@id, ITEMINFO_LOCATIONS);
-		if (.@loc & .@costume) {
-			debugmes "Hat Seller: rejected costume slot for event item " + .@id + " (" + .@name$ + ").";
-			continue;
-		}
-		.EvtId[.@kept] = .@id;
-		.EvtPrice[.@kept] = .EvtPrice[.@i];
-		.EvtAegis$[.@kept] = getiteminfo(.@id, ITEMINFO_AEGISNAME);
-		.@disp$ = .@name$;
-		.EvtDisp$[.@kept] = .@disp$;
-		.@evtname$[.@kept] = strtolower(.@disp$);
-		.@kept += 1;
-	}
-	.EvtCount = .@kept;
-	for (.@i = 0; .@i < .EvtCount; ++.@i) {
-		for (.@j = .@i + 1; .@j < .EvtCount; ++.@j) {
-			.@cmp = strcmp(.@evtname$[.@j], .@evtname$[.@i]);
-			if (.@cmp < 0 || (.@cmp == 0 && .EvtId[.@j] < .EvtId[.@i])) {
-				.@tmp = .EvtId[.@i];
-				.EvtId[.@i] = .EvtId[.@j];
-				.EvtId[.@j] = .@tmp;
-				.@tmp = .EvtPrice[.@i];
-				.EvtPrice[.@i] = .EvtPrice[.@j];
-				.EvtPrice[.@j] = .@tmp;
-				.@tmp$ = .EvtAegis$[.@i];
-				.EvtAegis$[.@i] = .EvtAegis$[.@j];
-				.EvtAegis$[.@j] = .@tmp$;
-				.@tmp$ = .EvtDisp$[.@i];
-				.EvtDisp$[.@i] = .EvtDisp$[.@j];
-				.EvtDisp$[.@j] = .@tmp$;
-				.@tmp$ = .@evtname$[.@i];
-				.@evtname$[.@i] = .@evtname$[.@j];
-				.@evtname$[.@j] = .@tmp$;
-			}
-		}
-	}
-	for (.@i = 0; .@i < .EvtCount; ++.@i) {
-		.@id = .EvtId[.@i];
-		.@price = .EvtPrice[.@i];
-		.@name$ = .EvtDisp$[.@i];
-		.@loc = getiteminfo(.@id, ITEMINFO_LOCATIONS);
-		.@letter$ = strtoupper(charat(.@name$, 0));
-		.@letter_index = strpos(.@alphabet$, .@letter$);
-		if (.@letter_index < 0) {
-			if (strpos("0123456789", .@letter$) >= 0) {
-				.@letter$ = "0";
-				.@letter_index = -2;
-			} else {
-				.@letter$ = "A";
-				.@letter_index = 0;
-			}
-		}
-		for (.@slot = 0; .@slot < 3; ++.@slot) {
-			if (.@loc & .@eqp[.@slot]) {
-				if (.@letter_index == -2)
-					.EvtHasNum[.@slot] = true;
-				else
-					.EvtHas[.@slot * 26 + .@letter_index] = true;
-				npcshopadditem "evt" + .@slot + "#" + .@letter$, .@id, .@price;
-			}
-		}
-	}
-
 
 	for (.@slot = 0; .@slot < 3; ++.@slot) {
 		.HatMenu$[.@slot] = "";
-		.RentMenu$[.@slot] = "";
-		.EvtMenu$[.@slot] = "";
 		.HatLetterCount[.@slot] = 0;
-		.RentLetterCount[.@slot] = 0;
-		.EvtLetterCount[.@slot] = 0;
-		if (.HatHasNum[.@slot]) {
-			.HatLetter$[.@slot * 27] = "0";
-			.HatMenu$[.@slot] += "0-9:";
+		if (.HatMode[.@slot] == 0) {
+			.HatLetter$[.@slot * 27] = "ALL";
+			.HatMenu$[.@slot] = "All items";
 			.HatLetterCount[.@slot] = 1;
-		}
-		if (.RentHasNum[.@slot]) {
-			.RentLetter$[.@slot * 27] = "0";
-			.RentMenu$[.@slot] += "0-9:";
-			.RentLetterCount[.@slot] = 1;
-		}
-
-		if (.EvtHasNum[.@slot]) {
-			.EvtLetter$[.@slot * 27] = "0";
-			.EvtMenu$[.@slot] += "0-9:";
-			.EvtLetterCount[.@slot] = 1;
-		}
-		for (.@i = 0; .@i < 26; ++.@i) {
-			if (.HatHas[.@slot * 26 + .@i]) {
-				.@letter$ = charat(.@alphabet$, .@i);
+		} else if (.HatMode[.@slot] == 1) {
+			.HatLetter$[.@slot * 27] = "AH";
+			.HatLetter$[.@slot * 27 + 1] = "IP";
+			.HatLetter$[.@slot * 27 + 2] = "QZ9";
+			.HatMenu$[.@slot] = "A-H:I-P:Q-Z / 0-9";
+			.HatLetterCount[.@slot] = 3;
+		} else {
+			for (.@i = 0; .@i < 26; ++.@i) {
+				if (.HatHas[.@slot * 26 + .@i]) {
+					.@letter$ = charat(.@alphabet$, .@i);
+					.@n = .HatLetterCount[.@slot];
+					.HatLetter$[.@slot * 27 + .@n] = .@letter$;
+					.HatMenu$[.@slot] += .@letter$ + ":";
+					.HatLetterCount[.@slot] = .@n + 1;
+				}
+			}
+			if (.HatHasNum[.@slot]) {
 				.@n = .HatLetterCount[.@slot];
-				.HatLetter$[.@slot * 27 + .@n] = .@letter$;
-				.HatMenu$[.@slot] += .@letter$ + ":";
+				.HatLetter$[.@slot * 27 + .@n] = "0";
+				.HatMenu$[.@slot] += "0-9";
 				.HatLetterCount[.@slot] = .@n + 1;
-			}
-			if (.RentHas[.@slot * 26 + .@i]) {
-				.@letter$ = charat(.@alphabet$, .@i);
-				.@n = .RentLetterCount[.@slot];
-				.RentLetter$[.@slot * 27 + .@n] = .@letter$;
-				.RentMenu$[.@slot] += .@letter$ + ":";
-				.RentLetterCount[.@slot] = .@n + 1;
-			}
-			if (.EvtHas[.@slot * 26 + .@i]) {
-				.@letter$ = charat(.@alphabet$, .@i);
-				.@n = .EvtLetterCount[.@slot];
-				.EvtLetter$[.@slot * 27 + .@n] = .@letter$;
-				.EvtMenu$[.@slot] += .@letter$ + ":";
-				.EvtLetterCount[.@slot] = .@n + 1;
 			}
 		}
 	}

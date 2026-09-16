@@ -1,37 +1,11 @@
 //===== Ragnarok Offline =====================================
 //= Black-Market Consumable Seller
 //===== Description: =========================================
-//= Sells a curated cash-origin consumable whitelist for
-//= account-wide Cash Points. Browse is one hidden pointshop
-//= per function category. Category shops are filled at OnInit
-//= by a hidden NPC. Inside each category, stock is ordered by
-//= product family, then family tier, then A-Z. Ordinary buffs
-//= and upgrade stones are sold as singles unless the piece
-//= price is under 1,000 Zeny, in which case the official pack
-//= is stocked instead. Timed Infinite rental boxes remain.
-//= Random boxes are omitted.
-//= Farmable basic ores are sold here. Ether and Etel stones
-//= are not.
-//= Premium Service (menu first): Nyangvine 10; 1/10/30-day boxes 100/800/2000.
-//= Battle Manual 5; Limited 6; Advanced 7; HE 10; X3 12.
-//= Job Battle Manual 5. Thick Battle Manual 12. Field Manual 25% is not stocked.
-//= Bubble Gum: 7 / 10 / 15. Combat: 3-day Infinite ASPD boxes 100;
-//= food 2/3/4/5 by dish tier; Blessing/AGI 10-packs 5; Aspersio 2;
-//= Assumptio/Wind Walk/Adrenaline 10-packs 8; Abrasive 1;
-//= Mega Resist Potion 10. Light ASPD 1/2/3. Concentration Scroll 5.
-//= Recovery: Small Life 3; Medium Life 5; Regeneration 2.
-//= Convenience: Kafra 1; Giant Fly Wing 10-pack 5; Insurance 3;
-//= Gym Pass 50; Token 10; Convex 2; Dungeon Teleport 10;
-//= Greed 30-pack 15; Infinite Flywing 1/3/5/7-day 30/45/60/150;
-//= New Insurance 15; Insurance60 5;
-//= Teleport Scrolls: Rune-Midgarts Central/South/Other, Lighthalzen, Rachel, Localizing
-//= 2/2/5, 3, 5, 8; butterfly Yellow/Green/Red/Blue 2/3/5/8;
-//= Infinite Giant Fly Wing 1-day 30; Halter 3/7/30-day 45/150/300.
-//= Style and Reset: dye coupons 20; Costume Change Ticket 100
-//= (100,000 Zeny); Premium Reset Stone 1000; Neuralizer 1000 (1,000,000 Zeny).
-//= Upgrade: basic ores 1-2; Oridecon/Elunium 5; Enriched 10; HD Ori/Elu 30;
-//= HD Bradium/Carnium 100; Blacksmith Blessing 13;
-//= Shadow Refine Hammer 100. Neuralizer 1000 (1,000,000 Zeny).
+//= Rooke sells a curated cash-origin consumable whitelist for
+//= character-local Black Market Points. Each category has one hidden
+//= pointshop per player-progression price tier, so simultaneous players
+//= never share a catalog or price. A zero tier price means the SKU is not
+//= sold in that tier. Full-row exclusions are absent from the catalog.
 //============================================================
 
 paramk,39,185,4	script	Rooke#offline	542,{
@@ -58,127 +32,220 @@ paramk,39,185,4	script	Rooke#offline	542,{
 	mes "[Rooke]";
 	mes "Manuals, gum, tonics, tickets... stones, if you know how to ask.";
 	mes "If it goes in a bottle, under the tongue, or into a forge, I can source it.";
-	mes "First taste is honest. ^0055FFCash Points^000000 only.";
+	mes "First taste is honest. ^0055FFBlack Market Points^000000 only.";
 	mes "Tell me what you're craving.";
 	next;
-	switch (select("Premium Service:EXP and Drop:Combat Buffs:Recovery:Convenience:Upgrade:Style and Reset:")) {
+	switch (select("EXP and Drop:Consumable#1:Consumable#2:Scrolls:Potions:Convenience:Style / Reset:Upgrade:Premium Service:")) {
 	case 1:
-		callsub S_OpenCategory, 6;
-		end;
-	case 2:
 		callsub S_OpenCategory, 0;
 		end;
-	case 3:
+	case 2:
 		callsub S_OpenCategory, 1;
 		end;
-	case 4:
+	case 3:
 		callsub S_OpenCategory, 2;
 		end;
-	case 5:
+	case 4:
 		callsub S_OpenCategory, 3;
+		end;
+	case 5:
+		callsub S_OpenCategory, 4;
 		end;
 	case 6:
 		callsub S_OpenCategory, 5;
 		end;
 	case 7:
-		callsub S_OpenCategory, 4;
+		callsub S_OpenCategory, 6;
+		end;
+	case 8:
+		callsub S_OpenCategory, 7;
+		end;
+	case 9:
+		callsub S_OpenCategory, 8;
 		end;
 	}
 	end;
 
 S_OpenCategory:
 	.@cat = getarg(0);
-	if (!getvariableofnpc(.CatHas[.@cat], "cons_seller_db")) {
+	.@tier = callsub(S_GetTier);
+	if (!getvariableofnpc(.CatHas[.@tier * 9 + .@cat], "cons_seller_db")) {
+		clear;
 		mes "[Rooke]";
 		mes "Tch. Empty bottle. Ask me for something else.";
 		close;
 	}
 	close2;
-	callshop "cons" + .@cat, 1;
+	callshop "cons" + .@cat + "#T" + .@tier, 1;
 	end;
+
+S_GetTier:
+	if (BaseLevel >= 201)
+		return 5;
+	if (BaseLevel >= 100)
+		return 4;
+	.@rebirth = (eaclass() & EAJL_UPPER) != 0;
+	if (BaseLevel <= 50)
+		return .@rebirth ? 2 : 0;
+	return .@rebirth ? 3 : 1;
 
 OnInit:
 	setunittitle(getnpcid(0), "<Alchemist>");
 	end;
 }
 
--	pointshop	cons0	-1,#CASHPOINTS,501:2
--	pointshop	cons1	-1,#CASHPOINTS,501:2
--	pointshop	cons2	-1,#CASHPOINTS,501:2
--	pointshop	cons3	-1,#CASHPOINTS,501:2
--	pointshop	cons4	-1,#CASHPOINTS,501:2
--	pointshop	cons5	-1,#CASHPOINTS,501:2
--	pointshop	cons6	-1,#CASHPOINTS,501:2
+// Nine categories x six progression tiers. They are populated by cons_seller_db.
+-	pointshop	cons0#T0	-1,BlackMarketPoints,501:2
+-	pointshop	cons0#T1	-1,BlackMarketPoints,501:2
+-	pointshop	cons0#T2	-1,BlackMarketPoints,501:2
+-	pointshop	cons0#T3	-1,BlackMarketPoints,501:2
+-	pointshop	cons0#T4	-1,BlackMarketPoints,501:2
+-	pointshop	cons0#T5	-1,BlackMarketPoints,501:2
+-	pointshop	cons1#T0	-1,BlackMarketPoints,501:2
+-	pointshop	cons1#T1	-1,BlackMarketPoints,501:2
+-	pointshop	cons1#T2	-1,BlackMarketPoints,501:2
+-	pointshop	cons1#T3	-1,BlackMarketPoints,501:2
+-	pointshop	cons1#T4	-1,BlackMarketPoints,501:2
+-	pointshop	cons1#T5	-1,BlackMarketPoints,501:2
+-	pointshop	cons2#T0	-1,BlackMarketPoints,501:2
+-	pointshop	cons2#T1	-1,BlackMarketPoints,501:2
+-	pointshop	cons2#T2	-1,BlackMarketPoints,501:2
+-	pointshop	cons2#T3	-1,BlackMarketPoints,501:2
+-	pointshop	cons2#T4	-1,BlackMarketPoints,501:2
+-	pointshop	cons2#T5	-1,BlackMarketPoints,501:2
+-	pointshop	cons3#T0	-1,BlackMarketPoints,501:2
+-	pointshop	cons3#T1	-1,BlackMarketPoints,501:2
+-	pointshop	cons3#T2	-1,BlackMarketPoints,501:2
+-	pointshop	cons3#T3	-1,BlackMarketPoints,501:2
+-	pointshop	cons3#T4	-1,BlackMarketPoints,501:2
+-	pointshop	cons3#T5	-1,BlackMarketPoints,501:2
+-	pointshop	cons4#T0	-1,BlackMarketPoints,501:2
+-	pointshop	cons4#T1	-1,BlackMarketPoints,501:2
+-	pointshop	cons4#T2	-1,BlackMarketPoints,501:2
+-	pointshop	cons4#T3	-1,BlackMarketPoints,501:2
+-	pointshop	cons4#T4	-1,BlackMarketPoints,501:2
+-	pointshop	cons4#T5	-1,BlackMarketPoints,501:2
+-	pointshop	cons5#T0	-1,BlackMarketPoints,501:2
+-	pointshop	cons5#T1	-1,BlackMarketPoints,501:2
+-	pointshop	cons5#T2	-1,BlackMarketPoints,501:2
+-	pointshop	cons5#T3	-1,BlackMarketPoints,501:2
+-	pointshop	cons5#T4	-1,BlackMarketPoints,501:2
+-	pointshop	cons5#T5	-1,BlackMarketPoints,501:2
+-	pointshop	cons6#T0	-1,BlackMarketPoints,501:2
+-	pointshop	cons6#T1	-1,BlackMarketPoints,501:2
+-	pointshop	cons6#T2	-1,BlackMarketPoints,501:2
+-	pointshop	cons6#T3	-1,BlackMarketPoints,501:2
+-	pointshop	cons6#T4	-1,BlackMarketPoints,501:2
+-	pointshop	cons6#T5	-1,BlackMarketPoints,501:2
+-	pointshop	cons7#T0	-1,BlackMarketPoints,501:2
+-	pointshop	cons7#T1	-1,BlackMarketPoints,501:2
+-	pointshop	cons7#T2	-1,BlackMarketPoints,501:2
+-	pointshop	cons7#T3	-1,BlackMarketPoints,501:2
+-	pointshop	cons7#T4	-1,BlackMarketPoints,501:2
+-	pointshop	cons7#T5	-1,BlackMarketPoints,501:2
+-	pointshop	cons8#T0	-1,BlackMarketPoints,501:2
+-	pointshop	cons8#T1	-1,BlackMarketPoints,501:2
+-	pointshop	cons8#T2	-1,BlackMarketPoints,501:2
+-	pointshop	cons8#T3	-1,BlackMarketPoints,501:2
+-	pointshop	cons8#T4	-1,BlackMarketPoints,501:2
+-	pointshop	cons8#T5	-1,BlackMarketPoints,501:2
 
 -	script	cons_seller_db	-1,{
 	end;
 
 OnInit:
-	// Canonical SKUs only. Random boxes, regional copies, [Not For Sale], empty
-	// TODO scripts, and weaker same-name duplicates are excluded.
-	// Ordinary buffs and upgrade stones are singles unless piece
-	// Zeny is under 1,000; those families stay on official packs.
-	// Timed Infinite, Giant Fly, and Halter rental boxes remain.
-	// Battle Manual family: 12208, 12872, 14533, 12411, 14545.
-	// Job Manual and Thick are their own families. Field Manual 25%
-	// 14532 is omitted as a weaker overlapping Base EXP bottle.
-	// Bubble Gum: 7,000 / 10,000 / 15,000 Zeny. 1 Cash Point = 1,000 Zeny.
-	// Etc also covers New Insurance 6413 and Premium Reset Stone 6320.
-	// Shelf order inside each category: product family, then family
-	// tier (price, strength, or duration), then A-Z by client
-	// identifiedDisplayName when the tier is tied. ASPD stays
-	// Concentration / Awakening / Berserk. Teleport Scrolls follow
-	// region: Rune-Midgarts (Central, South, Other), Lighthalzen,
-	// Rachel, Localizing. Butterfly wings follow the same geography:
-	// Yellow, Green, Red, Blue.
-	// Category 0: EXP and Drop. Battle Manual ladder, Job Manual,
-	// Thick, then gum.
-	setarray .ItemId[0],     12208, 12872, 14533, 12411, 14545, 14592, 12312, 12210, 12562, 12412;
-	setarray .ItemPrice[0],      5,     6,     7,    10,    12,     5,    12,     7,    10,    15;
-	setarray .ItemCat[0],        0,     0,     0,     0,     0,     0,     0,     0,     0,     0;
-	// Category 1: Combat Buffs. Stat food by tier then A-Z; Light then
-	// Infinite ASPD; scrolls by pack price; Abrasive then Concentration Scroll.
-	// Food: Dish06 2, Dish07 3, Dish08/09 4, Dish10 5. Mid-tier IDs are
-	// the existing cooking dishes that iRO history mislabeled as hats.
-	setarray .ItemId[10],    12086, 12092, 12077, 12087, 12083, 12093, 12074, 12206, 12204, 12205, 12203, 12202, 12207;
-	setarray .ItemPrice[10],     2,     3,     3,     3,     4,     4,     4,     5,     5,     5,     5,     5,     5;
-	setarray .ItemCat[10],       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1;
-	setarray .ItemId[23],    14509, 14510, 14511, 17263, 17264, 17265, 12217, 12913, 12914, 12918, 12916, 12917, 14536, 14531, 12299;
-	setarray .ItemPrice[23],     1,     2,     3,   100,   100,   100,     2,     5,     5,     8,     8,     8,     1,     5,    10;
-	setarray .ItemCat[23],       1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1,     1;
-	// Category 2: Recovery. Life potions Small then Medium; Regen last.
-	setarray .ItemId[38],    14534, 14535, 14537;
-	setarray .ItemPrice[38],     3,     5,     2;
-	setarray .ItemCat[38],       2,     2,     2;
-	// Category 3: Convenience. Giant Fly, Infinite Fly 1/3/5/7,
-	// city teleports by region, butterfly by the same geography,
-	// then insurance / utility / Halter.
-	setarray .ItemId[41],    12910, 17608, 17251, 17474, 17229, 12977, 12978, 12980, 12981, 12982, 12979;
-	setarray .ItemPrice[41],     5,    60,    60,    30,   150,     2,     2,     5,     3,     5,     8;
-	setarray .ItemCat[41],       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3;
-	setarray .ItemId[52],    14582, 14583, 14584, 14585, 14527, 12214, 12209, 14500,  6413,  7621, 13621, 12211,  7776, 17176, 17162, 16683;
-	setarray .ItemPrice[52],     2,     3,     5,     8,    10,     2,     3,     5,    15,    10,    15,     1,    50,    45,   150,   300;
-	setarray .ItemCat[52],       3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3,     3;
-	// Category 6: Premium Service. Menu first. Nyangvine, then 1/10/30-day boxes.
-	setarray .ItemId[68],     6909, 23209, 23216, 23207;
-	setarray .ItemPrice[68],    10,   100,   800,  2000;
-	setarray .ItemCat[68],      6,     6,     6,     6;
-	// Category 4: Style and Reset. Dye A-Z; Costume Ticket;
-	// Premium Reset Stone; Neuralizer.
-	setarray .ItemId[72],     6046,  6047,  6959,  6320, 12213;
-	setarray .ItemPrice[72],    20,    20,   100,  1000,  1000;
-	setarray .ItemCat[72],       4,     4,     4,     4,     4;
-	// Upgrade. Basic ores 1 CP A-Z then Emveretarcon; finished;
-	// Enriched; HD Ori/Elu then Bradium/Carnium; Blessing; Hammer.
-	setarray .ItemId[77],     1003,   998,  1002,  1010,   999,  1011,   985,   984,  7619,  7620,  6241,  6240,  6226,  6225,  6635, 23436;
-	setarray .ItemPrice[77],     1,     1,     1,     1,     1,     2,     5,     5,    10,    10,    30,    30,   100,   100,    13,   100;
-	setarray .ItemCat[77],       5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5,     5;
+	// The bounded 97 SKU x 6 tier builder exceeds rAthena's goto-count guard.
+	// It is not an unbounded loop; re-enable the guard before this event ends.
+	freeloop(1);
+	// Tier order: Normal 1-50, Normal 51-99, Rebirth 1-50,
+	// Rebirth 51-99, all jobs 100-200, all jobs 201+.
+	// Prices are Black Market Points; zero is deliberately unavailable.
+	setarray .ItemId[0],
+		12208,12872,14533,12411,14545,14592,12312,12210,12562,12412,
+		12086,12092,12077,12087,12083,12093,12074,12206,12204,12205,12203,12202,12207,
+		12418,12419,12424,12775,12791,12792,12796,14766,12883,14536,14601,23607,100232,100233,102803,12437,12684,12299,
+		12217,12215,12216,12220,12218,12219,14531,
+		14534,14535,14537,14509,14510,14511,17263,17264,17265,
+		12910,17608,17251,17474,17229,14582,14583,14584,14585,14527,12214,12209,14500,6413,7621,13621,12211,7776,17176,17162,16683,
+		6046,6047,6959,6320,12213,
+		985,984,7619,7620,6241,6240,6226,6225,6635,23436,
+		6909,23209,23216,23207;
+	setarray .ItemCat[0],
+		0,0,0,0,0,0,0,0,0,0,
+		1,1,1,1,1,1,1,1,1,1,1,1,1,
+		2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
+		3,3,3,3,3,3,3,
+		4,4,4,4,4,4,4,4,4,
+		5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+		6,6,6,6,6,
+		7,7,7,7,7,7,7,7,7,7,
+		8,8,8,8;
+	setarray .Tier0[0],
+		50,0,0,0,0,50,0,70,0,0,
+		0,0,0,0,0,0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+		10,5,5,8,8,5,3,
+		0,0,0,5,7,10,0,0,0,
+		30,1500,4500,4000,6000,2,3,4,7,7,30,40,70,100,30,15,5,1000,5000,10000,30000,
+		5000,3000,0,10000,10000,
+		10,10,30,30,50,50,0,0,100,0,
+		10,500,4000,10000;
+	setarray .Tier1[0],
+		70,0,0,0,0,70,0,90,0,0,
+		0,0,0,0,0,0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+		12,7,7,10,10,7,4,
+		0,0,0,7,9,12,0,0,0,
+		30,1500,4500,4000,6000,7,8,9,12,12,40,50,80,110,40,30,10,1200,5000,10000,30000,
+		5000,3000,0,12000,12000,
+		20,20,40,40,60,60,0,0,120,0,
+		20,1000,8000,20000;
+	setarray .Tier2[0],
+		70,80,0,0,0,70,0,90,0,0,
+		0,0,0,0,0,0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+		12,7,7,10,10,7,4,
+		0,0,0,7,9,12,1500,1700,2000,
+		50,2000,5000,4500,6500,12,13,14,17,17,40,50,80,110,50,45,10,1500,6000,12000,35000,
+		10000,7000,0,12000,12000,
+		20,20,40,40,60,60,0,0,120,0,
+		30,1000,8000,20000;
+	setarray .Tier3[0],
+		70,80,90,0,0,70,0,90,120,0,
+		0,0,0,0,0,0,0,0,0,0,0,0,0,
+		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+		12,7,7,10,10,7,6,
+		0,0,0,7,9,12,1500,1700,2000,
+		50,2500,5500,5000,7000,17,18,19,22,22,40,50,80,110,50,45,20,1500,6000,12000,35000,
+		10000,7000,0,15000,15000,
+		30,30,50,50,70,70,0,0,150,3000,
+		40,2000,16000,40000;
+	setarray .Tier4[0],
+		100,120,130,150,180,100,180,130,150,220,
+		70,80,80,80,90,90,90,100,100,100,100,100,100,
+		80,80,100,120,120,200,400,400,100,100,120,150,250,250,0,30,100,300,
+		15,10,10,13,13,10,10,
+		120,150,75,12,14,17,2500,2700,3000,
+		100,3500,6500,6000,8000,22,23,24,27,27,60,70,100,130,100,100,50,3000,10000,15000,45000,
+		12000,10000,15000,20000,20000,
+		100,100,120,120,150,150,300,300,200,5000,
+		50,4000,32000,80000;
+	setarray .Tier5[0],
+		120,140,150,170,200,120,200,150,170,240,
+		120,130,130,130,140,140,140,150,150,150,150,150,150,
+		130,130,150,170,170,250,500,500,150,150,170,200,300,300,1000,80,150,400,
+		20,15,15,18,18,15,15,
+		200,250,100,22,24,27,3500,3700,4000,
+		300,4500,7500,7000,9000,27,28,29,32,32,110,120,150,180,150,120,60,5000,12000,17000,47000,
+		20000,15000,25000,50000,50000,
+		200,200,250,250,300,300,500,500,300,10000,
+		50,8000,64000,160000;
 
-	.ItemCount = 93;
-	deletearray .CatHas[0], 7;
-
-	for (.@cat = 0; .@cat < 7; ++.@cat)
-		npcshopdelitem "cons" + .@cat, 501;
+	.ItemCount = 97;
+	deletearray .CatHas[0], 54;
+	for (.@cat = 0; .@cat < 9; ++.@cat)
+		for (.@tier = 0; .@tier < 6; ++.@tier)
+			npcshopdelitem "cons" + .@cat + "#T" + .@tier, 501;
 
 	for (.@i = 0; .@i < .ItemCount; ++.@i) {
 		.@id = .ItemId[.@i];
@@ -186,16 +253,28 @@ OnInit:
 		.@name$ = getitemname(.@id);
 		if (.@name$ == "" || .@name$ == "Unknown Item") {
 			debugmes "Consumable Seller: missing item " + .@id + ".";
-			.ItemId[.@i] = 0;
 			continue;
 		}
 		if (.@type != IT_USABLE && .@type != IT_HEALING && .@type != IT_DELAYCONSUME && .@type != IT_ETC && .@type != IT_CASH) {
 			debugmes "Consumable Seller: rejected type for item " + .@id + " (" + .@name$ + ").";
-			.ItemId[.@i] = 0;
 			continue;
 		}
-		.CatHas[.ItemCat[.@i]] = true;
-		npcshopadditem "cons" + .ItemCat[.@i], .@id, .ItemPrice[.@i];
+		.@cat = .ItemCat[.@i];
+		for (.@tier = 0; .@tier < 6; ++.@tier) {
+			switch (.@tier) {
+			case 0: .@price = .Tier0[.@i]; break;
+			case 1: .@price = .Tier1[.@i]; break;
+			case 2: .@price = .Tier2[.@i]; break;
+			case 3: .@price = .Tier3[.@i]; break;
+			case 4: .@price = .Tier4[.@i]; break;
+			case 5: .@price = .Tier5[.@i]; break;
+			}
+			if (.@price <= 0)
+				continue;
+			.CatHas[.@tier * 9 + .@cat] = true;
+			npcshopadditem "cons" + .@cat + "#T" + .@tier, .@id, .@price;
+		}
 	}
+	freeloop(0);
 	end;
 }

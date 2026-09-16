@@ -31,7 +31,7 @@ export const acquisitionServices: CostumeService[] = [
     name: 'Card Eater',
     location: 'Malangdo · 138, 140',
     description:
-      'Feed only the normal cards on the listed menu. The four card-level bands pay 2 / 8 / 14 / 30 Silvervine Fruit normally, or 2 / 6 / 10 / 20 Silvervine Fruit with Extras plus 0 / 2 / 4 / 10 Event Stone Coins.',
+      'Feed only the 120 Normal cards on the listed menu. Search the complete accepted-card list and reward tiers in the Card Eater reference.',
     tag: 'Cards → currencies'
   }
 ]

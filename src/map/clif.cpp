@@ -30,6 +30,7 @@
 #include "battle.hpp"
 #include "battleground.hpp"
 #include "cashshop.hpp"
+#include "../custom/black_market_cashshop.hpp"
 #include "channel.hpp"
 #include "chat.hpp"
 #include "chrif.hpp"
@@ -17411,10 +17412,36 @@ void clif_parse_cashshop_list_request( int32 fd, map_session_data* sd ){
 /// 0287 <packet len>.W <cash point>.L <kafra point>.L { <sell price>.L <discount price>.L <item type>.B <name id>.W }* (PACKETVER >= 20070711)
 void clif_cashshop_show( map_session_data& sd, const npc_data& nd ){
 	sd.npc_shopid = nd.id;
+	sd.black_market_shop_id = 0;
+	sd.black_market_price_numerator = 0;
+	sd.black_market_price_denominator = 0;
 
 	int32 cost[2] = { 0, 0 };
 
 	npc_shop_currency_type( &sd, &nd, cost, true );
+
+	black_market_price_ratio black_market_ratio{ 1, 1 };
+	const bool black_market_pointshop = nd.subtype == NPCTYPE_POINTSHOP &&
+		std::strcmp(nd.u.shop.pointshop_str, BLACK_MARKET_POINT_VAR) == 0;
+	if (black_market_pointshop) {
+		if (black_market_is_rooke_shop(nd.exname))
+			black_market_ratio = { 1, 1 };
+		else if (black_market_is_card_shop(nd.exname))
+			black_market_ratio = black_market_card_price_ratio(sd.status.base_level, (sd.class_ & JOBL_UPPER) != 0);
+		else
+			black_market_ratio = black_market_normal_price_ratio(sd.status.base_level, (sd.class_ & JOBL_UPPER) != 0);
+		for (int32 i = 0; i < nd.u.shop.count; ++i) {
+			int32 player_price = 0;
+			if (!black_market_player_price(nd.u.shop.shop_item[i].value, black_market_ratio, player_price)) {
+				ShowError("clif_cashshop_show: Black Market shop '%s' cannot price item %u for CID=%d (base=%u, ratio=%d/%d).\n",
+					nd.exname, nd.u.shop.shop_item[i].nameid, sd.status.char_id, nd.u.shop.shop_item[i].value, black_market_ratio.numerator, black_market_ratio.denominator);
+				return;
+			}
+		}
+		sd.black_market_shop_id = nd.id;
+		sd.black_market_price_numerator = black_market_ratio.numerator;
+		sd.black_market_price_denominator = black_market_ratio.denominator;
+	}
 
 	PACKET_ZC_PC_CASH_POINT_ITEMLIST* p = reinterpret_cast<PACKET_ZC_PC_CASH_POINT_ITEMLIST*>( packet_buffer );
 
@@ -17427,9 +17454,12 @@ void clif_cashshop_show( map_session_data& sd, const npc_data& nd ){
 
 	for( int32 i = 0; i < nd.u.shop.count; i++ ) {
 		struct item_data* id = itemdb_search( nd.u.shop.shop_item[i].nameid );
+		int32 player_price = nd.u.shop.shop_item[i].value;
+		if (black_market_pointshop && !black_market_player_price(nd.u.shop.shop_item[i].value, black_market_ratio, player_price))
+			return;
 
-		p->items[i].price = nd.u.shop.shop_item[i].value;
-		p->items[i].discountPrice = nd.u.shop.shop_item[i].value; // Discount Price
+		p->items[i].price = player_price;
+		p->items[i].discountPrice = player_price; // Discount Price
 		p->items[i].itemType = itemtype( id->nameid );
 		p->items[i].itemId = client_nameid( id->nameid );
 #ifdef ENABLE_OLD_CASHSHOP_PREVIEW_PATCH

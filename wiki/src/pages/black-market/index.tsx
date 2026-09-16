@@ -127,49 +127,63 @@ export default function BlackMarketPage(): ReactNode {
               icon={faHatWizard}
               location="Market hall · 41, 173"
               title="Harlan"
-              description="Browse equipment, rentals, specialty circlets, and event headgear. Specialty opens by endgame set, including Temporal, Helm of Faith, Glacier, Thanos, and Rune Crowns."
-              tag="616 hats · priced by power"
+              description="Browse 610 headgear items in the Equipment catalog, organized by slot and display name."
+              tag="610 equipment · CP"
+            />
+            <ServiceCard
+              icon={faGem}
+              location="Market hall · 27, 158"
+              title="Madame Celestine"
+              description="Browse the complete Specialty Broker catalog: 902 equipment items across 43 named endgame families."
+              tag="902 specialty items · CP"
+            />
+            <ServiceCard
+              icon={faUserSecret}
+              location="Market hall · 24, 172"
+              title="Riven"
+              description="Search 3,088 Black Market equipment items by name or exact Item ID, then open the matching seller drawer."
+              tag="Equipment Search"
             />
             <ServiceCard
               icon={faWandMagic}
               location="Market hall · 51, 175"
               title="Soren"
-              description="Browse 719 weapons by type. Specialty drawers use the weapon family name, so you can go straight to a set such as EDDA Biolab, Illusion, Frontier, Glacier, or Fides."
+              description="Browse weapons by type in the Equipment catalog. Specialty families are now handled by Madame Celestine."
               tag="719 weapons · CP"
             />
             <ServiceCard
               icon={faShieldHalved}
               location="Market hall · 37, 163"
               title="Mordain"
-              description="Browse body armor in Equipment and Specialty catalogs, with Specialty families separated from ordinary gear."
+              description="Browse body armor in the Equipment catalog. Specialty families are now handled by Madame Celestine."
               tag="319 armor · CP"
             />
             <ServiceCard
               icon={faShieldHalved}
               location="Market hall · 33, 166"
               title="Kaedra"
-              description="Recover shields through Equipment and Specialty drawers, organized for quick browsing."
+              description="Recover shields through the Equipment catalog, organized for quick browsing. Specialty families are now handled by Madame Celestine."
               tag="Shield recovery · CP"
             />
             <ServiceCard
               icon={faShoePrints}
               location="Market hall · 23, 185"
               title="Tess"
-              description="Browse footgear recovery stock, including verified Specialty families and complete client-asset coverage."
+              description="Browse footgear recovery stock in the Equipment catalog with complete client-asset coverage. Specialty families are now handled by Madame Celestine."
               tag="Footgear · CP"
             />
             <ServiceCard
               icon={faShirt}
               location="Market hall · 24, 160"
               title="Weaver"
-              description="Browse garment recovery equipment with imported executable effects and verified client assets."
+              description="Browse garment recovery equipment with imported executable effects and verified client assets. Specialty families are now handled by Madame Celestine."
               tag="326 garments · CP"
             />
             <ServiceCard
               icon={faRing}
               location="Market hall · 23, 160"
               title="Lady Seraphine Vellmont"
-              description="Browse accessory recovery stock by letter and verified accessory family, including imported combo partners."
+              description="Browse accessory recovery stock by letter, including imported combo partners. Specialty families are now handled by Madame Celestine."
               tag="Accessories · CP"
             />
             <ServiceCard

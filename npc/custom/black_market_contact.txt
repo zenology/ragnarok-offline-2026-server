@@ -91,6 +91,7 @@ paramk,8,171,4	script	Black Market Contact#exit	4_M_MASKMAN,{
 	next;
 	if (select("Leave quietly.:Stay here.") == 2)
 		close;
+	clear;
 	mes "[Black Market Contact]";
 	mes "Stay close and do not look back.";
 	close2;

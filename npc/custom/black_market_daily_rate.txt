@@ -12,6 +12,7 @@ function	script	F_BlackMarketDailyRateBand	{
 }
 
 function	script	F_BlackMarketDailyRemark	{
+	clear;
 	.@seller$ = getarg(0);
 	.@band = callfunc("F_BlackMarketDailyRateBand", getarg(1));
 	mes "[" + .@seller$ + "]";

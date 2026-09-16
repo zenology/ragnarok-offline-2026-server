@@ -46,6 +46,7 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 		.@menu$ += .@chosen_label$[.@i] + " - " + getitemname(.@chosen_item[.@i]) + ":";
 	.@choice = select(.@menu$ + "Cancel") - 1;
 	if (.@choice == .@count) close;
+	clear;
 	.@slot = .@chosen_slot[.@choice];
 	.@type = .@chosen_type[.@choice];
 	.@uid$ = .@chosen_uid$[.@choice];
@@ -53,13 +54,19 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 	.@existing = 0;
 	for (.@i = 0; .@i < 5; ++.@i)
 		if (getequiprandomoption(.@slot, .@i, ROA_ID) != 0) ++.@existing;
-	.@price = .@existing > 0 ? 2000 : 1000;
+	.@price = blackmarketprice(.@existing > 0 ? 2000 : 1000);
+	if (.@price <= 0) {
+		mes "[Vesper]";
+		mes "The ledger refuses to price this experiment safely. No points were charged.";
+		close;
+	}
 
 	mes "[Vesper]";
 	mes "Ah, ^0055FF" + getitemname(.@item) + "^000000 (" + .@chosen_label$[.@choice] + "). A splendid specimen.";
-	mes "Current Random Options: " + .@existing + ". Price: ^0055FF" + .@price + " Cash Points^000000.";
+	mes "Current Random Options: " + .@existing + ". Price: ^0055FF" + .@price + " Black Market Points^000000.";
 	mes "This experiment replaces all five option slots. Every existing Random Option will be cleared.";
 	if (select("Replace all options:Cancel") == 2) close;
+	clear;
 
 	.@rolled = 0;
 	if (rand(100) < 70) {
@@ -96,25 +103,40 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 			mes "How maddening! The option registry is invalid. No points were charged and your item was not changed.";
 			close;
 		}
-		.@selected_index = .@candidate_index[rand(.@candidate_count)];
-		.@roll_id[.@slot_index] = getelementofarray(getvariableofnpc(.OptionId[0], "equipment_enhancement_db"), .@selected_index);
-		.@minimum = getelementofarray(getvariableofnpc(.OptionMin[0], "equipment_enhancement_db"), .@selected_index);
-		.@maximum = getelementofarray(getvariableofnpc(.OptionMax[0], "equipment_enhancement_db"), .@selected_index);
-		.@roll_value[.@slot_index] = .@minimum + rand(.@maximum - .@minimum + 1);
+		if (.@slot_index == 0 && inarray(getvariableofnpc(.CrimsonItemId[0], "equipment_enhancement_db"), .@item) != -1) {
+			// Registry generator enforces the ten approved Crimson elements.
+			.@element_count = 10;
+			.@weight_total = 0;
+			for (.@i = 0; .@i < .@element_count; ++.@i)
+				.@weight_total += getelementofarray(getvariableofnpc(.CrimsonOptionWeight[0], "equipment_enhancement_db"), .@i);
+			.@element_roll = rand(.@weight_total);
+			for (.@i = 0; .@i < .@element_count; ++.@i) {
+				.@element_roll -= getelementofarray(getvariableofnpc(.CrimsonOptionWeight[0], "equipment_enhancement_db"), .@i);
+				if (.@element_roll < 0) break;
+			}
+			.@roll_id[.@slot_index] = getelementofarray(getvariableofnpc(.CrimsonOptionId[0], "equipment_enhancement_db"), .@i);
+			.@roll_value[.@slot_index] = 0;
+		} else {
+			.@selected_index = .@candidate_index[rand(.@candidate_count)];
+			.@roll_id[.@slot_index] = getelementofarray(getvariableofnpc(.OptionId[0], "equipment_enhancement_db"), .@selected_index);
+			.@minimum = getelementofarray(getvariableofnpc(.OptionMin[0], "equipment_enhancement_db"), .@selected_index);
+			.@maximum = getelementofarray(getvariableofnpc(.OptionMax[0], "equipment_enhancement_db"), .@selected_index);
+			.@roll_value[.@slot_index] = .@minimum + rand(.@maximum - .@minimum + 1);
+		}
 	}
 
 	.@result = blackmarketenhance(.@slot, .@uid$, .@roll_id, .@roll_value, .@roll_param);
 	mes "[Vesper]";
 	if (.@result == 1) {
 		if (.@rolled == 0)
-			mes "Fascinating! The replacement yielded zero options. Your item is intact; a later attempt still costs 1,000 Cash Points while it has no options.";
+			mes "Fascinating! The replacement yielded zero options. Your item is intact; a later attempt uses the no-options price.";
 		else
 			mes "Magnificent! Your item now has " + .@rolled + " Random Option" + (.@rolled == 1 ? "." : "s.");
 	} else if (.@result == 2)
-		mes "The specimen changed before I could begin. No Cash Points were charged.";
+		mes "The specimen changed before I could begin. No Black Market Points were charged.";
 	else if (.@result == 3)
-		mes "Insufficient Cash Points. Science has standards; no changes were made.";
+		mes "Insufficient Black Market Points. Science has standards; no changes were made.";
 	else
-		mes "The generated option data was invalid. No Cash Points were charged and your item was not changed.";
+		mes "The generated option data was invalid. No Black Market Points were charged and your item was not changed.";
 	close;
 }

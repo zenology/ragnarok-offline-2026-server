@@ -61,6 +61,9 @@ OnInit:
 	setarray .OptionMax[360],30,20,20,10,45,45,25,25;
 	setarray .PoolStart[0],0,35,90,159,217,226,253,319,342,359;
 	setarray .PoolCount[0],35,55,69,58,9,27,66,23,17,9;
-	debugmes "Vesper: loaded " + getarraysize(.OptionId) + " normalized random-option entries.";
+	setarray .CrimsonItemId[0],1443,1498,1680,1839,1939,1995,2025,13127,13327,13454,16040,18130,21015,28007,28106,28604,28705;
+	setarray .CrimsonOptionId[0],175,176,177,178,179,180,181,182,183,184;
+	setarray .CrimsonOptionWeight[0],15,15,15,15,15,5,5,5,5,5;
+	debugmes "Vesper: loaded " + getarraysize(.OptionId) + " normalized random-option entries and " + getarraysize(.CrimsonItemId) + " Crimson elemental exceptions.";
 	end;
 }

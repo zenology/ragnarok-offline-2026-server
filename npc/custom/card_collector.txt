@@ -1,7 +1,7 @@
 //===== Ragnarok Offline =====================================
 //= Card Collector
 //===== Description: =========================================
-//= Buys standalone card items for account-wide Cash Points.
+//= Buys standalone card items for character-local Black Market Points.
 //= Offers scale with the canonical source monster level:
 //= Normal 1-50: 250-1000; 51-100: 2000-4000; 101+: 7000-15000;
 //= Miniboss: 7000-20000; MVP: 20000-100000.
@@ -15,17 +15,20 @@ paramk,41,159,4	script	Black Market Boss#offline	4_M_MANAGER,{
 	mes "[Black Market Boss]";
 	mes "So, you brought me cards.";
 	mes "Good. Every card that changes hands in this market eventually reaches my table.";
-	mes "I pay in ^0055FFCash Points^000000, not Zeny.";
+	mes "I pay in ^0055FFBlack Market Points^000000, not Zeny.";
 	mes "My offer depends on the monster behind each card.";
 	next;
 	switch (select("Sell one card type.:Sell every accepted card.:Check points and loyalty.:Leave.")) {
 	case 1:
+		clear;
 		goto L_Single;
 	case 2:
+		clear;
 		goto L_Bulk;
 	case 3:
+		clear;
 		mes "[Black Market Boss]";
-		mes "Your account has ^0055FF" + #CASHPOINTS + " Cash Points^000000.";
+		mes "You have ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
 		mes "Normal-card loyalty: ^0055FF" + #CC_Normal + " / 30^000000.";
 		mes "Miniboss-card loyalty: ^0055FF" + #CC_Mini + " / 5^000000.";
 		mes "MVP-card loyalty: ^0055FF" + #CC_MVP + " / 5^000000.";
@@ -84,6 +87,7 @@ L_Single:
 			.@cancel_option = ++.@option_count;
 
 			.@action = select(.@menu$);
+			clear;
 			if (.@action == .@next_option) {
 				++.@page;
 				continue;
@@ -100,6 +104,7 @@ L_Single:
 		mes "[Black Market Boss]";
 		mes "Enter the number shown beside the card.";
 		input .@selection, .@start + 1, .@end;
+		clear;
 		.@selected_id = .@card_ids[.@selection - 1];
 		.@owned = countitem(.@selected_id);
 
@@ -107,17 +112,19 @@ L_Single:
 		mes "You have " + .@owned + " " + mesitemlink(.@selected_id, false) + ".";
 		mes "How many are you offering me?";
 		input .@amount, 1, .@owned;
+		clear;
 		.@points_each = callsub(S_GetOffer, .@selected_id);
 		.@payment = .@amount * .@points_each;
 		.@tier = callsub(S_GetTier, .@selected_id);
 
 		mes "[Black Market Boss]";
 		mes "^0055FF" + mesitemlink(.@selected_id, false) + "^000000 x" + .@amount;
-		mes "My offer: ^0055FF" + .@payment + " Cash Points^000000.";
+		mes "My offer: ^0055FF" + .@payment + " Black Market Points^000000.";
 		mes "Once they enter my collection, the deal is final.";
 		next;
 		if (select("Sell the cards.:Keep them.") != 1)
 			close;
+		clear;
 
 		// Roll every completed loyalty milestone before committing so the
 		// complete reward bundle can be checked for inventory capacity.
@@ -162,7 +169,7 @@ L_Single:
 			}
 			break;
 		case 4:
-			// Source-less and Special cards pay Cash Points only. They do
+			// Source-less and Special cards pay Black Market Points only. They do
 			// not participate in the monster-card loyalty promotions.
 			.@milestones = 0;
 			break;
@@ -219,7 +226,7 @@ L_Single:
 		}
 
 		delitem .@selected_id, .@amount;
-		#CASHPOINTS += .@payment;
+		BlackMarketPoints += .@payment;
 		switch (.@tier) {
 		case 1: #CC_Normal = .@remainder; break;
 		case 2: #CC_Mini = .@remainder; break;
@@ -227,12 +234,12 @@ L_Single:
 		}
 		for (.@i = 0; .@i < .@reward_count; ++.@i)
 			getitem .@reward_ids[.@i], .@reward_amounts[.@i];
-		logmes "Card Collector: sold " + .@amount + " x item " + .@selected_id + " for " + .@payment + " Cash Points; tier " + .@tier + "; milestones " + .@milestones + "; OCA " + .@old_card_albums + "; DB " + .@dead_branches + "; MCA " + .@magic_card_albums + "; MVP albums " + .@mvp_card_albums + "; BDB " + .@bloody_branches + "; bottles " + .@empty_bottles + "; backstabs " + .@backstabs + "; balance " + #CASHPOINTS;
+		logmes "Card Collector: sold " + .@amount + " x item " + .@selected_id + " for " + .@payment + " Black Market Points; tier " + .@tier + "; milestones " + .@milestones + "; OCA " + .@old_card_albums + "; DB " + .@dead_branches + "; MCA " + .@magic_card_albums + "; MVP albums " + .@mvp_card_albums + "; BDB " + .@bloody_branches + "; bottles " + .@empty_bottles + "; backstabs " + .@backstabs + "; balance " + BlackMarketPoints;
 
 		mes "[Black Market Boss]";
 		mes "A clean transaction. I expect nothing less.";
-		mes "You received ^0055FF" + .@payment + " Cash Points^000000.";
-		mes "Current balance: ^0055FF" + #CASHPOINTS + " Cash Points^000000.";
+		mes "You received ^0055FF" + .@payment + " Black Market Points^000000.";
+		mes "Current balance: ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
 		if (.@milestones) {
 			mes "^FF8800Loyalty reward:^000000";
 			if (.@old_card_albums) mes mesitemlink(616, false) + " x" + .@old_card_albums;
@@ -308,11 +315,12 @@ L_Bulk:
 	mes "^0055FF" + .@bulk_count + " card types, " + .@bulk_cards + " cards total.^000000";
 	mes "Normal: " + .@bulk_normal + "  Miniboss: " + .@bulk_mini + "  MVP: " + .@bulk_mvp;
 	mes "Special: " + .@bulk_special + " ^777777(no loyalty)^000000";
-	mes "My offer: ^0055FF" + .@bulk_payment + " Cash Points^000000.";
+	mes "My offer: ^0055FF" + .@bulk_payment + " Black Market Points^000000.";
 	mes "Once they enter my collection, the deal is final.";
 	next;
 	if (select("Sell every accepted card.:Keep everything.") != 1)
 		close;
+	clear;
 
 	.@new_normal = #CC_Normal + .@bulk_normal;
 	.@normal_milestones = .@new_normal / 30;
@@ -375,18 +383,18 @@ L_Bulk:
 	}
 	for (.@i = 0; .@i < .@bulk_count; ++.@i)
 		delitem .@bulk_ids[.@i], .@bulk_amounts[.@i];
-	#CASHPOINTS += .@bulk_payment;
+	BlackMarketPoints += .@bulk_payment;
 	#CC_Normal = .@normal_remainder;
 	#CC_Mini = .@mini_remainder;
 	#CC_MVP = .@mvp_remainder;
 	for (.@i = 0; .@i < .@reward_count; ++.@i)
 		getitem .@reward_ids[.@i], .@reward_amounts[.@i];
-	logmes "Card Collector: bulk sold " + .@bulk_cards + " cards across " + .@bulk_count + " item IDs for " + .@bulk_payment + " Cash Points; Normal " + .@bulk_normal + " (" + .@normal_milestones + " milestones); Miniboss " + .@bulk_mini + " (" + .@mini_milestones + " milestones); MVP " + .@bulk_mvp + " (" + .@mvp_milestones + " milestones); Special " + .@bulk_special + " (no loyalty); OCA " + .@old_card_albums + "; DB " + .@dead_branches + "; MCA " + .@magic_card_albums + "; MVP albums " + .@mvp_card_albums + "; BDB " + .@bloody_branches + "; bottles " + .@empty_bottles + "; backstabs " + .@backstabs + "; balance " + #CASHPOINTS;
+	logmes "Card Collector: bulk sold " + .@bulk_cards + " cards across " + .@bulk_count + " item IDs for " + .@bulk_payment + " Black Market Points; Normal " + .@bulk_normal + " (" + .@normal_milestones + " milestones); Miniboss " + .@bulk_mini + " (" + .@mini_milestones + " milestones); MVP " + .@bulk_mvp + " (" + .@mvp_milestones + " milestones); Special " + .@bulk_special + " (no loyalty); OCA " + .@old_card_albums + "; DB " + .@dead_branches + "; MCA " + .@magic_card_albums + "; MVP albums " + .@mvp_card_albums + "; BDB " + .@bloody_branches + "; bottles " + .@empty_bottles + "; backstabs " + .@backstabs + "; balance " + BlackMarketPoints;
 
 	mes "[Black Market Boss]";
 	mes "A clean transaction. I expect nothing less.";
-	mes "You received ^0055FF" + .@bulk_payment + " Cash Points^000000.";
-	mes "Current balance: ^0055FF" + #CASHPOINTS + " Cash Points^000000.";
+	mes "You received ^0055FF" + .@bulk_payment + " Black Market Points^000000.";
+	mes "Current balance: ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
 	if (.@reward_count) {
 		mes "^FF8800Loyalty reward:^000000";
 		if (.@old_card_albums) mes mesitemlink(616, false) + " x" + .@old_card_albums;
@@ -420,9 +428,6 @@ S_GetOffer:
 	.@i = inarray(getvariableofnpc(.SpecialCardIds[0], "mvp_card_seller_creation"), .@item_id);
 	if (.@i != -1)
 		return getelementofarray(getvariableofnpc(.SpecialCollectorOffer[0], "mvp_card_seller_creation"), .@i);
-	.@i = inarray(getvariableofnpc(.CollectorOnlyCardIds[0], "mvp_card_seller_creation"), .@item_id);
-	if (.@i != -1)
-		return getelementofarray(getvariableofnpc(.CollectorOnlyOffer[0], "mvp_card_seller_creation"), .@i);
 	if (.@item_id == 6716 || .@item_id == 6717 || .@item_id == 6718)
 		return 300;
 	// Read the Normal catalog at click time. OnInit runs in ev_db hash
@@ -442,8 +447,7 @@ S_GetTier:
 		return 3;
 	if (inarray(.MinibossCards[0], .@item_id) != -1)
 		return 2;
-	if (inarray(getvariableofnpc(.SpecialCardIds[0], "mvp_card_seller_creation"), .@item_id) != -1 ||
-		inarray(getvariableofnpc(.CollectorOnlyCardIds[0], "mvp_card_seller_creation"), .@item_id) != -1)
+	if (inarray(getvariableofnpc(.SpecialCardIds[0], "mvp_card_seller_creation"), .@item_id) != -1)
 		return 4;
 	if (callsub(S_GetOffer, .@item_id) > 0)
 		return 1;
@@ -453,10 +457,10 @@ OnInit:
 	.PageSize = 10;
 
 	// 139 MVP cards. Sources are the lowest-ID MVP dropper of each card.
-	setarray .Offer10[0], 4121,4123,4128,4131,4132,4134,4135,4137,4142,4143,4144,4145,4146,4147,4148,4168,4236,4263,4276,4302,4305,4318,4324,4330,4342,4352,4357,4359,4361,4363,4365,4367,4372,4374,4376,4386,4399,4403,4407,4408,4419,4425,4430,4441,4451,4456,4507,4509,4520,4525,4526,4527,4528,4529,4534,4556,4557,4560,4561,4562,4563,4564,4565,4566,4574,4576,4578,4580,4592,4601,4603,4610,4625,4636,4647,4648,4649,4650,4651,4652;
-	setarray .Offer10[80], 4662,4671,4672,4673,4674,4675,4676,4677,4678,4679,4680,4681,4682,4683,4697,27020,27025,27081,27104,27106,27113,27119,27126,27150,27151,27152,27162,27164,27180,27182,27265,27294,27298,27305,27318,27319,27321,27326,27327,27346,27362,27363,31023,31026,300007,300078,300079,300080,300099,300100,300107,300145,300151,300217,300227,300239,300248,300262,300281;
-	setarray .MvpSources[0], 1159,1115,1086,1150,1059,1389,1190,1112,1046,1087,1038,1874,1147,1039,1157,1272,1511,1492,1373,1583,1312,1251,1252,1418,1623,1658,1646,1647,1648,1649,1651,1650,1630,1685,1688,1719,1708,1734,1751,1768,1779,1785,1832,1871,1957,2022,2087,2165,2156,2202,2188,2187,2189,2190,2194,2564,2564,2240,2237,2238,2236,2239,2235,2241,2253,2251,2249,2255,2319,2476,2475,3190,3074,3450,3427,3426,3428,3429,3430,2362;
-	setarray .MvpSources[80], 3505,3242,3243,3245,3220,3221,3222,3223,3224,3225,3240,3241,3244,3246,3124,3254,3658,3758,3757,3073,3796,3804,2068,3633,3628,3621,1885,2529,3741,3181,2942,20273,20277,20340,20346,20381,3097,3000,3029,20419,20421,20422,2996,3473,20601,20642,20620,20621,20667,20668,20648,20843,20811,21301,21314,21395,20943,20928,20934;
+	setarray .Offer10[0], 4601,27383,4236,27294,27298,300382,4675,4359,4425,27113,27106,4147,4145,4662,4636,27126,300021,4352,300217,4592,27182,31023,4562,27334,4697,4560,27363,27362,4603,4563,27152,4574,4527,4168,4330,300248,300151,300145,27321,4386,4142,4134,4137,4123,27305,4451,27151,27265,27164,4441,4556,27104,27081,4681,4534,4576,4408,4509,4128,27162,300100,300080,27327,4580,4674,4566,4324,4363,4365,27381,4430,4263,4648,4650,4647,4649,4651,300014,300007,4403;
+	setarray .Offer10[80], 4525,4419,4376,4520,4357,4276,27025,4361,4146,4677,4399,300107,27318,4673,4132,4131,27326,4528,4457,4456,4652,27119,4143,4135,4144,4565,4148,4121,4561,4578,4507,300281,27319,4407,4676,4602,4604,300079,300013,27346,4680,4342,4679,4005,4610,4682,300227,300239,300099,300378,4367,4671,27180,4564,31026,4318,4672,300078,27020,4302,300262,4625,4305,300377,300175,27150,4374,4529,4683,4678,4557,4526,4372;
+	setarray .MvpSources[0], 2476,20573,1511,20273,20277,21531,3221,1647,1785,3796,3073,1039,1874,3505,3450,2068,20618,1658,21301,2319,3181,2996,2238,20520,3124,2240,20422,20421,2475,2236,3621,2253,2187,1272,1418,20943,20811,20843,3097,1719,1046,1389,1112,1115,20340,1957,3628,2942,2529,1871,2564,3757,3758,3241,2194,2251,1768,2165,1086,1885,20668,20621,3029,2255,3220,2241,1252,1649,1651,20572,1832,1492,3426,3429,3427,3428,3430,20611,20601,1734;
+	setarray .MvpSources[80], 2202,1779,1688,2156,1646,1373,3658,1648,1147,3223,1708,20648,20346,3245,1059,1150,3000,2189,1956,2022,2362,3804,1087,1190,1038,2235,1157,1159,2237,2249,2087,20934,20381,1751,3222,3150,3151,20620,20610,20419,3240,1623,3225,1502,3190,3244,21314,21395,20667,21533,1650,3242,3741,2239,3473,1251,3243,20642,3254,1583,20928,3074,1312,21537,20891,3633,1685,2190,3246,3224,2564,2188,1630;
 
 	if (getarraysize(.Offer10) != getarraysize(.MvpSources))
 		debugmes "Card Collector: MVP card and source arrays are not aligned.";
@@ -465,9 +469,10 @@ OnInit:
 
 	// 84 Miniboss cards are a separate loyalty tier. Sources stay local so
 	// this catalog does not depend on another NPC's OnInit finishing first.
-	setarray .MinibossCards[0], 4047,4054,4163,4169,4179,4183,4197,4203,4207,4237,4238,4241,4243,4250,4254,4266,4290,4300,4306,4354,4384,4391,4392,4393,4394,4395,4396,4397,4398,4406,4423,4426,4427,4428,4429,4431,4440,4462,4463,4508,4524,4532,4533,4575,4577,4579,4581,4590,4591,4605,4606,4631,4632,4642,4643,4645,4646,4684,4685,4686,4687,4688,4689,4690,4691,4692,4693,4694,4695,4696,27105,27109,27165,27183,27262,27263,27322,27323,27324,27325,31024,31025,300103,300228;
-	setarray .MinibossSources[0], 1120,1096,1259,1302,1091,1092,1090,1262,1203,1320,1295,1388,2988,1205,1204,1093,1307,1283,1089,1681,1720,1702,1700,1701,1703,1706,1704,1705,1707,1754,1783,1839,1829,1830,1831,1833,1870,1990,1991,2161,2198,2208,2192,2254,2252,2250,2256,2317,2320,2473,2474,2921,2923,3421,3422,3424,3425,3208,3209,3210,3211,3212,3213,3226,3227,3228,3229,3230,3232,3231,3756,3108,2530,3191,2562,2563,3105,3106,3091,3092;
-	setarray .MinibossSources[80], 3474,3475,20647,21315;
+	setarray .MinibossCards[0], 4605,4054,300274,4243,4241,300103,4591,4590,4391,27105,4428,27324,4426,4290,27343,4300,300268,300267,4392,27165,4169,27322,27323,4397,300228,4398,4179,27262,4266,4577,4250,27263,4423,4354,4047,27183,4508,4606,4163,4462,300275,4384,31024,31025,4646,4645,4642,4643,27109,4431,4524,4394,4395,4197,4393,27325,4203,4207,4440,4533,4396,4254,4238,4237,4632,4631,300276,300277,4581,4429,4130,4406,4575,4427,4463,4306,4696,4687,4692,4693;
+	setarray .MinibossCards[80], 4684,4691,4694,4688,4686,4685,4690,4689,4695,4183,4579,4608,4532;
+	setarray .MinibossSources[0], 2473,1096,20775,2988,1388,20647,2320,2317,1702,3756,1830,3091,1839,1307,20521,1283,20782,20783,1700,2530,1302,3105,3106,1705,21315,1707,1091,2562,1093,2252,1205,2563,1783,1681,1120,3191,2161,2474,1259,1990,20776,1720,3474,3475,3425,3424,3421,3422,3108,1833,2198,1703,1706,1090,1701,3092,1262,1203,1870,2192,1704,1204,1295,1320,2923,2921,20778,20777,2256,1831,1168,1754,2254,1829,1991,1089,3231,3211,3228,3229;
+	setarray .MinibossSources[80], 3208,3227,3230,3212,3210,3209,3226,3213,3232,1092,2250,20390,2208;
 	if (getarraysize(.MinibossCards) != getarraysize(.MinibossSources))
 		debugmes "Card Collector: Miniboss card and source arrays are not aligned.";
 
@@ -516,6 +521,7 @@ S_Warn:
 	return;
 }
 
+
 paramk,41,157,2	duplicate(Guard#card_collector_1)	Guard#card_collector_2	405,2,1
 
 // Room-entrance guard: same balloon warning pattern, different sprite and lines.
@@ -525,9 +531,10 @@ paramk,14,175,4	script	Guard#black_market_door	686,2,1,{
 	next;
 	if (select("How are the market rates today?:Never mind.") == 2)
 		close;
+	clear;
 
 	mes "[Guard]";
-	mes "The current adjustment is against each drawer's listed Cash Point price.";
+	mes "The current adjustment is against each drawer's listed Black Market Point price.";
 	mes "Harlan: " + $BlackMarketRateHarlan + "%";
 	mes "Soren: " + $BlackMarketRateSoren + "%";
 	mes "Mordain: " + $BlackMarketRateMordain + "%";
@@ -561,4 +568,3 @@ S_Warn:
 	}
 	return;
 }
-

@@ -83,22 +83,41 @@ function	script	F_CostumeEnhanceHead	{
 	}
 	.@part = -1;
 	.@equip_id = -1;
-	if (getequipid(EQI_COSTUME_HEAD_TOP) > -1) {
-		.@part = EQI_COSTUME_HEAD_TOP;
-		.@equip_id = getequipid(.@part);
+	setarray .@head_part[0], EQI_COSTUME_HEAD_TOP, EQI_COSTUME_HEAD_MID, EQI_COSTUME_HEAD_LOW;
+	.@equip_count = 0;
+	.@equip_menu$ = "";
+	for (.@i = 0; .@i < 3; ++.@i) {
+		.@candidate_part = .@head_part[.@i];
+		.@candidate_id = getequipid(.@candidate_part);
+		if (.@candidate_id < 0 || !callfunc("F_CostumeEnhancePoolCheck", .@candidate_id))
+			continue;
+		.@duplicate = 0;
+		for (.@j = 0; .@j < .@equip_count; ++.@j) {
+			if (.@selected_id[.@j] == .@candidate_id) {
+				.@duplicate = 1;
+				break;
+			}
+		}
+		if (.@duplicate)
+			continue;
+		.@equip_part[.@equip_count] = .@candidate_part;
+		.@selected_id[.@equip_count] = .@candidate_id;
+		.@equip_menu$ += (.@i == 0 ? "Upper" : .@i == 1 ? "Middle" : "Lower") + " - " + getitemname(.@candidate_id) + ":";
+		++.@equip_count;
 	}
-	else if (getequipid(EQI_COSTUME_HEAD_MID) > -1) {
-		.@part = EQI_COSTUME_HEAD_MID;
-		.@equip_id = getequipid(.@part);
-	}
-	else if (getequipid(EQI_COSTUME_HEAD_LOW) > -1) {
-		.@part = EQI_COSTUME_HEAD_LOW;
-		.@equip_id = getequipid(.@part);
-	}
-	if (.@equip_id < 0 || !callfunc("F_CostumeEnhancePoolCheck", .@equip_id)) {
+	if (.@equip_count < 1) {
 		mes "You must wear a Costume Headgear from the Costume Roulette pool.";
 		return;
 	}
+	if (.@equip_count > 1) {
+		.@choice = select(.@equip_menu$ + "Cancel") - 1;
+		if (.@choice == .@equip_count)
+			return;
+	}
+	else
+		.@choice = 0;
+	.@part = .@equip_part[.@choice];
+	.@equip_id = .@selected_id[.@choice];
 	.@location = getiteminfo(.@equip_id, ITEMINFO_LOCATIONS);
 	.@slot_menu$ = "";
 	.@slot_value[0] = -1;

@@ -4191,6 +4191,7 @@ Body:
     Weight: 70
     EquipLevelMin: 60
     Script: |
+      specialeffect2 EF_POTION1;
       itemheal 325,0;
   - Id: 11622
     AegisName: High_YelloPotion
@@ -4200,6 +4201,7 @@ Body:
     Weight: 100
     EquipLevelMin: 60
     Script: |
+      specialeffect2 EF_POTION3;
       itemheal 900,0;
   - Id: 11623
     AegisName: High_WhitePotion
@@ -4209,6 +4211,7 @@ Body:
     Weight: 140
     EquipLevelMin: 60
     Script: |
+      specialeffect2 EF_POTION4;
       itemheal 1800,0;
   - Id: 11624
     AegisName: High_BluePotion
@@ -4218,6 +4221,7 @@ Body:
     Weight: 100
     EquipLevelMin: 60
     Script: |
+      specialeffect2 EF_POTION5;
       itemheal 0,180;
   - Id: 11625
     AegisName: Gourmet_Popcorn

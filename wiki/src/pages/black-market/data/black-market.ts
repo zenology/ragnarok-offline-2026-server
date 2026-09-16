@@ -126,7 +126,7 @@ export const blackMarketContacts: BlackMarketContact[] = [
 
 export const cashPointRules = {
   buyRate: '1,000 Zeny = 1 Cash Point',
-  cashOutRate: '1 Cash Point = 750 Zeny',
+  cashOutRate: '1 Cash Point = 500 Zeny',
   bonus: 'Buy 10 Cash Points in one transaction and receive 1 bonus point.'
 }
 
@@ -148,12 +148,7 @@ export const rookeShelves = [
   'Style and Reset'
 ]
 
-export const harlanCatalogs = [
-  { name: 'Equipment', count: 498 },
-  { name: 'Rental', count: 19 },
-  { name: 'Specialty', count: 54 },
-  { name: 'Event', count: 45 }
-]
+export const harlanCatalogs = [{ name: 'Equipment', count: 610 }]
 
 export const featuredItems: FeaturedItem[] = [
   {
