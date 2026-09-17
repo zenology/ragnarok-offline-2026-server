@@ -4,3 +4,27 @@ Header:
 Footer:
   Imports:
     - Path: npc/custom/silvervine_enchant_upgrade/racing-caps.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/hero-boots-lt.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/brilliant-light.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/good-and-evil.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/biolab-5th-floor.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/circulation-of-life.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/constellation-star-seal.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/constellation-nebula.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/dimension-shoes.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/dimension-weapons.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/drooping-thanatos-dolor-lt.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/flush-weapons.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/furious-equipment.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/helms-of-faith.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/heros-badge.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/issgard-dim-glacier.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/illusion-of-abyss.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/illusion-of-frozen.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/illusion-of-labyrinth.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/illusion-of-luanda.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/illusion-of-moonlight.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/illusion-of-teddy-bear.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/illusion-of-twins.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/illusion-of-underwater.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/illusion-of-vampire.yml

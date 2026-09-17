@@ -1,7 +1,7 @@
 //===== Ragnarok Offline =====================================
-//= Doberkin: Racing Cap class-Racing charm level lottery.
+//= Doberkin: numbered same-slot charm level lottery.
 //= YAML book: silvervine_enchant_upgrade_item_pools.yml (not the cat first-fill book).
-//= Cost is 30 Silvervine Fruit times the current charm level. Always writes a rolled level.
+//= Flat cost: 5 Silvervine Fruit and 1 Shadowdecon. Always writes a rolled level.
 //============================================================
 
 mal_in01,25,167,2	script	Doberkin#sve_upg	4_M_DOGTRAVELER2,{
@@ -79,10 +79,10 @@ L_Main:
 		mes "Sniff sniff. Nothing on you I can gamble.";
 		next;
 		mes "[Doberkin]";
-		mes "Wear a Racing Cap that already has its class Racing charm.";
+		mes "Wear gear the old cat already started. I need a numbered charm already in the slot.";
 		next;
 		mes "[Doberkin]";
-		mes "Level 1, 2, or 3. Empty slots and plain stat charms do not count.";
+		mes "Empty holes, real cards, and plain one-off charms do not count.";
 		next;
 		goto L_Banter;
 	}
@@ -91,18 +91,18 @@ L_Main:
 	mes "Alright. I only gamble what you're wearing. Leave the bag out of it.";
 	next;
 	mes "[Doberkin]";
-	mes "Class Racing charms only. The old cat fills level 1. I toss the whole pile.";
+	mes "The old cat fills the first tier. I toss every level of that same charm pile.";
 	next;
 	mes "[Doberkin]";
-	mes "Level 1 shows up most. Level 3 is stingy. You might go down. That is the joke.";
+	mes "Level 1 shows up half the time. The top is twenty percent. Middles share the rest. You might go down.";
 	next;
 	mes "[Doberkin]";
-	mes "Thirty Silvervine Fruit if the charm is level 1. Sixty if it is already 2. Ninety if it is 3.";
+	mes "Every toss costs five Silvervine Fruit and one Shadowdecon. The stone is the real ingredient. Fruit just keeps the cats paid.";
 	next;
 
 	.@menu$ = "";
 	for (.@i = 0; .@i < .@count; ++.@i)
-		.@menu$ += .@chosen_label$[.@i] + " - " + getitemname(.@chosen_item[.@i]) + ":";
+		.@menu$ += .@chosen_label$[.@i] + " - " + replacestr(getitemname(.@chosen_item[.@i]), ":", "") + ":";
 	.@choice = select(.@menu$ + "Who are you?:Cancel") - 1;
 	if (.@choice == .@count)
 		goto L_Banter;
@@ -134,7 +134,7 @@ L_Main:
 	if (.@elig > 1) {
 		.@smenu$ = "";
 		for (.@i = 0; .@i < .@elig; ++.@i)
-			.@smenu$ += getitemname(.@elig_charm[.@i]) + " - Lv" + .@elig_lv[.@i] + " - " + (30 * .@elig_lv[.@i]) + " Fruit:";
+			.@smenu$ += replacestr(getitemname(.@elig_charm[.@i]), ":", "") + " - Lv" + .@elig_lv[.@i] + " - 5 Fruit, 1 Shadowdecon:";
 		.@spick = select(.@smenu$ + "Cancel") - 1;
 		if (.@spick == .@elig)
 			close;
@@ -146,16 +146,15 @@ L_Main:
 		.@cur_lv = .@elig_lv[0];
 		.@cur_charm = .@elig_charm[0];
 	}
-	.@pay = 30 * .@cur_lv;
 
 	mes "[Doberkin]";
 	mes "^0055FF" + getitemname(.@cur_charm) + "^000000, Level " + .@cur_lv + ".";
 	next;
 	mes "[Doberkin]";
-	mes "I will replace that slot with a random level from this cap's pile.";
+	mes "I will replace that slot with a random level from this charm's pile.";
 	next;
 	mes "[Doberkin]";
-	mes "This costs ^0055FF" + .@pay + " Silvervine Fruit^000000.";
+	mes "This costs ^0055FF5 Silvervine Fruit^000000 and ^0055FF1 Shadowdecon^000000.";
 	next;
 	mes "[Doberkin]";
 	mes "Refine, cards, other enchants, random options, and enchant grade stay put.";
@@ -163,9 +162,21 @@ L_Main:
 	if (select("Proceed:Cancel") == 2)
 		close;
 
-	if (countitem(6417) < .@pay) {
+	.@need_fruit = countitem(6417) < 5;
+	.@need_stone = countitem(25729) < 1;
+	if (.@need_stone) {
 		mes "[Doberkin]";
-		mes "You are " + .@pay + " fruit short. No credit. I already owe the cats.";
+		mes "No Shadowdecon, no upgrade. I do not work without that stone.";
+		if (.@need_fruit) {
+			next;
+			mes "[Doberkin]";
+			mes "You are short on Silvervine Fruit. I need five.";
+		}
+		close;
+	}
+	if (.@need_fruit) {
+		mes "[Doberkin]";
+		mes "You are short on Silvervine Fruit. I need five.";
 		close;
 	}
 
@@ -185,7 +196,7 @@ L_Main:
 	if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine))
 		close;
 
-	.@enchant_id = svu_roll(.@item, .@card_idx);
+	.@enchant_id = svu_roll(.@item, .@card_idx, .@cur_charm);
 	if (.@enchant_id < 1) {
 		mes "[Doberkin]";
 		mes "Something is wrong in my book. Invalid charm.";
@@ -205,7 +216,8 @@ L_Main:
 		mes "Nothing changed. Fruit stays in your pack.";
 		close;
 	}
-	delitem 6417, .@pay;
+	delitem 6417, 5;
+	delitem 25729, 1;
 
 	mes "[Doberkin]";
 	mes "Done. ^0055FF" + getitemname(.@enchant_id) + "^000000. Sniff. Debt goes down a little.";
@@ -256,7 +268,7 @@ L_Banter:
 		mes "That old cat over there works on gear. Fancy fruit. Fancy enchants.";
 		next;
 		mes "[Doberkin]";
-		mes "Me? I gamble Racing charms now. Level soup. Fruit in, luck out. The tab is still ugly.";
+		mes "Me? I gamble numbered charms now. Level soup. Fruit and Shadowdecon in, luck out. The tab is still ugly.";
 		next;
 		goto L_Main;
 	default:

@@ -1,0 +1,42 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 400465
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
+              - { Item: 4836 }
+          - Levels:
+              - { Item: 311386 }
+              - { Item: 311387 }
+              - { Item: 311388 }
+          - Levels:
+              - { Item: 311391 }
+              - { Item: 311392 }
+              - { Item: 311393 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }

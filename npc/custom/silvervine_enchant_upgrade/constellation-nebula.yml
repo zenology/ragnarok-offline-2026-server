@@ -1,0 +1,328 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 450169
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310727 }
+              - { Item: 310728 }
+              - { Item: 310729 }
+          - Levels:
+              - { Item: 310730 }
+              - { Item: 310731 }
+              - { Item: 310732 }
+          - Levels:
+              - { Item: 310733 }
+              - { Item: 310734 }
+              - { Item: 310735 }
+          - Levels:
+              - { Item: 310736 }
+              - { Item: 310737 }
+              - { Item: 310738 }
+          - Levels:
+              - { Item: 310739 }
+              - { Item: 310740 }
+              - { Item: 310741 }
+          - Levels:
+              - { Item: 310742 }
+              - { Item: 310743 }
+              - { Item: 310744 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 310674 }
+              - { Item: 310675 }
+              - { Item: 310676 }
+          - Levels:
+              - { Item: 310677 }
+              - { Item: 310678 }
+              - { Item: 310679 }
+          - Levels:
+              - { Item: 310680 }
+              - { Item: 310681 }
+              - { Item: 310682 }
+          - Levels:
+              - { Item: 310683 }
+              - { Item: 310684 }
+              - { Item: 310685 }
+          - Levels:
+              - { Item: 310686 }
+              - { Item: 310687 }
+              - { Item: 310688 }
+          - Levels:
+              - { Item: 310689 }
+              - { Item: 310690 }
+              - { Item: 310691 }
+  - Id: 450170
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310727 }
+              - { Item: 310728 }
+              - { Item: 310729 }
+          - Levels:
+              - { Item: 310730 }
+              - { Item: 310731 }
+              - { Item: 310732 }
+          - Levels:
+              - { Item: 310733 }
+              - { Item: 310734 }
+              - { Item: 310735 }
+          - Levels:
+              - { Item: 310736 }
+              - { Item: 310737 }
+              - { Item: 310738 }
+          - Levels:
+              - { Item: 310739 }
+              - { Item: 310740 }
+              - { Item: 310741 }
+          - Levels:
+              - { Item: 310742 }
+              - { Item: 310743 }
+              - { Item: 310744 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 310674 }
+              - { Item: 310675 }
+              - { Item: 310676 }
+          - Levels:
+              - { Item: 310677 }
+              - { Item: 310678 }
+              - { Item: 310679 }
+          - Levels:
+              - { Item: 310680 }
+              - { Item: 310681 }
+              - { Item: 310682 }
+          - Levels:
+              - { Item: 310683 }
+              - { Item: 310684 }
+              - { Item: 310685 }
+          - Levels:
+              - { Item: 310686 }
+              - { Item: 310687 }
+              - { Item: 310688 }
+          - Levels:
+              - { Item: 310689 }
+              - { Item: 310690 }
+              - { Item: 310691 }
+  - Id: 450171
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310727 }
+              - { Item: 310728 }
+              - { Item: 310729 }
+          - Levels:
+              - { Item: 310730 }
+              - { Item: 310731 }
+              - { Item: 310732 }
+          - Levels:
+              - { Item: 310733 }
+              - { Item: 310734 }
+              - { Item: 310735 }
+          - Levels:
+              - { Item: 310736 }
+              - { Item: 310737 }
+              - { Item: 310738 }
+          - Levels:
+              - { Item: 310739 }
+              - { Item: 310740 }
+              - { Item: 310741 }
+          - Levels:
+              - { Item: 310742 }
+              - { Item: 310743 }
+              - { Item: 310744 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 310674 }
+              - { Item: 310675 }
+              - { Item: 310676 }
+          - Levels:
+              - { Item: 310677 }
+              - { Item: 310678 }
+              - { Item: 310679 }
+          - Levels:
+              - { Item: 310680 }
+              - { Item: 310681 }
+              - { Item: 310682 }
+          - Levels:
+              - { Item: 310683 }
+              - { Item: 310684 }
+              - { Item: 310685 }
+          - Levels:
+              - { Item: 310686 }
+              - { Item: 310687 }
+              - { Item: 310688 }
+          - Levels:
+              - { Item: 310689 }
+              - { Item: 310690 }
+              - { Item: 310691 }
+  - Id: 450172
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310727 }
+              - { Item: 310728 }
+              - { Item: 310729 }
+          - Levels:
+              - { Item: 310730 }
+              - { Item: 310731 }
+              - { Item: 310732 }
+          - Levels:
+              - { Item: 310733 }
+              - { Item: 310734 }
+              - { Item: 310735 }
+          - Levels:
+              - { Item: 310736 }
+              - { Item: 310737 }
+              - { Item: 310738 }
+          - Levels:
+              - { Item: 310739 }
+              - { Item: 310740 }
+              - { Item: 310741 }
+          - Levels:
+              - { Item: 310742 }
+              - { Item: 310743 }
+              - { Item: 310744 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 310674 }
+              - { Item: 310675 }
+              - { Item: 310676 }
+          - Levels:
+              - { Item: 310677 }
+              - { Item: 310678 }
+              - { Item: 310679 }
+          - Levels:
+              - { Item: 310680 }
+              - { Item: 310681 }
+              - { Item: 310682 }
+          - Levels:
+              - { Item: 310683 }
+              - { Item: 310684 }
+              - { Item: 310685 }
+          - Levels:
+              - { Item: 310686 }
+              - { Item: 310687 }
+              - { Item: 310688 }
+          - Levels:
+              - { Item: 310689 }
+              - { Item: 310690 }
+              - { Item: 310691 }
+  - Id: 450173
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310727 }
+              - { Item: 310728 }
+              - { Item: 310729 }
+          - Levels:
+              - { Item: 310730 }
+              - { Item: 310731 }
+              - { Item: 310732 }
+          - Levels:
+              - { Item: 310733 }
+              - { Item: 310734 }
+              - { Item: 310735 }
+          - Levels:
+              - { Item: 310736 }
+              - { Item: 310737 }
+              - { Item: 310738 }
+          - Levels:
+              - { Item: 310739 }
+              - { Item: 310740 }
+              - { Item: 310741 }
+          - Levels:
+              - { Item: 310742 }
+              - { Item: 310743 }
+              - { Item: 310744 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 310674 }
+              - { Item: 310675 }
+              - { Item: 310676 }
+          - Levels:
+              - { Item: 310677 }
+              - { Item: 310678 }
+              - { Item: 310679 }
+          - Levels:
+              - { Item: 310680 }
+              - { Item: 310681 }
+              - { Item: 310682 }
+          - Levels:
+              - { Item: 310683 }
+              - { Item: 310684 }
+              - { Item: 310685 }
+          - Levels:
+              - { Item: 310686 }
+              - { Item: 310687 }
+              - { Item: 310688 }
+          - Levels:
+              - { Item: 310689 }
+              - { Item: 310690 }
+              - { Item: 310691 }
+  - Id: 450174
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310727 }
+              - { Item: 310728 }
+              - { Item: 310729 }
+          - Levels:
+              - { Item: 310730 }
+              - { Item: 310731 }
+              - { Item: 310732 }
+          - Levels:
+              - { Item: 310733 }
+              - { Item: 310734 }
+              - { Item: 310735 }
+          - Levels:
+              - { Item: 310736 }
+              - { Item: 310737 }
+              - { Item: 310738 }
+          - Levels:
+              - { Item: 310739 }
+              - { Item: 310740 }
+              - { Item: 310741 }
+          - Levels:
+              - { Item: 310742 }
+              - { Item: 310743 }
+              - { Item: 310744 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 310674 }
+              - { Item: 310675 }
+              - { Item: 310676 }
+          - Levels:
+              - { Item: 310677 }
+              - { Item: 310678 }
+              - { Item: 310679 }
+          - Levels:
+              - { Item: 310680 }
+              - { Item: 310681 }
+              - { Item: 310682 }
+          - Levels:
+              - { Item: 310683 }
+              - { Item: 310684 }
+              - { Item: 310685 }
+          - Levels:
+              - { Item: 310686 }
+              - { Item: 310687 }
+              - { Item: 310688 }
+          - Levels:
+              - { Item: 310689 }
+              - { Item: 310690 }
+              - { Item: 310691 }

@@ -596,7 +596,12 @@ BUILDIN_FUNC(svu_levelcount)
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	script_pushint(st, static_cast<int32>(pool->slots[slot_index].levels.size()));
+	if (pool->slots[slot_index].series.empty()) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	script_pushint(st, static_cast<int32>(pool->slots[slot_index].series[0].levels.size()));
 	return SCRIPT_CMD_SUCCESS;
 }
 
@@ -612,12 +617,12 @@ BUILDIN_FUNC(svu_levelitem)
 	}
 
 	const int32 slot_index = svu_find_slot_index(*pool, card_index);
-	if (slot_index < 0 || n >= static_cast<int32>(pool->slots[slot_index].levels.size())) {
+	if (slot_index < 0 || pool->slots[slot_index].series.empty() || n >= static_cast<int32>(pool->slots[slot_index].series[0].levels.size())) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	script_pushint(st, static_cast<int32>(pool->slots[slot_index].levels[n]));
+	script_pushint(st, static_cast<int32>(pool->slots[slot_index].series[0].levels[n]));
 	return SCRIPT_CMD_SUCCESS;
 }
 
@@ -640,12 +645,13 @@ BUILDIN_FUNC(svu_roll)
 {
 	const int32 item_id = script_getnum(st, 2);
 	const int32 card_index = script_getnum(st, 3);
+	const int32 charm_id = script_getnum(st, 4);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_upgrade_db.find(static_cast<t_itemid>(item_id));
-	if (pool == nullptr) {
+	if (pool == nullptr || charm_id < 1) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	script_pushint(st, svu_roll_level(*pool, card_index));
+	script_pushint(st, svu_roll_level(*pool, card_index, static_cast<t_itemid>(charm_id)));
 	return SCRIPT_CMD_SUCCESS;
 }

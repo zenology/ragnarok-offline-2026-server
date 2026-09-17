@@ -14,9 +14,13 @@
 #include <common/random.hpp>
 #include <common/showmsg.hpp>
 
+struct svu_series {
+	std::vector<t_itemid> levels;
+};
+
 struct svu_slot {
 	int32 card_index = 0;
-	std::vector<t_itemid> levels;
+	std::vector<svu_series> series;
 };
 
 struct svu_item_pool {
@@ -75,6 +79,37 @@ public:
 		auto pool = std::make_shared<svu_item_pool>();
 		pool->id = nameid;
 
+		auto parse_levels = [&](const ryml::NodeRef& levelsNode, const ryml::NodeRef& warnNode, int32 card_index, std::vector<t_itemid>& seen_in_slot, std::vector<t_itemid>& out) -> bool {
+			if (!levelsNode.is_seq() || levelsNode.num_children() < 2) {
+				this->invalidWarning(warnNode, "Slot CardIndex needs at least 2 Levels for Id %u.\n", nameid);
+				return false;
+			}
+
+			for (const ryml::NodeRef& levelNode : levelsNode) {
+				t_itemid item_id = 0;
+				if (!this->asUInt32(levelNode, "Item", item_id))
+					return false;
+				if (item_id < 1) {
+					this->invalidWarning(levelNode, "Level Item for Id %u must be positive.\n", nameid);
+					return false;
+				}
+				if (this->nodeExists(levelNode, "Chance") || this->nodeExists(levelNode, "Grade")) {
+					this->invalidWarning(levelNode, "Level Item %u for Id %u has Chance or Grade; upgrade weights are derived.\n", item_id, nameid);
+					return false;
+				}
+				for (t_itemid existing_id : seen_in_slot) {
+					if (existing_id == item_id) {
+						this->invalidWarning(levelNode, "Duplicate Level Item %u for Id %u CardIndex %d.\n", item_id, nameid, card_index);
+						return false;
+					}
+				}
+				seen_in_slot.push_back(item_id);
+				out.push_back(item_id);
+			}
+
+			return true;
+		};
+
 		for (const ryml::NodeRef& slotNode : slotsNode) {
 			svu_slot slot;
 
@@ -97,36 +132,42 @@ public:
 				return 0;
 			}
 
-			if (!this->nodeExists(slotNode, "Levels")) {
-				this->invalidWarning(slotNode, "Slot CardIndex %d for Id %u is missing Levels.\n", slot.card_index, nameid);
+			const bool has_levels = this->nodeExists(slotNode, "Levels");
+			const bool has_series = this->nodeExists(slotNode, "Series");
+			if (has_levels == has_series) {
+				this->invalidWarning(slotNode, "Slot CardIndex %d for Id %u must have Levels or Series, not both or neither.\n", slot.card_index, nameid);
 				return 0;
 			}
 
-			const auto& levelsNode = slotNode["Levels"];
-			if (!levelsNode.is_seq() || levelsNode.num_children() < 2) {
-				this->invalidWarning(slotNode["Levels"], "Slot CardIndex %d for Id %u needs at least 2 Levels.\n", slot.card_index, nameid);
-				return 0;
-			}
+			std::vector<t_itemid> seen_in_slot;
 
-			for (const ryml::NodeRef& levelNode : levelsNode) {
-				t_itemid item_id = 0;
-				if (!this->asUInt32(levelNode, "Item", item_id))
+			if (has_levels) {
+				svu_series one;
+				if (!parse_levels(slotNode["Levels"], slotNode["Levels"], slot.card_index, seen_in_slot, one.levels))
 					return 0;
-				if (item_id < 1) {
-					this->invalidWarning(levelNode, "Level Item for Id %u must be positive.\n", nameid);
+				slot.series.push_back(std::move(one));
+			} else {
+				const auto& seriesNode = slotNode["Series"];
+				if (!seriesNode.is_seq() || seriesNode.num_children() < 1) {
+					this->invalidWarning(slotNode["Series"], "Slot CardIndex %d for Id %u has empty Series.\n", slot.card_index, nameid);
 					return 0;
 				}
-				if (this->nodeExists(levelNode, "Chance") || this->nodeExists(levelNode, "Grade")) {
-					this->invalidWarning(levelNode, "Level Item %u for Id %u has Chance or Grade; upgrade weights are derived.\n", item_id, nameid);
-					return 0;
-				}
-				for (t_itemid existing_id : slot.levels) {
-					if (existing_id == item_id) {
-						this->invalidWarning(levelNode, "Duplicate Level Item %u for Id %u CardIndex %d.\n", item_id, nameid, slot.card_index);
+
+				for (const ryml::NodeRef& seriesChild : seriesNode) {
+					if (this->nodeExists(seriesChild, "Chance") || this->nodeExists(seriesChild, "Grade")) {
+						this->invalidWarning(seriesChild, "Series for Id %u CardIndex %d has Chance or Grade; upgrade weights are derived.\n", nameid, slot.card_index);
 						return 0;
 					}
+					if (!this->nodeExists(seriesChild, "Levels")) {
+						this->invalidWarning(seriesChild, "Series for Id %u CardIndex %d is missing Levels.\n", nameid, slot.card_index);
+						return 0;
+					}
+
+					svu_series one;
+					if (!parse_levels(seriesChild["Levels"], seriesChild["Levels"], slot.card_index, seen_in_slot, one.levels))
+						return 0;
+					slot.series.push_back(std::move(one));
 				}
-				slot.levels.push_back(item_id);
 			}
 
 			pool->slots.push_back(std::move(slot));
@@ -150,12 +191,16 @@ public:
 			bool drop = false;
 
 			for (const auto& slot : pool->slots) {
-				for (t_itemid item_id : slot.levels) {
-					if (item_db.find(item_id) == nullptr) {
-						ShowError("Silvervine enchant upgrade Id %u references missing charm %u.\n", pool->id, item_id);
-						drop = true;
-						break;
+				for (const auto& series : slot.series) {
+					for (t_itemid item_id : series.levels) {
+						if (item_db.find(item_id) == nullptr) {
+							ShowError("Silvervine enchant upgrade Id %u references missing charm %u.\n", pool->id, item_id);
+							drop = true;
+							break;
+						}
 					}
+					if (drop)
+						break;
 				}
 				if (drop)
 					break;
@@ -188,40 +233,59 @@ inline int32 svu_find_slot_index(const svu_item_pool& pool, int32 card_index) {
 	return -1;
 }
 
-inline int32 svu_find_level(const svu_item_pool& pool, int32 card_index, t_itemid charm_id) {
+inline const svu_series* svu_find_series(const svu_item_pool& pool, int32 card_index, t_itemid charm_id) {
 	const int32 slot_index = svu_find_slot_index(pool, card_index);
 	if (slot_index < 0 || charm_id < 1)
+		return nullptr;
+
+	for (const auto& series : pool.slots[slot_index].series) {
+		for (t_itemid item_id : series.levels) {
+			if (item_id == charm_id)
+				return &series;
+		}
+	}
+	return nullptr;
+}
+
+inline int32 svu_find_level(const svu_item_pool& pool, int32 card_index, t_itemid charm_id) {
+	const svu_series* series = svu_find_series(pool, card_index, charm_id);
+	if (series == nullptr)
 		return 0;
 
-	const auto& levels = pool.slots[slot_index].levels;
-	for (size_t i = 0; i < levels.size(); ++i) {
-		if (levels[i] == charm_id)
+	for (size_t i = 0; i < series->levels.size(); ++i) {
+		if (series->levels[i] == charm_id)
 			return static_cast<int32>(i + 1);
 	}
 	return 0;
 }
 
-inline int32 svu_roll_level(const svu_item_pool& pool, int32 card_index) {
-	const int32 slot_index = svu_find_slot_index(pool, card_index);
-	if (slot_index < 0)
-		return 0;
-
-	const auto& levels = pool.slots[slot_index].levels;
+inline int32 svu_roll_series(const std::vector<t_itemid>& levels) {
 	const size_t n = levels.size();
 	if (n == 0)
 		return 0;
 	if (n == 1)
 		return static_cast<int32>(levels[0]);
-
-	const uint32 total = static_cast<uint32>(n * (n + 1) / 2);
-	const uint32 r = rnd_value<uint32>(1, total);
-	uint32 acc = 0;
-	for (size_t i = 0; i < n; ++i) {
-		acc += static_cast<uint32>(n - i);
-		if (r <= acc)
-			return static_cast<int32>(levels[i]);
+	if (n == 2) {
+		const uint32 r = rnd_value<uint32>(1, 5);
+		return static_cast<int32>(r <= 4 ? levels[0] : levels[1]);
 	}
-	return static_cast<int32>(levels[n - 1]);
+
+	const uint32 r = rnd_value<uint32>(1, 10);
+	if (r <= 5)
+		return static_cast<int32>(levels[0]);
+	if (r >= 9)
+		return static_cast<int32>(levels[n - 1]);
+
+	const uint32 mid = rnd_value<uint32>(1, static_cast<uint32>(n - 2));
+	return static_cast<int32>(levels[mid]);
+}
+
+inline int32 svu_roll_level(const svu_item_pool& pool, int32 card_index, t_itemid charm_id) {
+	const svu_series* series = svu_find_series(pool, card_index, charm_id);
+	if (series == nullptr)
+		return 0;
+
+	return svu_roll_series(series->levels);
 }
 
 #endif /* SILVERVINE_ENCHANT_UPGRADE_HPP */

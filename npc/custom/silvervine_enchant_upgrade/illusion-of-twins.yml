@@ -1,0 +1,124 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 500030
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+  - Id: 510034
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+  - Id: 530015
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+  - Id: 620010
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }

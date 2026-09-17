@@ -26,7 +26,7 @@ function	script	F_SVE_ChoosePoolEnchant	{
 		.@menu$ = "";
 		.@shown = 0;
 		for (.@j = .@page_start; .@j < .@n && .@shown < 20; ++.@j) {
-			.@menu$ += getitemname(.@list[.@j]) + ":";
+			.@menu$ += replacestr(getitemname(.@list[.@j]), ":", "") + ":";
 			++.@shown;
 		}
 		if (.@page_start + .@shown < .@n)
@@ -185,7 +185,7 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 
 	.@menu$ = "";
 	for (.@i = 0; .@i < .@count; ++.@i)
-		.@menu$ += .@chosen_label$[.@i] + " - " + getitemname(.@chosen_item[.@i]) + ":";
+		.@menu$ += .@chosen_label$[.@i] + " - " + replacestr(getitemname(.@chosen_item[.@i]), ":", "") + ":";
 	.@choice = select(.@menu$ + "Cancel") - 1;
 	if (.@choice == .@count)
 		close;

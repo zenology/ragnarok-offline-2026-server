@@ -1,0 +1,154 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 1326
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+  - Id: 13338
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+  - Id: 13469
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+  - Id: 16065
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+  - Id: 32005
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
