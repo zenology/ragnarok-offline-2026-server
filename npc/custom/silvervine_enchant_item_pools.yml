@@ -22,6 +22,10 @@ Footer:
     - Path: npc/custom/silvervine_enchant/constellation-nebula.yml
     - Path: npc/custom/silvervine_enchant/constellation-star-seal.yml
     - Path: npc/custom/silvervine_enchant/cursed-knight-shield.yml
+    - Path: npc/custom/silvervine_enchant/deep-blue-sunglasses.yml
+    - Path: npc/custom/silvervine_enchant/dimension-shoes.yml
+    - Path: npc/custom/silvervine_enchant/dimension-weapons.yml
+    - Path: npc/custom/silvervine_enchant/drooping-thanatos-dolor-lt.yml
     - Path: npc/custom/silvervine_enchant/good-and-evil.yml
     - Path: npc/custom/silvervine_enchant/gray-wolf.yml
     - Path: npc/custom/silvervine_enchant/hero-boots-lt.yml
