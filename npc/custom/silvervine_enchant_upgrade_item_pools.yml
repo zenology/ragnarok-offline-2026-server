@@ -1,0 +1,6 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Footer:
+  Imports:
+    - Path: npc/custom/silvervine_enchant_upgrade/racing-caps.yml

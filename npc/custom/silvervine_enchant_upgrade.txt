@@ -1,14 +1,213 @@
 //===== Ragnarok Offline =====================================
-//= Doberkin: chat-only Malangdo placeholder.
-//= Reserved later as the Silvervine start-tier charm upgrade NPC.
-//= This file currently has no upgrade, item, or currency logic.
+//= Doberkin: Racing Cap class-Racing charm level lottery.
+//= YAML book: silvervine_enchant_upgrade_item_pools.yml (not the cat first-fill book).
+//= Cost is 30 Silvervine Fruit times the current charm level. Always writes a rolled level.
 //============================================================
 
 mal_in01,25,167,2	script	Doberkin#sve_upg	4_M_DOGTRAVELER2,{
 L_Main:
+	disable_items;
+	if (!checkweight(1119, 3)) {
+		mes "[Doberkin]";
+		mes "Your pack is stuffed. I cannot work like that.";
+		next;
+		mes "[Doberkin]";
+		mes "Dump something. Then come back.";
+		close;
+	}
+
+	if (getvariableofnpc(.ItemCount, "silvervine_enchant_upgrade_db") < 1) {
+		mes "[Doberkin]";
+		mes "My upgrade book didn't load. That's a server problem.";
+		next;
+		mes "[Doberkin]";
+		mes "Check the map log for Silvervine upgrade YAML errors.";
+		close;
+	}
+
 	mes "[Doberkin]";
-	mes "Sniff sniff. You are not a cat. Tail says hi anyway.";
+	mes "Hold still. I need a sniff at what you're wearing.";
+	freeloop(1);
+	.@count = 0;
+	for (.@scan = 0; .@scan < 10; ++.@scan) {
+		.@slot = (.@scan == 0 ? EQI_HEAD_TOP : .@scan == 1 ? EQI_HEAD_MID : .@scan == 2 ? EQI_HEAD_LOW : .@scan == 3 ? EQI_HAND_R : .@scan == 4 ? EQI_HAND_L : .@scan == 5 ? EQI_ARMOR : .@scan == 6 ? EQI_GARMENT : .@scan == 7 ? EQI_SHOES : .@scan == 8 ? EQI_ACC_L : EQI_ACC_R);
+		.@item = getequipid(.@slot);
+		if (.@item < 0)
+			continue;
+		.@type = getiteminfo(.@item, ITEMINFO_TYPE);
+		if (.@type != IT_WEAPON && .@type != IT_ARMOR)
+			continue;
+		if (.@type == IT_WEAPON && .@slot != EQI_HAND_R && .@slot != EQI_HAND_L)
+			continue;
+		if (.@type == IT_ARMOR && .@slot == EQI_HAND_R)
+			continue;
+		.@uid$ = getequipuniqueid(.@slot);
+		if (.@uid$ == "")
+			continue;
+		.@label$ = (.@slot == EQI_HEAD_TOP ? "Top" : .@slot == EQI_HEAD_MID ? "Middle" : .@slot == EQI_HEAD_LOW ? "Lower" : .@slot == EQI_HAND_R ? "Weapon Right" : .@slot == EQI_HAND_L && .@type == IT_WEAPON ? "Weapon Left" : .@slot == EQI_HAND_L ? "Shield" : .@slot == EQI_ARMOR ? "Armor" : .@slot == EQI_GARMENT ? "Garment" : .@slot == EQI_SHOES ? "Shoes" : .@slot == EQI_ACC_L ? "Accessory Left" : "Accessory Right");
+		.@nslots = svu_slotcount(.@item);
+		if (.@nslots < 1)
+			continue;
+		.@ok = 0;
+		for (.@s = 1; .@s <= .@nslots; ++.@s) {
+			.@ci = svu_slotcard(.@item, .@s);
+			.@lv = svu_findlevel(.@item, .@ci, getequipcardid(.@slot, .@ci));
+			if (.@lv > 0)
+				.@ok = 1;
+		}
+		if (!.@ok)
+			continue;
+		.@found = -1;
+		for (.@i = 0; .@i < .@count; ++.@i) {
+			if (.@chosen_uid$[.@i] == .@uid$)
+				.@found = .@i;
+		}
+		if (.@found >= 0) {
+			.@chosen_label$[.@found] += "/" + .@label$;
+			continue;
+		}
+		.@chosen_slot[.@count] = .@slot;
+		.@chosen_item[.@count] = .@item;
+		.@chosen_uid$[.@count] = .@uid$;
+		.@chosen_label$[.@count] = .@label$;
+		++.@count;
+	}
+	freeloop(0);
 	next;
+	if (.@count < 1) {
+		mes "[Doberkin]";
+		mes "Sniff sniff. Nothing on you I can gamble.";
+		next;
+		mes "[Doberkin]";
+		mes "Wear a Racing Cap that already has its class Racing charm.";
+		next;
+		mes "[Doberkin]";
+		mes "Level 1, 2, or 3. Empty slots and plain stat charms do not count.";
+		next;
+		goto L_Banter;
+	}
+
+	mes "[Doberkin]";
+	mes "Alright. I only gamble what you're wearing. Leave the bag out of it.";
+	next;
+	mes "[Doberkin]";
+	mes "Class Racing charms only. The old cat fills level 1. I toss the whole pile.";
+	next;
+	mes "[Doberkin]";
+	mes "Level 1 shows up most. Level 3 is stingy. You might go down. That is the joke.";
+	next;
+	mes "[Doberkin]";
+	mes "Thirty Silvervine Fruit if the charm is level 1. Sixty if it is already 2. Ninety if it is 3.";
+	next;
+
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@count; ++.@i)
+		.@menu$ += .@chosen_label$[.@i] + " - " + getitemname(.@chosen_item[.@i]) + ":";
+	.@choice = select(.@menu$ + "Who are you?:Cancel") - 1;
+	if (.@choice == .@count)
+		goto L_Banter;
+	if (.@choice == .@count + 1)
+		close;
+
+	.@slot = .@chosen_slot[.@choice];
+	.@item = .@chosen_item[.@choice];
+
+	.@elig = 0;
+	.@nslots = svu_slotcount(.@item);
+	for (.@s = 1; .@s <= .@nslots; ++.@s) {
+		.@ci = svu_slotcard(.@item, .@s);
+		.@charm = getequipcardid(.@slot, .@ci);
+		.@lv = svu_findlevel(.@item, .@ci, .@charm);
+		if (.@lv > 0) {
+			.@elig_ci[.@elig] = .@ci;
+			.@elig_lv[.@elig] = .@lv;
+			.@elig_charm[.@elig] = .@charm;
+			++.@elig;
+		}
+	}
+	if (.@elig < 1) {
+		mes "[Doberkin]";
+		mes "Hey. That cap is gone.";
+		close;
+	}
+	if (.@elig > 1) {
+		.@smenu$ = "";
+		for (.@i = 0; .@i < .@elig; ++.@i)
+			.@smenu$ += getitemname(.@elig_charm[.@i]) + " - Lv" + .@elig_lv[.@i] + " - " + (30 * .@elig_lv[.@i]) + " Fruit:";
+		.@spick = select(.@smenu$ + "Cancel") - 1;
+		if (.@spick == .@elig)
+			close;
+		.@card_idx = .@elig_ci[.@spick];
+		.@cur_lv = .@elig_lv[.@spick];
+		.@cur_charm = .@elig_charm[.@spick];
+	} else {
+		.@card_idx = .@elig_ci[0];
+		.@cur_lv = .@elig_lv[0];
+		.@cur_charm = .@elig_charm[0];
+	}
+	.@pay = 30 * .@cur_lv;
+
+	mes "[Doberkin]";
+	mes "^0055FF" + getitemname(.@cur_charm) + "^000000, Level " + .@cur_lv + ".";
+	next;
+	mes "[Doberkin]";
+	mes "I will replace that slot with a random level from this cap's pile.";
+	next;
+	mes "[Doberkin]";
+	mes "This costs ^0055FF" + .@pay + " Silvervine Fruit^000000.";
+	next;
+	mes "[Doberkin]";
+	mes "Refine, cards, other enchants, random options, and enchant grade stay put.";
+	next;
+	if (select("Proceed:Cancel") == 2)
+		close;
+
+	if (countitem(6417) < .@pay) {
+		mes "[Doberkin]";
+		mes "You are " + .@pay + " fruit short. No credit. I already owe the cats.";
+		close;
+	}
+
+	.@eq_id = getequipid(.@slot);
+	.@refine = getequiprefinerycnt(.@slot);
+	.@card[0] = getequipcardid(.@slot, 0);
+	.@card[1] = getequipcardid(.@slot, 1);
+	.@card[2] = getequipcardid(.@slot, 2);
+	.@card[3] = getequipcardid(.@slot, 3);
+	for (.@i = 0; .@i < 5; ++.@i) {
+		set getelementofarray(.@OptID, .@i), getequiprandomoption(.@slot, .@i, ROA_ID);
+		set getelementofarray(.@OptVal, .@i), getequiprandomoption(.@slot, .@i, ROA_VALUE);
+		set getelementofarray(.@OptParam, .@i), getequiprandomoption(.@slot, .@i, ROA_PARAM);
+	}
+	.@grade = getenchantgrade(.@slot);
+
+	if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine))
+		close;
+
+	.@enchant_id = svu_roll(.@item, .@card_idx);
+	if (.@enchant_id < 1) {
+		mes "[Doberkin]";
+		mes "Something is wrong in my book. Invalid charm.";
+		next;
+		mes "[Doberkin]";
+		mes "Nothing changed. Fruit stays in your pack.";
+		close;
+	}
+
+	delitem 6417, .@pay;
+	delequip .@slot;
+	.@card[.@card_idx] = .@enchant_id;
+	getitem4 .@eq_id, 1, 1, .@refine, 0, .@card[0], .@card[1], .@card[2], .@card[3], .@grade, .@OptID, .@OptVal, .@OptParam;
+
+	mes "[Doberkin]";
+	mes "Done. ^0055FF" + getitemname(.@enchant_id) + "^000000. Sniff. Debt goes down a little.";
+	specialeffect2 EF_REPAIRWEAPON;
+	next;
+	mes "[Doberkin]";
+	mes "Come back if you like throwing fruit at luck.";
+	close;
+
+L_Banter:
 	switch (select("Who are you?:How did you get here?:You live with cats?:Never mind.")) {
 	case 1:
 		mes "[Doberkin]";
@@ -49,7 +248,7 @@ L_Main:
 		mes "That old cat over there works on gear. Fancy fruit. Fancy enchants.";
 		next;
 		mes "[Doberkin]";
-		mes "Me? I just watch. For now. Still counting the debt.";
+		mes "Me? I gamble Racing charms now. Level soup. Fruit in, luck out. The tab is still ugly.";
 		next;
 		goto L_Main;
 	default:

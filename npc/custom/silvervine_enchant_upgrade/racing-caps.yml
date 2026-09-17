@@ -1,0 +1,137 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 19189
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29316 }
+          - { Item: 29317 }
+          - { Item: 29318 }
+  - Id: 19190
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29319 }
+          - { Item: 29320 }
+          - { Item: 29321 }
+  - Id: 19191
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29322 }
+          - { Item: 29323 }
+          - { Item: 29324 }
+  - Id: 19192
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29325 }
+          - { Item: 29326 }
+          - { Item: 29327 }
+  - Id: 19193
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29328 }
+          - { Item: 29329 }
+          - { Item: 29330 }
+  - Id: 19194
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29331 }
+          - { Item: 29332 }
+          - { Item: 29333 }
+  - Id: 19195
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29310 }
+          - { Item: 29311 }
+          - { Item: 29312 }
+  - Id: 19196
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29313 }
+          - { Item: 29314 }
+          - { Item: 29315 }
+  - Id: 19197
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29334 }
+          - { Item: 29335 }
+          - { Item: 29336 }
+  - Id: 19198
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29337 }
+          - { Item: 29338 }
+          - { Item: 29339 }
+  - Id: 19199
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29340 }
+          - { Item: 29341 }
+          - { Item: 29342 }
+  - Id: 19200
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29343 }
+          - { Item: 29344 }
+          - { Item: 29345 }
+  - Id: 19201
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29343 }
+          - { Item: 29344 }
+          - { Item: 29345 }
+  - Id: 19202
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29346 }
+          - { Item: 29347 }
+          - { Item: 29348 }
+  - Id: 19203
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29349 }
+          - { Item: 29350 }
+          - { Item: 29351 }
+  - Id: 19204
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29352 }
+          - { Item: 29353 }
+          - { Item: 29354 }
+  - Id: 19205
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29355 }
+          - { Item: 29356 }
+          - { Item: 29357 }
+  - Id: 19396
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29579 }
+          - { Item: 29580 }
+          - { Item: 29581 }
+  - Id: 19397
+    Slots:
+      - CardIndex: 1
+        Levels:
+          - { Item: 29582 }
+          - { Item: 29583 }
+          - { Item: 29584 }
