@@ -1,0 +1,156 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 450440
+    Mode: CardSlot
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313822, Chance: 10000 }
+          - { Item: 313823, Chance: 10000 }
+          - { Item: 313824, Chance: 10000 }
+          - { Item: 313825, Chance: 10000 }
+          - { Item: 313826, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313827, Chance: 10000 }
+          - { Item: 313828, Chance: 10000 }
+          - { Item: 313829, Chance: 10000 }
+          - { Item: 313830, Chance: 10000 }
+          - { Item: 313831, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313832, Chance: 10000 }
+          - { Item: 313833, Chance: 10000 }
+          - { Item: 313834, Chance: 10000 }
+
+  - Id: 450441
+    Mode: CardSlot
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313822, Chance: 10000 }
+          - { Item: 313823, Chance: 10000 }
+          - { Item: 313824, Chance: 10000 }
+          - { Item: 313825, Chance: 10000 }
+          - { Item: 313826, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313827, Chance: 10000 }
+          - { Item: 313828, Chance: 10000 }
+          - { Item: 313829, Chance: 10000 }
+          - { Item: 313830, Chance: 10000 }
+          - { Item: 313831, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313832, Chance: 10000 }
+          - { Item: 313833, Chance: 10000 }
+          - { Item: 313834, Chance: 10000 }
+
+  - Id: 480545
+    Mode: CardSlot
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313835, Chance: 10000 }
+          - { Item: 313836, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313837, Chance: 10000 }
+          - { Item: 313838, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313839, Chance: 10000 }
+          - { Item: 313840, Chance: 10000 }
+          - { Item: 313841, Chance: 10000 }
+          - { Item: 313842, Chance: 10000 }
+          - { Item: 313843, Chance: 10000 }
+
+  - Id: 480546
+    Mode: CardSlot
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313835, Chance: 10000 }
+          - { Item: 313836, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313837, Chance: 10000 }
+          - { Item: 313838, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313839, Chance: 10000 }
+          - { Item: 313840, Chance: 10000 }
+          - { Item: 313841, Chance: 10000 }
+          - { Item: 313842, Chance: 10000 }
+          - { Item: 313843, Chance: 10000 }
+
+  - Id: 470333
+    Mode: CardSlot
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313844, Chance: 10000 }
+          - { Item: 313845, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313846, Chance: 10000 }
+          - { Item: 313847, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313848, Chance: 10000 }
+          - { Item: 313849, Chance: 10000 }
+          - { Item: 313850, Chance: 10000 }
+          - { Item: 313851, Chance: 10000 }
+          - { Item: 313852, Chance: 10000 }
+
+  - Id: 470334
+    Mode: CardSlot
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313844, Chance: 10000 }
+          - { Item: 313845, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313846, Chance: 10000 }
+          - { Item: 313847, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 313848, Chance: 10000 }
+          - { Item: 313849, Chance: 10000 }
+          - { Item: 313850, Chance: 10000 }
+          - { Item: 313851, Chance: 10000 }
+          - { Item: 313852, Chance: 10000 }
+

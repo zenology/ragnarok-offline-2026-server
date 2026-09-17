@@ -26,6 +26,11 @@ Footer:
     - Path: npc/custom/silvervine_enchant/dimension-shoes.yml
     - Path: npc/custom/silvervine_enchant/dimension-weapons.yml
     - Path: npc/custom/silvervine_enchant/drooping-thanatos-dolor-lt.yml
+    - Path: npc/custom/silvervine_enchant/edda-weapons.yml
+    - Path: npc/custom/silvervine_enchant/einbech-weapons.yml
+    - Path: npc/custom/silvervine_enchant/encroached-weapons.yml
+    - Path: npc/custom/silvervine_enchant/entwined-equipment.yml
+    - Path: npc/custom/silvervine_enchant/excellion-gear.yml
     - Path: npc/custom/silvervine_enchant/good-and-evil.yml
     - Path: npc/custom/silvervine_enchant/gray-wolf.yml
     - Path: npc/custom/silvervine_enchant/hero-boots-lt.yml

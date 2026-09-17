@@ -1,0 +1,125 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 500119
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 187
+  - Id: 510140
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 187
+      - 189
+      - 191
+  - Id: 530071
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 187
+      - 190
+  - Id: 540109
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 189
+      - 190
+      - 191
+  - Id: 550137
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 191
+  - Id: 550174
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 187
+      - 191
+  - Id: 560080
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 187
+      - 189
+      - 190
+  - Id: 570086
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 188
+      - 191
+  - Id: 580086
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 188
+      - 191
+  - Id: 590081
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 188
+      - 190
+  - Id: 600056
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 185
+  - Id: 610084
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 185
+  - Id: 620038
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 186
+  - Id: 630059
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 184
+  - Id: 640051
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 192
+  - Id: 650048
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 184
+      - 192
+  - Id: 700117
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 183
+  - Id: 810048
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 183
+      - 184
