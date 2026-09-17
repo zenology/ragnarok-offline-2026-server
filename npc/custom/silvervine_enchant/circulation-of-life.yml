@@ -26,12 +26,6 @@ Body:
           - { Item: 312992, Chance: 10000 }
           - { Item: 313002, Chance: 10000 }
           - { Item: 313007, Chance: 10000 }
-          - { Item: 312983, Chance: 10000 }
-          - { Item: 312988, Chance: 10000 }
-          - { Item: 312998, Chance: 10000 }
-          - { Item: 312993, Chance: 10000 }
-          - { Item: 313003, Chance: 10000 }
-          - { Item: 313008, Chance: 10000 }
   - Id: 490484
     Mode: CardSlot
     Steps:
@@ -56,12 +50,6 @@ Body:
           - { Item: 312992, Chance: 10000 }
           - { Item: 313002, Chance: 10000 }
           - { Item: 313007, Chance: 10000 }
-          - { Item: 312983, Chance: 10000 }
-          - { Item: 312988, Chance: 10000 }
-          - { Item: 312998, Chance: 10000 }
-          - { Item: 312993, Chance: 10000 }
-          - { Item: 313003, Chance: 10000 }
-          - { Item: 313008, Chance: 10000 }
   - Id: 490485
     Mode: CardSlot
     Steps:
@@ -86,12 +74,6 @@ Body:
           - { Item: 312992, Chance: 10000 }
           - { Item: 313002, Chance: 10000 }
           - { Item: 313007, Chance: 10000 }
-          - { Item: 312983, Chance: 10000 }
-          - { Item: 312988, Chance: 10000 }
-          - { Item: 312998, Chance: 10000 }
-          - { Item: 312993, Chance: 10000 }
-          - { Item: 313003, Chance: 10000 }
-          - { Item: 313008, Chance: 10000 }
   - Id: 490486
     Mode: CardSlot
     Steps:
@@ -116,12 +98,6 @@ Body:
           - { Item: 312992, Chance: 10000 }
           - { Item: 313002, Chance: 10000 }
           - { Item: 313007, Chance: 10000 }
-          - { Item: 312983, Chance: 10000 }
-          - { Item: 312988, Chance: 10000 }
-          - { Item: 312998, Chance: 10000 }
-          - { Item: 312993, Chance: 10000 }
-          - { Item: 313003, Chance: 10000 }
-          - { Item: 313008, Chance: 10000 }
   - Id: 480345
     Mode: CardSlot
     Steps:

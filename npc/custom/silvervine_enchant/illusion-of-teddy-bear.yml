@@ -316,15 +316,7 @@ Body:
           - { Item: 4835, Chance: 10000 }
           - { Item: 4836, Chance: 10000 }
           - { Item: 29091, Chance: 10000 }
-          - { Item: 29092, Chance: 10000 }
-          - { Item: 29093, Chance: 10000 }
-          - { Item: 29094, Chance: 10000 }
-          - { Item: 29095, Chance: 10000 }
           - { Item: 29071, Chance: 10000 }
-          - { Item: 29072, Chance: 10000 }
-          - { Item: 29073, Chance: 10000 }
-          - { Item: 29074, Chance: 10000 }
-          - { Item: 29075, Chance: 10000 }
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
@@ -348,15 +340,7 @@ Body:
           - { Item: 4835, Chance: 10000 }
           - { Item: 4836, Chance: 10000 }
           - { Item: 29091, Chance: 10000 }
-          - { Item: 29092, Chance: 10000 }
-          - { Item: 29093, Chance: 10000 }
-          - { Item: 29094, Chance: 10000 }
-          - { Item: 29095, Chance: 10000 }
           - { Item: 29071, Chance: 10000 }
-          - { Item: 29072, Chance: 10000 }
-          - { Item: 29073, Chance: 10000 }
-          - { Item: 29074, Chance: 10000 }
-          - { Item: 29075, Chance: 10000 }
   - Id: 28745
     Mode: CardSlot
     Steps:
@@ -381,15 +365,7 @@ Body:
           - { Item: 4811, Chance: 10000 }
           - { Item: 4820, Chance: 10000 }
           - { Item: 29081, Chance: 10000 }
-          - { Item: 29082, Chance: 10000 }
-          - { Item: 29083, Chance: 10000 }
-          - { Item: 29084, Chance: 10000 }
-          - { Item: 29085, Chance: 10000 }
           - { Item: 29061, Chance: 10000 }
-          - { Item: 29062, Chance: 10000 }
-          - { Item: 29063, Chance: 10000 }
-          - { Item: 29064, Chance: 10000 }
-          - { Item: 29065, Chance: 10000 }
           - { Item: 4948, Chance: 10000 }
           - { Item: 4949, Chance: 10000 }
       - CardIndex: 2
@@ -413,14 +389,6 @@ Body:
           - { Item: 4811, Chance: 10000 }
           - { Item: 4820, Chance: 10000 }
           - { Item: 29081, Chance: 10000 }
-          - { Item: 29082, Chance: 10000 }
-          - { Item: 29083, Chance: 10000 }
-          - { Item: 29084, Chance: 10000 }
-          - { Item: 29085, Chance: 10000 }
           - { Item: 29061, Chance: 10000 }
-          - { Item: 29062, Chance: 10000 }
-          - { Item: 29063, Chance: 10000 }
-          - { Item: 29064, Chance: 10000 }
-          - { Item: 29065, Chance: 10000 }
           - { Item: 4948, Chance: 10000 }
           - { Item: 4949, Chance: 10000 }
