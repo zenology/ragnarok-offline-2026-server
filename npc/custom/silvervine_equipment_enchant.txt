@@ -248,14 +248,14 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 	if (.@count < 1) {
 		mes "[Silvervine Enchanter]";
 		mes "I do not see any supported equipped gear I can enchant right now.";
-		mes "Wear supported gear with an open enchant step, Imperial/OS gear for Random Options, or come back after the next registry update.";
+		mes "Wear supported gear with an open enchant step, Random Option gear (Imperial, OS, Ancient Hero, Adulter/Vivatus, Abyss Glastheim), or come back after the next registry update.";
 		close;
 	}
 
 	mes "[Silvervine Enchanter]";
 	mes "I can enchant equipped gear you wear right now.";
 	mes "Card-slot charms: step N costs N Silvervine Fruit, rerolling that step costs N+1.";
-	mes "Random Options (Imperial / OS): pick how many options you want; cost is 1+2+...+N fruit (double if the item already has options).";
+	mes "Random Options (Imperial, OS, Ancient Hero, Adulter/Vivatus, Abyss Glastheim): pick how many options you want; cost is 1+2+...+N fruit (double if the item already has options).";
 	next;
 
 	.@menu$ = "";
