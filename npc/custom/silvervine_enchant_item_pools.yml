@@ -1,0 +1,40 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Footer:
+  Imports:
+    - Path: npc/custom/silvervine_enchant/abyss-glastheim.yml
+    - Path: npc/custom/silvervine_enchant/adulter-fides.yml
+    - Path: npc/custom/silvervine_enchant/ancient-hero.yml
+    - Path: npc/custom/silvervine_enchant/ancient-hero-lt.yml
+    - Path: npc/custom/silvervine_enchant/ancient-hero-patent.yml
+    - Path: npc/custom/silvervine_enchant/automatic.yml
+    - Path: npc/custom/silvervine_enchant/biolab-5th-floor.yml
+    - Path: npc/custom/silvervine_enchant/biolab-gear.yml
+    - Path: npc/custom/silvervine_enchant/brilliant-light.yml
+    - Path: npc/custom/silvervine_enchant/circulation-of-life.yml
+    - Path: npc/custom/silvervine_enchant/clergy.yml
+    - Path: npc/custom/silvervine_enchant/constellation-nebula.yml
+    - Path: npc/custom/silvervine_enchant/constellation-star-seal.yml
+    - Path: npc/custom/silvervine_enchant/cursed-knight-shield.yml
+    - Path: npc/custom/silvervine_enchant/good-and-evil.yml
+    - Path: npc/custom/silvervine_enchant/gray-wolf.yml
+    - Path: npc/custom/silvervine_enchant/hero-boots-lt.yml
+    - Path: npc/custom/silvervine_enchant/illusion-17-1.yml
+    - Path: npc/custom/silvervine_enchant/illusion-of-abyss.yml
+    - Path: npc/custom/silvervine_enchant/illusion-of-frozen.yml
+    - Path: npc/custom/silvervine_enchant/illusion-of-labyrinth.yml
+    - Path: npc/custom/silvervine_enchant/illusion-of-luanda.yml
+    - Path: npc/custom/silvervine_enchant/illusion-of-moonlight.yml
+    - Path: npc/custom/silvervine_enchant/illusion-of-teddy-bear.yml
+    - Path: npc/custom/silvervine_enchant/illusion-of-twins.yml
+    - Path: npc/custom/silvervine_enchant/illusion-of-underwater.yml
+    - Path: npc/custom/silvervine_enchant/illusion-of-vampire.yml
+    - Path: npc/custom/silvervine_enchant/imperial.yml
+    - Path: npc/custom/silvervine_enchant/infinity-weapons.yml
+    - Path: npc/custom/silvervine_enchant/issgard-dim-glacier.yml
+    - Path: npc/custom/silvervine_enchant/issgard-glacier.yml
+    - Path: npc/custom/silvervine_enchant/issgard-snow-flower.yml
+    - Path: npc/custom/silvervine_enchant/os-weapons.yml
+    - Path: npc/custom/silvervine_enchant/vivatus-fides.yml
+    - Path: npc/custom/silvervine_enchant/werners-laboratory.yml

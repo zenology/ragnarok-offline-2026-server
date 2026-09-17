@@ -1,0 +1,277 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 500027
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 500028
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 510033
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 520009
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 530014
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 540024
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 540025
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 540026
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 540045
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 540046
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 550029
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 550063
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 550064
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 550065
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 550066
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 560020
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 560021
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 570019
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 570020
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 580019
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 580020
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 590023
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 590024
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 600018
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 610022
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 610023
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 630013
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 640021
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 640022
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 650021
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 650022
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 700033
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 700034
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 700035
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 800012
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 810008
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 820006
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 830011
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
+  - Id: 840007
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 170
+      - 171
