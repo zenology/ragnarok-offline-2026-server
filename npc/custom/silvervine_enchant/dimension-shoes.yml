@@ -4,8 +4,6 @@ Header:
 Body:
   - Id: 470335
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -34,8 +32,6 @@ Body:
           - { Item: 313933, Chance: 10000 }
   - Id: 470336
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -64,8 +60,6 @@ Body:
           - { Item: 313933, Chance: 10000 }
   - Id: 470337
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -94,8 +88,6 @@ Body:
           - { Item: 313933, Chance: 10000 }
   - Id: 470338
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -124,8 +116,6 @@ Body:
           - { Item: 313933, Chance: 10000 }
   - Id: 470339
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000

@@ -4,8 +4,6 @@ Header:
 Body:
   - Id: 1862
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -15,8 +13,6 @@ Body:
       - 131
   - Id: 13493
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -26,8 +22,6 @@ Body:
       - 131
   - Id: 16088
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -37,8 +31,6 @@ Body:
       - 131
   - Id: 16089
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -48,8 +40,6 @@ Body:
       - 131
   - Id: 18178
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -59,8 +49,6 @@ Body:
       - 131
   - Id: 18179
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -70,8 +58,6 @@ Body:
       - 131
   - Id: 18180
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -81,8 +67,6 @@ Body:
       - 131
   - Id: 21047
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -92,8 +76,6 @@ Body:
       - 131
   - Id: 26151
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -103,8 +85,6 @@ Body:
       - 131
   - Id: 26164
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -114,8 +94,6 @@ Body:
       - 131
   - Id: 28038
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -125,8 +103,6 @@ Body:
       - 131
   - Id: 28136
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -136,8 +112,6 @@ Body:
       - 131
   - Id: 28253
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -147,8 +121,6 @@ Body:
       - 131
   - Id: 28629
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -158,8 +130,6 @@ Body:
       - 131
   - Id: 28755
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127
@@ -169,8 +139,6 @@ Body:
       - 131
   - Id: 32019
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 126
       - 127

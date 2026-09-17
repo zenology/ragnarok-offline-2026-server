@@ -4,246 +4,176 @@ Header:
 Body:
   - Id: 21058
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 500013
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 500014
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 500017
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 510019
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 510020
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 510022
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 530006
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 540010
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 540011
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 550012
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 550013
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 550014
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 550015
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 560008
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 560009
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 570009
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 580009
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 590011
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 590012
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 600009
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 610008
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 610009
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 620004
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 640011
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 640012
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 650004
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 700013
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 700018
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 700019
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 800002
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 810001
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 820001
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 830002
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149
   - Id: 840001
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 148
       - 149

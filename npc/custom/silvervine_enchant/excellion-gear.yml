@@ -4,8 +4,6 @@ Header:
 Body:
   - Id: 15128
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -65,8 +63,6 @@ Body:
 
   - Id: 20773
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000

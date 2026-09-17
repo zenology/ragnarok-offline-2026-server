@@ -4,8 +4,6 @@ Header:
 Body:
   - Id: 450127
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -140,8 +138,6 @@ Body:
           - { Item: 310117, Chance: 10000 }
   - Id: 450128
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -276,8 +272,6 @@ Body:
           - { Item: 310117, Chance: 10000 }
   - Id: 470022
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -310,8 +304,6 @@ Body:
           - { Item: 310111, Chance: 10000 }
   - Id: 470023
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -344,8 +336,6 @@ Body:
           - { Item: 310111, Chance: 10000 }
   - Id: 480020
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -373,8 +363,6 @@ Body:
           - { Item: 310112, Chance: 10000 }
   - Id: 480021
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -402,8 +390,6 @@ Body:
           - { Item: 310112, Chance: 10000 }
   - Id: 490024
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -435,8 +421,6 @@ Body:
           - { Item: 310115, Chance: 10000 }
   - Id: 490025
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -468,8 +452,6 @@ Body:
           - { Item: 310116, Chance: 10000 }
   - Id: 490026
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -501,8 +483,6 @@ Body:
           - { Item: 310115, Chance: 10000 }
   - Id: 490027
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000

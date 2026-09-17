@@ -1,0 +1,77 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 2981
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4791, Chance: 10000 }
+          - { Item: 4792, Chance: 10000 }
+          - { Item: 4793, Chance: 10000 }
+          - { Item: 4794, Chance: 10000 }
+          - { Item: 4893, Chance: 10000 }
+          - { Item: 4890, Chance: 10000 }
+          - { Item: 4786, Chance: 10000 }
+          - { Item: 4891, Chance: 10000 }
+          - { Item: 4787, Chance: 10000 }
+          - { Item: 4892, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4861, Chance: 10000 }
+          - { Item: 4862, Chance: 10000 }
+          - { Item: 4867, Chance: 10000 }
+          - { Item: 4868, Chance: 10000 }
+          - { Item: 4900, Chance: 10000 }
+          - { Item: 4870, Chance: 10000 }
+          - { Item: 4800, Chance: 10000 }
+          - { Item: 4871, Chance: 10000 }
+          - { Item: 4801, Chance: 10000 }
+          - { Item: 4802, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4882, Chance: 10000 }
+          - { Item: 4894, Chance: 10000 }
+          - { Item: 4895, Chance: 10000 }
+          - { Item: 4883, Chance: 10000 }
+          - { Item: 4896, Chance: 10000 }
+          - { Item: 4897, Chance: 10000 }
+          - { Item: 4898, Chance: 10000 }
+          - { Item: 4899, Chance: 10000 }
+      - CardIndex: 0
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4700, Chance: 10000 }
+          - { Item: 4701, Chance: 10000 }
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4703, Chance: 10000 }
+          - { Item: 4704, Chance: 10000 }
+          - { Item: 4710, Chance: 10000 }
+          - { Item: 4711, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4713, Chance: 10000 }
+          - { Item: 4714, Chance: 10000 }
+          - { Item: 4730, Chance: 10000 }
+          - { Item: 4731, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 4733, Chance: 10000 }
+          - { Item: 4734, Chance: 10000 }
+          - { Item: 4740, Chance: 10000 }
+          - { Item: 4741, Chance: 10000 }
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4743, Chance: 10000 }
+          - { Item: 4744, Chance: 10000 }
+          - { Item: 4720, Chance: 10000 }
+          - { Item: 4721, Chance: 10000 }
+          - { Item: 4722, Chance: 10000 }
+          - { Item: 4723, Chance: 10000 }
+          - { Item: 4724, Chance: 10000 }
+          - { Item: 4750, Chance: 10000 }
+          - { Item: 4751, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4753, Chance: 10000 }
+          - { Item: 4754, Chance: 10000 }

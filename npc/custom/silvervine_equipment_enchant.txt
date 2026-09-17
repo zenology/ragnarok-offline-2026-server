@@ -130,10 +130,6 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 		.@item_mode = sve_mode(.@item);
 		if (.@item_mode < 1)
 			continue;
-		if (getequiprefinerycnt(.@slot) < sve_minrefine(.@item))
-			continue;
-		if (getenchantgrade(.@slot) < sve_mingrade(.@item))
-			continue;
 		if (.@item_mode == 1 && !callfunc("F_SVE_HasActionableStep", .@slot, .@item))
 			continue;
 		.@found = -1;
@@ -297,13 +293,12 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 	.@state = callfunc("F_SVE_StepState", .@slot, .@item, .@ui_step);
 	.@cost = (.@state == 2 ? .@ui_step + 1 : .@ui_step);
 	.@card_idx = sve_stepcard(.@item, .@ui_step);
-	.@grade = getenchantgrade(.@slot);
-	if (.@card_idx < 0 || sve_findstep(.@item, .@card_idx, .@grade) < 0) {
+	if (.@card_idx < 0 || sve_findstep(.@item, .@card_idx) < 0) {
 		mes "[Silvervine Enchanter]";
-		mes "No pool for that step at this enchant grade.";
+		mes "No pool for that step.";
 		next;
 		mes "[Silvervine Enchanter]";
-		mes "Not my fault. My list doesn't go that high yet.";
+		mes "Not my fault. My list doesn't have that slot.";
 		close;
 	}
 
@@ -357,7 +352,7 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 		if (.@enchant_id == 0)
 			close;
 	} else {
-		.@enchant_id = sve_rollcharm(.@item, .@card_idx, .@grade);
+		.@enchant_id = sve_rollcharm(.@item, .@card_idx);
 		if (.@enchant_id < 0) {
 			mes "[Silvervine Enchanter]";
 			mes "Fizzled. Bad luck. Happens to the best of us.";

@@ -302,22 +302,6 @@ BUILDIN_FUNC(sve_mode)
 	return SCRIPT_CMD_SUCCESS;
 }
 
-BUILDIN_FUNC(sve_minrefine)
-{
-	const int32 item_id = script_getnum(st, 2);
-	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
-	script_pushint(st, pool == nullptr ? 0 : pool->min_refine);
-	return SCRIPT_CMD_SUCCESS;
-}
-
-BUILDIN_FUNC(sve_mingrade)
-{
-	const int32 item_id = script_getnum(st, 2);
-	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
-	script_pushint(st, pool == nullptr ? 0 : pool->min_enchantgrade);
-	return SCRIPT_CMD_SUCCESS;
-}
-
 BUILDIN_FUNC(sve_stepcount)
 {
 	const int32 item_id = script_getnum(st, 2);
@@ -349,14 +333,13 @@ BUILDIN_FUNC(sve_findstep)
 {
 	const int32 item_id = script_getnum(st, 2);
 	const int32 card_index = script_getnum(st, 3);
-	const int32 grade = script_getnum(st, 4);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
 	if (pool == nullptr || pool->mode != SVE_MODE_CARD) {
 		script_pushint(st, -1);
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	script_pushint(st, sve_find_step_index(*pool, card_index, grade));
+	script_pushint(st, sve_find_step_index(*pool, card_index));
 	return SCRIPT_CMD_SUCCESS;
 }
 
@@ -370,7 +353,7 @@ BUILDIN_FUNC(sve_poolcount)
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	const int32 step_index = sve_find_step_index(*pool, card_index, 0);
+	const int32 step_index = sve_find_step_index(*pool, card_index);
 	if (step_index < 0) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
@@ -391,7 +374,7 @@ BUILDIN_FUNC(sve_poolitem)
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	const int32 step_index = sve_find_step_index(*pool, card_index, 0);
+	const int32 step_index = sve_find_step_index(*pool, card_index);
 	if (step_index < 0 || n >= static_cast<int32>(pool->steps[step_index].enchants.size())) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
@@ -405,14 +388,13 @@ BUILDIN_FUNC(sve_rollcharm)
 {
 	const int32 item_id = script_getnum(st, 2);
 	const int32 card_index = script_getnum(st, 3);
-	const int32 grade = script_getnum(st, 4);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
 	if (pool == nullptr || pool->mode != SVE_MODE_CARD) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	const int32 step_index = sve_find_step_index(*pool, card_index, grade);
+	const int32 step_index = sve_find_step_index(*pool, card_index);
 	if (step_index < 0) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;

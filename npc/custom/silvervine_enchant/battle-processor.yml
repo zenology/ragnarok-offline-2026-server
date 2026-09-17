@@ -4,7 +4,5 @@ Header:
 Body:
   - Id: 410017
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 167

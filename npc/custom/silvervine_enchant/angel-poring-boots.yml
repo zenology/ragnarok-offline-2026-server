@@ -4,8 +4,6 @@ Header:
 Body:
   - Id: 22101
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000

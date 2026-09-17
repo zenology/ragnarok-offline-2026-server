@@ -4,8 +4,6 @@ Header:
 Body:
   - Id: 450177
     Mode: CardSlot
-    MinRefine: 7
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -129,8 +127,6 @@ Body:
           - { Item: 310566, Chance: 1876 }
   - Id: 450178
     Mode: CardSlot
-    MinRefine: 7
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -254,8 +250,6 @@ Body:
           - { Item: 310566, Chance: 1876 }
   - Id: 470087
     Mode: CardSlot
-    MinRefine: 7
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -295,8 +289,6 @@ Body:
           - { Item: 310614, Chance: 16666 }
   - Id: 470088
     Mode: CardSlot
-    MinRefine: 7
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -336,8 +328,6 @@ Body:
           - { Item: 310614, Chance: 16666 }
   - Id: 480090
     Mode: CardSlot
-    MinRefine: 7
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -389,8 +379,6 @@ Body:
           - { Item: 310587, Chance: 300 }
   - Id: 480091
     Mode: CardSlot
-    MinRefine: 7
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -442,8 +430,6 @@ Body:
           - { Item: 310587, Chance: 300 }
   - Id: 490106
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -523,8 +509,6 @@ Body:
           - { Item: 310634, Chance: 80 }
   - Id: 490107
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -604,8 +588,6 @@ Body:
           - { Item: 310634, Chance: 80 }
   - Id: 490108
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -685,8 +667,6 @@ Body:
           - { Item: 310634, Chance: 80 }
   - Id: 490109
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000

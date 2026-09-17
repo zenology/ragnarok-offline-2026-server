@@ -4,8 +4,6 @@ Header:
 Body:
   - Id: 20947
     Mode: CardSlot
-    MinRefine: 7
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -92,8 +90,6 @@ Body:
           - { Item: 29238, Chance: 10000 }
   - Id: 22209
     Mode: CardSlot
-    MinRefine: 7
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000

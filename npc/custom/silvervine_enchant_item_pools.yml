@@ -30,6 +30,18 @@ Footer:
     - Path: npc/custom/silvervine_enchant/einbech-weapons.yml
     - Path: npc/custom/silvervine_enchant/encroached-weapons.yml
     - Path: npc/custom/silvervine_enchant/entwined-equipment.yml
+    - Path: npc/custom/silvervine_enchant/fallen-angel-wings.yml
+    - Path: npc/custom/silvervine_enchant/flush-weapons.yml
+    - Path: npc/custom/silvervine_enchant/furious-equipment.yml
+    - Path: npc/custom/silvervine_enchant/gaebolg-equipment.yml
+    - Path: npc/custom/silvervine_enchant/geffen-magic-tournament.yml
+    - Path: npc/custom/silvervine_enchant/geffen-night-arena.yml
+    - Path: npc/custom/silvervine_enchant/grace-set.yml
+    - Path: npc/custom/silvervine_enchant/helms-of-faith.yml
+    - Path: npc/custom/silvervine_enchant/heroic-ring.yml
+    - Path: npc/custom/silvervine_enchant/heros-badge.yml
+    - Path: npc/custom/silvervine_enchant/horror-toy.yml
+    - Path: npc/custom/silvervine_enchant/racing-caps.yml
     - Path: npc/custom/silvervine_enchant/excellion-gear.yml
     - Path: npc/custom/silvervine_enchant/good-and-evil.yml
     - Path: npc/custom/silvervine_enchant/gray-wolf.yml

@@ -2,41 +2,43 @@ Header:
   Type: SILVERVINE_ENCHANT_ITEM_POOL
   Version: 1
 Body:
-  - Id: 15391
+  - Id: 450149
     Mode: RandomOption
     Groups:
-      - 180
-      - 181
-  - Id: 15392
+      - 193
+  - Id: 450150
     Mode: RandomOption
     Groups:
-      - 180
-      - 181
-  - Id: 15393
+      - 193
+  - Id: 480065
     Mode: RandomOption
     Groups:
-      - 180
-      - 181
-  - Id: 15394
+      - 194
+  - Id: 480066
     Mode: RandomOption
     Groups:
-      - 180
-      - 181
-  - Id: 15395
+      - 194
+  - Id: 480067
     Mode: RandomOption
     Groups:
-      - 180
-      - 181
-  - Id: 15396
+      - 194
+  - Id: 480068
     Mode: RandomOption
     Groups:
-      - 180
-      - 181
-  - Id: 20946
+      - 194
+  - Id: 490077
     Mode: RandomOption
     Groups:
-      - 178
-  - Id: 22208
+      - 195
+  - Id: 490078
     Mode: RandomOption
     Groups:
-      - 179
+      - 195
+  - Id: 460005
+    Mode: RandomOption
+    Groups:
+      - 196
+  - Id: 460006
+    Mode: RandomOption
+    Groups:
+      - 196

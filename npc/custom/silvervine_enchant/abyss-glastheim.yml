@@ -4,37 +4,25 @@ Header:
 Body:
   - Id: 2049
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 147
   - Id: 21039
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 146
   - Id: 26016
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 146
   - Id: 26138
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 147
   - Id: 26139
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 147
   - Id: 28619
     Mode: RandomOption
-    MinRefine: 0
-    MinEnchantgrade: 0
     Groups:
       - 146

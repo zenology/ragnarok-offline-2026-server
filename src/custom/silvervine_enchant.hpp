@@ -28,7 +28,6 @@ struct sve_enchant_entry {
 
 struct sve_step {
 	int32 card_index = 0;
-	int32 grade = 0;
 	uint32 slot_chance = 100000;
 	std::vector<sve_enchant_entry> enchants;
 };
@@ -36,8 +35,6 @@ struct sve_step {
 struct sve_item_pool {
 	t_itemid id = 0;
 	sve_mode mode = SVE_MODE_NONE;
-	int32 min_refine = 0;
-	int32 min_enchantgrade = 0;
 	std::vector<sve_step> steps;
 	std::vector<uint16> ro_groups;
 };
@@ -85,14 +82,9 @@ public:
 			return 0;
 		}
 
-		if (this->nodeExists(node, "MinRefine")) {
-			if (!this->asInt32(node, "MinRefine", pool->min_refine))
-				return 0;
-		}
-
-		if (this->nodeExists(node, "MinEnchantgrade")) {
-			if (!this->asInt32(node, "MinEnchantgrade", pool->min_enchantgrade))
-				return 0;
+		if (this->nodeExists(node, "MinRefine") || this->nodeExists(node, "MinEnchantgrade")) {
+			this->invalidWarning(node, "Id %u has MinRefine or MinEnchantgrade; Silvervine pools have no refine or grade gate.\n", nameid);
+			return 0;
 		}
 
 		const bool has_steps = this->nodeExists(node, "Steps");
@@ -125,8 +117,8 @@ public:
 				}
 
 				if (this->nodeExists(stepNode, "Grade")) {
-					if (!this->asInt32(stepNode, "Grade", step.grade))
-						return 0;
+					this->invalidWarning(stepNode, "Step CardIndex %d for Id %u has Grade; Silvervine steps are not grade-gated.\n", step.card_index, nameid);
+					return 0;
 				}
 
 				if (this->nodeExists(stepNode, "SlotChance")) {
@@ -279,17 +271,12 @@ inline int32 sve_roll_charm(const sve_step& step) {
 	return static_cast<int32>(step.enchants[fallback].item_id);
 }
 
-inline int32 sve_find_step_index(const sve_item_pool& pool, int32 card_index, int32 grade) {
-	int32 fallback = -1;
+inline int32 sve_find_step_index(const sve_item_pool& pool, int32 card_index) {
 	for (size_t i = 0; i < pool.steps.size(); ++i) {
-		if (pool.steps[i].card_index != card_index)
-			continue;
-		if (pool.steps[i].grade == grade)
+		if (pool.steps[i].card_index == card_index)
 			return static_cast<int32>(i);
-		if (pool.steps[i].grade == 0 && fallback < 0)
-			fallback = static_cast<int32>(i);
 	}
-	return fallback;
+	return -1;
 }
 
 inline bool sve_roll_ro(t_itemid item_id, int32 want, int32 out_id[MAX_ITEM_RDM_OPT], int32 out_val[MAX_ITEM_RDM_OPT], int32 out_param[MAX_ITEM_RDM_OPT]) {

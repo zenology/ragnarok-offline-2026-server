@@ -4,8 +4,6 @@ Header:
 Body:
   - Id: 15195
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -103,8 +101,6 @@ Body:
           - { Item: 4753, Chance: 10000 }
   - Id: 16063
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -172,8 +168,6 @@ Body:
           - { Item: 4949, Chance: 10000 }
   - Id: 19209
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -271,8 +265,6 @@ Body:
           - { Item: 4753, Chance: 10000 }
   - Id: 19210
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -370,8 +362,6 @@ Body:
           - { Item: 4753, Chance: 10000 }
   - Id: 20838
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -469,8 +459,6 @@ Body:
           - { Item: 4753, Chance: 10000 }
   - Id: 22133
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -568,8 +556,6 @@ Body:
           - { Item: 4753, Chance: 10000 }
   - Id: 26007
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -637,8 +623,6 @@ Body:
           - { Item: 4949, Chance: 10000 }
   - Id: 26109
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
@@ -686,8 +670,6 @@ Body:
           - { Item: 4850, Chance: 10000 }
   - Id: 28725
     Mode: CardSlot
-    MinRefine: 0
-    MinEnchantgrade: 0
     Steps:
       - CardIndex: 3
         SlotChance: 100000
