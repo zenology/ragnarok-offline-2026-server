@@ -111,6 +111,7 @@ L_Main:
 
 	.@slot = .@chosen_slot[.@choice];
 	.@item = .@chosen_item[.@choice];
+	.@uid$ = .@chosen_uid$[.@choice];
 
 	.@elig = 0;
 	.@nslots = svu_slotcount(.@item);
@@ -194,10 +195,17 @@ L_Main:
 		close;
 	}
 
-	delitem 6417, .@pay;
-	delequip .@slot;
 	.@card[.@card_idx] = .@enchant_id;
-	getitem4 .@eq_id, 1, 1, .@refine, 0, .@card[0], .@card[1], .@card[2], .@card[3], .@grade, .@OptID, .@OptVal, .@OptParam;
+	.@result = replaceequipped(.@slot, .@uid$, .@card[0], .@card[1], .@card[2], .@card[3], .@OptID, .@OptVal, .@OptParam);
+	if (.@result != 1) {
+		mes "[Doberkin]";
+		mes "That piece changed before I could work.";
+		next;
+		mes "[Doberkin]";
+		mes "Nothing changed. Fruit stays in your pack.";
+		close;
+	}
+	delitem 6417, .@pay;
 
 	mes "[Doberkin]";
 	mes "Done. ^0055FF" + getitemname(.@enchant_id) + "^000000. Sniff. Debt goes down a little.";

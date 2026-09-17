@@ -193,6 +193,7 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 	.@slot = .@chosen_slot[.@choice];
 	.@item = .@chosen_item[.@choice];
 	.@item_mode = .@chosen_mode[.@choice];
+	.@uid$ = .@chosen_uid$[.@choice];
 
 	if (.@item_mode == 2) {
 		.@existing = 0;
@@ -249,9 +250,16 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 			mes "Nothing changed. Your fruit stays in your pocket.";
 			close;
 		}
+		.@result = replaceequipped(.@slot, .@uid$, .@card[0], .@card[1], .@card[2], .@card[3], .@sve_opt_id, .@sve_opt_value, .@sve_opt_param);
+		if (.@result != 1) {
+			mes "[Silvervine Enchanter]";
+			mes "That piece changed before I could work.";
+			next;
+			mes "[Silvervine Enchanter]";
+			mes "Nothing happened. Your fruit stays in your pocket.";
+			close;
+		}
 		delitem 6417, .@cost;
-		delequip .@slot;
-		getitem4 .@eq_id, 1, 1, .@refine, 0, .@card[0], .@card[1], .@card[2], .@card[3], .@grade, .@sve_opt_id, .@sve_opt_value, .@sve_opt_param;
 		mes "[Silvervine Enchanter]";
 		mes "There. " + .@want + " new Random Option" + (.@want == 1 ? "" : "s") + ", neat as I can make 'em.";
 		specialeffect2 EF_REPAIRWEAPON;
@@ -371,10 +379,17 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 		}
 	}
 
-	delitem 6417, .@pay;
-	delequip .@slot;
 	.@card[.@card_idx] = .@enchant_id;
-	getitem4 .@eq_id, 1, 1, .@refine, 0, .@card[0], .@card[1], .@card[2], .@card[3], .@grade, .@OptID, .@OptVal, .@OptParam;
+	.@result = replaceequipped(.@slot, .@uid$, .@card[0], .@card[1], .@card[2], .@card[3], .@OptID, .@OptVal, .@OptParam);
+	if (.@result != 1) {
+		mes "[Silvervine Enchanter]";
+		mes "That piece changed before I could work.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Nothing happened. Your fruit stays in your pocket.";
+		close;
+	}
+	delitem 6417, .@pay;
 
 	mes "[Silvervine Enchanter]";
 	mes "Done. ^0055FF" + getitemname(.@enchant_id) + "^000000, slotted where you wanted.";
