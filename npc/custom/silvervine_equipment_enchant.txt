@@ -249,10 +249,10 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 		getitem4 .@eq_id, 1, 1, .@refine, 0, .@card[0], .@card[1], .@card[2], .@card[3], .@grade, .@sve_opt_id, .@sve_opt_value, .@sve_opt_param;
 		mes "[Silvervine Enchanter]";
 		mes "There. " + .@want + " new Random Option" + (.@want == 1 ? "" : "s") + ", neat as I can make 'em.";
+		specialeffect2 EF_REPAIRWEAPON;
 		next;
 		mes "[Silvervine Enchanter]";
 		mes "Don't scratch it up on my account.";
-		specialeffect2 EF_REPAIRWEAPON;
 		close;
 	}
 
@@ -374,9 +374,9 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 
 	mes "[Silvervine Enchanter]";
 	mes "Done. ^0055FF" + getitemname(.@enchant_id) + "^000000, slotted where you wanted.";
+	specialeffect2 EF_REPAIRWEAPON;
 	next;
 	mes "[Silvervine Enchanter]";
 	mes "Treat it better than the last owner did, kid.";
-	specialeffect2 EF_REPAIRWEAPON;
 	close;
 }
