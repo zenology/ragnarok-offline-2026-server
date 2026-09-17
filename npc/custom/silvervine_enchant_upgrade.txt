@@ -201,7 +201,7 @@ L_Main:
 
 	mes "[Doberkin]";
 	mes "Done. ^0055FF" + getitemname(.@enchant_id) + "^000000. Sniff. Debt goes down a little.";
-	specialeffect2 EF_REPAIRWEAPON;
+	specialeffect2 EF_BASH3D2;
 	next;
 	mes "[Doberkin]";
 	mes "Come back if you like throwing fruit at luck.";
