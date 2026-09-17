@@ -98,6 +98,15 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 		close;
 	}
 
+	if (getvariableofnpc(.ItemCount, "silvervine_equipment_enchant_db") < 1) {
+		mes "[Silvervine Enchanter]";
+		mes "Hmph. My enchant book didn't load.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "That's a server problem, not your gear. Check the map log for Silvervine YAML errors.";
+		close;
+	}
+
 	mes "[Silvervine Enchanter]";
 	mes "Hold on, kid. Let me see what you've got on.";
 	freeloop(1);

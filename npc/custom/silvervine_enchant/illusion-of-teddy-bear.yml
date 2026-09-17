@@ -51,6 +51,55 @@ Body:
           - { Item: 4826, Chance: 10000 }
           - { Item: 4805, Chance: 10000 }
           - { Item: 4850, Chance: 10000 }
+  - Id: 2059
+    Mode: CardSlot
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4710, Chance: 10000 }
+          - { Item: 4711, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4713, Chance: 10000 }
+          - { Item: 4720, Chance: 10000 }
+          - { Item: 4721, Chance: 10000 }
+          - { Item: 4722, Chance: 10000 }
+          - { Item: 4723, Chance: 10000 }
+          - { Item: 4750, Chance: 10000 }
+          - { Item: 4751, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4753, Chance: 10000 }
+          - { Item: 4812, Chance: 10000 }
+          - { Item: 4813, Chance: 10000 }
+          - { Item: 4814, Chance: 10000 }
+          - { Item: 4815, Chance: 10000 }
+          - { Item: 4826, Chance: 10000 }
+          - { Item: 4805, Chance: 10000 }
+          - { Item: 4850, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4710, Chance: 10000 }
+          - { Item: 4711, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4713, Chance: 10000 }
+          - { Item: 4720, Chance: 10000 }
+          - { Item: 4721, Chance: 10000 }
+          - { Item: 4722, Chance: 10000 }
+          - { Item: 4723, Chance: 10000 }
+          - { Item: 4750, Chance: 10000 }
+          - { Item: 4751, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4753, Chance: 10000 }
+          - { Item: 4812, Chance: 10000 }
+          - { Item: 4813, Chance: 10000 }
+          - { Item: 4814, Chance: 10000 }
+          - { Item: 4815, Chance: 10000 }
+          - { Item: 4826, Chance: 10000 }
+          - { Item: 4805, Chance: 10000 }
+          - { Item: 4850, Chance: 10000 }
   - Id: 19344
     Mode: CardSlot
     MinRefine: 0

@@ -61,22 +61,17 @@ public:
 	uint64 parseBodyNode(const ryml::NodeRef& node) override {
 		t_itemid nameid;
 
-		if (!this->asUInt32(node, "Id", nameid)) {
-			this->loaded_ok = false;
+		if (!this->asUInt32(node, "Id", nameid))
 			return 0;
-		}
 
 		if (this->find(nameid) != nullptr) {
 			this->invalidWarning(node["Id"], "Duplicate Silvervine enchant Id %u.\n", nameid);
-			this->loaded_ok = false;
 			return 0;
 		}
 
 		std::string mode_name;
-		if (!this->asString(node, "Mode", mode_name)) {
-			this->loaded_ok = false;
+		if (!this->asString(node, "Mode", mode_name))
 			return 0;
-		}
 
 		auto pool = std::make_shared<sve_item_pool>();
 		pool->id = nameid;
@@ -87,102 +82,80 @@ public:
 			pool->mode = SVE_MODE_RO;
 		} else {
 			this->invalidWarning(node["Mode"], "Unknown Mode \"%s\" for Id %u.\n", mode_name.c_str(), nameid);
-			this->loaded_ok = false;
 			return 0;
 		}
 
 		if (this->nodeExists(node, "MinRefine")) {
-			if (!this->asInt32(node, "MinRefine", pool->min_refine)) {
-				this->loaded_ok = false;
+			if (!this->asInt32(node, "MinRefine", pool->min_refine))
 				return 0;
-			}
 		}
 
 		if (this->nodeExists(node, "MinEnchantgrade")) {
-			if (!this->asInt32(node, "MinEnchantgrade", pool->min_enchantgrade)) {
-				this->loaded_ok = false;
+			if (!this->asInt32(node, "MinEnchantgrade", pool->min_enchantgrade))
 				return 0;
-			}
 		}
 
 		const bool has_steps = this->nodeExists(node, "Steps");
 		const bool has_groups = this->nodeExists(node, "Groups");
 		if (has_steps && has_groups) {
 			this->invalidWarning(node, "Id %u has both Steps and Groups.\n", nameid);
-			this->loaded_ok = false;
 			return 0;
 		}
 
 		if (pool->mode == SVE_MODE_CARD) {
 			if (!has_steps) {
 				this->invalidWarning(node, "CardSlot Id %u is missing Steps.\n", nameid);
-				this->loaded_ok = false;
 				return 0;
 			}
 
 			const auto& stepsNode = node["Steps"];
 			if (!stepsNode.is_seq() || stepsNode.num_children() < 1) {
 				this->invalidWarning(node["Steps"], "CardSlot Id %u has empty Steps.\n", nameid);
-				this->loaded_ok = false;
 				return 0;
 			}
 
 			for (const ryml::NodeRef& stepNode : stepsNode) {
 				sve_step step;
 
-				if (!this->asInt32(stepNode, "CardIndex", step.card_index)) {
-					this->loaded_ok = false;
+				if (!this->asInt32(stepNode, "CardIndex", step.card_index))
 					return 0;
-				}
 				if (step.card_index < 0 || step.card_index > 3) {
 					this->invalidWarning(stepNode["CardIndex"], "CardIndex %d for Id %u must be 0..3.\n", step.card_index, nameid);
-					this->loaded_ok = false;
 					return 0;
 				}
 
 				if (this->nodeExists(stepNode, "Grade")) {
-					if (!this->asInt32(stepNode, "Grade", step.grade)) {
-						this->loaded_ok = false;
+					if (!this->asInt32(stepNode, "Grade", step.grade))
 						return 0;
-					}
 				}
 
 				if (this->nodeExists(stepNode, "SlotChance")) {
-					if (!this->asUInt32(stepNode, "SlotChance", step.slot_chance)) {
-						this->loaded_ok = false;
+					if (!this->asUInt32(stepNode, "SlotChance", step.slot_chance))
 						return 0;
-					}
 				}
 
 				if (!this->nodeExists(stepNode, "Enchants")) {
 					this->invalidWarning(stepNode, "Step CardIndex %d for Id %u is missing Enchants.\n", step.card_index, nameid);
-					this->loaded_ok = false;
 					return 0;
 				}
 
 				const auto& enchantsNode = stepNode["Enchants"];
 				if (!enchantsNode.is_seq() || enchantsNode.num_children() < 1) {
 					this->invalidWarning(stepNode["Enchants"], "Step CardIndex %d for Id %u has empty Enchants.\n", step.card_index, nameid);
-					this->loaded_ok = false;
 					return 0;
 				}
 
 				for (const ryml::NodeRef& enchantNode : enchantsNode) {
 					sve_enchant_entry entry;
-					if (!this->asUInt32(enchantNode, "Item", entry.item_id)) {
-						this->loaded_ok = false;
+					if (!this->asUInt32(enchantNode, "Item", entry.item_id))
 						return 0;
-					}
 					if (entry.item_id < 1) {
 						this->invalidWarning(enchantNode, "Enchant Item for Id %u must be positive.\n", nameid);
-						this->loaded_ok = false;
 						return 0;
 					}
 					if (this->nodeExists(enchantNode, "Chance")) {
-						if (!this->asUInt16(enchantNode, "Chance", entry.chance)) {
-							this->loaded_ok = false;
+						if (!this->asUInt16(enchantNode, "Chance", entry.chance))
 							return 0;
-						}
 					}
 					step.enchants.push_back(entry);
 				}
@@ -192,14 +165,12 @@ public:
 		} else {
 			if (!has_groups) {
 				this->invalidWarning(node, "RandomOption Id %u is missing Groups.\n", nameid);
-				this->loaded_ok = false;
 				return 0;
 			}
 
 			const auto& groupsNode = node["Groups"];
 			if (!groupsNode.is_seq() || groupsNode.num_children() < 1) {
 				this->invalidWarning(node["Groups"], "RandomOption Id %u has empty Groups.\n", nameid);
-				this->loaded_ok = false;
 				return 0;
 			}
 
@@ -209,12 +180,10 @@ public:
 					groupNode >> group_id;
 				} catch (const std::runtime_error&) {
 					this->invalidWarning(groupNode, "RandomOption Id %u has a Groups value that is not a number.\n", nameid);
-					this->loaded_ok = false;
 					return 0;
 				}
 				if (group_id < 1) {
 					this->invalidWarning(groupNode, "RandomOption Id %u has invalid group id %hu.\n", nameid, group_id);
-					this->loaded_ok = false;
 					return 0;
 				}
 				pool->ro_groups.push_back(group_id);
@@ -232,27 +201,48 @@ public:
 			return;
 		}
 
+		std::vector<t_itemid> drop_ids;
+
 		for (const auto& pair : *this) {
 			const auto& pool = pair.second;
+			bool drop = false;
+
 			if (pool->mode == SVE_MODE_CARD) {
 				for (const auto& step : pool->steps) {
 					for (const auto& entry : step.enchants) {
 						if (item_db.find(entry.item_id) == nullptr) {
 							ShowError("Silvervine enchant Id %u references missing charm %u.\n", pool->id, entry.item_id);
-							this->loaded_ok = false;
+							drop = true;
+							break;
 						}
 					}
+					if (drop)
+						break;
 				}
 			} else if (pool->mode == SVE_MODE_RO) {
 				for (uint16 group_id : pool->ro_groups) {
 					if (random_option_group.find(group_id) == nullptr) {
 						ShowError("Silvervine enchant Id %u references missing Random Option group %hu.\n", pool->id, group_id);
-						this->loaded_ok = false;
+						drop = true;
+						break;
 					}
 				}
 			}
+
+			if (drop)
+				drop_ids.push_back(pool->id);
 		}
 
+		for (t_itemid id : drop_ids)
+			this->erase(id);
+
+		if (this->empty()) {
+			this->loaded_ok = false;
+			return;
+		}
+
+		this->loaded_ok = true;
+		ShowStatus("Silvervine enchant: %zu item pool(s) loaded.\n", this->size());
 	}
 };
 

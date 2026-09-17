@@ -1,0 +1,58 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 15391
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 180
+      - 181
+  - Id: 15392
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 180
+      - 181
+  - Id: 15393
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 180
+      - 181
+  - Id: 15394
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 180
+      - 181
+  - Id: 15395
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 180
+      - 181
+  - Id: 15396
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 180
+      - 181
+  - Id: 20946
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 178
+  - Id: 22208
+    Mode: RandomOption
+    MinRefine: 0
+    MinEnchantgrade: 0
+    Groups:
+      - 179

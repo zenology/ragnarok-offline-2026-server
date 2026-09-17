@@ -275,13 +275,17 @@ BUILDIN_FUNC(sve_load)
 {
 	silvervine_enchant_db.clear();
 	const bool file_ok = silvervine_enchant_db.load();
-	if (!file_ok || !silvervine_enchant_db.loaded_ok || silvervine_enchant_db.empty()) {
+	if (!file_ok) {
 		silvervine_enchant_db.clear();
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
+	if (silvervine_enchant_db.empty()) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_SUCCESS;
+	}
 
-	script_pushint(st, 1);
+	script_pushint(st, static_cast<int32>(silvervine_enchant_db.size()));
 	return SCRIPT_CMD_SUCCESS;
 }
 

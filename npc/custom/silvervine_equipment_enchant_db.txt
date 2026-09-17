@@ -1,9 +1,10 @@
 // Silvervine enchant YAML loader. Pools live in silvervine_enchant_item_pools.yml
 -	script	silvervine_equipment_enchant_db	-1,{
 OnInit:
-	if (!sve_load())
+	.ItemCount = sve_load();
+	if (.ItemCount < 1)
 		debugmes "Silvervine enchant YAML failed to load.";
 	else
-		debugmes "Silvervine enchant YAML loaded.";
+		debugmes "Silvervine enchant YAML loaded " + .ItemCount + " items.";
 	end;
 }

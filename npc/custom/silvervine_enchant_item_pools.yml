@@ -4,14 +4,19 @@ Header:
 Footer:
   Imports:
     - Path: npc/custom/silvervine_enchant/abyss-glastheim.yml
+    - Path: npc/custom/silvervine_enchant/abyss-lake.yml
+    - Path: npc/custom/silvervine_enchant/accessories-enchantment.yml
     - Path: npc/custom/silvervine_enchant/adulter-fides.yml
     - Path: npc/custom/silvervine_enchant/ancient-hero.yml
     - Path: npc/custom/silvervine_enchant/ancient-hero-lt.yml
     - Path: npc/custom/silvervine_enchant/ancient-hero-patent.yml
+    - Path: npc/custom/silvervine_enchant/angel-poring-boots.yml
     - Path: npc/custom/silvervine_enchant/automatic.yml
+    - Path: npc/custom/silvervine_enchant/battle-processor.yml
     - Path: npc/custom/silvervine_enchant/biolab-5th-floor.yml
     - Path: npc/custom/silvervine_enchant/biolab-gear.yml
     - Path: npc/custom/silvervine_enchant/brilliant-light.yml
+    - Path: npc/custom/silvervine_enchant/cards-in-mouth.yml
     - Path: npc/custom/silvervine_enchant/circulation-of-life.yml
     - Path: npc/custom/silvervine_enchant/clergy.yml
     - Path: npc/custom/silvervine_enchant/constellation-nebula.yml
@@ -35,6 +40,7 @@ Footer:
     - Path: npc/custom/silvervine_enchant/issgard-dim-glacier.yml
     - Path: npc/custom/silvervine_enchant/issgard-glacier.yml
     - Path: npc/custom/silvervine_enchant/issgard-snow-flower.yml
+    - Path: npc/custom/silvervine_enchant/mental-pendants.yml
     - Path: npc/custom/silvervine_enchant/os-weapons.yml
     - Path: npc/custom/silvervine_enchant/vivatus-fides.yml
     - Path: npc/custom/silvervine_enchant/werners-laboratory.yml
