@@ -1,0 +1,60 @@
+//===== Ragnarok Offline =====================================
+//= Doberkin: chat-only Malangdo placeholder.
+//= Reserved later as the Silvervine start-tier charm upgrade NPC.
+//= This file currently has no upgrade, item, or currency logic.
+//============================================================
+
+mal_in01,25,167,2	script	Doberkin#sve_upg	4_M_DOGTRAVELER2,{
+L_Main:
+	mes "[Doberkin]";
+	mes "Sniff sniff. You are not a cat. Tail says hi anyway.";
+	next;
+	switch (select("Who are you?:How did you get here?:You live with cats?:Never mind.")) {
+	case 1:
+		mes "[Doberkin]";
+		mes "I am a dog. That is the whole personality.";
+		next;
+		mes "[Doberkin]";
+		mes "Name's Doberkin. I travel. I sniff. I chase things that run.";
+		next;
+		mes "[Doberkin]";
+		mes "Do not call me a wolf. Wolves have dignity. I have a wet nose.";
+		next;
+		goto L_Main;
+	case 2:
+		mes "[Doberkin]";
+		mes "Wind. A big rude wind. One minute I'm on a boat, next minute I'm swimming.";
+		next;
+		mes "[Doberkin]";
+		mes "I paddled. I barked. I swallowed half the sea. Very heroic. Very salty.";
+		next;
+		mes "[Doberkin]";
+		mes "Then someone fished me out. So I owe a life debt. Gratitude. Honor. All that.";
+		next;
+		mes "[Doberkin]";
+		mes "...No. That is a lie. I owe Silvervine.";
+		next;
+		mes "[Doberkin]";
+		mes "Hundreds of millions. The cats 'saved' me, then they handed me a bill.";
+		next;
+		goto L_Main;
+	case 3:
+		mes "[Doberkin]";
+		mes "Cat island. Cat rooms. Cat fur in my food. I sneeze just looking at them.";
+		next;
+		mes "[Doberkin]";
+		mes "I cannot leave. The tab is too big. My paws are stuck to this floor.";
+		next;
+		mes "[Doberkin]";
+		mes "That old cat over there works on gear. Fancy fruit. Fancy enchants.";
+		next;
+		mes "[Doberkin]";
+		mes "Me? I just watch. For now. Still counting the debt.";
+		next;
+		goto L_Main;
+	default:
+		mes "[Doberkin]";
+		mes "Woof. Come back if you bring Silvervine. Or a stick. Stick is fine too.";
+		close;
+	}
+}
