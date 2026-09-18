@@ -4553,3 +4553,160 @@ Body:
             MinValue: 5
             MaxValue: 10
             Chance: 10000
+  - Id: 199
+    Group: FAN_UPGRADE_KIT_EX
+    Slots:
+      - Slot: 1
+        Options:
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 10
+            Chance: 10000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: MELEE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 7
+            Chance: 10000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 7
+            Chance: 10000
+          - Option: ADDSKILLMDAMAGE_ALL
+            MinValue: 1
+            MaxValue: 7
+            Chance: 10000
+          - Option: VAR_CRITICALSUCCESSVALUE
+            MinValue: 1
+            MaxValue: 7
+            Chance: 10000
+          - Option: VAR_HITSUCCESSVALUE
+            MinValue: 5
+            MaxValue: 15
+            Chance: 10000
+          - Option: DEC_SP_CONSUMPTION
+            MinValue: 3
+            MaxValue: 5
+            Chance: 10000
+          - Option: VAR_MAXHPPERCENT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 10000
+          - Option: VAR_MAXSPPERCENT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 10000
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 10000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 10000
+      - Slot: 2
+        Options:
+          - Option: VAR_PLUSASPDPERCENT
+            MinValue: 3
+            MaxValue: 10
+            Chance: 10000
+          - Option: DEC_SPELL_CAST_TIME
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: DAMAGE_CRI_TARGET
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: MELEE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 7
+            Chance: 10000
+          - Option: RANGE_ATTACK_DAMAGE_TARGET
+            MinValue: 1
+            MaxValue: 7
+            Chance: 10000
+          - Option: ADDSKILLMDAMAGE_ALL
+            MinValue: 1
+            MaxValue: 7
+            Chance: 10000
+          - Option: VAR_CRITICALSUCCESSVALUE
+            MinValue: 1
+            MaxValue: 7
+            Chance: 10000
+          - Option: VAR_HITSUCCESSVALUE
+            MinValue: 5
+            MaxValue: 15
+            Chance: 10000
+          - Option: DEC_SP_CONSUMPTION
+            MinValue: 3
+            MaxValue: 5
+            Chance: 10000
+          - Option: VAR_MAXHPPERCENT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 10000
+          - Option: VAR_MAXSPPERCENT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 10000
+          - Option: VAR_ATKPERCENT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 10000
+          - Option: VAR_MAGICATKPERCENT
+            MinValue: 1
+            MaxValue: 5
+            Chance: 10000
+      - Slot: 3
+        Options:
+          - Option: ADDEXPPERCENT_KILLRACE_NOTHING
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_UNDEAD
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_ANIMAL
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_PLANT
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_INSECT
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_FISHS
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_DEVIL
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_HUMAN
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_ANGEL
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_DRAGON
+            MinValue: 5
+            MaxValue: 10
+            Chance: 10000
+          - Option: ADDEXPPERCENT_KILLRACE_ALL
+            MinValue: 3
+            MaxValue: 5
+            Chance: 10000

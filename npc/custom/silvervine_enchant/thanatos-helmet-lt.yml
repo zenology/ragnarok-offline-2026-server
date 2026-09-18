@@ -1,0 +1,84 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 400135
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29061, Chance: 10000 }
+          - { Item: 29071, Chance: 10000 }
+          - { Item: 29081, Chance: 10000 }
+          - { Item: 29091, Chance: 10000 }
+          - { Item: 29101, Chance: 10000 }
+          - { Item: 29111, Chance: 10000 }
+          - { Item: 29706, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311367, Chance: 10000 }
+          - { Item: 311370, Chance: 10000 }
+          - { Item: 311373, Chance: 10000 }
+          - { Item: 311376, Chance: 10000 }
+  - Id: 400142
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29061, Chance: 10000 }
+          - { Item: 29071, Chance: 10000 }
+          - { Item: 29081, Chance: 10000 }
+          - { Item: 29091, Chance: 10000 }
+          - { Item: 29101, Chance: 10000 }
+          - { Item: 29111, Chance: 10000 }
+          - { Item: 29706, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311367, Chance: 10000 }
+          - { Item: 311370, Chance: 10000 }
+          - { Item: 311373, Chance: 10000 }
+          - { Item: 311376, Chance: 10000 }
+  - Id: 400145
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29061, Chance: 10000 }
+          - { Item: 29071, Chance: 10000 }
+          - { Item: 29081, Chance: 10000 }
+          - { Item: 29091, Chance: 10000 }
+          - { Item: 29101, Chance: 10000 }
+          - { Item: 29111, Chance: 10000 }
+          - { Item: 29706, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311367, Chance: 10000 }
+          - { Item: 311370, Chance: 10000 }
+          - { Item: 311373, Chance: 10000 }
+          - { Item: 311376, Chance: 10000 }
+  - Id: 400151
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29061, Chance: 10000 }
+          - { Item: 29071, Chance: 10000 }
+          - { Item: 29081, Chance: 10000 }
+          - { Item: 29091, Chance: 10000 }
+          - { Item: 29101, Chance: 10000 }
+          - { Item: 29111, Chance: 10000 }
+          - { Item: 29706, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311367, Chance: 10000 }
+          - { Item: 311370, Chance: 10000 }
+          - { Item: 311373, Chance: 10000 }
+          - { Item: 311376, Chance: 10000 }

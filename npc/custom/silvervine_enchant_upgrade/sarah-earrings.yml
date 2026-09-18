@@ -1,0 +1,128 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 28310
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4939 }
+              - { Item: 4940 }
+          - Levels:
+              - { Item: 4863 }
+              - { Item: 4864 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+          - Levels:
+              - { Item: 4942 }
+              - { Item: 4943 }
+          - Levels:
+              - { Item: 4945 }
+              - { Item: 4946 }
+          - Levels:
+              - { Item: 4897 }
+              - { Item: 4898 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+          - Levels:
+              - { Item: 4948 }
+              - { Item: 4949 }
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4939 }
+              - { Item: 4940 }
+              - { Item: 4941 }
+          - Levels:
+              - { Item: 4863 }
+              - { Item: 4864 }
+              - { Item: 4865 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+          - Levels:
+              - { Item: 4942 }
+              - { Item: 4943 }
+              - { Item: 4944 }
+          - Levels:
+              - { Item: 4945 }
+              - { Item: 4946 }
+              - { Item: 4947 }
+          - Levels:
+              - { Item: 4897 }
+              - { Item: 4898 }
+              - { Item: 4899 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+          - Levels:
+              - { Item: 4948 }
+              - { Item: 4949 }
+              - { Item: 4950 }
+  - Id: 28311
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4939 }
+              - { Item: 4940 }
+          - Levels:
+              - { Item: 4863 }
+              - { Item: 4864 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+          - Levels:
+              - { Item: 4942 }
+              - { Item: 4943 }
+          - Levels:
+              - { Item: 4945 }
+              - { Item: 4946 }
+          - Levels:
+              - { Item: 4897 }
+              - { Item: 4898 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+          - Levels:
+              - { Item: 4948 }
+              - { Item: 4949 }
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4939 }
+              - { Item: 4940 }
+              - { Item: 4941 }
+          - Levels:
+              - { Item: 4863 }
+              - { Item: 4864 }
+              - { Item: 4865 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+          - Levels:
+              - { Item: 4942 }
+              - { Item: 4943 }
+              - { Item: 4944 }
+          - Levels:
+              - { Item: 4945 }
+              - { Item: 4946 }
+              - { Item: 4947 }
+          - Levels:
+              - { Item: 4897 }
+              - { Item: 4898 }
+              - { Item: 4899 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+          - Levels:
+              - { Item: 4948 }
+              - { Item: 4949 }
+              - { Item: 4950 }

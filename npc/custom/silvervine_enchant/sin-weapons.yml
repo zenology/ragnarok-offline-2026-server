@@ -1,0 +1,238 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 500007
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 500008
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 510008
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 510009
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 520002
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 530002
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 540004
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 540005
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 550008
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 550009
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 560004
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 570005
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 580005
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 590006
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 600008
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 610006
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 630003
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 640005
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 650003
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 700007
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 700008
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 700009
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 810000
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 820000
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 830001
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
+  - Id: 840000
+    Mode: RandomOption
+    Groups:
+      - 157
+      - 158
+      - 159
+      - 160
+      - 161
+      - 162
