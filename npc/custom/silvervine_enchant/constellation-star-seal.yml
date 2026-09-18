@@ -8,14 +8,10 @@ Body:
       - CardIndex: 3
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -26,14 +22,10 @@ Body:
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -54,14 +46,10 @@ Body:
       - CardIndex: 3
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -72,14 +60,10 @@ Body:
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -100,14 +84,10 @@ Body:
       - CardIndex: 3
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -118,14 +98,10 @@ Body:
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -146,14 +122,10 @@ Body:
       - CardIndex: 3
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -164,14 +136,10 @@ Body:
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -192,14 +160,10 @@ Body:
       - CardIndex: 3
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -210,14 +174,10 @@ Body:
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -238,14 +198,10 @@ Body:
       - CardIndex: 3
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }
@@ -256,14 +212,10 @@ Body:
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
-          - { Item: 4808, Chance: 10000 }
           - { Item: 4809, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
           - { Item: 4834, Chance: 10000 }
-          - { Item: 4835, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
           - { Item: 310692, Chance: 10000 }
           - { Item: 310697, Chance: 10000 }
           - { Item: 310702, Chance: 10000 }

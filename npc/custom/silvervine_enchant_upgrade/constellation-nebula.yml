@@ -4,6 +4,28 @@ Header:
 Body:
   - Id: 450169
     Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -58,6 +80,28 @@ Body:
               - { Item: 310691 }
   - Id: 450170
     Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -112,6 +156,28 @@ Body:
               - { Item: 310691 }
   - Id: 450171
     Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -166,6 +232,28 @@ Body:
               - { Item: 310691 }
   - Id: 450172
     Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -220,6 +308,28 @@ Body:
               - { Item: 310691 }
   - Id: 450173
     Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -274,6 +384,28 @@ Body:
               - { Item: 310691 }
   - Id: 450174
     Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
       - CardIndex: 2
         Series:
           - Levels:

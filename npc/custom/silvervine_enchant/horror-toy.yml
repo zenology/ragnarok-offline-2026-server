@@ -9,25 +9,11 @@ Body:
         SlotChance: 100000
         Enchants:
           - { Item: 4820, Chance: 10000 }
-          - { Item: 4821, Chance: 10000 }
-          - { Item: 4822, Chance: 10000 }
-          - { Item: 4823, Chance: 10000 }
-          - { Item: 4824, Chance: 10000 }
-          - { Item: 4825, Chance: 10000 }
           - { Item: 4816, Chance: 10000 }
-          - { Item: 4843, Chance: 10000 }
-          - { Item: 4844, Chance: 10000 }
           - { Item: 4760, Chance: 10000 }
-          - { Item: 4761, Chance: 10000 }
-          - { Item: 4806, Chance: 10000 }
           - { Item: 4872, Chance: 10000 }
-          - { Item: 4873, Chance: 10000 }
-          - { Item: 4881, Chance: 10000 }
           - { Item: 4807, Chance: 10000 }
           - { Item: 4827, Chance: 10000 }
-          - { Item: 4828, Chance: 10000 }
-          - { Item: 4829, Chance: 10000 }
-          - { Item: 4830, Chance: 10000 }
   - Id: 18849
     Mode: CardSlot
     Steps:
@@ -35,43 +21,19 @@ Body:
         SlotChance: 100000
         Enchants:
           - { Item: 4810, Chance: 10000 }
-          - { Item: 4809, Chance: 10000 }
-          - { Item: 4808, Chance: 10000 }
-          - { Item: 4820, Chance: 10000 }
           - { Item: 4818, Chance: 10000 }
-          - { Item: 4817, Chance: 10000 }
-          - { Item: 4816, Chance: 10000 }
           - { Item: 4760, Chance: 10000 }
-          - { Item: 4761, Chance: 10000 }
           - { Item: 4869, Chance: 10000 }
-          - { Item: 4872, Chance: 10000 }
-          - { Item: 4873, Chance: 10000 }
-          - { Item: 4881, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
-          - { Item: 4826, Chance: 10000 }
-          - { Item: 4827, Chance: 10000 }
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
           - { Item: 4700, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
           - { Item: 4710, Chance: 10000 }
-          - { Item: 4711, Chance: 10000 }
-          - { Item: 4712, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
           - { Item: 4740, Chance: 10000 }
-          - { Item: 4741, Chance: 10000 }
-          - { Item: 4742, Chance: 10000 }
           - { Item: 4750, Chance: 10000 }
-          - { Item: 4751, Chance: 10000 }
-          - { Item: 4752, Chance: 10000 }
   - Id: 18848
     Mode: CardSlot
     Steps:
@@ -79,43 +41,19 @@ Body:
         SlotChance: 100000
         Enchants:
           - { Item: 4810, Chance: 10000 }
-          - { Item: 4809, Chance: 10000 }
-          - { Item: 4808, Chance: 10000 }
-          - { Item: 4820, Chance: 10000 }
           - { Item: 4818, Chance: 10000 }
-          - { Item: 4817, Chance: 10000 }
-          - { Item: 4816, Chance: 10000 }
           - { Item: 4760, Chance: 10000 }
-          - { Item: 4761, Chance: 10000 }
           - { Item: 4869, Chance: 10000 }
-          - { Item: 4872, Chance: 10000 }
-          - { Item: 4873, Chance: 10000 }
-          - { Item: 4881, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
-          - { Item: 4826, Chance: 10000 }
-          - { Item: 4827, Chance: 10000 }
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
           - { Item: 4700, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
           - { Item: 4710, Chance: 10000 }
-          - { Item: 4711, Chance: 10000 }
-          - { Item: 4712, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
           - { Item: 4740, Chance: 10000 }
-          - { Item: 4741, Chance: 10000 }
-          - { Item: 4742, Chance: 10000 }
           - { Item: 4750, Chance: 10000 }
-          - { Item: 4751, Chance: 10000 }
-          - { Item: 4752, Chance: 10000 }
   - Id: 2486
     Mode: CardSlot
     Steps:
@@ -123,43 +61,19 @@ Body:
         SlotChance: 100000
         Enchants:
           - { Item: 4810, Chance: 10000 }
-          - { Item: 4809, Chance: 10000 }
-          - { Item: 4808, Chance: 10000 }
-          - { Item: 4820, Chance: 10000 }
           - { Item: 4818, Chance: 10000 }
-          - { Item: 4817, Chance: 10000 }
-          - { Item: 4816, Chance: 10000 }
           - { Item: 4760, Chance: 10000 }
-          - { Item: 4761, Chance: 10000 }
           - { Item: 4869, Chance: 10000 }
-          - { Item: 4872, Chance: 10000 }
-          - { Item: 4873, Chance: 10000 }
-          - { Item: 4881, Chance: 10000 }
           - { Item: 4813, Chance: 10000 }
-          - { Item: 4812, Chance: 10000 }
-          - { Item: 4826, Chance: 10000 }
-          - { Item: 4827, Chance: 10000 }
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
           - { Item: 4700, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
           - { Item: 4710, Chance: 10000 }
-          - { Item: 4711, Chance: 10000 }
-          - { Item: 4712, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
           - { Item: 4740, Chance: 10000 }
-          - { Item: 4741, Chance: 10000 }
-          - { Item: 4742, Chance: 10000 }
           - { Item: 4750, Chance: 10000 }
-          - { Item: 4751, Chance: 10000 }
-          - { Item: 4752, Chance: 10000 }
   - Id: 2980
     Mode: CardSlot
     Steps:
@@ -169,45 +83,18 @@ Body:
           - { Item: 4700, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4703, Chance: 10000 }
-          - { Item: 4733, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
           - { Item: 4700, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4703, Chance: 10000 }
-          - { Item: 4733, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
       - CardIndex: 1
         SlotChance: 100000
         Enchants:
           - { Item: 4710, Chance: 10000 }
           - { Item: 4740, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4711, Chance: 10000 }
-          - { Item: 4741, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4712, Chance: 10000 }
-          - { Item: 4742, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4713, Chance: 10000 }
-          - { Item: 4743, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
   - Id: 2977
     Mode: CardSlot
     Steps:
@@ -217,45 +104,18 @@ Body:
           - { Item: 4700, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4703, Chance: 10000 }
-          - { Item: 4733, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
           - { Item: 4700, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4703, Chance: 10000 }
-          - { Item: 4733, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
       - CardIndex: 1
         SlotChance: 100000
         Enchants:
           - { Item: 4710, Chance: 10000 }
           - { Item: 4740, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4711, Chance: 10000 }
-          - { Item: 4741, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4712, Chance: 10000 }
-          - { Item: 4742, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4713, Chance: 10000 }
-          - { Item: 4743, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
   - Id: 2978
     Mode: CardSlot
     Steps:
@@ -265,45 +125,18 @@ Body:
           - { Item: 4700, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4703, Chance: 10000 }
-          - { Item: 4733, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
           - { Item: 4700, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4703, Chance: 10000 }
-          - { Item: 4733, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
       - CardIndex: 1
         SlotChance: 100000
         Enchants:
           - { Item: 4710, Chance: 10000 }
           - { Item: 4740, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4711, Chance: 10000 }
-          - { Item: 4741, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4712, Chance: 10000 }
-          - { Item: 4742, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4713, Chance: 10000 }
-          - { Item: 4743, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
   - Id: 2976
     Mode: CardSlot
     Steps:
@@ -313,42 +146,15 @@ Body:
           - { Item: 4700, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4703, Chance: 10000 }
-          - { Item: 4733, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
       - CardIndex: 2
         SlotChance: 100000
         Enchants:
           - { Item: 4700, Chance: 10000 }
           - { Item: 4730, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4701, Chance: 10000 }
-          - { Item: 4731, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4702, Chance: 10000 }
-          - { Item: 4732, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4703, Chance: 10000 }
-          - { Item: 4733, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }
       - CardIndex: 1
         SlotChance: 100000
         Enchants:
           - { Item: 4710, Chance: 10000 }
           - { Item: 4740, Chance: 10000 }
           - { Item: 4720, Chance: 10000 }
-          - { Item: 4711, Chance: 10000 }
-          - { Item: 4741, Chance: 10000 }
-          - { Item: 4721, Chance: 10000 }
-          - { Item: 4712, Chance: 10000 }
-          - { Item: 4742, Chance: 10000 }
-          - { Item: 4722, Chance: 10000 }
-          - { Item: 4713, Chance: 10000 }
-          - { Item: 4743, Chance: 10000 }
-          - { Item: 4723, Chance: 10000 }

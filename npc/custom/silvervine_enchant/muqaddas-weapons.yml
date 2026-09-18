@@ -1,0 +1,395 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 500074
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 510102
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 510103
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 510104
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 520031
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 540074
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 540075
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 550117
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 550118
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 550119
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 560048
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 570045
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 580046
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 590062
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 590063
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 610054
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 630028
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 640046
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 700076
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 810034
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 820028
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 830033
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }
+  - Id: 840028
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312004, Chance: 10000 }
+          - { Item: 312005, Chance: 10000 }
+          - { Item: 312006, Chance: 10000 }
+          - { Item: 312007, Chance: 10000 }
+          - { Item: 312008, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 312009, Chance: 10000 }
+          - { Item: 312010, Chance: 10000 }
+          - { Item: 312011, Chance: 10000 }

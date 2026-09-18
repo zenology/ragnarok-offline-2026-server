@@ -42,6 +42,18 @@ Body:
               - { Item: 313009 }
               - { Item: 313010 }
               - { Item: 313011 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 311397 }
+              - { Item: 311398 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
   - Id: 490484
     Slots:
       - CardIndex: 2
@@ -82,6 +94,18 @@ Body:
               - { Item: 313009 }
               - { Item: 313010 }
               - { Item: 313011 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 311397 }
+              - { Item: 311398 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
   - Id: 490485
     Slots:
       - CardIndex: 2
@@ -122,6 +146,18 @@ Body:
               - { Item: 313009 }
               - { Item: 313010 }
               - { Item: 313011 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 311397 }
+              - { Item: 311398 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
   - Id: 490486
     Slots:
       - CardIndex: 2
@@ -162,6 +198,18 @@ Body:
               - { Item: 313009 }
               - { Item: 313010 }
               - { Item: 313011 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 311397 }
+              - { Item: 311398 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
   - Id: 480345
     Slots:
       - CardIndex: 3

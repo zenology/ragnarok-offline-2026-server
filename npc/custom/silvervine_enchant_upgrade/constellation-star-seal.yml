@@ -48,6 +48,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -92,6 +104,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 1
         Series:
           - Levels:
@@ -164,6 +188,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -208,6 +244,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 1
         Series:
           - Levels:
@@ -280,6 +328,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -324,6 +384,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 1
         Series:
           - Levels:
@@ -396,6 +468,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -440,6 +524,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 1
         Series:
           - Levels:
@@ -512,6 +608,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -556,6 +664,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 1
         Series:
           - Levels:
@@ -628,6 +748,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 2
         Series:
           - Levels:
@@ -672,6 +804,18 @@ Body:
               - { Item: 310724 }
               - { Item: 310725 }
               - { Item: 310726 }
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+          - Levels:
+              - { Item: 4813 }
+              - { Item: 4812 }
+          - Levels:
+              - { Item: 4816 }
+              - { Item: 4843 }
+          - Levels:
+              - { Item: 4834 }
+              - { Item: 4835 }
       - CardIndex: 1
         Series:
           - Levels:

@@ -1,0 +1,78 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 2981
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4791 }
+              - { Item: 4792 }
+              - { Item: 4793 }
+              - { Item: 4794 }
+              - { Item: 4893 }
+          - Levels:
+              - { Item: 4890 }
+              - { Item: 4786 }
+              - { Item: 4891 }
+              - { Item: 4787 }
+              - { Item: 4892 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+              - { Item: 4867 }
+              - { Item: 4868 }
+              - { Item: 4900 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 4882 }
+              - { Item: 4894 }
+              - { Item: 4895 }
+          - Levels:
+              - { Item: 4883 }
+              - { Item: 4896 }
+              - { Item: 4897 }
+              - { Item: 4898 }
+              - { Item: 4899 }
+      - CardIndex: 0
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
