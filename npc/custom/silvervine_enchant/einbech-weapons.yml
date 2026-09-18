@@ -1,0 +1,94 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 1867
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 2058
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 13346
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 16099
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 18190
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 21054
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 26162
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 26215
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 28045
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 28140
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 28635
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 28771
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 28772
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 32026
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 32110
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 32303
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 32352
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164
+  - Id: 550006
+    Mode: RandomOption
+    Groups:
+      - 163
+      - 164

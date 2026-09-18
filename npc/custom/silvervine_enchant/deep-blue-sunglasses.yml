@@ -1,0 +1,12 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 410079
+    Mode: RandomOption
+    Groups:
+      - 166
+  - Id: 410080
+    Mode: RandomOption
+    Groups:
+      - 166

@@ -1,0 +1,63 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 15110
+      - CardIndex: 3 2 1
+        Series:
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+          - Levels:
+              - { Item: 4762 }
+              - { Item: 4763 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+              - { Item: 4867 }
+          - Levels:
+              - { Item: 4933 }
+              - { Item: 4934 }
+          - Levels:
+              - { Item: 4792 }
+              - { Item: 4793 }
+      - CardIndex: ItemEntry
+        Series:
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+          - Levels:
+              - { Item: 4762 }
+              - { Item: 4763 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+              - { Item: 4867 }
+          - Levels:
+              - { Item: 4933 }
+              - { Item: 4934 }
+          - Levels:
+              - { Item: 4792 }
+              - { Item: 4793 }

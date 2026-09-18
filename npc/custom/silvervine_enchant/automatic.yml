@@ -1,0 +1,514 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 450127
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310099, Chance: 10000 }
+          - { Item: 310100, Chance: 10000 }
+          - { Item: 310101, Chance: 10000 }
+          - { Item: 310105, Chance: 10000 }
+          - { Item: 310106, Chance: 10000 }
+          - { Item: 310107, Chance: 10000 }
+          - { Item: 310108, Chance: 10000 }
+          - { Item: 310109, Chance: 10000 }
+          - { Item: 310178, Chance: 10000 }
+          - { Item: 310110, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310099, Chance: 10000 }
+          - { Item: 310100, Chance: 10000 }
+          - { Item: 310101, Chance: 10000 }
+          - { Item: 310127, Chance: 10000 }
+          - { Item: 310128, Chance: 10000 }
+          - { Item: 310129, Chance: 10000 }
+          - { Item: 310130, Chance: 10000 }
+          - { Item: 310131, Chance: 10000 }
+          - { Item: 310132, Chance: 10000 }
+          - { Item: 310133, Chance: 10000 }
+          - { Item: 310134, Chance: 10000 }
+          - { Item: 310135, Chance: 10000 }
+          - { Item: 310136, Chance: 10000 }
+          - { Item: 310137, Chance: 10000 }
+          - { Item: 310138, Chance: 10000 }
+          - { Item: 310139, Chance: 10000 }
+          - { Item: 310140, Chance: 10000 }
+          - { Item: 310141, Chance: 10000 }
+          - { Item: 310142, Chance: 10000 }
+          - { Item: 310143, Chance: 10000 }
+          - { Item: 310144, Chance: 10000 }
+          - { Item: 310145, Chance: 10000 }
+          - { Item: 310146, Chance: 10000 }
+          - { Item: 310147, Chance: 10000 }
+          - { Item: 310148, Chance: 10000 }
+          - { Item: 310149, Chance: 10000 }
+          - { Item: 310150, Chance: 10000 }
+          - { Item: 310151, Chance: 10000 }
+          - { Item: 310152, Chance: 10000 }
+          - { Item: 310153, Chance: 10000 }
+          - { Item: 310154, Chance: 10000 }
+          - { Item: 310155, Chance: 10000 }
+          - { Item: 310156, Chance: 10000 }
+          - { Item: 310157, Chance: 10000 }
+          - { Item: 310158, Chance: 10000 }
+          - { Item: 310159, Chance: 10000 }
+          - { Item: 310160, Chance: 10000 }
+          - { Item: 310161, Chance: 10000 }
+          - { Item: 310162, Chance: 10000 }
+          - { Item: 310163, Chance: 10000 }
+          - { Item: 310164, Chance: 10000 }
+          - { Item: 310165, Chance: 10000 }
+          - { Item: 310166, Chance: 10000 }
+          - { Item: 310167, Chance: 10000 }
+          - { Item: 310168, Chance: 10000 }
+          - { Item: 310169, Chance: 10000 }
+          - { Item: 310170, Chance: 10000 }
+          - { Item: 310171, Chance: 10000 }
+          - { Item: 310172, Chance: 10000 }
+          - { Item: 310173, Chance: 10000 }
+          - { Item: 310174, Chance: 10000 }
+          - { Item: 310175, Chance: 10000 }
+          - { Item: 310176, Chance: 10000 }
+          - { Item: 310177, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310127, Chance: 10000 }
+          - { Item: 310128, Chance: 10000 }
+          - { Item: 310129, Chance: 10000 }
+          - { Item: 310130, Chance: 10000 }
+          - { Item: 310131, Chance: 10000 }
+          - { Item: 310132, Chance: 10000 }
+          - { Item: 310133, Chance: 10000 }
+          - { Item: 310134, Chance: 10000 }
+          - { Item: 310135, Chance: 10000 }
+          - { Item: 310136, Chance: 10000 }
+          - { Item: 310137, Chance: 10000 }
+          - { Item: 310138, Chance: 10000 }
+          - { Item: 310139, Chance: 10000 }
+          - { Item: 310140, Chance: 10000 }
+          - { Item: 310141, Chance: 10000 }
+          - { Item: 310142, Chance: 10000 }
+          - { Item: 310143, Chance: 10000 }
+          - { Item: 310144, Chance: 10000 }
+          - { Item: 310145, Chance: 10000 }
+          - { Item: 310146, Chance: 10000 }
+          - { Item: 310147, Chance: 10000 }
+          - { Item: 310148, Chance: 10000 }
+          - { Item: 310149, Chance: 10000 }
+          - { Item: 310150, Chance: 10000 }
+          - { Item: 310151, Chance: 10000 }
+          - { Item: 310152, Chance: 10000 }
+          - { Item: 310153, Chance: 10000 }
+          - { Item: 310154, Chance: 10000 }
+          - { Item: 310155, Chance: 10000 }
+          - { Item: 310156, Chance: 10000 }
+          - { Item: 310157, Chance: 10000 }
+          - { Item: 310158, Chance: 10000 }
+          - { Item: 310159, Chance: 10000 }
+          - { Item: 310160, Chance: 10000 }
+          - { Item: 310161, Chance: 10000 }
+          - { Item: 310162, Chance: 10000 }
+          - { Item: 310163, Chance: 10000 }
+          - { Item: 310164, Chance: 10000 }
+          - { Item: 310165, Chance: 10000 }
+          - { Item: 310166, Chance: 10000 }
+          - { Item: 310167, Chance: 10000 }
+          - { Item: 310168, Chance: 10000 }
+          - { Item: 310169, Chance: 10000 }
+          - { Item: 310170, Chance: 10000 }
+          - { Item: 310171, Chance: 10000 }
+          - { Item: 310172, Chance: 10000 }
+          - { Item: 310173, Chance: 10000 }
+          - { Item: 310174, Chance: 10000 }
+          - { Item: 310175, Chance: 10000 }
+          - { Item: 310176, Chance: 10000 }
+          - { Item: 310177, Chance: 10000 }
+          - { Item: 310117, Chance: 10000 }
+  - Id: 450128
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310099, Chance: 10000 }
+          - { Item: 310100, Chance: 10000 }
+          - { Item: 310101, Chance: 10000 }
+          - { Item: 310105, Chance: 10000 }
+          - { Item: 310106, Chance: 10000 }
+          - { Item: 310107, Chance: 10000 }
+          - { Item: 310108, Chance: 10000 }
+          - { Item: 310109, Chance: 10000 }
+          - { Item: 310178, Chance: 10000 }
+          - { Item: 310110, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310099, Chance: 10000 }
+          - { Item: 310100, Chance: 10000 }
+          - { Item: 310101, Chance: 10000 }
+          - { Item: 310127, Chance: 10000 }
+          - { Item: 310128, Chance: 10000 }
+          - { Item: 310129, Chance: 10000 }
+          - { Item: 310130, Chance: 10000 }
+          - { Item: 310131, Chance: 10000 }
+          - { Item: 310132, Chance: 10000 }
+          - { Item: 310133, Chance: 10000 }
+          - { Item: 310134, Chance: 10000 }
+          - { Item: 310135, Chance: 10000 }
+          - { Item: 310136, Chance: 10000 }
+          - { Item: 310137, Chance: 10000 }
+          - { Item: 310138, Chance: 10000 }
+          - { Item: 310139, Chance: 10000 }
+          - { Item: 310140, Chance: 10000 }
+          - { Item: 310141, Chance: 10000 }
+          - { Item: 310142, Chance: 10000 }
+          - { Item: 310143, Chance: 10000 }
+          - { Item: 310144, Chance: 10000 }
+          - { Item: 310145, Chance: 10000 }
+          - { Item: 310146, Chance: 10000 }
+          - { Item: 310147, Chance: 10000 }
+          - { Item: 310148, Chance: 10000 }
+          - { Item: 310149, Chance: 10000 }
+          - { Item: 310150, Chance: 10000 }
+          - { Item: 310151, Chance: 10000 }
+          - { Item: 310152, Chance: 10000 }
+          - { Item: 310153, Chance: 10000 }
+          - { Item: 310154, Chance: 10000 }
+          - { Item: 310155, Chance: 10000 }
+          - { Item: 310156, Chance: 10000 }
+          - { Item: 310157, Chance: 10000 }
+          - { Item: 310158, Chance: 10000 }
+          - { Item: 310159, Chance: 10000 }
+          - { Item: 310160, Chance: 10000 }
+          - { Item: 310161, Chance: 10000 }
+          - { Item: 310162, Chance: 10000 }
+          - { Item: 310163, Chance: 10000 }
+          - { Item: 310164, Chance: 10000 }
+          - { Item: 310165, Chance: 10000 }
+          - { Item: 310166, Chance: 10000 }
+          - { Item: 310167, Chance: 10000 }
+          - { Item: 310168, Chance: 10000 }
+          - { Item: 310169, Chance: 10000 }
+          - { Item: 310170, Chance: 10000 }
+          - { Item: 310171, Chance: 10000 }
+          - { Item: 310172, Chance: 10000 }
+          - { Item: 310173, Chance: 10000 }
+          - { Item: 310174, Chance: 10000 }
+          - { Item: 310175, Chance: 10000 }
+          - { Item: 310176, Chance: 10000 }
+          - { Item: 310177, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310127, Chance: 10000 }
+          - { Item: 310128, Chance: 10000 }
+          - { Item: 310129, Chance: 10000 }
+          - { Item: 310130, Chance: 10000 }
+          - { Item: 310131, Chance: 10000 }
+          - { Item: 310132, Chance: 10000 }
+          - { Item: 310133, Chance: 10000 }
+          - { Item: 310134, Chance: 10000 }
+          - { Item: 310135, Chance: 10000 }
+          - { Item: 310136, Chance: 10000 }
+          - { Item: 310137, Chance: 10000 }
+          - { Item: 310138, Chance: 10000 }
+          - { Item: 310139, Chance: 10000 }
+          - { Item: 310140, Chance: 10000 }
+          - { Item: 310141, Chance: 10000 }
+          - { Item: 310142, Chance: 10000 }
+          - { Item: 310143, Chance: 10000 }
+          - { Item: 310144, Chance: 10000 }
+          - { Item: 310145, Chance: 10000 }
+          - { Item: 310146, Chance: 10000 }
+          - { Item: 310147, Chance: 10000 }
+          - { Item: 310148, Chance: 10000 }
+          - { Item: 310149, Chance: 10000 }
+          - { Item: 310150, Chance: 10000 }
+          - { Item: 310151, Chance: 10000 }
+          - { Item: 310152, Chance: 10000 }
+          - { Item: 310153, Chance: 10000 }
+          - { Item: 310154, Chance: 10000 }
+          - { Item: 310155, Chance: 10000 }
+          - { Item: 310156, Chance: 10000 }
+          - { Item: 310157, Chance: 10000 }
+          - { Item: 310158, Chance: 10000 }
+          - { Item: 310159, Chance: 10000 }
+          - { Item: 310160, Chance: 10000 }
+          - { Item: 310161, Chance: 10000 }
+          - { Item: 310162, Chance: 10000 }
+          - { Item: 310163, Chance: 10000 }
+          - { Item: 310164, Chance: 10000 }
+          - { Item: 310165, Chance: 10000 }
+          - { Item: 310166, Chance: 10000 }
+          - { Item: 310167, Chance: 10000 }
+          - { Item: 310168, Chance: 10000 }
+          - { Item: 310169, Chance: 10000 }
+          - { Item: 310170, Chance: 10000 }
+          - { Item: 310171, Chance: 10000 }
+          - { Item: 310172, Chance: 10000 }
+          - { Item: 310173, Chance: 10000 }
+          - { Item: 310174, Chance: 10000 }
+          - { Item: 310175, Chance: 10000 }
+          - { Item: 310176, Chance: 10000 }
+          - { Item: 310177, Chance: 10000 }
+          - { Item: 310117, Chance: 10000 }
+  - Id: 470022
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310096, Chance: 10000 }
+          - { Item: 310097, Chance: 10000 }
+          - { Item: 310098, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310096, Chance: 10000 }
+          - { Item: 310097, Chance: 10000 }
+          - { Item: 310098, Chance: 10000 }
+          - { Item: 310118, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310121, Chance: 10000 }
+          - { Item: 310122, Chance: 10000 }
+          - { Item: 310123, Chance: 10000 }
+          - { Item: 310124, Chance: 10000 }
+          - { Item: 310125, Chance: 10000 }
+          - { Item: 310126, Chance: 10000 }
+          - { Item: 310111, Chance: 10000 }
+  - Id: 470023
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310096, Chance: 10000 }
+          - { Item: 310097, Chance: 10000 }
+          - { Item: 310098, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310096, Chance: 10000 }
+          - { Item: 310097, Chance: 10000 }
+          - { Item: 310098, Chance: 10000 }
+          - { Item: 310118, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310121, Chance: 10000 }
+          - { Item: 310122, Chance: 10000 }
+          - { Item: 310123, Chance: 10000 }
+          - { Item: 310124, Chance: 10000 }
+          - { Item: 310125, Chance: 10000 }
+          - { Item: 310126, Chance: 10000 }
+          - { Item: 310111, Chance: 10000 }
+  - Id: 480020
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310102, Chance: 10000 }
+          - { Item: 310103, Chance: 10000 }
+          - { Item: 310104, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310102, Chance: 10000 }
+          - { Item: 310103, Chance: 10000 }
+          - { Item: 310104, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310119, Chance: 10000 }
+          - { Item: 310179, Chance: 10000 }
+          - { Item: 310112, Chance: 10000 }
+  - Id: 480021
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310102, Chance: 10000 }
+          - { Item: 310103, Chance: 10000 }
+          - { Item: 310104, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310102, Chance: 10000 }
+          - { Item: 310103, Chance: 10000 }
+          - { Item: 310104, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310082, Chance: 10000 }
+          - { Item: 310083, Chance: 10000 }
+          - { Item: 310119, Chance: 10000 }
+          - { Item: 310179, Chance: 10000 }
+          - { Item: 310112, Chance: 10000 }
+  - Id: 490024
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310092, Chance: 10000 }
+          - { Item: 310095, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310086, Chance: 10000 }
+          - { Item: 310087, Chance: 10000 }
+          - { Item: 310090, Chance: 10000 }
+          - { Item: 310093, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310086, Chance: 10000 }
+          - { Item: 310087, Chance: 10000 }
+          - { Item: 310090, Chance: 10000 }
+          - { Item: 310094, Chance: 10000 }
+          - { Item: 310120, Chance: 10000 }
+          - { Item: 310113, Chance: 10000 }
+          - { Item: 310115, Chance: 10000 }
+  - Id: 490025
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310092, Chance: 10000 }
+          - { Item: 310095, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310088, Chance: 10000 }
+          - { Item: 310089, Chance: 10000 }
+          - { Item: 310091, Chance: 10000 }
+          - { Item: 310093, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310088, Chance: 10000 }
+          - { Item: 310089, Chance: 10000 }
+          - { Item: 310091, Chance: 10000 }
+          - { Item: 310094, Chance: 10000 }
+          - { Item: 310120, Chance: 10000 }
+          - { Item: 310114, Chance: 10000 }
+          - { Item: 310116, Chance: 10000 }
+  - Id: 490026
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310092, Chance: 10000 }
+          - { Item: 310095, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310086, Chance: 10000 }
+          - { Item: 310087, Chance: 10000 }
+          - { Item: 310090, Chance: 10000 }
+          - { Item: 310093, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310086, Chance: 10000 }
+          - { Item: 310087, Chance: 10000 }
+          - { Item: 310090, Chance: 10000 }
+          - { Item: 310094, Chance: 10000 }
+          - { Item: 310120, Chance: 10000 }
+          - { Item: 310113, Chance: 10000 }
+          - { Item: 310115, Chance: 10000 }
+  - Id: 490027
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310092, Chance: 10000 }
+          - { Item: 310095, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310088, Chance: 10000 }
+          - { Item: 310089, Chance: 10000 }
+          - { Item: 310091, Chance: 10000 }
+          - { Item: 310093, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310084, Chance: 10000 }
+          - { Item: 310085, Chance: 10000 }
+          - { Item: 310088, Chance: 10000 }
+          - { Item: 310089, Chance: 10000 }
+          - { Item: 310091, Chance: 10000 }
+          - { Item: 310094, Chance: 10000 }
+          - { Item: 310120, Chance: 10000 }
+          - { Item: 310114, Chance: 10000 }
+          - { Item: 310116, Chance: 10000 }

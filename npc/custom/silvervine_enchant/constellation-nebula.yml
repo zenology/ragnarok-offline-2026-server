@@ -1,0 +1,178 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 450169
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4721, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 4742, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310727, Chance: 10000 }
+          - { Item: 310730, Chance: 10000 }
+          - { Item: 310733, Chance: 10000 }
+          - { Item: 310736, Chance: 10000 }
+          - { Item: 310739, Chance: 10000 }
+          - { Item: 310742, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310674, Chance: 10000 }
+          - { Item: 310677, Chance: 10000 }
+          - { Item: 310680, Chance: 10000 }
+          - { Item: 310683, Chance: 10000 }
+          - { Item: 310686, Chance: 10000 }
+          - { Item: 310689, Chance: 10000 }
+  - Id: 450170
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4721, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 4742, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310727, Chance: 10000 }
+          - { Item: 310730, Chance: 10000 }
+          - { Item: 310733, Chance: 10000 }
+          - { Item: 310736, Chance: 10000 }
+          - { Item: 310739, Chance: 10000 }
+          - { Item: 310742, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310674, Chance: 10000 }
+          - { Item: 310677, Chance: 10000 }
+          - { Item: 310680, Chance: 10000 }
+          - { Item: 310683, Chance: 10000 }
+          - { Item: 310686, Chance: 10000 }
+          - { Item: 310689, Chance: 10000 }
+  - Id: 450171
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4721, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 4742, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310727, Chance: 10000 }
+          - { Item: 310730, Chance: 10000 }
+          - { Item: 310733, Chance: 10000 }
+          - { Item: 310736, Chance: 10000 }
+          - { Item: 310739, Chance: 10000 }
+          - { Item: 310742, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310674, Chance: 10000 }
+          - { Item: 310677, Chance: 10000 }
+          - { Item: 310680, Chance: 10000 }
+          - { Item: 310683, Chance: 10000 }
+          - { Item: 310686, Chance: 10000 }
+          - { Item: 310689, Chance: 10000 }
+  - Id: 450172
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4721, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 4742, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310727, Chance: 10000 }
+          - { Item: 310730, Chance: 10000 }
+          - { Item: 310733, Chance: 10000 }
+          - { Item: 310736, Chance: 10000 }
+          - { Item: 310739, Chance: 10000 }
+          - { Item: 310742, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310674, Chance: 10000 }
+          - { Item: 310677, Chance: 10000 }
+          - { Item: 310680, Chance: 10000 }
+          - { Item: 310683, Chance: 10000 }
+          - { Item: 310686, Chance: 10000 }
+          - { Item: 310689, Chance: 10000 }
+  - Id: 450173
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4721, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 4742, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310727, Chance: 10000 }
+          - { Item: 310730, Chance: 10000 }
+          - { Item: 310733, Chance: 10000 }
+          - { Item: 310736, Chance: 10000 }
+          - { Item: 310739, Chance: 10000 }
+          - { Item: 310742, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310674, Chance: 10000 }
+          - { Item: 310677, Chance: 10000 }
+          - { Item: 310680, Chance: 10000 }
+          - { Item: 310683, Chance: 10000 }
+          - { Item: 310686, Chance: 10000 }
+          - { Item: 310689, Chance: 10000 }
+  - Id: 450174
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4721, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 4742, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310727, Chance: 10000 }
+          - { Item: 310730, Chance: 10000 }
+          - { Item: 310733, Chance: 10000 }
+          - { Item: 310736, Chance: 10000 }
+          - { Item: 310739, Chance: 10000 }
+          - { Item: 310742, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 310674, Chance: 10000 }
+          - { Item: 310677, Chance: 10000 }
+          - { Item: 310680, Chance: 10000 }
+          - { Item: 310683, Chance: 10000 }
+          - { Item: 310686, Chance: 10000 }
+          - { Item: 310689, Chance: 10000 }

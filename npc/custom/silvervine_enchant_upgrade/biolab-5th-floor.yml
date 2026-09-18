@@ -1,0 +1,2454 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 18971
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18972
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18973
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18974
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18975
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18976
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18977
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18978
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18979
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18980
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18981
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18982
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18983
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }
+  - Id: 18984
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4730 }
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+              - { Item: 29709 }
+              - { Item: 29710 }
+              - { Item: 29711 }
+              - { Item: 29712 }
+              - { Item: 29713 }
+              - { Item: 29714 }
+              - { Item: 29715 }
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+              - { Item: 29064 }
+              - { Item: 29065 }
+              - { Item: 29066 }
+              - { Item: 29067 }
+              - { Item: 29068 }
+              - { Item: 29069 }
+              - { Item: 29070 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+              - { Item: 29074 }
+              - { Item: 29075 }
+              - { Item: 29076 }
+              - { Item: 29077 }
+              - { Item: 29078 }
+              - { Item: 29079 }
+              - { Item: 29080 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+              - { Item: 29084 }
+              - { Item: 29085 }
+              - { Item: 29086 }
+              - { Item: 29087 }
+              - { Item: 29088 }
+              - { Item: 29089 }
+              - { Item: 29090 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+              - { Item: 29094 }
+              - { Item: 29095 }
+              - { Item: 29096 }
+              - { Item: 29097 }
+              - { Item: 29098 }
+              - { Item: 29099 }
+              - { Item: 29100 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+              - { Item: 29104 }
+              - { Item: 29105 }
+              - { Item: 29106 }
+              - { Item: 29107 }
+              - { Item: 29108 }
+              - { Item: 29109 }
+              - { Item: 29110 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+              - { Item: 29114 }
+              - { Item: 29115 }
+              - { Item: 29116 }
+              - { Item: 29117 }
+              - { Item: 29118 }
+              - { Item: 29119 }
+              - { Item: 29120 }
+          - Levels:
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4753 }
+              - { Item: 4754 }

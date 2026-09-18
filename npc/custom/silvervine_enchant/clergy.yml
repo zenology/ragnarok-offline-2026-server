@@ -1,0 +1,112 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 20947
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4705, Chance: 10000 }
+          - { Item: 4715, Chance: 10000 }
+          - { Item: 4725, Chance: 10000 }
+          - { Item: 4735, Chance: 10000 }
+          - { Item: 4745, Chance: 10000 }
+          - { Item: 4755, Chance: 10000 }
+          - { Item: 4794, Chance: 10000 }
+          - { Item: 4786, Chance: 10000 }
+          - { Item: 4867, Chance: 10000 }
+          - { Item: 4801, Chance: 10000 }
+          - { Item: 4802, Chance: 10000 }
+          - { Item: 4764, Chance: 10000 }
+          - { Item: 29241, Chance: 10000 }
+          - { Item: 4762, Chance: 10000 }
+          - { Item: 29238, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4705, Chance: 10000 }
+          - { Item: 4715, Chance: 10000 }
+          - { Item: 4725, Chance: 10000 }
+          - { Item: 4735, Chance: 10000 }
+          - { Item: 4745, Chance: 10000 }
+          - { Item: 4755, Chance: 10000 }
+          - { Item: 4794, Chance: 10000 }
+          - { Item: 4786, Chance: 10000 }
+          - { Item: 4867, Chance: 10000 }
+          - { Item: 4801, Chance: 10000 }
+          - { Item: 4802, Chance: 10000 }
+          - { Item: 4764, Chance: 10000 }
+          - { Item: 29241, Chance: 10000 }
+          - { Item: 4762, Chance: 10000 }
+          - { Item: 29238, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4707, Chance: 10000 }
+          - { Item: 4737, Chance: 10000 }
+          - { Item: 4747, Chance: 10000 }
+          - { Item: 4717, Chance: 10000 }
+          - { Item: 4727, Chance: 10000 }
+          - { Item: 4757, Chance: 10000 }
+          - { Item: 29026, Chance: 10000 }
+          - { Item: 4789, Chance: 10000 }
+          - { Item: 4900, Chance: 10000 }
+          - { Item: 4802, Chance: 10000 }
+          - { Item: 29241, Chance: 10000 }
+          - { Item: 29238, Chance: 10000 }
+  - Id: 22209
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4705, Chance: 10000 }
+          - { Item: 4715, Chance: 10000 }
+          - { Item: 4725, Chance: 10000 }
+          - { Item: 4735, Chance: 10000 }
+          - { Item: 4745, Chance: 10000 }
+          - { Item: 4755, Chance: 10000 }
+          - { Item: 4794, Chance: 10000 }
+          - { Item: 4786, Chance: 10000 }
+          - { Item: 4867, Chance: 10000 }
+          - { Item: 4801, Chance: 10000 }
+          - { Item: 4802, Chance: 10000 }
+          - { Item: 4764, Chance: 10000 }
+          - { Item: 29241, Chance: 10000 }
+          - { Item: 4762, Chance: 10000 }
+          - { Item: 29238, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4705, Chance: 10000 }
+          - { Item: 4715, Chance: 10000 }
+          - { Item: 4725, Chance: 10000 }
+          - { Item: 4735, Chance: 10000 }
+          - { Item: 4745, Chance: 10000 }
+          - { Item: 4755, Chance: 10000 }
+          - { Item: 4794, Chance: 10000 }
+          - { Item: 4786, Chance: 10000 }
+          - { Item: 4867, Chance: 10000 }
+          - { Item: 4801, Chance: 10000 }
+          - { Item: 4802, Chance: 10000 }
+          - { Item: 4764, Chance: 10000 }
+          - { Item: 29241, Chance: 10000 }
+          - { Item: 4762, Chance: 10000 }
+          - { Item: 29238, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4707, Chance: 10000 }
+          - { Item: 4737, Chance: 10000 }
+          - { Item: 4747, Chance: 10000 }
+          - { Item: 4717, Chance: 10000 }
+          - { Item: 4727, Chance: 10000 }
+          - { Item: 4757, Chance: 10000 }
+          - { Item: 29026, Chance: 10000 }
+          - { Item: 4789, Chance: 10000 }
+          - { Item: 4900, Chance: 10000 }
+          - { Item: 4802, Chance: 10000 }
+          - { Item: 29241, Chance: 10000 }
+          - { Item: 29238, Chance: 10000 }

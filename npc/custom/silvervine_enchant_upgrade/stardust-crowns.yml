@@ -1,0 +1,532 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 401055
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401056
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401057
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401058
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401059
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401060
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401115
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401116
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401117
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401118
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401119
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }
+  - Id: 401120
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 312719 }
+              - { Item: 312720 }
+              - { Item: 312721 }
+          - Levels:
+              - { Item: 312749 }
+              - { Item: 312750 }
+              - { Item: 312751 }
+          - Levels:
+              - { Item: 312729 }
+              - { Item: 312730 }
+              - { Item: 312731 }
+          - Levels:
+              - { Item: 312739 }
+              - { Item: 312740 }
+              - { Item: 312741 }
+          - Levels:
+              - { Item: 312759 }
+              - { Item: 312760 }
+              - { Item: 312761 }
+          - Levels:
+              - { Item: 312769 }
+              - { Item: 312770 }
+              - { Item: 312771 }
+          - Levels:
+              - { Item: 312779 }
+              - { Item: 312780 }
+              - { Item: 312781 }
+          - Levels:
+              - { Item: 312789 }
+              - { Item: 312790 }
+              - { Item: 312791 }
+          - Levels:
+              - { Item: 314249 }
+              - { Item: 314250 }
+              - { Item: 314251 }
+          - Levels:
+              - { Item: 314259 }
+              - { Item: 314260 }
+              - { Item: 314261 }

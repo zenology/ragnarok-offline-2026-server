@@ -1,0 +1,604 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 470335
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 313853 }
+              - { Item: 313854 }
+              - { Item: 313855 }
+              - { Item: 313856 }
+              - { Item: 313857 }
+              - { Item: 313939 }
+          - Levels:
+              - { Item: 313858 }
+              - { Item: 313859 }
+              - { Item: 313860 }
+              - { Item: 313861 }
+              - { Item: 313862 }
+              - { Item: 313940 }
+          - Levels:
+              - { Item: 313863 }
+              - { Item: 313864 }
+              - { Item: 313865 }
+              - { Item: 313866 }
+              - { Item: 313867 }
+              - { Item: 313941 }
+          - Levels:
+              - { Item: 313868 }
+              - { Item: 313869 }
+              - { Item: 313870 }
+              - { Item: 313871 }
+              - { Item: 313872 }
+              - { Item: 313942 }
+          - Levels:
+              - { Item: 313873 }
+              - { Item: 313874 }
+              - { Item: 313875 }
+              - { Item: 313876 }
+              - { Item: 313877 }
+              - { Item: 313943 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 313878 }
+              - { Item: 313879 }
+              - { Item: 313880 }
+              - { Item: 313881 }
+              - { Item: 313882 }
+              - { Item: 313944 }
+          - Levels:
+              - { Item: 313883 }
+              - { Item: 313884 }
+              - { Item: 313885 }
+              - { Item: 313886 }
+              - { Item: 313887 }
+              - { Item: 313945 }
+          - Levels:
+              - { Item: 313888 }
+              - { Item: 313889 }
+              - { Item: 313890 }
+              - { Item: 313891 }
+              - { Item: 313892 }
+              - { Item: 313946 }
+          - Levels:
+              - { Item: 313893 }
+              - { Item: 313894 }
+              - { Item: 313895 }
+              - { Item: 313896 }
+              - { Item: 313897 }
+              - { Item: 313947 }
+          - Levels:
+              - { Item: 313898 }
+              - { Item: 313899 }
+              - { Item: 313900 }
+              - { Item: 313901 }
+              - { Item: 313902 }
+              - { Item: 313948 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 313903 }
+              - { Item: 313904 }
+              - { Item: 313905 }
+              - { Item: 313906 }
+              - { Item: 313907 }
+              - { Item: 313908 }
+          - Levels:
+              - { Item: 313909 }
+              - { Item: 313910 }
+              - { Item: 313911 }
+              - { Item: 313912 }
+              - { Item: 313913 }
+              - { Item: 313914 }
+          - Levels:
+              - { Item: 313915 }
+              - { Item: 313916 }
+              - { Item: 313917 }
+              - { Item: 313918 }
+              - { Item: 313919 }
+              - { Item: 313920 }
+          - Levels:
+              - { Item: 313921 }
+              - { Item: 313922 }
+              - { Item: 313923 }
+              - { Item: 313924 }
+              - { Item: 313925 }
+              - { Item: 313926 }
+          - Levels:
+              - { Item: 313927 }
+              - { Item: 313928 }
+              - { Item: 313929 }
+              - { Item: 313930 }
+              - { Item: 313931 }
+              - { Item: 313932 }
+          - Levels:
+              - { Item: 313933 }
+              - { Item: 313934 }
+              - { Item: 313935 }
+              - { Item: 313936 }
+              - { Item: 313937 }
+              - { Item: 313938 }
+  - Id: 470336
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 313853 }
+              - { Item: 313854 }
+              - { Item: 313855 }
+              - { Item: 313856 }
+              - { Item: 313857 }
+              - { Item: 313939 }
+          - Levels:
+              - { Item: 313858 }
+              - { Item: 313859 }
+              - { Item: 313860 }
+              - { Item: 313861 }
+              - { Item: 313862 }
+              - { Item: 313940 }
+          - Levels:
+              - { Item: 313863 }
+              - { Item: 313864 }
+              - { Item: 313865 }
+              - { Item: 313866 }
+              - { Item: 313867 }
+              - { Item: 313941 }
+          - Levels:
+              - { Item: 313868 }
+              - { Item: 313869 }
+              - { Item: 313870 }
+              - { Item: 313871 }
+              - { Item: 313872 }
+              - { Item: 313942 }
+          - Levels:
+              - { Item: 313873 }
+              - { Item: 313874 }
+              - { Item: 313875 }
+              - { Item: 313876 }
+              - { Item: 313877 }
+              - { Item: 313943 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 313878 }
+              - { Item: 313879 }
+              - { Item: 313880 }
+              - { Item: 313881 }
+              - { Item: 313882 }
+              - { Item: 313944 }
+          - Levels:
+              - { Item: 313883 }
+              - { Item: 313884 }
+              - { Item: 313885 }
+              - { Item: 313886 }
+              - { Item: 313887 }
+              - { Item: 313945 }
+          - Levels:
+              - { Item: 313888 }
+              - { Item: 313889 }
+              - { Item: 313890 }
+              - { Item: 313891 }
+              - { Item: 313892 }
+              - { Item: 313946 }
+          - Levels:
+              - { Item: 313893 }
+              - { Item: 313894 }
+              - { Item: 313895 }
+              - { Item: 313896 }
+              - { Item: 313897 }
+              - { Item: 313947 }
+          - Levels:
+              - { Item: 313898 }
+              - { Item: 313899 }
+              - { Item: 313900 }
+              - { Item: 313901 }
+              - { Item: 313902 }
+              - { Item: 313948 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 313903 }
+              - { Item: 313904 }
+              - { Item: 313905 }
+              - { Item: 313906 }
+              - { Item: 313907 }
+              - { Item: 313908 }
+          - Levels:
+              - { Item: 313909 }
+              - { Item: 313910 }
+              - { Item: 313911 }
+              - { Item: 313912 }
+              - { Item: 313913 }
+              - { Item: 313914 }
+          - Levels:
+              - { Item: 313915 }
+              - { Item: 313916 }
+              - { Item: 313917 }
+              - { Item: 313918 }
+              - { Item: 313919 }
+              - { Item: 313920 }
+          - Levels:
+              - { Item: 313921 }
+              - { Item: 313922 }
+              - { Item: 313923 }
+              - { Item: 313924 }
+              - { Item: 313925 }
+              - { Item: 313926 }
+          - Levels:
+              - { Item: 313927 }
+              - { Item: 313928 }
+              - { Item: 313929 }
+              - { Item: 313930 }
+              - { Item: 313931 }
+              - { Item: 313932 }
+          - Levels:
+              - { Item: 313933 }
+              - { Item: 313934 }
+              - { Item: 313935 }
+              - { Item: 313936 }
+              - { Item: 313937 }
+              - { Item: 313938 }
+  - Id: 470337
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 313853 }
+              - { Item: 313854 }
+              - { Item: 313855 }
+              - { Item: 313856 }
+              - { Item: 313857 }
+              - { Item: 313939 }
+          - Levels:
+              - { Item: 313858 }
+              - { Item: 313859 }
+              - { Item: 313860 }
+              - { Item: 313861 }
+              - { Item: 313862 }
+              - { Item: 313940 }
+          - Levels:
+              - { Item: 313863 }
+              - { Item: 313864 }
+              - { Item: 313865 }
+              - { Item: 313866 }
+              - { Item: 313867 }
+              - { Item: 313941 }
+          - Levels:
+              - { Item: 313868 }
+              - { Item: 313869 }
+              - { Item: 313870 }
+              - { Item: 313871 }
+              - { Item: 313872 }
+              - { Item: 313942 }
+          - Levels:
+              - { Item: 313873 }
+              - { Item: 313874 }
+              - { Item: 313875 }
+              - { Item: 313876 }
+              - { Item: 313877 }
+              - { Item: 313943 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 313878 }
+              - { Item: 313879 }
+              - { Item: 313880 }
+              - { Item: 313881 }
+              - { Item: 313882 }
+              - { Item: 313944 }
+          - Levels:
+              - { Item: 313883 }
+              - { Item: 313884 }
+              - { Item: 313885 }
+              - { Item: 313886 }
+              - { Item: 313887 }
+              - { Item: 313945 }
+          - Levels:
+              - { Item: 313888 }
+              - { Item: 313889 }
+              - { Item: 313890 }
+              - { Item: 313891 }
+              - { Item: 313892 }
+              - { Item: 313946 }
+          - Levels:
+              - { Item: 313893 }
+              - { Item: 313894 }
+              - { Item: 313895 }
+              - { Item: 313896 }
+              - { Item: 313897 }
+              - { Item: 313947 }
+          - Levels:
+              - { Item: 313898 }
+              - { Item: 313899 }
+              - { Item: 313900 }
+              - { Item: 313901 }
+              - { Item: 313902 }
+              - { Item: 313948 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 313903 }
+              - { Item: 313904 }
+              - { Item: 313905 }
+              - { Item: 313906 }
+              - { Item: 313907 }
+              - { Item: 313908 }
+          - Levels:
+              - { Item: 313909 }
+              - { Item: 313910 }
+              - { Item: 313911 }
+              - { Item: 313912 }
+              - { Item: 313913 }
+              - { Item: 313914 }
+          - Levels:
+              - { Item: 313915 }
+              - { Item: 313916 }
+              - { Item: 313917 }
+              - { Item: 313918 }
+              - { Item: 313919 }
+              - { Item: 313920 }
+          - Levels:
+              - { Item: 313921 }
+              - { Item: 313922 }
+              - { Item: 313923 }
+              - { Item: 313924 }
+              - { Item: 313925 }
+              - { Item: 313926 }
+          - Levels:
+              - { Item: 313927 }
+              - { Item: 313928 }
+              - { Item: 313929 }
+              - { Item: 313930 }
+              - { Item: 313931 }
+              - { Item: 313932 }
+          - Levels:
+              - { Item: 313933 }
+              - { Item: 313934 }
+              - { Item: 313935 }
+              - { Item: 313936 }
+              - { Item: 313937 }
+              - { Item: 313938 }
+  - Id: 470338
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 313853 }
+              - { Item: 313854 }
+              - { Item: 313855 }
+              - { Item: 313856 }
+              - { Item: 313857 }
+              - { Item: 313939 }
+          - Levels:
+              - { Item: 313858 }
+              - { Item: 313859 }
+              - { Item: 313860 }
+              - { Item: 313861 }
+              - { Item: 313862 }
+              - { Item: 313940 }
+          - Levels:
+              - { Item: 313863 }
+              - { Item: 313864 }
+              - { Item: 313865 }
+              - { Item: 313866 }
+              - { Item: 313867 }
+              - { Item: 313941 }
+          - Levels:
+              - { Item: 313868 }
+              - { Item: 313869 }
+              - { Item: 313870 }
+              - { Item: 313871 }
+              - { Item: 313872 }
+              - { Item: 313942 }
+          - Levels:
+              - { Item: 313873 }
+              - { Item: 313874 }
+              - { Item: 313875 }
+              - { Item: 313876 }
+              - { Item: 313877 }
+              - { Item: 313943 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 313878 }
+              - { Item: 313879 }
+              - { Item: 313880 }
+              - { Item: 313881 }
+              - { Item: 313882 }
+              - { Item: 313944 }
+          - Levels:
+              - { Item: 313883 }
+              - { Item: 313884 }
+              - { Item: 313885 }
+              - { Item: 313886 }
+              - { Item: 313887 }
+              - { Item: 313945 }
+          - Levels:
+              - { Item: 313888 }
+              - { Item: 313889 }
+              - { Item: 313890 }
+              - { Item: 313891 }
+              - { Item: 313892 }
+              - { Item: 313946 }
+          - Levels:
+              - { Item: 313893 }
+              - { Item: 313894 }
+              - { Item: 313895 }
+              - { Item: 313896 }
+              - { Item: 313897 }
+              - { Item: 313947 }
+          - Levels:
+              - { Item: 313898 }
+              - { Item: 313899 }
+              - { Item: 313900 }
+              - { Item: 313901 }
+              - { Item: 313902 }
+              - { Item: 313948 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 313903 }
+              - { Item: 313904 }
+              - { Item: 313905 }
+              - { Item: 313906 }
+              - { Item: 313907 }
+              - { Item: 313908 }
+          - Levels:
+              - { Item: 313909 }
+              - { Item: 313910 }
+              - { Item: 313911 }
+              - { Item: 313912 }
+              - { Item: 313913 }
+              - { Item: 313914 }
+          - Levels:
+              - { Item: 313915 }
+              - { Item: 313916 }
+              - { Item: 313917 }
+              - { Item: 313918 }
+              - { Item: 313919 }
+              - { Item: 313920 }
+          - Levels:
+              - { Item: 313921 }
+              - { Item: 313922 }
+              - { Item: 313923 }
+              - { Item: 313924 }
+              - { Item: 313925 }
+              - { Item: 313926 }
+          - Levels:
+              - { Item: 313927 }
+              - { Item: 313928 }
+              - { Item: 313929 }
+              - { Item: 313930 }
+              - { Item: 313931 }
+              - { Item: 313932 }
+          - Levels:
+              - { Item: 313933 }
+              - { Item: 313934 }
+              - { Item: 313935 }
+              - { Item: 313936 }
+              - { Item: 313937 }
+              - { Item: 313938 }
+  - Id: 470339
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 313853 }
+              - { Item: 313854 }
+              - { Item: 313855 }
+              - { Item: 313856 }
+              - { Item: 313857 }
+              - { Item: 313939 }
+          - Levels:
+              - { Item: 313858 }
+              - { Item: 313859 }
+              - { Item: 313860 }
+              - { Item: 313861 }
+              - { Item: 313862 }
+              - { Item: 313940 }
+          - Levels:
+              - { Item: 313863 }
+              - { Item: 313864 }
+              - { Item: 313865 }
+              - { Item: 313866 }
+              - { Item: 313867 }
+              - { Item: 313941 }
+          - Levels:
+              - { Item: 313868 }
+              - { Item: 313869 }
+              - { Item: 313870 }
+              - { Item: 313871 }
+              - { Item: 313872 }
+              - { Item: 313942 }
+          - Levels:
+              - { Item: 313873 }
+              - { Item: 313874 }
+              - { Item: 313875 }
+              - { Item: 313876 }
+              - { Item: 313877 }
+              - { Item: 313943 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 313878 }
+              - { Item: 313879 }
+              - { Item: 313880 }
+              - { Item: 313881 }
+              - { Item: 313882 }
+              - { Item: 313944 }
+          - Levels:
+              - { Item: 313883 }
+              - { Item: 313884 }
+              - { Item: 313885 }
+              - { Item: 313886 }
+              - { Item: 313887 }
+              - { Item: 313945 }
+          - Levels:
+              - { Item: 313888 }
+              - { Item: 313889 }
+              - { Item: 313890 }
+              - { Item: 313891 }
+              - { Item: 313892 }
+              - { Item: 313946 }
+          - Levels:
+              - { Item: 313893 }
+              - { Item: 313894 }
+              - { Item: 313895 }
+              - { Item: 313896 }
+              - { Item: 313897 }
+              - { Item: 313947 }
+          - Levels:
+              - { Item: 313898 }
+              - { Item: 313899 }
+              - { Item: 313900 }
+              - { Item: 313901 }
+              - { Item: 313902 }
+              - { Item: 313948 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 313903 }
+              - { Item: 313904 }
+              - { Item: 313905 }
+              - { Item: 313906 }
+              - { Item: 313907 }
+              - { Item: 313908 }
+          - Levels:
+              - { Item: 313909 }
+              - { Item: 313910 }
+              - { Item: 313911 }
+              - { Item: 313912 }
+              - { Item: 313913 }
+              - { Item: 313914 }
+          - Levels:
+              - { Item: 313915 }
+              - { Item: 313916 }
+              - { Item: 313917 }
+              - { Item: 313918 }
+              - { Item: 313919 }
+              - { Item: 313920 }
+          - Levels:
+              - { Item: 313921 }
+              - { Item: 313922 }
+              - { Item: 313923 }
+              - { Item: 313924 }
+              - { Item: 313925 }
+              - { Item: 313926 }
+          - Levels:
+              - { Item: 313927 }
+              - { Item: 313928 }
+              - { Item: 313929 }
+              - { Item: 313930 }
+              - { Item: 313931 }
+              - { Item: 313932 }
+          - Levels:
+              - { Item: 313933 }
+              - { Item: 313934 }
+              - { Item: 313935 }
+              - { Item: 313936 }
+              - { Item: 313937 }
+              - { Item: 313938 }

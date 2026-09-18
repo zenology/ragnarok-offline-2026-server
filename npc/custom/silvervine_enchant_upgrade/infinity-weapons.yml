@@ -1,0 +1,184 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 1938
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+              - { Item: 4836 }
+              - { Item: 4837 }
+              - { Item: 4838 }
+              - { Item: 4839 }
+  - Id: 1994
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+              - { Item: 4836 }
+              - { Item: 4837 }
+              - { Item: 4838 }
+              - { Item: 4839 }
+  - Id: 2024
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4815 }
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+              - { Item: 4827 }
+              - { Item: 4828 }
+              - { Item: 4829 }
+  - Id: 13126
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+              - { Item: 4836 }
+              - { Item: 4837 }
+              - { Item: 4838 }
+              - { Item: 4839 }
+  - Id: 13323
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4811 }
+              - { Item: 4810 }
+              - { Item: 4809 }
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+              - { Item: 4823 }
+  - Id: 16038
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4811 }
+              - { Item: 4810 }
+              - { Item: 4809 }
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+              - { Item: 4823 }
+  - Id: 18128
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4720 }
+              - { Item: 4721 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+              - { Item: 4836 }
+              - { Item: 4837 }
+              - { Item: 4838 }
+              - { Item: 4839 }
+  - Id: 21014
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4811 }
+              - { Item: 4810 }
+              - { Item: 4809 }
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+              - { Item: 4823 }
+  - Id: 28105
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4811 }
+              - { Item: 4810 }
+              - { Item: 4809 }
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+              - { Item: 4823 }
+  - Id: 28703
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4811 }
+              - { Item: 4810 }
+              - { Item: 4809 }
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+              - { Item: 4823 }

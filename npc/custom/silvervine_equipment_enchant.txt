@@ -1,0 +1,423 @@
+// Malangdo Silvervine enchant (card-slot + Random Options). Pools: silvervine_enchant_item_pools.yml
+
+function	script	F_SVE_ChoosePoolEnchant	{
+	.@item_id = getarg(0);
+	.@card_idx = getarg(1);
+	.@count = sve_poolcount(.@item_id, .@card_idx);
+	if (.@count < 1)
+		return 0;
+	freeloop(1);
+	.@n = 0;
+	for (.@r = 0; .@r < .@count; ++.@r) {
+		.@id = sve_poolitem(.@item_id, .@card_idx, .@r);
+		if (.@id < 1)
+			continue;
+		if (inarray(.@list[0], .@id) != -1)
+			continue;
+		.@list[.@n] = .@id;
+		++.@n;
+	}
+	freeloop(0);
+	if (.@n < 1)
+		return 0;
+	.@page_count = (.@n + 19) / 20;
+	for (.@page = 0; .@page < .@page_count; ++.@page) {
+		.@page_start = .@page * 20;
+		.@menu$ = "";
+		.@shown = 0;
+		for (.@j = .@page_start; .@j < .@n && .@shown < 20; ++.@j) {
+			.@menu$ += replacestr(getitemname(.@list[.@j]), ":", "") + ":";
+			++.@shown;
+		}
+		if (.@page_start + .@shown < .@n)
+			.@menu$ += "Next page:Cancel";
+		else
+			.@menu$ += "Cancel";
+		.@choice = select(.@menu$) - 1;
+		if (.@choice < 0 || .@choice > .@shown)
+			return 0;
+		if (.@choice == .@shown) {
+			if (.@page + 1 < .@page_count)
+				continue;
+			return 0;
+		}
+		return .@list[.@page_start + .@choice];
+	}
+	return 0;
+}
+
+function	script	F_SVE_StepState	{
+	// getarg(0)=equip_slot, getarg(1)=item_id, getarg(2)=ui_step (1-based)
+	// Returns: 0=hidden, 1=new, 2=reroll
+	.@equip_slot = getarg(0);
+	.@item_id = getarg(1);
+	.@ui_step = getarg(2);
+	.@order_count = sve_stepcount(.@item_id);
+	if (.@ui_step < 1 || .@ui_step > .@order_count)
+		return 0;
+	for (.@p = 1; .@p < .@ui_step; ++.@p) {
+		.@prev_card = sve_stepcard(.@item_id, .@p);
+		if (.@prev_card < 0)
+			return 0;
+		.@prev_id = getequipcardid(.@equip_slot, .@prev_card);
+		if (!F_IsCharm(.@prev_id))
+			return 0;
+	}
+	.@card_idx = sve_stepcard(.@item_id, .@ui_step);
+	if (.@card_idx < 0)
+		return 0;
+	if (.@card_idx < getiteminfo(getequipid(.@equip_slot), ITEMINFO_SLOT))
+		return 0;
+	.@card_id = getequipcardid(.@equip_slot, .@card_idx);
+	if (.@card_id == 0)
+		return 1;
+	if (F_IsCharm(.@card_id))
+		return 2;
+	return 0;
+}
+
+function	script	F_SVE_HasActionableStep	{
+	.@equip_slot = getarg(0);
+	.@item_id = getarg(1);
+	.@order_count = sve_stepcount(.@item_id);
+	for (.@step = 1; .@step <= .@order_count; ++.@step) {
+		if (callfunc("F_SVE_StepState", .@equip_slot, .@item_id, .@step))
+			return 1;
+	}
+	return 0;
+}
+
+mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
+	disable_items;
+	if (!checkweight(1119, 3)) {
+		mes "[Silvervine Enchanter]";
+		mes "Hmph. Your pack's bursting at the seams.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Clear some space first. Even an old cat needs room to work.";
+		close;
+	}
+
+	if (getvariableofnpc(.ItemCount, "silvervine_equipment_enchant_db") < 1) {
+		mes "[Silvervine Enchanter]";
+		mes "Hmph. My enchant book didn't load.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "That's a server problem, not your gear. Check the map log for Silvervine YAML errors.";
+		close;
+	}
+
+	mes "[Silvervine Enchanter]";
+	mes "Hold on, kid. Let me see what you've got on.";
+	freeloop(1);
+	.@count = 0;
+	for (.@scan = 0; .@scan < 10; ++.@scan) {
+		.@slot = (.@scan == 0 ? EQI_HEAD_TOP : .@scan == 1 ? EQI_HEAD_MID : .@scan == 2 ? EQI_HEAD_LOW : .@scan == 3 ? EQI_HAND_R : .@scan == 4 ? EQI_HAND_L : .@scan == 5 ? EQI_ARMOR : .@scan == 6 ? EQI_GARMENT : .@scan == 7 ? EQI_SHOES : .@scan == 8 ? EQI_ACC_L : EQI_ACC_R);
+		.@item = getequipid(.@slot);
+		if (.@item < 0)
+			continue;
+		.@type = getiteminfo(.@item, ITEMINFO_TYPE);
+		if (.@type != IT_WEAPON && .@type != IT_ARMOR)
+			continue;
+		if (.@type == IT_WEAPON && .@slot != EQI_HAND_R && .@slot != EQI_HAND_L)
+			continue;
+		if (.@type == IT_ARMOR && .@slot == EQI_HAND_R)
+			continue;
+		.@uid$ = getequipuniqueid(.@slot);
+		if (.@uid$ == "")
+			continue;
+		.@label$ = (.@slot == EQI_HEAD_TOP ? "Top" : .@slot == EQI_HEAD_MID ? "Middle" : .@slot == EQI_HEAD_LOW ? "Lower" : .@slot == EQI_HAND_R ? "Weapon Right" : .@slot == EQI_HAND_L && .@type == IT_WEAPON ? "Weapon Left" : .@slot == EQI_HAND_L ? "Shield" : .@slot == EQI_ARMOR ? "Armor" : .@slot == EQI_GARMENT ? "Garment" : .@slot == EQI_SHOES ? "Shoes" : .@slot == EQI_ACC_L ? "Accessory Left" : "Accessory Right");
+		.@item_mode = sve_mode(.@item);
+		if (.@item_mode < 1)
+			continue;
+		if (.@item_mode == 1 && !callfunc("F_SVE_HasActionableStep", .@slot, .@item))
+			continue;
+		.@found = -1;
+		for (.@i = 0; .@i < .@count; ++.@i) {
+			if (.@chosen_uid$[.@i] == .@uid$)
+				.@found = .@i;
+		}
+		if (.@found >= 0) {
+			.@chosen_label$[.@found] += "/" + .@label$;
+			continue;
+		}
+		.@chosen_slot[.@count] = .@slot;
+		.@chosen_item[.@count] = .@item;
+		.@chosen_mode[.@count] = .@item_mode;
+		.@chosen_uid$[.@count] = .@uid$;
+		.@chosen_label$[.@count] = .@label$;
+		++.@count;
+	}
+	freeloop(0);
+	if (.@count < 1) {
+		mes "[Silvervine Enchanter]";
+		mes "Bah. Nothing on you I can touch right now.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Come back wearing gear with an open enchant step.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Or bring Random Option gear: Imperial, OS, Ancient Hero, Adulter, Vivatus, Abyss Glastheim.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "When I learn new names, I'll work on those too. For now, beat it.";
+		close;
+	}
+
+	mes "[Silvervine Enchanter]";
+	mes "Alright. I only work on what you're wearing. Leave the bag out of it.";
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "For card-slot charms, the step number is the price. Step one costs one Silvervine Fruit.";
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "Step two costs two. Reroll a filled step and I add one more fruit. Life ain't fair.";
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "Random Options are a different job. Imperial, OS, Ancient Hero, Adulter, Vivatus, Abyss Glastheim.";
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "You pick how many options. One fruit for one, three for two, six for three. It adds up.";
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "Already got options on the piece? Pay double. I've seen worse.";
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "Some pieces, like OSAD, take both jobs. I'll ask when it matters.";
+	next;
+
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@count; ++.@i)
+		.@menu$ += .@chosen_label$[.@i] + " - " + replacestr(getitemname(.@chosen_item[.@i]), ":", "") + ":";
+	.@choice = select(.@menu$ + "Cancel") - 1;
+	if (.@choice == .@count)
+		close;
+
+	.@slot = .@chosen_slot[.@choice];
+	.@item = .@chosen_item[.@choice];
+	.@item_mode = .@chosen_mode[.@choice];
+	.@uid$ = .@chosen_uid$[.@choice];
+
+	if (.@item_mode == 3) {
+		mes "[Silvervine Enchanter]";
+		mes "^0055FF" + getitemname(.@item) + "^000000. This one takes two kinds of work.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Card-slot charms, or Random Options. They don't overwrite each other.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Pick which job you want tonight.";
+		next;
+		.@kind = select("Card-slot charms:Random Options:Cancel");
+		if (.@kind == 3)
+			close;
+		if (.@kind == 1)
+			.@item_mode = 1;
+		else
+			.@item_mode = 2;
+	}
+
+	if (.@item_mode == 2) {
+		.@existing = 0;
+		for (.@i = 0; .@i < 5; ++.@i)
+			if (getequiprandomoption(.@slot, .@i, ROA_ID) != 0)
+				++.@existing;
+		.@mult = (.@existing > 0 ? 2 : 1);
+		.@n_menu$ = "";
+		for (.@n = 1; .@n <= 5; ++.@n) {
+			.@cost_n = .@n * (.@n + 1) / 2 * .@mult;
+			.@n_menu$ += .@n + " options - " + .@cost_n + " Fruit:";
+		}
+		mes "[Silvervine Enchanter]";
+		mes "^0055FF" + getitemname(.@item) + "^000000. Random Options.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Hmph. It's carrying " + .@existing + " option" + (.@existing == 1 ? "" : "s") + " right now.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "I'm wiping the slate. Whatever's on there goes. You pick how many fresh ones you want.";
+		next;
+		.@n_pick = select(.@n_menu$ + "Cancel") - 1;
+		if (.@n_pick == 5)
+			close;
+		.@want = .@n_pick + 1;
+		.@cost = .@want * (.@want + 1) / 2 * .@mult;
+		mes "[Silvervine Enchanter]";
+		mes "That'll be ^0055FF" + .@cost + " Silvervine Fruit^000000 for " + .@want + " option" + (.@want == 1 ? "" : "s") + ".";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Refine, cards, and enchant grade stay. Only the random options change.";
+		next;
+		if (select("Proceed:Cancel") == 2)
+			close;
+		if (countitem(6417) < .@cost) {
+			mes "[Silvervine Enchanter]";
+			mes "Short on fruit. You need " + .@cost + " Silvervine, not wishes.";
+			close;
+		}
+		.@eq_id = getequipid(.@slot);
+		.@refine = getequiprefinerycnt(.@slot);
+		.@card[0] = getequipcardid(.@slot, 0);
+		.@card[1] = getequipcardid(.@slot, 1);
+		.@card[2] = getequipcardid(.@slot, 2);
+		.@card[3] = getequipcardid(.@slot, 3);
+		.@grade = getenchantgrade(.@slot);
+		if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine))
+			close;
+		if (!sve_rollro(.@item, .@want)) {
+			mes "[Silvervine Enchanter]";
+			mes "Bah. The roll went sideways.";
+			next;
+			mes "[Silvervine Enchanter]";
+			mes "Nothing changed. Your fruit stays in your pocket.";
+			close;
+		}
+		.@result = replaceequipped(.@slot, .@uid$, .@card[0], .@card[1], .@card[2], .@card[3], .@sve_opt_id, .@sve_opt_value, .@sve_opt_param);
+		if (.@result != 1) {
+			mes "[Silvervine Enchanter]";
+			mes "That piece changed before I could work.";
+			next;
+			mes "[Silvervine Enchanter]";
+			mes "Nothing happened. Your fruit stays in your pocket.";
+			close;
+		}
+		delitem 6417, .@cost;
+		mes "[Silvervine Enchanter]";
+		mes "There. " + .@want + " new Random Option" + (.@want == 1 ? "" : "s") + ", neat as I can make 'em.";
+		specialeffect2 EF_REPAIRWEAPON;
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Don't scratch it up on my account.";
+		close;
+	}
+
+	.@order_count = sve_stepcount(.@item);
+	.@step_menu$ = "";
+	.@step_value[0] = 0;
+	.@step_count = 0;
+	for (.@step = 1; .@step <= .@order_count; ++.@step) {
+		.@state = callfunc("F_SVE_StepState", .@slot, .@item, .@step);
+		if (!.@state)
+			continue;
+		.@card_idx = sve_stepcard(.@item, .@step);
+		.@cost = (.@state == 2 ? .@step + 1 : .@step);
+		.@step_value[.@step_count] = .@step;
+		.@step_menu$ += "Step " + .@step + " (card " + (.@card_idx + 1) + ") - " + (.@state == 2 ? "reroll" : "new") + " " + .@cost + " Fruit:";
+		++.@step_count;
+	}
+	if (.@step_count < 1) {
+		mes "[Silvervine Enchanter]";
+		mes "That piece ran out of steps on me.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Come back when something's actually open, or wear different gear.";
+		close;
+	}
+	mes "[Silvervine Enchanter]";
+	mes "^0055FF" + getitemname(.@item) + "^000000. Pick a step.";
+	next;
+	.@step_choice = select(.@step_menu$ + "Cancel") - 1;
+	if (.@step_choice == .@step_count)
+		close;
+	.@ui_step = .@step_value[.@step_choice];
+	.@state = callfunc("F_SVE_StepState", .@slot, .@item, .@ui_step);
+	.@cost = (.@state == 2 ? .@ui_step + 1 : .@ui_step);
+	.@card_idx = sve_stepcard(.@item, .@ui_step);
+	if (.@card_idx < 0 || sve_findstep(.@item, .@card_idx) < 0) {
+		mes "[Silvervine Enchanter]";
+		mes "No pool for that step.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Not my fault. My list doesn't have that slot.";
+		close;
+	}
+
+	.@choose_cost = 20;
+	mes "[Silvervine Enchanter]";
+	mes "Spin the wheel for a random charm from this step. ^0055FF" + .@cost + " Silvervine Fruit^000000.";
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "Or pay ^0055FF" + .@choose_cost + " Silvervine^000000 and pick the exact charm. Your call.";
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "Refine, cards, other enchants, random options, and enchant grade all stay put.";
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "I only touch the one slot you chose. Nothing else.";
+	next;
+	.@mode = select("Spin - " + .@cost + " Fruit:Choose enchant - " + .@choose_cost + " Fruit:Cancel");
+	if (.@mode == 3)
+		close;
+	if (.@mode == 1) {
+		.@pay = .@cost;
+		.@pick = 0;
+	} else {
+		.@pay = .@choose_cost;
+		.@pick = 1;
+	}
+	if (countitem(6417) < .@pay) {
+		mes "[Silvervine Enchanter]";
+		mes "You're " + .@pay + " fruit short. I don't work on credit.";
+		close;
+	}
+
+	.@eq_id = getequipid(.@slot);
+	.@refine = getequiprefinerycnt(.@slot);
+	.@card[0] = getequipcardid(.@slot, 0);
+	.@card[1] = getequipcardid(.@slot, 1);
+	.@card[2] = getequipcardid(.@slot, 2);
+	.@card[3] = getequipcardid(.@slot, 3);
+	for (.@i = 0; .@i < 5; ++.@i) {
+		set getelementofarray(.@OptID, .@i), getequiprandomoption(.@slot, .@i, ROA_ID);
+		set getelementofarray(.@OptVal, .@i), getequiprandomoption(.@slot, .@i, ROA_VALUE);
+		set getelementofarray(.@OptParam, .@i), getequiprandomoption(.@slot, .@i, ROA_PARAM);
+	}
+	.@grade = getenchantgrade(.@slot);
+
+	if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine))
+		close;
+
+	if (.@pick) {
+		.@enchant_id = callfunc("F_SVE_ChoosePoolEnchant", .@item, .@card_idx);
+		if (.@enchant_id == 0)
+			close;
+	} else {
+		.@enchant_id = sve_rollcharm(.@item, .@card_idx);
+		if (.@enchant_id < 0) {
+			mes "[Silvervine Enchanter]";
+			mes "Fizzled. Bad luck. Happens to the best of us.";
+			next;
+			mes "[Silvervine Enchanter]";
+			mes "No fruit taken. Try again if you've got the nerve.";
+			close;
+		}
+		if (.@enchant_id == 0) {
+			mes "[Silvervine Enchanter]";
+			mes "Something's wrong in my book. Invalid charm.";
+			next;
+			mes "[Silvervine Enchanter]";
+			mes "Nothing changed. Don't ask me to explain bureaucracy.";
+			close;
+		}
+	}
+
+	.@card[.@card_idx] = .@enchant_id;
+	.@result = replaceequipped(.@slot, .@uid$, .@card[0], .@card[1], .@card[2], .@card[3], .@OptID, .@OptVal, .@OptParam);
+	if (.@result != 1) {
+		mes "[Silvervine Enchanter]";
+		mes "That piece changed before I could work.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Nothing happened. Your fruit stays in your pocket.";
+		close;
+	}
+	delitem 6417, .@pay;
+
+	mes "[Silvervine Enchanter]";
+	mes "Done. ^0055FF" + getitemname(.@enchant_id) + "^000000, slotted where you wanted.";
+	specialeffect2 EF_REPAIRWEAPON;
+	next;
+	mes "[Silvervine Enchanter]";
+	mes "Treat it better than the last owner did, kid.";
+	close;
+}

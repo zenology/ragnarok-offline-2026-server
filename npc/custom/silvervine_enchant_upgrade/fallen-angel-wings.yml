@@ -1,0 +1,149 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 2589
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+              - { Item: 4820 }
+          - Levels:
+              - { Item: 4812 }
+              - { Item: 4826 }
+              - { Item: 4827 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+          - Levels:
+              - { Item: 4863 }
+              - { Item: 4864 }
+              - { Item: 4865 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+              - { Item: 4867 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+          - Levels:
+              - { Item: 4731 }
+              - { Item: 4732 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+          - Levels:
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+              - { Item: 4820 }
+          - Levels:
+              - { Item: 4812 }
+              - { Item: 4826 }
+              - { Item: 4827 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+          - Levels:
+              - { Item: 4863 }
+              - { Item: 4864 }
+              - { Item: 4865 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+              - { Item: 4867 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+          - Levels:
+              - { Item: 4731 }
+              - { Item: 4732 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+          - Levels:
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 4809 }
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+          - Levels:
+              - { Item: 4812 }
+              - { Item: 4826 }
+              - { Item: 4827 }
+              - { Item: 4828 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4863 }
+              - { Item: 4864 }
+              - { Item: 4865 }
+              - { Item: 4866 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+              - { Item: 4867 }
+              - { Item: 4868 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4731 }
+              - { Item: 4732 }
+              - { Item: 4733 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4722 }
+              - { Item: 4723 }
+              - { Item: 4724 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }

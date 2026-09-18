@@ -1,0 +1,424 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 22000
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22001
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22002
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22003
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22004
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22005
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22006
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22007
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22008
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22009
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22010
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }
+  - Id: 22011
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4808 }
+              - { Item: 4820 }
+              - { Item: 4821 }
+              - { Item: 4822 }
+          - Levels:
+              - { Item: 4832 }
+              - { Item: 4833 }
+              - { Item: 4834 }
+              - { Item: 4835 }
+          - Levels:
+              - { Item: 4814 }
+              - { Item: 4813 }
+              - { Item: 4812 }
+              - { Item: 4826 }
+          - Levels:
+              - { Item: 4741 }
+              - { Item: 4742 }
+          - Levels:
+              - { Item: 4869 }
+              - { Item: 4872 }
+              - { Item: 4873 }
+              - { Item: 4881 }
+          - Levels:
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+              - { Item: 4755 }
+          - Levels:
+              - { Item: 4861 }
+              - { Item: 4862 }

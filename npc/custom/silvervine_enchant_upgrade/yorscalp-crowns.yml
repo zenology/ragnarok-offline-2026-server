@@ -1,0 +1,114 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 400723
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 313406 }
+              - { Item: 313407 }
+              - { Item: 313408 }
+              - { Item: 313409 }
+          - Levels:
+              - { Item: 313410 }
+              - { Item: 313411 }
+              - { Item: 313412 }
+              - { Item: 313413 }
+          - Levels:
+              - { Item: 313414 }
+              - { Item: 313416 }
+              - { Item: 313415 }
+              - { Item: 313417 }
+          - Levels:
+              - { Item: 313418 }
+              - { Item: 313419 }
+              - { Item: 313420 }
+              - { Item: 313421 }
+          - Levels:
+              - { Item: 313422 }
+              - { Item: 313423 }
+              - { Item: 313424 }
+              - { Item: 313425 }
+  - Id: 400724
+    Slots:
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 4700 }
+              - { Item: 4701 }
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4710 }
+              - { Item: 4711 }
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4740 }
+              - { Item: 4741 }
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+          - Levels:
+              - { Item: 4750 }
+              - { Item: 4751 }
+              - { Item: 4752 }
+              - { Item: 4753 }
+              - { Item: 4754 }
+      - CardIndex: 1
+        Series:
+          - Levels:
+              - { Item: 313406 }
+              - { Item: 313407 }
+              - { Item: 313408 }
+              - { Item: 313409 }
+          - Levels:
+              - { Item: 313410 }
+              - { Item: 313411 }
+              - { Item: 313412 }
+              - { Item: 313413 }
+          - Levels:
+              - { Item: 313414 }
+              - { Item: 313416 }
+              - { Item: 313415 }
+              - { Item: 313417 }
+          - Levels:
+              - { Item: 313418 }
+              - { Item: 313419 }
+              - { Item: 313420 }
+              - { Item: 313421 }
+          - Levels:
+              - { Item: 313422 }
+              - { Item: 313423 }
+              - { Item: 313424 }
+              - { Item: 313425 }

@@ -1,0 +1,179 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 1847
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 2048
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 13345
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 13485
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 18164
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 18170
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 21038
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 26118
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 26154
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 26155
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28039
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28130
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28255
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28256
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28257
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28258
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28630
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28631
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28744
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 28764
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 32018
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 32302
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 500003
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 500004
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 510006
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 550007
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 560002
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 570002
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 580002
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 590002
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 590003
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 600004
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 610003
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 640004
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136
+  - Id: 700003
+    Mode: RandomOption
+    Groups:
+      - 135
+      - 136

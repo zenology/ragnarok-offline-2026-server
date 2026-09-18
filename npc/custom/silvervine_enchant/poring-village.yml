@@ -1,0 +1,42 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 19238
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4795, Chance: 10000 }
+          - { Item: 4796, Chance: 10000 }
+          - { Item: 4928, Chance: 10000 }
+          - { Item: 4870, Chance: 10000 }
+          - { Item: 4800, Chance: 10000 }
+          - { Item: 4700, Chance: 10000 }
+          - { Item: 4730, Chance: 10000 }
+          - { Item: 4740, Chance: 10000 }
+          - { Item: 4710, Chance: 10000 }
+          - { Item: 4720, Chance: 10000 }
+          - { Item: 4750, Chance: 10000 }
+          - { Item: 4992, Chance: 10000 }
+          - { Item: 4993, Chance: 10000 }
+  - Id: 19239
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4795, Chance: 10000 }
+          - { Item: 4796, Chance: 10000 }
+          - { Item: 4928, Chance: 10000 }
+          - { Item: 4870, Chance: 10000 }
+          - { Item: 4800, Chance: 10000 }
+          - { Item: 4700, Chance: 10000 }
+          - { Item: 4730, Chance: 10000 }
+          - { Item: 4740, Chance: 10000 }
+          - { Item: 4710, Chance: 10000 }
+          - { Item: 4720, Chance: 10000 }
+          - { Item: 4750, Chance: 10000 }
+          - { Item: 4992, Chance: 10000 }
+          - { Item: 4993, Chance: 10000 }

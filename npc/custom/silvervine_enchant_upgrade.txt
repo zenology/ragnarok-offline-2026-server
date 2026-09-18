@@ -1,0 +1,308 @@
+//===== Ragnarok Offline =====================================
+//= Doberkin: numbered same-slot charm level lottery.
+//= YAML book: silvervine_enchant_upgrade_item_pools.yml (not the cat first-fill book).
+//= Flat cost: 5 Silvervine Fruit and 1 Shadowdecon. Always writes a rolled level.
+//============================================================
+
+mal_in01,25,167,2	script	Doberkin#sve_upg	4_M_DOGTRAVELER2,{
+L_Main:
+	disable_items;
+	if (!checkweight(1119, 3)) {
+		mes "[Doberkin]";
+		mes "Your pack is stuffed. I cannot work like that.";
+		next;
+		mes "[Doberkin]";
+		mes "Dump something. Then come back.";
+		close;
+	}
+
+	if (getvariableofnpc(.ItemCount, "silvervine_enchant_upgrade_db") < 1) {
+		mes "[Doberkin]";
+		mes "My upgrade book didn't load. That's a server problem.";
+		next;
+		mes "[Doberkin]";
+		mes "Check the map log for Silvervine upgrade YAML errors.";
+		close;
+	}
+
+	mes "[Doberkin]";
+	mes "Hold still. I need a sniff at what you're wearing.";
+	freeloop(1);
+	.@count = 0;
+	for (.@scan = 0; .@scan < 10; ++.@scan) {
+		.@slot = (.@scan == 0 ? EQI_HEAD_TOP : .@scan == 1 ? EQI_HEAD_MID : .@scan == 2 ? EQI_HEAD_LOW : .@scan == 3 ? EQI_HAND_R : .@scan == 4 ? EQI_HAND_L : .@scan == 5 ? EQI_ARMOR : .@scan == 6 ? EQI_GARMENT : .@scan == 7 ? EQI_SHOES : .@scan == 8 ? EQI_ACC_L : EQI_ACC_R);
+		.@item = getequipid(.@slot);
+		if (.@item < 0)
+			continue;
+		.@type = getiteminfo(.@item, ITEMINFO_TYPE);
+		if (.@type != IT_WEAPON && .@type != IT_ARMOR)
+			continue;
+		if (.@type == IT_WEAPON && .@slot != EQI_HAND_R && .@slot != EQI_HAND_L)
+			continue;
+		if (.@type == IT_ARMOR && .@slot == EQI_HAND_R)
+			continue;
+		.@uid$ = getequipuniqueid(.@slot);
+		if (.@uid$ == "")
+			continue;
+		.@label$ = (.@slot == EQI_HEAD_TOP ? "Top" : .@slot == EQI_HEAD_MID ? "Middle" : .@slot == EQI_HEAD_LOW ? "Lower" : .@slot == EQI_HAND_R ? "Weapon Right" : .@slot == EQI_HAND_L && .@type == IT_WEAPON ? "Weapon Left" : .@slot == EQI_HAND_L ? "Shield" : .@slot == EQI_ARMOR ? "Armor" : .@slot == EQI_GARMENT ? "Garment" : .@slot == EQI_SHOES ? "Shoes" : .@slot == EQI_ACC_L ? "Accessory Left" : "Accessory Right");
+		.@nslots = svu_slotcount(.@item);
+		if (.@nslots < 1)
+			continue;
+		.@ok = 0;
+		for (.@s = 1; .@s <= .@nslots; ++.@s) {
+			.@ci = svu_slotcard(.@item, .@s);
+			.@lv = svu_findlevel(.@item, .@ci, getequipcardid(.@slot, .@ci));
+			if (.@lv > 0)
+				.@ok = 1;
+		}
+		if (!.@ok)
+			continue;
+		.@found = -1;
+		for (.@i = 0; .@i < .@count; ++.@i) {
+			if (.@chosen_uid$[.@i] == .@uid$)
+				.@found = .@i;
+		}
+		if (.@found >= 0) {
+			.@chosen_label$[.@found] += "/" + .@label$;
+			continue;
+		}
+		.@chosen_slot[.@count] = .@slot;
+		.@chosen_item[.@count] = .@item;
+		.@chosen_uid$[.@count] = .@uid$;
+		.@chosen_label$[.@count] = .@label$;
+		++.@count;
+	}
+	freeloop(0);
+	next;
+	if (.@count < 1) {
+		mes "[Doberkin]";
+		mes "Sniff sniff. Nothing on you I can work.";
+		next;
+		mes "[Doberkin]";
+		mes "Wear gear the old cat already started. I need a numbered charm already in the slot.";
+		next;
+		mes "[Doberkin]";
+		mes "Empty holes, real cards, and plain one-off charms do not count.";
+		next;
+		goto L_Banter;
+	}
+
+	mes "[Doberkin]";
+	mes "Alright. I only work what you're wearing. Leave the bag out of it.";
+	next;
+	mes "[Doberkin]";
+	mes "The old cat fills the first tier. I use Shadowdecon to push that same charm stronger.";
+	next;
+	mes "[Doberkin]";
+	mes "I am trying to develop it. Careful. If it's already too good, it can get worse.";
+	next;
+	mes "[Doberkin]";
+	mes "Every try costs five Silvervine Fruit and one Shadowdecon. The stone does the work. Fruit just keeps the cats paid.";
+	next;
+
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@count; ++.@i)
+		.@menu$ += .@chosen_label$[.@i] + " - " + replacestr(getitemname(.@chosen_item[.@i]), ":", "") + ":";
+	.@choice = select(.@menu$ + "Who are you?:Cancel") - 1;
+	if (.@choice == .@count)
+		goto L_Banter;
+	if (.@choice == .@count + 1)
+		close;
+
+	.@slot = .@chosen_slot[.@choice];
+	.@item = .@chosen_item[.@choice];
+	.@uid$ = .@chosen_uid$[.@choice];
+
+	.@elig = 0;
+	.@nslots = svu_slotcount(.@item);
+	for (.@s = 1; .@s <= .@nslots; ++.@s) {
+		.@ci = svu_slotcard(.@item, .@s);
+		.@charm = getequipcardid(.@slot, .@ci);
+		.@lv = svu_findlevel(.@item, .@ci, .@charm);
+		if (.@lv > 0) {
+			.@elig_ci[.@elig] = .@ci;
+			.@elig_lv[.@elig] = .@lv;
+			.@elig_charm[.@elig] = .@charm;
+			++.@elig;
+		}
+	}
+	if (.@elig < 1) {
+		mes "[Doberkin]";
+		mes "Hey. That cap is gone.";
+		close;
+	}
+	if (.@elig > 1) {
+		.@smenu$ = "";
+		for (.@i = 0; .@i < .@elig; ++.@i)
+			.@smenu$ += replacestr(getitemname(.@elig_charm[.@i]), ":", "") + " - Lv" + .@elig_lv[.@i] + " - 5 Fruit, 1 Shadowdecon:";
+		.@spick = select(.@smenu$ + "Cancel") - 1;
+		if (.@spick == .@elig)
+			close;
+		.@card_idx = .@elig_ci[.@spick];
+		.@cur_lv = .@elig_lv[.@spick];
+		.@cur_charm = .@elig_charm[.@spick];
+	} else {
+		.@card_idx = .@elig_ci[0];
+		.@cur_lv = .@elig_lv[0];
+		.@cur_charm = .@elig_charm[0];
+	}
+
+	// Player 2026-09-18: pile names stack in one box, one charm per mes line. Copy is develop-with-risk, not lottery talk.
+	mes "[Doberkin]";
+	mes "Sniff sniff. That's ^0055FF" + getitemname(.@cur_charm) + "^000000 in there. Level " + .@cur_lv + ".";
+	.@pile_n = svu_levelcount(.@item, .@card_idx, .@cur_charm);
+	if (.@pile_n >= 2) {
+		.@first_id = svu_levelitem(.@item, .@card_idx, .@cur_charm, 0);
+		mes "I can work it toward these:";
+		for (.@i = 0; .@i < .@pile_n; ++.@i)
+			mes "^0055FF" + getitemname(svu_levelitem(.@item, .@card_idx, .@cur_charm, .@i)) + "^000000";
+		mes "If it slips, it likes to fall toward ^0055FF" + getitemname(.@first_id) + "^000000.";
+	}
+	next;
+	mes "[Doberkin]";
+	mes "I'll press Shadowdecon into that charm. Trying to make it stronger.";
+	next;
+	mes "[Doberkin]";
+	mes "Careful. Push too hard and it might drop.";
+	next;
+	mes "[Doberkin]";
+	mes "This costs ^0055FF5 Silvervine Fruit^000000 and ^0055FF1 Shadowdecon^000000.";
+	next;
+	mes "[Doberkin]";
+	mes "Refine, cards, other enchants, random options, and enchant grade stay put.";
+	next;
+	if (select("Proceed:Cancel") == 2)
+		close;
+
+	.@need_fruit = countitem(6417) < 5;
+	.@need_stone = countitem(25729) < 1;
+	if (.@need_stone) {
+		mes "[Doberkin]";
+		mes "No Shadowdecon, no upgrade. I do not work without that stone.";
+		if (.@need_fruit) {
+			next;
+			mes "[Doberkin]";
+			mes "You are short on Silvervine Fruit. I need five.";
+		}
+		close;
+	}
+	if (.@need_fruit) {
+		mes "[Doberkin]";
+		mes "You are short on Silvervine Fruit. I need five.";
+		close;
+	}
+
+	.@eq_id = getequipid(.@slot);
+	.@refine = getequiprefinerycnt(.@slot);
+	.@card[0] = getequipcardid(.@slot, 0);
+	.@card[1] = getequipcardid(.@slot, 1);
+	.@card[2] = getequipcardid(.@slot, 2);
+	.@card[3] = getequipcardid(.@slot, 3);
+	for (.@i = 0; .@i < 5; ++.@i) {
+		set getelementofarray(.@OptID, .@i), getequiprandomoption(.@slot, .@i, ROA_ID);
+		set getelementofarray(.@OptVal, .@i), getequiprandomoption(.@slot, .@i, ROA_VALUE);
+		set getelementofarray(.@OptParam, .@i), getequiprandomoption(.@slot, .@i, ROA_PARAM);
+	}
+	.@grade = getenchantgrade(.@slot);
+
+	if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine))
+		close;
+
+	.@enchant_id = svu_roll(.@item, .@card_idx, .@cur_charm);
+	if (.@enchant_id < 1) {
+		mes "[Doberkin]";
+		mes "Something is wrong in my book. Invalid charm.";
+		next;
+		mes "[Doberkin]";
+		mes "Nothing changed. Fruit stays in your pack.";
+		close;
+	}
+
+	.@card[.@card_idx] = .@enchant_id;
+	.@result = replaceequipped(.@slot, .@uid$, .@card[0], .@card[1], .@card[2], .@card[3], .@OptID, .@OptVal, .@OptParam);
+	if (.@result != 1) {
+		mes "[Doberkin]";
+		mes "That piece changed before I could work.";
+		next;
+		mes "[Doberkin]";
+		mes "Nothing changed. Fruit stays in your pack.";
+		close;
+	}
+	delitem 6417, 5;
+	delitem 25729, 1;
+
+	.@new_lv = svu_findlevel(.@item, .@card_idx, .@enchant_id);
+	mes "[Doberkin]";
+	if (.@new_lv > 0 && .@new_lv < .@cur_lv) {
+		mes "Oops. Sorry.";
+		specialeffect2 EF_REFINEFAIL;
+		next;
+		mes "[Doberkin]";
+		mes "It slipped. ^0055FF" + getitemname(.@cur_charm) + "^000000 down to ^0055FF" + getitemname(.@enchant_id) + "^000000.";
+		next;
+		mes "[Doberkin]";
+		mes "I was trying to push it. The stone got away from me.";
+		close;
+	}
+	if (.@new_lv > .@cur_lv) {
+		mes "Ha. It took. ^0055FF" + getitemname(.@enchant_id) + "^000000. Stronger.";
+		specialeffect2 EF_BASH3D2;
+	} else {
+		mes "Didn't budge. Still ^0055FF" + getitemname(.@enchant_id) + "^000000.";
+		specialeffect2 EF_HIT1;
+	}
+	next;
+	mes "[Doberkin]";
+	mes "Come back if you want me to try again.";
+	close;
+
+L_Banter:
+	switch (select("Who are you?:How did you get here?:You live with cats?:Never mind.")) {
+	case 1:
+		mes "[Doberkin]";
+		mes "I am a dog. That is the whole personality.";
+		next;
+		mes "[Doberkin]";
+		mes "Name's Doberkin. I travel. I sniff. I chase things that run.";
+		next;
+		mes "[Doberkin]";
+		mes "Do not call me a wolf. Wolves have dignity. I have a wet nose.";
+		next;
+		goto L_Main;
+	case 2:
+		mes "[Doberkin]";
+		mes "Wind. A big rude wind. One minute I'm on a boat, next minute I'm swimming.";
+		next;
+		mes "[Doberkin]";
+		mes "I paddled. I barked. I swallowed half the sea. Very heroic. Very salty.";
+		next;
+		mes "[Doberkin]";
+		mes "Then someone fished me out. So I owe a life debt. Gratitude. Honor. All that.";
+		next;
+		mes "[Doberkin]";
+		mes "...No. That is a lie. I owe Silvervine.";
+		next;
+		mes "[Doberkin]";
+		mes "Hundreds of millions. The cats 'saved' me, then they handed me a bill.";
+		next;
+		goto L_Main;
+	case 3:
+		mes "[Doberkin]";
+		mes "Cat island. Cat rooms. Cat fur in my food. I sneeze just looking at them.";
+		next;
+		mes "[Doberkin]";
+		mes "I cannot leave. The tab is too big. My paws are stuck to this floor.";
+		next;
+		mes "[Doberkin]";
+		mes "That old cat over there works on gear. Fancy fruit. Fancy enchants.";
+		next;
+		mes "[Doberkin]";
+		mes "Me? I take Shadowdecon and try to push numbered charms stronger. Sometimes it slips. The tab is still ugly.";
+		next;
+		goto L_Main;
+	default:
+		mes "[Doberkin]";
+		mes "Woof. Come back if you bring Silvervine. Or a stick. Stick is fine too.";
+		close;
+	}
+}

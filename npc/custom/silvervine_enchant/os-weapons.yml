@@ -1,0 +1,148 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 1862
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 13493
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 16088
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 16089
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 18178
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 18179
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 18180
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 21047
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 26151
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 26164
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 28038
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 28136
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 28253
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 28629
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 28755
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 32019
+    Mode: RandomOption
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131

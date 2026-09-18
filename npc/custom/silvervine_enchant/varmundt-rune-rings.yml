@@ -1,0 +1,67 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 490299
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311974, Chance: 10000 }
+          - { Item: 311979, Chance: 10000 }
+          - { Item: 311984, Chance: 10000 }
+          - { Item: 311989, Chance: 10000 }
+          - { Item: 311994, Chance: 10000 }
+          - { Item: 311999, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311944, Chance: 10000 }
+          - { Item: 311949, Chance: 10000 }
+          - { Item: 311954, Chance: 10000 }
+          - { Item: 311959, Chance: 10000 }
+          - { Item: 311964, Chance: 10000 }
+          - { Item: 311969, Chance: 10000 }
+  - Id: 490300
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311974, Chance: 10000 }
+          - { Item: 311979, Chance: 10000 }
+          - { Item: 311984, Chance: 10000 }
+          - { Item: 311989, Chance: 10000 }
+          - { Item: 311994, Chance: 10000 }
+          - { Item: 311999, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311944, Chance: 10000 }
+          - { Item: 311949, Chance: 10000 }
+          - { Item: 311954, Chance: 10000 }
+          - { Item: 311959, Chance: 10000 }
+          - { Item: 311964, Chance: 10000 }
+          - { Item: 311969, Chance: 10000 }
+  - Id: 490301
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311974, Chance: 10000 }
+          - { Item: 311979, Chance: 10000 }
+          - { Item: 311984, Chance: 10000 }
+          - { Item: 311989, Chance: 10000 }
+          - { Item: 311994, Chance: 10000 }
+          - { Item: 311999, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 311944, Chance: 10000 }
+          - { Item: 311949, Chance: 10000 }
+          - { Item: 311954, Chance: 10000 }
+          - { Item: 311959, Chance: 10000 }
+          - { Item: 311964, Chance: 10000 }
+          - { Item: 311969, Chance: 10000 }

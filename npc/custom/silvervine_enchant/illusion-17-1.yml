@@ -1,0 +1,282 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 15376
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29534, Chance: 10000 }
+          - { Item: 29535, Chance: 10000 }
+          - { Item: 29536, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29534, Chance: 10000 }
+          - { Item: 29535, Chance: 10000 }
+          - { Item: 29536, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29540, Chance: 10000 }
+  - Id: 15377
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29534, Chance: 10000 }
+          - { Item: 29535, Chance: 10000 }
+          - { Item: 29536, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29534, Chance: 10000 }
+          - { Item: 29535, Chance: 10000 }
+          - { Item: 29536, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29540, Chance: 10000 }
+  - Id: 20933
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29537, Chance: 10000 }
+          - { Item: 29538, Chance: 10000 }
+          - { Item: 29539, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29537, Chance: 10000 }
+          - { Item: 29538, Chance: 10000 }
+          - { Item: 29539, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29542, Chance: 10000 }
+  - Id: 20934
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29537, Chance: 10000 }
+          - { Item: 29538, Chance: 10000 }
+          - { Item: 29539, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29537, Chance: 10000 }
+          - { Item: 29538, Chance: 10000 }
+          - { Item: 29539, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29542, Chance: 10000 }
+  - Id: 22196
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29542, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29537, Chance: 10000 }
+          - { Item: 29538, Chance: 10000 }
+          - { Item: 29539, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29537, Chance: 10000 }
+          - { Item: 29538, Chance: 10000 }
+          - { Item: 29539, Chance: 10000 }
+  - Id: 22197
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29542, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29537, Chance: 10000 }
+          - { Item: 29538, Chance: 10000 }
+          - { Item: 29539, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 29527, Chance: 10000 }
+          - { Item: 29528, Chance: 10000 }
+          - { Item: 29537, Chance: 10000 }
+          - { Item: 29538, Chance: 10000 }
+          - { Item: 29539, Chance: 10000 }
+  - Id: 32207
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 4826, Chance: 10000 }
+          - { Item: 4836, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 29529, Chance: 10000 }
+          - { Item: 4881, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 29529, Chance: 10000 }
+          - { Item: 4866, Chance: 10000 }
+          - { Item: 29543, Chance: 10000 }
+          - { Item: 29545, Chance: 10000 }
+  - Id: 32208
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4722, Chance: 10000 }
+          - { Item: 4826, Chance: 10000 }
+          - { Item: 4836, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4722, Chance: 10000 }
+          - { Item: 29532, Chance: 10000 }
+          - { Item: 4881, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4722, Chance: 10000 }
+          - { Item: 29532, Chance: 10000 }
+          - { Item: 4866, Chance: 10000 }
+          - { Item: 29544, Chance: 10000 }
+          - { Item: 29546, Chance: 10000 }
+  - Id: 32209
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 4826, Chance: 10000 }
+          - { Item: 4836, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 29529, Chance: 10000 }
+          - { Item: 4881, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4702, Chance: 10000 }
+          - { Item: 4732, Chance: 10000 }
+          - { Item: 29529, Chance: 10000 }
+          - { Item: 4866, Chance: 10000 }
+          - { Item: 29543, Chance: 10000 }
+          - { Item: 29545, Chance: 10000 }
+  - Id: 32210
+    Mode: CardSlot
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4722, Chance: 10000 }
+          - { Item: 4826, Chance: 10000 }
+          - { Item: 4836, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4722, Chance: 10000 }
+          - { Item: 29532, Chance: 10000 }
+          - { Item: 4881, Chance: 10000 }
+      - CardIndex: 1
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4742, Chance: 10000 }
+          - { Item: 4752, Chance: 10000 }
+          - { Item: 4712, Chance: 10000 }
+          - { Item: 4722, Chance: 10000 }
+          - { Item: 29532, Chance: 10000 }
+          - { Item: 4866, Chance: 10000 }
+          - { Item: 29544, Chance: 10000 }
+          - { Item: 29546, Chance: 10000 }

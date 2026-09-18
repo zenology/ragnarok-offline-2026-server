@@ -1,0 +1,372 @@
+Header:
+  Type: SILVERVINE_ENCHANT_ITEM_POOL
+  Version: 1
+Body:
+  - Id: 500051
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 510066
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 530031
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 540051
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 550075
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 550076
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 560034
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 590043
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 590044
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 600028
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 610039
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 620018
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 700054
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 700055
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 700056
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131
+  - Id: 810013
+    Mode: Dual
+    Steps:
+      - CardIndex: 3
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4818, Chance: 10000 }
+          - { Item: 4869, Chance: 10000 }
+          - { Item: 311395, Chance: 10000 }
+          - { Item: 311400, Chance: 10000 }
+      - CardIndex: 2
+        SlotChance: 100000
+        Enchants:
+          - { Item: 4832, Chance: 10000 }
+          - { Item: 311384, Chance: 10000 }
+          - { Item: 311389, Chance: 10000 }
+    Groups:
+      - 126
+      - 127
+      - 128
+      - 129
+      - 130
+      - 131

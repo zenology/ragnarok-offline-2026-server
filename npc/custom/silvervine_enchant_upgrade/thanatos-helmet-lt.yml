@@ -1,0 +1,204 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 400135
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 311367 }
+              - { Item: 311368 }
+              - { Item: 311369 }
+          - Levels:
+              - { Item: 311370 }
+              - { Item: 311371 }
+              - { Item: 311372 }
+          - Levels:
+              - { Item: 311373 }
+              - { Item: 311374 }
+              - { Item: 311375 }
+          - Levels:
+              - { Item: 311376 }
+              - { Item: 311377 }
+              - { Item: 311378 }
+  - Id: 400142
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 311367 }
+              - { Item: 311368 }
+              - { Item: 311369 }
+          - Levels:
+              - { Item: 311370 }
+              - { Item: 311371 }
+              - { Item: 311372 }
+          - Levels:
+              - { Item: 311373 }
+              - { Item: 311374 }
+              - { Item: 311375 }
+          - Levels:
+              - { Item: 311376 }
+              - { Item: 311377 }
+              - { Item: 311378 }
+  - Id: 400145
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 311367 }
+              - { Item: 311368 }
+              - { Item: 311369 }
+          - Levels:
+              - { Item: 311370 }
+              - { Item: 311371 }
+              - { Item: 311372 }
+          - Levels:
+              - { Item: 311373 }
+              - { Item: 311374 }
+              - { Item: 311375 }
+          - Levels:
+              - { Item: 311376 }
+              - { Item: 311377 }
+              - { Item: 311378 }
+  - Id: 400151
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 29061 }
+              - { Item: 29062 }
+              - { Item: 29063 }
+          - Levels:
+              - { Item: 29071 }
+              - { Item: 29072 }
+              - { Item: 29073 }
+          - Levels:
+              - { Item: 29081 }
+              - { Item: 29082 }
+              - { Item: 29083 }
+          - Levels:
+              - { Item: 29091 }
+              - { Item: 29092 }
+              - { Item: 29093 }
+          - Levels:
+              - { Item: 29101 }
+              - { Item: 29102 }
+              - { Item: 29103 }
+          - Levels:
+              - { Item: 29111 }
+              - { Item: 29112 }
+              - { Item: 29113 }
+          - Levels:
+              - { Item: 29706 }
+              - { Item: 29707 }
+              - { Item: 29708 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 311367 }
+              - { Item: 311368 }
+              - { Item: 311369 }
+          - Levels:
+              - { Item: 311370 }
+              - { Item: 311371 }
+              - { Item: 311372 }
+          - Levels:
+              - { Item: 311373 }
+              - { Item: 311374 }
+              - { Item: 311375 }
+          - Levels:
+              - { Item: 311376 }
+              - { Item: 311377 }
+              - { Item: 311378 }
