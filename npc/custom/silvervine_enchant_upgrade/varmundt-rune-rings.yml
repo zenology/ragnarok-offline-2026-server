@@ -1,0 +1,238 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 490299
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 311974 }
+              - { Item: 311975 }
+              - { Item: 311976 }
+              - { Item: 311977 }
+              - { Item: 311978 }
+          - Levels:
+              - { Item: 311979 }
+              - { Item: 311980 }
+              - { Item: 311981 }
+              - { Item: 311982 }
+              - { Item: 311983 }
+          - Levels:
+              - { Item: 311984 }
+              - { Item: 311985 }
+              - { Item: 311986 }
+              - { Item: 311987 }
+              - { Item: 311988 }
+          - Levels:
+              - { Item: 311989 }
+              - { Item: 311990 }
+              - { Item: 311991 }
+              - { Item: 311992 }
+              - { Item: 311993 }
+          - Levels:
+              - { Item: 311994 }
+              - { Item: 311995 }
+              - { Item: 311996 }
+              - { Item: 311997 }
+              - { Item: 311998 }
+          - Levels:
+              - { Item: 311999 }
+              - { Item: 312000 }
+              - { Item: 312001 }
+              - { Item: 312002 }
+              - { Item: 312003 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 311944 }
+              - { Item: 311945 }
+              - { Item: 311946 }
+              - { Item: 311947 }
+              - { Item: 311948 }
+          - Levels:
+              - { Item: 311949 }
+              - { Item: 311950 }
+              - { Item: 311951 }
+              - { Item: 311952 }
+              - { Item: 311953 }
+          - Levels:
+              - { Item: 311954 }
+              - { Item: 311955 }
+              - { Item: 311956 }
+              - { Item: 311957 }
+              - { Item: 311958 }
+          - Levels:
+              - { Item: 311959 }
+              - { Item: 311960 }
+              - { Item: 311961 }
+              - { Item: 311962 }
+              - { Item: 311963 }
+          - Levels:
+              - { Item: 311964 }
+              - { Item: 311965 }
+              - { Item: 311966 }
+              - { Item: 311967 }
+              - { Item: 311968 }
+          - Levels:
+              - { Item: 311969 }
+              - { Item: 311970 }
+              - { Item: 311971 }
+              - { Item: 311972 }
+              - { Item: 311973 }
+  - Id: 490300
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 311974 }
+              - { Item: 311975 }
+              - { Item: 311976 }
+              - { Item: 311977 }
+              - { Item: 311978 }
+          - Levels:
+              - { Item: 311979 }
+              - { Item: 311980 }
+              - { Item: 311981 }
+              - { Item: 311982 }
+              - { Item: 311983 }
+          - Levels:
+              - { Item: 311984 }
+              - { Item: 311985 }
+              - { Item: 311986 }
+              - { Item: 311987 }
+              - { Item: 311988 }
+          - Levels:
+              - { Item: 311989 }
+              - { Item: 311990 }
+              - { Item: 311991 }
+              - { Item: 311992 }
+              - { Item: 311993 }
+          - Levels:
+              - { Item: 311994 }
+              - { Item: 311995 }
+              - { Item: 311996 }
+              - { Item: 311997 }
+              - { Item: 311998 }
+          - Levels:
+              - { Item: 311999 }
+              - { Item: 312000 }
+              - { Item: 312001 }
+              - { Item: 312002 }
+              - { Item: 312003 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 311944 }
+              - { Item: 311945 }
+              - { Item: 311946 }
+              - { Item: 311947 }
+              - { Item: 311948 }
+          - Levels:
+              - { Item: 311949 }
+              - { Item: 311950 }
+              - { Item: 311951 }
+              - { Item: 311952 }
+              - { Item: 311953 }
+          - Levels:
+              - { Item: 311954 }
+              - { Item: 311955 }
+              - { Item: 311956 }
+              - { Item: 311957 }
+              - { Item: 311958 }
+          - Levels:
+              - { Item: 311959 }
+              - { Item: 311960 }
+              - { Item: 311961 }
+              - { Item: 311962 }
+              - { Item: 311963 }
+          - Levels:
+              - { Item: 311964 }
+              - { Item: 311965 }
+              - { Item: 311966 }
+              - { Item: 311967 }
+              - { Item: 311968 }
+          - Levels:
+              - { Item: 311969 }
+              - { Item: 311970 }
+              - { Item: 311971 }
+              - { Item: 311972 }
+              - { Item: 311973 }
+  - Id: 490301
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 311974 }
+              - { Item: 311975 }
+              - { Item: 311976 }
+              - { Item: 311977 }
+              - { Item: 311978 }
+          - Levels:
+              - { Item: 311979 }
+              - { Item: 311980 }
+              - { Item: 311981 }
+              - { Item: 311982 }
+              - { Item: 311983 }
+          - Levels:
+              - { Item: 311984 }
+              - { Item: 311985 }
+              - { Item: 311986 }
+              - { Item: 311987 }
+              - { Item: 311988 }
+          - Levels:
+              - { Item: 311989 }
+              - { Item: 311990 }
+              - { Item: 311991 }
+              - { Item: 311992 }
+              - { Item: 311993 }
+          - Levels:
+              - { Item: 311994 }
+              - { Item: 311995 }
+              - { Item: 311996 }
+              - { Item: 311997 }
+              - { Item: 311998 }
+          - Levels:
+              - { Item: 311999 }
+              - { Item: 312000 }
+              - { Item: 312001 }
+              - { Item: 312002 }
+              - { Item: 312003 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 311944 }
+              - { Item: 311945 }
+              - { Item: 311946 }
+              - { Item: 311947 }
+              - { Item: 311948 }
+          - Levels:
+              - { Item: 311949 }
+              - { Item: 311950 }
+              - { Item: 311951 }
+              - { Item: 311952 }
+              - { Item: 311953 }
+          - Levels:
+              - { Item: 311954 }
+              - { Item: 311955 }
+              - { Item: 311956 }
+              - { Item: 311957 }
+              - { Item: 311958 }
+          - Levels:
+              - { Item: 311959 }
+              - { Item: 311960 }
+              - { Item: 311961 }
+              - { Item: 311962 }
+              - { Item: 311963 }
+          - Levels:
+              - { Item: 311964 }
+              - { Item: 311965 }
+              - { Item: 311966 }
+              - { Item: 311967 }
+              - { Item: 311968 }
+          - Levels:
+              - { Item: 311969 }
+              - { Item: 311970 }
+              - { Item: 311971 }
+              - { Item: 311972 }
+              - { Item: 311973 }

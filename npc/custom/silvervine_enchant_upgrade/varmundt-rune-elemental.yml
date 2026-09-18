@@ -1,0 +1,604 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 450200
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 450201
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 450202
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 450203
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 480145
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 480146
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 480147
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 480148
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 470108
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 470109
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 470110
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
+  - Id: 470111
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 4702 }
+              - { Item: 4703 }
+              - { Item: 4704 }
+          - Levels:
+              - { Item: 4712 }
+              - { Item: 4713 }
+              - { Item: 4714 }
+          - Levels:
+              - { Item: 4721 }
+              - { Item: 4722 }
+              - { Item: 4723 }
+          - Levels:
+              - { Item: 4732 }
+              - { Item: 4733 }
+              - { Item: 4734 }
+          - Levels:
+              - { Item: 4742 }
+              - { Item: 4743 }
+              - { Item: 4744 }
+      - CardIndex: 2
+        Series:
+          - Levels:
+              - { Item: 310920 }
+              - { Item: 310921 }
+              - { Item: 310922 }
+          - Levels:
+              - { Item: 310923 }
+              - { Item: 310924 }
+              - { Item: 310925 }
+          - Levels:
+              - { Item: 310926 }
+              - { Item: 310927 }
+              - { Item: 310928 }
+          - Levels:
+              - { Item: 310929 }
+              - { Item: 310930 }
+              - { Item: 310932 }
+          - Levels:
+              - { Item: 310933 }
+              - { Item: 310934 }
+              - { Item: 310935 }
+          - Levels:
+              - { Item: 310936 }
+              - { Item: 310937 }
+              - { Item: 310938 }
