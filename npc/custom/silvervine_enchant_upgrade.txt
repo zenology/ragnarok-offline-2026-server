@@ -76,7 +76,7 @@ L_Main:
 	next;
 	if (.@count < 1) {
 		mes "[Doberkin]";
-		mes "Sniff sniff. Nothing on you I can gamble.";
+		mes "Sniff sniff. Nothing on you I can work.";
 		next;
 		mes "[Doberkin]";
 		mes "Wear gear the old cat already started. I need a numbered charm already in the slot.";
@@ -88,16 +88,16 @@ L_Main:
 	}
 
 	mes "[Doberkin]";
-	mes "Alright. I only gamble what you're wearing. Leave the bag out of it.";
+	mes "Alright. I only work what you're wearing. Leave the bag out of it.";
 	next;
 	mes "[Doberkin]";
-	mes "The old cat fills the first tier. I toss every level of that same charm pile.";
+	mes "The old cat fills the first tier. I use Shadowdecon to push that same charm stronger.";
 	next;
 	mes "[Doberkin]";
-	mes "Level 1 shows up half the time. The top is twenty percent. Middles share the rest. You might go down.";
+	mes "I am trying to develop it. Careful. If it's already too good, it can get worse.";
 	next;
 	mes "[Doberkin]";
-	mes "Every toss costs five Silvervine Fruit and one Shadowdecon. The stone is the real ingredient. Fruit just keeps the cats paid.";
+	mes "Every try costs five Silvervine Fruit and one Shadowdecon. The stone does the work. Fruit just keeps the cats paid.";
 	next;
 
 	.@menu$ = "";
@@ -147,11 +147,23 @@ L_Main:
 		.@cur_charm = .@elig_charm[0];
 	}
 
+	// Player 2026-09-18: pile names stack in one box, one charm per mes line. Copy is develop-with-risk, not lottery talk.
 	mes "[Doberkin]";
-	mes "^0055FF" + getitemname(.@cur_charm) + "^000000, Level " + .@cur_lv + ".";
+	mes "Sniff sniff. That's ^0055FF" + getitemname(.@cur_charm) + "^000000 in there. Level " + .@cur_lv + ".";
+	.@pile_n = svu_levelcount(.@item, .@card_idx, .@cur_charm);
+	if (.@pile_n >= 2) {
+		.@first_id = svu_levelitem(.@item, .@card_idx, .@cur_charm, 0);
+		mes "I can work it toward these:";
+		for (.@i = 0; .@i < .@pile_n; ++.@i)
+			mes "^0055FF" + getitemname(svu_levelitem(.@item, .@card_idx, .@cur_charm, .@i)) + "^000000";
+		mes "If it slips, it likes to fall toward ^0055FF" + getitemname(.@first_id) + "^000000.";
+	}
 	next;
 	mes "[Doberkin]";
-	mes "I will replace that slot with a random level from this charm's pile.";
+	mes "I'll press Shadowdecon into that charm. Trying to make it stronger.";
+	next;
+	mes "[Doberkin]";
+	mes "Careful. Push too hard and it might drop.";
 	next;
 	mes "[Doberkin]";
 	mes "This costs ^0055FF5 Silvervine Fruit^000000 and ^0055FF1 Shadowdecon^000000.";
@@ -219,12 +231,29 @@ L_Main:
 	delitem 6417, 5;
 	delitem 25729, 1;
 
+	.@new_lv = svu_findlevel(.@item, .@card_idx, .@enchant_id);
 	mes "[Doberkin]";
-	mes "Done. ^0055FF" + getitemname(.@enchant_id) + "^000000. Sniff. Debt goes down a little.";
-	specialeffect2 EF_BASH3D2;
+	if (.@new_lv > 0 && .@new_lv < .@cur_lv) {
+		mes "Oops. Sorry.";
+		specialeffect2 EF_REFINEFAIL;
+		next;
+		mes "[Doberkin]";
+		mes "It slipped. ^0055FF" + getitemname(.@cur_charm) + "^000000 down to ^0055FF" + getitemname(.@enchant_id) + "^000000.";
+		next;
+		mes "[Doberkin]";
+		mes "I was trying to push it. The stone got away from me.";
+		close;
+	}
+	if (.@new_lv > .@cur_lv) {
+		mes "Ha. It took. ^0055FF" + getitemname(.@enchant_id) + "^000000. Stronger.";
+		specialeffect2 EF_BASH3D2;
+	} else {
+		mes "Didn't budge. Still ^0055FF" + getitemname(.@enchant_id) + "^000000.";
+		specialeffect2 EF_HIT1;
+	}
 	next;
 	mes "[Doberkin]";
-	mes "Come back if you like throwing fruit at luck.";
+	mes "Come back if you want me to try again.";
 	close;
 
 L_Banter:
@@ -268,7 +297,7 @@ L_Banter:
 		mes "That old cat over there works on gear. Fancy fruit. Fancy enchants.";
 		next;
 		mes "[Doberkin]";
-		mes "Me? I gamble numbered charms now. Level soup. Fruit and Shadowdecon in, luck out. The tab is still ugly.";
+		mes "Me? I take Shadowdecon and try to push numbered charms stronger. Sometimes it slips. The tab is still ugly.";
 		next;
 		goto L_Main;
 	default:
