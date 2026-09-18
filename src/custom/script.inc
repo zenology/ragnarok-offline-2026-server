@@ -401,7 +401,7 @@ BUILDIN_FUNC(sve_stepcount)
 {
 	const int32 item_id = script_getnum(st, 2);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
-	if (pool == nullptr || pool->mode != SVE_MODE_CARD) {
+	if (pool == nullptr || !sve_has_card_mode(pool->mode)) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -415,7 +415,7 @@ BUILDIN_FUNC(sve_stepcard)
 	const int32 item_id = script_getnum(st, 2);
 	const int32 ui_step = script_getnum(st, 3);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
-	if (pool == nullptr || pool->mode != SVE_MODE_CARD || ui_step < 1 || ui_step > static_cast<int32>(pool->steps.size())) {
+	if (pool == nullptr || !sve_has_card_mode(pool->mode) || ui_step < 1 || ui_step > static_cast<int32>(pool->steps.size())) {
 		script_pushint(st, -1);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -429,7 +429,7 @@ BUILDIN_FUNC(sve_findstep)
 	const int32 item_id = script_getnum(st, 2);
 	const int32 card_index = script_getnum(st, 3);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
-	if (pool == nullptr || pool->mode != SVE_MODE_CARD) {
+	if (pool == nullptr || !sve_has_card_mode(pool->mode)) {
 		script_pushint(st, -1);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -443,7 +443,7 @@ BUILDIN_FUNC(sve_poolcount)
 	const int32 item_id = script_getnum(st, 2);
 	const int32 card_index = script_getnum(st, 3);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
-	if (pool == nullptr || pool->mode != SVE_MODE_CARD) {
+	if (pool == nullptr || !sve_has_card_mode(pool->mode)) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -464,7 +464,7 @@ BUILDIN_FUNC(sve_poolitem)
 	const int32 card_index = script_getnum(st, 3);
 	const int32 n = script_getnum(st, 4);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
-	if (pool == nullptr || pool->mode != SVE_MODE_CARD || n < 0) {
+	if (pool == nullptr || !sve_has_card_mode(pool->mode) || n < 0) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -484,7 +484,7 @@ BUILDIN_FUNC(sve_rollcharm)
 	const int32 item_id = script_getnum(st, 2);
 	const int32 card_index = script_getnum(st, 3);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
-	if (pool == nullptr || pool->mode != SVE_MODE_CARD) {
+	if (pool == nullptr || !sve_has_card_mode(pool->mode)) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -503,7 +503,7 @@ BUILDIN_FUNC(sve_rogroupcount)
 {
 	const int32 item_id = script_getnum(st, 2);
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
-	if (pool == nullptr || pool->mode != SVE_MODE_RO) {
+	if (pool == nullptr || !sve_has_ro_mode(pool->mode)) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}

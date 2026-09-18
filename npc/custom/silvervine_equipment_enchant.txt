@@ -182,6 +182,9 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 	mes "[Silvervine Enchanter]";
 	mes "Already got options on the piece? Pay double. I've seen worse.";
 	next;
+	mes "[Silvervine Enchanter]";
+	mes "Some pieces, like OSAD, take both jobs. I'll ask when it matters.";
+	next;
 
 	.@menu$ = "";
 	for (.@i = 0; .@i < .@count; ++.@i)
@@ -194,6 +197,25 @@ mal_in01,11,176,4	script	Silvervine Enchanter#sve	4_DR_GAMBERI,{
 	.@item = .@chosen_item[.@choice];
 	.@item_mode = .@chosen_mode[.@choice];
 	.@uid$ = .@chosen_uid$[.@choice];
+
+	if (.@item_mode == 3) {
+		mes "[Silvervine Enchanter]";
+		mes "^0055FF" + getitemname(.@item) + "^000000. This one takes two kinds of work.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Card-slot charms, or Random Options. They don't overwrite each other.";
+		next;
+		mes "[Silvervine Enchanter]";
+		mes "Pick which job you want tonight.";
+		next;
+		.@kind = select("Card-slot charms:Random Options:Cancel");
+		if (.@kind == 3)
+			close;
+		if (.@kind == 1)
+			.@item_mode = 1;
+		else
+			.@item_mode = 2;
+	}
 
 	if (.@item_mode == 2) {
 		.@existing = 0;

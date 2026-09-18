@@ -18,8 +18,17 @@
 enum sve_mode : int32 {
 	SVE_MODE_NONE = 0,
 	SVE_MODE_CARD = 1,
-	SVE_MODE_RO = 2
+	SVE_MODE_RO = 2,
+	SVE_MODE_DUAL = 3
 };
+
+inline bool sve_has_card_mode(sve_mode mode) {
+	return mode == SVE_MODE_CARD || mode == SVE_MODE_DUAL;
+}
+
+inline bool sve_has_ro_mode(sve_mode mode) {
+	return mode == SVE_MODE_RO || mode == SVE_MODE_DUAL;
+}
 
 struct sve_enchant_entry {
 	t_itemid item_id = 0;
@@ -77,6 +86,8 @@ public:
 			pool->mode = SVE_MODE_CARD;
 		} else if (mode_name == "RandomOption") {
 			pool->mode = SVE_MODE_RO;
+		} else if (mode_name == "Dual") {
+			pool->mode = SVE_MODE_DUAL;
 		} else {
 			this->invalidWarning(node["Mode"], "Unknown Mode \"%s\" for Id %u.\n", mode_name.c_str(), nameid);
 			return 0;
@@ -89,17 +100,25 @@ public:
 
 		const bool has_steps = this->nodeExists(node, "Steps");
 		const bool has_groups = this->nodeExists(node, "Groups");
-		if (has_steps && has_groups) {
-			this->invalidWarning(node, "Id %u has both Steps and Groups.\n", nameid);
+
+		if (pool->mode == SVE_MODE_CARD && has_groups) {
+			this->invalidWarning(node, "CardSlot Id %u must not have Groups.\n", nameid);
+			return 0;
+		}
+		if (pool->mode == SVE_MODE_RO && has_steps) {
+			this->invalidWarning(node, "RandomOption Id %u must not have Steps.\n", nameid);
+			return 0;
+		}
+		if (sve_has_card_mode(pool->mode) && !has_steps) {
+			this->invalidWarning(node, "Id %u is missing Steps.\n", nameid);
+			return 0;
+		}
+		if (sve_has_ro_mode(pool->mode) && !has_groups) {
+			this->invalidWarning(node, "Id %u is missing Groups.\n", nameid);
 			return 0;
 		}
 
-		if (pool->mode == SVE_MODE_CARD) {
-			if (!has_steps) {
-				this->invalidWarning(node, "CardSlot Id %u is missing Steps.\n", nameid);
-				return 0;
-			}
-
+		if (sve_has_card_mode(pool->mode)) {
 			const auto& stepsNode = node["Steps"];
 			if (!stepsNode.is_seq() || stepsNode.num_children() < 1) {
 				this->invalidWarning(node["Steps"], "CardSlot Id %u has empty Steps.\n", nameid);
@@ -154,12 +173,9 @@ public:
 
 				pool->steps.push_back(std::move(step));
 			}
-		} else {
-			if (!has_groups) {
-				this->invalidWarning(node, "RandomOption Id %u is missing Groups.\n", nameid);
-				return 0;
-			}
+		}
 
+		if (sve_has_ro_mode(pool->mode)) {
 			const auto& groupsNode = node["Groups"];
 			if (!groupsNode.is_seq() || groupsNode.num_children() < 1) {
 				this->invalidWarning(node["Groups"], "RandomOption Id %u has empty Groups.\n", nameid);
@@ -199,7 +215,7 @@ public:
 			const auto& pool = pair.second;
 			bool drop = false;
 
-			if (pool->mode == SVE_MODE_CARD) {
+			if (sve_has_card_mode(pool->mode)) {
 				for (const auto& step : pool->steps) {
 					for (const auto& entry : step.enchants) {
 						if (item_db.find(entry.item_id) == nullptr) {
@@ -211,7 +227,8 @@ public:
 					if (drop)
 						break;
 				}
-			} else if (pool->mode == SVE_MODE_RO) {
+			}
+			if (!drop && sve_has_ro_mode(pool->mode)) {
 				for (uint16 group_id : pool->ro_groups) {
 					if (random_option_group.find(group_id) == nullptr) {
 						ShowError("Silvervine enchant Id %u references missing Random Option group %hu.\n", pool->id, group_id);
@@ -287,7 +304,7 @@ inline bool sve_roll_ro(t_itemid item_id, int32 want, int32 out_id[MAX_ITEM_RDM_
 	}
 
 	auto pool = silvervine_enchant_db.find(item_id);
-	if (pool == nullptr || pool->mode != SVE_MODE_RO || pool->ro_groups.empty())
+	if (pool == nullptr || !sve_has_ro_mode(pool->mode) || pool->ro_groups.empty())
 		return false;
 	if (want < 1 || want > MAX_ITEM_RDM_OPT)
 		return false;

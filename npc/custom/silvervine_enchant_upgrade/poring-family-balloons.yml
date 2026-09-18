@@ -1,0 +1,224 @@
+Header:
+  Type: SILVERVINE_ENCHANT_UPGRADE_POOL
+  Version: 1
+Body:
+  - Id: 19143
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }
+  - Id: 19146
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }
+  - Id: 19147
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }
+  - Id: 19148
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }
+  - Id: 19149
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }
+  - Id: 19150
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }
+  - Id: 19151
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }
+  - Id: 19152
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }
+  - Id: 19153
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }
+  - Id: 19154
+    Slots:
+      - CardIndex: 3
+        Series:
+          - Levels:
+              - { Item: 310982 }
+              - { Item: 310983 }
+          - Levels:
+              - { Item: 310984 }
+              - { Item: 310985 }
+          - Levels:
+              - { Item: 310986 }
+              - { Item: 310987 }
+          - Levels:
+              - { Item: 310988 }
+              - { Item: 310989 }
+          - Levels:
+              - { Item: 310990 }
+              - { Item: 310991 }
+          - Levels:
+              - { Item: 310992 }
+              - { Item: 310993 }

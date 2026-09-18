@@ -39,3 +39,8 @@ Footer:
     - Path: npc/custom/silvervine_enchant_upgrade/accessories-enchantment.yml
     - Path: npc/custom/silvervine_enchant_upgrade/heroic-ring.yml
     - Path: npc/custom/silvervine_enchant_upgrade/gray-wolf.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/poring-family-balloons.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/rift-armor.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/ring-of-fallen.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/royal-guard-ring.yml
+    - Path: npc/custom/silvervine_enchant_upgrade/rune-equipment.yml
