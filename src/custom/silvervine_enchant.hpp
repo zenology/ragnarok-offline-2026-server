@@ -407,7 +407,7 @@ inline int32 sve_find_step_index(const sve_item_pool& pool, int32 card_index) {
 	return -1;
 }
 
-inline bool sve_roll_ro(t_itemid item_id, int32 pool_index, int32 option_index, int32& out_id, int32& out_val, int32& out_param) {
+inline bool sve_roll_ro(t_itemid item_id, int32 pool_index, int32 option_index, int32& out_id, int32& out_val, int32& out_param, bool force_max) {
 	out_id = 0;
 	out_val = 0;
 	out_param = 0;
@@ -443,7 +443,7 @@ inline bool sve_roll_ro(t_itemid item_id, int32 pool_index, int32 option_index, 
 		const auto& option = entries[index];
 		if (rnd_value<uint16>(0, 9999) < option->chance) {
 			out_id = option->id;
-			out_val = rnd_value(option->min_value, option->max_value);
+			out_val = force_max ? option->max_value : rnd_value(option->min_value, option->max_value);
 			out_param = option->param;
 			return true;
 		}
@@ -454,7 +454,7 @@ inline bool sve_roll_ro(t_itemid item_id, int32 pool_index, int32 option_index, 
 		return false;
 	const auto& option = entries[fallback];
 	out_id = option->id;
-	out_val = rnd_value(option->min_value, option->max_value);
+	out_val = force_max ? option->max_value : rnd_value(option->min_value, option->max_value);
 	out_param = option->param;
 	return true;
 }

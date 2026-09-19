@@ -1,7 +1,7 @@
 //===== Ragnarok Offline =====================================
 //= Doberkin: numbered same-slot charm level lottery.
 //= YAML book: silvervine_enchant_upgrade_item_pools.yml (not the cat first-fill book).
-//= Flat cost: 5 Silvervine Fruit and 1 Etel Dust. Always writes a rolled level.
+//= Ordinary: 5 Fruit 6417 + 1 Etel Dust 1000322, weighted roll. Special: 25 Fruit + 5 Etel Dust + 1 Blacksmith Blessing 6635, last series ID.
 //============================================================
 
 mal_in01,25,167,2	script	Doberkin#sve_upg	4_M_DOGTRAVELER2,{
@@ -91,13 +91,22 @@ L_Main:
 	mes "Alright. I only work what you're wearing. Leave the bag out of it.";
 	next;
 	mes "[Doberkin]";
-	mes "The old cat fills the first tier. I use Etel Dust to push that same charm stronger.";
+	mes "Back home I learned how to develop stones already stuck in gear. Sniff sniff. Homeland trick.";
 	next;
 	mes "[Doberkin]";
-	mes "I am trying to develop it. Careful. If it's already too good, it can get worse.";
+	mes "Wind threw me here. These Original charms slot the same. Good nose. Familiar work.";
 	next;
 	mes "[Doberkin]";
-	mes "Every try costs five Silvervine Fruit and one Etel Dust. The dust does the work. Fruit just keeps the cats paid.";
+	mes "Papa Bramble across the room only stuffs the first stone in. He collects nearby and jams the socket. Never knew you could push higher.";
+	next;
+	mes "[Doberkin]";
+	mes "He looked sick when he watched my Etel Dust. Sorry. Careful with me. It can still get worse.";
+	next;
+	mes "[Doberkin]";
+	mes "Ordinary try is five Silvervine Fruit and one Etel Dust. The dust does the work. Fruit just keeps the cats paid.";
+	next;
+	mes "[Doberkin]";
+	mes "Special mix needs a Blacksmith Blessing too. Twenty-five fruit, five Etel Dust, one blessing. Top of the pile. No slip.";
 	next;
 
 	.@menu$ = "";
@@ -134,7 +143,7 @@ L_Main:
 	if (.@elig > 1) {
 		.@smenu$ = "";
 		for (.@i = 0; .@i < .@elig; ++.@i)
-			.@smenu$ += replacestr(getitemname(.@elig_charm[.@i]), ":", "") + " - Lv" + .@elig_lv[.@i] + " - 5 Fruit, 1 Etel Dust:";
+			.@smenu$ += replacestr(getitemname(.@elig_charm[.@i]), ":", "") + " - Lv" + .@elig_lv[.@i] + ":";
 		.@spick = select(.@smenu$ + "Cancel") - 1;
 		if (.@spick == .@elig)
 			close;
@@ -160,35 +169,56 @@ L_Main:
 	}
 	next;
 	mes "[Doberkin]";
-	mes "I'll press Etel Dust into that charm. Trying to make it stronger.";
+	mes "Ordinary: I press one Etel Dust. I try to make it stronger. It can drop.";
 	next;
 	mes "[Doberkin]";
-	mes "Careful. Push too hard and it might drop.";
+	mes "Special: Blacksmith Blessing makes it stick at the top. Highest quality. No slip.";
 	next;
 	mes "[Doberkin]";
-	mes "This costs ^0055FF5 Silvervine Fruit^000000 and ^0055FF1 Etel Dust^000000.";
+	mes "Ordinary is ^0055FF5 Silvervine Fruit^000000 and ^0055FF1 Etel Dust^000000.";
+	next;
+	mes "[Doberkin]";
+	mes "Special is ^0055FF25 Silvervine Fruit^000000, ^0055FF5 Etel Dust^000000, and ^0055FF1 Blacksmith Blessing^000000.";
 	next;
 	mes "[Doberkin]";
 	mes "Refine, cards, other enchants, random options, and enchant grade stay put.";
 	next;
-	if (select("Proceed:Cancel") == 2)
+	.@svc = select("Ordinary - 5 Fruit, 1 Etel Dust:Special - 25 Fruit, 5 Etel Dust, 1 Blacksmith Blessing:Cancel");
+	if (.@svc == 3)
 		close;
+	.@use_special = (.@svc == 2);
+	.@pay_fruit = (.@use_special ? 25 : 5);
+	.@pay_dust = (.@use_special ? 5 : 1);
+	.@pay_bs = (.@use_special ? 1 : 0);
 
-	.@need_fruit = countitem(6417) < 5;
-	.@need_dust = countitem(1000322) < 1;
-	if (.@need_dust) {
+	if (.@pay_bs > 0 && countitem(6635) < .@pay_bs) {
 		mes "[Doberkin]";
-		mes "No Etel Dust, no upgrade. I do not work without that dust.";
-		if (.@need_fruit) {
+		mes "No Blacksmith Blessing, no special mix. I need one.";
+		if (countitem(1000322) < .@pay_dust) {
 			next;
 			mes "[Doberkin]";
-			mes "You are short on Silvervine Fruit. I need five.";
+			mes "No Etel Dust, no upgrade. Special needs five.";
+		}
+		if (countitem(6417) < .@pay_fruit) {
+			next;
+			mes "[Doberkin]";
+			mes "You are short on Silvervine Fruit. Special needs twenty-five.";
 		}
 		close;
 	}
-	if (.@need_fruit) {
+	if (countitem(1000322) < .@pay_dust) {
 		mes "[Doberkin]";
-		mes "You are short on Silvervine Fruit. I need five.";
+		mes (.@pay_bs > 0 ? "No Etel Dust, no upgrade. Special needs five." : "No Etel Dust, no upgrade. I do not work without that dust.");
+		if (countitem(6417) < .@pay_fruit) {
+			next;
+			mes "[Doberkin]";
+			mes "You are short on Silvervine Fruit. I need " + .@pay_fruit + ".";
+		}
+		close;
+	}
+	if (countitem(6417) < .@pay_fruit) {
+		mes "[Doberkin]";
+		mes "You are short on Silvervine Fruit. I need " + .@pay_fruit + ".";
 		close;
 	}
 
@@ -208,7 +238,7 @@ L_Main:
 	if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine))
 		close;
 
-	.@enchant_id = svu_roll(.@item, .@card_idx, .@cur_charm);
+	.@enchant_id = svu_roll(.@item, .@card_idx, .@cur_charm, .@use_special);
 	if (.@enchant_id < 1) {
 		mes "[Doberkin]";
 		mes "Something is wrong in my book. Invalid charm.";
@@ -228,8 +258,10 @@ L_Main:
 		mes "Nothing changed. Fruit stays in your pack.";
 		close;
 	}
-	delitem 6417, 5;
-	delitem 1000322, 1;
+	delitem 6417, .@pay_fruit;
+	delitem 1000322, .@pay_dust;
+	if (.@pay_bs > 0)
+		delitem 6635, .@pay_bs;
 
 	.@new_lv = svu_findlevel(.@item, .@card_idx, .@enchant_id);
 	mes "[Doberkin]";
@@ -294,10 +326,13 @@ L_Banter:
 		mes "I cannot leave. The tab is too big. My paws are stuck to this floor.";
 		next;
 		mes "[Doberkin]";
-		mes "That old cat over there works on gear. Fancy fruit. Fancy enchants.";
+		mes "Back home I grew stones already in gear. Wind dumped me on cat island.";
 		next;
 		mes "[Doberkin]";
-		mes "Me? I take Etel Dust and try to push numbered charms stronger. Sometimes it slips. The tab is still ugly.";
+		mes "Bramble across the room only jams charms in. Collects stones nearby. He had no idea you could develop them.";
+		next;
+		mes "[Doberkin]";
+		mes "He yelped when he saw my dust work. Me? Etel Dust, numbered charms, sometimes a Blacksmith Blessing for the top. Twenty-five fruit, five dust, one blessing.";
 		next;
 		goto L_Main;
 	default:

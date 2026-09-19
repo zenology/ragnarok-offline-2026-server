@@ -558,11 +558,14 @@ BUILDIN_FUNC(sve_rollro)
 	const int32 item_id = script_getnum(st, 2);
 	const int32 pool_index = script_getnum(st, 3);
 	const int32 option_index = script_getnum(st, 4);
+	bool force_max = false;
+	if (script_hasdata(st, 5))
+		force_max = script_getnum(st, 5) != 0;
 	int32 out_id = 0;
 	int32 out_val = 0;
 	int32 out_param = 0;
 
-	if (item_id < 1 || !sve_roll_ro(static_cast<t_itemid>(item_id), pool_index, option_index, out_id, out_val, out_param)) {
+	if (item_id < 1 || !sve_roll_ro(static_cast<t_itemid>(item_id), pool_index, option_index, out_id, out_val, out_param, force_max)) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -683,12 +686,15 @@ BUILDIN_FUNC(svu_roll)
 	const int32 item_id = script_getnum(st, 2);
 	const int32 card_index = script_getnum(st, 3);
 	const int32 charm_id = script_getnum(st, 4);
+	bool force_max = false;
+	if (script_hasdata(st, 5))
+		force_max = script_getnum(st, 5) != 0;
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_upgrade_db.find(static_cast<t_itemid>(item_id));
 	if (pool == nullptr || charm_id < 1) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	script_pushint(st, svu_roll_level(*pool, card_index, static_cast<t_itemid>(charm_id)));
+	script_pushint(st, svu_roll_level(*pool, card_index, static_cast<t_itemid>(charm_id), force_max));
 	return SCRIPT_CMD_SUCCESS;
 }
