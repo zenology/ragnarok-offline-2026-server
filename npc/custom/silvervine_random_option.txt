@@ -420,8 +420,12 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	.@svc = select(.@ord_lab$ + ":" + .@sp_lab$ + ":Cancel");
 	if (.@svc != 1 && .@svc != 2) 		close;
 	.@use_special = (.@svc == 2);
+	.@loop_first = 1;
 	freeloop(1);
 	while (1) {
+	if (!.@loop_first)
+		clear;
+	.@loop_first = 0;
 	.@pay_fruit = (.@use_special ? .@sp_fruit : .@ord_fruit);
 	.@pay_zelu = (.@use_special ? .@sp_zelu : .@ord_zelu);
 	.@pay_bs = (.@use_special ? .@sp_bs : 0);
@@ -493,6 +497,7 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	if (.@pay_zelu > 0) 			delitem 25731, .@pay_zelu;
 	if (.@pay_bs > 0) 			delitem 6635, .@pay_bs;
 	.@got$ = callfunc("F_SVE_RoText", .@sve_opt_id[0], .@sve_opt_value[0]);
+	clear;
 	mes "[Stripe]";
 	mes "Got it. Option " + .@want_slot + ": ^0055FF" + .@got$ + "^000000.";
 	specialeffect2 EF_REPAIRWEAPON;
