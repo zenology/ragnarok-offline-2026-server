@@ -1,4 +1,5 @@
 // Malangdo Silvervine enchant (card-slot Spin/Choose only). Pools: silvervine_enchant_item_pools.yml
+// Spin: step N / N+1 Fruit 6417. Choose: 5 Fruit 6417 + 1 Shadowdecon 25729.
 
 function	script	F_SVE_ChoosePoolEnchant	{
 	.@item_id = getarg(0);
@@ -167,10 +168,13 @@ mal_in01,11,176,4	script	Bramble#sve	4_DR_GAMBERI,{
 	mes "Alright. I only work on what you're wearing. Leave the bag out of it.";
 	next;
 	mes "[Bramble]";
-	mes "For card-slot charms, the step number is the price. Step one costs one Silvervine Fruit.";
+	mes "For card-slot charms, Spin still follows the step number. Step one costs one Silvervine Fruit.";
 	next;
 	mes "[Bramble]";
 	mes "Step two costs two. Reroll a filled step and I add one more fruit. Life ain't fair.";
+	next;
+	mes "[Bramble]";
+	mes "Want the exact charm? That's five Silvervine Fruit and one Shadowdecon. I don't haggle.";
 	next;
 	mes "[Bramble]";
 	mes "Random Options are Stripe's job now. Don't bring that work to this old cat.";
@@ -229,12 +233,12 @@ mal_in01,11,176,4	script	Bramble#sve	4_DR_GAMBERI,{
 		close;
 	}
 
-	.@choose_cost = 20;
+	.@choose_cost = 5;
 	mes "[Bramble]";
 	mes "Spin the wheel for a random charm from this step. ^0055FF" + .@cost + " Silvervine Fruit^000000.";
 	next;
 	mes "[Bramble]";
-	mes "Or pay ^0055FF" + .@choose_cost + " Silvervine^000000 and pick the exact charm. Your call.";
+	mes "Or pay ^0055FF5 Silvervine Fruit^000000 and ^0055FF1 Shadowdecon^000000 and pick the exact charm. Your call.";
 	next;
 	mes "[Bramble]";
 	mes "Refine, cards, other enchants, random options, and enchant grade all stay put.";
@@ -242,7 +246,7 @@ mal_in01,11,176,4	script	Bramble#sve	4_DR_GAMBERI,{
 	mes "[Bramble]";
 	mes "I only touch the one slot you chose. Nothing else.";
 	next;
-	.@mode = select("Spin - " + .@cost + " Fruit:Choose enchant - " + .@choose_cost + " Fruit:Cancel");
+	.@mode = select("Spin - " + .@cost + " Fruit:Choose enchant - 5 Fruit, 1 Shadowdecon:Cancel");
 	if (.@mode == 3)
 		close;
 	if (.@mode == 1) {
@@ -252,7 +256,25 @@ mal_in01,11,176,4	script	Bramble#sve	4_DR_GAMBERI,{
 		.@pay = .@choose_cost;
 		.@pick = 1;
 	}
-	if (countitem(6417) < .@pay) {
+	if (.@pick) {
+		.@need_fruit = countitem(6417) < .@pay;
+		.@need_stone = countitem(25729) < 1;
+		if (.@need_stone) {
+			mes "[Bramble]";
+			mes "No Shadowdecon, no Choose. I don't work that trick without the stone.";
+			if (.@need_fruit) {
+				next;
+				mes "[Bramble]";
+				mes "You're " + .@pay + " fruit short too. I don't work on credit.";
+			}
+			close;
+		}
+		if (.@need_fruit) {
+			mes "[Bramble]";
+			mes "You're " + .@pay + " fruit short. I don't work on credit.";
+			close;
+		}
+	} else if (countitem(6417) < .@pay) {
 		mes "[Bramble]";
 		mes "You're " + .@pay + " fruit short. I don't work on credit.";
 		close;
@@ -309,6 +331,8 @@ mal_in01,11,176,4	script	Bramble#sve	4_DR_GAMBERI,{
 		close;
 	}
 	delitem 6417, .@pay;
+	if (.@pick)
+		delitem 25729, 1;
 
 	mes "[Bramble]";
 	mes "Done. ^0055FF" + getitemname(.@enchant_id) + "^000000, slotted where you wanted.";

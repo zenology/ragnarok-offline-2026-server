@@ -1,7 +1,7 @@
 //===== Ragnarok Offline =====================================
 //= Doberkin: numbered same-slot charm level lottery.
 //= YAML book: silvervine_enchant_upgrade_item_pools.yml (not the cat first-fill book).
-//= Flat cost: 5 Silvervine Fruit and 1 Shadowdecon. Always writes a rolled level.
+//= Flat cost: 5 Silvervine Fruit and 1 Etel Dust. Always writes a rolled level.
 //============================================================
 
 mal_in01,25,167,2	script	Doberkin#sve_upg	4_M_DOGTRAVELER2,{
@@ -91,13 +91,13 @@ L_Main:
 	mes "Alright. I only work what you're wearing. Leave the bag out of it.";
 	next;
 	mes "[Doberkin]";
-	mes "The old cat fills the first tier. I use Shadowdecon to push that same charm stronger.";
+	mes "The old cat fills the first tier. I use Etel Dust to push that same charm stronger.";
 	next;
 	mes "[Doberkin]";
 	mes "I am trying to develop it. Careful. If it's already too good, it can get worse.";
 	next;
 	mes "[Doberkin]";
-	mes "Every try costs five Silvervine Fruit and one Shadowdecon. The stone does the work. Fruit just keeps the cats paid.";
+	mes "Every try costs five Silvervine Fruit and one Etel Dust. The dust does the work. Fruit just keeps the cats paid.";
 	next;
 
 	.@menu$ = "";
@@ -134,7 +134,7 @@ L_Main:
 	if (.@elig > 1) {
 		.@smenu$ = "";
 		for (.@i = 0; .@i < .@elig; ++.@i)
-			.@smenu$ += replacestr(getitemname(.@elig_charm[.@i]), ":", "") + " - Lv" + .@elig_lv[.@i] + " - 5 Fruit, 1 Shadowdecon:";
+			.@smenu$ += replacestr(getitemname(.@elig_charm[.@i]), ":", "") + " - Lv" + .@elig_lv[.@i] + " - 5 Fruit, 1 Etel Dust:";
 		.@spick = select(.@smenu$ + "Cancel") - 1;
 		if (.@spick == .@elig)
 			close;
@@ -160,13 +160,13 @@ L_Main:
 	}
 	next;
 	mes "[Doberkin]";
-	mes "I'll press Shadowdecon into that charm. Trying to make it stronger.";
+	mes "I'll press Etel Dust into that charm. Trying to make it stronger.";
 	next;
 	mes "[Doberkin]";
 	mes "Careful. Push too hard and it might drop.";
 	next;
 	mes "[Doberkin]";
-	mes "This costs ^0055FF5 Silvervine Fruit^000000 and ^0055FF1 Shadowdecon^000000.";
+	mes "This costs ^0055FF5 Silvervine Fruit^000000 and ^0055FF1 Etel Dust^000000.";
 	next;
 	mes "[Doberkin]";
 	mes "Refine, cards, other enchants, random options, and enchant grade stay put.";
@@ -175,10 +175,10 @@ L_Main:
 		close;
 
 	.@need_fruit = countitem(6417) < 5;
-	.@need_stone = countitem(25729) < 1;
-	if (.@need_stone) {
+	.@need_dust = countitem(1000322) < 1;
+	if (.@need_dust) {
 		mes "[Doberkin]";
-		mes "No Shadowdecon, no upgrade. I do not work without that stone.";
+		mes "No Etel Dust, no upgrade. I do not work without that dust.";
 		if (.@need_fruit) {
 			next;
 			mes "[Doberkin]";
@@ -229,7 +229,7 @@ L_Main:
 		close;
 	}
 	delitem 6417, 5;
-	delitem 25729, 1;
+	delitem 1000322, 1;
 
 	.@new_lv = svu_findlevel(.@item, .@card_idx, .@enchant_id);
 	mes "[Doberkin]";
@@ -241,7 +241,7 @@ L_Main:
 		mes "It slipped. ^0055FF" + getitemname(.@cur_charm) + "^000000 down to ^0055FF" + getitemname(.@enchant_id) + "^000000.";
 		next;
 		mes "[Doberkin]";
-		mes "I was trying to push it. The stone got away from me.";
+		mes "I was trying to push it. The dust got away from me.";
 		close;
 	}
 	if (.@new_lv > .@cur_lv) {
@@ -297,7 +297,7 @@ L_Banter:
 		mes "That old cat over there works on gear. Fancy fruit. Fancy enchants.";
 		next;
 		mes "[Doberkin]";
-		mes "Me? I take Shadowdecon and try to push numbered charms stronger. Sometimes it slips. The tab is still ugly.";
+		mes "Me? I take Etel Dust and try to push numbered charms stronger. Sometimes it slips. The tab is still ugly.";
 		next;
 		goto L_Main;
 	default:
