@@ -7,32 +7,32 @@ export type CostumeService = {
 
 export const acquisitionServices: CostumeService[] = [
   {
-    name: 'Shadow Gear Broker',
+    name: 'Remy',
     location: 'Malangdo · 112, 162',
     description:
       'Browse Shadow Equipment through Event Stone Coin barter drawers. This is the offline recovery route for class and progression shadow gear.',
-    tag: 'Event Stone Coins'
+    tag: 'Shadow Equipment'
   },
   {
-    name: 'Costume Curator',
+    name: 'Dewey',
     location: 'Malangdo · 116, 169',
     description:
       'Browse the Costume Roulette pool by Top, Mid, Low / Mouth, or Garment. Ordinary and Special costumes use Event Stone Coins, with the live price tiers summarized as 10, 20, 30, 40, 50, or 70 coins.',
-    tag: 'Event Stone Coins'
+    tag: 'Costume Shop'
   },
   {
-    name: 'Costume Roulette',
+    name: 'Hank',
     location: 'Malangdo · 141, 137',
     description:
       'Choose one costume slot and spend one Silvervine Fruit per spin. Every 20 successful spins grants one Silk Mat.',
-    tag: 'Silvervine Fruit'
+    tag: 'Costume Roulette'
   },
   {
-    name: 'Card Eater',
+    name: 'Moth',
     location: 'Malangdo · 138, 140',
     description:
-      'Feed only the 120 Normal cards on the listed menu. Search the complete accepted-card list and reward tiers in the Card Eater reference.',
-    tag: 'Cards → currencies'
+      'Feed only the 120 Normal cards on the listed menu. Search the complete accepted-card list and reward tiers in the Moth / Card Eater reference.',
+    tag: 'Silvervine Exchange'
   }
 ]
 

@@ -1,19 +1,23 @@
 import type { ReactNode } from 'react'
 
-import { Link } from '@tanstack/react-router'
-
 import { Heading, Text } from '@/components/atoms'
 
-import { costumeCard } from '../styles/recipes'
+import { serviceSummaryCard } from './service-summary-card.recipe'
 
-import type { CostumeService } from '../data/costumes'
-
-type CostumeServiceCardProps = {
-  service: CostumeService
+type ServiceSummary = {
+  name: string
+  location: string
+  description: string
+  tag: string
 }
 
-export function CostumeServiceCard({ service }: CostumeServiceCardProps): ReactNode {
-  const styles = costumeCard()
+type ServiceSummaryCardProps = {
+  service: ServiceSummary
+  children?: ReactNode
+}
+
+function ServiceSummaryCard({ service, children }: ServiceSummaryCardProps): ReactNode {
+  const styles = serviceSummaryCard()
 
   return (
     <article className={styles.root}>
@@ -31,7 +35,10 @@ export function CostumeServiceCard({ service }: CostumeServiceCardProps): ReactN
       <Text as="p" tone="muted">
         {service.description}
       </Text>
-      {service.name === 'Card Eater' && <Link to="/card-eater">Search accepted cards →</Link>}
+      {children}
     </article>
   )
 }
+
+export { ServiceSummaryCard }
+export type { ServiceSummary }

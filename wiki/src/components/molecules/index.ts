@@ -1,3 +1,5 @@
 export { Callout } from './callout'
 export { ImageViewer } from './image-viewer'
 export type { ImageViewerImage } from './image-viewer'
+export { ServiceSummaryCard } from './service-summary-card'
+export type { ServiceSummary } from './service-summary-card'

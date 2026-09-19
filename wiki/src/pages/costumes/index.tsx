@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react'
 
-import { Text } from '@/components/atoms'
-import { Callout } from '@/components/molecules'
+import { Link } from '@tanstack/react-router'
+
+import { Callout, ServiceSummaryCard } from '@/components/molecules'
 import { GuideSection, HeaderSection } from '@/components/templates'
 
-import { CostumeServiceCard } from './components/costume-service-card'
 import { acquisitionServices, enhancementServices, stoneServices } from './data/costumes'
 import { costumesPage } from './styles/recipes'
 
@@ -27,9 +27,15 @@ export default function CostumePage(): ReactNode {
         >
           <div className={styles.grid}>
             {acquisitionServices.map((service) => (
-              <CostumeServiceCard key={service.name} service={service} />
+              <ServiceSummaryCard key={service.name} service={service}>
+                {service.name === 'Moth' && <Link to="/card-eater">Search accepted cards →</Link>}
+              </ServiceSummaryCard>
             ))}
           </div>
+          <Callout variant="notice">
+            Equipment charms and Random Options are a different corner of mal_in01.{' '}
+            <Link to="/enchantment">Open the Enchantment guide →</Link>
+          </Callout>
         </GuideSection>
 
         <GuideSection
@@ -40,7 +46,7 @@ export default function CostumePage(): ReactNode {
         >
           <div className={styles.grid}>
             {stoneServices.map((service) => (
-              <CostumeServiceCard key={service.name} service={service} />
+              <ServiceSummaryCard key={service.name} service={service} />
             ))}
           </div>
         </GuideSection>
@@ -53,7 +59,7 @@ export default function CostumePage(): ReactNode {
         >
           <div className={styles.grid}>
             {enhancementServices.map((service) => (
-              <CostumeServiceCard key={service.name} service={service} />
+              <ServiceSummaryCard key={service.name} service={service} />
             ))}
           </div>
           <Callout variant="notice">
@@ -61,22 +67,6 @@ export default function CostumePage(): ReactNode {
             attempted stone and clears only that enchant slot; the costume, refine level, and other
             enchant slots remain safe.
           </Callout>
-        </GuideSection>
-
-        <GuideSection
-          id="route"
-          number="04"
-          eyebrow="Keep the currencies separate"
-          title="The simple route"
-        >
-          <div className={styles.route}>
-            <Text as="p" tone="muted">
-              <strong>Eligible cards</strong> → Card Eater → Silvervine Fruit → Costume Roulette
-            </Text>
-            <Text as="p" tone="muted">
-              <strong>Event Stone Coins</strong> → Costume Curator or Milo Crumb
-            </Text>
-          </div>
         </GuideSection>
       </div>
     </main>

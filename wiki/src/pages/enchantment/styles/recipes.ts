@@ -1,6 +1,6 @@
 import { sva } from 'styled-system/css'
 
-export const costumesPage = sva({
+export const enchantmentPage = sva({
   slots: ['root', 'content', 'grid', 'route'],
   base: {
     root: { minHeight: '100vh' },

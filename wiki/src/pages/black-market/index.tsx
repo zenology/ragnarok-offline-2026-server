@@ -13,6 +13,7 @@ import {
   faUserSecret,
   faWandMagic
 } from '@fortawesome/free-solid-svg-icons'
+import { Link } from '@tanstack/react-router'
 
 import { Text } from '@/components/atoms'
 import { Callout } from '@/components/molecules'
@@ -120,7 +121,7 @@ export default function BlackMarketPage(): ReactNode {
               icon={faGem}
               location="Market hall · 39, 185"
               title="Rooke"
-              description="Browse 94 curated consumables across seven shelves, from EXP and recovery to upgrades and style."
+              description="Browse 94 curated consumables across seven shelves. The Upgrade shelf also sells Etel Dust, Shadowdecon, and Zelunium from Base Level 100."
               tag="94 items · CP"
             />
             <ServiceCard
@@ -209,6 +210,12 @@ export default function BlackMarketPage(): ReactNode {
             your build, but always check the item description before you buy.
           </Callout>
           <CatalogStrip rookeShelves={rookeShelves} harlanCatalogs={harlanCatalogs} />
+          <Callout variant="notice">
+            Malangdo stones on Rooke. Etel Dust, Shadowdecon, and Zelunium are 150 Cash Points at
+            Base Level 100–200 and 300 at 201+. They are not sold below 100. Bramble uses
+            Shadowdecon, Doberkin uses Etel Dust, and Stripe uses Zelunium on option slots four and
+            five. <Link to="/enchantment">Open the Enchantment guide →</Link>
+          </Callout>
         </GuideSection>
 
         <GuideSection
