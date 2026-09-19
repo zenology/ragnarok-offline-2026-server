@@ -4,8 +4,8 @@
 //= Currency: Event Stone Coin (7000). Base price: 50, rounded up.
 //============================================================
 
-malangdo,112,162,6	script	Shadow Gear Broker#offline	4_EP17_BOY_B,{
-	mes "[Shadow Gear Broker]";
+malangdo,112,162,6	script	Remy#offline	4_EP17_BOY_B,{
+	mes "[Remy]";
 	mes "E-every Shadow thing... weapon... armor... I-I put them in little name piles...";
 	mes "P-please bring Event Stone Coins... before the moon comes out... rrr...";
 	next;

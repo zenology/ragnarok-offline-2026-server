@@ -4,17 +4,29 @@ Header:
 Body:
   - Id: 28439
     Mode: RandomOption
-    Groups:
-      - 101
+    Pools:
+      - Label: Fan Modification Kit
+        Groups:
+          - 101
+        MaxSlots: 2
   - Id: 28440
     Mode: RandomOption
-    Groups:
-      - 101
+    Pools:
+      - Label: Fan Modification Kit
+        Groups:
+          - 101
+        MaxSlots: 2
   - Id: 490374
     Mode: RandomOption
-    Groups:
-      - 199
+    Pools:
+      - Label: Fan Modification Kit EX
+        Groups:
+          - 199
+        MaxSlots: 3
   - Id: 490375
     Mode: RandomOption
-    Groups:
-      - 199
+    Pools:
+      - Label: Fan Modification Kit EX
+        Groups:
+          - 199
+        MaxSlots: 3

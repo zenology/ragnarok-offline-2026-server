@@ -4,25 +4,43 @@ Header:
 Body:
   - Id: 15278
     Mode: RandomOption
-    Groups:
-      - 114
+    Pools:
+      - Label: Gemstone of Time
+        Groups:
+          - 114
+        MaxSlots: 2
   - Id: 15279
     Mode: RandomOption
-    Groups:
-      - 114
+    Pools:
+      - Label: Gemstone of Time
+        Groups:
+          - 114
+        MaxSlots: 2
   - Id: 15346
     Mode: RandomOption
-    Groups:
-      - 114
+    Pools:
+      - Label: Gemstone of Time
+        Groups:
+          - 114
+        MaxSlots: 2
   - Id: 15347
     Mode: RandomOption
-    Groups:
-      - 114
+    Pools:
+      - Label: Gemstone of Time
+        Groups:
+          - 114
+        MaxSlots: 2
   - Id: 15353
     Mode: RandomOption
-    Groups:
-      - 114
+    Pools:
+      - Label: Gemstone of Time
+        Groups:
+          - 114
+        MaxSlots: 2
   - Id: 15354
     Mode: RandomOption
-    Groups:
-      - 114
+    Pools:
+      - Label: Gemstone of Time
+        Groups:
+          - 114
+        MaxSlots: 2

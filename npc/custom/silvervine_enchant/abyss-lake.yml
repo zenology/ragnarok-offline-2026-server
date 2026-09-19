@@ -4,39 +4,81 @@ Header:
 Body:
   - Id: 15391
     Mode: RandomOption
-    Groups:
-      - 180
-      - 181
+    Pools:
+      - Label: Turbulence Dragon's Power
+        Groups:
+          - 180
+        MaxSlots: 3
+      - Label: Stable Dragon's Power
+        Groups:
+          - 181
+        MaxSlots: 3
   - Id: 15392
     Mode: RandomOption
-    Groups:
-      - 180
-      - 181
+    Pools:
+      - Label: Turbulence Dragon's Power
+        Groups:
+          - 180
+        MaxSlots: 3
+      - Label: Stable Dragon's Power
+        Groups:
+          - 181
+        MaxSlots: 3
   - Id: 15393
     Mode: RandomOption
-    Groups:
-      - 180
-      - 181
+    Pools:
+      - Label: Turbulence Dragon's Power
+        Groups:
+          - 180
+        MaxSlots: 3
+      - Label: Stable Dragon's Power
+        Groups:
+          - 181
+        MaxSlots: 3
   - Id: 15394
     Mode: RandomOption
-    Groups:
-      - 180
-      - 181
+    Pools:
+      - Label: Turbulence Dragon's Power
+        Groups:
+          - 180
+        MaxSlots: 3
+      - Label: Stable Dragon's Power
+        Groups:
+          - 181
+        MaxSlots: 3
   - Id: 15395
     Mode: RandomOption
-    Groups:
-      - 180
-      - 181
+    Pools:
+      - Label: Turbulence Dragon's Power
+        Groups:
+          - 180
+        MaxSlots: 3
+      - Label: Stable Dragon's Power
+        Groups:
+          - 181
+        MaxSlots: 3
   - Id: 15396
     Mode: RandomOption
-    Groups:
-      - 180
-      - 181
+    Pools:
+      - Label: Turbulence Dragon's Power
+        Groups:
+          - 180
+        MaxSlots: 3
+      - Label: Stable Dragon's Power
+        Groups:
+          - 181
+        MaxSlots: 3
   - Id: 20946
     Mode: RandomOption
-    Groups:
-      - 178
+    Pools:
+      - Label: Burning Dragon's Power
+        Groups:
+          - 178
+        MaxSlots: 3
   - Id: 22208
     Mode: RandomOption
-    Groups:
-      - 179
+    Pools:
+      - Label: Hot Dragon's Power
+        Groups:
+          - 179
+        MaxSlots: 3

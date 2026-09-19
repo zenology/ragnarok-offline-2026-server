@@ -4,86 +4,303 @@ Header:
 Body:
   - Id: 500119
     Mode: RandomOption
-    Groups:
-      - 187
+    Pools:
+      - Label: Ranged 1H Critical
+        Groups:
+          - 187
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 510140
     Mode: RandomOption
-    Groups:
-      - 187
-      - 189
-      - 191
+    Pools:
+      - Label: Ranged 1H Critical
+        Groups:
+          - 187
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Melee 1H Critical
+        Groups:
+          - 189
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Magic 1H
+        Groups:
+          - 191
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 530071
     Mode: RandomOption
-    Groups:
-      - 187
-      - 190
+    Pools:
+      - Label: Ranged 1H Critical
+        Groups:
+          - 187
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Melee 1H
+        Groups:
+          - 190
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 540109
     Mode: RandomOption
-    Groups:
-      - 189
-      - 190
-      - 191
+    Pools:
+      - Label: Melee 1H Critical
+        Groups:
+          - 189
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Melee 1H
+        Groups:
+          - 190
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Magic 1H
+        Groups:
+          - 191
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 550137
     Mode: RandomOption
-    Groups:
-      - 191
+    Pools:
+      - Label: Magic 1H
+        Groups:
+          - 191
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 550174
     Mode: RandomOption
-    Groups:
-      - 187
-      - 191
+    Pools:
+      - Label: Ranged 1H Critical
+        Groups:
+          - 187
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Magic 1H
+        Groups:
+          - 191
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 560080
     Mode: RandomOption
-    Groups:
-      - 187
-      - 189
-      - 190
+    Pools:
+      - Label: Ranged 1H Critical
+        Groups:
+          - 187
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Melee 1H Critical
+        Groups:
+          - 189
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Melee 1H
+        Groups:
+          - 190
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 570086
     Mode: RandomOption
-    Groups:
-      - 188
-      - 191
+    Pools:
+      - Label: Ranged 1H
+        Groups:
+          - 188
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Magic 1H
+        Groups:
+          - 191
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 580086
     Mode: RandomOption
-    Groups:
-      - 188
-      - 191
+    Pools:
+      - Label: Ranged 1H
+        Groups:
+          - 188
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Magic 1H
+        Groups:
+          - 191
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 590081
     Mode: RandomOption
-    Groups:
-      - 188
-      - 190
+    Pools:
+      - Label: Ranged 1H
+        Groups:
+          - 188
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Melee 1H
+        Groups:
+          - 190
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 600056
     Mode: RandomOption
-    Groups:
-      - 185
+    Pools:
+      - Label: Melee 2H Critical
+        Groups:
+          - 185
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 610084
     Mode: RandomOption
-    Groups:
-      - 185
+    Pools:
+      - Label: Melee 2H Critical
+        Groups:
+          - 185
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 620038
     Mode: RandomOption
-    Groups:
-      - 186
+    Pools:
+      - Label: Melee 2H
+        Groups:
+          - 186
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 630059
     Mode: RandomOption
-    Groups:
-      - 184
+    Pools:
+      - Label: Ranged 2H
+        Groups:
+          - 184
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 640051
     Mode: RandomOption
-    Groups:
-      - 192
+    Pools:
+      - Label: Magic 2H
+        Groups:
+          - 192
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 650048
     Mode: RandomOption
-    Groups:
-      - 184
-      - 192
+    Pools:
+      - Label: Ranged 2H
+        Groups:
+          - 184
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Magic 2H
+        Groups:
+          - 192
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 700117
     Mode: RandomOption
-    Groups:
-      - 183
+    Pools:
+      - Label: Ranged 2H Critical
+        Groups:
+          - 183
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
   - Id: 810048
     Mode: RandomOption
-    Groups:
-      - 183
-      - 184
+    Pools:
+      - Label: Ranged 2H Critical
+        Groups:
+          - 183
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2
+      - Label: Ranged 2H
+        Groups:
+          - 184
+        MaxSlots: 3
+        OptionSlots:
+          - 1
+          - 2
+          - 2

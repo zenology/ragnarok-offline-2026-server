@@ -4,176 +4,386 @@ Header:
 Body:
   - Id: 500038
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 500039
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 500040
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 510040
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 510041
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 510060
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 530019
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 540035
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 540048
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 550045
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 550046
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 550067
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 550068
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 560026
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 560027
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 570027
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 580027
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 590030
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 590034
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 600023
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 600024
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 610033
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 610034
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 620015
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 640027
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 640028
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 650024
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 700045
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 700046
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 700049
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 800013
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 810009
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 820007
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 830012
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2
   - Id: 840008
     Mode: RandomOption
-    Groups:
-      - 150
-      - 151
+    Pools:
+      - Label: Hero's Weapon Modifier(Physical)
+        Groups:
+          - 150
+        MaxSlots: 1
+      - Label: Hero's Weapon Modifier(Magical)
+        Groups:
+          - 151
+        MaxSlots: 2

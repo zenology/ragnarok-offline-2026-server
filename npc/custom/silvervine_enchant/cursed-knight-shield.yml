@@ -4,13 +4,22 @@ Header:
 Body:
   - Id: 28942
     Mode: RandomOption
-    Groups:
-      - 14
+    Pools:
+      - Label: Bloody Knight Shield
+        Groups:
+          - 14
+        MaxSlots: 2
   - Id: 28945
     Mode: RandomOption
-    Groups:
-      - 116
+    Pools:
+      - Label: Cursed Blood
+        Groups:
+          - 116
+        MaxSlots: 2
   - Id: 28946
     Mode: RandomOption
-    Groups:
-      - 117
+    Pools:
+      - Label: Gold Statue
+        Groups:
+          - 117
+        MaxSlots: 3

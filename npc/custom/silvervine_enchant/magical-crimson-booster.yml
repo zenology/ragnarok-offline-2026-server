@@ -4,9 +4,15 @@ Header:
 Body:
   - Id: 19241
     Mode: RandomOption
-    Groups:
-      - 112
+    Pools:
+      - Label: Booster Amplifier
+        Groups:
+          - 112
+        MaxSlots: 2
   - Id: 19245
     Mode: RandomOption
-    Groups:
-      - 112
+    Pools:
+      - Label: Booster Amplifier
+        Groups:
+          - 112
+        MaxSlots: 2

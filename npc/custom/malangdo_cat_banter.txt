@@ -10,19 +10,19 @@ OnInit:
 
 OnTimer60000:
 	// The controller is on Malangdo so the nearby players can hear both cats.
-	npctalk "I eat Silvervine. You eat cards. Why do you give my Silvervine away?", "Costume Roulette", bc_area;
+	npctalk "I eat Silvervine. You eat cards. Why do you give my Silvervine away?", "Hank#cos_roul", bc_area;
 	end;
 
 OnTimer62000:
-	npctalk "I eat paper. Cards are just paper wearing a tiny important hat.", "Card Eater#offline", bc_area;
+	npctalk "I eat paper. Cards are just paper wearing a tiny important hat.", "Moth#offline", bc_area;
 	end;
 
 OnTimer64000:
-	npctalk "You crunch paper, then hand out my Silvervine. That is not sharing.", "Costume Roulette", bc_area;
+	npctalk "You crunch paper, then hand out my Silvervine. That is not sharing.", "Hank#cos_roul", bc_area;
 	end;
 
 OnTimer66000:
-	npctalk "The paper asks for it. Very politely. Usually after I crunch.", "Card Eater#offline", bc_area;
+	npctalk "The paper asks for it. Very politely. Usually after I crunch.", "Moth#offline", bc_area;
 	end;
 
 OnTimer68000:

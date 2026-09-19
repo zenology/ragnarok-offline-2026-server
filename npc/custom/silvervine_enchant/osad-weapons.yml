@@ -18,13 +18,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 510066
     Mode: Dual
     Steps:
@@ -41,13 +59,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 530031
     Mode: Dual
     Steps:
@@ -64,13 +100,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 540051
     Mode: Dual
     Steps:
@@ -87,13 +141,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 550075
     Mode: Dual
     Steps:
@@ -110,13 +182,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 550076
     Mode: Dual
     Steps:
@@ -133,13 +223,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 560034
     Mode: Dual
     Steps:
@@ -156,13 +264,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 590043
     Mode: Dual
     Steps:
@@ -179,13 +305,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 590044
     Mode: Dual
     Steps:
@@ -202,13 +346,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 600028
     Mode: Dual
     Steps:
@@ -225,13 +387,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 610039
     Mode: Dual
     Steps:
@@ -248,13 +428,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 620018
     Mode: Dual
     Steps:
@@ -271,13 +469,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 700054
     Mode: Dual
     Steps:
@@ -294,13 +510,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 700055
     Mode: Dual
     Steps:
@@ -317,13 +551,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 700056
     Mode: Dual
     Steps:
@@ -340,13 +592,31 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2
   - Id: 810013
     Mode: Dual
     Steps:
@@ -363,10 +633,28 @@ Body:
           - { Item: 4832, Chance: 10000 }
           - { Item: 311384, Chance: 10000 }
           - { Item: 311389, Chance: 10000 }
-    Groups:
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
+    Pools:
+      - Label: Weapon Modifier (Physical)
+        Groups:
+          - 126
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Physical)
+        Groups:
+          - 127
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Physical)
+        Groups:
+          - 128
+        MaxSlots: 2
+      - Label: Weapon Modifier (Magic)
+        Groups:
+          - 129
+        MaxSlots: 2
+      - Label: Advanced Weapon Modifier (Magic)
+        Groups:
+          - 130
+        MaxSlots: 2
+      - Label: Super Weapon Modifier (Magic)
+        Groups:
+          - 131
+        MaxSlots: 2

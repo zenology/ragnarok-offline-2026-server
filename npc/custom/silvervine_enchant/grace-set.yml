@@ -4,191 +4,419 @@ Header:
 Body:
   - Id: 450086
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450087
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450088
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450089
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450090
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450091
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450092
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450093
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450094
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450095
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450098
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450099
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450100
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450101
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450102
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450103
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450104
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450105
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450106
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450107
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450108
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450109
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450110
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450111
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450112
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450113
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450114
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450115
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450116
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450117
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450118
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450119
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450096
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450097
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450125
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 450126
     Mode: RandomOption
-    Groups:
-      - 143
-      - 144
+    Pools:
+      - Label: Grace Physical Modification Permit (Armor)
+        Groups:
+          - 143
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Armor)
+        Groups:
+          - 144
+        MaxSlots: 2
   - Id: 480018
     Mode: RandomOption
-    Groups:
-      - 141
-      - 142
+    Pools:
+      - Label: Grace Physical Modification Permit (Garment)
+        Groups:
+          - 141
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Garment)
+        Groups:
+          - 142
+        MaxSlots: 2
   - Id: 480019
     Mode: RandomOption
-    Groups:
-      - 141
-      - 142
+    Pools:
+      - Label: Grace Physical Modification Permit (Garment)
+        Groups:
+          - 141
+        MaxSlots: 2
+      - Label: Grace Magical Modification Permit (Garment)
+        Groups:
+          - 142
+        MaxSlots: 2

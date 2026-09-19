@@ -6,15 +6,15 @@
 //= Payout is based on the whitelist card's level class.
 //============================================================
 
-malangdo,138,140,4	script	Card Eater#offline	4_CAT_ADV2,{
+malangdo,138,140,4	script	Moth#offline	4_CAT_ADV2,{
 L_Main:
 	if (!.Valid) {
-		mes "[Card Eater]";
+		mes "[Moth]";
 		mes "My menu is a mess. Come back after someone fixes my dinner list.";
 		close;
 	}
 
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "Mrrr... cards are delicious. Crispy corners, inky middle, lovely paper.";
 	mes "I eat only the cards on my menu. Do not try to sneak me some weird boss scrap.";
 	next;
@@ -32,7 +32,7 @@ L_Main:
 	}
 
 L_WhyCards:
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "I dunno. Cards taste bland.";
 	mes "Not bad-bland. Paper-bland. Flat, dry, a little dusty... very respectable.";
 	next;
@@ -80,13 +80,13 @@ L_Bulk:
 	}
 
 	if (!.@bulk_count) {
-		mes "[Card Eater]";
+		mes "[Moth]";
 		mes "Mrr? You called me over with no snacks? Rude.";
 		mes "Bring me one of the cards from my menu. I do not eat cards already stuck in equipment, either.";
 		goto L_Main;
 	}
 
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "Choose one reward for every card on my menu.";
 	mes "I do not serve both plates at once.";
 	next;
@@ -105,7 +105,7 @@ L_Bulk:
 		goto L_Main;
 	}
 
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "You are feeding me every card I accept.";
 	mes "^0055FF" + .@bulk_count + " card types, " + .@bulk_cards + " cards total.^000000";
 	mes "Class 1: " + .@class1_count + "  Class 2: " + .@class2_count;
@@ -119,7 +119,7 @@ L_Bulk:
 	setarray .@reward_ids[0], .@reward_id;
 	setarray .@reward_amounts[0], .@reward_amount;
 	if (!checkweight2(.@reward_ids, .@reward_amounts)) {
-		mes "[Card Eater]";
+		mes "[Moth]";
 		mes "Your fruit bowl or shiny-crumb jar cannot hold that much.";
 		mes "Make room first. I will not eat anything yet.";
 		goto L_Main;
@@ -131,7 +131,7 @@ L_Bulk:
 			inarray(.AllCards[0], .@bulk_ids[.@i]) == -1 ||
 			callsub(S_GetCardClass, .@bulk_ids[.@i]) != .@bulk_classes[.@i] ||
 			countitem(.@bulk_ids[.@i]) < .@bulk_amounts[.@i]) {
-			mes "[Card Eater]";
+			mes "[Moth]";
 			mes "Mrr. Something changed while you were staring at the menu.";
 			mes "I refuse uncertain food. Nothing was eaten.";
 			goto L_Main;
@@ -142,7 +142,7 @@ L_Bulk:
 	getitem .@reward_id, .@reward_amount;
 	logmes "Card Eater: bulk ate " + .@bulk_cards + " cards across " + .@bulk_count + " item IDs; class 1 " + .@class1_count + "; class 2 " + .@class2_count + "; class 3 " + .@class3_count + "; class 4 " + .@class4_count + "; mode " + .@reward_name$ + "; reward item " + .@reward_id + "; reward amount " + .@reward_amount;
 
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "Crunch. Crunch. That was a whole buffet.";
 	mes "There. Your reward. Now show me what else you are hiding.";
 	next;
@@ -164,7 +164,7 @@ L_Feed:
 	}
 
 	if (!.@card_count) {
-		mes "[Card Eater]";
+		mes "[Moth]";
 		mes "Mrr? You called me over with no snacks? Rude.";
 		mes "Bring me one of the cards from my menu. I do not eat cards already stuck in equipment, either.";
 		goto L_Main;
@@ -175,7 +175,7 @@ L_Feed:
 		.@start = .@page * .PageSize;
 		.@end = min(.@start + .PageSize, .@card_count);
 
-		mes "[Card Eater]";
+		mes "[Moth]";
 		mes "Pick my dinner by number. Use the blue number, not your paws.";
 		mes "^777777Page " + (.@page + 1) + " / " + ((.@card_count + .PageSize - 1) / .PageSize) + "^000000";
 		for (.@i = .@start; .@i < .@end; ++.@i)
@@ -212,7 +212,7 @@ L_Feed:
 			goto L_Main;
 	}
 
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "Enter the number shown beside the card.";
 	input .@selection, .@start + 1, .@end;
 	.@selected_id = .@card_ids[.@selection - 1];
@@ -220,7 +220,7 @@ L_Feed:
 	if (.@owned < 1)
 		goto L_Feed;
 
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "You have " + .@owned + " " + mesitemlink(.@selected_id, false) + ".";
 	mes "How many should I crunch?";
 	input .@amount, 1, .@owned;
@@ -229,7 +229,7 @@ L_Feed:
 	.@silvervine_reward = .NormalFruit[.@card_class - 1] * .@amount;
 	.@cookie_reward = .CookieCoin[.@card_class - 1] * .@amount;
 
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "Choose one reward. I do not serve both plates at once.";
 	next;
 	switch (select("Silvervine:Cookie:Keep the card.")) {
@@ -247,7 +247,7 @@ L_Feed:
 		goto L_Feed;
 	}
 
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "^0055FF" + mesitemlink(.@selected_id, false) + " x" + .@amount + "^000000?";
 	mes "I will eat them and give you ^0055FF" + .@reward_amount + " " + .@reward_name$ + "^000000.";
 	mes "Once I crunch, there are no refunds. My stomach has no undo button.";
@@ -262,7 +262,7 @@ L_Feed:
 		inarray(.AllCards[0], .@selected_id) == -1 ||
 		countitem(.@selected_id) < .@amount ||
 		callsub(S_GetCardClass, .@selected_id) != .@card_class) {
-		mes "[Card Eater]";
+		mes "[Moth]";
 		mes "Mrr. Something changed while you were staring at the menu.";
 		mes "I refuse uncertain food. Nothing was eaten.";
 		goto L_Feed;
@@ -271,7 +271,7 @@ L_Feed:
 	setarray .@reward_ids[0], .@reward_id;
 	setarray .@reward_amounts[0], .@reward_amount;
 	if (!checkweight2(.@reward_ids, .@reward_amounts)) {
-		mes "[Card Eater]";
+		mes "[Moth]";
 		mes "Your fruit bowl or shiny-crumb jar cannot hold that much.";
 		mes "Choose fewer cards, or make room first. I will not eat anything yet.";
 		goto L_Feed;
@@ -281,14 +281,14 @@ L_Feed:
 	getitem .@reward_id, .@reward_amount;
 	logmes "Card Eater: ate " + .@amount + " x item " + .@selected_id + "; card class " + .@card_class + "; mode " + .@reward_name$ + "; reward item " + .@reward_id + "; reward amount " + .@reward_amount;
 
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "Crunch. Crunch. Delicious paper.";
 	mes "There. Your reward. Now show me what else you are hiding.";
 	next;
 	goto L_Feed;
 
 L_Catalog:
-	mes "[Card Eater]";
+	mes "[Moth]";
 	mes "These are the cards I want. Pick a level range; do not make me read all 120 at once.";
 	next;
 	switch (select("Card level 1-50.:Card level 51-99.:Card level 100-199.:Card level 200+.:Back.")) {
@@ -324,7 +324,7 @@ L_Catalog:
 	while (true) {
 		.@start = .@page * .PageSize;
 		.@end = min(.@start + .PageSize, getarraysize(.@catalog_ids));
-		mes "[Card Eater]";
+		mes "[Moth]";
 		mes "Cards I want from card level range ^0055FF" + .@range$ + "^000000:";
 		mes "^777777Page " + (.@page + 1) + " / " + ((getarraysize(.@catalog_ids) + .PageSize - 1) / .PageSize) + "^000000";
 		for (.@i = .@start; .@i < .@end; ++.@i)

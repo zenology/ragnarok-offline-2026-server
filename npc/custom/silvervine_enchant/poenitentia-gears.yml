@@ -4,181 +4,397 @@ Header:
 Body:
   - Id: 500019
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 500020
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 500046
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 510027
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 510028
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 510056
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 510057
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 530010
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 540014
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 540015
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 540044
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 550019
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 550020
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 550060
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 550061
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 550062
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 560012
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 560013
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 570013
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 580013
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 590016
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 590017
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 600014
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 610016
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 620006
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 630009
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 640014
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 640015
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 700022
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 700023
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 700024
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 700025
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 800011
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 810007
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 830010
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1
   - Id: 840006
     Mode: RandomOption
-    Groups:
-      - 197
-      - 198
+    Pools:
+      - Label: Sakrai's Wraith
+        Groups:
+          - 197
+        MaxSlots: 1
+      - Label: Sakrai's Regret
+        Groups:
+          - 198
+        MaxSlots: 1

@@ -4,25 +4,43 @@ Header:
 Body:
   - Id: 2049
     Mode: RandomOption
-    Groups:
-      - 147
+    Pools:
+      - Label: Abyss Glastheim Magical
+        Groups:
+          - 147
+        MaxSlots: 2
   - Id: 21039
     Mode: RandomOption
-    Groups:
-      - 146
+    Pools:
+      - Label: Abyss Glastheim Physical
+        Groups:
+          - 146
+        MaxSlots: 2
   - Id: 26016
     Mode: RandomOption
-    Groups:
-      - 146
+    Pools:
+      - Label: Abyss Glastheim Physical
+        Groups:
+          - 146
+        MaxSlots: 2
   - Id: 26138
     Mode: RandomOption
-    Groups:
-      - 147
+    Pools:
+      - Label: Abyss Glastheim Magical
+        Groups:
+          - 147
+        MaxSlots: 2
   - Id: 26139
     Mode: RandomOption
-    Groups:
-      - 147
+    Pools:
+      - Label: Abyss Glastheim Magical
+        Groups:
+          - 147
+        MaxSlots: 2
   - Id: 28619
     Mode: RandomOption
-    Groups:
-      - 146
+    Pools:
+      - Label: Abyss Glastheim Physical
+        Groups:
+          - 146
+        MaxSlots: 2

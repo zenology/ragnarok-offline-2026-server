@@ -4,9 +4,15 @@ Header:
 Body:
   - Id: 410079
     Mode: RandomOption
-    Groups:
-      - 166
+    Pools:
+      - Label: Lens Craft Stone
+        Groups:
+          - 166
+        MaxSlots: 2
   - Id: 410080
     Mode: RandomOption
-    Groups:
-      - 166
+    Pools:
+      - Label: Lens Craft Stone
+        Groups:
+          - 166
+        MaxSlots: 2

@@ -4,8 +4,8 @@
 //= Regenerate with tools/generate_costume_roulette.py after item DB changes.
 //============================================================
 
-malangdo,141,137,4	script	Costume Roulette	4_M_MERCAT2,{
-	mes "[Costume Roulette]";
+malangdo,141,137,4	script	Hank#cos_roul	4_M_MERCAT2,{
+	mes "[Hank]";
 	mes "Mrrp~ Pick a costume part and I will spin that drawer for you, nya~";
 	mes "One Silvervine Fruit buys one spin, nya.";
 	mes "Pity: " + #COSTUME_ROULETTE_PITY + "/20";

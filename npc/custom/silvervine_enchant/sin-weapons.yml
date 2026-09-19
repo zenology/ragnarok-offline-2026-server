@@ -4,235 +4,703 @@ Header:
 Body:
   - Id: 500007
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 500008
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 510008
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 510009
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 520002
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 530002
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 540004
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 540005
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 550008
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 550009
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 560004
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 570005
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 580005
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 590006
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 600008
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 610006
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 630003
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 640005
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 650003
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 700007
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 700008
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 700009
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 810000
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 820000
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 830001
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3
   - Id: 840000
     Mode: RandomOption
-    Groups:
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
+    Pools:
+      - Label: Normal Automatic Improvement Device (Physical)
+        Groups:
+          - 157
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Physical)
+        Groups:
+          - 158
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Physical)
+        Groups:
+          - 159
+        MaxSlots: 3
+      - Label: Normal Automatic Improvement Device (Magical)
+        Groups:
+          - 160
+        MaxSlots: 1
+      - Label: Advanced Automatic Improvement Device (Magical)
+        Groups:
+          - 161
+        MaxSlots: 2
+      - Label: Premium Automatic Improvement Device (Magical)
+        Groups:
+          - 162
+        MaxSlots: 3

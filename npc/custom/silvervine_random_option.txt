@@ -1,0 +1,270 @@
+// Malangdo Stripe: official Random Option pools. Pools: silvervine_enchant_item_pools.yml
+
+mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
+	disable_items;
+	if (!checkweight(1119, 3)) {
+		mes "[Stripe]";
+		mes "Whoa. Your bag is stuffed.";
+		next;
+		mes "[Stripe]";
+		mes "Make some room first. I need space to work.";
+		close;
+	}
+
+	if (getvariableofnpc(.ItemCount, "silvervine_equipment_enchant_db") < 1) {
+		mes "[Stripe]";
+		mes "Uh. Papa's enchant book didn't load.";
+		next;
+		mes "[Stripe]";
+		mes "That's a server problem, not your gear. Check the map log for Silvervine YAML errors.";
+		close;
+	}
+
+	mes "[Stripe]";
+	mes "Hey! I'm the real one. Papa Bramble taught me everything.";
+	freeloop(1);
+	.@count = 0;
+	for (.@scan = 0; .@scan < 10; ++.@scan) {
+		.@slot = (.@scan == 0 ? EQI_HEAD_TOP : .@scan == 1 ? EQI_HEAD_MID : .@scan == 2 ? EQI_HEAD_LOW : .@scan == 3 ? EQI_HAND_R : .@scan == 4 ? EQI_HAND_L : .@scan == 5 ? EQI_ARMOR : .@scan == 6 ? EQI_GARMENT : .@scan == 7 ? EQI_SHOES : .@scan == 8 ? EQI_ACC_L : EQI_ACC_R);
+		.@item = getequipid(.@slot);
+		if (.@item < 0)
+			continue;
+		.@type = getiteminfo(.@item, ITEMINFO_TYPE);
+		if (.@type != IT_WEAPON && .@type != IT_ARMOR)
+			continue;
+		if (.@type == IT_WEAPON && .@slot != EQI_HAND_R && .@slot != EQI_HAND_L)
+			continue;
+		if (.@type == IT_ARMOR && .@slot == EQI_HAND_R)
+			continue;
+		.@uid$ = getequipuniqueid(.@slot);
+		if (.@uid$ == "")
+			continue;
+		.@label$ = (.@slot == EQI_HEAD_TOP ? "Top" : .@slot == EQI_HEAD_MID ? "Middle" : .@slot == EQI_HEAD_LOW ? "Lower" : .@slot == EQI_HAND_R ? "Weapon Right" : .@slot == EQI_HAND_L && .@type == IT_WEAPON ? "Weapon Left" : .@slot == EQI_HAND_L ? "Shield" : .@slot == EQI_ARMOR ? "Armor" : .@slot == EQI_GARMENT ? "Garment" : .@slot == EQI_SHOES ? "Shoes" : .@slot == EQI_ACC_L ? "Accessory Left" : "Accessory Right");
+		.@item_mode = sve_mode(.@item);
+		if (.@item_mode != 2 && .@item_mode != 3)
+			continue;
+		if (sve_ropoolcount(.@item) < 1)
+			continue;
+		.@found = -1;
+		for (.@i = 0; .@i < .@count; ++.@i) {
+			if (.@chosen_uid$[.@i] == .@uid$)
+				.@found = .@i;
+		}
+		if (.@found >= 0) {
+			.@chosen_label$[.@found] += "/" + .@label$;
+			continue;
+		}
+		.@chosen_slot[.@count] = .@slot;
+		.@chosen_item[.@count] = .@item;
+		.@chosen_uid$[.@count] = .@uid$;
+		.@chosen_label$[.@count] = .@label$;
+		++.@count;
+	}
+	freeloop(0);
+	if (.@count < 1) {
+		next;
+		mes "[Stripe]";
+		mes "Nothing on you I know.";
+		next;
+		mes "[Stripe]";
+		mes "Wear registered Random Option gear. I only work on what you're wearing.";
+		close;
+	}
+
+	next;
+	mes "[Stripe]";
+	mes "I know each piece's real pool. That market NPC just shakes a generic bag.";
+	next;
+	mes "[Stripe]";
+	mes "I only work on what you're wearing. Leave the bag out of it.";
+	next;
+	mes "[Stripe]";
+	mes "One option at a time. You fill slot one, then two, then the next. No jumping.";
+	next;
+	mes "[Stripe]";
+	mes "Slot one costs five Silvervine Fruit. Slot two costs seven. Slot three costs ten.";
+	next;
+	mes "[Stripe]";
+	mes "Slot four costs five Fruit and one Zelunium. Slot five costs five Fruit and two Zelunium.";
+	next;
+	mes "[Stripe]";
+	mes "First fill and reroll cost the same. I rewrite only the slot you pick. Later options stay.";
+	next;
+
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@count; ++.@i)
+		.@menu$ += .@chosen_label$[.@i] + " - " + replacestr(getitemname(.@chosen_item[.@i]), ":", "") + ":";
+	.@choice = select(.@menu$ + "Cancel") - 1;
+	if (.@choice == .@count)
+		close;
+
+	.@slot = .@chosen_slot[.@choice];
+	.@item = .@chosen_item[.@choice];
+	.@uid$ = .@chosen_uid$[.@choice];
+
+	.@pool_count = sve_ropoolcount(.@item);
+	if (.@pool_count < 1) {
+		mes "[Stripe]";
+		mes "No pool for that piece.";
+		next;
+		mes "[Stripe]";
+		mes "Not my fault. My list doesn't have it.";
+		close;
+	}
+
+	.@pool_index = 0;
+	if (.@pool_count > 1) {
+		mes "[Stripe]";
+		mes "^0055FF" + getitemname(.@item) + "^000000. Pick the real pool. Same choice as the official stone.";
+		next;
+		.@pmenu$ = "";
+		for (.@p = 0; .@p < .@pool_count; ++.@p)
+			.@pmenu$ += sve_ropoollabel(.@item, .@p) + ":";
+		.@pool_index = select(.@pmenu$ + "Cancel") - 1;
+		if (.@pool_index == .@pool_count)
+			close;
+	}
+
+	.@max = sve_ropoolmaxslots(.@item, .@pool_index);
+	if (.@max < 1) {
+		mes "[Stripe]";
+		mes "That pool has no option slots. Weird.";
+		close;
+	}
+
+	.@filled = 0;
+	for (.@i = 0; .@i < 5; ++.@i) {
+		if (getequiprandomoption(.@slot, .@i, ROA_ID) == 0)
+			break;
+		++.@filled;
+	}
+
+	.@opt_menu$ = "";
+	.@opt_value[0] = 0;
+	.@opt_count = 0;
+	for (.@k = 1; .@k <= .@filled && .@k <= .@max; ++.@k) {
+		.@opt_value[.@opt_count] = .@k;
+		.@opt_menu$ += "Option " + .@k + " - reroll:";
+		++.@opt_count;
+	}
+	if (.@filled + 1 <= .@max) {
+		.@opt_value[.@opt_count] = .@filled + 1;
+		.@opt_menu$ += "Option " + (.@filled + 1) + " - new:";
+		++.@opt_count;
+	}
+	if (.@opt_count < 1) {
+		mes "[Stripe]";
+		mes "That pool is already full.";
+		close;
+	}
+
+	mes "[Stripe]";
+	mes "^0055FF" + getitemname(.@item) + "^000000. Pick an option slot.";
+	next;
+	.@opt_choice = select(.@opt_menu$ + "Cancel") - 1;
+	if (.@opt_choice == .@opt_count)
+		close;
+	.@want_slot = .@opt_value[.@opt_choice];
+	if (.@want_slot < 1 || .@want_slot > .@max)
+		close;
+	if (.@want_slot > .@filled + 1)
+		close;
+	if (.@want_slot > 1) {
+		for (.@prev = 0; .@prev < .@want_slot - 1; ++.@prev) {
+			if (getequiprandomoption(.@slot, .@prev, ROA_ID) == 0)
+				close;
+		}
+	}
+
+	.@fruit = (.@want_slot == 1 ? 5 : .@want_slot == 2 ? 7 : .@want_slot == 3 ? 10 : 5);
+	.@zelu = (.@want_slot == 4 ? 1 : .@want_slot == 5 ? 2 : 0);
+
+	if (.@zelu > 0) {
+		mes "[Stripe]";
+		mes "That'll be ^0055FF" + .@fruit + " Silvervine Fruit^000000 and ^0055FF" + .@zelu + " Zelunium^000000.";
+	} else {
+		mes "[Stripe]";
+		mes "That'll be ^0055FF" + .@fruit + " Silvervine Fruit^000000.";
+	}
+	next;
+	mes "[Stripe]";
+	mes "Refine, cards, and enchant grade stay. I only rewrite option " + .@want_slot + ".";
+	next;
+	if (select("Proceed:Cancel") == 2)
+		close;
+	if (countitem(6417) < .@fruit) {
+		mes "[Stripe]";
+		mes "Short on fruit. You need " + .@fruit + " Silvervine, not wishes.";
+		close;
+	}
+	if (.@zelu > 0 && countitem(25731) < .@zelu) {
+		mes "[Stripe]";
+		mes "Short on Zelunium. You need " + .@zelu + ".";
+		close;
+	}
+
+	.@eq_id = getequipid(.@slot);
+	.@refine = getequiprefinerycnt(.@slot);
+	.@card[0] = getequipcardid(.@slot, 0);
+	.@card[1] = getequipcardid(.@slot, 1);
+	.@card[2] = getequipcardid(.@slot, 2);
+	.@card[3] = getequipcardid(.@slot, 3);
+	for (.@i = 0; .@i < 5; ++.@i) {
+		set getelementofarray(.@OptID, .@i), getequiprandomoption(.@slot, .@i, ROA_ID);
+		set getelementofarray(.@OptVal, .@i), getequiprandomoption(.@slot, .@i, ROA_VALUE);
+		set getelementofarray(.@OptParam, .@i), getequiprandomoption(.@slot, .@i, ROA_PARAM);
+	}
+	.@grade = getenchantgrade(.@slot);
+	if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine))
+		close;
+
+	.@opt_index = .@want_slot - 1;
+	.@picked = 0;
+	for (.@attempt = 0; .@attempt < 12; ++.@attempt) {
+		if (!sve_rollro(.@item, .@pool_index, .@opt_index))
+			break;
+		.@dup = 0;
+		for (.@i = 0; .@i < 5; ++.@i) {
+			if (.@i == .@opt_index)
+				continue;
+			if (getelementofarray(.@OptID, .@i) != 0 && getelementofarray(.@OptID, .@i) == .@sve_opt_id[0])
+				.@dup = 1;
+		}
+		if (!.@dup) {
+			.@picked = 1;
+			break;
+		}
+		.@picked = 1;
+	}
+	if (!.@picked) {
+		mes "[Stripe]";
+		mes "The roll went sideways.";
+		next;
+		mes "[Stripe]";
+		mes "Nothing changed. Your fruit stays in your pocket.";
+		close;
+	}
+
+	set getelementofarray(.@OptID, .@opt_index), .@sve_opt_id[0];
+	set getelementofarray(.@OptVal, .@opt_index), .@sve_opt_value[0];
+	set getelementofarray(.@OptParam, .@opt_index), .@sve_opt_param[0];
+	.@result = replaceequipped(.@slot, .@uid$, .@card[0], .@card[1], .@card[2], .@card[3], .@OptID, .@OptVal, .@OptParam);
+	if (.@result != 1) {
+		mes "[Stripe]";
+		mes "That piece changed before I could work.";
+		next;
+		mes "[Stripe]";
+		mes "Nothing happened. Your fruit stays in your pocket.";
+		close;
+	}
+	delitem 6417, .@fruit;
+	if (.@zelu > 0)
+		delitem 25731, .@zelu;
+	mes "[Stripe]";
+	mes "There. Option " + .@want_slot + " is done. I'm the real one, remember?";
+	specialeffect2 EF_REPAIRWEAPON;
+	next;
+	mes "[Stripe]";
+	mes "Don't scratch it up. Papa would scold me.";
+	close;
+}

@@ -4,13 +4,22 @@ Header:
 Body:
   - Id: 20842
     Mode: RandomOption
-    Groups:
-      - 109
+    Pools:
+      - Label: Candy Bag Blessing Scroll(Physical)
+        Groups:
+          - 109
+        MaxSlots: 2
   - Id: 20843
     Mode: RandomOption
-    Groups:
-      - 110
+    Pools:
+      - Label: Candy Bag Blessing Scroll(Ranged)
+        Groups:
+          - 110
+        MaxSlots: 2
   - Id: 20844
     Mode: RandomOption
-    Groups:
-      - 111
+    Pools:
+      - Label: Candy Bag Blessing Scroll(Magic)
+        Groups:
+          - 111
+        MaxSlots: 2
