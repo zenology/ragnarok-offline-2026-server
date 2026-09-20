@@ -18,9 +18,16 @@ export default function DungeonsPage(): ReactNode {
           its entrance portal.
         </Text>
         <Callout>
-          <strong>Where to enter:</strong> Navigate to <strong>odin_tem03 276/236</strong> in Hugel
-          Odin Temple North Side. Talk to the portal marked <strong>Entry: Level 180+</strong>, then
-          choose <em>Enter Odin Past.</em>
+          <strong>Find:</strong> Search for <strong>Odin Past Entrance</strong> in Navigation. Find
+          guides you to the portal at <strong>odin_tem03 276/236</strong> in Hugel Odin Temple North
+          Side. Talk to the portal marked <strong>Entry: Level 180+</strong>, then choose{' '}
+          <em>Enter Odin Past.</em>
+        </Callout>
+        <Callout>
+          <strong>MOVE:</strong> Select <strong>Ancient Odin Temple</strong> in Navigation to warp
+          to a random walkable point in <strong>odin_past</strong> for <strong>1 Nyangvine</strong>.
+          MOVE has no Base Level 180 requirement and is available only from maps that support
+          Private Airship travel.
         </Callout>
       </GuideSection>
       <GuideSection
