@@ -419,6 +419,7 @@ thana_step	mapflag	nomemo
 abyss_01	mapflag	nomemo
 abyss_02	mapflag	nomemo
 abyss_03	mapflag	nomemo
+abyss_04	mapflag	nomemo
 // Odin's Temple & Kiehl
 odin_tem01	mapflag	nomemo
 odin_tem02	mapflag	nomemo

@@ -9,8 +9,8 @@ export default function DungeonsPage(): ReactNode {
     <main aria-label="Dungeon guide">
       <HeaderSection
         eyebrow="RAGNAROK OFFLINE · DUNGEONS"
-        title="Ancient Odin Temple"
-        description="Enter Odin Past through the portal in Odin Temple's north side."
+        title="Late-game dungeons"
+        description="Enter Odin Past and Abyss Lake F4 from their on-map portals and signs."
       />
       <GuideSection id="odin-past-access" number="01" eyebrow="ODIN PAST" title="Odin Past access">
         <Text as="p">
@@ -70,6 +70,81 @@ export default function DungeonsPage(): ReactNode {
         <Text as="p">
           Hunt inside <strong>odin_past</strong>. Use the north portal on Odin Temple 3F at{' '}
           <strong>odin_tem03 276/236</strong>.
+        </Text>
+      </GuideSection>
+      <GuideSection
+        id="abyss-04-access"
+        number="05"
+        eyebrow="ABYSS LAKE F4"
+        title="Abyss Lake F4 access"
+      >
+        <Text as="p">
+          Abyss Lake Underground Cave F4 requires Base Level 190 or higher to use the F3 entrance
+          sign.
+        </Text>
+        <Callout>
+          <strong>Find:</strong> Search Navigation for <strong>Abyss Lake F4 Entrance</strong>. Find
+          guides you to the sign at <strong>abyss_03 91/110</strong>. Talk to the sign marked{' '}
+          <strong>Entry: Level 190+</strong>, then choose <em>Enter Abyss Lake F4.</em>
+        </Callout>
+      </GuideSection>
+      <GuideSection id="abyss-04-move" number="06" eyebrow="ABYSS LAKE F4" title="MOVE">
+        <Callout>
+          <strong>MOVE:</strong> Select <strong>Abyss Lake Underground Cave F4</strong> in
+          Navigation to warp to a random walkable point in <strong>abyss_04</strong> for{' '}
+          <strong>1 Nyangvine</strong>. MOVE has no Base Level 190 requirement and is available only
+          from maps that support Private Airship travel.
+        </Callout>
+      </GuideSection>
+      <GuideSection
+        id="abyss-04-return"
+        number="07"
+        eyebrow="ABYSS LAKE F4"
+        title="Arrival and return"
+      >
+        <Text as="p">
+          The sign sends you to <strong>abyss_04 169/159</strong>. To leave, talk to the exit sign
+          at <strong>abyss_04 169/164</strong> marked <strong>Exit</strong> and choose{' '}
+          <em>Return to Abyss Lake F3.</em> That returns you to <strong>abyss_03 97/104</strong>.
+        </Text>
+      </GuideSection>
+      <GuideSection
+        id="abyss-04-hunting"
+        number="08"
+        eyebrow="ABYSS LAKE F4"
+        title="Hunting roster"
+      >
+        <Text as="p">
+          The map hunts six normal monsters: Purple Ferus, Treasure Mimic, Black Acidus, Silver
+          Acidus, Bone Ferus, and Bone Acidus. One MVP also spawns here: Bone Detardeurus.
+        </Text>
+        <Text as="p">Bone Detardeurus respawns after 3 hours, with a 10-minute variance.</Text>
+        <Text as="p">Cards from this map use the offline 1% card target.</Text>
+      </GuideSection>
+      <GuideSection id="abyss-04-dailies" number="09" eyebrow="ABYSS LAKE F4" title="Daily quests">
+        <Text as="p">
+          <strong>Folklorist Marigold</strong> stands in Hugel Square at <strong>hugel 102/148</strong>.
+          You need Base Level 190. Four independent dailies grant EXP only, with a 4-hour standby after
+          each turn-in.
+        </Text>
+        <Text as="p">
+          <strong>A Strangely-colored Ferus:</strong> 20 Purple Ferus. Base 15,823,920 / Job
+          11,076,720.
+        </Text>
+        <Text as="p">
+          <strong>Studying the New Mimic:</strong> 10 Treasure Mimic. Base 7,979,360 / Job 5,585,560.
+        </Text>
+        <Text as="p">
+          <strong>Acidus Elemental Study:</strong> 20 Black Acidus, 20 Silver Acidus. Base
+          32,090,640 / Job 22,463,360.
+        </Text>
+        <Text as="p">
+          <strong>Against Providence:</strong> 30 Bone Ferus, 30 Bone Acidus. Base 48,548,160 / Job
+          33,983,640.
+        </Text>
+        <Text as="p">
+          Hunt inside <strong>abyss_04</strong>. Use the F3 entrance sign at{' '}
+          <strong>abyss_03 91/110</strong>.
         </Text>
       </GuideSection>
     </main>

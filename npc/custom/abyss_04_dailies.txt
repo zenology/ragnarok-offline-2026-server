@@ -1,0 +1,233 @@
+//===== Ragnarok Offline =====================================
+//= Abyss Lake F4 Daily Quests
+//===== Description: =========================================
+//= Folklorist Marigold in Hugel Square.
+//= Daily hunts 7893 / 7895 / 7897 / 7899 for Abyss Lake F4.
+//============================================================
+
+hugel,102,148,4	script	Folklorist Marigold#abyss_dq	4_F_HUWOMAN,{
+	if (BaseLevel < 190) {
+		mes "[Marigold]";
+		mes "Come back at Base Level 190. I will not send a half-ready adventurer into Abyss Lake 4F.";
+		close;
+	}
+
+	if (checkquest(7893,HUNTING) == 2) {
+		mes "[Marigold]";
+		mes "Twenty purple ones. Same bones as a Ferus, wrong color. I can write the variant page without guessing.";
+		erasequest 7893;
+		setquest 7894;
+		getexp 15823920,11076720;
+		questinfo_refresh();
+		next;
+	}
+
+	if (checkquest(7895,HUNTING) == 2) {
+		mes "[Marigold]";
+		mes "Ten treasure boxes that bite. New mimic, old trick. The notes will hold.";
+		erasequest 7895;
+		setquest 7896;
+		getexp 7979360,5585560;
+		questinfo_refresh();
+		next;
+	}
+
+	if (checkquest(7897,HUNTING) == 2) {
+		mes "[Marigold]";
+		mes "Black and silver in one cave. Two properties at once. I can tell the elements apart now.";
+		erasequest 7897;
+		setquest 7898;
+		getexp 32090640,22463360;
+		questinfo_refresh();
+		next;
+	}
+
+	if (checkquest(7899,HUNTING) == 2) {
+		mes "[Marigold]";
+		mes "Bone Ferus and Bone Acidus. They should not walk. Closer to a warning than a species.";
+		erasequest 7899;
+		setquest 7900;
+		getexp 48548160,33983640;
+		questinfo_refresh();
+		next;
+	}
+
+	mes "[Marigold]";
+	mes "I study Abyss Lake from Hugel Square. The fourth floor opened, and the old dragon notes stopped matching.";
+	next;
+	mes "[Marigold]";
+	mes "I have four questions I cannot answer from here. Will you hunt for the notes?";
+	next;
+	switch( select("A Strangely-colored Ferus:Studying the New Mimic:Acidus Elemental Study:Against Providence:What do you study?") ) {
+	case 1:
+		switch( checkquest(7894,PLAYTIME) ) {
+		case -1:
+			break;
+		case 0:
+		case 1:
+			mes "[Marigold]";
+			mes "Come back after I finish cataloging today's notes.";
+			close;
+		case 2:
+			erasequest 7894;
+			break;
+		}
+		switch( checkquest(7893,HUNTING) ) {
+		case -1:
+			mes "[Marigold]";
+			mes "The records call them Ferus, but never this color. Purple ones share a shape and fight in the same cave.";
+			next;
+			mes "[Marigold]";
+			mes "I cannot date a variant while it is trying to poison me. Hunt 20 Purple Ferus so I can tell the color apart.";
+			next;
+			if (select("Accept the request.:Not now.") == 2)
+				close;
+			mes "[Marigold]";
+			mes "Abyss Lake 4F. The sign on 3F. Bring me something I can write down.";
+			setquest 7893;
+			questinfo_refresh();
+			close;
+		case 0:
+		case 1:
+			mes "[Marigold]";
+			mes "Purple Ferus, fourth floor only. Twenty. The Ferus on the old floors will not count.";
+			close;
+		case 2:
+			end;
+		}
+		end;
+	case 2:
+		switch( checkquest(7896,PLAYTIME) ) {
+		case -1:
+			break;
+		case 0:
+		case 1:
+			mes "[Marigold]";
+			mes "Come back after I finish cataloging today's notes.";
+			close;
+		case 2:
+			erasequest 7896;
+			break;
+		}
+		switch( checkquest(7895,HUNTING) ) {
+		case -1:
+			mes "[Marigold]";
+			mes "Mimics hide in chests. This one hides in treasure and still bites. Hugel never cataloged it.";
+			next;
+			mes "[Marigold]";
+			mes "Hunt 10 Treasure Mimics on the fourth floor. Count the bites, not the gold.";
+			next;
+			if (select("Accept the request.:Not now.") == 2)
+				close;
+			mes "[Marigold]";
+			mes "Abyss Lake 4F. Do not open the chest. Kill it.";
+			setquest 7895;
+			questinfo_refresh();
+			close;
+		case 0:
+		case 1:
+			mes "[Marigold]";
+			mes "Treasure Mimics, fourth floor only. Ten. Ordinary Mimics will not answer this.";
+			close;
+		case 2:
+			end;
+		}
+		end;
+	case 3:
+		switch( checkquest(7898,PLAYTIME) ) {
+		case -1:
+			break;
+		case 0:
+		case 1:
+			mes "[Marigold]";
+			mes "Come back after I finish cataloging today's notes.";
+			close;
+		case 2:
+			erasequest 7898;
+			break;
+		}
+		switch( checkquest(7897,HUNTING) ) {
+		case -1:
+			mes "[Marigold]";
+			mes "Black Acidus and Silver Acidus share a name and split an element. Dark and Ghost, same cave.";
+			next;
+			mes "[Marigold]";
+			mes "Hunt 20 of each. Their properties will say more than a scale.";
+			next;
+			if (select("Accept the request.:Not now.") == 2)
+				close;
+			mes "[Marigold]";
+			mes "Fourth floor only. The Acidus on the old floors will not answer this.";
+			setquest 7897;
+			questinfo_refresh();
+			close;
+		case 0:
+		case 1:
+			mes "[Marigold]";
+			mes "Black Acidus and Silver Acidus, fourth floor only. Twenty each.";
+			close;
+		case 2:
+			end;
+		}
+		end;
+	case 4:
+		switch( checkquest(7900,PLAYTIME) ) {
+		case -1:
+			break;
+		case 0:
+		case 1:
+			mes "[Marigold]";
+			mes "Come back after I finish cataloging today's notes.";
+			close;
+		case 2:
+			erasequest 7900;
+			break;
+		}
+		switch( checkquest(7899,HUNTING) ) {
+		case -1:
+			mes "[Marigold]";
+			mes "Bones should rest. These walk. Ferus and Acidus, both bone, both against providence.";
+			next;
+			mes "[Marigold]";
+			mes "Hunt 30 Bone Ferus and 30 Bone Acidus. Their habits will say more than a hymn.";
+			next;
+			if (select("Accept the request.:Not now.") == 2)
+				close;
+			mes "[Marigold]";
+			mes "Fourth floor. The living dragons will not count.";
+			setquest 7899;
+			questinfo_refresh();
+			close;
+		case 0:
+		case 1:
+			mes "[Marigold]";
+			mes "Bone Ferus and Bone Acidus, fourth floor only. Thirty each. The living dragons will not count.";
+			close;
+		case 2:
+			end;
+		}
+		end;
+	case 5:
+		close;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(7893,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(7895,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(7897,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(7899,HUNTING) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7893,HUNTING) == 0 || checkquest(7893,HUNTING) == 1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7895,HUNTING) == 0 || checkquest(7895,HUNTING) == 1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7897,HUNTING) == 0 || checkquest(7897,HUNTING) == 1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7899,HUNTING) == 0 || checkquest(7899,HUNTING) == 1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7894,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7896,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7898,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7900,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 190 && isbegin_quest(7893) == 0 && checkquest(7894,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 190 && isbegin_quest(7895) == 0 && checkquest(7896,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 190 && isbegin_quest(7897) == 0 && checkquest(7898,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 190 && isbegin_quest(7899) == 0 && checkquest(7900,PLAYTIME) == -1" );
+	end;
+}
