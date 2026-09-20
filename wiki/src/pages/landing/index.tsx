@@ -41,6 +41,12 @@ const guides = [
     number: '05',
     title: 'Dungeons',
     description: 'Find late-game dungeon access points, level requirements, and return routes.'
+  },
+  {
+    to: '/eden-leveling',
+    number: '06',
+    title: 'Eden Leveling',
+    description: 'Eden Group mission boards from level 1 through 140+ and where to turn in.'
   }
 ] as const
 

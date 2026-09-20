@@ -7,6 +7,7 @@ import BlackMarketPage from '@/pages/black-market'
 import CardEaterPage from '@/pages/card-eater/index'
 import CostumePage from '@/pages/costumes'
 import DungeonsPage from '@/pages/dungeons'
+import EdenLevelingPage from '@/pages/eden-leveling'
 import EnchantmentPage from '@/pages/enchantment'
 import JobChangesPage from '@/pages/job-changes'
 import LandingPage from '@/pages/landing'
@@ -64,6 +65,12 @@ const dungeonsRoute = createRoute({
   component: DungeonsPage
 })
 
+const edenLevelingRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/eden-leveling',
+  component: EdenLevelingPage
+})
+
 const enchantmentRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/enchantment',
@@ -87,6 +94,7 @@ const routeTree = rootRoute.addChildren([
   blackMarketRoute,
   costumesRoute,
   dungeonsRoute,
+  edenLevelingRoute,
   enchantmentRoute,
   cardEaterRoute,
   jobChangesRoute
