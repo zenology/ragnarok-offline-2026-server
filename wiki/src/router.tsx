@@ -4,7 +4,7 @@ import { createRootRoute, createRoute, createRouter, Link, Outlet } from '@tanst
 
 import { SiteShell } from '@/components/templates'
 import BlackMarketPage from '@/pages/black-market'
-import CardEaterPage from '@/pages/card-eater'
+import CardEaterPage from '@/pages/card-eater/index'
 import CostumePage from '@/pages/costumes'
 import EnchantmentPage from '@/pages/enchantment'
 import JobChangesPage from '@/pages/job-changes'

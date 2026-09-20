@@ -10,6 +10,15 @@ import { GuideSection, HeaderSection } from '@/components/templates'
 import { cardEaterCards, type CardEaterCard } from './data/cards'
 
 const tierLabels = ['1–50', '51–99', '100–199', '200+'] as const
+const cardImageModules = import.meta.glob('../../assets/card-eater/cards/*.png', {
+  eager: true,
+  import: 'default',
+  query: '?url'
+}) as Record<string, string>
+
+const cardImages = new Map(
+  Object.entries(cardImageModules).map(([path, url]) => [path.match(/(\d+)\.png$/)?.[1], url])
+)
 
 function normalize(value: string): string {
   return value.toLocaleLowerCase().trim().replace(/\s+/g, ' ')
@@ -60,11 +69,18 @@ function searchCards(query: string): CardEaterCard[] {
     .filter((entry): entry is { card: CardEaterCard; score: number } => entry.score !== undefined)
     .sort(
       (left, right) =>
-        left.score - right.score ||
-        left.card.name.localeCompare(right.card.name) ||
-        left.card.itemId - right.card.itemId
+        left.card.name.localeCompare(right.card.name) || left.card.itemId - right.card.itemId
     )
     .map((entry) => entry.card)
+}
+
+function sortCardsByMonsterLevel(cards: CardEaterCard[]): CardEaterCard[] {
+  return [...cards].sort(
+    (left, right) =>
+      left.monsterLevel - right.monsterLevel ||
+      left.name.localeCompare(right.name) ||
+      left.itemId - right.itemId
+  )
 }
 
 function rewardText(card: CardEaterCard): string {
@@ -93,6 +109,18 @@ function CardGrid({ cards }: { cards: CardEaterCard[] }): ReactNode {
             backgroundColor: 'surface.default'
           })}
         >
+          <img
+            src={cardImages.get(String(card.itemId))}
+            alt={`${card.name} artwork`}
+            loading="lazy"
+            className={css({
+              width: '100%',
+              height: '220px',
+              objectFit: 'contain',
+              backgroundColor: 'surface.raised',
+              borderRadius: '4px'
+            })}
+          />
           <h3
             className={css({
               margin: 0,
@@ -106,6 +134,9 @@ function CardGrid({ cards }: { cards: CardEaterCard[] }): ReactNode {
           <p className={css({ margin: 0, color: 'accent.soft', fontSize: '13px' })}>
             Item ID {card.itemId}
           </p>
+          <p className={css({ margin: 0, color: 'text.muted', fontSize: '14px' })}>
+            Monster Lv. {card.monsterLevel} · {card.monsterName}
+          </p>
           <p className={css({ margin: 0, color: 'text.muted', fontSize: '14px', lineHeight: 1.5 })}>
             {rewardText(card)}
           </p>
@@ -117,10 +148,14 @@ function CardGrid({ cards }: { cards: CardEaterCard[] }): ReactNode {
 
 export default function CardEaterPage(): ReactNode {
   const [query, setQuery] = useState('')
-  const results = useMemo(() => searchCards(query), [query])
+  const hasQuery = normalize(query).length > 0
+  const results = useMemo(
+    () => (hasQuery ? searchCards(query) : sortCardsByMonsterLevel(cardEaterCards)),
+    [hasQuery, query]
+  )
   const resultsByTier = tierLabels.map((label, index) => ({
     label,
-    cards: results.filter((card) => card.tier === index + 1)
+    cards: sortCardsByMonsterLevel(results.filter((card) => card.tier === index + 1))
   }))
 
   return (
@@ -202,88 +237,42 @@ export default function CardEaterPage(): ReactNode {
             <p role="status">
               No accepted cards match “{query}”. Try a longer part of the card name.
             </p>
+          ) : hasQuery ? (
+            <div className={css({ marginTop: '28px' })}>
+              <CardGrid cards={results} />
+            </div>
           ) : (
-            <>
-              <div className={css({ display: 'grid', gap: '36px', marginTop: '28px' })}>
-                {resultsByTier.map(({ label, cards }) =>
-                  cards.length > 0 ? (
-                    <section key={label} aria-labelledby={`tier-${label}`}>
-                      <div
-                        className={css({
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'baseline',
-                          gap: '16px',
-                          marginBottom: '14px'
-                        })}
-                      >
-                        <h2
-                          id={`tier-${label}`}
-                          className={css({
-                            margin: 0,
-                            color: 'text.default',
-                            fontFamily: 'siteHeading',
-                            fontSize: '24px'
-                          })}
-                        >
-                          Card Tier {label}
-                        </h2>
-                        <span className={css({ color: 'text.muted', fontSize: '14px' })}>
-                          {cards.length} cards
-                        </span>
-                      </div>
-                      <CardGrid cards={cards} />
-                    </section>
-                  ) : null
-                )}
-              </div>
-              <div
-                className={css({
-                  display: 'none',
-                  gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-                  gap: '12px',
-                  _mobile: { gridTemplateColumns: '1fr' }
-                })}
-              >
-                {results.map((card) => (
-                  <article
-                    key={card.itemId}
+            <div className={css({ display: 'grid', gap: '36px', marginTop: '28px' })}>
+              {resultsByTier.map(({ label, cards }) => (
+                <section key={label} aria-labelledby={`tier-${label}`}>
+                  <div
                     className={css({
-                      display: 'grid',
-                      gap: '8px',
-                      padding: '18px',
-                      border: '1px solid var(--colors-line-default)',
-                      borderRadius: '6px',
-                      backgroundColor: 'surface.default'
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'baseline',
+                      gap: '16px',
+                      marginBottom: '14px'
                     })}
                   >
                     <h2
+                      id={`tier-${label}`}
                       className={css({
                         margin: 0,
-                        fontFamily: 'siteHeading',
                         color: 'text.default',
-                        fontSize: '18px'
+                        fontFamily: 'siteHeading',
+                        fontSize: '24px'
                       })}
                     >
-                      {card.name}
+                      Card Tier {label}
                     </h2>
-                    <p className={css({ margin: 0, color: 'accent.soft', fontSize: '13px' })}>
-                      Item ID {card.itemId} · Tier {card.levelBand}
-                    </p>
-                    <p
-                      className={css({
-                        margin: 0,
-                        color: 'text.muted',
-                        fontSize: '14px',
-                        lineHeight: 1.5
-                      })}
-                    >
-                      {rewardText(card)}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </>
+                    <span className={css({ color: 'text.muted', fontSize: '14px' })}>
+                      {cards.length} cards
+                    </span>
+                  </div>
+                  <CardGrid cards={cards} />
+                </section>
+              ))}
+            </div>
           )}
         </GuideSection>
         <GuideSection id="tiers" number="02" eyebrow="Know the payout" title="Four card tiers">

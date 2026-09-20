@@ -259,6 +259,19 @@ function	script	F_SVE_RoText	{
 	return "Option " + .@id + " +" + .@val;
 }
 
+function	script	F_SVE_StripeTierCosts	{
+	.@slot = getarg(0);
+	if (.@slot < 1)
+		.@slot = 1;
+	if (.@slot > 5)
+		.@slot = 5;
+	set getarg(1), (.@slot == 1 ? 5 : .@slot == 2 ? 7 : .@slot == 3 ? 10 : 5);
+	set getarg(2), (.@slot == 4 ? 1 : .@slot == 5 ? 2 : 0);
+	set getarg(3), (.@slot <= 3 ? 5 : 10);
+	set getarg(4), .@slot;
+	return;
+}
+
 mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	disable_items;
 	if (!checkweight(1119, 3)) {
@@ -335,7 +348,7 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	mes "First fill and reroll cost the same. I rewrite only the slot you pick. Later options stay.";
 	next;
 	mes "[Stripe]";
-	mes "Want the max number? Pick Special later. Twenty-five fruit, Zelunium by slot, and a Blacksmith Blessing.";
+	mes "Want the max number? Pick Special later. Same fruit as Ordinary for that slot, plus Zelunium and a Blacksmith Blessing by slot.";
 	next;
 	mes "[Stripe]";
 	mes "Papa only stuffs charms in sockets. The dog across the room develops them higher. Papa looked miserable when he found out.";
@@ -402,11 +415,8 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	for (.@prev = 0; .@prev < .@want_slot - 1; ++.@prev) {
 	if (getequiprandomoption(.@slot, .@prev, ROA_ID) == 0) 				close;
 	}
-	}  	.@ord_fruit = (.@want_slot == 1 ? 5 : .@want_slot == 2 ? 7 : .@want_slot == 3 ? 10 : 5);
-	.@ord_zelu = (.@want_slot == 4 ? 1 : .@want_slot == 5 ? 2 : 0);
-	.@sp_fruit = 25;
-	.@sp_zelu = (.@want_slot <= 3 ? 5 : 10);
-	.@sp_bs = .@want_slot;
+	}  	callfunc("F_SVE_StripeTierCosts", .@want_slot, .@ord_fruit, .@ord_zelu, .@sp_zelu, .@sp_bs);
+	.@sp_fruit = .@ord_fruit;
 	.@opt_index = .@want_slot - 1;
 	mes "[Stripe]";
 	mes "Ordinary service rolls the real pool. The number can be junk or perfect.";

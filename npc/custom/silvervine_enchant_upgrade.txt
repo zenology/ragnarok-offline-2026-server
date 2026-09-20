@@ -1,7 +1,7 @@
 //===== Ragnarok Offline =====================================
 //= Doberkin: numbered same-slot charm level lottery.
 //= YAML book: silvervine_enchant_upgrade_item_pools.yml (not the cat first-fill book).
-//= Ordinary: 5 Fruit 6417 + 1 Etel Dust 1000322, weighted roll. Special: 25 Fruit + 5 Etel Dust + 1 Blacksmith Blessing 6635, last series ID.
+//= Fruit 5/7/10/15/20 by charm socket (card_idx+1); Etel/Blessing from F_SVE_StripeTierCosts (Stripe Zelunium/Special Blessing). Ordinary weighted roll; Special last series ID.
 //============================================================
 
 mal_in01,25,167,2	script	Doberkin#sve_upg	4_M_DOGTRAVELER2,{
@@ -103,10 +103,10 @@ L_Main:
 	mes "He looked sick when he watched my Etel Dust. Sorry. Careful with me. It can still get worse.";
 	next;
 	mes "[Doberkin]";
-	mes "Ordinary try is five Silvervine Fruit and one Etel Dust. The dust does the work. Fruit just keeps the cats paid.";
+	mes "Ordinary try costs Silvervine Fruit and Etel Dust by which charm socket you pick. The dust does the work. Fruit just keeps the cats paid.";
 	next;
 	mes "[Doberkin]";
-	mes "Special mix needs a Blacksmith Blessing too. Twenty-five fruit, five Etel Dust, one blessing. Top of the pile. No slip.";
+	mes "Special mix needs a Blacksmith Blessing too. Same fruit as Ordinary for that socket, plus Etel Dust and blessing counts like Stripe Special. Top of the pile. No slip.";
 	next;
 
 	.@menu$ = "";
@@ -156,6 +156,14 @@ L_Main:
 		.@cur_charm = .@elig_charm[0];
 	}
 
+	.@tier = .@card_idx + 1;
+	if (.@tier < 1)
+		.@tier = 1;
+	if (.@tier > 5)
+		.@tier = 5;
+	callfunc("F_SVE_StripeTierCosts", .@tier, .@ord_fruit, .@ord_zelu, .@sp_zelu, .@sp_bs);
+	.@ord_fruit = (.@tier == 1 ? 5 : .@tier == 2 ? 7 : .@tier == 3 ? 10 : .@tier == 4 ? 15 : 20);
+
 	// Player 2026-09-18: pile names stack in one box, one charm per mes line. Copy is develop-with-risk, not lottery talk.
 	mes "[Doberkin]";
 	mes "Sniff sniff. That's ^0055FF" + getitemname(.@cur_charm) + "^000000 in there. Level " + .@cur_lv + ".";
@@ -175,40 +183,44 @@ L_Main:
 	mes "Special: Blacksmith Blessing makes it stick at the top. Highest quality. No slip.";
 	next;
 	mes "[Doberkin]";
-	mes "Ordinary is ^0055FF5 Silvervine Fruit^000000 and ^0055FF1 Etel Dust^000000.";
+	.@ord_lab$ = "Ordinary - " + .@ord_fruit + " Fruit";
+	if (.@ord_zelu > 0)
+		.@ord_lab$ += ", " + .@ord_zelu + " Etel Dust";
+	.@sp_lab$ = "Special - " + .@ord_fruit + " Fruit, " + .@sp_zelu + " Etel Dust, " + .@sp_bs + " Blacksmith Blessing";
+	mes "Ordinary is ^0055FF" + .@ord_fruit + " Silvervine Fruit^000000" + (.@ord_zelu > 0 ? " and ^0055FF" + .@ord_zelu + " Etel Dust^000000." : ".");
 	next;
 	mes "[Doberkin]";
-	mes "Special is ^0055FF25 Silvervine Fruit^000000, ^0055FF5 Etel Dust^000000, and ^0055FF1 Blacksmith Blessing^000000.";
+	mes "Special is ^0055FF" + .@ord_fruit + " Silvervine Fruit^000000, ^0055FF" + .@sp_zelu + " Etel Dust^000000, and ^0055FF" + .@sp_bs + " Blacksmith Blessing^000000.";
 	next;
 	mes "[Doberkin]";
 	mes "Refine, cards, other enchants, random options, and enchant grade stay put.";
 	next;
-	.@svc = select("Ordinary - 5 Fruit, 1 Etel Dust:Special - 25 Fruit, 5 Etel Dust, 1 Blacksmith Blessing:Cancel");
+	.@svc = select(.@ord_lab$ + ":" + .@sp_lab$ + ":Cancel");
 	if (.@svc == 3)
 		close;
 	.@use_special = (.@svc == 2);
-	.@pay_fruit = (.@use_special ? 25 : 5);
-	.@pay_dust = (.@use_special ? 5 : 1);
-	.@pay_bs = (.@use_special ? 1 : 0);
+	.@pay_fruit = .@ord_fruit;
+	.@pay_dust = (.@use_special ? .@sp_zelu : .@ord_zelu);
+	.@pay_bs = (.@use_special ? .@sp_bs : 0);
 
 	if (.@pay_bs > 0 && countitem(6635) < .@pay_bs) {
 		mes "[Doberkin]";
-		mes "No Blacksmith Blessing, no special mix. I need one.";
-		if (countitem(1000322) < .@pay_dust) {
+		mes "No Blacksmith Blessing, no special mix. I need " + .@pay_bs + ".";
+		if (.@pay_dust > 0 && countitem(1000322) < .@pay_dust) {
 			next;
 			mes "[Doberkin]";
-			mes "No Etel Dust, no upgrade. Special needs five.";
+			mes "No Etel Dust, no upgrade. Special needs " + .@pay_dust + ".";
 		}
 		if (countitem(6417) < .@pay_fruit) {
 			next;
 			mes "[Doberkin]";
-			mes "You are short on Silvervine Fruit. Special needs twenty-five.";
+			mes "You are short on Silvervine Fruit. I need " + .@pay_fruit + ".";
 		}
 		close;
 	}
-	if (countitem(1000322) < .@pay_dust) {
+	if (.@pay_dust > 0 && countitem(1000322) < .@pay_dust) {
 		mes "[Doberkin]";
-		mes (.@pay_bs > 0 ? "No Etel Dust, no upgrade. Special needs five." : "No Etel Dust, no upgrade. I do not work without that dust.");
+		mes (.@pay_bs > 0 ? "No Etel Dust, no upgrade. Special needs " + .@pay_dust + "." : "No Etel Dust, no upgrade. I need " + .@pay_dust + ".");
 		if (countitem(6417) < .@pay_fruit) {
 			next;
 			mes "[Doberkin]";
@@ -259,7 +271,8 @@ L_Main:
 		close;
 	}
 	delitem 6417, .@pay_fruit;
-	delitem 1000322, .@pay_dust;
+	if (.@pay_dust > 0)
+		delitem 1000322, .@pay_dust;
 	if (.@pay_bs > 0)
 		delitem 6635, .@pay_bs;
 
@@ -332,7 +345,7 @@ L_Banter:
 		mes "Bramble across the room only jams charms in. Collects stones nearby. He had no idea you could develop them.";
 		next;
 		mes "[Doberkin]";
-		mes "He yelped when he saw my dust work. Me? Etel Dust, numbered charms, sometimes a Blacksmith Blessing for the top. Twenty-five fruit, five dust, one blessing.";
+		mes "He yelped when he saw my dust work. Me? Etel Dust, numbered charms, fruit by socket, sometimes a Blacksmith Blessing for the top.";
 		next;
 		goto L_Main;
 	default:

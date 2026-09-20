@@ -1,13 +1,141 @@
-export type CardEaterCard = {
+type CardEaterCard = {
   itemId: number
   name: string
+  sourceMobId: number
+  monsterName: string
+  monsterLevel: number
   tier: 1 | 2 | 3 | 4
   levelBand: string
   silvervineReward: number
   eventStoneCoinReward: number
 }
 
-export const cardEaterCards: CardEaterCard[] = [
+type CardEaterCardBase = Omit<CardEaterCard, 'sourceMobId' | 'monsterName' | 'monsterLevel'>
+
+const sourceMobs: Record<number, readonly [number, string, number]> = {
+  4659: [3495, 'Eggring', 1],
+  4663: [3496, 'Leaf Lunatic', 3],
+  4664: [3497, 'Grass Fabre', 7],
+  4021: [1052, 'Rocker', 15],
+  4017: [1167, 'Savage Babe', 14],
+  4022: [1014, 'Spore', 18],
+  4037: [1025, 'Boa', 18],
+  4034: [1024, 'Wormtail', 17],
+  4031: [1019, 'Peco Peco', 25],
+  4036: [1055, 'Muka', 23],
+  4007: [1047, 'Peco Peco Egg', 7],
+  4006: [1063, 'Lunatic', 3],
+  4009: [1011, 'Chonchon', 5],
+  4030: [1020, 'Mandragora', 13],
+  4040: [1018, 'Creamy', 23],
+  4014: [1012, 'Roda Frog', 13],
+  4032: [1094, 'Ambernite', 19],
+  4020: [1005, 'Familiar', 24],
+  4025: [1076, 'Skeleton', 27],
+  4033: [1031, 'Poporing', 30],
+  4013: [1097, 'Ant Egg', 28],
+  4074: [1060, 'Bigfoot', 29],
+  4039: [1174, 'Stainer', 21],
+  4063: [1103, 'Caramel', 25],
+  4048: [1077, 'Poison Spore', 26],
+  4044: [1056, 'Smokie', 29],
+  4052: [1033, 'Elder Willow', 34],
+  4041: [1104, 'Coco', 38],
+  4045: [1128, 'Horn', 32],
+  4066: [1023, 'Orc Warrior', 44],
+  4104: [1164, 'Requiem', 71],
+  4064: [1178, 'Zerom', 70],
+  4117: [1037, 'Side Winder', 70],
+  4079: [1139, 'Mantis', 65],
+  4114: [1099, 'Argiope', 75],
+  4120: [1156, 'Petite', 79],
+  4118: [1155, 'Petite', 86],
+  27122: [2074, 'Curupira', 68],
+  27123: [2073, 'Toucan', 70],
+  27124: [2072, 'Jaguar', 71],
+  4325: [1376, 'Harpy', 83],
+  4150: [1372, 'Goat', 80],
+  4161: [1369, 'Grand Peco', 75],
+  4228: [1386, 'Sleeper', 81],
+  4299: [1269, 'Clock', 81],
+  4313: [1199, 'Punk', 82],
+  4185: [1195, 'Rideword', 74],
+  4268: [1257, 'Injustice', 95],
+  4194: [1201, 'Rybio', 98],
+  4222: [1196, 'Skeleton Prisoner', 91],
+  4171: [1198, 'Dark Priest', 98],
+  4422: [1782, 'Roween', 95],
+  4082: [1106, 'Desert Wolf', 103],
+  4091: [1133, 'Kobold', 107],
+  4167: [1255, 'Nereid', 98],
+  4124: [1148, 'Medusa', 102],
+  4166: [1379, 'Nightmare Terror', 107],
+  4158: [1384, 'Deleter', 105],
+  4432: [1836, 'Magmaring', 110],
+  4369: [1675, 'Venatu', 77],
+  4404: [1752, 'Skogul', 126],
+  4405: [1753, 'Frus', 128],
+  300001: [20592, 'Poisonous', 188],
+  300005: [20603, 'Abyssman', 190],
+  300006: [20598, 'Jewelry Ant', 191],
+  300004: [20594, 'Green Mineral', 190],
+  27347: [20377, 'Rigid Kaho', 173],
+  27352: [20373, 'Rigid Nightmare Terror', 179],
+  27354: [20367, 'Contaminated Raydric', 185],
+  27356: [20369, 'Frozen Gargoyle', 186],
+  4411: [1771, 'Vanberk', 123],
+  4412: [1772, 'Isilla', 124],
+  4380: [1714, 'Ferus', 126],
+  4378: [1713, 'Acidus', 130],
+  4448: [1992, 'Cornus', 120],
+  4469: [1993, 'Naga', 117],
+  4442: [1986, 'Tatacho', 128],
+  4447: [1987, 'Centipede', 125],
+  4640: [3442, 'Frozen Wolf', 140],
+  4638: [3444, 'Watcher', 145],
+  300211: [21295, 'Ash Toad', 179],
+  300215: [21299, 'Volcaring', 185],
+  27085: [3760, 'Resentful Munak', 110],
+  27102: [3750, 'Matt Drainliar', 137],
+  27101: [3754, 'Sweet Nightmare', 141],
+  27110: [3792, 'Angry Gazeti', 126],
+  27115: [3800, 'Ominous Permeter', 157],
+  300140: [20801, 'Deep Sea Sropho', 147],
+  300148: [20808, 'Deep Sea Strouf', 201],
+  300106: [20649, 'Red Pitaya', 162],
+  300240: [20935, 'Gan Ceann', 215],
+  300241: [20937, 'Brutal Murderer', 214],
+  300242: [20938, 'Ghost Cube', 213],
+  300243: [20939, 'Lude Gal', 213],
+  300244: [20936, 'Disguiser', 254],
+  300246: [20941, 'Grote', 253],
+  300247: [20942, 'Pierrotzoist', 255],
+  300245: [20940, 'Blue Moon Loli Ruri', 255],
+  300249: [20929, 'Giant Caput', 213],
+  300250: [20930, 'Dolorian', 214],
+  300252: [20932, 'Deadre', 214],
+  300251: [20931, 'Plagarion', 215],
+  300253: [20933, 'Venedi', 213],
+  300254: [20924, 'Amitera', 227],
+  300255: [20925, 'Litus', 228],
+  300256: [20926, 'Fillia', 229],
+  300257: [20927, 'Vanilaqus', 230],
+  300258: [20920, 'Lavaeter', 243],
+  300259: [20921, 'Fulgor', 244],
+  300260: [20922, 'Napeo', 244],
+  300261: [20923, 'Galensis', 244],
+  300146: [20806, 'Deep Sea Sedora', 199],
+  300147: [20807, 'Deep Sea Swordfish', 199],
+  300149: [20809, 'Deep Sea Phen', 199],
+  300150: [20810, 'Deep Sea King Dramoh', 205],
+  27355: [20368, 'Contaminated Raydric Ar', 184],
+  27357: [20370, 'Contaminated Sting', 180],
+  27358: [20371, 'Prison Breaker', 186],
+  27359: [20379, 'Ice Ghost', 189],
+  27360: [20380, 'Flame Ghost', 189]
+}
+
+const cardEaterCardsBase: CardEaterCardBase[] = [
   {
     itemId: 4659,
     name: 'Eggring Card',
@@ -969,3 +1097,17 @@ export const cardEaterCards: CardEaterCard[] = [
     eventStoneCoinReward: 90
   }
 ]
+
+const cardEaterCards: CardEaterCard[] = cardEaterCardsBase.map((card) => {
+  const sourceMob = sourceMobs[card.itemId]
+
+  if (!sourceMob) {
+    throw new Error(`Missing Card Eater source monster for item ${card.itemId}`)
+  }
+
+  const [sourceMobId, monsterName, monsterLevel] = sourceMob
+
+  return { ...card, sourceMobId, monsterName, monsterLevel }
+})
+
+export { cardEaterCards, type CardEaterCard }
