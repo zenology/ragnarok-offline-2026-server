@@ -9,8 +9,8 @@ export default function DungeonsPage(): ReactNode {
     <main aria-label="Dungeon guide">
       <HeaderSection
         eyebrow="RAGNAROK OFFLINE · DUNGEONS"
-        title="Ancient Odin Temple"
-        description="Enter Odin Past through the portal in Odin Temple's north side."
+        title="Late-game dungeons"
+        description="Enter Odin Past and Abyss Lake F4 from their on-map portals and signs."
       />
       <GuideSection id="odin-past-access" number="01" eyebrow="ODIN PAST" title="Odin Past access">
         <Text as="p">
@@ -71,6 +71,43 @@ export default function DungeonsPage(): ReactNode {
           Hunt inside <strong>odin_past</strong>. Use the north portal on Odin Temple 3F at{' '}
           <strong>odin_tem03 276/236</strong>.
         </Text>
+      </GuideSection>
+      <GuideSection
+        id="abyss-04-access"
+        number="05"
+        eyebrow="ABYSS LAKE F4"
+        title="Abyss Lake F4 access"
+      >
+        <Text as="p">
+          Abyss Lake Underground Cave F4 requires Base Level 190 or higher to use the F3 entrance
+          sign.
+        </Text>
+        <Callout>
+          <strong>Find:</strong> Search Navigation for <strong>Abyss Lake F4 Entrance</strong>. Find
+          guides you to the sign at <strong>abyss_03 91/110</strong>. Talk to the sign marked{' '}
+          <strong>Entry: Level 190+</strong>, then choose <em>Enter Abyss Lake F4.</em>
+        </Callout>
+      </GuideSection>
+      <GuideSection id="abyss-04-move" number="06" eyebrow="ABYSS LAKE F4" title="MOVE">
+        <Callout>
+          <strong>MOVE:</strong> Select <strong>Abyss Lake Underground Cave F4</strong> in
+          Navigation to warp to a random walkable point in <strong>abyss_04</strong> for{' '}
+          <strong>1 Nyangvine</strong>. MOVE has no Base Level 190 requirement and is available only
+          from maps that support Private Airship travel.
+        </Callout>
+      </GuideSection>
+      <GuideSection
+        id="abyss-04-return"
+        number="07"
+        eyebrow="ABYSS LAKE F4"
+        title="Arrival and return"
+      >
+        <Text as="p">
+          The sign sends you to <strong>abyss_04 169/159</strong>. To leave, talk to the exit sign
+          at <strong>abyss_04 169/164</strong> marked <strong>Exit</strong> and choose{' '}
+          <em>Return to Abyss Lake F3.</em> That returns you to <strong>abyss_03 97/104</strong>.
+        </Text>
+        <Text as="p">This pass does not spawn monsters on F4.</Text>
       </GuideSection>
     </main>
   )

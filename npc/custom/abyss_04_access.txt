@@ -1,0 +1,44 @@
+//===== Ragnarok Offline =====================================
+//= Abyss Lake F4 Access
+//===== Description: =========================================
+//= Clickable sign access between abyss_03 and abyss_04.
+//= Entry requires Base Level 190 or higher.
+//============================================================
+
+abyss_03,91,110,0	script	Abyss Lake F4 Entrance#offline	2_BULLETIN_BOARD,{
+	if (BaseLevel < 190) {
+		mes "[Abyss Lake F4 Entrance]";
+		mes "Only adventurers of Base Level 190 or higher may enter.";
+		close;
+	}
+
+	mes "[Abyss Lake F4 Entrance]";
+	mes "Beyond this sign lies Abyss Lake Underground Cave F4.";
+	next;
+	if (select("Enter Abyss Lake F4.:Not yet.") == 2)
+		close;
+
+	close2;
+	warp "abyss_04",169,159;
+	end;
+
+OnInit:
+	setunittitle(getnpcid(0), "Entry: Level 190+");
+	end;
+}
+
+abyss_04,169,164,0	script	Abyss Lake F4 Exit#offline	2_BULLETIN_BOARD,{
+	mes "[Abyss Lake F4 Exit]";
+	mes "Do you want to return to Abyss Lake F3?";
+	next;
+	if (select("Return to Abyss Lake F3.:Stay here.") == 2)
+		close;
+
+	close2;
+	warp "abyss_03",97,104;
+	end;
+
+OnInit:
+	setunittitle(getnpcid(0), "Exit");
+	end;
+}

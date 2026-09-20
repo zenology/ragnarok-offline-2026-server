@@ -16,6 +16,7 @@ abbey03	mapflag	privateairship_source
 abyss_01	mapflag	privateairship_source
 abyss_02	mapflag	privateairship_source
 abyss_03	mapflag	privateairship_source
+abyss_04	mapflag	privateairship_source
 alb2trea	mapflag	privateairship_source
 alberta	mapflag	privateairship_source
 alde_dun01	mapflag	privateairship_source
@@ -372,6 +373,7 @@ abbey03	mapflag	privateairship_destination
 abyss_01	mapflag	privateairship_destination
 abyss_02	mapflag	privateairship_destination
 abyss_03	mapflag	privateairship_destination
+abyss_04	mapflag	privateairship_destination
 alb2trea	mapflag	privateairship_destination
 alberta	mapflag	privateairship_destination
 alde_dun01	mapflag	privateairship_destination
