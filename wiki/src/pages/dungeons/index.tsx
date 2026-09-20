@@ -107,7 +107,19 @@ export default function DungeonsPage(): ReactNode {
           at <strong>abyss_04 169/164</strong> marked <strong>Exit</strong> and choose{' '}
           <em>Return to Abyss Lake F3.</em> That returns you to <strong>abyss_03 97/104</strong>.
         </Text>
-        <Text as="p">This pass does not spawn monsters on F4.</Text>
+      </GuideSection>
+      <GuideSection
+        id="abyss-04-hunting"
+        number="08"
+        eyebrow="ABYSS LAKE F4"
+        title="Hunting roster"
+      >
+        <Text as="p">
+          The map hunts six normal monsters: Purple Ferus, Treasure Mimic, Black Acidus, Silver
+          Acidus, Bone Ferus, and Bone Acidus. One MVP also spawns here: Bone Detardeurus.
+        </Text>
+        <Text as="p">Bone Detardeurus respawns after 3 hours, with a 10-minute variance.</Text>
+        <Text as="p">Cards from this map use the offline 1% card target.</Text>
       </GuideSection>
     </main>
   )
