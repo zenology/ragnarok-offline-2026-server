@@ -1,0 +1,226 @@
+//===== Ragnarok Offline =====================================
+//= Paradise Advanced Requests Board
+//===== Description: =========================================
+//= Eden HQ board for gap Paradise hunt dailies 19000-19040.
+//============================================================
+
+moc_para01,48,179,3	script	Advanced Requests Board#para	857,{
+	if (!callfunc("F_HasEdenGroupMark")) {
+		mes "[Advanced Requests Board]";
+		mes "You need an Eden Group Mark to read these requests.";
+		next;
+		mes "[Advanced Requests Board]";
+		mes "Talk to Secretary Lime Evenor on the first floor.";
+		next;
+		mes "[Advanced Requests Board]";
+		mes "Join the Eden Group, then come back.";
+		close;
+	}
+	if (BaseLevel < 130) {
+		mes "[Advanced Requests Board]";
+		mes "This board is for Base Level 130 and above.";
+		close;
+	}
+
+	setarray .@hunt[0], 19000,19012,19016,19018,19020,19022,19024,19026,19028,19032,19034,19038,19040;
+	setarray .@standby[0], 19001,19013,19017,19019,19021,19023,19025,19027,19029,19033,19035,19039,19041;
+	setarray .@bexp[0], 1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,1500000,8000000,1500000,1500000;
+	setarray .@jexp[0], 1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,1000000,4000000,1000000,1000000;
+	for ( .@i = 0; .@i < 13; .@i++ ) {
+		if (checkquest(.@hunt[.@i],HUNTING) == 2) {
+			mes "[Advanced Requests Board]";
+			mes "Request complete. The Paradise Team recorded the result.";
+			erasequest .@hunt[.@i];
+			setquest .@standby[.@i];
+			getexp .@bexp[.@i],.@jexp[.@i];
+			next;
+		}
+	}
+
+	mes "[Advanced Requests Board]";
+	mes "Paradise Team exclusive requests. Hunt the posted maps, then report here.";
+	next;
+	mes "[Advanced Requests Board]";
+	mes "Which request do you want to read?";
+	next;
+	switch( select(
+		"Blooming Flower Land:Bifrost Tower:Prontera Prison:Invaded Prontera:Rockridge Mine:Glastheim Castle F2 (Nightmare):Underground Bunker:More requests.:Not now."
+	) ) {
+	case 1:
+		callsub S_QuestPair, 19000, 19001, 130,
+			"Blooming Flower Land",
+			"Hunt 30 Menblatt and 30 Petals in Blooming Flower Land.";
+		end;
+	case 2:
+		callsub S_QuestPair, 19012, 19013, 130,
+			"Bifrost Tower",
+			"Hunt 30 Cenere and 30 Antique Books in Bifrost Tower 1F.";
+		end;
+	case 3:
+		callsub S_QuestPair, 19016, 19017, 130,
+			"Prontera Prison",
+			"Hunt 30 Taffy and 30 Watchers in Prontera Prison.";
+		end;
+	case 4:
+		callsub S_QuestPair, 19018, 19019, 130,
+			"Invaded Prontera",
+			"Hunt 30 Zombie Guards and 30 Immortal Corps in Invaded Prontera.";
+		end;
+	case 5:
+		callsub S_QuestPair, 19020, 19021, 130,
+			"Rockridge Mine",
+			"Hunt 30 Gasters in Rockridge Mine.";
+		end;
+	case 6:
+		callsub S_QuestPair, 19022, 19023, 130,
+			"Glastheim Castle F2 (Nightmare)",
+			"Hunt 30 Wanderers (Nightmare) in Glastheim Castle F2.";
+		end;
+	case 7:
+		callsub S_QuestPair, 19024, 19025, 130,
+			"Underground Bunker",
+			"Hunt 30 Smelly Ghouls in the Underground Bunker.";
+		end;
+	case 8:
+		mes "[Advanced Requests Board]";
+		mes "Which request do you want to read?";
+		next;
+		switch( select(
+			"Laboratory-OPTATIO:Twisted Clock Tower F2:Twisted Clock Tower F3:Od Canyon and Ida Plains:Eastern Ruins of Juperos:Verus City:Previous list.:Not now."
+		) ) {
+		case 1:
+			callsub S_QuestPair, 19026, 19027, 130,
+				"Laboratory-OPTATIO",
+				"Hunt 30 Repair Robot Turbos and 30 Green Cenere in Laboratory-OPTATIO.";
+			end;
+		case 2:
+			callsub S_QuestPair, 19028, 19029, 130,
+				"Twisted Clock Tower F2",
+				"Hunt 30 Big Bens and 30 Neo Punks in Twisted Clock Tower F2.";
+			end;
+		case 3:
+			callsub S_QuestPair, 19032, 19033, 130,
+				"Twisted Clock Tower F3",
+				"Hunt 30 Big Bells in Twisted Clock Tower F3.";
+			end;
+		case 4:
+			callsub S_QuestPair, 19034, 19035, 170,
+				"Od Canyon and Ida Plains",
+				"Hunt 30 Ashen Goats and 30 Baby Gray Wolves in Od Canyon.";
+			end;
+		case 5:
+			callsub S_QuestPair, 19038, 19039, 130,
+				"Eastern Ruins of Juperos",
+				"Hunt 30 Recon Robots in the Eastern Ruins of Juperos.";
+			end;
+		case 6:
+			callsub S_QuestPair, 19040, 19041, 130,
+				"Verus City",
+				"Hunt 30 Explorer Robots and 30 Explorer Robot Turbos. Turbo is in Verus City; the other is in the next Verus map.";
+			end;
+		case 7:
+			close;
+		case 8:
+			close;
+		}
+		end;
+	case 9:
+		close;
+	}
+	end;
+
+S_QuestPair:
+	.@hunt = getarg(0);
+	.@standby = getarg(1);
+	.@minlv = getarg(2);
+	.@title$ = getarg(3);
+	.@detail$ = getarg(4);
+	if (BaseLevel < .@minlv) {
+		mes "[Advanced Requests Board]";
+		if (.@hunt == 19034)
+			mes "Od Canyon grey beasts are posted for Base Level 170 and above.";
+		else
+			mes "This board is for Base Level 130 and above.";
+		close;
+	}
+	switch( checkquest(.@standby,PLAYTIME) ) {
+	case -1:
+		break;
+	case 0:
+	case 1:
+		mes "[Advanced Requests Board]";
+		mes "This request is on standby. Come back after the wait.";
+		close;
+	case 2:
+		erasequest .@standby;
+		break;
+	}
+	switch( checkquest(.@hunt,HUNTING) ) {
+	case -1:
+		mes "[Advanced Requests Board]";
+		mes "This request is posted for "+ .@title$ +".";
+		next;
+		mes "[Advanced Requests Board]";
+		mes .@detail$;
+		next;
+		mes "[Advanced Requests Board]";
+		mes "Defeat the targets, then report back to this board. There may be conditions for entering the area.";
+		next;
+		if (select("Accept the request.:Not now.") == 2)
+			close;
+		mes "[Advanced Requests Board]";
+		mes "The request is posted. Return here when the hunt is done.";
+		setquest .@hunt;
+		close;
+	case 0:
+	case 1:
+		mes "[Advanced Requests Board]";
+		mes "That hunt is still open. Finish the posted kills, then report here.";
+		close;
+	case 2:
+		end;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19000,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19012,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19016,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19018,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19020,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19022,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19024,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19026,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19028,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19032,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19034,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19038,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(19040,HUNTING) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19001,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19013,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19017,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19019,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19021,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19023,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19025,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19027,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19029,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19033,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19035,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19039,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(19041,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19000) == 0 && checkquest(19001,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19012) == 0 && checkquest(19013,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19016) == 0 && checkquest(19017,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19018) == 0 && checkquest(19019,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19020) == 0 && checkquest(19021,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19022) == 0 && checkquest(19023,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19024) == 0 && checkquest(19025,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19026) == 0 && checkquest(19027,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19028) == 0 && checkquest(19029,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19032) == 0 && checkquest(19033,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 170 && isbegin_quest(19034) == 0 && checkquest(19035,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19038) == 0 && checkquest(19039,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 130 && isbegin_quest(19040) == 0 && checkquest(19041,PLAYTIME) == -1" );
+	end;
+}

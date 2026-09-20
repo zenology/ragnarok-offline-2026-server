@@ -1,0 +1,76 @@
+//===== Ragnarok Offline =====================================
+//= Geffen Field 8 Wind Petite Daily
+//===== Description: =========================================
+//= Field Watcher Rhea at gef_fild08. Daily hunt 8596 / 8597.
+//============================================================
+
+gef_fild08,196,348,4	script	Field Watcher Rhea#petit_dq	4_M_SITDOWN,{
+	if (BaseLevel < 70) {
+		mes "[Rhea]";
+		mes "Come back at Base Level 70. Wind Petites on this field will not wait for you.";
+		close;
+	}
+
+	if (checkquest(8596,HUNTING) == 2) {
+		mes "[Rhea]";
+		mes "Thirty wind Petites. The west Geffen fields can breathe until tomorrow.";
+		erasequest 8596;
+		setquest 8597;
+		getexp 50000,40000;
+		next;
+	}
+
+	mes "[Rhea]";
+	mes "I watch this field from the north gate. The wind Petites keep trampling the grass toward Geffen.";
+	next;
+	mes "[Rhea]";
+	mes "Will you hunt for the notes?";
+	next;
+	switch( select("Wind Petite Hunt:Not now.") ) {
+	case 1:
+		switch( checkquest(8597,PLAYTIME) ) {
+		case -1:
+			break;
+		case 0:
+		case 1:
+			mes "[Rhea]";
+			mes "Come back after I finish cataloging today's notes.";
+			close;
+		case 2:
+			erasequest 8597;
+			break;
+		}
+		switch( checkquest(8596,HUNTING) ) {
+		case -1:
+			mes "[Rhea]";
+			mes "They share a name with the earth Petites, but these are wind. Same faces, worse weather.";
+			next;
+			mes "[Rhea]";
+			mes "Hunt 30 Wind Petites on this map. The earth ones on the other Geffen fields will not count.";
+			next;
+			if (select("Accept the request.:Not now.") == 2)
+				close;
+			mes "[Rhea]";
+			mes "Stay on Geffen Field 8. Bring me a count I can write down.";
+			setquest 8596;
+			close;
+		case 0:
+		case 1:
+			mes "[Rhea]";
+			mes "Wind Petites, this field only. Thirty. The earth Petites will not answer this.";
+			close;
+		case 2:
+			end;
+		}
+		end;
+	case 2:
+		close;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(8596,HUNTING) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(8597,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 70 && isbegin_quest(8596) == 0 && checkquest(8597,PLAYTIME) == -1" );
+	end;
+}

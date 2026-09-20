@@ -6144,6 +6144,14 @@ Body:
   - Id: 8595
     Title: Playing with Pitaya - Standby
     TimeLimit: 4h
+  - Id: 8596
+    Title: Wind Petite Hunt
+    Targets:
+      - Mob: PETIT_
+        Count: 30
+  - Id: 8597
+    Title: Wind Petite Hunt - Waiting
+    TimeLimit: 4h
   - Id: 8639
     Title: Great banquet hall in the depths of the underworld
   - Id: 8640
@@ -12388,6 +12396,13 @@ Body:
     Title: Gusli
   - Id: 18121
     Title: Shafka
+  - Id: 19000
+    Title: Blooming Flower Land
+    Targets:
+      - Mob: MENBLATT
+        Count: 30
+      - Mob: PETAL
+        Count: 30
   - Id: 19001
     Title: The earth where the flowers have blossomed - Waiting
     TimeLimit: 4h
@@ -12406,48 +12421,122 @@ Body:
   - Id: 19011
     Title: Dragon's nest - Waiting
     TimeLimit: 4h
+  - Id: 19012
+    Title: Bifrost Tower
+    Targets:
+      - Mob: CENERE
+        Count: 30
+      - Mob: ANTIQUE_BOOK
+        Count: 30
   - Id: 19013
     Title: Bifrost Tower - Waiting
     TimeLimit: 4h
   - Id: 19015
     Title: Dragon's nest - Waiting
     TimeLimit: 4h
+  - Id: 19016
+    Title: Prontera Prison
+    Targets:
+      - Mob: TAFFY
+        Count: 30
+      - Mob: WATCHER
+        Count: 30
   - Id: 19017
     Title: Prontera Dungeon - Waiting
     TimeLimit: 4h
+  - Id: 19018
+    Title: Invaded Prontera
+    Targets:
+      - Mob: ZOMBIE_GUARD
+        Count: 30
+      - Mob: IMMOTAL_CORPS
+        Count: 30
   - Id: 19019
     Title: The invaded Prontera - Waiting
     TimeLimit: 4h
+  - Id: 19020
+    Title: Rockridge Mine
+    Targets:
+      - Mob: GASTER
+        Count: 30
   - Id: 19021
     Title: Rock Ridge Mine - Waiting
     TimeLimit: 4h
+  - Id: 19022
+    Title: Glastheim Castle F2 (Nightmare)
+    Targets:
+      - Mob: NG_WANDER_MAN
+        Count: 30
   - Id: 19023
     Title: 2nd floor corridor - Waiting
     TimeLimit: 4h
+  - Id: 19024
+    Title: Underground Bunker
+    Targets:
+      - Mob: GHOUL_H
+        Count: 30
   - Id: 19025
     Title: Underground bunker - Waiting
     TimeLimit: 4h
+  - Id: 19026
+    Title: Laboratory-OPTATIO
+    Targets:
+      - Mob: REPAIR_ROBOT_T
+        Count: 30
+      - Mob: CENERE_G
+        Count: 30
   - Id: 19027
     Title: Experiment-OPTATIO - Waiting
     TimeLimit: 4h
   - Id: 19028
-    Title: Twisted time clock tower 2nd floor - Waiting
+    Title: Twisted Clock Tower F2
+    Targets:
+      - Mob: BIG_BEN
+        Count: 30
+      - Mob: NEO_PUNK
+        Count: 30
+  - Id: 19029
+    Title: Twisted Clock Tower F2 - Waiting
     TimeLimit: 4h
   - Id: 19031
     Title: Breeding Farm Lost Valley - Waiting
     TimeLimit: 4h
+  - Id: 19032
+    Title: Twisted Clock Tower F3
+    Targets:
+      - Mob: BIG_BELL
+        Count: 30
   - Id: 19033
     Title: Twisted time clock tower 3rd floor - Waiting
     TimeLimit: 4h
+  - Id: 19034
+    Title: Od Canyon and Ida Plains
+    Targets:
+      - Mob: EP18_GREY_GOAT
+        Count: 30
+      - Mob: EP18_GREY_WOLF_BABY
+        Count: 30
   - Id: 19035
     Title: OZ Canyon and Ida Plains - Waiting
     TimeLimit: 4h
   - Id: 19037
     Title: Waste Test Abandoned Ludus 2nd Floor - Waiting
     TimeLimit: 4h
+  - Id: 19038
+    Title: Eastern Ruins of Juperos
+    Targets:
+      - Mob: RECON_ROBOT
+        Count: 30
   - Id: 19039
     Title: East Ruins of Eupheros - Waiting
     TimeLimit: 4h
+  - Id: 19040
+    Title: Verus City
+    Targets:
+      - Mob: EXPLORATION_ROVER
+        Count: 30
+      - Mob: EXPLORATION_ROVER_T
+        Count: 30
   - Id: 19041
     Title: Verus City - Waiting
     TimeLimit: 4h
