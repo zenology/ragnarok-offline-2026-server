@@ -53,6 +53,25 @@ export default function DungeonsPage(): ReactNode {
         </Text>
         <Text as="p">Cards from this map use the offline 1% card target.</Text>
       </GuideSection>
+      <GuideSection id="odin-past-dailies" number="04" eyebrow="ODIN PAST" title="Daily quests">
+        <Text as="p">
+          <strong>Folklorist Cinnamon</strong> sits at the Odin Temple ferry,{' '}
+          <strong>odin_tem01 108/152</strong>. You need Base Level 180. Two independent dailies
+          grant EXP only, with a 4-hour standby after each turn-in.
+        </Text>
+        <Text as="p">
+          <strong>Xth Century XXgolt:</strong> 30 grey Angelgolt, 40 pink Angelgolt. Base 50,190,280
+          / Job 35,133,280.
+        </Text>
+        <Text as="p">
+          <strong>What is Valkyrie?:</strong> 30 Holy Frus, 30 Holy Skogul. Base 44,210,160 / Job
+          30,947,160.
+        </Text>
+        <Text as="p">
+          Hunt inside <strong>odin_past</strong>. Use the north portal on Odin Temple 3F at{' '}
+          <strong>odin_tem03 276/236</strong>.
+        </Text>
+      </GuideSection>
     </main>
   )
 }
