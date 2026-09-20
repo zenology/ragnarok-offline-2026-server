@@ -125,17 +125,21 @@ export const blackMarketContacts: BlackMarketContact[] = [
 ]
 
 export const cashPointRules = {
-  buyRate: '1,000 Zeny = 1 Cash Point',
-  cashOutRate: '1 Cash Point = 500 Zeny',
-  bonus: 'Buy 10 Cash Points in one transaction and receive 1 bonus point.'
+  buyRate: '1,000 Zeny = 1 Black Market Point',
+  cashOutRate: '1 Black Market Point = 500 Zeny',
+  bonus: 'Buy 10 Black Market Points in one transaction and receive 1 bonus point.'
 }
 
 export const cardPriceBands: CardPriceBand[] = [
-  { catalog: 'Normal card', source: 'Monster Lv. 1–50', range: '250–1,000 CP' },
-  { catalog: 'Normal card', source: 'Monster Lv. 51–100', range: '2,000–4,000 CP' },
-  { catalog: 'Normal card', source: 'Monster Lv. 101+', range: '7,000–15,000 CP' },
-  { catalog: 'Miniboss card', source: 'Source monster', range: '7,000–20,000 CP' },
-  { catalog: 'MVP card', source: 'Source monster', range: '20,000–100,000 CP' }
+  { catalog: 'Normal card', source: 'Monster Lv. 1–50', range: '250–1,000 Black Market Points' },
+  {
+    catalog: 'Normal card',
+    source: 'Monster Lv. 51–100',
+    range: '2,000–4,000 Black Market Points'
+  },
+  { catalog: 'Normal card', source: 'Monster Lv. 101+', range: '7,000–15,000 Black Market Points' },
+  { catalog: 'Miniboss card', source: 'Source monster', range: '7,000–20,000 Black Market Points' },
+  { catalog: 'MVP card', source: 'Source monster', range: '20,000–100,000 Black Market Points' }
 ]
 
 export const rookeShelves = [
@@ -148,7 +152,7 @@ export const rookeShelves = [
   'Style and Reset'
 ]
 
-export const harlanCatalogs = [{ name: 'Equipment', count: 610 }]
+export const harlanCatalogs = [{ name: 'Equipment', count: 532 }]
 
 export const featuredItems: FeaturedItem[] = [
   {
@@ -210,7 +214,7 @@ export const featuredItems: FeaturedItem[] = [
   {
     name: 'Issgard Helmet',
     itemId: 401019,
-    price: 2100,
+    price: 900,
     category: 'Harlan · Equipment',
     divinePrideUrl: 'https://www.divine-pride.net/database/item/401019/s2-issgard-helmet'
   }

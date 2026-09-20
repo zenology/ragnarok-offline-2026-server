@@ -19,8 +19,9 @@ export default function JobChangesPage(): ReactNode {
       />
       <div className={styles.content}>
         <Callout variant="notice">
-          This page lists where to begin each job change. It does not replace the quest dialogue or
-          show level, item, or currency requirements.
+          This page lists where to begin each job change. Fourth Jobs without a dedicated quest use
+          Doppelganger in dali at Base Level 200 and Job Level 70. His awakening costs 100
+          Silvervine Fruit and 200 Event Stone Coins. Spirit Handler keeps its dedicated quest.
         </Callout>
         {jobChangeGroups.map((group, index) => (
           <GuideSection
