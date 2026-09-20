@@ -121,6 +121,32 @@ export default function DungeonsPage(): ReactNode {
         <Text as="p">Bone Detardeurus respawns after 3 hours, with a 10-minute variance.</Text>
         <Text as="p">Cards from this map use the offline 1% card target.</Text>
       </GuideSection>
+      <GuideSection id="abyss-04-dailies" number="09" eyebrow="ABYSS LAKE F4" title="Daily quests">
+        <Text as="p">
+          <strong>Folklorist Marigold</strong> stands in Hugel Square at <strong>hugel 102/148</strong>.
+          You need Base Level 190. Four independent dailies grant EXP only, with a 4-hour standby after
+          each turn-in.
+        </Text>
+        <Text as="p">
+          <strong>A Strangely-colored Ferus:</strong> 20 Purple Ferus. Base 15,823,920 / Job
+          11,076,720.
+        </Text>
+        <Text as="p">
+          <strong>Studying the New Mimic:</strong> 10 Treasure Mimic. Base 7,979,360 / Job 5,585,560.
+        </Text>
+        <Text as="p">
+          <strong>Acidus Elemental Study:</strong> 20 Black Acidus, 20 Silver Acidus. Base
+          32,090,640 / Job 22,463,360.
+        </Text>
+        <Text as="p">
+          <strong>Against Providence:</strong> 30 Bone Ferus, 30 Bone Acidus. Base 48,548,160 / Job
+          33,983,640.
+        </Text>
+        <Text as="p">
+          Hunt inside <strong>abyss_04</strong>. Use the F3 entrance sign at{' '}
+          <strong>abyss_03 91/110</strong>.
+        </Text>
+      </GuideSection>
     </main>
   )
 }
