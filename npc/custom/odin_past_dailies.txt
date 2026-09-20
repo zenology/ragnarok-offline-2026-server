@@ -1,0 +1,125 @@
+//===== Ragnarok Offline =====================================
+//= Odin Past Daily Quests
+//===== Description: =========================================
+//= Folklorist Cinnamon at the Odin Temple ferry.
+//= Daily hunts 7889 / 7891 for Ancient Odin Temple.
+//============================================================
+
+odin_tem01,108,152,4	script	Folklorist Cinnamon#odin_dq	4_M_SITDOWN,{
+	if (BaseLevel < 180) {
+		mes "[Cinnamon]";
+		mes "Come back at Base Level 180. I will not send a half-ready adventurer to date angels.";
+		close;
+	}
+
+	if (checkquest(7889,HUNTING) == 2) {
+		mes "[Cinnamon]";
+		mes "Grey and pink in one shrine. Two centuries at once. I can write the Xth Century XXgolt page without guessing.";
+		erasequest 7889;
+		setquest 7890;
+		getexp 50190280,35133280;
+		next;
+	}
+
+	if (checkquest(7891,HUNTING) == 2) {
+		mes "[Cinnamon]";
+		mes "They heal, they smite, they still will not name themselves. Closer to a Valkyrie than the priests ever got.";
+		erasequest 7891;
+		setquest 7892;
+		getexp 44210160,30947160;
+		next;
+	}
+
+	mes "[Cinnamon]";
+	mes "I study this shrine from the ferry. The past temple opened, and the old hymns stopped matching.";
+	next;
+	mes "[Cinnamon]";
+	mes "I have two questions I cannot answer from here. Will you hunt for the notes?";
+	next;
+	switch( select("Xth Century XXgolt:What is Valkyrie?:Not now.") ) {
+	case 1:
+		switch( checkquest(7890,PLAYTIME) ) {
+		case -1:
+			break;
+		case 0:
+		case 1:
+			mes "[Cinnamon]";
+			mes "Come back after I finish cataloging today's notes.";
+			close;
+		case 2:
+			erasequest 7890;
+			break;
+		}
+		switch( checkquest(7889,HUNTING) ) {
+		case -1:
+			mes "[Cinnamon]";
+			mes "The records call them golts, but never which century they belong to. Grey ones and pink ones share a name and fight in the same ruin.";
+			next;
+			mes "[Cinnamon]";
+			mes "I cannot date an XXgolt while it is trying to smite me. Hunt 30 grey Angelgolts and 40 pink ones so I can tell the centuries apart.";
+			next;
+			if (select("Accept the request.:Not now.") == 2)
+				close;
+			mes "[Cinnamon]";
+			mes "North portal on Odin Temple 3F. Bring me something I can write down.";
+			setquest 7889;
+			close;
+		case 0:
+		case 1:
+			mes "[Cinnamon]";
+			mes "Grey and pink Angelgolts still mix in the Ancient Odin Temple. I need both counts before I can date them.";
+			close;
+		case 2:
+			end;
+		}
+		end;
+	case 2:
+		switch( checkquest(7892,PLAYTIME) ) {
+		case -1:
+			break;
+		case 0:
+		case 1:
+			mes "[Cinnamon]";
+			mes "Come back after I finish cataloging today's notes.";
+			close;
+		case 2:
+			erasequest 7892;
+			break;
+		}
+		switch( checkquest(7891,HUNTING) ) {
+		case -1:
+			mes "[Cinnamon]";
+			mes "Everyone in Hugel can name a Valkyrie. Nobody can tell me what the word meant when this temple was new.";
+			next;
+			mes "[Cinnamon]";
+			mes "Holy Frus and Holy Skogul wear the same faces as today's attendants, only holy. Hunt 30 of each. Their habits will say more than a hymn.";
+			next;
+			if (select("Accept the request.:Not now.") == 2)
+				close;
+			mes "[Cinnamon]";
+			mes "North portal on Odin Temple 3F. Not the Frus and Skogul on these present floors.";
+			setquest 7891;
+			close;
+		case 0:
+		case 1:
+			mes "[Cinnamon]";
+			mes "Holy Frus and Holy Skogul, past temple only. Thirty each. The kin on these floors will not answer this.";
+			close;
+		case 2:
+			end;
+		}
+		end;
+	case 3:
+		close;
+	}
+	end;
+
+OnInit:
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(7889,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(7891,HUNTING) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7890,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "checkquest(7892,PLAYTIME) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 180 && isbegin_quest(7889) == 0 && checkquest(7890,PLAYTIME) == -1" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "BaseLevel >= 180 && isbegin_quest(7891) == 0 && checkquest(7892,PLAYTIME) == -1" );
+	end;
+}

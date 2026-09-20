@@ -6,8 +6,8 @@ import { blackMarketPage } from '../styles/recipes'
 
 const links = [
   ['#enter', 'Enter'],
-  ['#earn', 'Earn Cash Points'],
-  ['#spend', 'Spend Cash Points'],
+  ['#earn', 'Earn Black Market Points'],
+  ['#spend', 'Spend Black Market Points'],
   ['#featured', 'Featured Items']
 ] as const
 

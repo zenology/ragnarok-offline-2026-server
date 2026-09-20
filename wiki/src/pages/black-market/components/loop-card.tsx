@@ -15,7 +15,7 @@ export function LoopCard(): ReactNode {
   const styles = loop()
 
   return (
-    <div className={styles.root} aria-label="Cash Point gameplay loop">
+    <div className={styles.root} aria-label="Black Market Point gameplay loop">
       {steps.map(([number, title, description], index) => (
         <Fragment key={number}>
           {index > 0 && (

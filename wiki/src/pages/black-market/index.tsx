@@ -80,12 +80,19 @@ export default function BlackMarketPage(): ReactNode {
           id="earn"
           number="02"
           eyebrow="Turn your drops into options"
-          title="Earn Cash Points"
+          title="Earn Black Market Points"
         >
           <LoopCard />
           <Callout>
             The Card Collector buys standalone cards from your inventory. Cards already placed into
             equipment are not part of the sale.
+          </Callout>
+          <Callout variant="notice">
+            <strong>Catalog prices are base prices.</strong> Ordinary Black Market shops apply a
+            Base Level multiplier to the listed BP: ×1 at Base 1–50, ×2 at 51–99, ×6 at 100–200, and
+            ×10 at 201+. Reborn characters use ×3 at 1–50 and ×4 at 51–99. The daily market
+            adjustment then shifts each seller by −10% to +30%, so the shop price can differ from
+            the catalog price.
           </Callout>
           <div className={gridStyles.price}>
             {cardPriceBands.map((band) => (
@@ -99,7 +106,7 @@ export default function BlackMarketPage(): ReactNode {
           id="spend"
           number="03"
           eyebrow="Useful things, carefully curated"
-          title="Spend Cash Points"
+          title="Spend Black Market Points"
         >
           <div className={gridStyles.service}>
             <ServiceCard
@@ -107,42 +114,42 @@ export default function BlackMarketPage(): ReactNode {
               icon={faStore}
               location="Market hall · 41, 159"
               title="Black Market Boss"
-              description="Sell accepted monster cards and check your Cash Point balance and loyalty progress."
+              description="Sell accepted monster cards and check your Black Market Point balance and loyalty progress."
               tag="Card exchange"
             />
             <ServiceCard
               icon={faCoins}
               location="Market hall · 26, 181"
               title="Coin Exchange"
-              description="Convert Zeny into Cash Points, cash points back into Zeny, or try the optional gacha."
+              description="Convert Zeny into Black Market Points, points back into Zeny, or try the optional gacha."
               tag="Currency"
             />
             <ServiceCard
               icon={faGem}
               location="Market hall · 39, 185"
               title="Rooke"
-              description="Browse 94 curated consumables across seven shelves. The Upgrade shelf also sells Etel Dust, Shadowdecon, and Zelunium from Base Level 100."
-              tag="94 items · CP"
+              description="Browse 100 curated consumables across seven shelves. The Upgrade shelf also sells Etel Dust, Shadowdecon, and Zelunium from Base Level 100."
+              tag="100 items · BP"
             />
             <ServiceCard
               icon={faHatWizard}
               location="Market hall · 41, 173"
               title="Harlan"
-              description="Browse 610 headgear items in the Equipment catalog, organized by slot and display name."
-              tag="610 equipment · CP"
+              description="Browse 532 headgear items in the Equipment catalog, organized by slot and display name."
+              tag="532 equipment · BP"
             />
             <ServiceCard
               icon={faGem}
               location="Market hall · 27, 158"
               title="Madame Celestine"
-              description="Browse the complete Specialty Broker catalog: 902 equipment items across 43 named endgame families."
-              tag="902 specialty items · CP"
+              description="Browse the complete Specialty Broker catalog: 1,631 equipment items across 90 named endgame families."
+              tag="1,631 specialty items · BP"
             />
             <ServiceCard
               icon={faUserSecret}
               location="Market hall · 24, 172"
               title="Riven"
-              description="Search 3,088 Black Market equipment items by name or exact Item ID, then open the matching seller drawer."
+              description="Search 3,438 Black Market equipment items by name or exact Item ID, then open the matching seller drawer."
               tag="Equipment Search"
             />
             <ServiceCard
@@ -150,49 +157,49 @@ export default function BlackMarketPage(): ReactNode {
               location="Market hall · 51, 175"
               title="Soren"
               description="Browse weapons by type in the Equipment catalog. Specialty families are now handled by Madame Celestine."
-              tag="719 weapons · CP"
+              tag="719 weapons · BP"
             />
             <ServiceCard
               icon={faShieldHalved}
               location="Market hall · 37, 163"
               title="Mordain"
               description="Browse body armor in the Equipment catalog. Specialty families are now handled by Madame Celestine."
-              tag="319 armor · CP"
+              tag="319 armor · BP"
             />
             <ServiceCard
               icon={faShieldHalved}
               location="Market hall · 33, 166"
               title="Kaedra"
               description="Recover shields through the Equipment catalog, organized for quick browsing. Specialty families are now handled by Madame Celestine."
-              tag="Shield recovery · CP"
+              tag="Shield recovery · BP"
             />
             <ServiceCard
               icon={faShoePrints}
               location="Market hall · 23, 185"
               title="Tess"
               description="Browse footgear recovery stock in the Equipment catalog with complete client-asset coverage. Specialty families are now handled by Madame Celestine."
-              tag="Footgear · CP"
+              tag="Footgear · BP"
             />
             <ServiceCard
               icon={faShirt}
               location="Market hall · 24, 160"
               title="Weaver"
               description="Browse garment recovery equipment with imported executable effects and verified client assets. Specialty families are now handled by Madame Celestine."
-              tag="326 garments · CP"
+              tag="326 garments · BP"
             />
             <ServiceCard
               icon={faRing}
               location="Market hall · 23, 160"
               title="Lady Seraphine Vellmont"
               description="Browse accessory recovery stock by letter, including imported combo partners. Specialty families are now handled by Madame Celestine."
-              tag="Accessories · CP"
+              tag="Accessories · BP"
             />
             <ServiceCard
               icon={faUserSecret}
               location="Market hall · 47–51, 186"
               title="Card Sellers"
-              description="Use the card-seller drawers to exchange monster cards for Cash Points and browse the available card catalog."
-              tag="Cards · CP"
+              description="Use the card-seller drawers to exchange monster cards for Black Market Points and browse the available card catalog."
+              tag="Cards · BP"
             />
             <ServiceCard
               icon={faBoxArchive}
@@ -204,17 +211,18 @@ export default function BlackMarketPage(): ReactNode {
           </div>
           <Callout variant="notice">
             <strong>Harlan&apos;s prices are a useful hint.</strong> Hats with stronger combat
-            effects, useful casting bonuses, or powerful combinations cost more Cash Points.
+            effects, useful casting bonuses, or powerful combinations cost more Black Market Points.
             Requirements such as refinement, level, and grading are considered too, but the effect
             itself remains the main signal. A higher price can point you toward a valuable hat for
             your build, but always check the item description before you buy.
           </Callout>
           <CatalogStrip rookeShelves={rookeShelves} harlanCatalogs={harlanCatalogs} />
           <Callout variant="notice">
-            Malangdo stones on Rooke. Etel Dust, Shadowdecon, and Zelunium are 150 Cash Points at
-            Base Level 100–200 and 300 at 201+. They are not sold below 100. Bramble uses
-            Shadowdecon, Doberkin uses Etel Dust, and Stripe uses Zelunium on option slots four and
-            five. <Link to="/enchantment">Open the Enchantment guide →</Link>
+            Malangdo stones on Rooke. Etel Dust, Shadowdecon, and Zelunium are 150 Black Market
+            Points at Base Level 100–200 and 300 at 201+. They are not sold below 100. Bramble uses
+            Shadowdecon, Doberkin uses Etel Dust, and Stripe uses Zelunium. Special and exact-choice
+            services also require Blacksmith Blessing.{' '}
+            <Link to="/enchantment">Open the Enchantment guide →</Link>
           </Callout>
         </GuideSection>
 

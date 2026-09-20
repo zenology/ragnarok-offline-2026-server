@@ -1,0 +1,44 @@
+//===== Ragnarok Offline =====================================
+//= Odin Past Access
+//===== Description: =========================================
+//= Interactive Portal access to Ancient Odin Temple.
+//= Entry requires Base Level 180 or higher.
+//============================================================
+
+odin_tem03,276,236,0	script	Odin Past Entrance#offline	PORTAL,{
+	if (BaseLevel < 180) {
+		mes "[Odin Past Entrance]";
+		mes "Only adventurers of Base Level 180 or higher may enter.";
+		close;
+	}
+
+	mes "[Odin Past Entrance]";
+	mes "Beyond this portal lies the Ancient Odin Temple.";
+	next;
+	if (select("Enter Odin Past.:Not yet.") == 2)
+		close;
+
+	close2;
+	warp "odin_past",291,230;
+	end;
+
+OnInit:
+	setunittitle(getnpcid(0), "Entry: Level 180+");
+	end;
+}
+
+odin_past,291,235,0	script	Odin Past Exit#offline	PORTAL,{
+	mes "[Odin Past Exit]";
+	mes "Do you want to return to Odin Temple?";
+	next;
+	if (select("Return to Odin Temple.:Stay here.") == 2)
+		close;
+
+	close2;
+	warp "odin_tem03",280,241;
+	end;
+
+OnInit:
+	setunittitle(getnpcid(0), "Exit");
+	end;
+}

@@ -35,23 +35,37 @@ export const costServices: ServiceSummary[] = [
   {
     name: 'Bramble · Choose',
     location: 'Exact charm',
-    tag: '5 Fruit + Shadowdecon',
+    tag: '25 Fruit + stones + blessing',
     description:
-      'Always 5 Silvervine Fruit and 1 Shadowdecon. Cancel or missing materials spend nothing.'
+      'Always 25 Silvervine Fruit. Steps 1–3 also cost 5 Shadowdecon; steps 4–5 cost 10. Blacksmith Blessing follows the step: 1, 2, 3, 4, or 5. Cancel or missing materials spend nothing.'
   },
   {
-    name: 'Stripe · Options',
-    location: 'Same price to fill or reroll',
-    tag: 'Fruit + Zelunium',
+    name: 'Stripe · Ordinary',
+    location: 'Roll the option and its value',
+    tag: 'Fruit + optional Zelunium',
     description:
       'Slot 1: 5 Fruit. Slot 2: 7 Fruit. Slot 3: 10 Fruit. Slot 4: 5 Fruit and 1 Zelunium. Slot 5: 5 Fruit and 2 Zelunium.'
   },
   {
-    name: 'Doberkin · Push',
-    location: 'Every try',
-    tag: '5 Fruit + Etel Dust',
+    name: 'Stripe · Special',
+    location: 'Roll the option, force its maximum value',
+    tag: 'Fruit + Zelunium + blessing',
     description:
-      'Always 5 Silvervine Fruit and 1 Etel Dust. Missing Etel Dust is called out first, then Fruit. Nothing is taken until the charm is rewritten.'
+      'Fruit is 5, 7, 10, 5, or 5 by slot. Zelunium is 5 for slots 1–3 and 10 for slots 4–5. Blacksmith Blessing follows the slot: 1 through 5.'
+  },
+  {
+    name: 'Doberkin · Ordinary',
+    location: 'The charm can rise, stay, or drop',
+    tag: 'Fruit + optional Etel Dust',
+    description:
+      'Fruit follows the charm socket: 5, 7, 10, 15, or 20. Sockets 1–3 use no Etel Dust; socket 4 uses 1 and socket 5 uses 2. The equipment is never destroyed.'
+  },
+  {
+    name: 'Doberkin · Special',
+    location: 'Force the top charm in the series',
+    tag: 'Fruit + Etel Dust + blessing',
+    description:
+      'Fruit is 5, 7, 10, 15, or 20 by charm socket. Etel Dust is 5 for sockets 1–3 and 10 for sockets 4–5. Blacksmith Blessing follows the socket: 1 through 5.'
   }
 ]
 
@@ -66,8 +80,8 @@ export const materialServices: ServiceSummary[] = [
   {
     name: 'Rooke · Upgrade',
     location: 'Black Market hall · 39, 185',
-    tag: '150 / 300 CP',
+    tag: '150 / 300 BP',
     description:
-      'Etel Dust, Shadowdecon, and Zelunium appear from Base Level 100. All jobs 100–200 pay 150 Cash Points. 201+ pay 300. They are not sold below 100.'
+      'Etel Dust, Shadowdecon, and Zelunium appear from Base Level 100. All jobs 100–200 pay 150 Black Market Points. 201+ pay 300. They are not sold below 100.'
   }
 ]

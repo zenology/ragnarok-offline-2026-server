@@ -18,7 +18,7 @@ export function ItemCard({ item }: { item: FeaturedItem }): ReactNode {
       <h3 className={styles.title}>{item.name}</h3>
       <div className={styles.footer}>
         <strong className={styles.value}>
-          {item.price} <small>CP</small>
+          {item.price} <small>BP</small>
         </strong>
         <Link variant="external" external href={item.divinePrideUrl}>
           View on Divine Pride ↗

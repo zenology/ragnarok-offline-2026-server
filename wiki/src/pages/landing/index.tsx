@@ -35,6 +35,12 @@ const guides = [
     number: '04',
     title: 'Job Changes',
     description: 'Find the NPC, guild, or fallback Job Master for every supported job path.'
+  },
+  {
+    to: '/dungeons',
+    number: '05',
+    title: 'Dungeons',
+    description: 'Find late-game dungeon access points, level requirements, and return routes.'
   }
 ] as const
 
