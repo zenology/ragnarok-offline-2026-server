@@ -41,6 +41,18 @@ export default function DungeonsPage(): ReactNode {
           portal at <strong>odin_past 291/235</strong> and choose <em>Return to Odin Temple.</em>
         </Text>
       </GuideSection>
+      <GuideSection id="odin-past-hunting" number="03" eyebrow="ODIN PAST" title="Hunting roster">
+        <Text as="p">
+          The map hunts six normal monsters: two Angelgolt kinds, Holy Frus, Holy Skogul, Arch
+          Plasma, and Spectral Plasma. Two MVPs also spawn here: Valkyrie Reginleif and Valkyrie
+          Ingrid.
+        </Text>
+        <Text as="p">
+          Reginleif and Ingrid are independent MVP spawns of about 8 hours, each with a 10-minute
+          variance. Killing one does not reset the other.
+        </Text>
+        <Text as="p">Cards from this map use the offline 1% card target.</Text>
+      </GuideSection>
     </main>
   )
 }
