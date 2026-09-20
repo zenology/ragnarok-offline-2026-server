@@ -13409,6 +13409,37 @@ Body:
     Title: Bathroom Ghost
   - Id: 60355
     Title: Bathroom Ghost
+  - Id: 60401
+    Title: Drops Hunt
+    Targets:
+      - Mob: DROPS
+        Count: 10
+  - Id: 60402
+    Title: Lunatic and Fabre Hunt
+    Targets:
+      - Mob: LUNATIC
+        Count: 10
+      - Mob: FABRE
+        Count: 10
+  - Id: 60403
+    Title: ChonChon and Pupa Hunt
+    Targets:
+      - Mob: CHONCHON
+        Count: 20
+      - Mob: PUPA
+        Count: 10
+  - Id: 60404
+    Title: Peco Peco Egg Hunt
+    Targets:
+      - Mob: PECOPECO_EGG
+        Count: 20
+  - Id: 60405
+    Title: Willow and Picky Hunt
+    Targets:
+      - Mob: WILOW
+        Count: 20
+      - Mob: PICKY
+        Count: 20
   - Id: 62238
     Title: Midgardian Mercenary timer
     TimeLimit: +3h

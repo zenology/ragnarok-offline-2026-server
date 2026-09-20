@@ -13,6 +13,7 @@ const navigation = [
   { label: 'Black Market', to: '/black-market' },
   { label: 'Costumes', to: '/costumes' },
   { label: 'Dungeons', to: '/dungeons' },
+  { label: 'Eden Leveling', to: '/eden-leveling' },
   { label: 'Enchantment', to: '/enchantment' },
   { label: 'Job Changes', to: '/job-changes' }
 ] as const

@@ -1,0 +1,191 @@
+//===== Ragnarok Offline =====================================
+//= Eden Group Quests - Mission [1 - 11]
+//===== Description: =========================================
+//= Repeatable hunts 60401-60405. Board at moc_para01 34/38.
+//= Turn-in Sprakki at 32/36 (south of the 1-11 easel). No cooldown.
+//============================================================
+
+moc_para01,34,38,3	script	Mission [1 - 11]#eden	4_BOARD3,{
+	if (!callfunc("F_HasEdenGroupMark")) {
+		mes "- You need to have an -";
+		mes "- ^4d4dff'Eden Group Mark'^000000 -";
+		mes "- to receive these missions. -";
+		close;
+	}
+	if (BaseLevel > 11) {
+		mes " - These missions are too - ";
+		mes " - easy for your caliber - ";
+		mes " - search for a more level - ";
+		mes " - appropriate mission. - ";
+		close;
+	}
+	mes " - Mission bulletin board -";
+	mes " - for beginners. -";
+	mes " ";
+	mes " - Manager : Sprakki -";
+	next;
+	switch(select("Drops Hunt:Lunatic and Fabre Hunt:ChonChon and Pupa Hunt:Peco Peco Egg Hunt:Willow and Picky Hunt:Cancel")) {
+	case 1:
+		callsub L_Quest,60401,"Drops Hunt",
+			" - Hunt 10 ^4d4dffDrops^000000 - ",
+			" - at Morroc Field 7 north of Morroc. - ";
+		break;
+	case 2:
+		callsub L_Quest,60402,"Lunatic and Fabre Hunt",
+			" - Hunt 10 ^4d4dffLunatics^000000 and - ",
+			" - 10 ^4d4dffFabres^000000 north and east of Prontera. - ";
+		break;
+	case 3:
+		callsub L_Quest,60403,"ChonChon and Pupa Hunt",
+			" - Hunt 20 ^4d4dffChonchons^000000 and - ",
+			" - 10 ^4d4dffPupas^000000 east and west of Geffen. - ";
+		break;
+	case 4:
+		callsub L_Quest,60404,"Peco Peco Egg Hunt",
+			" - Hunt 20 ^4d4dffPeco Peco Eggs^000000 - ",
+			" - south of Morroc and the Sograt Desert. - ";
+		break;
+	case 5:
+		callsub L_Quest,60405,"Willow and Picky Hunt",
+			" - Hunt 20 ^4d4dffWillows^000000 south of Payon - ",
+			" - and 20 ^4d4dffPickys^000000 south of Morroc. - ";
+		break;
+	case 6:
+		mes " - Stop reading the bulletin board. - ";
+		close;
+	}
+	end;
+
+L_Quest:
+	.@qid = getarg(0);
+	if (checkquest(.@qid,HUNTING) >= 0) {
+		mes " - You already accepted - ";
+		mes " - this mission. - ";
+		mes " ";
+		mes " - See Sprakki for your reward. - ";
+		close;
+	}
+	mes " - Mission '"+ getarg(1) +"' - ";
+	for ( .@i = 2; .@i < getargcount(); .@i++ )
+		mes getarg(.@i);
+	mes " ";
+	mes " - Manager : Sprakki - ";
+	next;
+	if (select("I will do this mission.:Look for other missions.") == 2) {
+		mes " - Let's search for -";
+		mes " - other missions. - ";
+		close;
+	}
+	setquest .@qid;
+	mes " - Mission accepted. - ";
+	mes " - A free teleport is offered - ";
+	mes " - to the hunting ground. - ";
+	next;
+	if (select("Warp there now.:I will go myself.") == 2)
+		close;
+	if (.@qid == 60405) {
+		switch(select("Willows (Payon Forest):Pickys (Sograt Desert)")) {
+		case 1:
+			close2;
+			warp "pay_fild01",339,346;
+			end;
+		case 2:
+			close2;
+			warp "moc_fild07",198,39;
+			end;
+		}
+	}
+	switch(.@qid) {
+	case 60401:
+		close2;
+		warp "moc_fild07",198,39;
+		end;
+	case 60402:
+		close2;
+		warp "prt_fild08",170,369;
+		end;
+	case 60403:
+		close2;
+		warp "gef_fild07",327,188;
+		end;
+	case 60404:
+		close2;
+		warp "moc_fild01",232,250;
+		end;
+	}
+	end;
+}
+
+moc_para01,32,36,5	script	Sprakki#eden_1_11	90,{
+	for ( .@i = 60401; .@i <= 60405; .@i++ ) {
+		if (checkquest(.@i,HUNTING) != 2)
+			continue;
+		switch(.@i) {
+		case 60401:
+			mes "[Sprakki]";
+			mes "Nice work on the Drops hunt!";
+			erasequest 60401;
+			getexp 220,0;
+			next;
+			break;
+		case 60402:
+			mes "[Sprakki]";
+			mes "Lunatics and Fabres cleared. Good job!";
+			erasequest 60402;
+			getexp 765,0;
+			next;
+			break;
+		case 60403:
+			mes "[Sprakki]";
+			mes "Chonchons and Pupas done. Thanks!";
+			erasequest 60403;
+			getexp 1088,0;
+			next;
+			break;
+		case 60404:
+			mes "[Sprakki]";
+			mes "That was a lot of eggs. Well hunted!";
+			erasequest 60404;
+			getexp 918,0;
+			next;
+			break;
+		case 60405:
+			mes "[Sprakki]";
+			mes "Willows and Pickys? You nailed it!";
+			erasequest 60405;
+			getexp 2108,0;
+			next;
+			break;
+		}
+	}
+	.@busy = 0;
+	for ( .@i = 60401; .@i <= 60405; .@i++ ) {
+		.@s = checkquest(.@i,HUNTING);
+		if (.@s == 0 || .@s == 1)
+			.@busy = 1;
+	}
+	mes "[Sprakki]";
+	mes "Looking for beginner work?";
+	next;
+	mes "[Sprakki]";
+	mes "Check the Mission [1 - 11] board on the wall.";
+	if (.@busy) {
+		next;
+		mes "[Sprakki]";
+		mes "Finish your hunts, then come back for pay.";
+	}
+	close;
+
+OnInit:
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(60401,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(60402,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(60403,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(60404,HUNTING) == 2" );
+	questinfo( QTYPE_QUEST2, QMARK_YELLOW, "checkquest(60405,HUNTING) == 2" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "callfunc(\"F_HasEdenGroupMark\") && BaseLevel >= 1 && BaseLevel <= 11 && isbegin_quest(60401) == 0" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "callfunc(\"F_HasEdenGroupMark\") && BaseLevel >= 1 && BaseLevel <= 11 && isbegin_quest(60402) == 0" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "callfunc(\"F_HasEdenGroupMark\") && BaseLevel >= 1 && BaseLevel <= 11 && isbegin_quest(60403) == 0" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "callfunc(\"F_HasEdenGroupMark\") && BaseLevel >= 1 && BaseLevel <= 11 && isbegin_quest(60404) == 0" );
+	questinfo( QTYPE_DAILYQUEST, QMARK_YELLOW, "callfunc(\"F_HasEdenGroupMark\") && BaseLevel >= 1 && BaseLevel <= 11 && isbegin_quest(60405) == 0" );
+	end;
+}
