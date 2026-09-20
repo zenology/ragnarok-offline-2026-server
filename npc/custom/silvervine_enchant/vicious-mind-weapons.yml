@@ -4,69 +4,120 @@ Header:
 Body:
   - Id: 1600
     Mode: RandomOption
-    Groups:
-      - 7
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 7
+        MaxSlots: 3
   - Id: 2026
     Mode: RandomOption
-    Groups:
-      - 7
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 7
+        MaxSlots: 3
   - Id: 1900
     Mode: RandomOption
-    Groups:
-      - 8
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 8
+        MaxSlots: 3
   - Id: 1996
     Mode: RandomOption
-    Groups:
-      - 8
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 8
+        MaxSlots: 3
   - Id: 13128
     Mode: RandomOption
-    Groups:
-      - 8
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 8
+        MaxSlots: 3
   - Id: 18121
     Mode: RandomOption
-    Groups:
-      - 8
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 8
+        MaxSlots: 3
   - Id: 28107
     Mode: RandomOption
-    Groups:
-      - 9
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 9
+        MaxSlots: 3
   - Id: 16041
     Mode: RandomOption
-    Groups:
-      - 9
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 9
+        MaxSlots: 3
   - Id: 13455
     Mode: RandomOption
-    Groups:
-      - 9
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 9
+        MaxSlots: 3
   - Id: 13328
     Mode: RandomOption
-    Groups:
-      - 10
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 10
+        MaxSlots: 3
   - Id: 28605
     Mode: RandomOption
-    Groups:
-      - 10
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 10
+        MaxSlots: 3
   - Id: 28706
     Mode: RandomOption
-    Groups:
-      - 10
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 10
+        MaxSlots: 3
   - Id: 21016
     Mode: RandomOption
-    Groups:
-      - 11
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 11
+        MaxSlots: 3
   - Id: 1450
     Mode: RandomOption
-    Groups:
-      - 11
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 11
+        MaxSlots: 3
   - Id: 1400
     Mode: RandomOption
-    Groups:
-      - 11
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 11
+        MaxSlots: 3
   - Id: 28008
     Mode: RandomOption
-    Groups:
-      - 11
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 11
+        MaxSlots: 3
   - Id: 1800
     Mode: RandomOption
-    Groups:
-      - 11
+    Pools:
+      - Label: Vicious Mind Enchant
+        Groups:
+          - 11
+        MaxSlots: 3

@@ -259,12 +259,14 @@ inline int32 svu_find_level(const svu_item_pool& pool, int32 card_index, t_itemi
 	return 0;
 }
 
-inline int32 svu_roll_series(const std::vector<t_itemid>& levels) {
+inline int32 svu_roll_series(const std::vector<t_itemid>& levels, bool force_max) {
 	const size_t n = levels.size();
 	if (n == 0)
 		return 0;
 	if (n == 1)
 		return static_cast<int32>(levels[0]);
+	if (force_max)
+		return static_cast<int32>(levels[n - 1]);
 	if (n == 2) {
 		const uint32 r = rnd_value<uint32>(1, 5);
 		return static_cast<int32>(r <= 4 ? levels[0] : levels[1]);
@@ -280,12 +282,12 @@ inline int32 svu_roll_series(const std::vector<t_itemid>& levels) {
 	return static_cast<int32>(levels[mid]);
 }
 
-inline int32 svu_roll_level(const svu_item_pool& pool, int32 card_index, t_itemid charm_id) {
+inline int32 svu_roll_level(const svu_item_pool& pool, int32 card_index, t_itemid charm_id, bool force_max) {
 	const svu_series* series = svu_find_series(pool, card_index, charm_id);
 	if (series == nullptr)
 		return 0;
 
-	return svu_roll_series(series->levels);
+	return svu_roll_series(series->levels, force_max);
 }
 
 #endif /* SILVERVINE_ENCHANT_UPGRADE_HPP */

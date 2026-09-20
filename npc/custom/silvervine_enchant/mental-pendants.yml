@@ -4,13 +4,22 @@ Header:
 Body:
   - Id: 490100
     Mode: RandomOption
-    Groups:
-      - 182
+    Pools:
+      - Label: Dark Stone
+        Groups:
+          - 182
+        MaxSlots: 2
   - Id: 490101
     Mode: RandomOption
-    Groups:
-      - 182
+    Pools:
+      - Label: Dark Stone
+        Groups:
+          - 182
+        MaxSlots: 2
   - Id: 490099
     Mode: RandomOption
-    Groups:
-      - 182
+    Pools:
+      - Label: Dark Stone
+        Groups:
+          - 182
+        MaxSlots: 2

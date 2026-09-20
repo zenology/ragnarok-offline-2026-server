@@ -4,17 +4,29 @@ Header:
 Body:
   - Id: 15073
     Mode: RandomOption
-    Groups:
-      - 118
+    Pools:
+      - Label: Geffen Magic Armor Order Form
+        Groups:
+          - 118
+        MaxSlots: 2
   - Id: 15074
     Mode: RandomOption
-    Groups:
-      - 118
+    Pools:
+      - Label: Geffen Magic Armor Order Form
+        Groups:
+          - 118
+        MaxSlots: 2
   - Id: 2963
     Mode: RandomOption
-    Groups:
-      - 122
+    Pools:
+      - Label: Geffen Magic Accessory Order Form
+        Groups:
+          - 122
+        MaxSlots: 2
   - Id: 2964
     Mode: RandomOption
-    Groups:
-      - 122
+    Pools:
+      - Label: Geffen Magic Accessory Order Form
+        Groups:
+          - 122
+        MaxSlots: 2

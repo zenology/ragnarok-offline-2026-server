@@ -508,28 +508,71 @@ BUILDIN_FUNC(sve_rogroupcount)
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	script_pushint(st, static_cast<int32>(pool->ro_groups.size()));
+	script_pushint(st, static_cast<int32>(pool->ro_pools.size()));
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(sve_ropoolcount)
+{
+	const int32 item_id = script_getnum(st, 2);
+	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
+	if (pool == nullptr || !sve_has_ro_mode(pool->mode)) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	script_pushint(st, static_cast<int32>(pool->ro_pools.size()));
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(sve_ropoollabel)
+{
+	const int32 item_id = script_getnum(st, 2);
+	const int32 pool_index = script_getnum(st, 3);
+	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
+	if (pool == nullptr || !sve_has_ro_mode(pool->mode) || pool_index < 0 || pool_index >= static_cast<int32>(pool->ro_pools.size())) {
+		script_pushconststr(st, "");
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	script_pushstrcopy(st, pool->ro_pools[pool_index].label.c_str());
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(sve_ropoolmaxslots)
+{
+	const int32 item_id = script_getnum(st, 2);
+	const int32 pool_index = script_getnum(st, 3);
+	auto pool = item_id < 1 ? nullptr : silvervine_enchant_db.find(static_cast<t_itemid>(item_id));
+	if (pool == nullptr || !sve_has_ro_mode(pool->mode) || pool_index < 0 || pool_index >= static_cast<int32>(pool->ro_pools.size())) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+
+	script_pushint(st, pool->ro_pools[pool_index].max_slots);
 	return SCRIPT_CMD_SUCCESS;
 }
 
 BUILDIN_FUNC(sve_rollro)
 {
 	const int32 item_id = script_getnum(st, 2);
-	const int32 want = script_getnum(st, 3);
-	int32 out_id[MAX_ITEM_RDM_OPT];
-	int32 out_val[MAX_ITEM_RDM_OPT];
-	int32 out_param[MAX_ITEM_RDM_OPT];
+	const int32 pool_index = script_getnum(st, 3);
+	const int32 option_index = script_getnum(st, 4);
+	bool force_max = false;
+	if (script_hasdata(st, 5))
+		force_max = script_getnum(st, 5) != 0;
+	int32 out_id = 0;
+	int32 out_val = 0;
+	int32 out_param = 0;
 
-	if (item_id < 1 || !sve_roll_ro(static_cast<t_itemid>(item_id), want, out_id, out_val, out_param)) {
+	if (item_id < 1 || !sve_roll_ro(static_cast<t_itemid>(item_id), pool_index, option_index, out_id, out_val, out_param, force_max)) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	for (int32 i = 0; i < MAX_ITEM_RDM_OPT; ++i) {
-		setd_sub_num(st, nullptr, ".@sve_opt_id", i, out_id[i], nullptr);
-		setd_sub_num(st, nullptr, ".@sve_opt_value", i, out_val[i], nullptr);
-		setd_sub_num(st, nullptr, ".@sve_opt_param", i, out_param[i], nullptr);
-	}
+	setd_sub_num(st, nullptr, ".@sve_opt_id", 0, out_id, nullptr);
+	setd_sub_num(st, nullptr, ".@sve_opt_value", 0, out_val, nullptr);
+	setd_sub_num(st, nullptr, ".@sve_opt_param", 0, out_param, nullptr);
 
 	script_pushint(st, 1);
 	return SCRIPT_CMD_SUCCESS;
@@ -643,12 +686,15 @@ BUILDIN_FUNC(svu_roll)
 	const int32 item_id = script_getnum(st, 2);
 	const int32 card_index = script_getnum(st, 3);
 	const int32 charm_id = script_getnum(st, 4);
+	bool force_max = false;
+	if (script_hasdata(st, 5))
+		force_max = script_getnum(st, 5) != 0;
 	auto pool = item_id < 1 ? nullptr : silvervine_enchant_upgrade_db.find(static_cast<t_itemid>(item_id));
 	if (pool == nullptr || charm_id < 1) {
 		script_pushint(st, 0);
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	script_pushint(st, svu_roll_level(*pool, card_index, static_cast<t_itemid>(charm_id)));
+	script_pushint(st, svu_roll_level(*pool, card_index, static_cast<t_itemid>(charm_id), force_max));
 	return SCRIPT_CMD_SUCCESS;
 }

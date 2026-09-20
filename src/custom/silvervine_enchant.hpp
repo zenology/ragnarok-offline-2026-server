@@ -41,12 +41,29 @@ struct sve_step {
 	std::vector<sve_enchant_entry> enchants;
 };
 
+struct sve_ro_pool {
+	std::string label;
+	std::vector<uint16> groups;
+	int32 max_slots = 0;
+	int32 option_slots[5] = { 0, 0, 0, 0, 0 };
+};
+
 struct sve_item_pool {
 	t_itemid id = 0;
 	sve_mode mode = SVE_MODE_NONE;
 	std::vector<sve_step> steps;
-	std::vector<uint16> ro_groups;
+	std::vector<sve_ro_pool> ro_pools;
 };
+
+inline bool sve_label_is_ascii(const std::string& label) {
+	if (label.empty())
+		return false;
+	for (unsigned char c : label) {
+		if (c < 0x20 || c > 0x7E)
+			return false;
+	}
+	return true;
+}
 
 class SilvervineEnchantDatabase : public TypesafeYamlDatabase<t_itemid, sve_item_pool> {
 public:
@@ -100,21 +117,30 @@ public:
 
 		const bool has_steps = this->nodeExists(node, "Steps");
 		const bool has_groups = this->nodeExists(node, "Groups");
+		const bool has_pools = this->nodeExists(node, "Pools");
 
 		if (pool->mode == SVE_MODE_CARD && has_groups) {
 			this->invalidWarning(node, "CardSlot Id %u must not have Groups.\n", nameid);
+			return 0;
+		}
+		if (pool->mode == SVE_MODE_CARD && has_pools) {
+			this->invalidWarning(node, "CardSlot Id %u must not have Pools.\n", nameid);
 			return 0;
 		}
 		if (pool->mode == SVE_MODE_RO && has_steps) {
 			this->invalidWarning(node, "RandomOption Id %u must not have Steps.\n", nameid);
 			return 0;
 		}
+		if (sve_has_ro_mode(pool->mode) && has_groups) {
+			this->invalidWarning(node, "Id %u still has leftover Groups; RandomOption and Dual use Pools.\n", nameid);
+			return 0;
+		}
 		if (sve_has_card_mode(pool->mode) && !has_steps) {
 			this->invalidWarning(node, "Id %u is missing Steps.\n", nameid);
 			return 0;
 		}
-		if (sve_has_ro_mode(pool->mode) && !has_groups) {
-			this->invalidWarning(node, "Id %u is missing Groups.\n", nameid);
+		if (sve_has_ro_mode(pool->mode) && !has_pools) {
+			this->invalidWarning(node, "Id %u is missing Pools.\n", nameid);
 			return 0;
 		}
 
@@ -176,25 +202,93 @@ public:
 		}
 
 		if (sve_has_ro_mode(pool->mode)) {
-			const auto& groupsNode = node["Groups"];
-			if (!groupsNode.is_seq() || groupsNode.num_children() < 1) {
-				this->invalidWarning(node["Groups"], "RandomOption Id %u has empty Groups.\n", nameid);
+			const auto& poolsNode = node["Pools"];
+			if (!poolsNode.is_seq() || poolsNode.num_children() < 1) {
+				this->invalidWarning(node["Pools"], "Id %u has empty Pools.\n", nameid);
 				return 0;
 			}
 
-			for (const ryml::NodeRef& groupNode : groupsNode) {
+			for (const ryml::NodeRef& poolNode : poolsNode) {
+				sve_ro_pool ro_pool;
+
+				if (!this->asString(poolNode, "Label", ro_pool.label))
+					return 0;
+				if (!sve_label_is_ascii(ro_pool.label)) {
+					this->invalidWarning(poolNode["Label"], "Id %u pool Label must be non-empty ASCII.\n", nameid);
+					return 0;
+				}
+
+				if (!this->asInt32(poolNode, "MaxSlots", ro_pool.max_slots))
+					return 0;
+				if (ro_pool.max_slots < 1 || ro_pool.max_slots > MAX_ITEM_RDM_OPT) {
+					this->invalidWarning(poolNode["MaxSlots"], "Id %u MaxSlots %d must be 1..%d.\n", nameid, ro_pool.max_slots, MAX_ITEM_RDM_OPT);
+					return 0;
+				}
+
+				if (!this->nodeExists(poolNode, "Groups")) {
+					this->invalidWarning(poolNode, "Id %u pool is missing Groups.\n", nameid);
+					return 0;
+				}
+
+				const auto& groupsNode = poolNode["Groups"];
+				if (!groupsNode.is_seq()) {
+					this->invalidWarning(poolNode["Groups"], "Id %u pool Groups must be a sequence of one group id.\n", nameid);
+					return 0;
+				}
+
+				int32 group_count = 0;
 				uint16 group_id = 0;
-				try {
-					groupNode >> group_id;
-				} catch (const std::runtime_error&) {
-					this->invalidWarning(groupNode, "RandomOption Id %u has a Groups value that is not a number.\n", nameid);
+				for (const ryml::NodeRef& groupNode : groupsNode) {
+					if (group_count >= 1) {
+						this->invalidWarning(poolNode["Groups"], "Id %u pool Groups must have exactly one group id.\n", nameid);
+						return 0;
+					}
+					try {
+						groupNode >> group_id;
+					} catch (const std::runtime_error&) {
+						this->invalidWarning(groupNode, "Id %u pool has a Groups value that is not a number.\n", nameid);
+						return 0;
+					}
+					if (group_id < 1) {
+						this->invalidWarning(groupNode, "Id %u pool has invalid group id %hu.\n", nameid, group_id);
+						return 0;
+					}
+					++group_count;
+				}
+				if (group_count != 1) {
+					this->invalidWarning(poolNode["Groups"], "Id %u pool Groups must have exactly one group id.\n", nameid);
 					return 0;
 				}
-				if (group_id < 1) {
-					this->invalidWarning(groupNode, "RandomOption Id %u has invalid group id %hu.\n", nameid, group_id);
-					return 0;
+				ro_pool.groups.push_back(group_id);
+
+				if (this->nodeExists(poolNode, "OptionSlots")) {
+					const auto& optNode = poolNode["OptionSlots"];
+					if (!optNode.is_seq() || static_cast<int32>(optNode.num_children()) != ro_pool.max_slots) {
+						this->invalidWarning(poolNode["OptionSlots"], "Id %u OptionSlots length must equal MaxSlots %d.\n", nameid, ro_pool.max_slots);
+						return 0;
+					}
+					int32 slot_i = 0;
+					for (const ryml::NodeRef& slotNode : optNode) {
+						int32 yaml_slot = 0;
+						try {
+							slotNode >> yaml_slot;
+						} catch (const std::runtime_error&) {
+							this->invalidWarning(slotNode, "Id %u OptionSlots value is not a number.\n", nameid);
+							return 0;
+						}
+						if (yaml_slot < 1 || yaml_slot > MAX_ITEM_RDM_OPT) {
+							this->invalidWarning(slotNode, "Id %u OptionSlots value %d must be 1..%d.\n", nameid, yaml_slot, MAX_ITEM_RDM_OPT);
+							return 0;
+						}
+						ro_pool.option_slots[slot_i] = yaml_slot;
+						++slot_i;
+					}
+				} else {
+					for (int32 i = 0; i < ro_pool.max_slots; ++i)
+						ro_pool.option_slots[i] = i + 1;
 				}
-				pool->ro_groups.push_back(group_id);
+
+				pool->ro_pools.push_back(std::move(ro_pool));
 			}
 		}
 
@@ -229,12 +323,29 @@ public:
 				}
 			}
 			if (!drop && sve_has_ro_mode(pool->mode)) {
-				for (uint16 group_id : pool->ro_groups) {
-					if (random_option_group.find(group_id) == nullptr) {
-						ShowError("Silvervine enchant Id %u references missing Random Option group %hu.\n", pool->id, group_id);
+				for (const auto& ro_pool : pool->ro_pools) {
+					if (ro_pool.groups.size() != 1) {
+						ShowError("Silvervine enchant Id %u pool \"%s\" does not have exactly one group.\n", pool->id, ro_pool.label.c_str());
 						drop = true;
 						break;
 					}
+					auto group = random_option_group.find(ro_pool.groups[0]);
+					if (group == nullptr) {
+						ShowError("Silvervine enchant Id %u references missing Random Option group %hu.\n", pool->id, ro_pool.groups[0]);
+						drop = true;
+						break;
+					}
+					for (int32 i = 0; i < ro_pool.max_slots; ++i) {
+						const uint16 slot_key = static_cast<uint16>(ro_pool.option_slots[i] - 1);
+						if (group->slots.find(slot_key) == group->slots.end()) {
+							ShowError("Silvervine enchant Id %u pool \"%s\" OptionSlots %d is missing YAML Slot %d on group %hu.\n",
+								pool->id, ro_pool.label.c_str(), i + 1, ro_pool.option_slots[i], ro_pool.groups[0]);
+							drop = true;
+							break;
+						}
+					}
+					if (drop)
+						break;
 				}
 			}
 
@@ -296,64 +407,55 @@ inline int32 sve_find_step_index(const sve_item_pool& pool, int32 card_index) {
 	return -1;
 }
 
-inline bool sve_roll_ro(t_itemid item_id, int32 want, int32 out_id[MAX_ITEM_RDM_OPT], int32 out_val[MAX_ITEM_RDM_OPT], int32 out_param[MAX_ITEM_RDM_OPT]) {
-	for (int32 i = 0; i < MAX_ITEM_RDM_OPT; ++i) {
-		out_id[i] = 0;
-		out_val[i] = 0;
-		out_param[i] = 0;
-	}
+inline bool sve_roll_ro(t_itemid item_id, int32 pool_index, int32 option_index, int32& out_id, int32& out_val, int32& out_param, bool force_max) {
+	out_id = 0;
+	out_val = 0;
+	out_param = 0;
 
 	auto pool = silvervine_enchant_db.find(item_id);
-	if (pool == nullptr || !sve_has_ro_mode(pool->mode) || pool->ro_groups.empty())
+	if (pool == nullptr || !sve_has_ro_mode(pool->mode) || pool->ro_pools.empty())
 		return false;
-	if (want < 1 || want > MAX_ITEM_RDM_OPT)
+	if (pool_index < 0 || pool_index >= static_cast<int32>(pool->ro_pools.size()))
 		return false;
 
-	for (int32 n = 0; n < want; ++n) {
-		bool picked = false;
-		for (int32 attempt = 0; attempt < 12 && !picked; ++attempt) {
-			const size_t group_index = sve_pick_index(pool->ro_groups.size());
-			if (group_index >= pool->ro_groups.size())
-				return false;
-			auto group = random_option_group.find(pool->ro_groups[group_index]);
-			if (group == nullptr)
-				return false;
+	const sve_ro_pool& ro_pool = pool->ro_pools[pool_index];
+	if (option_index < 0 || option_index >= ro_pool.max_slots)
+		return false;
+	if (ro_pool.groups.size() != 1)
+		return false;
 
-			struct item tmp{};
-			group->apply(tmp);
+	auto group = random_option_group.find(ro_pool.groups[0]);
+	if (group == nullptr)
+		return false;
 
-			int32 cand_idx[MAX_ITEM_RDM_OPT];
-			int32 cand = 0;
-			for (int32 j = 0; j < MAX_ITEM_RDM_OPT; ++j) {
-				if (tmp.option[j].id == 0)
-					continue;
-				bool duplicate = false;
-				for (int32 prior = 0; prior < n; ++prior) {
-					if (out_id[prior] == tmp.option[j].id) {
-						duplicate = true;
-						break;
-					}
-				}
-				if (duplicate)
-					continue;
-				cand_idx[cand++] = j;
-			}
-			if (cand < 1)
-				continue;
+	const uint16 slot_key = static_cast<uint16>(ro_pool.option_slots[option_index] - 1);
+	auto slot_it = group->slots.find(slot_key);
+	if (slot_it == group->slots.end() || slot_it->second.empty())
+		return false;
 
-			const size_t pick = sve_pick_index(static_cast<size_t>(cand));
-			if (pick >= static_cast<size_t>(cand))
-				return false;
-			const int32 j = cand_idx[pick];
-			out_id[n] = tmp.option[j].id;
-			out_val[n] = tmp.option[j].value;
-			out_param[n] = tmp.option[j].param;
-			picked = true;
-		}
-		if (!picked)
+	const auto& entries = slot_it->second;
+	const size_t count = entries.size();
+	const size_t maximum = 3 * count;
+	for (size_t attempt = 0; attempt < maximum; ++attempt) {
+		const size_t index = sve_pick_index(count);
+		if (index >= count)
 			return false;
+		const auto& option = entries[index];
+		if (rnd_value<uint16>(0, 9999) < option->chance) {
+			out_id = option->id;
+			out_val = force_max ? option->max_value : rnd_value(option->min_value, option->max_value);
+			out_param = option->param;
+			return true;
+		}
 	}
 
+	const size_t fallback = sve_pick_index(count);
+	if (fallback >= count)
+		return false;
+	const auto& option = entries[fallback];
+	out_id = option->id;
+	out_val = force_max ? option->max_value : rnd_value(option->min_value, option->max_value);
+	out_param = option->param;
 	return true;
 }
 

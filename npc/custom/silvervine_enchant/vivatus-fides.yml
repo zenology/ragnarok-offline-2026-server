@@ -4,196 +4,430 @@ Header:
 Body:
   - Id: 500027
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 500028
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 510033
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 520009
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 530014
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 540024
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 540025
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 540026
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 540045
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 540046
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 550029
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 550063
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 550064
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 550065
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 550066
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 560020
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 560021
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 570019
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 570020
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 580019
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 580020
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 590023
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 590024
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 600018
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 610022
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 610023
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 630013
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 640021
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 640022
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 650021
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 650022
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 700033
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 700034
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 700035
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 800012
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 810008
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 820006
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 830011
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2
   - Id: 840007
     Mode: RandomOption
-    Groups:
-      - 170
-      - 171
+    Pools:
+      - Label: Pontifex Tenacity
+        Groups:
+          - 170
+        MaxSlots: 2
+      - Label: Pontifex Belief
+        Groups:
+          - 171
+        MaxSlots: 2

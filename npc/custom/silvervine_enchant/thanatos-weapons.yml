@@ -4,136 +4,298 @@ Header:
 Body:
   - Id: 1438
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 1496
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 1669
     Mode: RandomOption
-    Groups:
-      - 120
+    Pools:
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
   - Id: 1836
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 1933
     Mode: RandomOption
-    Groups:
-      - 119
-      - 120
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 1988
     Mode: RandomOption
-    Groups:
-      - 119
-      - 120
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 2023
     Mode: RandomOption
-    Groups:
-      - 120
+    Pools:
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
   - Id: 13093
     Mode: RandomOption
-    Groups:
-      - 119
-      - 120
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
   - Id: 13441
     Mode: RandomOption
-    Groups:
-      - 119
-      - 120
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 16028
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 18119
     Mode: RandomOption
-    Groups:
-      - 121
+    Pools:
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 21009
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 28000
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 28100
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 500024
     Mode: RandomOption
-    Groups:
-      - 119
-      - 120
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 510030
     Mode: RandomOption
-    Groups:
-      - 119
-      - 120
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
   - Id: 530012
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 550023
     Mode: RandomOption
-    Groups:
-      - 120
+    Pools:
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
   - Id: 560017
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 570016
     Mode: RandomOption
-    Groups:
-      - 119
-      - 120
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 580016
     Mode: RandomOption
-    Groups:
-      - 119
-      - 120
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 590020
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 600016
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 610019
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 620009
     Mode: RandomOption
-    Groups:
-      - 119
-      - 121
+    Pools:
+      - Label: Grey Abrasive (physical)
+        Groups:
+          - 119
+        MaxSlots: 2
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2
   - Id: 640017
     Mode: RandomOption
-    Groups:
-      - 120
+    Pools:
+      - Label: Grey Abrasive (magical)
+        Groups:
+          - 120
+        MaxSlots: 2
   - Id: 700029
     Mode: RandomOption
-    Groups:
-      - 121
+    Pools:
+      - Label: Grey Abrasive (distance)
+        Groups:
+          - 121
+        MaxSlots: 2

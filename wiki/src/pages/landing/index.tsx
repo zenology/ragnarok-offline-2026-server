@@ -24,8 +24,15 @@ const guides = [
       'Find every costume acquisition, Fashion Stone, and enhancement service in one route.'
   },
   {
-    to: '/job-changes',
+    to: '/enchantment',
     number: '03',
+    title: 'Enchantment in Malangdo',
+    description:
+      'Fill charms with Bramble, roll official Random Options with Stripe, and push numbered charms with Doberkin.'
+  },
+  {
+    to: '/job-changes',
+    number: '04',
     title: 'Job Changes',
     description: 'Find the NPC, guild, or fallback Job Master for every supported job path.'
   }

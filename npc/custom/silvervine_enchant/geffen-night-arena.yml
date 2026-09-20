@@ -4,41 +4,71 @@ Header:
 Body:
   - Id: 450149
     Mode: RandomOption
-    Groups:
-      - 193
+    Pools:
+      - Label: Geffen Night Armor
+        Groups:
+          - 193
+        MaxSlots: 3
   - Id: 450150
     Mode: RandomOption
-    Groups:
-      - 193
+    Pools:
+      - Label: Geffen Night Armor
+        Groups:
+          - 193
+        MaxSlots: 3
   - Id: 480065
     Mode: RandomOption
-    Groups:
-      - 194
+    Pools:
+      - Label: Geffen Night Garment
+        Groups:
+          - 194
+        MaxSlots: 3
   - Id: 480066
     Mode: RandomOption
-    Groups:
-      - 194
+    Pools:
+      - Label: Geffen Night Garment
+        Groups:
+          - 194
+        MaxSlots: 3
   - Id: 480067
     Mode: RandomOption
-    Groups:
-      - 194
+    Pools:
+      - Label: Geffen Night Garment
+        Groups:
+          - 194
+        MaxSlots: 3
   - Id: 480068
     Mode: RandomOption
-    Groups:
-      - 194
+    Pools:
+      - Label: Geffen Night Garment
+        Groups:
+          - 194
+        MaxSlots: 3
   - Id: 490077
     Mode: RandomOption
-    Groups:
-      - 195
+    Pools:
+      - Label: Geffen Night Accessory
+        Groups:
+          - 195
+        MaxSlots: 2
   - Id: 490078
     Mode: RandomOption
-    Groups:
-      - 195
+    Pools:
+      - Label: Geffen Night Accessory
+        Groups:
+          - 195
+        MaxSlots: 2
   - Id: 460005
     Mode: RandomOption
-    Groups:
-      - 196
+    Pools:
+      - Label: Geffen Night Shield
+        Groups:
+          - 196
+        MaxSlots: 3
   - Id: 460006
     Mode: RandomOption
-    Groups:
-      - 196
+    Pools:
+      - Label: Geffen Night Shield
+        Groups:
+          - 196
+        MaxSlots: 3

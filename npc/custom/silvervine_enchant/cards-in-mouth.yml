@@ -4,17 +4,29 @@ Header:
 Body:
   - Id: 420210
     Mode: RandomOption
-    Groups:
-      - 174
+    Pools:
+      - Label: Loki's Advice (Melee Physical)
+        Groups:
+          - 174
+        MaxSlots: 2
   - Id: 420213
     Mode: RandomOption
-    Groups:
-      - 175
+    Pools:
+      - Label: Condensed Tiara's Loss
+        Groups:
+          - 175
+        MaxSlots: 2
   - Id: 420220
     Mode: RandomOption
-    Groups:
-      - 176
+    Pools:
+      - Label: Loki's advice (distance physics)
+        Groups:
+          - 176
+        MaxSlots: 2
   - Id: 420269
     Mode: RandomOption
-    Groups:
-      - 177
+    Pools:
+      - Label: Loki's Advice (Defense)
+        Groups:
+          - 177
+        MaxSlots: 2

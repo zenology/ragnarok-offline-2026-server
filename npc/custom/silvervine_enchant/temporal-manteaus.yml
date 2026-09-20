@@ -4,25 +4,43 @@ Header:
 Body:
   - Id: 20963
     Mode: RandomOption
-    Groups:
-      - 115
+    Pools:
+      - Label: Time Unseal Key
+        Groups:
+          - 115
+        MaxSlots: 1
   - Id: 20964
     Mode: RandomOption
-    Groups:
-      - 115
+    Pools:
+      - Label: Time Unseal Key
+        Groups:
+          - 115
+        MaxSlots: 1
   - Id: 20965
     Mode: RandomOption
-    Groups:
-      - 115
+    Pools:
+      - Label: Time Unseal Key
+        Groups:
+          - 115
+        MaxSlots: 1
   - Id: 20966
     Mode: RandomOption
-    Groups:
-      - 115
+    Pools:
+      - Label: Time Unseal Key
+        Groups:
+          - 115
+        MaxSlots: 1
   - Id: 20967
     Mode: RandomOption
-    Groups:
-      - 115
+    Pools:
+      - Label: Time Unseal Key
+        Groups:
+          - 115
+        MaxSlots: 1
   - Id: 20968
     Mode: RandomOption
-    Groups:
-      - 115
+    Pools:
+      - Label: Time Unseal Key
+        Groups:
+          - 115
+        MaxSlots: 1

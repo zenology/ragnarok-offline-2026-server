@@ -4,9 +4,15 @@ Header:
 Body:
   - Id: 400002
     Mode: RandomOption
-    Groups:
-      - 165
+    Pools:
+      - Label: Victorious Happiness
+        Groups:
+          - 165
+        MaxSlots: 2
   - Id: 400001
     Mode: RandomOption
-    Groups:
-      - 165
+    Pools:
+      - Label: Victorious Happiness
+        Groups:
+          - 165
+        MaxSlots: 2

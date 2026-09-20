@@ -4,5 +4,8 @@ Header:
 Body:
   - Id: 410017
     Mode: RandomOption
-    Groups:
-      - 167
+    Pools:
+      - Label: Battle Processor Accelerator
+        Groups:
+          - 167
+        MaxSlots: 2

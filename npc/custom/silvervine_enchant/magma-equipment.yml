@@ -4,13 +4,22 @@ Header:
 Body:
   - Id: 15378
     Mode: RandomOption
-    Groups:
-      - 132
+    Pools:
+      - Label: Lava Essence
+        Groups:
+          - 132
+        MaxSlots: 4
   - Id: 15379
     Mode: RandomOption
-    Groups:
-      - 132
+    Pools:
+      - Label: Lava Essence
+        Groups:
+          - 132
+        MaxSlots: 4
   - Id: 15380
     Mode: RandomOption
-    Groups:
-      - 132
+    Pools:
+      - Label: Lava Essence
+        Groups:
+          - 132
+        MaxSlots: 4

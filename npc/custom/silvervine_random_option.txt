@@ -1,0 +1,524 @@
+// Malangdo Stripe: official Random Option pools. Pools: silvervine_enchant_item_pools.yml
+
+function	script	F_SVE_RoText	{
+	.@id = getarg(0);
+	.@val = getarg(1);
+	if (.@id == RDMOPT_VAR_MAXHPAMOUNT) return "MaxHP +" + .@val;
+	if (.@id == RDMOPT_VAR_MAXSPAMOUNT) return "MaxSP +" + .@val;
+	if (.@id == RDMOPT_VAR_STRAMOUNT) return "STR +" + .@val;
+	if (.@id == RDMOPT_VAR_AGIAMOUNT) return "AGI +" + .@val;
+	if (.@id == RDMOPT_VAR_VITAMOUNT) return "VIT +" + .@val;
+	if (.@id == RDMOPT_VAR_INTAMOUNT) return "INT +" + .@val;
+	if (.@id == RDMOPT_VAR_DEXAMOUNT) return "DEX +" + .@val;
+	if (.@id == RDMOPT_VAR_LUKAMOUNT) return "LUK +" + .@val;
+	if (.@id == RDMOPT_VAR_MAXHPPERCENT) return "MaxHP +" + .@val + "%";
+	if (.@id == RDMOPT_VAR_MAXSPPERCENT) return "MaxSP +" + .@val + "%";
+	if (.@id == RDMOPT_VAR_HPACCELERATION) return "HP Recovery +" + .@val + "%";
+	if (.@id == RDMOPT_VAR_SPACCELERATION) return "SP Recovery +" + .@val + "%";
+	if (.@id == RDMOPT_VAR_ATKPERCENT) return "ATK +" + .@val + "%";
+	if (.@id == RDMOPT_VAR_MAGICATKPERCENT) return "MATK +" + .@val + "%";
+	if (.@id == RDMOPT_VAR_PLUSASPD) return "ASPD +" + .@val;
+	if (.@id == RDMOPT_VAR_PLUSASPDPERCENT) return "ASPD -" + .@val + "%";
+	if (.@id == RDMOPT_VAR_ATTPOWER) return "ATK +" + .@val;
+	if (.@id == RDMOPT_VAR_HITSUCCESSVALUE) return "HIT +" + .@val;
+	if (.@id == RDMOPT_VAR_ATTMPOWER) return "MATK +" + .@val;
+	if (.@id == RDMOPT_VAR_ITEMDEFPOWER) return "DEF +" + .@val;
+	if (.@id == RDMOPT_VAR_MDEFPOWER) return "MDEF +" + .@val;
+	if (.@id == RDMOPT_VAR_AVOIDSUCCESSVALUE) return "FLEE +" + .@val;
+	if (.@id == RDMOPT_VAR_PLUSAVOIDSUCCESSVALUE) return "Perfect Dodge +" + .@val;
+	if (.@id == RDMOPT_VAR_CRITICALSUCCESSVALUE) return "Critical +" + .@val;
+	if (.@id == RDMOPT_ATTR_TOLERACE_NOTHING) return "Neutral elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_WATER) return "Water elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_GROUND) return "Earth elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_FIRE) return "Fire elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_WIND) return "Wind elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_POISON) return "Poison elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_SAINT) return "Holy elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_DARKNESS) return "Shadow elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_TELEKINESIS) return "Ghost elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_UNDEAD) return "Undead elemental resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_ALLBUTNOTHING) return "All elemental (except Neutral) resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_NOTHING_USER) return "Neutral monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_NOTHING_TARGET) return "ATK +" + .@val + "% against Neutral monster";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_WATER_USER) return "Water monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_WATER_TARGET) return "ATK +" + .@val + "% against Water monster";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_GROUND_USER) return "Earth monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_GROUND_TARGET) return "ATK +" + .@val + "% against Earth monster";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_FIRE_USER) return "Fire monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_FIRE_TARGET) return "ATK +" + .@val + "% against Fire monster";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_WIND_USER) return "Wind monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_WIND_TARGET) return "ATK +" + .@val + "% against Wind monster";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_POISON_USER) return "Poison monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_POISON_TARGET) return "ATK +" + .@val + "% against Poison monster";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_SAINT_USER) return "Holy monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_SAINT_TARGET) return "ATK +" + .@val + "% against Holy monster";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_DARKNESS_USER) return "Shadow monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_DARKNESS_TARGET) return "ATK +" + .@val + "% against Shadow monster";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_TELEKINESIS_USER) return "Ghost monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_TELEKINESIS_TARGET) return "ATK +" + .@val + "% against Ghost monster";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_UNDEAD_USER) return "Undead monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_PROPERTY_UNDEAD_TARGET) return "ATK +" + .@val + "% against Undead monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_NOTHING_USER) return "Neutral monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_NOTHING_TARGET) return "MATK +" + .@val + "% against Neutral monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_WATER_USER) return "Water monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_WATER_TARGET) return "MATK +" + .@val + "% against Water monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_GROUND_USER) return "Earth monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_GROUND_TARGET) return "MATK +" + .@val + "% against Earth monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_FIRE_USER) return "Fire monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_FIRE_TARGET) return "MATK +" + .@val + "% against Fire monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_WIND_USER) return "Wind monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_WIND_TARGET) return "MATK +" + .@val + "% against Wind monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_POISON_USER) return "Poison monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_POISON_TARGET) return "MATK +" + .@val + "% against Poison monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_SAINT_USER) return "Holy monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_SAINT_TARGET) return "MATK +" + .@val + "% against Holy monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_DARKNESS_USER) return "Shadow monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_DARKNESS_TARGET) return "MATK +" + .@val + "% against Shadow monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_TELEKINESIS_USER) return "Ghost monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_TELEKINESIS_TARGET) return "MATK +" + .@val + "% against Ghost monster";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_UNDEAD_USER) return "Undead monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_PROPERTY_UNDEAD_TARGET) return "MATK +" + .@val + "% against Undead monster";
+	if (.@id == RDMOPT_BODY_ATTR_NOTHING) return "Armor Element: Neutral";
+	if (.@id == RDMOPT_BODY_ATTR_WATER) return "Armor Element: Water";
+	if (.@id == RDMOPT_BODY_ATTR_GROUND) return "Armor Element: Earth";
+	if (.@id == RDMOPT_BODY_ATTR_FIRE) return "Armor Element: Fire";
+	if (.@id == RDMOPT_BODY_ATTR_WIND) return "Armor Element: Wind";
+	if (.@id == RDMOPT_BODY_ATTR_POISON) return "Armor Element: Poison";
+	if (.@id == RDMOPT_BODY_ATTR_SAINT) return "Armor Element: Holy";
+	if (.@id == RDMOPT_BODY_ATTR_DARKNESS) return "Armor Element: Shadow";
+	if (.@id == RDMOPT_BODY_ATTR_TELEKINESIS) return "Armor Element: Ghost";
+	if (.@id == RDMOPT_BODY_ATTR_UNDEAD) return "Armor Element: Undead";
+	if (.@id == RDMOPT_RACE_TOLERACE_NOTHING) return "Formless monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_UNDEAD) return "Undead monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_ANIMAL) return "Brute monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_PLANT) return "Plant monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_INSECT) return "Insect monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_FISHS) return "Fish monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_DEVIL) return "Demon monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_HUMAN) return "Demihuman monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_ANGEL) return "Angel monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_DRAGON) return "Dragon monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_DAMAGE_NOTHING) return "ATK +" + .@val + "% against Formless monster";
+	if (.@id == RDMOPT_RACE_DAMAGE_UNDEAD) return "ATK +" + .@val + "% against Undead monster";
+	if (.@id == RDMOPT_RACE_DAMAGE_ANIMAL) return "ATK +" + .@val + "% against Brute monster";
+	if (.@id == RDMOPT_RACE_DAMAGE_PLANT) return "ATK +" + .@val + "% against Plant monster";
+	if (.@id == RDMOPT_RACE_DAMAGE_INSECT) return "ATK +" + .@val + "% against Insect monster";
+	if (.@id == RDMOPT_RACE_DAMAGE_FISHS) return "ATK +" + .@val + "% against Fish monster";
+	if (.@id == RDMOPT_RACE_DAMAGE_DEVIL) return "ATK +" + .@val + "% against Demon monster";
+	if (.@id == RDMOPT_RACE_DAMAGE_HUMAN) return "ATK +" + .@val + "% against Demihuman monster";
+	if (.@id == RDMOPT_RACE_DAMAGE_ANGEL) return "ATK +" + .@val + "% against Angel monster";
+	if (.@id == RDMOPT_RACE_DAMAGE_DRAGON) return "ATK +" + .@val + "% against Dragon monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_NOTHING) return "MATK +" + .@val + "% against Formless monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_UNDEAD) return "MATK +" + .@val + "% against Undead monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_ANIMAL) return "MATK +" + .@val + "% against Brute monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_PLANT) return "MATK +" + .@val + "% against Plant monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_INSECT) return "MATK +" + .@val + "% against Insect monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_FISHS) return "MATK +" + .@val + "% against Fish monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_DEVIL) return "MATK +" + .@val + "% against Devil monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_HUMAN) return "MATK +" + .@val + "% against Demihuman monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_ANGEL) return "MATK +" + .@val + "% against Angel monster";
+	if (.@id == RDMOPT_RACE_MDAMAGE_DRAGON) return "MATK +" + .@val + "% against Dragon monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_NOTHING) return "Critical +" + .@val + " against Formless monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_UNDEAD) return "Critical +" + .@val + " against Undead monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_ANIMAL) return "Critical +" + .@val + " against Brute monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_PLANT) return "Critical +" + .@val + " against Plant monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_INSECT) return "Critical +" + .@val + " against Insect monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_FISHS) return "Critical +" + .@val + " against Fish monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_DEVIL) return "Critical +" + .@val + " against Demon monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_HUMAN) return "Critical +" + .@val + " against Demihuman monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_ANGEL) return "Critical +" + .@val + " against Angel monster";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_DRAGON) return "Critical +" + .@val + " against Dragon monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_NOTHING) return "Pierces " + .@val + "% DEF of Formless monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_UNDEAD) return "Pierces " + .@val + "% DEF of Undead monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_ANIMAL) return "Pierces " + .@val + "% DEF of Brute monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_PLANT) return "Pierces " + .@val + "% DEF of Plant monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_INSECT) return "Pierces " + .@val + "% DEF of Insect monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_FISHS) return "Pierces " + .@val + "% DEF of Fish monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_DEVIL) return "Pierces " + .@val + "% DEF of Demon monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_HUMAN) return "Pierces " + .@val + "% DEF of Demihuman monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_ANGEL) return "Pierces " + .@val + "% DEF of Angel monster";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_DRAGON) return "Pierces " + .@val + "% DEF of Dragon monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_NOTHING) return "Pierces " + .@val + "% MDEF of Formless monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_UNDEAD) return "Pierces " + .@val + "% MDEF of Undead monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_ANIMAL) return "Pierces " + .@val + "% MDEF of Brute monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_PLANT) return "Pierces " + .@val + "% MDEF of Plant monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_INSECT) return "Pierces " + .@val + "% MDEF of Insect monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_FISHS) return "Pierces " + .@val + "% MDEF of Fish monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_DEVIL) return "Pierces " + .@val + "% MDEF of Demon monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_HUMAN) return "Pierces " + .@val + "% MDEF of Demihuman monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_ANGEL) return "Pierces " + .@val + "% MDEF of Angel monster";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_DRAGON) return "Pierces " + .@val + "% MDEF of Dragon monster";
+	if (.@id == RDMOPT_CLASS_DAMAGE_NORMAL_TARGET) return "ATK +" + .@val + "% against Normal monster";
+	if (.@id == RDMOPT_CLASS_DAMAGE_BOSS_TARGET) return "ATK +" + .@val + "% against Boss monster";
+	if (.@id == RDMOPT_CLASS_DAMAGE_NORMAL_USER) return "Normal monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_CLASS_DAMAGE_BOSS_USER) return "Boss monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_CLASS_MDAMAGE_NORMAL) return "MATK +" + .@val + "% against Normal monster";
+	if (.@id == RDMOPT_CLASS_MDAMAGE_BOSS) return "MATK +" + .@val + "% against Boss monster";
+	if (.@id == RDMOPT_CLASS_IGNORE_DEF_PERCENT_NORMAL) return "Pierces " + .@val + "% DEF of Normal monster";
+	if (.@id == RDMOPT_CLASS_IGNORE_DEF_PERCENT_BOSS) return "Pierces " + .@val + "% DEF of Boss monster";
+	if (.@id == RDMOPT_CLASS_IGNORE_MDEF_PERCENT_NORMAL) return "Pierces " + .@val + "% MDEF of Normal monster";
+	if (.@id == RDMOPT_CLASS_IGNORE_MDEF_PERCENT_BOSS) return "Pierces " + .@val + "% MDEF of Boss monster";
+	if (.@id == RDMOPT_DAMAGE_SIZE_SMALL_TARGET) return "ATK +" + .@val + "% against Small size monster";
+	if (.@id == RDMOPT_DAMAGE_SIZE_MIDIUM_TARGET) return "ATK +" + .@val + "% against Medium size monster";
+	if (.@id == RDMOPT_DAMAGE_SIZE_LARGE_TARGET) return "ATK +" + .@val + "% against Large size monster";
+	if (.@id == RDMOPT_DAMAGE_SIZE_SMALL_USER) return "Small monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_SIZE_MIDIUM_USER) return "Medium monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_SIZE_LARGE_USER) return "Large monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_SIZE_PERFECT) return "Nullify weapon's damage size penalty";
+	if (.@id == RDMOPT_DAMAGE_CRI_TARGET) return "Critical Damage +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_CRI_USER) return "Critical Damage -" + .@val + "%";
+	if (.@id == RDMOPT_RANGE_ATTACK_DAMAGE_TARGET) return "Ranged Physical Damage +" + .@val + "%";
+	if (.@id == RDMOPT_RANGE_ATTACK_DAMAGE_USER) return "Received Ranged Physical Damage -" + .@val + "%";
+	if (.@id == RDMOPT_HEAL_VALUE) return "Healing effectiveness +" + .@val + "%";
+	if (.@id == RDMOPT_HEAL_MODIFY_PERCENT) return "Recovery gained from Healing skills +" + .@val + "%";
+	if (.@id == RDMOPT_DEC_SPELL_CAST_TIME) return "Variable Casting Time -" + .@val + "%";
+	if (.@id == RDMOPT_DEC_SPELL_DELAY_TIME) return "After Skill Delay -" + .@val + "%";
+	if (.@id == RDMOPT_DEC_SP_CONSUMPTION) return "SP Consumption -" + .@val + "%";
+	if (.@id == RDMOPT_WEAPON_ATTR_NOTHING) return "Weapon Element: Neutral";
+	if (.@id == RDMOPT_WEAPON_ATTR_WATER) return "Weapon Element: Water";
+	if (.@id == RDMOPT_WEAPON_ATTR_GROUND) return "Weapon Element: Earth";
+	if (.@id == RDMOPT_WEAPON_ATTR_FIRE) return "Weapon Element: Fire";
+	if (.@id == RDMOPT_WEAPON_ATTR_WIND) return "Weapon Element: Wind";
+	if (.@id == RDMOPT_WEAPON_ATTR_POISON) return "Weapon Element: Poison";
+	if (.@id == RDMOPT_WEAPON_ATTR_SAINT) return "Weapon Element: Holy";
+	if (.@id == RDMOPT_WEAPON_ATTR_DARKNESS) return "Weapon Element: Shadow";
+	if (.@id == RDMOPT_WEAPON_ATTR_TELEKINESIS) return "Weapon Element: Ghost";
+	if (.@id == RDMOPT_WEAPON_ATTR_UNDEAD) return "Weapon Element: Undead";
+	if (.@id == RDMOPT_WEAPON_INDESTRUCTIBLE) return "Indestructible in battle";
+	if (.@id == RDMOPT_BODY_INDESTRUCTIBLE) return "Indestructible in battle";
+	if (.@id == RDMOPT_MDAMAGE_SIZE_SMALL_TARGET) return "MATK against Small size monster +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_SIZE_MIDIUM_TARGET) return "MATK against Medium size monster +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_SIZE_LARGE_TARGET) return "MATK against Large size monster +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_SIZE_SMALL_USER) return "Small monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_SIZE_MIDIUM_USER) return "Medium monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_MDAMAGE_SIZE_LARGE_USER) return "Large monster magic resistance +" + .@val + "%";
+	if (.@id == RDMOPT_ATTR_TOLERACE_ALL) return "Elemental attacks resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_NOTHING) return "Formless monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_UNDEAD) return "Undead monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_ANIMAL) return "Brute monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_PLANT) return "Plant monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_INSECT) return "Insect monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_FISHS) return "Fish monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_DEVIL) return "Demon monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_HUMAN) return "Demihuman monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_ANGEL) return "Angel monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_WEAPON_TOLERACE_DRAGON) return "Dragon monster resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RANGE_WEAPON_ATTACK_DAMAGE_TARGET) return "Ranged Physical Damage +" + .@val + "%";
+	if (.@id == RDMOPT_RANGE_WEAPON_ATTACK_DAMAGE_USER) return "Received Ranged Physical Damage -" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_PLAYER_HUMAN) return "Demi-Human players resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_TOLERACE_PLAYER_DORAM) return "Doram players resistance +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_DAMAGE_PLAYER_HUMAN) return "ATK against Demi-Human players +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_DAMAGE_PLAYER_DORAM) return "ATK against Doram players +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_MDAMAGE_PLAYER_HUMAN) return "MATK against Demi-Human players +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_MDAMAGE_PLAYER_DORAM) return "MATK against Doram players +" + .@val + "%";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_PLAYER_HUMAN) return "Critical +" + .@val + " for Demi-Human players";
+	if (.@id == RDMOPT_RACE_CRI_PERCENT_PLAYER_DORAM) return "Critical +" + .@val + " for Doram players";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_PLAYER_HUMAN) return "Pierces " + .@val + "% DEF of Demi-Human players";
+	if (.@id == RDMOPT_RACE_IGNORE_DEF_PERCENT_PLAYER_DORAM) return "Pierces " + .@val + "% DEF of Doram players";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_PLAYER_HUMAN) return "Pierces " + .@val + "% MDEF of Demi-Human players";
+	if (.@id == RDMOPT_RACE_IGNORE_MDEF_PERCENT_PLAYER_DORAM) return "Pierces " + .@val + "% MDEF of Doram players";
+	if (.@id == RDMOPT_REFLECT_DAMAGE_PERCENT) return "Received reflected damage -" + .@val + "%";
+	if (.@id == RDMOPT_MELEE_ATTACK_DAMAGE_TARGET) return "Melee Physical Damage +" + .@val + "%";
+	if (.@id == RDMOPT_MELEE_ATTACK_DAMAGE_USER) return "Received Melee Physical Damage -" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_NOTHING) return "Neutral elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_WATER) return "Water elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_GROUND) return "Earth elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_FIRE) return "Fire elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_WIND) return "Wind elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_POISON) return "Poison elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_SAINT) return "Holy elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_DARKNESS) return "Shadow elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_TELEKINESIS) return "Ghost elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_UNDEAD) return "Undead elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDSKILLMDAMAGE_ALL) return "All elemental magic skill damage +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_NOTHING) return "Experience gained from Formless race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_UNDEAD) return "Experience gained from Undead race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_ANIMAL) return "Experience gained from Brute race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_PLANT) return "Experience gained from Plant race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_INSECT) return "Experience gained from Insect race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_FISHS) return "Experience gained from Fish race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_DEVIL) return "Experience gained from Demon race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_HUMAN) return "Experience gained from Demi-Human race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_ANGEL) return "Experience gained from Angel race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_DRAGON) return "Experience gained from Dragon race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_ADDEXPPERCENT_KILLRACE_ALL) return "Experience gained from all race monsters +" + .@val + "%";
+	if (.@id == RDMOPT_VAR_POWAMOUNT) return "POW +" + .@val;
+	if (.@id == RDMOPT_VAR_SPLAMOUNT) return "SPL +" + .@val;
+	if (.@id == RDMOPT_VAR_STAAMOUNT) return "STA +" + .@val;
+	if (.@id == RDMOPT_VAR_WISAMOUNT) return "WIS +" + .@val;
+	if (.@id == RDMOPT_VAR_CONAMOUNT) return "CON +" + .@val;
+	if (.@id == RDMOPT_VAR_CRTAMOUNT) return "CRT +" + .@val;
+	if (.@id == RDMOPT_VAR_PATKAMOUNT) return "P.ATK +" + .@val;
+	if (.@id == RDMOPT_VAR_SMATKAMOUNT) return "S.MATK +" + .@val;
+	if (.@id == RDMOPT_VAR_RESAMOUNT) return "RES +" + .@val;
+	if (.@id == RDMOPT_VAR_MRESAMOUNT) return "MRES +" + .@val;
+	if (.@id == RDMOPT_VAR_HEAL_PLUS) return "H.PLUS +" + .@val;
+	if (.@id == RDMOPT_VAR_CRITICAL_RATE) return "C.RATE +" + .@val;
+	if (.@id == RDMOPT_DAMAGE_HIT_TARGET) return "Normal Physical Damage +" + .@val + "%";
+	if (.@id == RDMOPT_DAMAGE_HIT_USER) return "Received Normal Physical Damage -" + .@val + "%";
+	return "Option " + .@id + " +" + .@val;
+}
+
+function	script	F_SVE_StripeTierCosts	{
+	.@slot = getarg(0);
+	if (.@slot < 1)
+		.@slot = 1;
+	if (.@slot > 5)
+		.@slot = 5;
+	set getarg(1), (.@slot == 1 ? 5 : .@slot == 2 ? 7 : .@slot == 3 ? 10 : 5);
+	set getarg(2), (.@slot == 4 ? 1 : .@slot == 5 ? 2 : 0);
+	set getarg(3), (.@slot <= 3 ? 5 : 10);
+	set getarg(4), .@slot;
+	return;
+}
+
+mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
+	disable_items;
+	if (!checkweight(1119, 3)) {
+	mes "[Stripe]";
+	mes "Whoa. Your bag is stuffed.";
+	next;
+	mes "[Stripe]";
+	mes "Make some room first. I need space to work.";
+	close;
+	}
+	if (getvariableofnpc(.ItemCount, "silvervine_equipment_enchant_db") < 1) {
+	mes "[Stripe]";
+	mes "Uh. Papa's enchant book didn't load.";
+	next;
+	mes "[Stripe]";
+	mes "That's a server problem, not your gear. Check the map log for Silvervine YAML errors.";
+	close;
+	}  	mes "[Stripe]";
+	mes "Hey! I'm the real one. Papa Bramble taught me everything.";
+	freeloop(1);
+	.@count = 0;
+	for (.@scan = 0; .@scan < 10; ++.@scan) {
+	.@slot = (.@scan == 0 ? EQI_HEAD_TOP : .@scan == 1 ? EQI_HEAD_MID : .@scan == 2 ? EQI_HEAD_LOW : .@scan == 3 ? EQI_HAND_R : .@scan == 4 ? EQI_HAND_L : .@scan == 5 ? EQI_ARMOR : .@scan == 6 ? EQI_GARMENT : .@scan == 7 ? EQI_SHOES : .@scan == 8 ? EQI_ACC_L : EQI_ACC_R);
+	.@item = getequipid(.@slot);
+	if (.@item < 0) 			continue;
+	.@type = getiteminfo(.@item, ITEMINFO_TYPE);
+	if (.@type != IT_WEAPON && .@type != IT_ARMOR) 			continue;
+	if (.@type == IT_WEAPON && .@slot != EQI_HAND_R && .@slot != EQI_HAND_L) 			continue;
+	if (.@type == IT_ARMOR && .@slot == EQI_HAND_R) 			continue;
+	.@uid$ = getequipuniqueid(.@slot);
+	if (.@uid$ == "") 			continue;
+	.@label$ = (.@slot == EQI_HEAD_TOP ? "Top" : .@slot == EQI_HEAD_MID ? "Middle" : .@slot == EQI_HEAD_LOW ? "Lower" : .@slot == EQI_HAND_R ? "Weapon Right" : .@slot == EQI_HAND_L && .@type == IT_WEAPON ? "Weapon Left" : .@slot == EQI_HAND_L ? "Shield" : .@slot == EQI_ARMOR ? "Armor" : .@slot == EQI_GARMENT ? "Garment" : .@slot == EQI_SHOES ? "Shoes" : .@slot == EQI_ACC_L ? "Accessory Left" : "Accessory Right");
+	.@item_mode = sve_mode(.@item);
+	if (.@item_mode != 2 && .@item_mode != 3) 			continue;
+	if (sve_ropoolcount(.@item) < 1) 			continue;
+	.@found = -1;
+	for (.@i = 0; .@i < .@count; ++.@i) {
+	if (.@chosen_uid$[.@i] == .@uid$) 				.@found = .@i;
+	}
+	if (.@found >= 0) {
+	.@chosen_label$[.@found] += "/" + .@label$;
+	continue;
+	} 		.@chosen_slot[.@count] = .@slot;
+	.@chosen_item[.@count] = .@item;
+	.@chosen_uid$[.@count] = .@uid$;
+	.@chosen_label$[.@count] = .@label$;
+	++.@count;
+	} 	freeloop(0);
+	if (.@count < 1) {
+	next;
+	mes "[Stripe]";
+	mes "Nothing on you I know.";
+	next;
+	mes "[Stripe]";
+	mes "Wear registered Random Option gear. I only work on what you're wearing.";
+	close;
+	}  	next;
+	mes "[Stripe]";
+	mes "I know each piece's real pool. That market NPC just shakes a generic bag.";
+	next;
+	mes "[Stripe]";
+	mes "I only work on what you're wearing. Leave the bag out of it.";
+	next;
+	mes "[Stripe]";
+	mes "One option at a time. You fill slot one, then two, then the next. No jumping.";
+	next;
+	mes "[Stripe]";
+	mes "Slot one costs five Silvervine Fruit. Slot two costs seven. Slot three costs ten.";
+	next;
+	mes "[Stripe]";
+	mes "Slot four costs five Fruit and one Zelunium. Slot five costs five Fruit and two Zelunium.";
+	next;
+	mes "[Stripe]";
+	mes "First fill and reroll cost the same. I rewrite only the slot you pick. Later options stay.";
+	next;
+	mes "[Stripe]";
+	mes "Want the max number? Pick Special later. Same fruit as Ordinary for that slot, plus Zelunium and a Blacksmith Blessing by slot.";
+	next;
+	mes "[Stripe]";
+	mes "Papa only stuffs charms in sockets. The dog across the room develops them higher. Papa looked miserable when he found out.";
+	next;
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@count; ++.@i) 		.@menu$ += .@chosen_label$[.@i] + " - " + replacestr(getitemname(.@chosen_item[.@i]), ":", "") + ":";
+	.@choice = select(.@menu$ + "Cancel") - 1;
+	if (.@choice == .@count) 		close;
+	.@slot = .@chosen_slot[.@choice];
+	.@item = .@chosen_item[.@choice];
+	.@uid$ = .@chosen_uid$[.@choice];
+	.@pool_count = sve_ropoolcount(.@item);
+	if (.@pool_count < 1) {
+	mes "[Stripe]";
+	mes "No pool for that piece.";
+	next;
+	mes "[Stripe]";
+	mes "Not my fault. My list doesn't have it.";
+	close;
+	}  	.@pool_index = 0;
+	if (.@pool_count > 1) {
+	mes "[Stripe]";
+	mes "^0055FF" + getitemname(.@item) + "^000000. Pick the real pool. Same choice as the official stone.";
+	next;
+	.@pmenu$ = "";
+	for (.@p = 0; .@p < .@pool_count; ++.@p) 			.@pmenu$ += sve_ropoollabel(.@item, .@p) + ":";
+	.@pool_index = select(.@pmenu$ + "Cancel") - 1;
+	if (.@pool_index == .@pool_count) 			close;
+	}  	.@max = sve_ropoolmaxslots(.@item, .@pool_index);
+	if (.@max < 1) {
+	mes "[Stripe]";
+	mes "That pool has no option slots. Weird.";
+	close;
+	}  	.@filled = 0;
+	for (.@i = 0; .@i < 5; ++.@i) {
+	if (getequiprandomoption(.@slot, .@i, ROA_ID) == 0) 			break;
+	++.@filled;
+	}  	.@opt_menu$ = "";
+	.@opt_value[0] = 0;
+	.@opt_count = 0;
+	for (.@k = 1; .@k <= .@filled && .@k <= .@max; ++.@k) {
+	.@opt_value[.@opt_count] = .@k;
+	.@opt_menu$ += "Option " + .@k + " - reroll:";
+	++.@opt_count;
+	}
+	if (.@filled + 1 <= .@max) {
+	.@opt_value[.@opt_count] = .@filled + 1;
+	.@opt_menu$ += "Option " + (.@filled + 1) + " - new:";
+	++.@opt_count;
+	}
+	if (.@opt_count < 1) {
+	mes "[Stripe]";
+	mes "That pool is already full.";
+	close;
+	}  	mes "[Stripe]";
+	mes "^0055FF" + getitemname(.@item) + "^000000. Pick an option slot.";
+	next;
+	.@opt_choice = select(.@opt_menu$ + "Cancel") - 1;
+	if (.@opt_choice == .@opt_count) 		close;
+	.@want_slot = .@opt_value[.@opt_choice];
+	if (.@want_slot < 1 || .@want_slot > .@max) 		close;
+	if (.@want_slot > .@filled + 1) 		close;
+	if (.@want_slot > 1) {
+	for (.@prev = 0; .@prev < .@want_slot - 1; ++.@prev) {
+	if (getequiprandomoption(.@slot, .@prev, ROA_ID) == 0) 				close;
+	}
+	}  	callfunc("F_SVE_StripeTierCosts", .@want_slot, .@ord_fruit, .@ord_zelu, .@sp_zelu, .@sp_bs);
+	.@sp_fruit = .@ord_fruit;
+	.@opt_index = .@want_slot - 1;
+	mes "[Stripe]";
+	mes "Ordinary service rolls the real pool. The number can be junk or perfect.";
+	next;
+	mes "[Stripe]";
+	mes "Special service still rolls the pool, but the number sticks to the max. Same Blacksmith Blessing Papa wants for Choose.";
+	next;
+	if (.@ord_zelu > 0) 		.@ord_lab$ = "Ordinary - " + .@ord_fruit + " Fruit, " + .@ord_zelu + " Zelunium";
+	else 		.@ord_lab$ = "Ordinary - " + .@ord_fruit + " Fruit";
+	.@sp_lab$ = "Special - " + .@sp_fruit + " Fruit, " + .@sp_zelu + " Zelunium, " + .@sp_bs + " Blacksmith Blessing";
+	.@svc = select(.@ord_lab$ + ":" + .@sp_lab$ + ":Cancel");
+	if (.@svc != 1 && .@svc != 2) 		close;
+	.@use_special = (.@svc == 2);
+	.@loop_first = 1;
+	freeloop(1);
+	while (1) {
+	if (!.@loop_first)
+		clear;
+	.@loop_first = 0;
+	.@pay_fruit = (.@use_special ? .@sp_fruit : .@ord_fruit);
+	.@pay_zelu = (.@use_special ? .@sp_zelu : .@ord_zelu);
+	.@pay_bs = (.@use_special ? .@sp_bs : 0);
+	if (.@pay_bs > 0 && countitem(6635) < .@pay_bs) {
+	freeloop(0);
+	mes "[Stripe]";
+	mes "Short on Blacksmith Blessing. Special needs " + .@pay_bs + ".";
+	close;
+	}
+	if (countitem(6417) < .@pay_fruit) {
+	freeloop(0);
+	mes "[Stripe]";
+	mes "Short on fruit. You need " + .@pay_fruit + " Silvervine, not wishes.";
+	close;
+	}
+	if (.@pay_zelu > 0 && countitem(25731) < .@pay_zelu) {
+	freeloop(0);
+	mes "[Stripe]";
+	mes "Short on Zelunium. You need " + .@pay_zelu + ".";
+	close;
+	}  		.@eq_id = getequipid(.@slot);
+	.@refine = getequiprefinerycnt(.@slot);
+	.@card[0] = getequipcardid(.@slot, 0);
+	.@card[1] = getequipcardid(.@slot, 1);
+	.@card[2] = getequipcardid(.@slot, 2);
+	.@card[3] = getequipcardid(.@slot, 3);
+	for (.@i = 0; .@i < 5; ++.@i) {
+	set getelementofarray(.@OptID, .@i), getequiprandomoption(.@slot, .@i, ROA_ID);
+	set getelementofarray(.@OptVal, .@i), getequiprandomoption(.@slot, .@i, ROA_VALUE);
+	set getelementofarray(.@OptParam, .@i), getequiprandomoption(.@slot, .@i, ROA_PARAM);
+	} 		.@grade = getenchantgrade(.@slot);
+	if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine)) {
+	freeloop(0);
+	close;
+	}  		.@picked = 0;
+	for (.@attempt = 0; .@attempt < 12; ++.@attempt) {
+	if (!sve_rollro(.@item, .@pool_index, .@opt_index, .@use_special)) 				break;
+	.@dup = 0;
+	for (.@i = 0; .@i < 5; ++.@i) {
+	if (.@i == .@opt_index) 					continue;
+	if (getelementofarray(.@OptID, .@i) != 0 && getelementofarray(.@OptID, .@i) == .@sve_opt_id[0]) 					.@dup = 1;
+	}
+	if (!.@dup) {
+		.@picked = 1;
+		break;
+	}
+	}
+	if (!.@picked) {
+	freeloop(0);
+	mes "[Stripe]";
+	mes "The roll went sideways.";
+	next;
+	mes "[Stripe]";
+	mes "Nothing changed. Your fruit stays in your pocket.";
+	close;
+	}  		set getelementofarray(.@OptID, .@opt_index), .@sve_opt_id[0];
+	set getelementofarray(.@OptVal, .@opt_index), .@sve_opt_value[0];
+	set getelementofarray(.@OptParam, .@opt_index), .@sve_opt_param[0];
+	.@result = replaceequipped(.@slot, .@uid$, .@card[0], .@card[1], .@card[2], .@card[3], .@OptID, .@OptVal, .@OptParam);
+	if (.@result != 1) {
+	freeloop(0);
+	mes "[Stripe]";
+	mes "That piece changed before I could work.";
+	next;
+	mes "[Stripe]";
+	mes "Nothing happened. Your fruit stays in your pocket.";
+	close;
+	} 		delitem 6417, .@pay_fruit;
+	if (.@pay_zelu > 0) 			delitem 25731, .@pay_zelu;
+	if (.@pay_bs > 0) 			delitem 6635, .@pay_bs;
+	.@got$ = callfunc("F_SVE_RoText", .@sve_opt_id[0], .@sve_opt_value[0]);
+	clear;
+	mes "[Stripe]";
+	mes "Got it. Option " + .@want_slot + ": ^0055FF" + .@got$ + "^000000.";
+	specialeffect2 EF_REPAIRWEAPON;
+	.@again = select("Reroll " + .@ord_lab$ + ":Reroll " + .@sp_lab$ + ":Keep it");
+	if (.@again == 1) 			.@use_special = 0;
+	else if (.@again == 2) 			.@use_special = 1;
+	else {
+	freeloop(0);
+	next;
+	mes "[Stripe]";
+	mes "Don't scratch it up. Papa would scold me.";
+	close;
+	}
+	} }

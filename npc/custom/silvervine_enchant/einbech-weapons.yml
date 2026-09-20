@@ -4,91 +4,199 @@ Header:
 Body:
   - Id: 1867
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 2058
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 13346
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 16099
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 18190
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 21054
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 26162
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 26215
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 28045
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 28140
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 28635
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 28771
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 28772
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 32026
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 32110
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 32303
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 32352
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
   - Id: 550006
     Mode: RandomOption
-    Groups:
-      - 163
-      - 164
+    Pools:
+      - Label: Physical Modification Permit
+        Groups:
+          - 163
+        MaxSlots: 2
+      - Label: Magical Modification Permit
+        Groups:
+          - 164
+        MaxSlots: 2
