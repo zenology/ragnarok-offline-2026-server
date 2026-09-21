@@ -9383,6 +9383,22 @@ Body:
   - Id: 12461
     Title: The aftereffects of powerful death
     TimeLimit: 3d 4h
+  - Id: 12482
+    Title: Missing Guild Members
+  - Id: 12483
+    Title: Follow Up with Esmeralda
+  - Id: 12484
+    Title: Find Andrea's Trace
+  - Id: 12485
+    Title: Find Anes's Trace
+  - Id: 12486
+    Title: Find Silvano's Trace
+  - Id: 12487
+    Title: Find Cecilia's Trace
+  - Id: 12488
+    Title: Report the Traces
+  - Id: 12489
+    Title: Guest Guild Member
   - Id: 12490
     Title: Receive today's mission
     TimeLimit: 4h

@@ -255,6 +255,7 @@ odin_tem01	mapflag	privateairship_source
 odin_tem02	mapflag	privateairship_source
 odin_tem03	mapflag	privateairship_source
 odin_past	mapflag	privateairship_source
+prt_mz03_i	mapflag	privateairship_source
 orcsdun01	mapflag	privateairship_source
 orcsdun02	mapflag	privateairship_source
 pay_arche	mapflag	privateairship_source
@@ -608,6 +609,7 @@ odin_tem01	mapflag	privateairship_destination
 odin_tem02	mapflag	privateairship_destination
 odin_tem03	mapflag	privateairship_destination
 odin_past	mapflag	privateairship_destination
+prt_mz03_i	mapflag	privateairship_destination
 orcsdun01	mapflag	privateairship_destination
 orcsdun02	mapflag	privateairship_destination
 pay_arche	mapflag	privateairship_destination

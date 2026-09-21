@@ -399,6 +399,12 @@ D23: menu	"Illusion of Abyss",SubD1, "Illusion of Frozen",SubD2, "Illusion of La
 	SubD2: Restrict("RE");
 		   Go("ice_d03_i",149,22);
 	SubD3: Restrict("RE");
+		   if (ill_laby < 10) {
+			   mes "The Twisted Labyrinth is sealed to ordinary visitors.";
+			   next;
+			   mes "Speak with Irene in Labyrinth Forest first.";
+			   close;
+		   }
 		   Go("prt_mz03_i",100,100);
 	SubD4: Restrict("RE");
 		   Go("com_d02_i",250,245);

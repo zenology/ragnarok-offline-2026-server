@@ -10,7 +10,7 @@ export default function DungeonsPage(): ReactNode {
       <HeaderSection
         eyebrow="RAGNAROK OFFLINE · DUNGEONS"
         title="Late-game dungeons"
-        description="Enter Odin Past and Abyss Lake F4 from their on-map portals and signs."
+        description="Access Odin Past, Abyss Lake F4, and Illusion of Labyrinth through their on-map routes."
       />
       <GuideSection id="odin-past-access" number="01" eyebrow="ODIN PAST" title="Odin Past access">
         <Text as="p">
@@ -145,6 +145,38 @@ export default function DungeonsPage(): ReactNode {
         <Text as="p">
           Hunt inside <strong>abyss_04</strong>. Use the F3 entrance sign at{' '}
           <strong>abyss_03 91/110</strong>.
+        </Text>
+      </GuideSection>
+      <GuideSection
+        id="illusion-labyrinth-access"
+        number="10"
+        eyebrow="ILLUSION OF LABYRINTH"
+        title="Access quest"
+      >
+        <Text as="p">
+          Start at Base Level 170 or higher. Speak with <strong>Irene</strong> at{' '}
+          <strong>prt_maze01 97/26</strong>, report to Esmeralda at Prontera Cathedral, then meet her
+          beside Irene at <strong>prt_maze01 101/26</strong>.
+        </Text>
+        <Callout>
+          <strong>Find:</strong> Search Navigation for <strong>Illusion of Labyrinth Entrance</strong>{' '}
+          to reach the Twisted Crack at <strong>prt_maze01 99/23</strong>.
+        </Callout>
+        <Text as="p">
+          Enter the Twisted Crack and inspect any three of four traces: Andrea 107/104, Anes 10/18,
+          Silvano 135/68, and Cecilia 183/26. Return to Esmeralda, then speak with Andrea near the
+          crack to accept guest membership. This permanently unlocks the crack and the custom warper.
+        </Text>
+      </GuideSection>
+      <GuideSection id="illusion-labyrinth-move" number="11" eyebrow="ILLUSION OF LABYRINTH" title="MOVE and return">
+        <Callout>
+          <strong>MOVE:</strong> Navigation can move you to <strong>Twisted Labyrinth Forest</strong>{' '}
+          for 1 Nyangvine or 1 World Tour Ticket. Native Private Airship travel has no Base Level or
+          quest requirement and lands on a random walkable cell.
+        </Callout>
+        <Text as="p">
+          The exit portal at <strong>prt_mz03_i 182/84</strong> returns you to Labyrinth Forest.
+          Daily and weekly Illusion of Labyrinth quests are not included yet.
         </Text>
       </GuideSection>
     </main>

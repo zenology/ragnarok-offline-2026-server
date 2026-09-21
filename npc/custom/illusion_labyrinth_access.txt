@@ -1,0 +1,91 @@
+//===== Ragnarok Offline Script =======================================
+//= Illusion of Labyrinth - Phase 2 access quest (access only)
+//====================================================================
+
+function	script	F_IllusionLabyrinthTrace	{
+	.@quest = getarg(0); .@bit = getarg(1); .@npc$ = getarg(2);
+	if (ill_laby != 3 || (ill_laby_trace_mask & .@bit)) return;
+	mes "A faint trace of a Priest Guild member remains here.";
+	completequest .@quest;
+	ill_laby_trace_mask |= .@bit;
+	ill_laby_trace_count++;
+	cloakonnpcself( .@npc$ );
+	if (ill_laby_trace_count < 3) { mes "I should continue searching for the others."; close; }
+	if (!(ill_laby_trace_mask & 1)) erasequest 12484;
+	if (!(ill_laby_trace_mask & 2)) erasequest 12485;
+	if (!(ill_laby_trace_mask & 4)) erasequest 12486;
+	if (!(ill_laby_trace_mask & 8)) erasequest 12487;
+	setquest 12488;
+	ill_laby = 4;
+	mes "I have enough evidence. I should report to Esmeralda.";
+	close2;
+	warp "prt_maze01",101,26;
+	end;
+}
+
+prt_maze01,97,26,3	script	Irene#ill_laby	4_F_ERENE,3,3,{
+	if (BaseLevel < 170) { mes "[Irene]"; mes "I need someone with more experience for this investigation."; next; mes "^4D4DFFYou must be Base Level 170 or higher.^000000"; close; }
+	if (ill_laby == 0) { mes "[Irene]"; mes "Our guild members entered the twisted forest and never returned."; next; mes "Please report this to Guild Leader Esmeralda at Prontera Cathedral."; setquest 12482; ill_laby = 1; close; }
+	mes "[Irene]"; mes "Please help Esmeralda find the missing members."; close;
+}
+
+prontera,212,320,3	script	Esmeralda#ill_laby_prt	4_GEFFEN_09,3,3,{
+	if (ill_laby == 1) { mes "[Esmeralda]"; mes "Irene sent you? Then the situation is worse than I feared."; next; mes "Meet me beside Irene in Labyrinth Forest. We must investigate the crack together."; completequest 12482; setquest 12483; ill_laby = 2; close; }
+	mes "[Esmeralda]"; mes "I will meet you in Labyrinth Forest."; close;
+}
+
+prt_maze01,101,26,3	script	Esmeralda#ill_laby_maze	4_GEFFEN_09,3,3,{
+	if (ill_laby == 2) {
+		mes "[Esmeralda]"; mes "The crack leads to a twisted reflection of this forest."; next;
+		mes "Find traces of Andrea, Anes, Silvano, and Cecilia. Any three traces will let us confirm what happened.";
+		completequest 12483; setquest 12484; setquest 12485; setquest 12486; setquest 12487;
+		ill_laby_trace_mask = 0; ill_laby_trace_count = 0; ill_laby = 3; close;
+	}
+	if (ill_laby == 4) {
+		mes "[Esmeralda]"; mes "You found enough traces to confirm our fears."; next;
+		mes "Leave the forest for a moment. I need to prepare a rite for the four souls.";
+		completequest 12488; setquest 12489; ill_laby = 5;
+		cloakoffnpcself( "Andrea#ill_laby_guest" ); cloakoffnpcself( "Anes#ill_laby_guest" ); cloakoffnpcself( "Silvano#ill_laby_guest" ); cloakoffnpcself( "Cecilia#ill_laby_guest" );
+		warp "prt_maze01",98,26; end;
+	}
+	mes "[Esmeralda]"; mes "The spirits are waiting by the crack."; close;
+}
+
+prt_maze01,99,23,3	script	Twisted Crack#ill_laby	CLEAR_NPC,3,3,{
+	if (ill_laby == 3 || ill_laby >= 10) { warp "prt_mz03_i",100,100; end; }
+	mes "The crack is silent. I should speak with Esmeralda first."; close;
+}
+
+prt_mz03_i,108,104,0	script	Andrea Trace Reveal#ill_laby	HIDDEN_WARP_NPC,1,1,{ end;
+OnTouch: if (ill_laby == 3 && !(ill_laby_trace_mask & 1)) cloakoffnpcself( "Andrea Trace#ill_laby" ); end; }
+prt_mz03_i,11,18,0	script	Anes Trace Reveal#ill_laby	HIDDEN_WARP_NPC,1,1,{ end;
+OnTouch: if (ill_laby == 3 && !(ill_laby_trace_mask & 2)) cloakoffnpcself( "Anes Trace#ill_laby" ); end; }
+prt_mz03_i,136,68,0	script	Silvano Trace Reveal#ill_laby	HIDDEN_WARP_NPC,1,1,{ end;
+OnTouch: if (ill_laby == 3 && !(ill_laby_trace_mask & 4)) cloakoffnpcself( "Silvano Trace#ill_laby" ); end; }
+prt_mz03_i,184,26,0	script	Cecilia Trace Reveal#ill_laby	HIDDEN_WARP_NPC,1,1,{ end;
+OnTouch: if (ill_laby == 3 && !(ill_laby_trace_mask & 8)) cloakoffnpcself( "Cecilia Trace#ill_laby" ); end; }
+
+prt_mz03_i,107,104,3	script	Andrea Trace#ill_laby	4_M_ANDREA_D,3,3,{ callfunc "F_IllusionLabyrinthTrace",12484,1,"Andrea Trace#ill_laby"; end;
+OnInit: cloakonnpc(); end; }
+prt_mz03_i,10,18,3	script	Anes Trace#ill_laby	4_F_ANES_D,3,3,{ callfunc "F_IllusionLabyrinthTrace",12485,2,"Anes Trace#ill_laby"; end;
+OnInit: cloakonnpc(); end; }
+prt_mz03_i,135,68,3	script	Silvano Trace#ill_laby	4_M_SILVANO_D,3,3,{ callfunc "F_IllusionLabyrinthTrace",12486,4,"Silvano Trace#ill_laby"; end;
+OnInit: cloakonnpc(); end; }
+prt_mz03_i,183,26,3	script	Cecilia Trace#ill_laby	4_F_CECILIA_D,3,3,{ callfunc "F_IllusionLabyrinthTrace",12487,8,"Cecilia Trace#ill_laby"; end;
+OnInit: cloakonnpc(); end; }
+
+prt_maze01,96,20,3	script	Andrea#ill_laby_guest	4_M_ANDREA_D,3,3,{
+	if (ill_laby != 5) end;
+	mes "[Andrea]"; mes "Thank you for hearing the traces we left behind."; next;
+	mes "Will you accept guest membership in our guild and watch over this forest?";
+	if (select( "Accept guest membership", "Not yet" ) == 2) close;
+	completequest 12489; ill_laby = 10;
+	mes "[Andrea]"; mes "Then the Twisted Crack will recognize you from now on."; close;
+OnInit: cloakonnpc(); end;
+}
+prt_maze01,98,20,3	script	Anes#ill_laby_guest	4_F_ANES_D,3,3,{ end;
+OnInit: cloakonnpc(); end; }
+prt_maze01,100,20,3	script	Silvano#ill_laby_guest	4_M_SILVANO_D,3,3,{ end;
+OnInit: cloakonnpc(); end; }
+prt_maze01,102,20,3	script	Cecilia#ill_laby_guest	4_F_CECILIA_D,3,3,{ end;
+OnInit: cloakonnpc(); end; }

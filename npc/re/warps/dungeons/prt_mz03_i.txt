@@ -1,0 +1,7 @@
+//===== rAthena Script =======================================
+//= Warps
+//===== Description: =========================================
+//= Illusion of Labyrinth return portal
+//============================================================
+
+prt_mz03_i,182,84,0	warp	IllusionLabyrinthExit	1,1,prt_maze01,100,23
