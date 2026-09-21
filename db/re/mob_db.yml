@@ -60583,7 +60583,7 @@ Body:
         StealProtected: true
   - Id: 2477
     AegisName: NG_WANDER_MAN
-    Name: Nightmare Wander Man
+    Name: Wanderer (Nightmare)
     Level: 151
     Hp: 130682
     BaseExp: 9907
@@ -60630,7 +60630,7 @@ Body:
         Rate: 10
   - Id: 2478
     AegisName: NG_RIDEWORD
-    Name: Nightmare Rideword
+    Name: Rideword (Nightmare)
     Level: 146
     Hp: 103220
     BaseExp: 5250
@@ -60677,7 +60677,7 @@ Body:
         Rate: 1
   - Id: 2479
     AegisName: NG_MIMIC
-    Name: Nightmare Mimic
+    Name: Mimic (Nightmare)
     Level: 143
     Hp: 24958
     BaseExp: 1384
@@ -60722,7 +60722,7 @@ Body:
         Rate: 270
   - Id: 2480
     AegisName: NG_EVIL_DRUID
-    Name: Nightmare Evil Druid
+    Name: Evil Druid (Nightmare)
     Level: 134
     Hp: 72837
     BaseExp: 3370
@@ -60810,7 +60810,7 @@ Body:
 #    AegisName: G_MG_KHALITZBURG
   - Id: 2483
     AegisName: NG_BAPHOMET
-    Name: Nightmare Baphomet
+    Name: Baphomet (Nightmare)
     Level: 154
     Hp: 4008000
     BaseExp: 1308534
@@ -60900,7 +60900,7 @@ Body:
       FixedItemDrop: true
   - Id: 2485
     AegisName: NG_CHIMERA
-    Name: Nightmare Chimera
+    Name: Chimera (Nightmare)
     Level: 140
     Hp: 528120
     BaseExp: 54260
@@ -70038,7 +70038,7 @@ Body:
         Rate: 50
   - Id: 2734
     AegisName: C1_NG_WANDER_MAN
-    Name: Furious Wanderer (Nightm
+    Name: Swift Wanderer (Nightmare)
     Level: 151
     Hp: 653410
     BaseExp: 49535

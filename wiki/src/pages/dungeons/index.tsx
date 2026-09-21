@@ -123,16 +123,17 @@ export default function DungeonsPage(): ReactNode {
       </GuideSection>
       <GuideSection id="abyss-04-dailies" number="09" eyebrow="ABYSS LAKE F4" title="Daily quests">
         <Text as="p">
-          <strong>Folklorist Marigold</strong> stands in Hugel Square at <strong>hugel 102/148</strong>.
-          You need Base Level 190. Four independent dailies grant EXP only, with a 4-hour standby after
-          each turn-in.
+          <strong>Folklorist Marigold</strong> stands in Hugel Square at{' '}
+          <strong>hugel 102/148</strong>. You need Base Level 190. Four independent dailies grant
+          EXP only, with a 4-hour standby after each turn-in.
         </Text>
         <Text as="p">
           <strong>A Strangely-colored Ferus:</strong> 20 Purple Ferus. Base 15,823,920 / Job
           11,076,720.
         </Text>
         <Text as="p">
-          <strong>Studying the New Mimic:</strong> 10 Treasure Mimic. Base 7,979,360 / Job 5,585,560.
+          <strong>Studying the New Mimic:</strong> 10 Treasure Mimic. Base 7,979,360 / Job
+          5,585,560.
         </Text>
         <Text as="p">
           <strong>Acidus Elemental Study:</strong> 20 Black Acidus, 20 Silver Acidus. Base
@@ -155,28 +156,82 @@ export default function DungeonsPage(): ReactNode {
       >
         <Text as="p">
           Start at Base Level 170 or higher. Speak with <strong>Irene</strong> at{' '}
-          <strong>prt_maze01 97/26</strong>, report to Esmeralda at Prontera Cathedral, then meet her
-          beside Irene at <strong>prt_maze01 101/26</strong>.
+          <strong>prt_maze01 97/26</strong>, report to Esmeralda at Prontera Cathedral, then meet
+          her beside Irene at <strong>prt_maze01 101/26</strong>.
         </Text>
         <Callout>
-          <strong>Find:</strong> Search Navigation for <strong>Illusion of Labyrinth Entrance</strong>{' '}
-          to reach the Twisted Crack at <strong>prt_maze01 99/23</strong>.
+          <strong>Find:</strong> Search Navigation for{' '}
+          <strong>Illusion of Labyrinth Entrance</strong> to reach the Twisted Crack at{' '}
+          <strong>prt_maze01 99/23</strong>.
         </Callout>
         <Text as="p">
           Enter the Twisted Crack and inspect any three of four traces: Andrea 107/104, Anes 10/18,
           Silvano 135/68, and Cecilia 183/26. Return to Esmeralda, then speak with Andrea near the
-          crack to accept guest membership. This permanently unlocks the crack and the custom warper.
+          crack to accept guest membership. This permanently unlocks the crack and the custom
+          warper.
         </Text>
       </GuideSection>
-      <GuideSection id="illusion-labyrinth-move" number="11" eyebrow="ILLUSION OF LABYRINTH" title="MOVE and return">
+      <GuideSection
+        id="illusion-labyrinth-move"
+        number="11"
+        eyebrow="ILLUSION OF LABYRINTH"
+        title="MOVE and return"
+      >
         <Callout>
-          <strong>MOVE:</strong> Navigation can move you to <strong>Twisted Labyrinth Forest</strong>{' '}
-          for 1 Nyangvine or 1 World Tour Ticket. Native Private Airship travel has no Base Level or
-          quest requirement and lands on a random walkable cell.
+          <strong>MOVE:</strong> Navigation can move you to{' '}
+          <strong>Twisted Labyrinth Forest</strong> for 1 Nyangvine or 1 World Tour Ticket. Native
+          Private Airship travel has no Base Level or quest requirement and lands on a random
+          walkable cell.
         </Callout>
         <Text as="p">
           The exit portal at <strong>prt_mz03_i 182/84</strong> returns you to Labyrinth Forest.
           Daily and weekly Illusion of Labyrinth quests are not included yet.
+        </Text>
+      </GuideSection>
+      <GuideSection
+        id="illusion-world-view"
+        number="12"
+        eyebrow="WORLD VIEW AND MOVE"
+        title="Illusion and Abyss Glastheim directory"
+      >
+        <Text as="p">
+          World View now lists the Illusion floors under their normal dungeon dropdowns. Navigation
+          MOVE can also reach each listed map for 1 Nyangvine or 1 World Tour Ticket, with no Base
+          Level or quest requirement and a random walkable landing cell.
+        </Text>
+        <Text as="p">
+          Payon Cave: <strong>Illusion of Moonlight</strong>. Geffen Dungeon:{' '}
+          <strong>Illusion of Vampire</strong>. Ice Cave: <strong>Illusion of Frozen</strong>.
+          Turtle Island: <strong>Illusion of Abyss F1</strong> and <strong>F2</strong>. Einbech
+          Mine: <strong>Illusion of Teddy Bear</strong>. Beach Cave North:{' '}
+          <strong>Illusion of Luanda</strong>.
+        </Text>
+        <Text as="p">
+          Labyrinth Forest: <strong>Illusion of Labyrinth</strong>. Undersea Tunnel:{' '}
+          <strong>Illusion of Underwater F1</strong> and <strong>F2</strong>. Ant Hell:{' '}
+          <strong>Illusion of Twins</strong>. Glastheim: <strong>Abyss Glastheim Castle F1</strong>{' '}
+          and <strong>Abyss Glastheim Castle F2</strong>.
+        </Text>
+        <Text as="p">
+          Additional permanent dungeon floors are also listed under their established World View
+          dropdowns: Bifrost Tower F4, Geffenia Dungeon, Rachel Ice Cave - Sealed Space, Somatology
+          Laboratory 4th Basement, Twisted Clock Tower F2 and F3, Glastheim Churchyard - Nightmare
+          Mode, Tomb of the Fallen, Morroc Pyramid B1 and B2 - Nightmare, Laboratory-OPTATIO,
+          Research Building-WISH, and Niflheim Dungeon F1 and F2.
+        </Text>
+        <Text as="p">
+          Every listed destination is also available through native Private Airship travel. MOVE
+          uses one Nyangvine or World Tour Ticket, has no quest or Base Level gate, and lands on a
+          random walkable cell.
+        </Text>
+        <Callout>
+          <strong>Abyss Glastheim is separate from Abyss Lake.</strong> Abyss Lake F4 remains its
+          own destination and is not part of this Illusion directory.
+        </Callout>
+        <Text as="p">
+          Abyss Glastheim Castle F2 follows its current roster: Wanderer, Rideword, Mimic, Evil
+          Druid, Chimera, Baphomet, and Swift Wanderer Nightmare variants. The old Mysteltainn,
+          Alice, and Whisper entries are not part of this floor.
         </Text>
       </GuideSection>
     </main>

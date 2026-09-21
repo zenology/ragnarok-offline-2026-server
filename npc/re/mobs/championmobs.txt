@@ -96,7 +96,7 @@ gefenia02,0,0	monster	Solid Violy	2623,2,180000
 gefenia03,0,0	monster	Swift Violy	2622,2,180000
 gefenia04,0,0	monster	Elusive Violy	2621,2,180000
 gl_cas01,0,0	monster	Elusive Carat	2877,2,180000
-gl_cas02_,0,0	monster	Furious Wanderer (Nightmare)	2734,2,180000,0
+gl_cas02_,0,0	monster	Swift Wanderer (Nightmare)	2734,2,180000,0
 gl_cas02,0,0	monster	Furious Wanderer	2620,2,180000
 gl_church,0,0	monster	Elusive Evil Druid	2838,2,180000
 gl_chyard_,0,0	monster	Elusive Wraith Dead (Nightmare)	2733,2,180000,0
