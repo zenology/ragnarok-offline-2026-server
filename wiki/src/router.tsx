@@ -6,7 +6,6 @@ import { SiteShell } from '@/components/templates'
 import BlackMarketPage from '@/pages/black-market'
 import CardEaterPage from '@/pages/card-eater/index'
 import CostumePage from '@/pages/costumes'
-import DungeonsPage from '@/pages/dungeons'
 import EdenLevelingPage from '@/pages/eden-leveling'
 import EnchantmentPage from '@/pages/enchantment'
 import JobChangesPage from '@/pages/job-changes'
@@ -59,12 +58,6 @@ const costumesRoute = createRoute({
   component: CostumePage
 })
 
-const dungeonsRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/dungeons',
-  component: DungeonsPage
-})
-
 const edenLevelingRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/eden-leveling',
@@ -93,7 +86,6 @@ const routeTree = rootRoute.addChildren([
   landingRoute,
   blackMarketRoute,
   costumesRoute,
-  dungeonsRoute,
   edenLevelingRoute,
   enchantmentRoute,
   cardEaterRoute,
