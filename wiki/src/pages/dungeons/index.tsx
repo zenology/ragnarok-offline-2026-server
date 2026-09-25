@@ -220,9 +220,14 @@ export default function DungeonsPage(): ReactNode {
           Research Building-WISH, and Niflheim Dungeon F1 and F2.
         </Text>
         <Text as="p">
-          Every listed destination is also available through native Private Airship travel. MOVE
-          uses one Nyangvine or World Tour Ticket, has no quest or Base Level gate, and lands on a
-          random walkable cell.
+          The World View also has a Rudus Dungeon marker on <strong>ein_fild05</strong>, with
+          selectable destinations for Rudus F1 through F4. Private Airship MOVE is available to and
+          from all four floors.
+        </Text>
+        <Text as="p">
+          The Illusion and permanent dungeon directory destinations listed above are also available
+          through native Private Airship travel. MOVE uses one Nyangvine or World Tour Ticket, has
+          no quest or Base Level gate, and lands on a random walkable cell.
         </Text>
         <Callout>
           <strong>Abyss Glastheim is separate from Abyss Lake.</strong> Abyss Lake F4 remains its

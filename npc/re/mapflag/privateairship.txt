@@ -32,6 +32,8 @@ ama_fild01	mapflag	privateairship_source
 amatsu	mapflag	privateairship_source
 anthell01	mapflag	privateairship_source
 anthell02	mapflag	privateairship_source
+amicitia1	mapflag	privateairship_source
+amicitia2	mapflag	privateairship_source
 ant_d02_i	mapflag	privateairship_source
 aru_gld	mapflag	privateairship_source
 ayo_dun01	mapflag	privateairship_source
@@ -333,6 +335,10 @@ ra_san04	mapflag	privateairship_source
 ra_san05	mapflag	privateairship_source
 ra_temple	mapflag	privateairship_source
 rachel	mapflag	privateairship_source
+sp_rudus	mapflag	privateairship_source
+sp_rudus2	mapflag	privateairship_source
+sp_rudus3	mapflag	privateairship_source
+sp_rudus4	mapflag	privateairship_source
 spl_fild01	mapflag	privateairship_source
 spl_fild02	mapflag	privateairship_source
 spl_fild03	mapflag	privateairship_source
@@ -416,6 +422,8 @@ ama_fild01	mapflag	privateairship_destination
 amatsu	mapflag	privateairship_destination
 anthell01	mapflag	privateairship_destination
 anthell02	mapflag	privateairship_destination
+amicitia1	mapflag	privateairship_destination
+amicitia2	mapflag	privateairship_destination
 ant_d02_i	mapflag	privateairship_destination
 aru_gld	mapflag	privateairship_destination
 ayo_dun01	mapflag	privateairship_destination
@@ -713,6 +721,10 @@ ra_san04	mapflag	privateairship_destination
 ra_san05	mapflag	privateairship_destination
 ra_temple	mapflag	privateairship_destination
 rachel	mapflag	privateairship_destination
+sp_rudus	mapflag	privateairship_destination
+sp_rudus2	mapflag	privateairship_destination
+sp_rudus3	mapflag	privateairship_destination
+sp_rudus4	mapflag	privateairship_destination
 spl_fild01	mapflag	privateairship_destination
 spl_fild02	mapflag	privateairship_destination
 spl_fild03	mapflag	privateairship_destination
