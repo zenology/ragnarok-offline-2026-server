@@ -1,91 +1,495 @@
 //===== Ragnarok Offline Script =======================================
-//= Illusion of Labyrinth - Phase 2 access quest (access only)
+//= Illusion of Labyrinth - Irene, Esmeralda, traces, and report handoff
 //====================================================================
 
 function	script	F_IllusionLabyrinthTrace	{
-	.@quest = getarg(0); .@bit = getarg(1); .@npc$ = getarg(2);
-	if (ill_laby != 3 || (ill_laby_trace_mask & .@bit)) return;
-	mes "A faint trace of a Priest Guild member remains here.";
-	completequest .@quest;
-	ill_laby_trace_mask |= .@bit;
-	ill_laby_trace_count++;
+	.@quest_id = getarg(0);
+	.@member$ = getarg(1);
+	.@npc$ = getarg(2);
+	if (ill_laby != 3 || isbegin_quest(.@quest_id) != 1)
+		return;
+
+	mes "[Investigation]";
+	mes "You find a faint trace left by " + .@member$ + ".";
+	next;
+	mes "[Investigation]";
+	mes "It suggests that " + .@member$ + " passed through this distorted labyrinth, but it does not reveal where they are now.";
+	next;
+	mes "[Investigation]";
+	mes "You record what you found so you can report it to Esmeralda.";
+	completequest .@quest_id;
 	cloakonnpcself( .@npc$ );
-	if (ill_laby_trace_count < 3) { mes "I should continue searching for the others."; close; }
-	if (!(ill_laby_trace_mask & 1)) erasequest 12484;
-	if (!(ill_laby_trace_mask & 2)) erasequest 12485;
-	if (!(ill_laby_trace_mask & 4)) erasequest 12486;
-	if (!(ill_laby_trace_mask & 8)) erasequest 12487;
+
+	if (isbegin_quest(12484) != 2 || isbegin_quest(12485) != 2 || isbegin_quest(12486) != 2) {
+		next;
+		mes "[Investigation]";
+		mes "I should continue searching for traces of the other guild members.";
+		close;
+	}
+
 	setquest 12488;
 	ill_laby = 4;
-	mes "I have enough evidence. I should report to Esmeralda.";
+	next;
+	mes "[Investigation]";
+	mes "I have recorded traces from all three guild members. I should report what I found to Esmeralda.";
 	close2;
-	warp "prt_maze01",101,26;
+	warp "prt_maze01",99,26;
 	end;
 }
 
-prt_maze01,97,26,3	script	Irene#ill_laby	4_F_ERENE,3,3,{
-	if (BaseLevel < 170) { mes "[Irene]"; mes "I need someone with more experience for this investigation."; next; mes "^4D4DFFYou must be Base Level 170 or higher.^000000"; close; }
-	if (ill_laby == 0) { mes "[Irene]"; mes "Our guild members entered the twisted forest and never returned."; next; mes "Please report this to Guild Leader Esmeralda at Prontera Cathedral."; setquest 12482; ill_laby = 1; close; }
-	mes "[Irene]"; mes "Please help Esmeralda find the missing members."; close;
-}
-
-prontera,212,320,3	script	Esmeralda#ill_laby_prt	4_GEFFEN_09,3,3,{
-	if (ill_laby == 1) { mes "[Esmeralda]"; mes "Irene sent you? Then the situation is worse than I feared."; next; mes "Meet me beside Irene in Labyrinth Forest. We must investigate the crack together."; completequest 12482; setquest 12483; ill_laby = 2; close; }
-	mes "[Esmeralda]"; mes "I will meet you in Labyrinth Forest."; close;
-}
-
-prt_maze01,101,26,3	script	Esmeralda#ill_laby_maze	4_GEFFEN_09,3,3,{
+prt_maze01,97,26,5	script(CLOAKED)	Irene#ill_laby	4_F_ERENE,{
+	if (BaseLevel < 170) {
+		mes "[Irene]";
+		mes "You need to be at least Base Level 170 before I can ask for your help.";
+		close;
+	}
+	if (ill_laby == 1) {
+		mes "[Irene]";
+		mes "The Guild Leader's location is in the note I gave you. Please report the missing members to her.";
+		close;
+	}
 	if (ill_laby == 2) {
-		mes "[Esmeralda]"; mes "The crack leads to a twisted reflection of this forest."; next;
-		mes "Find traces of Andrea, Anes, Silvano, and Cecilia. Any three traces will let us confirm what happened.";
-		completequest 12483; setquest 12484; setquest 12485; setquest 12486; setquest 12487;
-		ill_laby_trace_mask = 0; ill_laby_trace_count = 0; ill_laby = 3; close;
+		mes "[Irene]";
+		mes "The guild leader really came. You told her, didn't you?";
+		next;
+		mes "[Irene]";
+		mes "She told me to rest here. I'll wait, but please listen to what she asks.";
+		close;
+	}
+	if (ill_laby == 3) {
+		mes "[Irene]";
+		mes "You're going in after the others, right?";
+		next;
+		mes "[Irene]";
+		mes "If you find even a trace of them, tell the guild leader. I'll keep waiting here.";
+		close;
 	}
 	if (ill_laby == 4) {
-		mes "[Esmeralda]"; mes "You found enough traces to confirm our fears."; next;
-		mes "Leave the forest for a moment. I need to prepare a rite for the four souls.";
-		completequest 12488; setquest 12489; ill_laby = 5;
-		cloakoffnpcself( "Andrea#ill_laby_guest" ); cloakoffnpcself( "Anes#ill_laby_guest" ); cloakoffnpcself( "Silvano#ill_laby_guest" ); cloakoffnpcself( "Cecilia#ill_laby_guest" );
-		warp "prt_maze01",98,26; end;
+		mes "[Irene]";
+		mes "You found something in there, didn't you? The guild leader looks different.";
+		next;
+		mes "[Irene]";
+		mes "Talk to her. I'll stay right here.";
+		close;
 	}
-	mes "[Esmeralda]"; mes "The spirits are waiting by the crack."; close;
+	if (ill_laby >= 5) {
+		mes "[Irene]";
+		mes "You figured something out, didn't you?";
+		next;
+		mes "[Irene]";
+		mes "The guild leader left in such a hurry. She wouldn't even look at me.";
+		close;
+	}
+	if (ill_laby != 0)
+		end;
+	mes "[Irene]";
+	mes "Ouch! Sorry. I didn't mean to surprise you!";
+	next;
+	select( "Whoua! You surprised me!" );
+	mes "[Irene]";
+	mes "Please don't point your weapon at me and hear me out! Please.";
+	next;
+	select( "Calm down." );
+	mes "[Irene]";
+	mes "Thank you. My name is Irene, member of the Prontera Priest Guild. Ah... There is a bit of reason why this is happening right now.";
+	next;
+	select( "What happened while you were training?" );
+	mes "[Irene]";
+	mes "I found this suspicious crack during training with four other new guild members. They rushed into this place, so I followed them...";
+	next;
+	mes "[Irene]";
+	mes "Please, I would like you to inform our Guild Leader of the current situation. We are recruiting near the cathedral in Prontera. I will wait here for other guild members who might come out...";
+	next;
+	if (select("Sorry, I can't help you.:Alright, no problem.") == 1) {
+		mes "[Irene]";
+		mes "Well yeah... it must have been an unreasonable request... sorry...";
+		close;
+	}
+	mes "[Irene]";
+	mes "Thank you! Here's a note with the guild leader's location! Please!";
+	ill_laby = 1;
+	setquest 12482;
+	close;
+
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Member>";
+	questinfo QTYPE_QUEST, QMARK_YELLOW, "BaseLevel >= 170 && ill_laby == 0";
+	end;
+
+OnPCLoadMapEvent:
+	.@map$ = strcharinfo(3);
+	if (.@map$ == "prt_maze01") {
+		if (BaseLevel < 170)
+			end;
+		.@npc_name$ = "Twisted Crack#ill_laby";
+		removespecialeffect EF_GROUNDSAMPLE, SELF, .@npc_name$;
+		removespecialeffect EF_ICEWALL, SELF, .@npc_name$;
+		specialeffect EF_GROUNDSAMPLE, SELF, .@npc_name$;
+		specialeffect EF_ICEWALL, SELF, .@npc_name$;
+		cloakoffnpcself( "Irene#ill_laby" );
+		cloakoffnpcself( .@npc_name$ );
+		if (ill_laby >= 5) {
+			cloakonnpcself( "Irene#ill_laby" );
+			cloakoffnpcself( "Andrea#ill_laby" );
+			cloakoffnpcself( "Anes#ill_laby" );
+			cloakoffnpcself( "Silvano#ill_laby" );
+			cloakoffnpcself( "Cecilia#ill_laby" );
+			if (ill_laby == 5 && isbegin_quest(12489) == 0)
+				setquest 12489;
+		}
+	}
+	else if (.@map$ == "prontera" && ill_laby == 1 && isbegin_quest(12482) == 1)
+		cloakoffnpcself( "Esmeralda#ill_laby_prt" );
+	if (.@map$ == "prt_maze01" && ((ill_laby == 2 && isbegin_quest(12483) == 1) || ill_laby == 3 || (ill_laby == 4 && isbegin_quest(12488) == 1)))
+		cloakoffnpcself( "Esmeralda#ill_laby_maze" );
+	else if (.@map$ == "prt_mz03_i" && ill_laby == 4 && isbegin_quest(12488) == 1) {
+		warp "prt_maze01",99,26;
+		end;
+	}
+	else if (.@map$ == "prt_mz03_i" && ill_laby == 3) {
+		if (isbegin_quest(12484) == 1)
+			cloakoffnpcself( "Andrea's Trace#ill_laby" );
+		if (isbegin_quest(12485) == 1)
+			cloakoffnpcself( "Anes's Trace#ill_laby" );
+		if (isbegin_quest(12486) == 1)
+			cloakoffnpcself( "Silvano's Trace#ill_laby" );
+	}
+	if (.@map$ == "prt_maze01" && ill_laby >= 5) {
+		cloakonnpcself( "Esmeralda#ill_laby_maze" );
+		cloakonnpcself( "Irene#ill_laby" );
+	}
+	if (.@map$ == "prt_fild01") {
+		if (ill_laby >= 6)
+			cloakoffnpcself( "Esmeralda#ill_laby_fild" );
+		else
+			cloakonnpcself( "Esmeralda#ill_laby_fild" );
+	}
+	end;
 }
 
-prt_maze01,99,23,3	script	Twisted Crack#ill_laby	CLEAR_NPC,3,3,{
-	if (ill_laby == 3 || ill_laby >= 10) { warp "prt_mz03_i",100,100; end; }
-	mes "The crack is silent. I should speak with Esmeralda first."; close;
+prt_maze01,99,23,3	script(CLOAKED)	Twisted Crack#ill_laby	CLEAR_NPC,{
+	if (BaseLevel < 170 || ill_laby < 3)
+		end;
+	mes "Beyond the twisted crack, a familiar yet unfamiliar labyrinth unfolds. ^ff0000If you step in, you may not be able to get out again.^000000";
+	next;
+	if (select("Pretend you didn't see it.:Enter through the crack") == 1) {
+		mes "^0000ffCuriosity killed the cat. Let's bury it quietly.^000000";
+		close;
+	}
+	warp "prt_mz03_i",99,26;
+	end;
+
+OnInit:
+	questinfo QTYPE_CLICKME, QMARK_YELLOW, "ill_laby == 3 && (isbegin_quest(12484) == 1 || isbegin_quest(12485) == 1 || isbegin_quest(12486) == 1)";
+	end;
 }
 
-prt_mz03_i,108,104,0	script	Andrea Trace Reveal#ill_laby	HIDDEN_WARP_NPC,1,1,{ end;
-OnTouch: if (ill_laby == 3 && !(ill_laby_trace_mask & 1)) cloakoffnpcself( "Andrea Trace#ill_laby" ); end; }
-prt_mz03_i,11,18,0	script	Anes Trace Reveal#ill_laby	HIDDEN_WARP_NPC,1,1,{ end;
-OnTouch: if (ill_laby == 3 && !(ill_laby_trace_mask & 2)) cloakoffnpcself( "Anes Trace#ill_laby" ); end; }
-prt_mz03_i,136,68,0	script	Silvano Trace Reveal#ill_laby	HIDDEN_WARP_NPC,1,1,{ end;
-OnTouch: if (ill_laby == 3 && !(ill_laby_trace_mask & 4)) cloakoffnpcself( "Silvano Trace#ill_laby" ); end; }
-prt_mz03_i,184,26,0	script	Cecilia Trace Reveal#ill_laby	HIDDEN_WARP_NPC,1,1,{ end;
-OnTouch: if (ill_laby == 3 && !(ill_laby_trace_mask & 8)) cloakoffnpcself( "Cecilia Trace#ill_laby" ); end; }
+prontera,212,321,4	script(CLOAKED)	Esmeralda#ill_laby_prt	4_GEFFEN_09,{
+	if (ill_laby == 2 && isbegin_quest(12483) == 1) {
+		mes "[Esmeralda]";
+		mes "Alright, I'll see you in Labyrinth Forest.";
+		close;
+	}
+	if (ill_laby != 1 || isbegin_quest(12482) == 0)
+		end;
+	mes "[Esmeralda]";
+	mes "Huh? What's going on? Did something happen to our guild members?";
+	next;
+	select( "(Inform her about the terrible thing that happened to the priests' guild)" );
+	mes "[You]";
+	mes "Irene told me that several members of the Priests' Guild disappeared after investigating a Twisted Crack near Labyrinth Forest.";
+	next;
+	mes "[Esmeralda]";
+	mes "Our new recruits are missing?";
+	next;
+	mes "[Esmeralda]";
+	mes "Sigh... Is it a guild tradition? It always like this every year...";
+	next;
+	mes "[Esmeralda]";
+	mes "Thank you for telling me. Let's meet at the scene of the incident. I'll go ahead and wait for you there. May God's blessings be with you, adventurer.";
+	completequest 12482;
+	setquest 12483;
+	ill_laby = 2;
+	close;
 
-prt_mz03_i,107,104,3	script	Andrea Trace#ill_laby	4_M_ANDREA_D,3,3,{ callfunc "F_IllusionLabyrinthTrace",12484,1,"Andrea Trace#ill_laby"; end;
-OnInit: cloakonnpc(); end; }
-prt_mz03_i,10,18,3	script	Anes Trace#ill_laby	4_F_ANES_D,3,3,{ callfunc "F_IllusionLabyrinthTrace",12485,2,"Anes Trace#ill_laby"; end;
-OnInit: cloakonnpc(); end; }
-prt_mz03_i,135,68,3	script	Silvano Trace#ill_laby	4_M_SILVANO_D,3,3,{ callfunc "F_IllusionLabyrinthTrace",12486,4,"Silvano Trace#ill_laby"; end;
-OnInit: cloakonnpc(); end; }
-prt_mz03_i,183,26,3	script	Cecilia Trace#ill_laby	4_F_CECILIA_D,3,3,{ callfunc "F_IllusionLabyrinthTrace",12487,8,"Cecilia Trace#ill_laby"; end;
-OnInit: cloakonnpc(); end; }
-
-prt_maze01,96,20,3	script	Andrea#ill_laby_guest	4_M_ANDREA_D,3,3,{
-	if (ill_laby != 5) end;
-	mes "[Andrea]"; mes "Thank you for hearing the traces we left behind."; next;
-	mes "Will you accept guest membership in our guild and watch over this forest?";
-	if (select( "Accept guest membership", "Not yet" ) == 2) close;
-	completequest 12489; ill_laby = 10;
-	mes "[Andrea]"; mes "Then the Twisted Crack will recognize you from now on."; close;
-OnInit: cloakonnpc(); end;
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Leader>";
+	questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(12482) == 1";
+	end;
 }
-prt_maze01,98,20,3	script	Anes#ill_laby_guest	4_F_ANES_D,3,3,{ end;
-OnInit: cloakonnpc(); end; }
-prt_maze01,100,20,3	script	Silvano#ill_laby_guest	4_M_SILVANO_D,3,3,{ end;
-OnInit: cloakonnpc(); end; }
-prt_maze01,102,20,3	script	Cecilia#ill_laby_guest	4_F_CECILIA_D,3,3,{ end;
-OnInit: cloakonnpc(); end; }
+
+prt_maze01,101,26,3	script(CLOAKED)	Esmeralda#ill_laby_maze	4_GEFFEN_09,{
+	if (ill_laby == 4 && isbegin_quest(12488) == 1) {
+		mes "[Esmeralda]";
+		mes "Oh, thank you. I almost gave up, but you really saved all of our new recruits.";
+		next;
+		select( "(Can these remains really be called new recruits?)" );
+		mes "[Esmeralda]";
+		mes "Thank you so much.";
+		next;
+		mes "[Esmeralda]";
+		mes "First, we need to summon the souls of our guild members to this area.";
+		next;
+		mes "[Esmeralda]";
+		mes "I think this place will be better than the city until complete revival work is done.";
+		next;
+		mes "[Esmeralda]";
+		mes "Oh, and it's a bit difficult to show our guild's soul summoning process if you're not a member of the guild. Could you please go outside the dungeon for a moment?";
+		next;
+		if (select( "Can't I just watch?", "Of course" ) == 1) {
+			mes "[Esmeralda]";
+			mes "Ah, it would be a bit awkward to show this to someone outside the guild...";
+			close;
+		}
+		mes "[Esmeralda]";
+		mes "Thank you for your consideration. Then I'll send you outside for a while.";
+		close2;
+		completequest 12488;
+		setquest 12489;
+		ill_laby = 5;
+		cloakonnpcself();
+		warp "prt_fild01",136,368;
+		end;
+	}
+	if (ill_laby == 3) {
+		mes "[Esmeralda]";
+		mes "I've collected information about the 3 guild members, so if you need anything, please check it. Perhaps traces of my members lie beyond this twisted rift.";
+		close;
+	}
+	if (ill_laby != 2 || isbegin_quest(12483) != 1)
+		end;
+	mes "[Esmeralda]";
+	mes "Irene, you must be exhausted. Stay here and rest for now.";
+	next;
+	mes "[Irene]";
+	mes "But the others are still in there. I can't just wait here...";
+	next;
+	mes "[Esmeralda]";
+	mes "I know. Don't force yourself. I'll find a way to help you, so leave this to me.";
+	next;
+	mes "[Irene]";
+	mes "You really can help?";
+	next;
+	mes "[Esmeralda]";
+	mes "I'll do everything I can. Wait here for me.";
+	next;
+	mes "[Irene]";
+	mes "Alright... Please find them.";
+	next;
+	mes "[Esmeralda]";
+	mes "Three other guild members entered the labyrinth with Irene, and none of them have returned.";
+	next;
+	mes "[Esmeralda]";
+	mes "Finding even the smallest trace may tell us where they went and give us a way to help them.";
+	next;
+	mes "[Esmeralda]";
+	mes "Please search beyond the Twisted Crack and find the traces of those three guild members.";
+	next;
+	if (select("Well, it looks dangerous so I...:Alright, I will do it") == 1) {
+		mes "[Esmeralda]";
+		mes "I understand. This is our responsibility. We will find another way.";
+		close;
+	}
+	mes "[Esmeralda]";
+	mes "Thank you. I've collected what we know about the three guild members. Their traces should be somewhere beyond this twisted rift.";
+	completequest 12483;
+	setquest 12484;
+	setquest 12485;
+	setquest 12486;
+	ill_laby = 3;
+	cloakoffnpcself( "Andrea's Trace#ill_laby" );
+	cloakoffnpcself( "Anes's Trace#ill_laby" );
+	cloakoffnpcself( "Silvano's Trace#ill_laby" );
+	close;
+
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Leader>";
+	questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(12483) == 1";
+	questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(12488) == 1";
+	end;
+}
+
+prt_mz03_i,107,104,3	script(CLOAKED)	Andrea's Trace#ill_laby	4_M_ANDREA_D,{
+	callfunc "F_IllusionLabyrinthTrace",12484,"Andrea","Andrea's Trace#ill_laby";
+	end;
+
+OnInit:
+	questinfo QTYPE_CLICKME, QMARK_YELLOW, "isbegin_quest(12484) == 1";
+	end;
+}
+
+prt_mz03_i,10,18,3	script(CLOAKED)	Anes's Trace#ill_laby	4_F_ANES_D,{
+	callfunc "F_IllusionLabyrinthTrace",12485,"Anes","Anes's Trace#ill_laby";
+	end;
+
+OnInit:
+	questinfo QTYPE_CLICKME, QMARK_YELLOW, "isbegin_quest(12485) == 1";
+	end;
+}
+
+prt_mz03_i,135,68,3	script(CLOAKED)	Silvano's Trace#ill_laby	4_M_SILVANO_D,{
+	callfunc "F_IllusionLabyrinthTrace",12486,"Silvano","Silvano's Trace#ill_laby";
+	end;
+
+OnInit:
+	questinfo QTYPE_CLICKME, QMARK_YELLOW, "isbegin_quest(12486) == 1";
+	end;
+}
+
+prt_maze01,97,21,7	script(CLOAKED)	Andrea#ill_laby	4_M_ANDREA,{
+	if (ill_laby < 5)
+		end;
+	if (ill_laby >= 6) {
+		mes "[Andrea]";
+		mes "The guild leader is preparing at the entrance of the labyrinth. I'll have requests for you later.";
+		close;
+	}
+	mes "[Andrea]";
+	mes "I heard the story from the guild leader Esmeralda. You are the one who saved us.";
+	next;
+	select( "It's not like I did anything great particularly." );
+	mes "[Andrea]";
+	mes "What humble words these are. I almost couldn't come back to life even as a soul. Thank you so much.";
+	next;
+	select( "Where did Esmeralda go?" );
+	mes "[Andrea]";
+	mes "Oh, the guild leader said she had a few things to prepare and returned to the guild base for a moment. She said she would return straight to the entrance of the labyrinth.";
+	next;
+	mes "[Andrea]";
+	mes "Also, she asked me whether " + strcharinfo(0) + " wants to join us as a guest member of the guild.";
+	next;
+	mes "[Andrea]";
+	mes "We don't have the manpower to raise funds for the guild's revival. So, we are in a situation where even one hand is helping.";
+	next;
+	mes "[Andrea]";
+	mes "If we can conquer this newly revealed Twisted Labyrinth, it will be a spark that can revive our guild. The only person around the guild who can do that is " + strcharinfo(0) + ".";
+	next;
+	mes "[Andrea]";
+	mes strcharinfo(0) + ", would you be able to work as a guest guild member for our guild?";
+	next;
+	if (select( "I guess that's too much.", "What are the benefits of being one?" ) == 1) {
+		mes "[Andrea]";
+		mes "Ah... right, I think it was a bit of an unreasonable request.";
+		close;
+	}
+	mes "[Andrea]";
+	mes "Even though we are only souls, we have gained a lot of knowledge while wandering through this Twisted Labyrinth.";
+	next;
+	mes "[Andrea]";
+	mes "We will give you several requests and provide you with appropriate compensation. Would you like to work as a guest guild member?";
+	next;
+	if (select( "I think I'll pass", "Yes for compensation!" ) == 1) {
+		mes "[Andrea]";
+		mes "Ah... right, I think it was a bit of an unreasonable request.";
+		close;
+	}
+	mes "[Andrea]";
+	mes "Thank you. Now, on behalf of the guild, we would like to ask " + strcharinfo(0) + " a request related to this Twisted Labyrinth.";
+	ill_laby = 6;
+	completequest 12489;
+	close;
+
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Recruit>";
+	questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(12489) == 1";
+	end;
+}
+
+prt_maze01,97,25,5	script(CLOAKED)	Anes#ill_laby	4_F_ANES,{
+	if (ill_laby < 5)
+		end;
+	mes "[Anes]";
+	mes "Thank you for your help, " + strcharinfo(0) + ". Guild leader left a message through ^0000ffAndrea^000000.";
+	close;
+
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Recruit>";
+	end;
+}
+
+prt_maze01,101,25,3	script(CLOAKED)	Silvano#ill_laby	4_M_SILVANO,{
+	if (ill_laby < 5)
+		end;
+	mes "[Silvano]";
+	mes "Thank you for your help, " + strcharinfo(0) + ". Guild leader left a message through ^0000ffAndrea^000000.";
+	close;
+
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Recruit>";
+	end;
+}
+
+prt_maze01,101,21,1	script(CLOAKED)	Cecilia#ill_laby	4_F_CECILIA,{
+	if (ill_laby < 5)
+		end;
+	mes "[Cecilia]";
+	mes "Thank you for your help, " + strcharinfo(0) + ". Guild leader left a message through ^0000ffAndrea^000000.";
+	close;
+
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Recruit>";
+	end;
+}
+
+prt_fild01,141,367,3	script(CLOAKED)	Esmeralda#ill_laby_fild	4_GEFFEN_09,{
+	if (ill_laby < 6)
+		end;
+	if (isbegin_quest(12492) == 0) {
+		mes "[Esmeralda]";
+		mes "Oh, I thought we parted ways without even saying goodbye, but I guess you decided to work as a guest guild member for us?";
+		next;
+		select( "It happened to be like that", "I don't think it's any harm" );
+		mes "[Esmeralda]";
+		mes "It's a good choice. We will be of great help to each other.";
+		next;
+		select( "Why don't you send other guild members?" );
+		mes "[Esmeralda]";
+		mes "There is a reason for that.";
+		next;
+		mes "[Esmeralda]";
+		mes "Those guys didn't make a contract with the Guardian Relic. So, there is no insurance whatsoever. If I send other members to perform exorcism, those lost souls will be gone forever.";
+		next;
+		mes "[Esmeralda]";
+		mes "I thought it would be safer to stay here for the time being, so I gave instructions to keep myself hidden and only appear to you who helped me.";
+		next;
+		mes "[Esmeralda]";
+		mes "First of all, since the guild has very little funds, it will likely take quite some time for them to be fully revived. So, I'm thinking of stopping running the guild for a while and starting a business here.";
+		next;
+		select( "What kind of business are you planning on doing?" );
+		mes "[Esmeralda]";
+		mes "As you know, items called Illusion Stones appear in unknown dungeons all over the continent these days. That... is a very valuable item in this world.";
+		next;
+		mes "[Esmeralda]";
+		mes "I heard that there is a guild that started exploring this dungeon first. And I also received information that Illusion Stones were also found.";
+		next;
+		mes "[Esmeralda]";
+		mes "I'm thinking of doing something like an equipment upgrade service near the entrance. Of course, you will receive Illusion Stones and various materials as payment.";
+		next;
+		mes "[Esmeralda]";
+		mes "I think that if I work hard for a few months, I will soon have enough money to revive my guild members.";
+		next;
+		mes "[Esmeralda]";
+		mes "This is probably the best for now.";
+		next;
+		select( "Is that all there is?" );
+		mes "[Esmeralda]";
+		mes "Well... there are countless other places to put money. I will skip explaining it in detail.";
+		next;
+		mes "[Esmeralda]";
+		mes "Anyway, next time you see me, I will be a vendor. Will you come as a customer? Please continue to take good care of me.";
+		close2;
+		setquest 12492;
+		completequest 12492;
+		end;
+	}
+	if (isbegin_quest(12492) == 1)
+		completequest 12492;
+	mes "[Esmeralda]";
+	mes "Please continue to take good care of me.";
+	close;
+
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Leader>";
+	questinfo QTYPE_QUEST, QMARK_YELLOW, "ill_laby >= 6 && isbegin_quest(12492) == 0";
+	end;
+}

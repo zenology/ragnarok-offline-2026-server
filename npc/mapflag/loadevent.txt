@@ -1,0 +1,4 @@
+prt_maze01	mapflag	loadevent
+prontera	mapflag	loadevent
+prt_mz03_i	mapflag	loadevent
+prt_fild01	mapflag	loadevent

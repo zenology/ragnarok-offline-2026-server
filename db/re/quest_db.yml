@@ -9393,8 +9393,6 @@ Body:
     Title: Find Anes's Trace
   - Id: 12486
     Title: Find Silvano's Trace
-  - Id: 12487
-    Title: Find Cecilia's Trace
   - Id: 12488
     Title: Report the Traces
   - Id: 12489
@@ -9402,6 +9400,8 @@ Body:
   - Id: 12490
     Title: Receive today's mission
     TimeLimit: 4h
+  - Id: 12492
+    Title: Esmeralda
   - Id: 12493
     Title: The aftereffect of the challenge
     TimeLimit: 3d 4h
