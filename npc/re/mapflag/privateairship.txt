@@ -278,6 +278,8 @@ odin_tem01	mapflag	privateairship_source
 odin_tem02	mapflag	privateairship_source
 odin_tem03	mapflag	privateairship_source
 odin_past	mapflag	privateairship_source
+oz_dun01	mapflag	privateairship_source
+oz_dun02	mapflag	privateairship_source
 prt_mz03_i	mapflag	privateairship_source
 orcsdun01	mapflag	privateairship_source
 orcsdun02	mapflag	privateairship_source
@@ -396,6 +398,27 @@ yuno_fild08	mapflag	privateairship_source
 yuno_fild09	mapflag	privateairship_source
 yuno_fild11	mapflag	privateairship_source
 yuno_fild12	mapflag	privateairship_source
+// Client StartableMap entries absent from the source-flag list.
+gw_fild01	mapflag	privateairship_source
+gw_fild02	mapflag	privateairship_source
+icecastle	mapflag	privateairship_source
+jor_back1	mapflag	privateairship_source
+jor_back2	mapflag	privateairship_source
+jor_back3	mapflag	privateairship_source
+jor_back4	mapflag	privateairship_source
+jor_back5	mapflag	privateairship_source
+jor_back6	mapflag	privateairship_source
+jor_tail	mapflag	privateairship_source
+pay_gld	mapflag	privateairship_source
+prt_gld	mapflag	privateairship_source
+prt_mk	mapflag	privateairship_source
+ra_fild10	mapflag	privateairship_source
+ra_fild11	mapflag	privateairship_source
+sch_gld	mapflag	privateairship_source
+xmas	mapflag	privateairship_source
+xmas_dun01	mapflag	privateairship_source
+xmas_dun02	mapflag	privateairship_source
+xmas_fild01	mapflag	privateairship_source
 
 //============================================================
 // Available Destinations
@@ -664,6 +687,8 @@ odin_tem01	mapflag	privateairship_destination
 odin_tem02	mapflag	privateairship_destination
 odin_tem03	mapflag	privateairship_destination
 odin_past	mapflag	privateairship_destination
+oz_dun01	mapflag	privateairship_destination
+oz_dun02	mapflag	privateairship_destination
 prt_mz03_i	mapflag	privateairship_destination
 orcsdun01	mapflag	privateairship_destination
 orcsdun02	mapflag	privateairship_destination
