@@ -20,7 +20,7 @@ function	script	F_IllusionLabyrinthTrace	{
 	completequest .@quest_id;
 	cloakonnpcself( .@npc$ );
 
-	if (isbegin_quest(12484) != 2 || isbegin_quest(12485) != 2 || isbegin_quest(12486) != 2) {
+	if (isbegin_quest(12484) != 2 || isbegin_quest(12485) != 2 || isbegin_quest(12486) != 2 || isbegin_quest(12487) != 2) {
 		next;
 		mes "[Investigation]";
 		mes "I should continue searching for traces of the other guild members.";
@@ -31,7 +31,7 @@ function	script	F_IllusionLabyrinthTrace	{
 	ill_laby = 4;
 	next;
 	mes "[Investigation]";
-	mes "I have recorded traces from all three guild members. I should report what I found to Esmeralda.";
+	mes "I have recorded traces from all four guild members. I should report what I found to Esmeralda.";
 	close2;
 	warp "prt_maze01",99,26;
 	end;
@@ -153,6 +153,8 @@ OnPCLoadMapEvent:
 			cloakoffnpcself( "Anes's Trace#ill_laby" );
 		if (isbegin_quest(12486) == 1)
 			cloakoffnpcself( "Silvano's Trace#ill_laby" );
+		if (isbegin_quest(12487) == 1)
+			cloakoffnpcself( "Cecilia's Trace#ill_laby" );
 	}
 	if (.@map$ == "prt_maze01" && ill_laby >= 5) {
 		cloakonnpcself( "Esmeralda#ill_laby_maze" );
@@ -180,7 +182,7 @@ prt_maze01,99,23,3	script(CLOAKED)	Twisted Crack#ill_laby	CLEAR_NPC,{
 	end;
 
 OnInit:
-	questinfo QTYPE_CLICKME, QMARK_YELLOW, "ill_laby == 3 && (isbegin_quest(12484) == 1 || isbegin_quest(12485) == 1 || isbegin_quest(12486) == 1)";
+	questinfo QTYPE_CLICKME, QMARK_YELLOW, "ill_laby == 3 && (isbegin_quest(12484) == 1 || isbegin_quest(12485) == 1 || isbegin_quest(12486) == 1 || isbegin_quest(12487) == 1)";
 	end;
 }
 
@@ -253,7 +255,7 @@ prt_maze01,101,26,3	script(CLOAKED)	Esmeralda#ill_laby_maze	4_GEFFEN_09,{
 	}
 	if (ill_laby == 3) {
 		mes "[Esmeralda]";
-		mes "I've collected information about the 3 guild members, so if you need anything, please check it. Perhaps traces of my members lie beyond this twisted rift.";
+		mes "I've collected information about the 4 guild members, so if you need anything, please check it. Perhaps traces of my members lie beyond this twisted rift.";
 		close;
 	}
 	if (ill_laby != 2 || isbegin_quest(12483) != 1)
@@ -277,13 +279,13 @@ prt_maze01,101,26,3	script(CLOAKED)	Esmeralda#ill_laby_maze	4_GEFFEN_09,{
 	mes "Alright... Please find them.";
 	next;
 	mes "[Esmeralda]";
-	mes "Three other guild members entered the labyrinth with Irene, and none of them have returned.";
+	mes "Four other guild members entered the labyrinth with Irene, and none of them have returned.";
 	next;
 	mes "[Esmeralda]";
 	mes "Finding even the smallest trace may tell us where they went and give us a way to help them.";
 	next;
 	mes "[Esmeralda]";
-	mes "Please search beyond the Twisted Crack and find the traces of those three guild members.";
+	mes "Please search beyond the Twisted Crack and find the traces of those four guild members.";
 	next;
 	if (select("Well, it looks dangerous so I...:Alright, I will do it") == 1) {
 		mes "[Esmeralda]";
@@ -291,15 +293,17 @@ prt_maze01,101,26,3	script(CLOAKED)	Esmeralda#ill_laby_maze	4_GEFFEN_09,{
 		close;
 	}
 	mes "[Esmeralda]";
-	mes "Thank you. I've collected what we know about the three guild members. Their traces should be somewhere beyond this twisted rift.";
+	mes "Thank you. I've collected what we know about the four guild members. Their traces should be somewhere beyond this twisted rift.";
 	completequest 12483;
 	setquest 12484;
 	setquest 12485;
 	setquest 12486;
+	setquest 12487;
 	ill_laby = 3;
 	cloakoffnpcself( "Andrea's Trace#ill_laby" );
 	cloakoffnpcself( "Anes's Trace#ill_laby" );
 	cloakoffnpcself( "Silvano's Trace#ill_laby" );
+	cloakoffnpcself( "Cecilia's Trace#ill_laby" );
 	close;
 
 OnInit:
@@ -333,6 +337,15 @@ prt_mz03_i,135,68,3	script(CLOAKED)	Silvano's Trace#ill_laby	4_M_SILVANO_D,{
 
 OnInit:
 	questinfo QTYPE_CLICKME, QMARK_YELLOW, "isbegin_quest(12486) == 1";
+	end;
+}
+
+prt_mz03_i,183,26,3	script(CLOAKED)	Cecilia's Trace#ill_laby	4_F_CECILIA_D,{
+	callfunc "F_IllusionLabyrinthTrace",12487,"Cecilia","Cecilia's Trace#ill_laby";
+	end;
+
+OnInit:
+	questinfo QTYPE_CLICKME, QMARK_YELLOW, "isbegin_quest(12487) == 1";
 	end;
 }
 
