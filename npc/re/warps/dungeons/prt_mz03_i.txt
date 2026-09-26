@@ -1,7 +1,123 @@
 //===== rAthena Script =======================================
 //= Warps
 //===== Description: =========================================
-//= Illusion of Labyrinth return portal
+//= Illusion of Labyrinth room warps.
+//= Internal links match prt_maze03. Cell 23 is the entrance
+//= arrival and has no south portal. Cell 25 south is the only
+//= exit and lands at prt_maze02,100,174.
 //============================================================
 
-prt_mz03_i,182,84,0	warp	IllusionLabyrinthExit	1,1,prt_maze01,100,23
+// Cell 1
+prt_mz03_i,22,194,0	warp	illwarp5301	1,1,prt_mz03_i,175,48	/*north to 20*/
+prt_mz03_i,5,186,0	warp	illwarp5302	1,1,prt_mz03_i,151,134	/*west to 9*/
+// Cell 2 north random
+prt_mz03_i,58,194,0	script	#illwarp5303	45,1,1,{
+	switch(rand(4)) {
+		case 0: warp "prt_mz03_i",98,151; end;	/*cell 8*/
+		case 1: warp "prt_mz03_i",137,128; end;	/*cell 9*/
+		case 2: warp "prt_mz03_i",14,71; end;	/*cell 16*/
+		case 3: warp "prt_mz03_i",54,8; end;	/*cell 22*/
+	}
+}
+// Cell 3
+prt_mz03_i,102,165,0	warp	illwarp5304	1,1,prt_mz03_i,137,71	/*south to 19*/
+prt_mz03_i,85,174,0	warp	illwarp5305	1,1,prt_mz03_i,14,47	/*west to 16*/
+// Cell 4
+prt_mz03_i,154,181,0	warp	illwarp5306	1,1,prt_mz03_i,139,48	/*east to 19*/
+prt_mz03_i,125,171,0	warp	illwarp5307	1,1,prt_mz03_i,105,111	/*west to 13*/
+// Cell 5
+prt_mz03_i,175,165,0	warp	illwarp5308	1,1,prt_mz03_i,71,12	/*south to 22*/
+prt_mz03_i,194,175,0	warp	illwarp5309	1,1,prt_mz03_i,191,139	/*east to 10*/
+// Cell 6
+prt_mz03_i,18,154,0	warp	illwarp5310	1,1,prt_mz03_i,48,21	/*north to 22*/
+prt_mz03_i,23,125,0	warp	illwarp5311	1,1,prt_mz03_i,177,71	/*south to 20*/
+prt_mz03_i,5,140,0	warp	illwarp5312	1,1,prt_mz03_i,111,56	/*west to 18*/
+// Cell 7
+prt_mz03_i,54,154,0	warp	illwarp5313	1,1,prt_mz03_i,142,111	/*north to 14*/
+prt_mz03_i,63,125,0	warp	illwarp5314	1,1,prt_mz03_i,88,97	/*south to 13*/
+// Cell 8
+prt_mz03_i,98,154,0	warp	illwarp5315	1,1,prt_mz03_i,99,31	/*north to 23*/
+prt_mz03_i,114,145,0	warp	illwarp5316	1,1,prt_mz03_i,168,22	/*east to 25*/
+prt_mz03_i,85,146,0	warp	illwarp5317	1,1,prt_mz03_i,22,88	/*west to 11*/
+// Cell 9
+prt_mz03_i,137,125,0	warp	illwarp5318	1,1,prt_mz03_i,71,71	/*south to 17*/
+prt_mz03_i,154,134,0	warp	illwarp5319	1,1,prt_mz03_i,8,186	/*east to 1*/
+// Cell 10
+prt_mz03_i,194,139,0	warp	illwarp5320	1,1,prt_mz03_i,191,175	/*east to 5*/
+prt_mz03_i,166,139,0	warp	illwarp5321	1,1,prt_mz03_i,63,88	/*west to 12*/
+// Cell 11
+prt_mz03_i,17,114,0	warp	illwarp5322	1,1,prt_mz03_i,128,105	/*north to 14*/
+prt_mz03_i,22,85,0	warp	illwarp5323	1,1,prt_mz03_i,88,146	/*south to 8*/
+// Cell 12
+prt_mz03_i,63,114,0	warp	illwarp5324	1,1,prt_mz03_i,14,71	/*north to 16*/
+prt_mz03_i,63,85,0	warp	illwarp5325	1,1,prt_mz03_i,169,139	/*south to 10*/
+prt_mz03_i,74,97,0	warp	illwarp5326	1,1,prt_mz03_i,54,8	/*east to 22*/
+prt_mz03_i,45,104,0	warp	illwarp5327	1,1,prt_mz03_i,96,48	/*west to 18*/
+// Cell 13
+prt_mz03_i,105,114,0	warp	illwarp5328	1,1,prt_mz03_i,128,171	/*north to 4*/
+prt_mz03_i,114,95,0	warp	illwarp5329	1,1,prt_mz03_i,176,8	/*east to 25*/
+prt_mz03_i,85,97,0	warp	illwarp5330	1,1,prt_mz03_i,63,128	/*west to 7*/
+// Cell 14
+prt_mz03_i,142,114,0	warp	illwarp5331	1,1,prt_mz03_i,54,151	/*north to 7*/
+prt_mz03_i,125,105,0	warp	illwarp5332	1,1,prt_mz03_i,58,191	/*west to 2*/
+// Cell 15: no south portal. West to 20, east to 24.
+prt_mz03_i,194,94,0	warp	illwarp5334	1,1,prt_mz03_i,151,22	/*east to 24*/
+prt_mz03_i,168,94,0	warp	illwarp5335	1,1,prt_mz03_i,191,54	/*west to 20*/
+// Cell 16
+prt_mz03_i,14,74,0	warp	illwarp5336	1,1,prt_mz03_i,63,111	/*north to 12*/
+prt_mz03_i,14,45,0	warp	illwarp5337	1,1,prt_mz03_i,88,174	/*south to 3*/
+prt_mz03_i,5,58,0	warp	illwarp5338	1,1,prt_mz03_i,191,15	/*west to 25*/
+// Cell 17 north-corner random, plus south to 21
+prt_mz03_i,74,74,0	script	#illwarp5339	45,1,1,{
+	switch(rand(4)) {
+		case 0: warp "prt_mz03_i",98,151; end;	/*cell 8*/
+		case 1: warp "prt_mz03_i",137,128; end;	/*cell 9*/
+		case 2: warp "prt_mz03_i",14,71; end;	/*cell 16*/
+		case 3: warp "prt_mz03_i",54,8; end;	/*cell 22*/
+	}
+}
+prt_mz03_i,52,45,0	warp	illwarp5340	1,1,prt_mz03_i,16,31	/*south to 21*/
+// Cell 18
+prt_mz03_i,104,74,0	warp	illwarp5341	1,1,prt_mz03_i,111,22	/*north to 23*/
+prt_mz03_i,96,45,0	warp	illwarp5342	1,1,prt_mz03_i,48,104	/*south to 12*/
+prt_mz03_i,114,56,0	warp	illwarp5343	1,1,prt_mz03_i,8,140	/*east to 6*/
+prt_mz03_i,85,56,0	warp	illwarp5344	1,1,prt_mz03_i,176,31	/*west to 25*/
+// Cell 19
+prt_mz03_i,137,74,0	warp	illwarp5345	1,1,prt_mz03_i,102,168	/*north to 3*/
+prt_mz03_i,139,45,0	script	#illwarp5346	45,1,1,{
+	switch(rand(4)) {
+		case 0: warp "prt_mz03_i",98,151; end;	/*cell 8*/
+		case 1: warp "prt_mz03_i",137,128; end;	/*cell 9*/
+		case 2: warp "prt_mz03_i",14,71; end;	/*cell 16*/
+		case 3: warp "prt_mz03_i",54,8; end;	/*cell 22*/
+	}
+}
+// Cell 20
+prt_mz03_i,177,74,0	warp	illwarp5347	1,1,prt_mz03_i,23,128	/*north to 6*/
+prt_mz03_i,175,45,0	warp	illwarp5348	1,1,prt_mz03_i,22,191	/*south to 1*/
+prt_mz03_i,194,54,0	warp	illwarp5349	1,1,prt_mz03_i,171,94	/*east to 15*/
+// Cell 21
+prt_mz03_i,16,34,0	warp	illwarp5350	1,1,prt_mz03_i,52,48	/*north to 17*/
+prt_mz03_i,23,5,0	warp	illwarp5351	1,1,prt_mz03_i,88,13	/*south to 23*/
+// Cell 22
+prt_mz03_i,54,5,0	warp	illwarp5352	1,1,prt_mz03_i,71,97	/*south to 12*/
+prt_mz03_i,74,12,0	warp	illwarp5353	1,1,prt_mz03_i,175,168	/*east to 5*/
+prt_mz03_i,45,21,0	warp	illwarp5354	1,1,prt_mz03_i,18,151	/*west to 6*/
+// Cell 23: north, east, west only. South is the entrance arrival.
+prt_mz03_i,99,34,0	warp	illwarp5355	1,1,prt_mz03_i,98,151	/*north to 8*/
+prt_mz03_i,114,22,0	warp	illwarp5356	1,1,prt_mz03_i,104,71	/*east to 18*/
+prt_mz03_i,85,13,0	warp	illwarp5357	1,1,prt_mz03_i,23,8	/*west to 21*/
+// Cell 24 east random
+prt_mz03_i,154,22,0	script	#illwarp5358	45,1,1,{
+	switch(rand(4)) {
+		case 0: warp "prt_mz03_i",98,151; end;	/*cell 8*/
+		case 1: warp "prt_mz03_i",137,128; end;	/*cell 9*/
+		case 2: warp "prt_mz03_i",14,71; end;	/*cell 16*/
+		case 3: warp "prt_mz03_i",54,8; end;	/*cell 22*/
+	}
+}
+// Cell 25
+prt_mz03_i,176,34,0	warp	illwarp5359	1,1,prt_mz03_i,88,56	/*north to 18*/
+prt_mz03_i,176,5,0	warp	illwarp5360	1,1,prt_maze02,100,174	/*south exit*/
+prt_mz03_i,194,15,0	warp	illwarp5361	1,1,prt_mz03_i,8,58	/*east to 16*/
+prt_mz03_i,165,22,0	warp	illwarp5362	1,1,prt_mz03_i,111,145	/*west to 8*/
