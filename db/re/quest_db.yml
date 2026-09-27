@@ -9423,6 +9423,26 @@ Body:
     Targets:
       - Mob: ILL_STEM_WORM
         Count: 3
+  - Id: 12478
+    Title: "[Weekly] Soul Purification - Andrea"
+    Targets:
+      - Mob: ILL_ANDREA
+        Count: 1
+  - Id: 12479
+    Title: "[Weekly] Soul Purification - Anes"
+    Targets:
+      - Mob: ILL_ANES
+        Count: 1
+  - Id: 12480
+    Title: "[Weekly] Soul Purification - Silvano"
+    Targets:
+      - Mob: ILL_SILVANO
+        Count: 1
+  - Id: 12481
+    Title: "[Weekly] Soul Purification - Cecilia"
+    Targets:
+      - Mob: ILL_CECILIA
+        Count: 1
   - Id: 12482
     Title: Missing Guild Members
   - Id: 12483
@@ -9442,6 +9462,9 @@ Body:
   - Id: 12490
     Title: "[Cooldown] Illusion of Labyrinth Daily Mission"
     TimeLimit: 4h
+  - Id: 12491
+    Title: "[Cooldown] Illusion of Labyrinth Weekly Mission"
+    TimeLimit: Saturday 4h
   - Id: 12492
     Title: Esmeralda
   - Id: 12493

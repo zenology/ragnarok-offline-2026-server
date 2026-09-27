@@ -46,6 +46,23 @@ function	script	F_IllusionLabyrinthDailyReset	{
 	return;
 }
 
+function	script	F_IllusionLabyrinthWeeklyReset	{
+	if (checkquest(12491,PLAYTIME) == 2) {
+		erasequest 12491;
+		questinfo_refresh();
+	}
+	return;
+}
+
+function	script	F_IllusionLabyrinthWeeklyWeek$	{
+	.@day = gettime(DT_DAYOFWEEK);
+	.@days_since_saturday = (.@day + 1) % 7;
+	if (.@day == SATURDAY && gettime(DT_HOUR) < 4)
+		.@days_since_saturday = 7;
+	.@seconds_since_reset = .@days_since_saturday * 86400 + gettime(DT_HOUR) * 3600 + gettime(DT_MINUTE) * 60 + gettime(DT_SECOND) - 14400;
+	return gettimestr("%Y%m%d",9,gettimetick(2) - .@seconds_since_reset);
+}
+
 prt_maze01,97,26,5	script(CLOAKED)	Irene#ill_laby	4_F_ERENE,{
 	if (BaseLevel < 170) {
 		mes "[Irene]";
@@ -419,6 +436,10 @@ prt_maze01,97,21,7	script(CLOAKED)	Andrea#ill_laby	4_M_ANDREA,{
 	setarray .@targets$[0],"Chaos Baphomet Jr.","Chaos Ghostring","Chaos Hunter Fly","Chaos Killer Mantis","Chaos Mantis","Chaos Poporing","Chaos Side Winder","Chaotic Stem Worm";
 	setarray .@counts[0],5,2,5,5,5,5,5,3;
 	setarray .@reward_ids[0],25271,25271,25271,25271,25781,25782,25783,25784;
+	setarray .@speakers$[0],"Andrea","Andrea","Anes","Anes","Silvano","Silvano","Cecilia","Cecilia";
+	setarray .@stories$[0],"Inside the Twisted Labyrinth, a Chaos Baphomet Jr. cut me down with its scythe. Do not let its harmless appearance fool you.","After I was mortally wounded, I tried to heal myself. The force of a Chaos Ghostring's soul overwhelmed mine and ended any hope of returning.","A Chaos Hunter Fly struck me when I was already close to death. Those creatures hunt the living as readily as the dying.","I was lost in the labyrinth when a Chaos Killer Mantis burst from the brush. It attacked just as I took the first bite of the sandwich I had made before dawn.","I clearly remember the Chaos Mantis that hunted me down. It resembled the creature that attacked Anes, but I know it was a different monster.","When I was badly wounded, I reached for a potion because there was no time to finish a healing prayer. A Chaos Poporing swallowed every bottle I carried.","A Chaos Side Winder struck while I rested. Its venom spread through me so quickly that I could no longer move.","While I lay paralyzed, a Chaotic Stem Worm pierced me again and again. Had I only been poisoned, I might have survived.";
+	setarray .@requests$[0],"As a fellow member of our guild, please hunt 5 Chaos Baphomet Jr. for me. Let them learn that our guild has not forgotten its fallen.","Please purify 2 Chaos Ghostrings. I do not want another guild member to be swallowed by that same malice.","We are guildmates now, so I can entrust this anger to you. Please hunt 5 Chaos Hunter Flies.","That became my last meal. Hunt 5 Chaos Killer Mantises, and consider it a personal favor for your guildmate.","Anes and I share the same grudge. As our guildmate, please hunt 5 Chaos Mantises for us.","I cannot change what happened to me, but I can keep it from happening to another guild member. Please hunt 5 Chaos Poporings.","If you must rest in the labyrinth, I want the path to be safer than it was for me. Please hunt 5 Chaos Side Winders.","Please hunt 3 Chaotic Stem Worms. Help me settle the anger I carried out of that labyrinth.";
+	setarray .@completion_lines$[0],"That little fiend will not claim another guild member so easily. Thank you.","Those restless spirits have been purified. My own soul feels lighter.","Good. Fewer of those winged beasts will prey on the living.","At last. I hope those mantises choke on the memory of my sandwich.","You avenged both Anes and me. Thank you, guildmate.","Those supplies will not vanish into a Poporing again. You may have saved another adventurer.","The labyrinth is a little safer for anyone who needs to catch their breath.","That anger has followed me since my death. It finally feels quieter now.";
 
 L_IllusionDailyMenu:
 	.@menu$ = "";
@@ -440,17 +461,25 @@ L_IllusionDailyMenu:
 		close;
 	.@index = .@choice - 1;
 	if (.@status$[.@index] == "Available") {
-		mes "[Andrea]";
-		mes .@quest_titles$[.@index] + ": hunt " + .@counts[.@index] + " " + .@targets$[.@index] + " in the Twisted Labyrinth Forest.";
+		mes "[" + .@speakers$[.@index] + "]";
+		mes .@stories$[.@index];
 		next;
-		mes "[Andrea]";
+		mes "[" + .@speakers$[.@index] + "]";
+		mes .@requests$[.@index];
+		mes "Target: " + .@counts[.@index] + " " + .@targets$[.@index] + ".";
+		next;
+		mes "[" + .@speakers$[.@index] + "]";
 		mes "The reward is 1,750,000 Base EXP, 1,137,500 Job EXP, and 1 " + getitemname(.@reward_ids[.@index]) + ".";
 		next;
 		if (select("Accept the request.:Not now.") == 1) {
 			setquest .@quest_ids[.@index];
 			questinfo_refresh();
-			mes "[Andrea]";
-			mes "Thank you. Return to Silvano in Prontera Maze 1F after the hunt to receive your reward.";
+			mes "[" + .@speakers$[.@index] + "]";
+			mes "Thank you, guildmate. When the hunt is done, report to Silvano. He keeps our rewards in order.";
+			next;
+		} else {
+			mes "[" + .@speakers$[.@index] + "]";
+			mes "I understand. Come back if you decide to help me settle this.";
 			next;
 		}
 		goto L_IllusionDailyMenu;
@@ -468,19 +497,114 @@ L_IllusionDailyMenu:
 OnInit:
 	setunittitle getnpcid(0), "<Priest Guild Recruit>";
 	questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(12489) == 1";
-	questinfo QTYPE_DAILYQUEST, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && (checkquest(12490,PLAYTIME) == 2 || (checkquest(12470,HUNTING) == -1 && (ill_laby_dq_done & 1) == 0) || (checkquest(12471,HUNTING) == -1 && (ill_laby_dq_done & 2) == 0) || (checkquest(12472,HUNTING) == -1 && (ill_laby_dq_done & 4) == 0) || (checkquest(12473,HUNTING) == -1 && (ill_laby_dq_done & 8) == 0) || (checkquest(12474,HUNTING) == -1 && (ill_laby_dq_done & 16) == 0) || (checkquest(12475,HUNTING) == -1 && (ill_laby_dq_done & 32) == 0) || (checkquest(12476,HUNTING) == -1 && (ill_laby_dq_done & 64) == 0) || (checkquest(12477,HUNTING) == -1 && (ill_laby_dq_done & 128) == 0)" );
+	questinfo QTYPE_DAILYQUEST, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && (checkquest(12490,PLAYTIME) == 2 || (checkquest(12470,HUNTING) == -1 && (ill_laby_dq_done / 1) % 2 == 0) || (checkquest(12471,HUNTING) == -1 && (ill_laby_dq_done / 2) % 2 == 0) || (checkquest(12472,HUNTING) == -1 && (ill_laby_dq_done / 4) % 2 == 0) || (checkquest(12473,HUNTING) == -1 && (ill_laby_dq_done / 8) % 2 == 0) || (checkquest(12474,HUNTING) == -1 && (ill_laby_dq_done / 16) % 2 == 0) || (checkquest(12475,HUNTING) == -1 && (ill_laby_dq_done / 32) % 2 == 0) || (checkquest(12476,HUNTING) == -1 && (ill_laby_dq_done / 64) % 2 == 0) || (checkquest(12477,HUNTING) == -1 && (ill_laby_dq_done / 128) % 2 == 0))";
 	end;
 }
 
 prt_maze01,97,25,5	script(CLOAKED)	Anes#ill_laby	4_F_ANES,{
 	if (ill_laby < 5)
 		end;
+	if (ill_laby < 6) {
+		mes "[Anes]";
+		mes "Thank you for your help, " + strcharinfo(0) + ". Guild leader left a message through ^0000ffAndrea^000000.";
+		close;
+	}
+	if (BaseLevel < 170) {
+		mes "[Anes]";
+		mes "I'd like to ask for your help again, but the guild asked me to wait until you're Base Level 170. The shadows in that labyrinth are dangerous.";
+		close;
+	}
+	callfunc "F_IllusionLabyrinthWeeklyReset";
+	.@week$ = callfunc("F_IllusionLabyrinthWeeklyWeek$");
+	setarray .@quest_ids[0],12478,12479,12480,12481;
+	setarray .@targets$[0],"Chaotic Andrea","Chaotic Anes","Chaotic Silvano","Chaotic Cecilia";
+	setarray .@assignment_lines$[0],"Andrea's shadow is still trying to protect us, even now. The labyrinth has twisted that care into something fierce.","It's... mine. I thought I had let that anger go, but something wearing my face is still wandering in there.","Silvano always watched over the rest of us. I hate seeing the labyrinth use his face this way.","Cecilia rarely speaks about what happened to her. I hope quieting her shadow will give her a little peace.";
+	.@active_count = 0;
+	.@active_index = -1;
+	for (.@i = 0; .@i < 4; ++.@i) {
+		.@state[.@i] = checkquest(.@quest_ids[.@i],HUNTING);
+		if (.@state[.@i] >= 0) {
+			++.@active_count;
+			.@active_index = .@i;
+		}
+	}
+	if (.@active_count > 1) {
+		mes "[Anes]";
+		mes "I see more than one weekly request under your name. Please wait until we can sort out which one is yours.";
+		close;
+	}
+	if (.@active_count == 1) {
+		if (ill_laby_wq_week$ != .@week$) {
+			mes "[Anes]";
+			mes "Saturday has passed, but the task I gave you is still waiting. You can finish hunting " + .@targets$[.@active_index] + ", or I can listen for another shadow.";
+			next;
+			.@choice = select("Keep this hunt.:Ask for another soul.:Not now.");
+			if (.@choice == 1) {
+				ill_laby_wq_week$ = .@week$;
+				questinfo_refresh();
+				mes "[Anes]";
+				mes "All right. We'll stay with this one. Everything you've done toward it still counts.";
+				close;
+			}
+			if (.@choice == 2) {
+				mes "[Anes]";
+				mes "If I let this task go, the progress you've made toward it will go too. Are you sure?";
+				next;
+				if (select("Yes, find another soul.:No, keep this one.") == 1) {
+					erasequest .@quest_ids[.@active_index];
+					.@new_index = rand(4);
+					setquest .@quest_ids[.@new_index];
+					ill_laby_wq_week$ = .@week$;
+					questinfo_refresh();
+					mes "[Anes]";
+					mes .@assignment_lines$[.@new_index];
+					next;
+					mes "[Anes]";
+					mes "Please find " + .@targets$[.@new_index] + " in the twisted labyrinth. When it's quiet, tell Silvano. He's keeping our thanks safe for you.";
+					close;
+				}
+			}
+			mes "[Anes]";
+			mes "Take your time. I won't change the task without you.";
+			close;
+		}
+		mes "[Anes]";
+		if (.@state[.@active_index] == 2)
+			mes "You found " + .@targets$[.@active_index] + ". I can feel that shadow finally quiet. Silvano has what we promised you.";
+		else
+			mes .@targets$[.@active_index] + " is still out there. Be careful, and let Silvano know when it's over.";
+		close;
+	}
+	if (checkquest(12491,PLAYTIME) != -1 || ill_laby_wq_week$ == .@week$) {
+		mes "[Anes]";
+		mes "You've done your part for us this week. I can ask you again after Saturday at 4:00 AM server time.";
+		close;
+	}
 	mes "[Anes]";
-	mes "Thank you for your help, " + strcharinfo(0) + ". Guild leader left a message through ^0000ffAndrea^000000.";
+	mes "When our souls were pulled clear of the labyrinth, some of our fear and anger stayed behind. It took our shapes and still wanders those halls.";
+	next;
+	mes "[Anes]";
+	mes "I can feel one of those shadows strongly this week. If you help us quiet it, Silvano will thank you for all of us. Will you?";
+	next;
+	if (select("I'll help.:Maybe later.") == 2) {
+		mes "[Anes]";
+		mes "I understand. Those shadows can wait until you're ready.";
+		close;
+	}
+	.@new_index = rand(4);
+	setquest .@quest_ids[.@new_index];
+	ill_laby_wq_week$ = .@week$;
+	questinfo_refresh();
+	mes "[Anes]";
+	mes .@assignment_lines$[.@new_index];
+	next;
+	mes "[Anes]";
+	mes "Please find " + .@targets$[.@new_index] + " in the twisted labyrinth. When it's quiet, tell Silvano. He's keeping our thanks safe for you.";
 	close;
 
 OnInit:
 	setunittitle getnpcid(0), "<Priest Guild Recruit>";
+	questinfo QTYPE_DAILYQUEST, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12478,HUNTING) == -1 && checkquest(12479,HUNTING) == -1 && checkquest(12480,HUNTING) == -1 && checkquest(12481,HUNTING) == -1 && (checkquest(12491,PLAYTIME) == -1 || checkquest(12491,PLAYTIME) == 2)";
 	end;
 }
 
@@ -497,11 +621,67 @@ prt_maze01,101,25,3	script(CLOAKED)	Silvano#ill_laby	4_M_SILVANO,{
 		mes "The guild's daily requests are for adventurers at Base Level 170 or higher.";
 		close;
 	}
+	callfunc "F_IllusionLabyrinthWeeklyReset";
+	setarray .@weekly_ids[0],12478,12479,12480,12481;
+	setarray .@weekly_targets$[0],"Chaotic Andrea","Chaotic Anes","Chaotic Silvano","Chaotic Cecilia";
+	setarray .@weekly_rewards[0],25781,25782,25783,25784;
+	.@weekly_active_count = 0;
+	.@weekly_active_index = -1;
+	.@weekly_ready_index = -1;
+	for (.@i = 0; .@i < 4; ++.@i) {
+		.@weekly_state[.@i] = checkquest(.@weekly_ids[.@i],HUNTING);
+		if (.@weekly_state[.@i] >= 0) {
+			++.@weekly_active_count;
+			.@weekly_active_index = .@i;
+			if (.@weekly_state[.@i] == 2)
+				.@weekly_ready_index = .@i;
+		}
+	}
+	if (.@weekly_active_count > 1) {
+		mes "[Silvano]";
+		mes "There are two weekly reports with your name on them. I can't settle a reward until we know which one is yours.";
+		close;
+	}
+	if (.@weekly_active_count == 1 && .@weekly_ready_index >= 0) {
+		mes "[Silvano]";
+		mes "You made it back. " + .@weekly_targets$[.@weekly_ready_index] + " is finally quiet. Anes was right to trust you.";
+		next;
+		mes "[Silvano]";
+		mes "I have 2,500,000 Base EXP, 1,625,000 Job EXP, and 3 " + getitemname(.@weekly_rewards[.@weekly_ready_index]) + " set aside for you. Shall I hand them over?";
+		next;
+		if (select("Yes, thank you.:Not yet.") == 2) {
+			mes "[Silvano]";
+			mes "No hurry. I'll keep it safe until you come back.";
+			close;
+		}
+		setarray .@item_ids[0],.@weekly_rewards[.@weekly_ready_index];
+		setarray .@item_amounts[0],3;
+		if (!checkweight2(.@item_ids,.@item_amounts)) {
+			mes "[Silvano]";
+			mes "Your bag's too full for everything I owe you. Make some room and I'll hand it over.";
+			close;
+		}
+		setquest 12491;
+		getexp 2500000,1625000;
+		getitem .@weekly_rewards[.@weekly_ready_index],3;
+		erasequest .@weekly_ids[.@weekly_ready_index];
+		questinfo_refresh();
+		mes "[Silvano]";
+		mes "Thank you for easing that pain. Anes can ask you for another hunt after Saturday at 4:00 AM server time.";
+		close;
+	}
+	if (.@weekly_active_count == 1) {
+		mes "[Silvano]";
+		mes .@weekly_targets$[.@weekly_active_index] + " is still roaming the labyrinth. Take care of yourself in there. Anes wants you back safely.";
+		next;
+	}
 	callfunc "F_IllusionLabyrinthDailyReset";
 	setarray .@quest_ids[0],12470,12471,12472,12473,12474,12475,12476,12477;
 	setarray .@quest_bits[0],1,2,4,8,16,32,64,128;
 	setarray .@quest_titles$[0],"Andrea's Revenge I","Andrea's Revenge II","Anes' Revenge I","Anes' Revenge II","Silvano's Revenge I","Silvano's Revenge II","Cecilia's Revenge I","Cecilia's Revenge II";
 	setarray .@reward_ids[0],25271,25271,25271,25271,25781,25782,25783,25784;
+	setarray .@speakers$[0],"Andrea","Andrea","Anes","Anes","Silvano","Silvano","Cecilia","Cecilia";
+	setarray .@completion_lines$[0],"That little fiend will not claim another guild member so easily. Thank you.","Those restless spirits have been purified. My own soul feels lighter.","Good. Fewer of those winged beasts will prey on the living.","At last. I hope those mantises choke on the memory of my sandwich.","You avenged both Anes and me. Thank you, guildmate.","Those supplies will not vanish into a Poporing again. You may have saved another adventurer.","The labyrinth is a little safer for anyone who needs to catch their breath.","That anger has followed me since my death. It finally feels quieter now.";
 	.@ready_count = 0;
 	.@illusion_count = 0;
 	for (.@i = 0; .@i < 8; ++.@i) {
@@ -567,7 +747,8 @@ prt_maze01,101,25,3	script(CLOAKED)	Silvano#ill_laby	4_M_SILVANO,{
 		erasequest .@quest_ids[.@i];
 		if ((ill_laby_dq_done & .@quest_bits[.@i]) == 0)
 			ill_laby_dq_done += .@quest_bits[.@i];
-		mes "[Daily] " + .@quest_titles$[.@i] + " completed.";
+		mes "[" + .@speakers$[.@i] + "]";
+		mes "You have completed ^0000ff[Daily] " + .@quest_titles$[.@i] + "^000000. " + .@completion_lines$[.@i];
 		next;
 	}
 	questinfo_refresh();
@@ -577,6 +758,10 @@ prt_maze01,101,25,3	script(CLOAKED)	Silvano#ill_laby	4_M_SILVANO,{
 
 OnInit:
 	setunittitle getnpcid(0), "<Priest Guild Recruit>";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12478,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12479,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12480,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12481,HUNTING) == 2";
 	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12470,HUNTING) == 2";
 	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12471,HUNTING) == 2";
 	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12472,HUNTING) == 2";
