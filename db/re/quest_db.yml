@@ -3256,6 +3256,32 @@ Body:
     Title: "[Daily] Half Flower Gathering"
   - Id: 5942
     Title: Flower Room Opening Ceremony
+  - Id: 5961
+    Title: "[Cooldown] Devil's Meal"
+    TimeLimit: 4h
+  - Id: 5962
+    Title: "[Daily] Devil's Breakfast"
+  - Id: 5963
+    Title: "[Daily] Devil's Lunch"
+  - Id: 5964
+    Title: "[Daily] Devil's Dinner"
+  - Id: 5965
+    Title: "[Cooldown] Devil's Special"
+    TimeLimit: Monday 4h
+  - Id: 5966
+    Title: "[Weekly] Devil's Special"
+  - Id: 5967
+    Title: "[Cooldown] Devil's Snack"
+    TimeLimit: 4h
+  - Id: 5968
+    Title: "[Cooldown] Devil's Pet Mimic"
+    TimeLimit: 4h
+  - Id: 5969
+    Title: "[Daily] Pet Mimic's Food"
+  - Id: 5970
+    Title: "[Daily] Pet Mimic's Food - Report"
+  - Id: 5971
+    Title: Devil in the Box
   - Id: 6000
     Title: Job Change to Taekwon
   - Id: 6001
