@@ -1,0 +1,25 @@
+//===== Ragnarok Offline =====================================
+//= Clock Tower Unknown Basement Access
+//= Entry requires Base Level 240 or higher.
+//============================================================
+
+// Sprite 111 has no image but remains clickable on the map's spring model.
+c_tower1,246,198,0	script	Giant Spring#clock01	111,{
+	if (BaseLevel < 240) {
+		mes "[Giant Spring]";
+		mes "Only adventurers of Base Level 240 or higher may enter.";
+		close;
+	}
+
+	mes "[Giant Spring]";
+	mes "The spring turns toward the Unknown Basement.";
+	next;
+	if (select("Turn Right!:Not yet.") == 2)
+		close;
+
+	close2;
+	warp "clock_01",244,198;
+	end;
+}
+
+clock_01,79,38,0	warp	clock01_out	1,1,c_tower1,245,198

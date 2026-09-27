@@ -55,6 +55,7 @@ c_tower2_	mapflag	privateairship_source
 c_tower3	mapflag	privateairship_source
 c_tower3_	mapflag	privateairship_source
 c_tower4	mapflag	privateairship_source
+clock_01	mapflag	privateairship_source
 cmd_fild01	mapflag	privateairship_source
 cmd_fild02	mapflag	privateairship_source
 cmd_fild03	mapflag	privateairship_source
@@ -476,6 +477,7 @@ c_tower2_	mapflag	privateairship_destination
 c_tower3	mapflag	privateairship_destination
 c_tower3_	mapflag	privateairship_destination
 c_tower4	mapflag	privateairship_destination
+clock_01	mapflag	privateairship_destination
 cmd_fild01	mapflag	privateairship_destination
 cmd_fild02	mapflag	privateairship_destination
 cmd_fild03	mapflag	privateairship_destination
