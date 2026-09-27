@@ -177,6 +177,10 @@ izlude_a	mapflag	privateairship_source
 izlude_b	mapflag	privateairship_source
 izlude_c	mapflag	privateairship_source
 izlude_d	mapflag	privateairship_source
+jor_ab01	mapflag	privateairship_source
+jor_ab02	mapflag	privateairship_source
+jor_dun01	mapflag	privateairship_source
+jor_dun02	mapflag	privateairship_source
 jupe_core	mapflag	privateairship_source
 juperos_01	mapflag	privateairship_source
 juperos_02	mapflag	privateairship_source
@@ -586,6 +590,10 @@ iz_d04_i	mapflag	privateairship_destination
 iz_d05_i	mapflag	privateairship_destination
 izlu2dun	mapflag	privateairship_destination
 izlude	mapflag	privateairship_destination
+jor_ab01	mapflag	privateairship_destination
+jor_ab02	mapflag	privateairship_destination
+jor_dun01	mapflag	privateairship_destination
+jor_dun02	mapflag	privateairship_destination
 jupe_core	mapflag	privateairship_destination
 juperos_01	mapflag	privateairship_destination
 juperos_02	mapflag	privateairship_destination
