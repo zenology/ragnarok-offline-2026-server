@@ -181,6 +181,8 @@ jor_ab01	mapflag	privateairship_source
 jor_ab02	mapflag	privateairship_source
 jor_dun01	mapflag	privateairship_source
 jor_dun02	mapflag	privateairship_source
+jor_twice	mapflag	privateairship_source
+jor_twig	mapflag	privateairship_source
 jupe_core	mapflag	privateairship_source
 juperos_01	mapflag	privateairship_source
 juperos_02	mapflag	privateairship_source
@@ -575,6 +577,7 @@ ice_dun02	mapflag	privateairship_destination
 ice_dun03	mapflag	privateairship_destination
 ice_dun04	mapflag	privateairship_destination
 ice_d03_i	mapflag	privateairship_destination
+icecastle	mapflag	privateairship_destination
 in_sphinx1	mapflag	privateairship_destination
 in_sphinx2	mapflag	privateairship_destination
 in_sphinx3	mapflag	privateairship_destination
@@ -592,8 +595,17 @@ izlu2dun	mapflag	privateairship_destination
 izlude	mapflag	privateairship_destination
 jor_ab01	mapflag	privateairship_destination
 jor_ab02	mapflag	privateairship_destination
+jor_back1	mapflag	privateairship_destination
+jor_back2	mapflag	privateairship_destination
+jor_back3	mapflag	privateairship_destination
+jor_back4	mapflag	privateairship_destination
+jor_back5	mapflag	privateairship_destination
+jor_back6	mapflag	privateairship_destination
 jor_dun01	mapflag	privateairship_destination
 jor_dun02	mapflag	privateairship_destination
+jor_tail	mapflag	privateairship_destination
+jor_twice	mapflag	privateairship_destination
+jor_twig	mapflag	privateairship_destination
 jupe_core	mapflag	privateairship_destination
 juperos_01	mapflag	privateairship_destination
 juperos_02	mapflag	privateairship_destination
