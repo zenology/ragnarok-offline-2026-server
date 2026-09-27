@@ -1,5 +1,5 @@
 //===== Ragnarok Offline Script =======================================
-//= Illusion of Labyrinth - Irene, Esmeralda, traces, and report handoff
+//= Illusion of Labyrinth - access quest and post-membership daily hunts
 //====================================================================
 
 function	script	F_IllusionLabyrinthTrace	{
@@ -35,6 +35,15 @@ function	script	F_IllusionLabyrinthTrace	{
 	close2;
 	warp "prt_maze01",99,26;
 	end;
+}
+
+function	script	F_IllusionLabyrinthDailyReset	{
+	if (checkquest(12490,PLAYTIME) == 2) {
+		erasequest 12490;
+		ill_laby_dq_done = 0;
+		questinfo_refresh();
+	}
+	return;
 }
 
 prt_maze01,97,26,5	script(CLOAKED)	Irene#ill_laby	4_F_ERENE,{
@@ -352,59 +361,114 @@ OnInit:
 prt_maze01,97,21,7	script(CLOAKED)	Andrea#ill_laby	4_M_ANDREA,{
 	if (ill_laby < 5)
 		end;
-	if (ill_laby >= 6) {
+	if (ill_laby == 5) {
 		mes "[Andrea]";
-		mes "The guild leader is preparing at the entrance of the labyrinth. I'll have requests for you later.";
+		mes "I heard the story from the guild leader Esmeralda. You are the one who saved us.";
+		next;
+		select( "It's not like I did anything great particularly." );
+		mes "[Andrea]";
+		mes "What humble words these are. I almost couldn't come back to life even as a soul. Thank you so much.";
+		next;
+		select( "Where did Esmeralda go?" );
+		mes "[Andrea]";
+		mes "Oh, the guild leader said she had a few things to prepare and returned to the guild base for a moment. She said she would return straight to the entrance of the labyrinth.";
+		next;
+		mes "[Andrea]";
+		mes "Also, she asked me whether " + strcharinfo(0) + " wants to join us as a guest member of the guild.";
+		next;
+		mes "[Andrea]";
+		mes "We don't have the manpower to raise funds for the guild's revival. So, we are in a situation where even one hand is helping.";
+		next;
+		mes "[Andrea]";
+		mes "If we can conquer this newly revealed Twisted Labyrinth, it will be a spark that can revive our guild. The only person around the guild who can do that is " + strcharinfo(0) + ".";
+		next;
+		mes "[Andrea]";
+		mes strcharinfo(0) + ", would you be able to work as a guest guild member for our guild?";
+		next;
+		if (select( "I guess that's too much.", "What are the benefits of being one?" ) == 1) {
+			mes "[Andrea]";
+			mes "Ah... right, I think it was a bit of an unreasonable request.";
+			close;
+		}
+		mes "[Andrea]";
+		mes "Even though we are only souls, we have gained a lot of knowledge while wandering through this Twisted Labyrinth.";
+		next;
+		mes "[Andrea]";
+		mes "We will give you several requests and provide you with appropriate compensation. Would you like to work as a guest guild member?";
+		next;
+		if (select( "I think I'll pass", "Yes for compensation!" ) == 1) {
+			mes "[Andrea]";
+			mes "Ah... right, I think it was a bit of an unreasonable request.";
+			close;
+		}
+		mes "[Andrea]";
+		mes "Thank you. Now, on behalf of the guild, we would like to ask " + strcharinfo(0) + " a request related to this Twisted Labyrinth.";
+		ill_laby = 6;
+		completequest 12489;
 		close;
 	}
-	mes "[Andrea]";
-	mes "I heard the story from the guild leader Esmeralda. You are the one who saved us.";
-	next;
-	select( "It's not like I did anything great particularly." );
-	mes "[Andrea]";
-	mes "What humble words these are. I almost couldn't come back to life even as a soul. Thank you so much.";
-	next;
-	select( "Where did Esmeralda go?" );
-	mes "[Andrea]";
-	mes "Oh, the guild leader said she had a few things to prepare and returned to the guild base for a moment. She said she would return straight to the entrance of the labyrinth.";
-	next;
-	mes "[Andrea]";
-	mes "Also, she asked me whether " + strcharinfo(0) + " wants to join us as a guest member of the guild.";
-	next;
-	mes "[Andrea]";
-	mes "We don't have the manpower to raise funds for the guild's revival. So, we are in a situation where even one hand is helping.";
-	next;
-	mes "[Andrea]";
-	mes "If we can conquer this newly revealed Twisted Labyrinth, it will be a spark that can revive our guild. The only person around the guild who can do that is " + strcharinfo(0) + ".";
-	next;
-	mes "[Andrea]";
-	mes strcharinfo(0) + ", would you be able to work as a guest guild member for our guild?";
-	next;
-	if (select( "I guess that's too much.", "What are the benefits of being one?" ) == 1) {
+	if (BaseLevel < 170) {
 		mes "[Andrea]";
-		mes "Ah... right, I think it was a bit of an unreasonable request.";
+		mes "Our daily requests are for adventurers at Base Level 170 or higher.";
 		close;
 	}
-	mes "[Andrea]";
-	mes "Even though we are only souls, we have gained a lot of knowledge while wandering through this Twisted Labyrinth.";
-	next;
-	mes "[Andrea]";
-	mes "We will give you several requests and provide you with appropriate compensation. Would you like to work as a guest guild member?";
-	next;
-	if (select( "I think I'll pass", "Yes for compensation!" ) == 1) {
-		mes "[Andrea]";
-		mes "Ah... right, I think it was a bit of an unreasonable request.";
+	callfunc "F_IllusionLabyrinthDailyReset";
+	setarray .@quest_ids[0],12470,12471,12472,12473,12474,12475,12476,12477;
+	setarray .@quest_bits[0],1,2,4,8,16,32,64,128;
+	setarray .@quest_titles$[0],"Andrea's Revenge I","Andrea's Revenge II","Anes' Revenge I","Anes' Revenge II","Silvano's Revenge I","Silvano's Revenge II","Cecilia's Revenge I","Cecilia's Revenge II";
+	setarray .@targets$[0],"Chaos Baphomet Jr.","Chaos Ghostring","Chaos Hunter Fly","Chaos Killer Mantis","Chaos Mantis","Chaos Poporing","Chaos Side Winder","Chaotic Stem Worm";
+	setarray .@counts[0],5,2,5,5,5,5,5,3;
+	setarray .@reward_ids[0],25271,25271,25271,25271,25781,25782,25783,25784;
+
+L_IllusionDailyMenu:
+	.@menu$ = "";
+	for (.@i = 0; .@i < 8; ++.@i) {
+		.@quest_state[.@i] = checkquest(.@quest_ids[.@i],HUNTING);
+		if (.@quest_state[.@i] == 2)
+			.@status$[.@i] = "Ready - Silvano";
+		else if (.@quest_state[.@i] == 0 || .@quest_state[.@i] == 1)
+			.@status$[.@i] = "In progress";
+		else if ((ill_laby_dq_done & .@quest_bits[.@i]) != 0)
+			.@status$[.@i] = "Completed today";
+		else
+			.@status$[.@i] = "Available";
+		.@menu$ += (.@i == 0 ? "" : ":") + .@quest_titles$[.@i] + " [" + .@status$[.@i] + "]";
+	}
+	.@menu$ += ":Leave";
+	.@choice = select(.@menu$);
+	if (.@choice == 9)
 		close;
+	.@index = .@choice - 1;
+	if (.@status$[.@index] == "Available") {
+		mes "[Andrea]";
+		mes .@quest_titles$[.@index] + ": hunt " + .@counts[.@index] + " " + .@targets$[.@index] + " in the Twisted Labyrinth Forest.";
+		next;
+		mes "[Andrea]";
+		mes "The reward is 1,750,000 Base EXP, 1,137,500 Job EXP, and 1 " + getitemname(.@reward_ids[.@index]) + ".";
+		next;
+		if (select("Accept the request.:Not now.") == 1) {
+			setquest .@quest_ids[.@index];
+			questinfo_refresh();
+			mes "[Andrea]";
+			mes "Thank you. Return to Silvano in Prontera Maze 1F after the hunt to receive your reward.";
+			next;
+		}
+		goto L_IllusionDailyMenu;
 	}
 	mes "[Andrea]";
-	mes "Thank you. Now, on behalf of the guild, we would like to ask " + strcharinfo(0) + " a request related to this Twisted Labyrinth.";
-	ill_laby = 6;
-	completequest 12489;
-	close;
+	if (.@status$[.@index] == "In progress")
+		mes "That request is already in progress. Finish the hunt, then speak with Silvano.";
+	else if (.@status$[.@index] == "Ready - Silvano")
+		mes "That hunt is complete. Speak with Silvano in Prontera Maze 1F to receive your reward.";
+	else
+		mes "You have already received that request's reward today. You can accept it again after 04:00.";
+	next;
+	goto L_IllusionDailyMenu;
 
 OnInit:
 	setunittitle getnpcid(0), "<Priest Guild Recruit>";
 	questinfo QTYPE_QUEST, QMARK_YELLOW, "isbegin_quest(12489) == 1";
+	questinfo QTYPE_DAILYQUEST, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && (checkquest(12490,PLAYTIME) == 2 || (checkquest(12470,HUNTING) == -1 && (ill_laby_dq_done & 1) == 0) || (checkquest(12471,HUNTING) == -1 && (ill_laby_dq_done & 2) == 0) || (checkquest(12472,HUNTING) == -1 && (ill_laby_dq_done & 4) == 0) || (checkquest(12473,HUNTING) == -1 && (ill_laby_dq_done & 8) == 0) || (checkquest(12474,HUNTING) == -1 && (ill_laby_dq_done & 16) == 0) || (checkquest(12475,HUNTING) == -1 && (ill_laby_dq_done & 32) == 0) || (checkquest(12476,HUNTING) == -1 && (ill_laby_dq_done & 64) == 0) || (checkquest(12477,HUNTING) == -1 && (ill_laby_dq_done & 128) == 0)" );
 	end;
 }
 
@@ -423,12 +487,104 @@ OnInit:
 prt_maze01,101,25,3	script(CLOAKED)	Silvano#ill_laby	4_M_SILVANO,{
 	if (ill_laby < 5)
 		end;
+	if (ill_laby < 6) {
+		mes "[Silvano]";
+		mes "Thank you for your help, " + strcharinfo(0) + ". Guild leader left a message through ^0000ffAndrea^000000.";
+		close;
+	}
+	if (BaseLevel < 170) {
+		mes "[Silvano]";
+		mes "The guild's daily requests are for adventurers at Base Level 170 or higher.";
+		close;
+	}
+	callfunc "F_IllusionLabyrinthDailyReset";
+	setarray .@quest_ids[0],12470,12471,12472,12473,12474,12475,12476,12477;
+	setarray .@quest_bits[0],1,2,4,8,16,32,64,128;
+	setarray .@quest_titles$[0],"Andrea's Revenge I","Andrea's Revenge II","Anes' Revenge I","Anes' Revenge II","Silvano's Revenge I","Silvano's Revenge II","Cecilia's Revenge I","Cecilia's Revenge II";
+	setarray .@reward_ids[0],25271,25271,25271,25271,25781,25782,25783,25784;
+	.@ready_count = 0;
+	.@illusion_count = 0;
+	for (.@i = 0; .@i < 8; ++.@i) {
+		.@quest_state[.@i] = checkquest(.@quest_ids[.@i],HUNTING);
+		.@ready[.@i] = (.@quest_state[.@i] == 2);
+		if (.@ready[.@i]) {
+			++.@ready_count;
+			if (.@i < 4)
+				++.@illusion_count;
+		}
+	}
+	if (.@ready_count == 0) {
+		mes "[Silvano]";
+		mes "You have no completed daily requests to turn in. Please come back after finishing a hunt.";
+		close;
+	}
 	mes "[Silvano]";
-	mes "Thank you for your help, " + strcharinfo(0) + ". Guild leader left a message through ^0000ffAndrea^000000.";
+	mes "You have completed " + .@ready_count + " request(s). Would you like to receive all completed rewards?";
+	next;
+	if (select("Not now.:Receive all completed rewards") == 1) {
+		mes "[Silvano]";
+		mes "I'll wait until you are ready.";
+		close;
+	}
+	.@reward_count = 0;
+	if (.@illusion_count > 0) {
+		setarray .@item_ids[.@reward_count],25271;
+		setarray .@item_amounts[.@reward_count],.@illusion_count;
+		++.@reward_count;
+	}
+	if (.@ready[4]) {
+		setarray .@item_ids[.@reward_count],25781;
+		setarray .@item_amounts[.@reward_count],1;
+		++.@reward_count;
+	}
+	if (.@ready[5]) {
+		setarray .@item_ids[.@reward_count],25782;
+		setarray .@item_amounts[.@reward_count],1;
+		++.@reward_count;
+	}
+	if (.@ready[6]) {
+		setarray .@item_ids[.@reward_count],25783;
+		setarray .@item_amounts[.@reward_count],1;
+		++.@reward_count;
+	}
+	if (.@ready[7]) {
+		setarray .@item_ids[.@reward_count],25784;
+		setarray .@item_amounts[.@reward_count],1;
+		++.@reward_count;
+	}
+	if (!checkweight2(.@item_ids,.@item_amounts)) {
+		mes "[Silvano]";
+		mes "Please make room in your inventory and reduce your weight before receiving these rewards.";
+		close;
+	}
+	if (checkquest(12490,PLAYTIME) == -1)
+		setquest 12490;
+	for (.@i = 0; .@i < 8; ++.@i) {
+		if (!.@ready[.@i])
+			continue;
+		getexp 1750000,1137500;
+		getitem .@reward_ids[.@i],1;
+		erasequest .@quest_ids[.@i];
+		if ((ill_laby_dq_done & .@quest_bits[.@i]) == 0)
+			ill_laby_dq_done += .@quest_bits[.@i];
+		mes "[Daily] " + .@quest_titles$[.@i] + " completed.";
+		next;
+	}
+	questinfo_refresh();
+	mes "[Silvano]";
+	mes "All rewards for your completed daily requests have been paid.";
 	close;
 
 OnInit:
 	setunittitle getnpcid(0), "<Priest Guild Recruit>";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12470,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12471,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12472,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12473,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12474,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12475,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12476,HUNTING) == 2";
+	questinfo QTYPE_QUEST2, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12477,HUNTING) == 2";
 	end;
 }
 

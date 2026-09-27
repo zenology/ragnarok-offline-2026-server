@@ -9383,6 +9383,46 @@ Body:
   - Id: 12461
     Title: The aftereffects of powerful death
     TimeLimit: 3d 4h
+  - Id: 12470
+    Title: "[Daily] Andrea's Revenge I"
+    Targets:
+      - Mob: ILL_BAPHOMET_J
+        Count: 5
+  - Id: 12471
+    Title: "[Daily] Andrea's Revenge II"
+    Targets:
+      - Mob: ILL_GHOSTRING
+        Count: 2
+  - Id: 12472
+    Title: "[Daily] Anes' Revenge I"
+    Targets:
+      - Mob: ILL_HUNTER_FLY
+        Count: 5
+  - Id: 12473
+    Title: "[Daily] Anes' Revenge II"
+    Targets:
+      - Mob: ILL_KILLER_MANTIS
+        Count: 5
+  - Id: 12474
+    Title: "[Daily] Silvano's Revenge I"
+    Targets:
+      - Mob: ILL_MANTIS
+        Count: 5
+  - Id: 12475
+    Title: "[Daily] Silvano's Revenge II"
+    Targets:
+      - Mob: ILL_POPORING
+        Count: 5
+  - Id: 12476
+    Title: "[Daily] Cecilia's Revenge I"
+    Targets:
+      - Mob: ILL_SIDE_WINDER
+        Count: 5
+  - Id: 12477
+    Title: "[Daily] Cecilia's Revenge II"
+    Targets:
+      - Mob: ILL_STEM_WORM
+        Count: 3
   - Id: 12482
     Title: Missing Guild Members
   - Id: 12483
@@ -9400,7 +9440,7 @@ Body:
   - Id: 12489
     Title: Guest Guild Member
   - Id: 12490
-    Title: Receive today's mission
+    Title: "[Cooldown] Illusion of Labyrinth Daily Mission"
     TimeLimit: 4h
   - Id: 12492
     Title: Esmeralda
