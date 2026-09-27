@@ -1,0 +1,318 @@
+//===== Ragnarok Offline =====================================
+//= Clock Tower Unknown Basement Access
+//= Entry requires Base Level 240 or higher.
+//============================================================
+
+// Sprite 111 has no image but remains clickable on the map's spring model.
+c_tower1,246,198,0	script	Giant Spring#clock01	111,{
+	if (BaseLevel < 240) {
+		mes "[Giant Spring]";
+		mes "Only adventurers of Base Level 240 or higher may enter.";
+		close;
+	}
+
+	mes "[Giant Spring]";
+	mes "The spring turns toward the Unknown Basement.";
+	next;
+	if (select("Turn Right!:Not yet.") == 2)
+		close;
+
+	close2;
+	warp "clock_01",244,198;
+	end;
+}
+
+clock_01,79,38,0	warp	clock01_out	1,1,c_tower1,245,198
+
+// The daily snack uses one server-wide item assignment per 04:00 cycle.
+c_tower1,243,202,4	script	Mysterious Box#clock01	4_MYSTCASE,{
+	if (isbegin_quest(5971) != 0)
+		setnpcdisplay "Mysterious Box#clock01", "Devil in the Box", 2155; // Butoijo
+	else
+		setnpcdisplay "Mysterious Box#clock01", "Mysterious Box", 4_MYSTCASE;
+	if (BaseLevel < 240) {
+		mes "[Mysterious Box]";
+		mes "Only adventurers of Base Level 240 or higher may wake me.";
+		close;
+	}
+
+	callsub L_ClearCooldowns;
+	callsub L_RollSnack;
+	if (isbegin_quest(5971) == 0) {
+		mes "[Mysterious Box]";
+		mes "A strange voice stirs inside the box.";
+		next;
+		if (select("Wake Up:Not now") == 2)
+			close;
+		setquest 5971;
+		completequest 5971;
+		setnpcdisplay "Mysterious Box#clock01", "Devil in the Box", 2155;
+		mes "[Devil in the Box]";
+		mes "At last. I am the Devil in the Box. I have a few requests for you.";
+		next;
+	}
+
+	if (clock01_snack_id > 0) {
+		mes "[Devil in the Box]";
+		mes "For today's snack, bring me 100 " + getitemname(clock01_snack_id) + ". You have " + countitem(clock01_snack_id) + "/100.";
+		next;
+	}
+
+	switch(select("Devil's Meal:Devil's Snack:Pet Mimic:Devil's Special:Leave")) {
+	case 1:
+		callsub L_Meal;
+		close;
+	case 2:
+		callsub L_Snack;
+		close;
+	case 3:
+		callsub L_PetMimic;
+		close;
+	case 4:
+		callsub L_Weekly;
+		close;
+	default:
+		close;
+	}
+
+L_ClearCooldowns:
+	if (checkquest(5961,PLAYTIME) == 2)
+		erasequest 5961;
+	if (checkquest(5965,PLAYTIME) == 2)
+		erasequest 5965;
+	if (checkquest(5967,PLAYTIME) == 2)
+		erasequest 5967;
+	if (checkquest(5968,PLAYTIME) == 2)
+		erasequest 5968;
+	return;
+
+L_RollSnack:
+	.@today$ = gettimestr("%Y%m%d",9,gettimetick(2) - 14400);
+	if ($clock01_snack_date$ != .@today$) {
+		$clock01_snack_date$ = .@today$;
+		$clock01_snack_item = .SnackItems[rand(4)];
+	}
+	return;
+
+L_Meal:
+	if (checkquest(5961,PLAYTIME) != -1 && checkquest(5961,PLAYTIME) != 2) {
+		mes "[Devil in the Box]";
+		mes "You have already served a meal today. Come back after 04:00.";
+		return;
+	}
+	if (checkquest(5962) != -1 || checkquest(5963) != -1 || checkquest(5964) != -1) {
+		if (checkquest(5962) == 2) {
+			.@id = 5962; .@base = 38409074; .@job = 25606020; .@lead = 1; .@name$ = "Breakfast";
+		} else if (checkquest(5963) == 2) {
+			.@id = 5963; .@base = 136177626; .@job = 90784980; .@lead = 3; .@name$ = "Lunch";
+		} else if (checkquest(5964) == 2) {
+			.@id = 5964; .@base = 698346800; .@job = 465564000; .@lead = 10; .@name$ = "Dinner";
+		} else {
+			if (checkquest(5962) == 1)
+				.@target = 100;
+			else if (checkquest(5963) == 1)
+				.@target = 300;
+			else
+				.@target = 1000;
+			mes "[Devil in the Box]";
+			mes "Your meal is not ready yet. You have defeated " + clock01_meal_count + "/" + .@target + " monsters.";
+			return;
+		}
+		.@reward_item[0] = 1000680;
+		.@reward_amount[0] = .@lead;
+		if (!checkweight2(.@reward_item,.@reward_amount)) {
+			mes "[Devil in the Box]";
+			mes "Make room for the Lead before I can accept your " + .@name$ + ".";
+			return;
+		}
+		getitem 1000680,.@lead;
+		getexp .@base,.@job;
+		erasequest .@id;
+		setquest 5961;
+		clock01_meal_count = 0;
+		mes "[Devil in the Box]";
+		mes "Thank you for the " + .@name$ + ". Here are " + .@lead + " Lead, " + .@base + " Base EXP, and " + .@job + " Job EXP.";
+		return;
+	}
+
+	mes "[Devil in the Box]";
+	mes "Choose one meal hunt for today. The three meal requests share one daily cooldown.";
+	next;
+	switch(select("Breakfast - 100 monsters:Lunch - 300 monsters:Dinner - 1,000 monsters:Cancel")) {
+	case 1: .@id = 5962; .@name$ = "Breakfast";
+		break;
+	case 2: .@id = 5963; .@name$ = "Lunch";
+		break;
+	case 3: .@id = 5964; .@name$ = "Dinner";
+		break;
+	default: return;
+	}
+	if (.@id == 5962) {
+		.@target = 100; .@lead = 1; .@base = 38409074; .@job = 25606020;
+	} else if (.@id == 5963) {
+		.@target = 300; .@lead = 3; .@base = 136177626; .@job = 90784980;
+	} else {
+		.@target = 1000; .@lead = 10; .@base = 698346800; .@job = 465564000;
+	}
+	clock01_meal_count = 0;
+	setquest .@id;
+	mes "[Devil in the Box]";
+	mes "Bring me the remnants of " + .@target + " monsters for " + .@name$ + ". I will give you " + .@lead + " Lead, " + .@base + " Base EXP, and " + .@job + " Job EXP.";
+	return;
+
+L_Snack:
+	if (checkquest(5967,PLAYTIME) != -1 && checkquest(5967,PLAYTIME) != 2) {
+		mes "[Devil in the Box]";
+		mes "I have already had today's snack. Come back after 04:00.";
+		return;
+	}
+	if (clock01_snack_id == 0) {
+		clock01_snack_id = $clock01_snack_item;
+		switch(clock01_snack_id) {
+		case 25505: .@base = 280442400; .@job = 186961600; break;
+		case 25509: .@base = 347798000; .@job = 231865000; break;
+		case 25507: .@base = 347798000; .@job = 231865000; break;
+		case 25506: .@base = 279337600; .@job = 186224800; break;
+		}
+		mes "[Devil in the Box]";
+		mes "Today's snack is " + getitemname(clock01_snack_id) + ". Bring me 100 for " + .@base + " Base EXP and " + .@job + " Job EXP.";
+		next;
+	}
+	if (countitem(clock01_snack_id) < 100) {
+		mes "[Devil in the Box]";
+		mes "You have " + countitem(clock01_snack_id) + "/100 " + getitemname(clock01_snack_id) + ".";
+		return;
+	}
+	delitem clock01_snack_id,100;
+	switch(clock01_snack_id) {
+	case 25505: .@base = 280442400; .@job = 186961600; break;
+	case 25509: .@base = 347798000; .@job = 231865000; break;
+	case 25507: .@base = 347798000; .@job = 231865000; break;
+	case 25506: .@base = 279337600; .@job = 186224800; break;
+	}
+	.@name$ = getitemname(clock01_snack_id);
+	getexp .@base,.@job;
+	setquest 5967;
+	clock01_snack_id = 0;
+	mes "[Devil in the Box]";
+	mes "A perfect snack. Thank you for the " + .@name$ + ". Take " + .@base + " Base EXP and " + .@job + " Job EXP.";
+	return;
+
+L_PetMimic:
+	if (checkquest(5968,PLAYTIME) != -1 && checkquest(5968,PLAYTIME) != 2) {
+		mes "[Devil in the Box]";
+		mes "Mimic has already been fed today. Come back after 04:00.";
+		return;
+	}
+	if (checkquest(5970) == 1) {
+		mes "[Devil in the Box]";
+		mes "It seems Mimic took the food. Thank you for finding my pet.";
+		next;
+		getexp 1745867,1163910;
+		completequest 5970;
+		erasequest 5970;
+		setquest 5968;
+		mes "[Devil in the Box]";
+		mes "Here is 1,745,867 Base EXP and 1,163,910 Job EXP for finding Mimic.";
+		return;
+	}
+	if (checkquest(5969) != -1) {
+		mes "[Devil in the Box]";
+		mes "Mimic is hiding at clock_01,84,44. Please find it and come back to me.";
+		return;
+	}
+	setquest 5969;
+	mes "[Devil in the Box]";
+	mes "Please find my pet Mimic at clock_01,84,44. I will reward you with 1,745,867 Base EXP and 1,163,910 Job EXP.";
+	return;
+
+L_Weekly:
+	if (checkquest(5965,PLAYTIME) != -1 && checkquest(5965,PLAYTIME) != 2) {
+		mes "[Devil in the Box]";
+		mes "You have already served my special meal this week. Come back after Monday 04:00.";
+		return;
+	}
+	if (checkquest(5966) != -1) {
+		if (checkquest(5966) == 2) {
+			.@reward_item[0] = 1000681;
+			.@reward_amount[0] = 3;
+			if (!checkweight2(.@reward_item,.@reward_amount)) {
+				mes "[Devil in the Box]";
+				mes "Make room for three Clock Gears before I can accept your special meal.";
+				return;
+			}
+			getitem 1000681,3;
+			getexp 2182333750,1454887500;
+			erasequest 5966;
+			setquest 5965;
+			clock01_weekly_count = 0;
+			mes "[Devil in the Box]";
+			mes "A wonderful special meal. Take 3 Clock Gears, 2,182,333,750 Base EXP, and 1,454,887,500 Job EXP.";
+			return;
+		}
+		mes "[Devil in the Box]";
+		mes "You have defeated " + clock01_weekly_count + "/5000 monsters for my special meal.";
+		return;
+	}
+	clock01_weekly_count = 0;
+	setquest 5966;
+	mes "[Devil in the Box]";
+	mes "Bring me the remnants of 5,000 monsters for my weekly special. I will give you 3 Clock Gears, 2,182,333,750 Base EXP, and 1,454,887,500 Job EXP.";
+	return;
+
+OnNPCKillEvent:
+	if (strcharinfo(3) != "clock_01")
+		end;
+	if (!((killedrid >= 20175 && killedrid <= 20179) || killedrid == 20118))
+		end;
+	if (checkquest(5962) == 1 && clock01_meal_count < 100) {
+		clock01_meal_count++;
+		if (clock01_meal_count >= 100)
+			completequest 5962;
+	}
+	if (checkquest(5963) == 1 && clock01_meal_count < 300) {
+		clock01_meal_count++;
+		if (clock01_meal_count >= 300)
+			completequest 5963;
+	}
+	if (checkquest(5964) == 1 && clock01_meal_count < 1000) {
+		clock01_meal_count++;
+		if (clock01_meal_count >= 1000)
+			completequest 5964;
+	}
+	if (checkquest(5966) == 1 && clock01_weekly_count < 5000) {
+		clock01_weekly_count++;
+		if (clock01_weekly_count >= 5000)
+			completequest 5966;
+	}
+	end;
+
+OnInit:
+	setarray .SnackItems[0],25505,25509,25507,25506;
+	callsub L_RollSnack;
+	end;
+
+OnPCLoginEvent:
+	if (isbegin_quest(5971) != 0)
+		setnpcdisplay "Mysterious Box#clock01", "Devil in the Box", 2155;
+	else
+		setnpcdisplay "Mysterious Box#clock01", "Mysterious Box", 4_MYSTCASE;
+	end;
+
+OnClock0400:
+	callsub L_RollSnack;
+	end;
+}
+
+clock_01,84,44,0	script	Pet Mimic#clock01	4_MIMIC,{
+	if (BaseLevel < 240 || checkquest(5969) != 1) {
+		mes "[Pet Mimic]";
+		mes "The mimic rustles quietly and hides again.";
+		close;
+	}
+	mes "[Pet Mimic]";
+	mes "The Mimic takes the food and scurries away.";
+	completequest 5969;
+	setquest 5970;
+	close;
+}
