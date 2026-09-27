@@ -190,9 +190,6 @@ gl_cas02_,0,0	monster	Chimera (Nightmare)	2485,1,5000
 gl_cas02_,0,0	monster	Mimic (Nightmare)	2479,19,5000
 gl_cas02_,0,0	monster	Rideword (Nightmare)	2478,10,5000
 gl_cas02_,0,0	monster	Wanderer (Nightmare)	2477,60,5000
-gl_cas02_,0,0	monster	Mysteltainn	1203,1,7200000,3600000
-gl_cas02_,0,0	monster	Alice	1275,1,5000
-gl_cas02_,102,180	monster	Whisper	1185,1,1800000,900000
 gl_cas02_,0,0	monster	Baphomet (Nightmare)	2483,1,7200000,0,0
 
 //==================================================

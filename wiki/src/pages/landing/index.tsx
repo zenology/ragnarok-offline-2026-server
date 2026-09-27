@@ -37,14 +37,8 @@ const guides = [
     description: 'Find the NPC, guild, or fallback Job Master for every supported job path.'
   },
   {
-    to: '/dungeons',
-    number: '05',
-    title: 'Dungeons',
-    description: 'Find late-game dungeon access points, level requirements, and return routes.'
-  },
-  {
     to: '/eden-leveling',
-    number: '06',
+    number: '05',
     title: 'Eden Leveling',
     description: 'Eden Group mission boards from level 1 through 140+ and where to turn in.'
   }
