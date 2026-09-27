@@ -86,6 +86,7 @@ ecl_tdun04	mapflag	privateairship_source
 eclage	mapflag	privateairship_source
 ein_dun01	mapflag	privateairship_source
 ein_dun02	mapflag	privateairship_source
+ein_dun03	mapflag	privateairship_source
 ein_d02_i	mapflag	privateairship_source
 ein_fild01	mapflag	privateairship_source
 ein_fild03	mapflag	privateairship_source
@@ -177,6 +178,12 @@ izlude_a	mapflag	privateairship_source
 izlude_b	mapflag	privateairship_source
 izlude_c	mapflag	privateairship_source
 izlude_d	mapflag	privateairship_source
+jor_ab01	mapflag	privateairship_source
+jor_ab02	mapflag	privateairship_source
+jor_dun01	mapflag	privateairship_source
+jor_dun02	mapflag	privateairship_source
+jor_twice	mapflag	privateairship_source
+jor_twig	mapflag	privateairship_source
 jupe_core	mapflag	privateairship_source
 juperos_01	mapflag	privateairship_source
 juperos_02	mapflag	privateairship_source
@@ -208,6 +215,7 @@ ma_fild02	mapflag	privateairship_source
 ma_scene01	mapflag	privateairship_source
 mag_dun01	mapflag	privateairship_source
 mag_dun02	mapflag	privateairship_source
+mag_dun03	mapflag	privateairship_source
 mal_dun01	mapflag	privateairship_source
 malangdo	mapflag	privateairship_source
 malaya	mapflag	privateairship_source
@@ -499,6 +507,7 @@ ecl_tdun04	mapflag	privateairship_destination
 eclage	mapflag	privateairship_destination
 ein_dun01	mapflag	privateairship_destination
 ein_dun02	mapflag	privateairship_destination
+ein_dun03	mapflag	privateairship_destination
 ein_d02_i	mapflag	privateairship_destination
 ein_fild01	mapflag	privateairship_destination
 ein_fild03	mapflag	privateairship_destination
@@ -560,6 +569,8 @@ gon_dun02	mapflag	privateairship_destination
 gon_dun03	mapflag	privateairship_destination
 gon_fild01	mapflag	privateairship_destination
 gonryun	mapflag	privateairship_destination
+gw_fild01	mapflag	privateairship_destination
+gw_fild02	mapflag	privateairship_destination
 hu_fild01	mapflag	privateairship_destination
 hu_fild02	mapflag	privateairship_destination
 hu_fild04	mapflag	privateairship_destination
@@ -571,6 +582,7 @@ ice_dun02	mapflag	privateairship_destination
 ice_dun03	mapflag	privateairship_destination
 ice_dun04	mapflag	privateairship_destination
 ice_d03_i	mapflag	privateairship_destination
+icecastle	mapflag	privateairship_destination
 in_sphinx1	mapflag	privateairship_destination
 in_sphinx2	mapflag	privateairship_destination
 in_sphinx3	mapflag	privateairship_destination
@@ -586,6 +598,19 @@ iz_d04_i	mapflag	privateairship_destination
 iz_d05_i	mapflag	privateairship_destination
 izlu2dun	mapflag	privateairship_destination
 izlude	mapflag	privateairship_destination
+jor_ab01	mapflag	privateairship_destination
+jor_ab02	mapflag	privateairship_destination
+jor_back1	mapflag	privateairship_destination
+jor_back2	mapflag	privateairship_destination
+jor_back3	mapflag	privateairship_destination
+jor_back4	mapflag	privateairship_destination
+jor_back5	mapflag	privateairship_destination
+jor_back6	mapflag	privateairship_destination
+jor_dun01	mapflag	privateairship_destination
+jor_dun02	mapflag	privateairship_destination
+jor_tail	mapflag	privateairship_destination
+jor_twice	mapflag	privateairship_destination
+jor_twig	mapflag	privateairship_destination
 jupe_core	mapflag	privateairship_destination
 juperos_01	mapflag	privateairship_destination
 juperos_02	mapflag	privateairship_destination
@@ -617,6 +642,7 @@ ma_fild02	mapflag	privateairship_destination
 ma_scene01	mapflag	privateairship_destination
 mag_dun01	mapflag	privateairship_destination
 mag_dun02	mapflag	privateairship_destination
+mag_dun03	mapflag	privateairship_destination
 mal_dun01	mapflag	privateairship_destination
 malangdo	mapflag	privateairship_destination
 malaya	mapflag	privateairship_destination
@@ -738,6 +764,8 @@ ra_fild04	mapflag	privateairship_destination
 ra_fild05	mapflag	privateairship_destination
 ra_fild06	mapflag	privateairship_destination
 ra_fild08	mapflag	privateairship_destination
+ra_fild10	mapflag	privateairship_destination
+ra_fild11	mapflag	privateairship_destination
 ra_fild12	mapflag	privateairship_destination
 ra_san01	mapflag	privateairship_destination
 ra_san02	mapflag	privateairship_destination
@@ -796,6 +824,10 @@ verus01	mapflag	privateairship_destination
 verus02	mapflag	privateairship_destination
 verus03	mapflag	privateairship_destination
 verus04	mapflag	privateairship_destination
+xmas	mapflag	privateairship_destination
+xmas_dun01	mapflag	privateairship_destination
+xmas_dun02	mapflag	privateairship_destination
+xmas_fild01	mapflag	privateairship_destination
 yuno	mapflag	privateairship_destination
 yuno_fild01	mapflag	privateairship_destination
 yuno_fild02	mapflag	privateairship_destination
