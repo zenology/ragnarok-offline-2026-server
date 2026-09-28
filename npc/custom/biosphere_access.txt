@@ -1,0 +1,52 @@
+//===== Ragnarok Offline =====================================
+//= Varmundt Biosphere Access
+//============================================================
+
+ba_in01,310,38,0	script	Biosphere Door#bl_ice	111,{
+ mes "[Biosphere Door]";
+ mes "The Ice Biosphere is extremely dangerous. Are you sure you want to enter?";
+ next;
+ if (select("Enter:Not yet.") == 2)
+  close;
+ close2;
+ warp "bl_ice",39,81;
+ end;
+}
+
+ba_in01,311,56,0	script	Biosphere Door#bl_lava	111,{
+ mes "[Biosphere Door]";
+ mes "The Fire Biosphere is extremely dangerous. Are you sure you want to enter?";
+ next;
+ if (select("Enter:Not yet.") == 2)
+  close;
+ close2;
+ warp "bl_lava",163,18;
+ end;
+}
+
+ba_in01,325,56,0	script	Biosphere Door#bl_grass	111,{
+ mes "[Biosphere Door]";
+ mes "The Grass Biosphere is extremely dangerous. Are you sure you want to enter?";
+ next;
+ if (select("Enter:Not yet.") == 2)
+  close;
+ close2;
+ warp "bl_grass",156,20;
+ end;
+}
+
+ba_in01,339,56,0	script	Biosphere Door#bl_death	111,{
+ mes "[Biosphere Door]";
+ mes "The Death Biosphere is extremely dangerous. Are you sure you want to enter?";
+ next;
+ if (select("Enter:Not yet.") == 2)
+  close;
+ close2;
+ warp "bl_death",314,64;
+ end;
+}
+
+bl_ice,36,81,0	warp	Biosphere Ice Exit	1,1,ba_in01,307,38
+bl_lava,163,14,0	warp	Biosphere Fire Exit	1,1,ba_in01,311,53
+bl_grass,157,16,0	warp	Biosphere Grass Exit	1,1,ba_in01,325,53
+bl_death,315,59,0	warp	Biosphere Death Exit	1,1,ba_in01,339,53
