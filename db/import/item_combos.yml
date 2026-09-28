@@ -3789,3 +3789,267 @@ Body:
       bonus2 bMagicAddClass,Class_Normal,30;
       bonus bPow,15;
       bonus bSpl,15;
+  # WARPGATE 450356 + Detardeurus Card
+  - Combos:
+      - Combo:
+          - Abbys_L_H_Armor
+          - Detale_Card
+    Script: |
+      bonus bPatk,15;
+      bonus2 bAddClass,Class_All,30;
+  # WARPGATE 450356 + Dragon Scale Hood
+  - Combos:
+      - Combo:
+          - Abbys_L_H_Armor
+          - Drag_Manteau
+    Script: |
+      .@garment = getequiprefinerycnt(EQI_GARMENT);
+      .@armor = getequiprefinerycnt(EQI_ARMOR);
+      bonus2 bAddEle,Ele_All,.@garment/2+6*((.@garment+.@armor)/6);
+  # WARPGATE 450361 + Heart Hunter Card
+  - Combos:
+      - Combo:
+          - Great_Gunner_US
+          - Heart_Hunter_Card
+    Script: |
+      bonus2 bSkillAtk,"RL_FIREDANCE",30;
+      autobonus3 "{ bonus bFlee,100; }",1000,3000,"RL_FALLEN_ANGEL";
+  # WARPGATE 450361 + Captain Ferlock Card
+  - Combos:
+      - Combo:
+          - Great_Gunner_US
+          - Felock_Card
+    Script: |
+      bonus2 bSkillAtk,"RL_D_TAIL",50;
+      bonus2 bSkillCooldown,"RL_D_TAIL",-2000;
+  # WARPGATE 450442 + Unknown Swordsman Card
+  - Combos:
+      - Combo:
+          - Saint_Knight_US
+          - Unknown_Swordman_Card
+    Script: |
+      bonus bMaxHPrate,30;
+      bonus bMaxSPrate,30;
+      skill "MG_ENERGYCOAT",1;
+      if (getequiprefinerycnt(EQI_ARMOR)>=13) {
+         bonus2 bAddClass,Class_Normal,40;
+         bonus2 bAddClass,Class_Boss,40;
+         bonus2 bMagicAddClass,Class_Normal,40;
+         bonus2 bMagicAddClass,Class_Boss,40;
+      }
+  # WARPGATE 450444 + Randgris Card
+  - Combos:
+      - Combo:
+          - Dark_Acolyte_US
+          - Randgris_Card
+    Script: |
+      bonus bMaxHPrate,30;
+      bonus bMaxSPrate,30;
+      skill "MG_ENERGYCOAT",1;
+      if (getequiprefinerycnt(EQI_ARMOR)>=13) {
+         bonus2 bAddClass,Class_Normal,40;
+         bonus2 bAddClass,Class_Boss,40;
+         bonus2 bMagicAddClass,Class_Normal,40;
+         bonus2 bMagicAddClass,Class_Boss,40;
+      }
+  # WARPGATE 450444 + Chaotic Acolyte Card
+  - Combos:
+      - Combo:
+          - Dark_Acolyte_US
+          - Chaos_Acolyte_Card
+    Script: |
+      bonus bPow,6;
+      bonus bSpl,6;
+      bonus bDelayrate,-6;
+      bonus bSpeedRate,25;
+  # WARPGATE 500118 + Fire Frilldora Card
+  - Combos:
+      - Combo:
+          - Agni_Sword_US
+          - Fire_Frilldora_Card
+    Script: |
+      bonus bInt,10;
+      bonus2 bMagicAddClass,Class_All,15;
+      skill "WL_HELLINFERNO",5;
+  # WARPGATE 500118 + Kaho Card
+  - Combos:
+      - Combo:
+          - Agni_Sword_US
+          - Kaho_Card
+    Script: |
+      bonus bStr,10;
+      bonus2 bAddClass,Class_All,15;
+      skill "RK_SONICWAVE",10;
+  # WARPGATE 500118 + Ifrit Card
+  - Combos:
+      - Combo:
+          - Agni_Sword_US
+          - Ifrit_Card
+    Script: |
+      bonus bPow,25;
+      bonus bSpl,25;
+      bonus2 bAddClass,Class_All,25;
+      bonus2 bMagicAddClass,Class_All,25;
+      bonus4 bAutoSpellOnSkill,"SM_MAGNUM","RK_IGNITIONBREAK",5,1000;
+      bonus4 bAutoSpellOnSkill,"MG_FIREBOLT","WL_CRIMSONROCK",5,1000;
+  # WARPGATE 500118 + Sealed Ifrit Card
+  - Combos:
+      - Combo:
+          - Agni_Sword_US
+          - Sealed_Ifrit_Card
+    Script: |
+      bonus bPow,12;
+      bonus bSpl,12;
+      bonus2 bAddClass,Class_All,12;
+      bonus2 bMagicAddClass,Class_All,12;
+      bonus4 bAutoSpellOnSkill,"RK_SONICWAVE","WL_HELLINFERNO",5,500;
+  # WARPGATE 500133 + Ancient Prontera Book
+  - Combos:
+      - Combo:
+          - Vlad_Impaler_US
+          - Ancient_Prontera_US
+    Script: |
+      if (getenchantgrade(EQI_HAND_L)>=ENCHANTGRADE_B) {
+         bonus bSpl,10;
+         bonus2 bMagicAddSize,Size_All,20;
+      }
+  # WARPGATE 500133 + Dragonic Shield
+  - Combos:
+      - Combo:
+          - Vlad_Impaler_US
+          - Dragonic_Shield_US
+    Script: |
+      if (getenchantgrade(EQI_HAND_L)>=ENCHANTGRADE_B) {
+         bonus bPow,10;
+         bonus bLongAtkRate,20;
+      }
+  # WARPGATE 500133 + Doppelganger Card
+  - Combos:
+      - Combo:
+          - Vlad_Impaler_US
+          - Doppelganger_Card
+    Script: |
+      bonus bSplashRange,1;
+      bonus bPow,10;
+      bonus bSpl,10;
+      bonus2 bAddClass,Class_Normal,20;
+      bonus2 bAddClass,Class_Boss,20;
+      bonus2 bMagicAddClass,Class_Normal,20;
+      bonus2 bMagicAddClass,Class_Boss,20;
+      if (getenchantgrade(EQI_HAND_R)>=ENCHANTGRADE_A) {
+         bonus bPow,10;
+         bonus bSpl,10;
+         bonus2 bAddClass,Class_Normal,20;
+         bonus2 bAddClass,Class_Boss,20;
+         bonus2 bMagicAddClass,Class_Normal,20;
+         bonus2 bMagicAddClass,Class_Boss,20;
+      }
+  # WARPGATE 540124 + Polluted Dark Lord Card
+  - Combos:
+      - Combo:
+          - Polluted_Follower_US
+          - Polluted_Dark_L_Card
+    Script: |
+      bonus bAllTraitStats,20;
+      autobonus "{ bonus bStr,250; bonus bPow,25; }",70,7000,BF_WEAPON|BF_MAGIC;
+  # WARPGATE 540124 + Polluted Queen Spider Card
+  - Combos:
+      - Combo:
+          - Polluted_Follower_US
+          - Polluted_Spi_Q_Card
+    Script: |
+      bonus bAllTraitStats,20;
+      autobonus "{ bonus bInt,250; bonus bSpl,25; }",70,7000,BF_WEAPON|BF_MAGIC;
+  # WARPGATE 540126 + Time Holder Card
+  - Combos:
+      - Combo:
+          - Time_Distortion_US
+          - Timeholder_Card
+    Script: |
+      bonus bSpl,30;
+      bonus bCon,30;
+      bonus2 bMagicAddRace,RC_All,30;
+      if (getequiprefinerycnt(EQI_HAND_R)>=15) bonus bNoWalkDelay;
+  # WARPGATE 540126 + Time Keeper Card
+  - Combos:
+      - Combo:
+          - Time_Distortion_US
+          - Time_Keeper_Card
+    Script: |
+      bonus bSpl,5;
+      bonus2 bMagicAddSize,Size_All,15;
+      if (getequiprefinerycnt(EQI_HAND_R)>=13) bonus5 bAutoSpellWhenHit,"NPC_WIDECURSE",2,70,BF_WEAPON|BF_MAGIC,0;
+  # WARPGATE 550169 + Fenrir Card
+  - Combos:
+      - Combo:
+          - Fenrir_Staff_US
+          - Fenrir_Card
+    Script: |
+      bonus bSpl,30;
+      bonus bCon,30;
+      bonus2 bMagicAddRace,RC_All,40;
+      skill "EM_SPELL_ENCHANTING",5;
+      if (getequiprefinerycnt(EQI_HAND_R)>=14) {
+         bonus2 bSkillAtk,"WL_COMET",120;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",120;
+         bonus bVariableCastrate,-30;
+         bonus bDelayrate,-30;
+      }
+  # WARPGATE 560077 + Butoijo Card
+  - Combos:
+      - Combo:
+          - Coatneis_Knuckle_US
+          - Butoijo_Card
+    Script: |
+      bonus bAtk,200;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",20;
+  # WARPGATE 560077 + Sura Chen Card
+  - Combos:
+      - Combo:
+          - Coatneis_Knuckle_US
+          - Sura_Card
+    Script: |
+      bonus2 bSkillAtk,"MO_EXTREMITYFIST",200;
+      bonus2 bAddClass,Class_Normal,30;
+      bonus2 bAddClass,Class_Boss,30;
+      bonus bAllTraitStats,20;
+  # WARPGATE 590109 + Angelgolt Card
+  - Combos:
+      - Combo:
+          - Divine_Mace_US
+          - Angelgolt_Card
+    Script: |
+      bonus bInt,10;
+      bonus2 bMagicAddSize,Size_All,15;
+  # WARPGATE 590109 + Pray Giver Card
+  - Combos:
+      - Combo:
+          - Divine_Mace_US
+          - Pray_Giver_Card
+    Script: |
+      bonus bInt,15;
+      bonus2 bMagicAddSize,Size_All,20;
+  # WARPGATE 590109 + Reginleif Card
+  - Combos:
+      - Combo:
+          - Divine_Mace_US
+          - Reginleif_Card
+    Script: |
+      bonus bWis,30;
+      bonus bSpl,30;
+      bonus2 bMagicAddSize,Size_All,40;
+      skill "IG_HOLY_SHIELD",5;
+      skill "CD_RELIGIO",5;
+  # WARPGATE 590109 + Ingrid Card
+  - Combos:
+      - Combo:
+          - Divine_Mace_US
+          - Ingrid_Card
+    Script: |
+      bonus bWis,30;
+      bonus bSpl,30;
+      bonus2 bMagicAddSize,Size_All,40;
+      skill "IG_HOLY_SHIELD",5;
+      skill "CD_RELIGIO",5;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);

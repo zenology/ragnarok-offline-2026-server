@@ -295,7 +295,7 @@ enum e_autospell_flags{
 
 /// AutoSpell bonus struct
 struct s_autospell {
-	uint16 id, lv, trigger_skill;
+	uint16 id, alternate_id, lv, trigger_skill;
 	int16 rate, battle_flag;
 	t_itemid card_id;
 	uint8 flag;
