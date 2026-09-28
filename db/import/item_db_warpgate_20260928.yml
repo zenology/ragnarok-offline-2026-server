@@ -1,0 +1,491 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 768
+    AegisName: Offline_WG_768
+    Name: Fierce Magique Cert
+    Type: Etc
+    Weight: 10
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+  - Id: 769
+    AegisName: Offline_WG_769
+    Name: Fierce Physique Cert
+    Type: Etc
+    Weight: 10
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+  - Id: 771
+    AegisName: Offline_WG_771
+    Name: Redilite
+    Type: Etc
+    Weight: 5
+  - Id: 772
+    AegisName: Offline_WG_772
+    Name: Leafolite
+    Type: Etc
+    Weight: 5
+  - Id: 773
+    AegisName: Offline_WG_773
+    Name: Oranite
+    Type: Etc
+    Weight: 5
+  - Id: 774
+    AegisName: Offline_WG_774
+    Name: Purpulite
+    Type: Etc
+    Weight: 5
+  - Id: 775
+    AegisName: Offline_WG_775
+    Name: Silvolite
+    Type: Etc
+    Weight: 5
+  - Id: 776
+    AegisName: Offline_WG_776
+    Name: Everglow
+    Type: Etc
+    Weight: 10
+  - Id: 777
+    AegisName: Offline_WG_777
+    Name: Bergman Magique Permit
+    Type: Etc
+    Weight: 10
+  - Id: 778
+    AegisName: Offline_WG_778
+    Name: Bergman Physique Permit
+    Type: Etc
+    Weight: 10
+  - Id: 450356
+    AegisName: Abbys_L_H_Armor
+    Name: Abyss Lake Roaring Armor
+    Type: Armor
+    Weight: 1000
+    Defense: 50
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 130
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bAllStats,10;
+      bonus bMaxHPrate,15;
+      bonus bMaxSPrate,15;
+      bonus bAtk,10*(BaseLevel/10);
+      bonus bAtkRate,2*(.@r/2);
+      bonus bPow,.@r/3;
+      bonus bCon,.@r/3;
+      if (.@r>=9) { bonus bShortAtkRate,15; bonus bLongAtkRate,15; }
+      if (.@r>=11) { bonus2 bAddSize,Size_Medium,25; bonus2 bAddSize,Size_Large,25; }
+      if (.@r>=13) bonus bDelayrate,-15;
+  - Id: 450361
+    AegisName: Great_Gunner_US
+    Name: Great Gunner Armor
+    Type: Armor
+    Weight: 700
+    Defense: 100
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 1
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bLongAtkRate,15+5*getskilllv("GS_SNAKEEYE");
+      bonus bAspd,2;
+      bonus bDex,3*(.@r/3);
+      bonus bAgi,3*(.@r/3);
+      if (getskilllv("RL_FALLEN_ANGEL")>=1) { bonus bDex,15; bonus bAtk,75; }
+      if (.@r>=8) { bonus bPerfectHitRate,30; bonus bAspdRate,3; }
+      if (.@r>=9) { bonus2 bSkillAtk,"RL_FIREDANCE",40; bonus2 bSkillAtk,"RL_BANISHING_BUSTER",40; bonus2 bSkillAtk,"RL_S_STORM",40; }
+      if (.@r>=10) { bonus2 bSkillAtk,"RL_R_TRIP",40; bonus2 bSkillAtk,"RL_D_TAIL",40; }
+      if (.@r>=11) { bonus2 bHPDrainRate,30,3; bonus2 bSPDrainRate,20,2; }
+      if (.@r>=12) { skill "SN_SIGHT",10; bonus2 bSkillCooldown,"RL_R_TRIP",-500; bonus2 bIgnoreDefClassRate,Class_Normal,3*getskilllv("GS_SINGLEACTION"); }
+  - Id: 450442
+    AegisName: Saint_Knight_US
+    Name: Saint Knight Armor
+    Type: Armor
+    Weight: 3000
+    Defense: 300
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAtk,150;
+      bonus bMatk,150;
+      bonus2 bSubClass,Class_Normal,20;
+      bonus2 bSubClass,Class_Boss,20;
+      if (Class==JOB_ROYAL_GUARD || Class==JOB_ROYAL_GUARD_T || Class==JOB_ROYAL_GUARD2 || Class==JOB_ROYAL_GUARD_T2 || Class==JOB_BABY_ROYAL_GUARD || Class==JOB_BABY_ROYAL_GUARD2 || Class==JOB_IMPERIAL_GUARD || Class==JOB_IMPERIAL_GUARD2) skill "RK_HUNDREDSPEAR",10;
+      if (Class==JOB_RUNE_KNIGHT || Class==JOB_RUNE_KNIGHT_T || Class==JOB_RUNE_KNIGHT2 || Class==JOB_RUNE_KNIGHT_T2 || Class==JOB_BABY_RUNE_KNIGHT || Class==JOB_BABY_RUNE_KNIGHT2 || Class==JOB_DRAGON_KNIGHT || Class==JOB_DRAGON_KNIGHT2) skill "LG_RAYOFGENESIS",10;
+      if (.@r>=10) { bonus4 bAutoSpellOnSkill,"RK_HUNDREDSPEAR","SU_TUNABELLY",2,300; bonus4 bAutoSpellOnSkill,"LG_RAYOFGENESIS","SU_TUNABELLY",2,300; }
+      if (.@r>=11) { bonus2 bSkillAtk,"LG_RAYOFGENESIS",BaseLevel/2; bonus4 bAutoSpellOnSkill,"CR_HOLYCROSS","LG_RAYOFGENESIS",10,1000; }
+      if (.@r>=12) { bonus bAllStats,20; bonus bAtk,200; bonus bMatk,200; }
+      if (.@r>=13) { bonus2 bSkillAtk,"IG_CROSS_RAIN",BaseLevel/3; bonus2 bSkillAtk,"IG_JUDGEMENT_CROSS",BaseLevel/3; bonus2 bSkillAtk,"DK_HACKANDSLASHER",BaseLevel/3; bonus2 bSkillAtk,"DK_STORMSLASH",BaseLevel/3; }
+      if (.@r>=14) { bonus2 bAddSize,Size_All,10*(.@r/2); bonus2 bMagicAddSize,Size_All,10*(.@r/2); }
+      if (.@g>=ENCHANTGRADE_D) bonus bVariableCastrate,-15;
+      if (.@g>=ENCHANTGRADE_C) { bonus bPow,5; bonus bSpl,5; }
+      if (.@g>=ENCHANTGRADE_B) { bonus bSmatk,15; bonus bPatk,15; }
+      if (.@g>=ENCHANTGRADE_A) bonus bFixedCast,-1000;
+  - Id: 450444
+    AegisName: Dark_Acolyte_US
+    Name: Dark Apostate Armor
+    Type: Armor
+    Weight: 1000
+    Defense: 300
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAtk,150;
+      bonus bMatk,150;
+      bonus2 bSubClass,Class_Normal,20;
+      bonus2 bSubClass,Class_Boss,20;
+      if (BaseClass==JOB_ACOLYTE) { skill "ASC_METEORASSAULT",10; skill "WL_HELLINFERNO",5; }
+      if (.@r>=10) bonus4 bAutoSpellOnSkill,"ASC_METEORASSAULT","SU_TUNABELLY",2,500;
+      if (.@r>=11) { bonus bPow,5; bonus bSpl,5; bonus2 bSkillAtk,"ASC_METEORASSAULT",2*BaseLevel; bonus2 bSkillAtk,"WL_HELLINFERNO",2*BaseLevel; }
+      if (.@r>=12) { bonus bAllStats,20; bonus bAtk,200; bonus bMatk,200; }
+      if (.@r>=13) { bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",BaseLevel/2; bonus2 bSkillAtk,"CD_FRAMEN",BaseLevel/2; }
+      if (.@r>=14) { bonus2 bAddSize,Size_All,10*(.@r/2); bonus2 bMagicAddSize,Size_All,10*(.@r/2); }
+      if (.@g>=ENCHANTGRADE_D) bonus bVariableCastrate,-15;
+      if (.@g>=ENCHANTGRADE_C) { bonus bPow,5; bonus bSpl,5; }
+      if (.@g>=ENCHANTGRADE_B) { bonus bSmatk,15; bonus bPatk,15; }
+      if (.@g>=ENCHANTGRADE_A) bonus bFixedCast,-1000;
+  - Id: 500118
+    AegisName: Agni_Sword_US
+    Name: Agni Sword
+    Type: Weapon
+    SubType: 1hSword
+    Weight: 1000
+    Attack: 300
+    MagicAttack: 300
+    Slots: 2
+    Jobs:
+      Swordman: true
+      Knight: true
+      Crusader: true
+      Merchant: true
+      Blacksmith: true
+      Alchemist: true
+      Thief: true
+      Assassin: true
+      Rogue: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bAtkEle,Ele_Fire;
+      bonus bAspd,10;
+      skill "MG_FIREBOLT",10;
+      skill "SM_MAGNUM",10;
+      if (BaseLevel<=99) { bonus2 bSubRace,RC_DemiHuman,-70; bonus2 bSubRace,RC_Player_Human,-70; }
+      bonus2 bSkillAtk,"SM_MAGNUM",10*min(BaseLevel,250);
+      bonus2 bSkillAtk,"MG_FIREBOLT",10*min(BaseLevel,250);
+      bonus bPow,.@r;
+      bonus bSpl,.@r;
+      bonus2 bAddClass,Class_All,12*.@r;
+      bonus2 bMagicAddClass,Class_All,12*.@r;
+      if (.@r>=10) bonus bAllStats,10;
+      if (.@r>=11) { bonus bStr,25; bonus bInt,25; }
+      if (.@r>=12) bonus5 bRandomAutoSpell,"MG_FIREBOLT","SM_MAGNUM",10,500,BF_SHORT|BF_NORMAL;
+      if (.@r>=13) { bonus2 bAddClass,Class_All,25; bonus2 bMagicAddClass,Class_All,25; }
+      if (.@r>=14) { bonus2 bSkillAtk,"RK_IGNITIONBREAK",60; bonus2 bSkillAtk,"WL_CRIMSONROCK",60; }
+      if (.@r>=15) { skill "MG_ENERGYCOAT",1; bonus2 bAddClass,Class_All,40; bonus2 bMagicAddClass,Class_All,40; }
+      if (.@g>=ENCHANTGRADE_D) { bonus bPow,5; bonus bSpl,5; }
+      if (.@g>=ENCHANTGRADE_C) { bonus2 bIgnoreDefRaceRate,RC_All,30; bonus2 bIgnoreMdefRaceRate,RC_All,30; }
+      if (.@g>=ENCHANTGRADE_B) { bonus bPatk,10; bonus bSmatk,10; }
+      if (.@g>=ENCHANTGRADE_A) bonus bNoWalkDelay;
+  - Id: 500133
+    AegisName: Vlad_Impaler_US
+    Name: Vlad The Impaler
+    Type: Weapon
+    SubType: 1hSpear
+    Weight: 1500
+    Attack: 300
+    MagicAttack: 300
+    Slots: 2
+    Jobs:
+      Swordman: true
+      Knight: true
+      Crusader: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bDef,150;
+      bonus bMdef,50;
+      bonus bAspd,10;
+      bonus bDelayrate,-15;
+      bonus2 bHPLossRate,666,6000;
+      bonus bSpl,.@r;
+      bonus bPow,.@r;
+      bonus bAtk,10*.@r;
+      bonus bMatk,10*.@r;
+      bonus2 bAddSize,Size_All,10*.@r;
+      bonus2 bMagicAddSize,Size_All,10*.@r;
+      if (.@r>=10) { bonus bMaxHPrate,20; bonus bLongAtkRate,20; }
+      if (.@r>=11) { bonus bAllStats,20; bonus bAtk,200; bonus bMatk,200; }
+      if (.@r>=12) bonus bNoWalkDelay;
+      if (.@r>=13) { bonus2 bSkillAtk,"RK_HUNDREDSPEAR",70; bonus2 bSkillAtk,"LG_RAYOFGENESIS",70; }
+      if (.@r>=14) { bonus4 bAutoSpellOnSkill,"RK_HUNDREDSPEAR","LG_CANNONSPEAR",5,500; bonus4 bAutoSpellOnSkill,"LG_RAYOFGENESIS","RK_IGNITIONBREAK",5,500; }
+      if (.@g>=ENCHANTGRADE_D) { bonus bPow,5; bonus bSpl,5; }
+      if (.@g>=ENCHANTGRADE_C) bonus3 bAddEff,SC_COMA,30,ATF_SHORT|ATF_WEAPON;
+      if (.@g>=ENCHANTGRADE_B) { bonus2 bSkillAtk,"RK_HUNDREDSPEAR",70; bonus2 bSkillAtk,"LG_RAYOFGENESIS",70; }
+      if (.@g>=ENCHANTGRADE_A && .@r>=15) {
+         bonus2 bIgnoreDefRaceRate,RC_Formless,100;
+         bonus2 bIgnoreDefRaceRate,RC_Undead,100;
+         bonus2 bIgnoreDefRaceRate,RC_Brute,100;
+         bonus2 bIgnoreDefRaceRate,RC_Plant,100;
+         bonus2 bIgnoreDefRaceRate,RC_Insect,100;
+         bonus2 bIgnoreDefRaceRate,RC_Fish,100;
+         bonus2 bIgnoreDefRaceRate,RC_Demon,100;
+         bonus2 bIgnoreDefRaceRate,RC_DemiHuman,100;
+         bonus2 bIgnoreDefRaceRate,RC_Angel,100;
+         bonus2 bIgnoreDefRaceRate,RC_Dragon,100;
+      }
+  - Id: 540124
+    AegisName: Polluted_Follower_US
+    Name: Polluted Grimoire
+    Type: Weapon
+    SubType: Book
+    Weight: 1000
+    Attack: 250
+    MagicAttack: 250
+    Slots: 2
+    Jobs:
+      Sage: true
+      Priest: true
+      StarGladiator: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bAspd,10;
+      bonus bDelayrate,-10;
+      bonus2 bSubClass,Class_Normal,30;
+      bonus2 bSubClass,Class_Boss,30;
+      bonus2 bAddSize,Size_All,30+10*.@r;
+      bonus2 bMagicAddSize,Size_All,30+10*.@r;
+      bonus bSpl,3*(.@r/2);
+      bonus bMaxHPrate,3*(.@r/2)+4*(.@r/3);
+      bonus2 bSkillAtk,"SO_DIAMONDDUST",20*(.@r/2);
+      bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",20*(.@r/2);
+      bonus bPow,4*(.@r/3);
+      bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",30*(.@r/3);
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",30*(.@r/3);
+      if (.@r>=10) { bonus bSpl,6; bonus bPow,6; bonus bDelayrate,-10; }
+      if (.@r>=11) { bonus2 bSkillCooldown,"SO_DIAMONDDUST",-4000; bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-4000; bonus2 bSkillCooldown,"SKE_MIDNIGHT_KICK",-700; bonus2 bSkillCooldown,"SKE_NOON_BLAST",-700; }
+      if (.@r>=12) { bonus2 bAddSize,Size_All,20; bonus2 bMagicAddSize,Size_All,20; }
+      if (.@r>=13) { bonus bAllStats,25; bonus bAtk,250; bonus bMatk,250; }
+      if (.@r>=14) { bonus bAllTraitStats,15; bonus2 bMagicAtkEle,Ele_All,20; bonus2 bAddClass,Class_All,20; }
+      if (.@r>=15) { bonus2 bMagicAtkEle,Ele_All,30; bonus2 bAddClass,Class_All,30; bonus bNoWalkDelay; }
+      if (.@g>=ENCHANTGRADE_D) { bonus bAtk,100; bonus bMatk,100; }
+      if (.@g>=ENCHANTGRADE_C) { bonus bPow,6; bonus bSpl,6; }
+      if (.@g>=ENCHANTGRADE_B) bonus bFixedCast,-500;
+      if (.@g>=ENCHANTGRADE_A) bonus bVariableCastrate,-30;
+  - Id: 540126
+    AegisName: Time_Distortion_US
+    Name: Time Distortion
+    Type: Weapon
+    SubType: Book
+    Weight: 1000
+    Attack: 300
+    MagicAttack: 300
+    Slots: 2
+    Jobs:
+      Sage: true
+    Classes:
+      All_Third: true
+      Fourth: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bDelayrate,-10;
+      bonus2 bMagicAddSize,Size_All,30+12*.@r;
+      bonus2 bSkillAtk,"SO_DIAMONDDUST",25*(.@r/2);
+      bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",25*(.@r/2);
+      bonus2 bSkillAtk,"SO_EARTHGRAVE",25*(.@r/2);
+      if (.@r>=10) { bonus bDelayrate,-10; bonus bSpl,10; }
+      if (.@r>=11) { bonus bMatk,150; bonus2 bSkillCooldown,"SO_DIAMONDDUST",-5000; bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-3000; }
+      if (.@r>=12) { bonus2 bSkillAtk,"EM_CONFLAGRATION",30; bonus2 bSkillCooldown,"EM_CONFLAGRATION",-2000; }
+      if (.@r>=13) { bonus bAllStats,25; bonus bMatk,250; bonus bMaxHPrate,25; }
+      if (.@r>=14) { bonus bAllTraitStats,15; bonus2 bMagicAtkEle,Ele_All,30; }
+      if (.@g>=ENCHANTGRADE_D) bonus bMatk,150;
+      if (.@g>=ENCHANTGRADE_C) bonus bSmatk,15;
+      if (.@g>=ENCHANTGRADE_B) bonus bFixedCast,-300;
+      if (.@g>=ENCHANTGRADE_A) bonus2 bMagicAddSize,Size_All,40;
+  - Id: 550169
+    AegisName: Fenrir_Staff_US
+    Name: Fenrir Staff
+    Type: Weapon
+    SubType: Staff
+    Weight: 100
+    Attack: 100
+    MagicAttack: 300
+    Slots: 2
+    Jobs:
+      Mage: true
+      Wizard: true
+      Sage: true
+      Acolyte: true
+      Priest: true
+      Monk: true
+      SoulLinker: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus2 bSubClass,Class_Normal,20;
+      bonus2 bSubClass,Class_Boss,20;
+      bonus2 bMagicAddSize,Size_All,30+12*.@r;
+      bonus bAspdRate,3*.@r;
+      if (.@r>=11) { bonus bMaxHPrate,20; bonus bSpeedRate,25; }
+      if (.@r>=12) { bonus bAllStats,20; bonus bMatk,200; }
+      if (.@r>=13) { bonus2 bSkillAtk,"WL_COMET",70; bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",70; }
+      if (.@g>=ENCHANTGRADE_D) bonus2 bMagicAddRace,RC_All,15;
+      if (.@g>=ENCHANTGRADE_C) { bonus bSpl,7; bonus bCon,7; }
+      if (.@g>=ENCHANTGRADE_B) bonus bSmatk,20;
+      if (.@g>=ENCHANTGRADE_A) bonus2 bMagicAddSize,Size_All,20;
+  - Id: 560077
+    AegisName: Coatneis_Knuckle_US
+    Name: Courtenes Knuckle
+    Type: Weapon
+    SubType: Knuckle
+    Weight: 1000
+    Attack: 300
+    Slots: 2
+    Jobs:
+      Monk: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 100
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableWeapon;
+      bonus bAspd,10;
+      bonus bDelayrate,-10;
+      bonus2 bSubClass,Class_Normal,30;
+      bonus2 bSubClass,Class_Boss,30;
+      bonus2 bAddSize,Size_All,30+12*.@r;
+      bonus bPow,3*(.@r/2);
+      bonus bMaxHPrate,3*(.@r/2);
+      bonus2 bSkillAtk,"SR_EARTHSHAKER",20*(.@r/2);
+      bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",20*(.@r/2);
+      bonus2 bSkillAtk,"SR_GATEOFHELL",20*(.@r/2);
+      if (.@r>=10) { bonus bPow,15; bonus bDelayrate,-20; }
+      if (.@r>=11) { bonus2 bSkillCooldown,"SR_RAMPAGEBLASTER",-10000; bonus2 bSkillCooldown,"SR_EARTHSHAKER",-3000; }
+      if (.@r>=12) { bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",30; bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-1000; }
+      if (.@r>=13) { bonus bAllStats,25; bonus bAtk,250; bonus bMaxHPrate,25; }
+      if (.@r>=14) { bonus bLongAtkRate,30; bonus bAllTraitStats,13; }
+      if (.@r>=15) { bonus bLongAtkDef,40; bonus2 bSubEle,Ele_All,40; }
+      if (.@g>=ENCHANTGRADE_D) bonus bFixedCast,-300;
+      if (.@g>=ENCHANTGRADE_C) bonus bLongAtkRate,15;
+      if (.@g>=ENCHANTGRADE_B) { bonus2 bSkillAtk,"SR_EARTHSHAKER",50; bonus2 bSkillAtk,"SR_RAMPAGEBLASTER",50; bonus2 bSkillAtk,"SR_GATEOFHELL",50; }
+      if (.@g>=ENCHANTGRADE_A) { bonus bAllTraitStats,7; bonus bAllStats,7; }
+  - Id: 590109
+    AegisName: Divine_Mace_US
+    Name: Divine Mace
+    Type: Weapon
+    SubType: Mace
+    Weight: 1500
+    Attack: 300
+    MagicAttack: 300
+    Slots: 2
+    Jobs:
+      Swordman: true
+      Knight: true
+      Crusader: true
+      Merchant: true
+      Blacksmith: true
+      Alchemist: true
+      Acolyte: true
+      Priest: true
+      Monk: true
+    Locations:
+      Right_Hand: true
+    WeaponLevel: 5
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAspd,10;
+      skill "PA_PRESSURE",5;
+      if (BaseLevel<=99) { bonus2 bSubSize,Size_All,-100; bonus2 bMagicSubSize,Size_All,-100; bonus bMatk,-200; }
+      bonus2 bSkillAtk,"PA_PRESSURE",10*(BaseLevel/2);
+      bonus bWis,2*.@r;
+      bonus bSpl,2*.@r;
+      bonus2 bMagicAddClass,Class_All,12*.@r;
+      if (.@r>=10) { bonus2 bSkillAtk,"LG_RAYOFGENESIS",40; bonus2 bSkillAtk,"AB_ADORAMUS",40; }
+      if (.@r>=11) { bonus bInt,25; bonus bVit,25; }
+      if (.@r>=12) bonus2 bMagicAddSize,Size_All,25;
+      if (.@r>=13) skill "AB_RENOVATIO",4;
+      if (.@r>=14) { bonus2 bSkillAtk,"LG_RAYOFGENESIS",80; bonus2 bSkillAtk,"AB_ADORAMUS",80; }
+      if (.@r>=15) { skill "MG_ENERGYCOAT",1; bonus2 bMagicAddSize,Size_All,40; }
+      if (.@g>=ENCHANTGRADE_D) { bonus bWis,5; bonus bSpl,5; }
+      if (.@g>=ENCHANTGRADE_C) bonus bSmatk,15;
+      if (.@g>=ENCHANTGRADE_B) { bonus2 bVariableCastrate,"LG_RAYOFGENESIS",-100; bonus2 bVariableCastrate,"AB_ADORAMUS",-100; }
+      if (.@g>=ENCHANTGRADE_A) bonus2 bIgnoreMdefRaceRate,RC_All,70;

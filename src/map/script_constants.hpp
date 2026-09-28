@@ -718,6 +718,7 @@
 	export_constant2("bSplashRange",SP_SPLASH_RANGE);
 	export_constant2("bSplashAddRange",SP_SPLASH_ADD_RANGE);
 	export_constant2("bAutoSpell",SP_AUTOSPELL);
+	export_constant2("bRandomAutoSpell",SP_RANDOM_AUTOSPELL);
 	export_constant2("bHPDrainRate",SP_HP_DRAIN_RATE);
 	export_constant2("bSPDrainRate",SP_SP_DRAIN_RATE);
 	export_constant2("bShortWeaponDamageReturn",SP_SHORT_WEAPON_DAMAGE_RETURN);

@@ -10041,6 +10041,7 @@ BUILDIN_FUNC(bonus)
 
 	type = script_getnum(st,2);
 	switch( type ) {
+		case SP_RANDOM_AUTOSPELL:
 		case SP_AUTOSPELL:
 		case SP_AUTOSPELL_WHENHIT:
 		case SP_AUTOSPELL_ONSKILL:
@@ -10107,10 +10108,15 @@ BUILDIN_FUNC(bonus)
 			pc_bonus4(sd, type, val1, val2, val3, val4);
 			break;
 		case 5:
-			if( type == SP_AUTOSPELL_ONSKILL && script_isstring(st, 4) )
+			if( (type == SP_AUTOSPELL_ONSKILL || type == SP_RANDOM_AUTOSPELL) && script_isstring(st, 4) )
 				val2 = skill_name2id(script_getstr(st,4)); // 2nd value can be skill name
 			else
 				val2 = script_getnum(st,4);
+
+			if( type == SP_RANDOM_AUTOSPELL && !skill_get_index(val2) ) {
+				ShowError("buildin_bonus: Invalid alternate skill passed to random autospell. Skipping.\n");
+				return SCRIPT_CMD_FAILURE;
+			}
 
 			val3 = script_getnum(st,5);
 			val4 = script_getnum(st,6);

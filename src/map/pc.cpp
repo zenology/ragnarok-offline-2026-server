@@ -3123,7 +3123,7 @@ int32 pc_disguise(map_session_data *sd, int32 class_)
  *              &1: forces the skill to be casted on target, rather than self
  *              &2: random skill level in [1..lv] is chosen
  */
-static void pc_bonus_autospell(std::vector<s_autospell> &spell, uint16 id, uint16 lv, int16 rate, int16 battle_flag, t_itemid card_id, uint8 flag)
+static void pc_bonus_autospell(std::vector<s_autospell> &spell, uint16 id, uint16 lv, int16 rate, int16 battle_flag, t_itemid card_id, uint8 flag, uint16 alternate_id = 0)
 {
 	if (spell.size() == MAX_PC_BONUS) {
 		ShowWarning("pc_bonus_autospell: Reached max (%d) number of autospells per character!\n", MAX_PC_BONUS);
@@ -3145,7 +3145,7 @@ static void pc_bonus_autospell(std::vector<s_autospell> &spell, uint16 id, uint1
 	}
 
 	for (auto &it : spell) {
-		if ((it.card_id == card_id || it.rate < 0 || rate < 0) && it.id == id && it.lv == lv && it.battle_flag == battle_flag && it.flag == flag) {
+		if ((it.card_id == card_id || it.rate < 0 || rate < 0) && it.id == id && it.alternate_id == alternate_id && it.lv == lv && it.battle_flag == battle_flag && it.flag == flag) {
 			if (!battle_config.autospell_stacking && it.rate > 0 && rate > 0) // Stacking disabled
 				return;
 			it.rate = util::safe_addition_cap(it.rate, rate, (int16)1000);
@@ -3156,6 +3156,7 @@ static void pc_bonus_autospell(std::vector<s_autospell> &spell, uint16 id, uint1
 	struct s_autospell entry = {};
 
 	entry.id = id;
+	entry.alternate_id = alternate_id;
 	entry.lv = lv;
 	entry.rate = cap_value(rate, -1000, 1000);
 	entry.battle_flag = battle_flag;
@@ -5390,6 +5391,10 @@ void pc_bonus5(map_session_data *sd,int32 type,int32 type2,int32 type3,int32 typ
 	nullpo_retv(sd);
 
 	switch(type){
+	case SP_RANDOM_AUTOSPELL: // bonus5 bRandomAutoSpell,skill1,skill2,level,rate,battle_flag;
+		if (sd->state.lr_flag != LR_FLAG_ARROW)
+			pc_bonus_autospell(sd->autospell, type2, type4, type5, val, current_equip_card_id, 0, type3);
+		break;
 	case SP_AUTOSPELL: // bonus5 bAutoSpell,sk,y,n,bf,i;
 		if (sd->state.lr_flag != LR_FLAG_ARROW)
 			pc_bonus_autospell(sd->autospell, type2, type3, type4, type5, current_equip_card_id, val & AUTOSPELL_FORCE_ALL);

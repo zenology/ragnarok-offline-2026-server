@@ -390,6 +390,7 @@ bonus3 bAutoSpellWhenHit,sk,y,n;	Adds a n/10% chance to cast skill sk of level y
 
 bonus4 bAutoSpell,sk,y,n,i;          	Adds a n/10% chance to cast skill sk of level y when attacking
 bonus5 bAutoSpell,sk,y,n,bf,i;       	Adds a n/10% chance to cast skill sk of level y when attacking with trigger criteria bf
+bonus5 bRandomAutoSpell,sk1,sk2,y,n,bf; Adds a n/10% chance to cast exactly one of sk1 or sk2 at level y when attacking with trigger criteria bf; each skill has equal selection chance
 bonus4 bAutoSpellWhenHit,sk,y,n,i;   	Adds a n/10% chance to cast skill sk of level y when being hit by a direct attack
 bonus5 bAutoSpellWhenHit,sk,y,n,bf,i;	Adds a n/10% chance to cast skill sk of level y when being hit by a direct attack with trigger criteria bf
                                         i provides additional options (bitfield):

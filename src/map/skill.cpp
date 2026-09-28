@@ -1506,7 +1506,7 @@ int32 skill_additional_effect( block_list* src, block_list *bl, uint16 skill_id,
 			int32 skill = it.id;
 
 			sd->state.autocast = 1;
-			if ( skill_isNotOk(skill, *sd) ) {
+			if ( !it.alternate_id && skill_isNotOk(skill, *sd) ) {
 				sd->state.autocast = 0;
 				continue;
 			}
@@ -1522,7 +1522,22 @@ int32 skill_additional_effect( block_list* src, block_list *bl, uint16 skill_id,
 			if (rnd()%1000 >= rate)
 				continue;
 
+			if (it.alternate_id) {
+				skill = rnd() % 2 ? it.id : it.alternate_id;
+				sd->state.autocast = 1;
+				if (skill_isNotOk(skill, *sd)) {
+					sd->state.autocast = 0;
+					continue;
+				}
+				sd->state.autocast = 0;
+			}
+
 			block_list *tbl = (it.flag & AUTOSPELL_FORCE_TARGET) ? bl : src;
+			if (it.alternate_id) {
+				int32 inf = skill_get_inf(skill);
+				bool self = (inf & INF_SUPPORT_SKILL) || ((inf & INF_SELF_SKILL) && !skill_get_inf2(skill, INF2_NOTARGETSELF));
+				tbl = self ? src : bl;
+			}
 			e_cast_type type = skill_get_casttype(skill);
 
 			if (type == CAST_GROUND) {
