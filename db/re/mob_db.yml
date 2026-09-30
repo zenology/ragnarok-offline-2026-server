@@ -116006,9 +116006,9 @@ Body:
         Rate: 1
         StealProtected: true
     MvpDrops:
-      - Item: RoyalguardStone_Top3 # 1000616
+      - Item: Old_Card_Album # 616
         Rate: 4000
-      - Item: Ep19_Letter # 1000607
+      - Item: Yggdrasilberry # 607
         Rate: 4000
       - Item: Snow_F_Stone3 # 1000814
         Rate: 2000
@@ -118439,8 +118439,6 @@ Body:
         Rate: 2400
       - Item: Bill_Of_Birds # 925
         Rate: 2500
-      - Item: Piece_Of_Egg_Shell # 7032
-        Rate: 2500
       - Item: Copo_Card # 300455
         Rate: 1
         StealProtected: true
@@ -118905,7 +118903,7 @@ Body:
       - Item: Ep20_Iwin_Priva_Co_C # 1001241
         Rate: 1500
       - Item: Round_Feather # 6393
-        Rate: 2500
+        Rate: 2400
       - Item: Ep19_Rgan_Core_F # 1000707
         Rate: 700
       - Item: Fake_Iwin_S_Card # 300461
@@ -119053,7 +119051,7 @@ Body:
     MvpDrops:
       - Item: Bs_Making_S # 23817
         Rate: 4000
-      - Item: Payroll_Of_Kafra_ # 12249
+      - Item: Magic_Card_Album # 12246
         Rate: 4000
       - Item: Snow_F_Stone3 # 1000814
         Rate: 2000
