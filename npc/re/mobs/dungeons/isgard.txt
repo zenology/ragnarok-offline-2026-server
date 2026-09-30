@@ -1,0 +1,53 @@
+// Isgard and Jormungandr dungeon maps.
+
+jor_dun01,0,0,0,0	monster	--ja--	21526,110,5000,0
+jor_dun01,0,0,0,0	monster	--ja--	21527,60,5000,0
+jor_dun01,0,0,0,0	monster	--ja--	21599,10,5000,0
+jor_dun01,0,0,0,0	monster	--ja--	21528,20,5000,0
+
+jor_dun02,0,0,0,0	monster	--ja--	21527,90,5000,0
+jor_dun02,0,0,0,0	monster	--ja--	21599,10,5000,0
+jor_dun02,0,0,0,0	monster	--ja--	21528,80,5000,0
+jor_dun02,0,0,0,0	monster	--ja--	21529,20,5000,0
+
+jor_ab01,0,0,0,0	monster	--ja--	21540,70,5000,0
+jor_ab01,0,0,0,0	monster	--ja--	21541,60,5000,0
+jor_ab01,0,0,0,0	monster	--ja--	21538,70,5000,0
+jor_ab01,0,0,0,0	monster	--ja--	21600,10,5000,0
+jor_ab01,0,0,0,0	monster	--ja--	21543,60,5000,0
+
+jor_ab02,0,0,0,0	monster	--ja--	21544,60,5000,0
+jor_ab02,0,0,0,0	monster	--ja--	21601,10,5000,0
+jor_ab02,0,0,0,0	monster	--ja--	21542,70,5000,0
+jor_ab02,0,0,0,0	monster	--ja--	21539,70,5000,0
+jor_ab02,0,0,0,0	monster	--ja--	21545,60,5000,0
+
+jor_maze,0,0,0,0	monster	--ja--	21972,35,5000,0
+jor_maze,0,0,0,0	monster	--ja--	21973,35,5000,0
+jor_maze,0,0,0,0	monster	--ja--	21989,30,5000,0
+
+jor_root1,0,0,0,0	monster	--ja--	21972,20,5000,0
+jor_root1,0,0,0,0	monster	--ja--	21973,10,5000,0
+jor_root1,0,0,0,0	monster	--ja--	21989,20,5000,0
+jor_root1,0,0,0,0	monster	--ja--	21986,70,5000,0
+jor_root1,0,0,0,0	monster	--ja--	21985,80,5000,0
+
+jor_root2,0,0,0,0	monster	--ja--	21972,5,5000,0
+jor_root2,0,0,0,0	monster	--ja--	21973,15,5000,0
+jor_root2,0,0,0,0	monster	--ja--	21989,60,5000,0
+jor_root2,0,0,0,0	monster	--ja--	21987,40,5000,0
+jor_root2,0,0,0,0	monster	--ja--	21988,30,5000,0
+
+jor_root3,0,0,0,0	monster	--ja--	21971,30,5000,0
+jor_root3,0,0,0,0	monster	--ja--	21990,130,5000,0
+jor_root3,0,0,0,0	monster	--ja--	21970,110,5000,0
+jor_root3,0,0,0,0	boss_monster	--ja--	21980,1,21600000,0
+
+jor_twice,0,0,0,0	monster	--ja--	21969,60,5000,0
+jor_twice,0,0,0,0	monster	--ja--	21983,60,5000,0
+jor_twice,0,0,0,0	monster	--ja--	21972,20,5000,0
+jor_twice,0,0,0,0	monster	--ja--	21973,20,5000,0
+jor_twice,0,0,0,0	monster	--ja--	21987,40,5000,0
+
+jor_twig,0,0,0,0	monster	--ja--	21997,20,5000,0
+jor_twig,0,0,0,0	monster	--ja--	21998,20,5000,0
