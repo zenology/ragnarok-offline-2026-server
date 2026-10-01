@@ -1,0 +1,63 @@
+//===== Ragnarok Offline =====================================
+//= Isgard Airship Access
+//============================================================
+
+ba_in01,30,264,3	script	Navigator Ginger#isg1	4_EP17_TABLET,{
+	if (ep18_main < 57) {
+		mes "[Navigator Ginger]";
+		mes "The airship's route to Frozen Tail will be available after you complete Direction of Prayer.";
+		close;
+	}
+	mes "[Navigator Ginger]";
+	mes "The airship is ready to travel to Frozen Tail.";
+	next;
+	mes "[Navigator Ginger]";
+	mes "Would you like to board?";
+	if (select("Board the airship:Not now.") == 2)
+		close;
+	close2;
+	warp "air_if",53,71;
+	end;
+}
+
+air_if,46,71,3	script	Navigator Ginger#isg2	4_EP17_TABLET,{
+	mes "[Navigator Ginger]";
+	mes "Where would you like to go?";
+	if (ep18_main >= 57) {
+		switch (select("Frozen Tail (Isgard):Varmundt's Mansion:Stay aboard.")) {
+		case 1:
+			if (ep18_main < 57) {
+				mes "[Navigator Ginger]";
+				mes "You must complete Direction of Prayer before traveling to Frozen Tail.";
+				close;
+			}
+			close2;
+			warp "jor_tail",219,53;
+			end;
+		case 2:
+			close2;
+			warp "ba_in01",30,262;
+			end;
+		default:
+			close;
+		}
+	}
+	switch (select("Varmundt's Mansion:Stay aboard.")) {
+	case 1:
+		close2;
+		warp "ba_in01",30,262;
+		end;
+	default:
+		close;
+	}
+}
+
+jor_tail,216,51,3	script	Navigator Ginger#isg3	4_EP17_TABLET,{
+	mes "[Navigator Ginger]";
+	mes "Would you like to return to Varmundt's Mansion by airship?";
+	if (select("Board the airship:Stay here.") == 2)
+		close;
+	close2;
+	warp "air_if",53,71;
+	end;
+}
