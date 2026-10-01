@@ -10,6 +10,7 @@
  **/
 
 #define PACKETVER 20250716
+#define ENABLE_OLD_CASHSHOP_PREVIEW_PATCH
 
 /// Timed Premium Buff / iRO Premium Subscription. VIP_SCRIPT stays 0 in core.hpp.
 #define VIP_ENABLE

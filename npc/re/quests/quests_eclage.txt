@@ -48,6 +48,11 @@
 		setarray .@cost[0],20;
 		break;
 	}
+	if (ep18_main >= 57) {
+		.@isgard_index = getarraysize(.@map$);
+		.@map$[.@isgard_index] = "Frozen Tail (Isgard)";
+		.@cost[.@isgard_index] = 55;
+	}
 	mes "[Teleport Cat]";
 	mes "What a nice day, isn't it!";
 	mes "Welcome to Cat Merchant Group. We do anything to please our customers. We would even lie on our back if you want!";
@@ -69,6 +74,11 @@
 	}
 	.@choice$ = .@map$[.@i/2];
 	.@price = .@cost[.@i/2];
+	if (.@choice$ == "Frozen Tail (Isgard)" && ep18_main < 57) {
+		mes "[Teleport Cat]";
+		mes "You must complete Direction of Prayer before traveling to Frozen Tail.";
+		close;
+	}
 	if (.@i % 2) {
 		.@price = .@price*1000;
 		if (Zeny < .@price) {
@@ -91,6 +101,7 @@
 	else if (.@choice$ == "Near El Dicastes") warp "dic_fild01",159,264;
 	else if (.@choice$ == "Entrance to Mora") warp "bif_fild02",291,323;
 	else if (.@choice$ == "Near Eclage") warp "ecl_fild01",116,309;
+	else if (.@choice$ == "Frozen Tail (Isgard)") warp "jor_tail",219,53;
 	end;
 }
 ecl_fild01,118,311,4	duplicate(Teleport Cat#ep14_2)	Teleport Cat No.1	4_M_BOSSCAT
