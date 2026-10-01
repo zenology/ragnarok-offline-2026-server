@@ -424,6 +424,7 @@ yuno_fild12	mapflag	privateairship_source
 // Client StartableMap entries absent from the source-flag list.
 gw_fild01	mapflag	privateairship_source
 gw_fild02	mapflag	privateairship_source
+wolfvill	mapflag	privateairship_source
 icecastle	mapflag	privateairship_source
 jor_back1	mapflag	privateairship_source
 jor_back2	mapflag	privateairship_source
@@ -603,6 +604,7 @@ gon_fild01	mapflag	privateairship_destination
 gonryun	mapflag	privateairship_destination
 gw_fild01	mapflag	privateairship_destination
 gw_fild02	mapflag	privateairship_destination
+wolfvill	mapflag	privateairship_destination
 hu_fild01	mapflag	privateairship_destination
 hu_fild02	mapflag	privateairship_destination
 hu_fild04	mapflag	privateairship_destination
