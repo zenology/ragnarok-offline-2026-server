@@ -8,4 +8,4 @@
  *	ACMD_DEF(command_name),
  **/
 
-//ACMD_DEF(newcommand),
+ACMD_DEF(ap),
