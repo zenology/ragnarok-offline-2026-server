@@ -48,11 +48,9 @@
 		setarray .@cost[0],20;
 		break;
 	}
-	if (ep18_main >= 57) {
-		.@isgard_index = getarraysize(.@map$);
-		.@map$[.@isgard_index] = "Frozen Tail (Isgard)";
-		.@cost[.@isgard_index] = 55;
-	}
+	.@isgard_index = getarraysize(.@map$);
+	.@map$[.@isgard_index] = "Frozen Tail (Isgard)";
+	.@cost[.@isgard_index] = 55;
 	mes "[Teleport Cat]";
 	mes "What a nice day, isn't it!";
 	mes "Welcome to Cat Merchant Group. We do anything to please our customers. We would even lie on our back if you want!";
