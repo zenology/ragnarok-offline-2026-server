@@ -12,9 +12,9 @@ const navigation = [
   { label: 'Home', to: '/' },
   { label: 'Black Market', to: '/black-market' },
   { label: 'Costumes', to: '/costumes' },
-  { label: 'Eden Leveling', to: '/eden-leveling' },
   { label: 'Enchantment', to: '/enchantment' },
-  { label: 'Job Changes', to: '/job-changes' }
+  { label: 'Job Changes', to: '/job-changes' },
+  { label: 'Private Airship', to: '/private-airship' }
 ] as const
 
 export function SiteShell({ children }: SiteShellProps): ReactNode {

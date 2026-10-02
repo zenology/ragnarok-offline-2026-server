@@ -97,7 +97,7 @@ Body:
     Name: Support
     Inherit:
       Super Player: true
-    Level: 1
+    Level: 10
     Commands:
       version: true
       where: true
@@ -119,7 +119,7 @@ Body:
     Name: Script Manager
     Inherit:
       Support: true
-    Level: 1
+    Level: 60
     Commands:
       tonpc: true
       hidenpc: true
@@ -135,7 +135,7 @@ Body:
     Name: Event Manager
     Inherit:
       Support: true
-    Level: 1
+    Level: 10
     Commands:
       monster: true
       monstersmall: true
@@ -182,11 +182,19 @@ Body:
     Commands:
       rates: true
       who: true
+  - Id: 6
+    Name: Super VIP
+    Inherit:
+      Player: true
+    Level: 1
+    LogCommands: true
+    Permissions:
+      all_commands: true
   - Id: 10
     Name: Law Enforcement
     Inherit:
       Support: true
-    Level: 2
+    Level: 70
     Commands:
       hide: true
       follow: true

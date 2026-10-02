@@ -53,6 +53,7 @@
 #include "pc_groups.hpp"
 #include "pet.hpp"
 #include "quest.hpp"
+#include "../custom/private_airship_gate.hpp"
 #include "script.hpp"
 #include "skill.hpp"
 #include "status.hpp"
@@ -22155,6 +22156,17 @@ void clif_parse_private_airship_request( int32 fd, map_session_data* sd ){
 
 	// Check if the player is allowed to warp to the target map
 	if( !map_getmapflag( mapid, MF_PRIVATEAIRSHIP_DESTINATION ) ){
+		clif_private_airship_response( sd, PRIVATEAIRSHIP_DESTINATION_MAP_INVALID );
+		return;
+	}
+
+	if( pc_get_group_level( sd ) > 50 ){
+		pc_setpos( sd, mapindex, 0, 0, CLR_TELEPORT );
+		return;
+	}
+
+	const char* airship_map_name = mapindex_id2name( mapindex );
+	if( airship_map_name == nullptr || !private_airship_ordinary_destination_allowed( sd, airship_map_name ) ){
 		clif_private_airship_response( sd, PRIVATEAIRSHIP_DESTINATION_MAP_INVALID );
 		return;
 	}
