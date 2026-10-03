@@ -96,48 +96,48 @@ OnInit:
 
 prt_in,55,68,4	script	Pip#rooke_delivery	4_M_KID1,{
 	if (BM_Visited != 1) {
-		mes "[Pip]";
-		mes "Hello! I'm the shopkeeper's son. I'm just helping out around the shop.";
+		mes "[" + strnpcinfo(1) + "]";
+		mes callsub(S_CourierLine, 0);
 		close;
 	}
 
 	.@eac = eaclass();
 	if ((.@eac & EAJ_BASEMASK) == EAJ_SUMMONER) {
-		mes "[Pip]";
-		mes "A talking cat? Rooke never mentioned that on the delivery slip.";
+		mes "[" + strnpcinfo(1) + "]";
+		mes callsub(S_CourierLine, 1);
 		next;
 	} else if (.@eac & EAJL_BABY) {
-		mes "[Pip]";
-		mes "You're my size... but I think I'll let you carry the heavy crate.";
+		mes "[" + strnpcinfo(1) + "]";
+		mes callsub(S_CourierLine, 2);
 		next;
 	} else if (.@eac & EAJL_UPPER) {
-		mes "[Pip]";
-		mes "You look like you've made this trip before.";
+		mes "[" + strnpcinfo(1) + "]";
+		mes callsub(S_CourierLine, 3);
 		next;
 	} else if (!(.@eac & EAJL_2)) {
-		mes "[Pip]";
-		mes "Starting small? I've got stones for that.";
+		mes "[" + strnpcinfo(1) + "]";
+		mes callsub(S_CourierLine, 4);
 		next;
 	}
-	mes "[Pip]";
-	mes "Hi! Good to see you again. I've got some of the upgrade supplies Rooke sells.";
+	mes "[" + strnpcinfo(1) + "]";
+	mes callsub(S_CourierLine, 5);
 	next;
-	mes "[Pip]";
-	mes "Want to take a look?";
+	mes "[" + strnpcinfo(1) + "]";
+	mes callsub(S_CourierLine, 6);
 	next;
 	if (select("Upgrade:Not now.") == 2)
 		close;
 	if (BM_Visited != 1) {
 		clear;
-		mes "[Pip]";
-		mes "Hello! I'm the shopkeeper's son. I'm just helping out around the shop.";
+		mes "[" + strnpcinfo(1) + "]";
+		mes callsub(S_CourierLine, 0);
 		close;
 	}
 	.@tier = callsub(S_GetTier);
 	if (!getvariableofnpc(.CourierHas[.@tier], "cons_seller_db")) {
 		clear;
-		mes "[Pip]";
-		mes "The crate's empty. I'll check with Rooke.";
+		mes "[" + strnpcinfo(1) + "]";
+		mes callsub(S_CourierLine, 7);
 		close;
 	}
 	close2;
@@ -154,10 +154,93 @@ S_GetTier:
 		return .@rebirth ? 2 : 0;
 	return .@rebirth ? 3 : 1;
 
+S_CourierLine:
+	// Intro, Doram, Baby, reborn, beginner, memory, offer, empty crate.
+	.@courier$ = strnpcinfo(2);
+	if (.@courier$ == "rooke_moc") {
+		setarray .@lines$[0],
+			"Toby. Mind the dust. It gets into everything except my pockets.",
+			"Talking cat. Fine. Just keep your tail away from the furnace.",
+			"You're small, but the air feels heavy around you. I'll stand over here.",
+			"Fresh boots, old footsteps. You've walked this road before.",
+			"Don't chase the biggest hammer yet. Start with what you can carry.",
+			"Rooke found me sleeping beside a cold furnace. I've had a bed ever since.",
+			"His upgrade stones are in this crate. Need some?",
+			"Nothing left. I'll ask Rooke to send another crate.";
+	} else if (.@courier$ == "rooke_pay") {
+		setarray .@lines$[0],
+			"Oh... hello. I'm Mira. Please don't trip over the little basket.",
+			"You can talk? I nearly offered you a saucer. Sorry...",
+			"You look little, but... I think the forest would go quiet for you.",
+			"You seem familiar. Maybe it's the way you hold yourself.",
+			"Everyone starts somewhere. Please be careful with your first weapon.",
+			"Rooke kept a lamp on for me when I had no home to go back to.",
+			"I brought his upgrade supplies. Would you like to see them?",
+			"Oh... the basket is empty. I'll leave Rooke a note.";
+	} else if (.@courier$ == "rooke_alb") {
+		setarray .@lines$[0],
+			"Nell, fastest parcel runner on this dock! Unless there's a snack stall.",
+			"A talking cat! Can you shout at gulls for me? They stole my lunch.",
+			"We're the same height! Why do I feel like I should hide behind the crate?",
+			"You have that been-everywhere look. Any good dock stories?",
+			"First proper weapon? Don't drop it in the sea. I've tried fishing one out.",
+			"I didn't have a home then. Rooke carried me in and said I could make noise.",
+			"Want his upgrade supplies? I even kept the crate dry!",
+			"All gone! I'll catch Rooke before the next shipment.";
+	} else if (.@courier$ == "rooke_yuno") {
+		setarray .@lines$[0],
+			"I'm Ada. These labels are in order. Please help me keep them that way.",
+			"A speaking cat. I need a new column in my delivery book.",
+			"Small stature, considerable power. I'll amend my first impression.",
+			"Your equipment looks new. Your handling of it suggests otherwise.",
+			"Start with the basics. A sound foundation saves expensive mistakes.",
+			"My first address was Rooke's. I had no family name to write above it.",
+			"His upgrade supplies are catalogued here. Shall I open the crate?",
+			"No stock in this crate. I'll send Rooke an exact list.";
+	} else if (.@courier$ == "rooke_ein") {
+		setarray .@lines$[0],
+			"Finn. Give me a second to wipe the soot off. There. Ready!",
+			"A talking cat in the workshop! Stay clear of the sparks, all right?",
+			"You look like me, but you feel stronger than the whole hammer rack.",
+			"You handle that gear like an old hand. No need for my beginner advice.",
+			"New to the forge? Keep a firm grip and listen to the smith.",
+			"Rooke taught me to count nails when I was small. Back then, he was all I had.",
+			"I've checked his upgrade supplies twice. Want to inspect them?",
+			"Crate's empty. I'll tell Rooke before the forge shift ends.";
+	} else if (.@courier$ == "rooke_lhz") {
+		setarray .@lines$[0],
+			"Lio, at your service. Mind the crate. I've just polished the latch.",
+			"A talking cat. Of course. I'll pretend I wasn't about to say 'pspsps'.",
+			"You look young. I'll take that dangerous feeling as my cue to be polite.",
+			"A fresh appearance, an experienced eye. Welcome back to the trade.",
+			"A modest weapon can still deserve excellent care. Shall we start there?",
+			"Nobody came to claim me. Rooke did, without asking for a family name.",
+			"I keep his upgrade supplies neatly packed. May I show you?",
+			"I'm afraid the crate is empty. Rooke will hear about it promptly.";
+	} else {
+		setarray .@lines$[0],
+			"Hi! I'm Pip. I help with deliveries. This one's nearly as big as me!",
+			"A talking cat? Rooke left that bit off the delivery slip!",
+			"You're my size... but I think I'll let you carry the heavy crate.",
+			"You look like you've made this trip before. Did you ever get lost?",
+			"Starting small? Me too. Rooke says that still counts as starting.",
+			"Rooke gave me my first house key. Before that, I waited outside other people's doors.",
+			"I've got his upgrade supplies right here! Want to take a look?",
+			"The crate's empty. I'll check with Rooke. I know where he keeps the spare key.";
+	}
+	return .@lines$[getarg(0)];
+
 OnInit:
 	setunittitle(getnpcid(0), "<Rooke's Courier>");
 	end;
 }
+
+morocc_in,75,38,4	duplicate(Pip#rooke_delivery)	Toby#rooke_moc	4_M_DST_CHILD
+payon,141,173,4	duplicate(Pip#rooke_delivery)	Mira#rooke_pay	4_F_CHILD
+alberta_in,31,58,4	duplicate(Pip#rooke_delivery)	Nell#rooke_alb	4W_KID
+yuno_in01,168,21,4	duplicate(Pip#rooke_delivery)	Ada#rooke_yuno	4_F_KID2
+ein_in01,21,87,4	duplicate(Pip#rooke_delivery)	Finn#rooke_ein	4_M_KID2
+lhz_in02,285,20,4	duplicate(Pip#rooke_delivery)	Lio#rooke_lhz	4_M_RUSCHILD
 
 // Nine categories x six progression tiers. They are populated by cons_seller_db.
 -	pointshop	cons0#T0	-1,BlackMarketPoints,501:2
