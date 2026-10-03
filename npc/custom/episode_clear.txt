@@ -1,0 +1,167 @@
+//===== Ragnarok Offline =====================================
+//= Episode Clear Ticket consumer (Bright)
+//===== Description: =========================================
+//= Consumes official EpisodClear13-18 tickets at prt_cas 373,77.
+//= Sets main-story character variables only. No quest log changes.
+//============================================================
+
+prt_cas,373,77,4	script	Bright#epclear	4_F_VALKYRIE,{
+	mes "[Bright]";
+	mes "These tickets close a finished episode. They do not pay the rewards.";
+	next;
+	mes "[Bright]";
+	mes "Bring the matching ticket. I will take one.";
+	next;
+	switch (select("Episode 13:Episode 14:Episode 15:Episode 16:Episode 17:Episode 18:Cancel.")) {
+	case 1:
+		callsub S_Clear, 1000284, "Episode 13";
+		end;
+	case 2:
+		callsub S_Clear, 1000285, "Episode 14";
+		end;
+	case 3:
+		callsub S_Clear, 1000286, "Episode 15";
+		end;
+	case 4:
+		callsub S_Clear, 1000282, "Episode 16";
+		end;
+	case 5:
+		callsub S_Clear, 1000287, "Episode 17";
+		end;
+	case 6:
+		callsub S_Clear, 1000288, "Episode 18";
+		end;
+	case 7:
+		mes "[Bright]";
+		mes "Come back with a ticket.";
+		close;
+	}
+	end;
+
+S_Clear:
+	if (countitem(getarg(0)) < 1) {
+		mes "[Bright]";
+		mes "You do not have the " + getarg(1) + " Clear Ticket.";
+		close;
+	}
+	switch (getarg(0)) {
+	case 1000284:
+		.@raised = callsub(S_Raise13);
+		break;
+	case 1000285:
+		.@raised = callsub(S_Raise14);
+		break;
+	case 1000286:
+		.@raised = callsub(S_Raise15);
+		break;
+	case 1000282:
+		.@raised = callsub(S_Raise16);
+		break;
+	case 1000287:
+		.@raised = callsub(S_Raise17);
+		break;
+	case 1000288:
+		.@raised = callsub(S_Raise18);
+		break;
+	default:
+		.@raised = 0;
+		break;
+	}
+	if (.@raised < 1) {
+		mes "[Bright]";
+		mes "That episode is already closed.";
+		close;
+	}
+	delitem getarg(0), 1;
+	mes "[Bright]";
+	mes getarg(1) + " is closed. The other quests there are still yours.";
+	close;
+
+S_Raise13:
+	.@n = 0;
+	if (ep13_ryu < 100) {
+		ep13_ryu = 100;
+		.@n++;
+	}
+	if (ep13_newbs < 100) {
+		ep13_newbs = 100;
+		.@n++;
+	}
+	if (ep13_1_rhea < 100) {
+		ep13_1_rhea = 100;
+		.@n++;
+	}
+	if (mao_morocc2 < 100) {
+		mao_morocc2 = 100;
+		.@n++;
+	}
+	if (ep13_mdrama < 28) {
+		ep13_mdrama = 28;
+		.@n++;
+	}
+	return .@n;
+
+S_Raise14:
+	.@n = 0;
+	if (ep14_2_oliver < 30) {
+		ep14_2_oliver = 30;
+		.@n++;
+	}
+	if (ep14_3_newerabs < 24) {
+		ep14_3_newerabs = 24;
+		.@n++;
+	}
+	return .@n;
+
+S_Raise15:
+	.@n = 0;
+	if (ep15_1_atnad < 34) {
+		ep15_1_atnad = 34;
+		.@n++;
+	}
+	if (ep15_1_elb < 15) {
+		ep15_1_elb = 15;
+		.@n++;
+	}
+	if (ep15_2_bslast < 9) {
+		ep15_2_bslast = 9;
+		.@n++;
+	}
+	if (ep15_2_bsmemo < 18) {
+		ep15_2_bsmemo = 18;
+		.@n++;
+	}
+	return .@n;
+
+S_Raise16:
+	.@n = 0;
+	if (ep16_royal < 24) {
+		ep16_royal = 24;
+		.@n++;
+	}
+	if (terra_gloria_main < 25) {
+		terra_gloria_main = 25;
+		.@n++;
+	}
+	return .@n;
+
+S_Raise17:
+	.@n = 0;
+	if (terra_gloria_main < 26) {
+		terra_gloria_main = 26;
+		.@n++;
+	}
+	if (ep17_2_main < 36) {
+		ep17_2_main = 36;
+		.@n++;
+	}
+	return .@n;
+
+S_Raise18:
+	.@n = 0;
+	if (ep18_main < 57) {
+		ep18_main = 57;
+		.@n++;
+	}
+	return .@n;
+}
