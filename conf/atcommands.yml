@@ -100,6 +100,10 @@ Body:
       - skillsall
     Help: |
       Give you all skills.
+  - Command: ap
+    Help: |
+      Params: [<AP>]
+      Heals the desired amount of AP. No value or 0 does a full AP heal. A negative value subtracts AP. The result stays within the AP bar, which caps at 200. Only classes that can use AP may use this command.
   - Command: auction
     Help: |
       Opens the auction window.

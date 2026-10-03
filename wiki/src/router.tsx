@@ -6,10 +6,10 @@ import { SiteShell } from '@/components/templates'
 import BlackMarketPage from '@/pages/black-market'
 import CardEaterPage from '@/pages/card-eater/index'
 import CostumePage from '@/pages/costumes'
-import EdenLevelingPage from '@/pages/eden-leveling'
 import EnchantmentPage from '@/pages/enchantment'
 import JobChangesPage from '@/pages/job-changes'
 import LandingPage from '@/pages/landing'
+import PrivateAirshipPage from '@/pages/private-airship'
 
 declare module '@tanstack/react-router' {
   interface Register {
@@ -58,12 +58,6 @@ const costumesRoute = createRoute({
   component: CostumePage
 })
 
-const edenLevelingRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/eden-leveling',
-  component: EdenLevelingPage
-})
-
 const enchantmentRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/enchantment',
@@ -82,14 +76,20 @@ const jobChangesRoute = createRoute({
   component: JobChangesPage
 })
 
+const privateAirshipRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/private-airship',
+  component: PrivateAirshipPage
+})
+
 const routeTree = rootRoute.addChildren([
   landingRoute,
   blackMarketRoute,
   costumesRoute,
-  edenLevelingRoute,
   enchantmentRoute,
   cardEaterRoute,
-  jobChangesRoute
+  jobChangesRoute,
+  privateAirshipRoute
 ])
 
 export const router = createRouter({ routeTree })

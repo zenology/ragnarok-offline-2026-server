@@ -37,10 +37,11 @@ const guides = [
     description: 'Find the NPC, guild, or fallback Job Master for every supported job path.'
   },
   {
-    to: '/eden-leveling',
+    to: '/private-airship',
     number: '05',
-    title: 'Eden Leveling',
-    description: 'Eden Group mission boards from level 1 through 140+ and where to turn in.'
+    title: 'Private Airship',
+    description:
+      'Unlike the original game, MOVE checks the destination’s original entrance requirements before it takes your ticket.'
   }
 ] as const
 
