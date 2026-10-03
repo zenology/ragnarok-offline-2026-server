@@ -410,6 +410,7 @@ S_BlackMarket:
 	close2;
 	cutin "",255;
 	warp "paramk",11,171;
+	BM_Visited = 1;
 	end;
 
 S_BuffMenu:

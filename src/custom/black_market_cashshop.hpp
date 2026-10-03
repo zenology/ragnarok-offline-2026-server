@@ -37,6 +37,14 @@ inline bool black_market_is_rooke_shop(const char* shop_name) {
 		std::strcmp(shop_name, "cons8") == 0;
 	if (legacy_shop)
 		return true;
+	// The courier catalog already includes the Rooke price-tier adjustment.
+	if (std::strcmp(shop_name, "rookup#T0") == 0 ||
+		std::strcmp(shop_name, "rookup#T1") == 0 ||
+		std::strcmp(shop_name, "rookup#T2") == 0 ||
+		std::strcmp(shop_name, "rookup#T3") == 0 ||
+		std::strcmp(shop_name, "rookup#T4") == 0 ||
+		std::strcmp(shop_name, "rookup#T5") == 0)
+		return true;
 	// Rooke's six player-progression tiers use exactly cons[0-8]#T[0-5].
 	return std::strncmp(shop_name, "cons", 4) == 0 &&
 		shop_name[4] >= '0' && shop_name[4] <= '8' &&

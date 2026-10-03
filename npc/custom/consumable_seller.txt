@@ -94,6 +94,71 @@ OnInit:
 	end;
 }
 
+prt_in,55,68,4	script	Pip#rooke_delivery	4_M_KID1,{
+	if (BM_Visited != 1) {
+		mes "[Pip]";
+		mes "Hello! I'm the shopkeeper's son. I'm just helping out around the shop.";
+		close;
+	}
+
+	.@eac = eaclass();
+	if ((.@eac & EAJ_BASEMASK) == EAJ_SUMMONER) {
+		mes "[Pip]";
+		mes "A talking cat? Rooke never mentioned that on the delivery slip.";
+		next;
+	} else if (.@eac & EAJL_BABY) {
+		mes "[Pip]";
+		mes "You're my size... but I think I'll let you carry the heavy crate.";
+		next;
+	} else if (.@eac & EAJL_UPPER) {
+		mes "[Pip]";
+		mes "You look like you've made this trip before.";
+		next;
+	} else if (!(.@eac & EAJL_2)) {
+		mes "[Pip]";
+		mes "Starting small? I've got stones for that.";
+		next;
+	}
+	mes "[Pip]";
+	mes "Hi! Good to see you again. I've got some of the upgrade supplies Rooke sells.";
+	next;
+	mes "[Pip]";
+	mes "Want to take a look?";
+	next;
+	if (select("Upgrade:Not now.") == 2)
+		close;
+	if (BM_Visited != 1) {
+		clear;
+		mes "[Pip]";
+		mes "Hello! I'm the shopkeeper's son. I'm just helping out around the shop.";
+		close;
+	}
+	.@tier = callsub(S_GetTier);
+	if (!getvariableofnpc(.CourierHas[.@tier], "cons_seller_db")) {
+		clear;
+		mes "[Pip]";
+		mes "The crate's empty. I'll check with Rooke.";
+		close;
+	}
+	close2;
+	callshop "rookup#T" + .@tier, 1;
+	end;
+
+S_GetTier:
+	if (BaseLevel >= 201)
+		return 5;
+	if (BaseLevel >= 100)
+		return 4;
+	.@rebirth = (eaclass() & EAJL_UPPER) != 0;
+	if (BaseLevel <= 50)
+		return .@rebirth ? 2 : 0;
+	return .@rebirth ? 3 : 1;
+
+OnInit:
+	setunittitle(getnpcid(0), "<Rooke's Courier>");
+	end;
+}
+
 // Nine categories x six progression tiers. They are populated by cons_seller_db.
 -	pointshop	cons0#T0	-1,BlackMarketPoints,501:2
 -	pointshop	cons0#T1	-1,BlackMarketPoints,501:2
@@ -149,6 +214,12 @@ OnInit:
 -	pointshop	cons8#T3	-1,BlackMarketPoints,501:2
 -	pointshop	cons8#T4	-1,BlackMarketPoints,501:2
 -	pointshop	cons8#T5	-1,BlackMarketPoints,501:2
+-	pointshop	rookup#T0	-1,BlackMarketPoints,501:2
+-	pointshop	rookup#T1	-1,BlackMarketPoints,501:2
+-	pointshop	rookup#T2	-1,BlackMarketPoints,501:2
+-	pointshop	rookup#T3	-1,BlackMarketPoints,501:2
+-	pointshop	rookup#T4	-1,BlackMarketPoints,501:2
+-	pointshop	rookup#T5	-1,BlackMarketPoints,501:2
 
 -	script	cons_seller_db	-1,{
 	end;
@@ -243,9 +314,12 @@ OnInit:
 
 	.ItemCount = 106;
 	deletearray .CatHas[0], 54;
+	deletearray .CourierHas[0], 6;
 	for (.@cat = 0; .@cat < 9; ++.@cat)
 		for (.@tier = 0; .@tier < 6; ++.@tier)
 			npcshopdelitem "cons" + .@cat + "#T" + .@tier, 501;
+	for (.@tier = 0; .@tier < 6; ++.@tier)
+		npcshopdelitem "rookup#T" + .@tier, 501;
 
 	for (.@i = 0; .@i < .ItemCount; ++.@i) {
 		.@id = .ItemId[.@i];
@@ -273,6 +347,11 @@ OnInit:
 				continue;
 			.CatHas[.@tier * 9 + .@cat] = true;
 			npcshopadditem "cons" + .@cat + "#T" + .@tier, .@id, .@price;
+			if (.@cat == 7) {
+				.@courier_price = (.@price * 120 + 50) / 100;
+				npcshopadditem "rookup#T" + .@tier, .@id, .@courier_price;
+				.CourierHas[.@tier] = true;
+			}
 		}
 	}
 	freeloop(0);
