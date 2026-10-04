@@ -66,6 +66,31 @@ inline bool private_airship_new_world_unlocked( const map_session_data* sd ) {
 		|| private_airship_reg_at_least( sd, "ep13_start", 100 );
 }
 
+inline bool private_airship_is_hazy_forest_destination( const char* map_name ) {
+	if( map_name == nullptr )
+		return false;
+
+	static const char* const destinations[] = {
+		"bif_fild02", "mora", "ecl_fild01", "ecl_tdun01", "ecl_tdun02", "ecl_tdun03", "ecl_tdun04", "eclage"
+	};
+
+	for( const char* destination : destinations ) {
+		if( strcmp( map_name, destination ) == 0 )
+			return true;
+	}
+
+	return false;
+}
+
+inline bool private_airship_hazy_forest_entered( const map_session_data* sd ) {
+	if( sd == nullptr )
+		return false;
+
+	return private_airship_reg_at_least( sd, "hazy_forest_entered", 1 )
+		|| private_airship_reg_at_least( sd, "ep14_1_mistwoods", 1 )
+		|| private_airship_isbegin_quest( sd, 7211 ) > 0;
+}
+
 inline bool private_airship_is_new_world_destination( const char* map_name ) {
 	if( map_name == nullptr )
 		return false;
@@ -103,6 +128,8 @@ inline bool private_airship_new_world_destination_allowed( const map_session_dat
 	if( !private_airship_base_level_at_least( sd, required_level ) )
 		return false;
 	if( !private_airship_new_world_unlocked( sd ) )
+		return false;
+	if( private_airship_is_hazy_forest_destination( map_name ) && !private_airship_hazy_forest_entered( sd ) )
 		return false;
 
 	if( strcmp( map_name, "dic_dun01" ) == 0 )
