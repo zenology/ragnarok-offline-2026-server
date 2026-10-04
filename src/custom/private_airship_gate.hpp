@@ -61,11 +61,64 @@ inline bool private_airship_lhz_dun03_allowed( const map_session_data* sd ) {
 	return private_airship_base_level_at_least( sd, 95 );
 }
 
-inline bool private_airship_mid_camp_allowed( const map_session_data* sd ) {
-	if( !private_airship_base_level_at_least( sd, 70 ) )
-		return false;
+inline bool private_airship_new_world_unlocked( const map_session_data* sd ) {
 	return private_airship_reg_at_least( sd, "ep13_ryu", 100 )
 		|| private_airship_reg_at_least( sd, "ep13_start", 100 );
+}
+
+inline bool private_airship_is_new_world_destination( const char* map_name ) {
+	if( map_name == nullptr )
+		return false;
+
+	static const char* const destinations[] = {
+		"mid_camp", "man_fild01", "man_fild02", "man_fild03", "spl_fild01", "spl_fild02", "spl_fild03",
+		"manuk", "splendide", "bif_fild01", "bif_fild02", "mora", "ecl_fild01", "ecl_tdun01", "ecl_tdun02", "ecl_tdun03", "ecl_tdun04",
+		"dic_dun01", "dic_fild01", "dic_fild02", "dicastes01", "dicastes02", "dic_dun02", "dic_dun03", "eclage", "moro_vol", "moro_cav"
+	};
+
+	for( const char* destination : destinations ) {
+		if( strcmp( map_name, destination ) == 0 )
+			return true;
+	}
+
+	return false;
+}
+
+inline bool private_airship_new_world_destination_allowed( const map_session_data* sd, const char* map_name ) {
+	if( sd == nullptr || map_name == nullptr )
+		return false;
+
+	uint16 required_level = 0;
+	if( strcmp( map_name, "mid_camp" ) == 0
+		|| strcmp( map_name, "man_fild01" ) == 0 || strcmp( map_name, "man_fild02" ) == 0 || strcmp( map_name, "man_fild03" ) == 0
+		|| strcmp( map_name, "spl_fild01" ) == 0 || strcmp( map_name, "spl_fild02" ) == 0 || strcmp( map_name, "spl_fild03" ) == 0
+		|| strcmp( map_name, "dic_dun01" ) == 0 || strcmp( map_name, "dic_dun02" ) == 0 || strcmp( map_name, "dic_dun03" ) == 0
+		|| strcmp( map_name, "dicastes01" ) == 0 || strcmp( map_name, "dicastes02" ) == 0 )
+		required_level = 70;
+	else if( strcmp( map_name, "eclage" ) == 0 )
+		required_level = 120;
+	else if( strcmp( map_name, "moro_vol" ) == 0 || strcmp( map_name, "moro_cav" ) == 0 )
+		required_level = 140;
+
+	if( !private_airship_base_level_at_least( sd, required_level ) )
+		return false;
+	if( !private_airship_new_world_unlocked( sd ) )
+		return false;
+
+	if( strcmp( map_name, "dic_dun01" ) == 0 )
+		return private_airship_reg_at_least( sd, "ep13_3_invite", 4 );
+	if( strcmp( map_name, "dic_dun02" ) == 0 || strcmp( map_name, "dic_dun03" ) == 0 )
+		return private_airship_reg_at_least( sd, "ep13_3_secret", 6 );
+	if( strcmp( map_name, "dicastes01" ) == 0 || strcmp( map_name, "dicastes02" ) == 0 )
+		return private_airship_reg_at_least( sd, "ep13_3_invite", 5 );
+	if( strcmp( map_name, "eclage" ) == 0 )
+		return private_airship_reg_at_least( sd, "ep14_2_oliver", 3 );
+	if( strcmp( map_name, "moro_vol" ) == 0 )
+		return private_airship_reg_at_least( sd, "ep14_3_newerabs", 8 );
+	if( strcmp( map_name, "moro_cav" ) == 0 )
+		return private_airship_reg_at_least( sd, "ep14_3_newerabs", 24 );
+
+	return true;
 }
 
 inline bool private_airship_ra_sanctuary_allowed( const map_session_data* sd ) {
@@ -79,6 +132,8 @@ inline bool private_airship_ra_sanctuary_allowed( const map_session_data* sd ) {
 inline bool private_airship_ordinary_destination_allowed( const map_session_data* sd, const char* map_name ) {
 	if( sd == nullptr || map_name == nullptr )
 		return false;
+	if( private_airship_is_new_world_destination( map_name ) )
+		return private_airship_new_world_destination_allowed( sd, map_name );
 
 	// Gray Wolf Forest opens from the Oz rope. Field 2 is a plain walk from field 1.
 	if( strcmp( map_name, "gw_fild01" ) == 0 || strcmp( map_name, "gw_fild02" ) == 0 )
@@ -136,16 +191,6 @@ inline bool private_airship_ordinary_destination_allowed( const map_session_data
 	if( strcmp( map_name, "dew_dun01" ) == 0 )
 		return private_airship_reg_at_least( sd, "dew_legend", 8 ) && private_airship_base_level_at_least( sd, 60 );
 
-	if( strcmp( map_name, "dic_dun01" ) == 0 )
-		return private_airship_reg_at_least( sd, "ep13_3_invite", 4 ) && private_airship_base_level_at_least( sd, 70 );
-	if( strcmp( map_name, "dicastes01" ) == 0 || strcmp( map_name, "dicastes02" ) == 0 )
-		return private_airship_reg_at_least( sd, "ep13_3_invite", 5 ) && private_airship_base_level_at_least( sd, 70 );
-	if( strcmp( map_name, "dic_dun02" ) == 0 || strcmp( map_name, "dic_dun03" ) == 0 )
-		return private_airship_reg_at_least( sd, "ep13_3_secret", 6 ) && private_airship_base_level_at_least( sd, 70 );
-
-	if( strcmp( map_name, "eclage" ) == 0 )
-		return private_airship_reg_at_least( sd, "ep14_2_oliver", 3 ) && private_airship_base_level_at_least( sd, 120 );
-
 	if( strcmp( map_name, "ein_d02_i" ) == 0 )
 		return private_airship_reg_at_least( sd, "ill_teddy", 3 ) && private_airship_base_level_at_least( sd, 150 );
 
@@ -183,20 +228,6 @@ inline bool private_airship_ordinary_destination_allowed( const map_session_data
 
 	if( strcmp( map_name, "ma_dun01" ) == 0 )
 		return private_airship_reg_at_least( sd, "malaya_bang", 18 ) && private_airship_base_level_at_least( sd, 100 );
-
-	if( strcmp( map_name, "man_fild01" ) == 0 || strcmp( map_name, "man_fild02" ) == 0 || strcmp( map_name, "man_fild03" ) == 0
-		|| strcmp( map_name, "spl_fild01" ) == 0 || strcmp( map_name, "spl_fild02" ) == 0 || strcmp( map_name, "spl_fild03" ) == 0 )
-		return private_airship_reg_at_least( sd, "ep13_newbs", 5 )
-			&& private_airship_reg_at_least( sd, "ep13_animal", 100 )
-			&& private_airship_base_level_at_least( sd, 70 );
-
-	if( strcmp( map_name, "mid_camp" ) == 0 )
-		return private_airship_mid_camp_allowed( sd );
-
-	if( strcmp( map_name, "moro_cav" ) == 0 )
-		return private_airship_reg_at_least( sd, "ep14_3_newerabs", 24 ) && private_airship_base_level_at_least( sd, 140 );
-	if( strcmp( map_name, "moro_vol" ) == 0 )
-		return private_airship_reg_at_least( sd, "ep14_3_newerabs", 8 ) && private_airship_base_level_at_least( sd, 140 );
 
 	if( strcmp( map_name, "mosk_dun01" ) == 0 || strcmp( map_name, "mosk_dun02" ) == 0 || strcmp( map_name, "mosk_dun03" ) == 0 )
 		return private_airship_reg_at_least( sd, "mos_whale_edq", 41 );
