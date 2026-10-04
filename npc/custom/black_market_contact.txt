@@ -8,23 +8,41 @@
 function	script	F_BlackMarketContact	{
 	mes "[Black Market Contact]";
 	mes "Keep your voice down. I work for the Black Market.";
-	mes "Normally, you need a Permit before anyone lets you through.";
-	mes "I can get you inside for free this time.";
+	next;
+	if (BM_Visited != 1) {
+		mes "[Black Market Contact]";
+		mes "First time? My escort fee is 20,000 Zeny. After that, I'll bring you in for free.";
+	} else {
+		mes "[Black Market Contact]";
+		mes "I've seen you inside before. No escort fee this time.";
+	}
 	next;
 	if (select("Enter the Black Market.:Not now.") == 2)
 		close;
-
-	// A normal Contact entry supersedes any unconsumed exact-position return
-	// that Premi may have recorded.
-	BM_ReturnMap$ = "";
-	BM_ReturnX = 0;
-	BM_ReturnY = 0;
-	// Permanent character variable: overwritten on every confirmed entry.
-	BM_ReturnLocation = getarg(0);
+	clear;
+	.@fee = (BM_Visited == 1) ? 0 : 20000;
+	if (Zeny < .@fee) {
+		mes "[Black Market Contact]";
+		mes "You need 20,000 Zeny for your first escort.";
+		close;
+	}
 	mes "[Black Market Contact]";
 	mes "Stay close and do not ask questions.";
 	close2;
+	.@fee = (BM_Visited == 1) ? 0 : 20000;
+	if (Zeny < .@fee) {
+		dispbottom "You need 20,000 Zeny for your first escort.";
+		end;
+	}
 	warp "paramk",11,171;
+	Zeny -= .@fee;
+	// Contact entry supersedes any unconsumed Premi exact-position return.
+	BM_ReturnMap$ = "";
+	BM_ReturnX = 0;
+	BM_ReturnY = 0;
+	// Permanent character visit history is separate from the return marker.
+	BM_ReturnLocation = getarg(0);
+	BM_Visited = 1;
 	end;
 }
 
