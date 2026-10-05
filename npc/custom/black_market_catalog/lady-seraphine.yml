@@ -4,7 +4,6 @@ Header:
 Body:
   - {"Id": 2751, "Price": 1400, "DisplayName": "Academy Badge", "Category": 0}
   - {"Id": 2767, "Price": 1000, "DisplayName": "Acolyte Figure", "Category": 0}
-  - {"Id": 2821, "Price": 1000, "DisplayName": "Acolyte Manual", "Category": 0}
   - {"Id": 2776, "Price": 975, "DisplayName": "Adventurer's Trusty Towel", "Category": 0}
   - {"Id": 2919, "Price": 1500, "DisplayName": "AGI Glove", "Category": 0}
   - {"Id": 2925, "Price": 2220, "DisplayName": "AGI Glove", "Category": 0}
@@ -12,7 +11,6 @@ Body:
   - {"Id": 490110, "Price": 5800, "DisplayName": "Anulus Ring", "Category": 0}
   - {"Id": 490318, "Price": 4560, "DisplayName": "Archangel Ring", "Category": 0}
   - {"Id": 2769, "Price": 1000, "DisplayName": "Archer Figure", "Category": 0}
-  - {"Id": 2822, "Price": 1000, "DisplayName": "Archer Manual", "Category": 0}
   - {"Id": 32219, "Price": 660, "DisplayName": "Asteria's Ring", "Category": 0}
   - {"Id": 490244, "Price": 9000, "DisplayName": "�Cardinal's Ring", "Category": 0}
   - {"Id": 2910, "Price": 1800, "DisplayName": "Bakonawa Agimat Tattoo", "Category": 0}
@@ -101,7 +99,6 @@ Body:
   - {"Id": 28415, "Price": 300, "DisplayName": "Greater Tuna Talisman", "Category": 0}
   - {"Id": 2795, "Price": 200, "DisplayName": "Green Apple Ring", "Category": 0}
   - {"Id": 2953, "Price": 1000, "DisplayName": "Green Kvasir's Ring", "Category": 0}
-  - {"Id": 2941, "Price": 1000, "DisplayName": "Gunslinger Manual", "Category": 0}
   - {"Id": 2707, "Price": 100, "DisplayName": "Gusli", "Category": 0}
   - {"Id": 490627, "Price": 1560, "DisplayName": "Haunted Talisman", "Category": 0}
   - {"Id": 490163, "Price": 260, "DisplayName": "Hero's Badge", "Category": 0}
@@ -132,7 +129,6 @@ Body:
   - {"Id": 2796, "Price": 100, "DisplayName": "Magical Stone", "Category": 0}
   - {"Id": 2797, "Price": 100, "DisplayName": "Magical Stone", "Category": 0}
   - {"Id": 2768, "Price": 1200, "DisplayName": "Magician Figure", "Category": 0}
-  - {"Id": 2824, "Price": 1000, "DisplayName": "Magician Manual", "Category": 0}
   - {"Id": 490381, "Price": 6200, "DisplayName": "Majesty of Yggdrasil", "Category": 0}
   - {"Id": 2720, "Price": 1600, "DisplayName": "Medal of Honor", "Category": 0}
   - {"Id": 2721, "Price": 1600, "DisplayName": "Medal of Honor", "Category": 0}
@@ -149,7 +145,6 @@ Body:
   - {"Id": 490615, "Price": 3360, "DisplayName": "Memory Records of Reminiscences", "Category": 0}
   - {"Id": 490079, "Price": 4800, "DisplayName": "Mental Expansion Ring", "Category": 0}
   - {"Id": 2771, "Price": 1500, "DisplayName": "Merchant Figure", "Category": 0}
-  - {"Id": 2823, "Price": 1000, "DisplayName": "Merchant Manual", "Category": 0}
   - {"Id": 490141, "Price": 4800, "DisplayName": "Metal Pick", "Category": 0}
   - {"Id": 490183, "Price": 6800, "DisplayName": "Military Gloves", "Category": 0}
   - {"Id": 490704, "Price": 7440, "DisplayName": "Miracle Stone", "Category": 0}
@@ -164,7 +159,6 @@ Body:
   - {"Id": 2714, "Price": 975, "DisplayName": "Mysterious Pendant", "Category": 0}
   - {"Id": 2904, "Price": 9200, "DisplayName": "Naqsi", "Category": 0}
   - {"Id": 2647, "Price": 260, "DisplayName": "Nile Rose", "Category": 0}
-  - {"Id": 2940, "Price": 1000, "DisplayName": "Ninja Manual", "Category": 0}
   - {"Id": 2845, "Price": 1000, "DisplayName": "NoFear Belt", "Category": 0}
   - {"Id": 2765, "Price": 1000, "DisplayName": "Novice Figure", "Category": 0}
   - {"Id": 2639, "Price": 200, "DisplayName": "Occult Incense", "Category": 0}
@@ -226,13 +220,10 @@ Body:
   - {"Id": 490823, "Price": 4560, "DisplayName": "Survival Glove-LT", "Category": 0}
   - {"Id": 490792, "Price": 3120, "DisplayName": "Survival Gloves", "Category": 0}
   - {"Id": 2766, "Price": 1000, "DisplayName": "Swordman Figure", "Category": 0}
-  - {"Id": 2819, "Price": 1000, "DisplayName": "Swordman Manual", "Category": 0}
-  - {"Id": 2942, "Price": 1000, "DisplayName": "Taekwon Manual", "Category": 0}
   - {"Id": 490030, "Price": 300, "DisplayName": "Temporal Ring", "Category": 0}
   - {"Id": 490404, "Price": 2850, "DisplayName": "Temporal Ring-LT", "Category": 0}
   - {"Id": 2644, "Price": 1400, "DisplayName": "The Sign", "Category": 0}
   - {"Id": 2770, "Price": 1500, "DisplayName": "Thief Figure", "Category": 0}
-  - {"Id": 2820, "Price": 1000, "DisplayName": "Thief Manual", "Category": 0}
   - {"Id": 32265, "Price": 260, "DisplayName": "Thief's Guide Vol.2", "Category": 0}
   - {"Id": 490258, "Price": 2550, "DisplayName": "Time Thief Earring", "Category": 0}
   - {"Id": 28596, "Price": 2700, "DisplayName": "Toy Ring", "Category": 0}
