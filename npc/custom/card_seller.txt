@@ -94,6 +94,23 @@ function	script	F_OfflineLetterShop	{
 	return 0;
 }
 
+function	script	F_OfflineCardBrowseKey	{
+	.@letter = getarg(0);
+	.@count = getarg(1);
+	if (.@count < 100)
+		return "ALL";
+	if (.@count < 200) {
+		if (.@letter >= 0 && .@letter <= 7)
+			return "AH";
+		if (.@letter >= 8 && .@letter <= 15)
+			return "IP";
+		return "QZ9";
+	}
+	if (.@letter == 26)
+		return "0";
+	return charat("ABCDEFGHIJKLMNOPQRSTUVWXYZ", .@letter);
+}
+
 paramk,47,186,4	script	Corvin#offline	512,{
 	.@menu$ = getvariableofnpc( .alphabet_menu$, "card_seller_creation" );
 	if (.@menu$ == "") {
@@ -129,7 +146,8 @@ paramk,47,186,4	script	Corvin#offline	512,{
 	mes "Please do not compare my shelves to theirs.";
 	mes "Would you like to browse the collection?";
 	next;
-	.@s = select(.@menu$) -1;
+	.@count = getvariableofnpc(.size_alphabet, "card_seller_creation");
+	.@s = (.@count == 1) ? 0 : select(.@menu$) - 1;
 	callfunc "F_BlackMarketDailyRemark", "Corvin", $BlackMarketRateCards;
 	close2;
 	callblackmarketshop "card_mob#"+ getvariableofnpc( .alphabet$[.@s], "card_seller_creation" ), 1, $BlackMarketRateCards;
@@ -190,7 +208,8 @@ paramk,49,186,4	script	Corven#offline	512,{
 	mes "Every card here came from a monster worth remembering.";
 	mes "Would you like to browse the collection?";
 	next;
-	.@s = select(.@menu$) -1;
+	.@count = getvariableofnpc(.size_alphabet, "miniboss_card_seller_creation");
+	.@s = (.@count == 1) ? 0 : select(.@menu$) - 1;
 	callfunc "F_BlackMarketDailyRemark", "Corven", $BlackMarketRateCards;
 	close2;
 	callblackmarketshop "card_miniboss#"+ getvariableofnpc( .alphabet$[.@s], "miniboss_card_seller_creation" ), 1, $BlackMarketRateCards;
@@ -204,7 +223,9 @@ OnInit:
 paramk,51,186,4	script	Veynar#offline	10576,{
 	.@mvp_menu$ = getvariableofnpc( .alphabet_menu$, "mvp_card_seller_creation" );
 	.@special_menu$ = getvariableofnpc( .special_alphabet_menu$, "mvp_card_seller_creation" );
-	if (.@mvp_menu$ == "" || .@special_menu$ == "") {
+	.@mvp_count = getvariableofnpc(.size_alphabet, "mvp_card_seller_creation");
+	.@special_count = getvariableofnpc(.special_size_alphabet, "mvp_card_seller_creation");
+	if (.@mvp_count == 0 && .@special_count == 0) {
 		mes "[Veynar]";
 		mes "I am sorry, it seems like something went wrong.";
 		mes "I cannot find any cards in our database at the moment.";
@@ -261,9 +282,20 @@ paramk,51,186,4	script	Veynar#offline	10576,{
 	mes "Do not confuse their stock with mine.";
 	mes "Which collection have you come to see?";
 	next;
-	switch (select("Show me your MVP cards.:I know you have something more valuable.:")) {
+	.@collection$ = "";
+	if (.@mvp_count > 0)
+		.@collection$ = "Show me your MVP cards.:";
+	if (.@special_count > 0)
+		.@collection$ += "I know you have something more valuable.:";
+	if (.@mvp_count == 0)
+		.@choice = 2;
+	else if (.@special_count == 0)
+		.@choice = 1;
+	else
+		.@choice = select(.@collection$);
+	switch (.@choice) {
 	case 1:
-		.@s = select(.@mvp_menu$) - 1;
+		.@s = (.@mvp_count == 1) ? 0 : select(.@mvp_menu$) - 1;
 		callfunc "F_BlackMarketDailyRemark", "Veynar", $BlackMarketRateCards;
 		close2;
 		callblackmarketshop "card_mvp#" + getvariableofnpc( .alphabet$[.@s], "mvp_card_seller_creation" ), 1, $BlackMarketRateCards;
@@ -284,7 +316,7 @@ paramk,51,186,4	script	Veynar#offline	10576,{
 		mes "[Veynar]";
 		mes "Very well. You may look upon the cards no other merchant can offer.";
 		next;
-		.@s = select(.@special_menu$) - 1;
+		.@s = (.@special_count == 1) ? 0 : select(.@special_menu$) - 1;
 		callfunc "F_BlackMarketDailyRemark", "Veynar", $BlackMarketRateCards;
 		close2;
 		callblackmarketshop "card_special#" + getvariableofnpc( .special_alphabet$[.@s], "mvp_card_seller_creation" ), 1, $BlackMarketRateCards;
@@ -303,6 +335,7 @@ OnInit:
 	freeloop 1;
 	deletearray .alphabet$[0], getarraysize(.alphabet$);
 	deletearray .HasAlphabet[0], getarraysize(.HasAlphabet);
+	deletearray .HasRange[0], 3;
 	.size_alphabet = 0;
 	.alphabet_menu$ = "";
 	.HasNum = false;
@@ -395,14 +428,19 @@ OnInit:
 	for (.@i = 0; .@i < 26; ++.@i)
 		npcshopdelitem "card_mob#" + charat(.@alphabet$, .@i), 501;
 	npcshopdelitem "card_mob#0", 501;
+	npcshopdelitem "card_mob#ALL", 501;
+	npcshopdelitem "card_mob#AH", 501;
+	npcshopdelitem "card_mob#IP", 501;
+	npcshopdelitem "card_mob#QZ9", 501;
 
 	.@card_count = getarraysize(.CardIds);
-	if (.@card_count != getarraysize(.SourceMobIds) || .@card_count != getarraysize(.CardPrice)) {
-		debugmes "Card Seller: card/source/price arrays are not aligned.";
+	if (.@card_count != getarraysize(.SourceMobIds) || .@card_count != getarraysize(.CardPrice) || .@card_count != getarraysize(.CardDisp$)) {
+		debugmes "Card Seller: card/display/source/price arrays are not aligned.";
 		freeloop 0;
 		end;
 	}
 
+	.@accepted_count = 0;
 	for (.@i = 0; .@i < .@card_count; ++.@i) {
 		.@item_id = .CardIds[.@i];
 		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
@@ -414,30 +452,68 @@ OnInit:
 		.@drawer = callfunc("F_OfflineLetterShop", .CardDisp$[.@i], 1);
 		if (.@drawer < 0)
 			continue;
-		if (.@drawer == 26) {
-			.@letter$ = "0";
-			.HasNum = true;
-		} else {
-			.@letter$ = charat(.@alphabet$, .@drawer);
-			.HasAlphabet[.@drawer] = true;
-		}
-		npcshopadditem "card_mob#" + .@letter$, .@item_id, .@price;
+		.@accepted[.@accepted_count] = .@i;
+		.@letters[.@accepted_count] = .@drawer;
+		.@accepted_count += 1;
 	}
 
-	if (.HasNum) {
-		.alphabet$[.size_alphabet++] = "0";
-		.alphabet_menu$ += "0-9 Cards:";
+	.@failed = false;
+	for (.@i = 0; .@i < .@accepted_count; ++.@i) {
+		.@index = .@accepted[.@i];
+		.@letter = .@letters[.@i];
+		.@key$ = callfunc("F_OfflineCardBrowseKey", .@letter, .@accepted_count);
+		if (!npcshopadditem("card_mob#" + .@key$, .CardIds[.@index], .CardPrice[.@index])) {
+			debugmes "Card Seller: failed to populate card_mob#" + .@key$ + ".";
+			.@failed = true;
+			break;
+		}
+		if (.@accepted_count < 100)
+			continue;
+		if (.@accepted_count < 200) {
+			if (.@key$ == "AH") .HasRange[0] = true;
+			else if (.@key$ == "IP") .HasRange[1] = true;
+			else .HasRange[2] = true;
+		} else if (.@letter == 26)
+			.HasNum = true;
+		else
+			.HasAlphabet[.@letter] = true;
 	}
-	for (.@i = 0; .@i < 26; ++.@i) {
-		if (.HasAlphabet[.@i]) {
-			.@letter$ = charat(.@alphabet$, .@i);
-			.alphabet$[.size_alphabet++] = .@letter$;
-			.alphabet_menu$ += .@letter$ + " Cards:";
+	if (.@failed) {
+		freeloop 0;
+		end;
+	}
+	if (.@accepted_count > 0 && .@accepted_count < 100) {
+		.alphabet$[.size_alphabet++] = "ALL";
+		.alphabet_menu$ = "All Cards:";
+	} else if (.@accepted_count < 200) {
+		.@keys$[0] = "AH"; .@keys$[1] = "IP"; .@keys$[2] = "QZ9";
+		.@labels$[0] = "A-H Cards:"; .@labels$[1] = "I-P Cards:"; .@labels$[2] = "Q-Z / 0-9 Cards:";
+		for (.@i = 0; .@i < 3; ++.@i) {
+			if (.HasRange[.@i]) {
+				.alphabet$[.size_alphabet++] = .@keys$[.@i];
+				.alphabet_menu$ += .@labels$[.@i];
+			}
+		}
+	} else {
+		if (.HasNum) {
+			.alphabet$[.size_alphabet++] = "0";
+			.alphabet_menu$ += "0-9 Cards:";
+		}
+		for (.@i = 0; .@i < 26; ++.@i) {
+			if (.HasAlphabet[.@i]) {
+				.@letter$ = charat(.@alphabet$, .@i);
+				.alphabet$[.size_alphabet++] = .@letter$;
+				.alphabet_menu$ += .@letter$ + " Cards:";
+			}
 		}
 	}
 	freeloop 0;
 	end;
 }
+-	pointshop	card_mob#ALL	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#AH	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#IP	-1,BlackMarketPoints,501:10
+-	pointshop	card_mob#QZ9	-1,BlackMarketPoints,501:10
 -	pointshop	card_mob#0	-1,BlackMarketPoints,501:10
 -	pointshop	card_mob#A	-1,BlackMarketPoints,501:10
 -	pointshop	card_mob#B	-1,BlackMarketPoints,501:10
@@ -472,6 +548,7 @@ OnInit:
 	freeloop 1;
 	deletearray .alphabet$[0], getarraysize(.alphabet$);
 	deletearray .HasAlphabet[0], getarraysize(.HasAlphabet);
+	deletearray .HasRange[0], 3;
 	.size_alphabet = 0;
 	.alphabet_menu$ = "";
 	.HasNum = false;
@@ -495,14 +572,19 @@ OnInit:
 	for (.@i = 0; .@i < 26; ++.@i)
 		npcshopdelitem "card_miniboss#" + charat(.@alphabet$, .@i), 501;
 	npcshopdelitem "card_miniboss#0", 501;
+	npcshopdelitem "card_miniboss#ALL", 501;
+	npcshopdelitem "card_miniboss#AH", 501;
+	npcshopdelitem "card_miniboss#IP", 501;
+	npcshopdelitem "card_miniboss#QZ9", 501;
 
 	.@card_count = getarraysize(.CardIds);
-	if (.@card_count != getarraysize(.SourceMobIds) || .@card_count != getarraysize(.CardPrice)) {
-		debugmes "Miniboss Card Seller: card/source/price arrays are not aligned.";
+	if (.@card_count != getarraysize(.SourceMobIds) || .@card_count != getarraysize(.CardPrice) || .@card_count != getarraysize(.CardDisp$)) {
+		debugmes "Miniboss Card Seller: card/display/source/price arrays are not aligned.";
 		freeloop 0;
 		end;
 	}
 
+	.@accepted_count = 0;
 	for (.@i = 0; .@i < .@card_count; ++.@i) {
 		.@item_id = .CardIds[.@i];
 		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
@@ -514,30 +596,68 @@ OnInit:
 		.@drawer = callfunc("F_OfflineLetterShop", .CardDisp$[.@i], 1);
 		if (.@drawer < 0)
 			continue;
-		if (.@drawer == 26) {
-			.@letter$ = "0";
-			.HasNum = true;
-		} else {
-			.@letter$ = charat(.@alphabet$, .@drawer);
-			.HasAlphabet[.@drawer] = true;
-		}
-		npcshopadditem "card_miniboss#" + .@letter$, .@item_id, .@price;
+		.@accepted[.@accepted_count] = .@i;
+		.@letters[.@accepted_count] = .@drawer;
+		.@accepted_count += 1;
 	}
 
-	if (.HasNum) {
-		.alphabet$[.size_alphabet++] = "0";
-		.alphabet_menu$ += "0-9 Cards:";
+	.@failed = false;
+	for (.@i = 0; .@i < .@accepted_count; ++.@i) {
+		.@index = .@accepted[.@i];
+		.@letter = .@letters[.@i];
+		.@key$ = callfunc("F_OfflineCardBrowseKey", .@letter, .@accepted_count);
+		if (!npcshopadditem("card_miniboss#" + .@key$, .CardIds[.@index], .CardPrice[.@index])) {
+			debugmes "Miniboss Card Seller: failed to populate card_miniboss#" + .@key$ + ".";
+			.@failed = true;
+			break;
+		}
+		if (.@accepted_count < 100)
+			continue;
+		if (.@accepted_count < 200) {
+			if (.@key$ == "AH") .HasRange[0] = true;
+			else if (.@key$ == "IP") .HasRange[1] = true;
+			else .HasRange[2] = true;
+		} else if (.@letter == 26)
+			.HasNum = true;
+		else
+			.HasAlphabet[.@letter] = true;
 	}
-	for (.@i = 0; .@i < 26; ++.@i) {
-		if (.HasAlphabet[.@i]) {
-			.@letter$ = charat(.@alphabet$, .@i);
-			.alphabet$[.size_alphabet++] = .@letter$;
-			.alphabet_menu$ += .@letter$ + " Cards:";
+	if (.@failed) {
+		freeloop 0;
+		end;
+	}
+	if (.@accepted_count > 0 && .@accepted_count < 100) {
+		.alphabet$[.size_alphabet++] = "ALL";
+		.alphabet_menu$ = "All Cards:";
+	} else if (.@accepted_count < 200) {
+		.@keys$[0] = "AH"; .@keys$[1] = "IP"; .@keys$[2] = "QZ9";
+		.@labels$[0] = "A-H Cards:"; .@labels$[1] = "I-P Cards:"; .@labels$[2] = "Q-Z / 0-9 Cards:";
+		for (.@i = 0; .@i < 3; ++.@i) {
+			if (.HasRange[.@i]) {
+				.alphabet$[.size_alphabet++] = .@keys$[.@i];
+				.alphabet_menu$ += .@labels$[.@i];
+			}
+		}
+	} else {
+		if (.HasNum) {
+			.alphabet$[.size_alphabet++] = "0";
+			.alphabet_menu$ += "0-9 Cards:";
+		}
+		for (.@i = 0; .@i < 26; ++.@i) {
+			if (.HasAlphabet[.@i]) {
+				.@letter$ = charat(.@alphabet$, .@i);
+				.alphabet$[.size_alphabet++] = .@letter$;
+				.alphabet_menu$ += .@letter$ + " Cards:";
+			}
 		}
 	}
 	freeloop 0;
 	end;
 }
+-	pointshop	card_miniboss#ALL	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#AH	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#IP	-1,BlackMarketPoints,501:50
+-	pointshop	card_miniboss#QZ9	-1,BlackMarketPoints,501:50
 -	pointshop	card_miniboss#0	-1,BlackMarketPoints,501:50
 -	pointshop	card_miniboss#A	-1,BlackMarketPoints,501:50
 -	pointshop	card_miniboss#B	-1,BlackMarketPoints,501:50
@@ -572,8 +692,10 @@ OnInit:
 	freeloop 1;
 	deletearray .alphabet$[0], getarraysize(.alphabet$);
 	deletearray .HasAlphabet[0], getarraysize(.HasAlphabet);
+	deletearray .HasRange[0], 3;
 	deletearray .special_alphabet$[0], getarraysize(.special_alphabet$);
 	deletearray .SpecialHasAlphabet[0], getarraysize(.SpecialHasAlphabet);
+	deletearray .SpecialHasRange[0], 3;
 	.size_alphabet = 0;
 	.special_size_alphabet = 0;
 	.alphabet_menu$ = "";
@@ -631,13 +753,22 @@ OnInit:
 	}
 	npcshopdelitem "card_mvp#0", 501;
 	npcshopdelitem "card_special#0", 501;
+	.@key$[0] = "ALL";
+	.@key$[1] = "AH";
+	.@key$[2] = "IP";
+	.@key$[3] = "QZ9";
+	for (.@i = 0; .@i < 4; ++.@i) {
+		npcshopdelitem "card_mvp#" + .@key$[.@i], 501;
+		npcshopdelitem "card_special#" + .@key$[.@i], 501;
+	}
 
 	.@card_count = getarraysize(.CardIds);
-	if (.@card_count != getarraysize(.SourceMobIds) || .@card_count != getarraysize(.CardPrice)) {
-		debugmes "MVP Card Seller: card/source/price arrays are not aligned.";
+	if (.@card_count != getarraysize(.SourceMobIds) || .@card_count != getarraysize(.CardPrice) || .@card_count != getarraysize(.CardDisp$)) {
+		debugmes "MVP Card Seller: card/display/source/price arrays are not aligned.";
 		freeloop 0;
 		end;
 	}
+	.@accepted_count = 0;
 	for (.@i = 0; .@i < .@card_count; ++.@i) {
 		.@item_id = .CardIds[.@i];
 		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
@@ -649,14 +780,9 @@ OnInit:
 		.@drawer = callfunc("F_OfflineLetterShop", .CardDisp$[.@i], 1);
 		if (.@drawer < 0)
 			continue;
-		if (.@drawer == 26) {
-			.@letter$ = "0";
-			.HasNum = true;
-		} else {
-			.@letter$ = charat(.@alphabet$, .@drawer);
-			.HasAlphabet[.@drawer] = true;
-		}
-		npcshopadditem "card_mvp#" + .@letter$, .@item_id, .@price;
+		.@accepted[.@accepted_count] = .@i;
+		.@letters[.@accepted_count] = .@drawer;
+		.@accepted_count += 1;
 	}
 
 	.@special_count = getarraysize(.SpecialCardIds);
@@ -665,6 +791,7 @@ OnInit:
 		freeloop 0;
 		end;
 	}
+	.@special_accepted_count = 0;
 	for (.@i = 0; .@i < .@special_count; ++.@i) {
 		.@item_id = .SpecialCardIds[.@i];
 		.@price = .SpecialCardPrice[.@i];
@@ -672,31 +799,102 @@ OnInit:
 			getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL || .@price < 1)
 			continue;
 		.@drawer = callfunc("F_OfflineLetterShop", .SpecialCardDisp$[.@i]);
-		if (.@drawer == 26) {
-			.@letter$ = "0";
-			.SpecialHasNum = true;
-		} else {
-			.@letter$ = charat(.@alphabet$, .@drawer);
-			.SpecialHasAlphabet[.@drawer] = true;
-		}
-		npcshopadditem "card_special#" + .@letter$, .@item_id, .@price;
+		.@special_accepted[.@special_accepted_count] = .@i;
+		.@special_letters[.@special_accepted_count] = .@drawer;
+		.@special_accepted_count += 1;
 	}
 
-	if (.HasNum) {
-		.alphabet$[.size_alphabet++] = "0";
-		.alphabet_menu$ += "0-9 Cards:";
+	for (.@i = 0; .@i < .@accepted_count; ++.@i) {
+		.@source = .@accepted[.@i];
+		.@drawer = .@letters[.@i];
+		.@key$ = callfunc("F_OfflineCardBrowseKey", .@drawer, .@accepted_count);
+		.@shop$ = "card_mvp#" + .@key$;
+		if (!npcshopadditem(.@shop$, .CardIds[.@source], .CardPrice[.@source])) {
+			debugmes "MVP Card Seller: failed to fill " + .@shop$ + ".";
+			.alphabet_menu$ = "";
+			.special_alphabet_menu$ = "";
+			.size_alphabet = 0;
+			.special_size_alphabet = 0;
+			freeloop 0;
+			end;
+		}
+		if (.@drawer == 26)
+			.HasNum = true;
+		else
+			.HasAlphabet[.@drawer] = true;
+		if (.@accepted_count >= 100 && .@accepted_count < 200) {
+			if (.@key$ == "AH") .HasRange[0] = true;
+			else if (.@key$ == "IP") .HasRange[1] = true;
+			else .HasRange[2] = true;
+		}
 	}
-	if (.SpecialHasNum) {
-		.special_alphabet$[.special_size_alphabet++] = "0";
-		.special_alphabet_menu$ += "0-9 Cards:";
+	for (.@i = 0; .@i < .@special_accepted_count; ++.@i) {
+		.@source = .@special_accepted[.@i];
+		.@drawer = .@special_letters[.@i];
+		.@key$ = callfunc("F_OfflineCardBrowseKey", .@drawer, .@special_accepted_count);
+		.@shop$ = "card_special#" + .@key$;
+		if (!npcshopadditem(.@shop$, .SpecialCardIds[.@source], .SpecialCardPrice[.@source])) {
+			debugmes "MVP Card Seller: failed to fill " + .@shop$ + ".";
+			.alphabet_menu$ = "";
+			.special_alphabet_menu$ = "";
+			.size_alphabet = 0;
+			.special_size_alphabet = 0;
+			freeloop 0;
+			end;
+		}
+		if (.@drawer == 26)
+			.SpecialHasNum = true;
+		else
+			.SpecialHasAlphabet[.@drawer] = true;
+		if (.@special_accepted_count >= 100 && .@special_accepted_count < 200) {
+			if (.@key$ == "AH") .SpecialHasRange[0] = true;
+			else if (.@key$ == "IP") .SpecialHasRange[1] = true;
+			else .SpecialHasRange[2] = true;
+		}
 	}
-	for (.@i = 0; .@i < 26; ++.@i) {
-		if (.HasAlphabet[.@i]) {
+	.@range_key$[0] = "AH";
+	.@range_key$[1] = "IP";
+	.@range_key$[2] = "QZ9";
+	.@range_label$[0] = "A-H Cards:";
+	.@range_label$[1] = "I-P Cards:";
+	.@range_label$[2] = "Q-Z / 0-9 Cards:";
+	if (.@accepted_count > 0 && .@accepted_count < 100) {
+		.alphabet$[.size_alphabet++] = "ALL";
+		.alphabet_menu$ = "All Cards:";
+	} else if (.@accepted_count < 200) {
+		for (.@i = 0; .@i < 3; ++.@i) {
+			if (!.HasRange[.@i]) continue;
+			.alphabet$[.size_alphabet++] = .@range_key$[.@i];
+			.alphabet_menu$ += .@range_label$[.@i];
+		}
+	} else {
+		if (.HasNum) {
+			.alphabet$[.size_alphabet++] = "0";
+			.alphabet_menu$ += "0-9 Cards:";
+		}
+		for (.@i = 0; .@i < 26; ++.@i) {
+			if (!.HasAlphabet[.@i]) continue;
 			.@letter$ = charat(.@alphabet$, .@i);
 			.alphabet$[.size_alphabet++] = .@letter$;
 			.alphabet_menu$ += .@letter$ + " Cards:";
 		}
-		if (.SpecialHasAlphabet[.@i]) {
+	}
+	if (.@special_accepted_count > 0 && .@special_accepted_count < 100) {
+		.special_alphabet$[.special_size_alphabet++] = "ALL";
+		.special_alphabet_menu$ = "All Cards:";
+	} else if (.@special_accepted_count < 200) {
+		for (.@i = 0; .@i < 3; ++.@i) {
+			if (!.SpecialHasRange[.@i]) continue;
+			.special_alphabet$[.special_size_alphabet++] = .@range_key$[.@i];
+			.special_alphabet_menu$ += .@range_label$[.@i];
+		}
+	} else {
+		if (.SpecialHasNum) {
+			.special_alphabet$[.special_size_alphabet++] = "0";
+			.special_alphabet_menu$ += "0-9 Cards:";
+		}
+		for (.@i = 0; .@i < 26; ++.@i) {
+			if (!.SpecialHasAlphabet[.@i]) continue;
 			.@letter$ = charat(.@alphabet$, .@i);
 			.special_alphabet$[.special_size_alphabet++] = .@letter$;
 			.special_alphabet_menu$ += .@letter$ + " Cards:";
@@ -705,6 +903,10 @@ OnInit:
 	freeloop 0;
 	end;
 }
+-	pointshop	card_mvp#ALL	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#AH	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#IP	-1,BlackMarketPoints,501:100
+-	pointshop	card_mvp#QZ9	-1,BlackMarketPoints,501:100
 -	pointshop	card_mvp#0	-1,BlackMarketPoints,501:100
 -	pointshop	card_mvp#A	-1,BlackMarketPoints,501:100
 -	pointshop	card_mvp#B	-1,BlackMarketPoints,501:100
@@ -732,6 +934,10 @@ OnInit:
 -	pointshop	card_mvp#X	-1,BlackMarketPoints,501:100
 -	pointshop	card_mvp#Y	-1,BlackMarketPoints,501:100
 -	pointshop	card_mvp#Z	-1,BlackMarketPoints,501:100
+-	pointshop	card_special#ALL	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#AH	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#IP	-1,BlackMarketPoints,501:120
+-	pointshop	card_special#QZ9	-1,BlackMarketPoints,501:120
 -	pointshop	card_special#0	-1,BlackMarketPoints,501:120
 -	pointshop	card_special#A	-1,BlackMarketPoints,501:120
 -	pointshop	card_special#B	-1,BlackMarketPoints,501:120
