@@ -419,77 +419,31 @@ L_Bulk:
 
 S_GetOffer:
 	.@item_id = getarg(0);
-	.@i = inarray(.Offer10[0], .@item_id);
-	if (.@i != -1)
-		return getelementofarray(getvariableofnpc(.CardOffer[0], "mvp_card_seller_creation"), .@i);
-	.@i = inarray(.MinibossCards[0], .@item_id);
-	if (.@i != -1)
-		return getelementofarray(getvariableofnpc(.CardOffer[0], "miniboss_card_seller_creation"), .@i);
-	.@i = inarray(getvariableofnpc(.SpecialCardIds[0], "mvp_card_seller_creation"), .@item_id);
-	if (.@i != -1)
-		return getelementofarray(getvariableofnpc(.SpecialCollectorOffer[0], "mvp_card_seller_creation"), .@i);
 	if (.@item_id == 6716 || .@item_id == 6717 || .@item_id == 6718)
 		return 300;
-	// Read the Normal catalog at click time. OnInit runs in ev_db hash
-	// order, so copying card_seller_creation during OnInit can happen
-	// before that NPC has filled .CardIds. That left Normal cards such
-	// as Poring_Card (4001) unbuyable while local Miniboss/MVP lists still worked.
-	if (getarraysize(getvariableofnpc(.CardIds[0], "card_seller_creation")) < 1)
-		return 0;
-	.@i = inarray(getvariableofnpc(.CardIds[0], "card_seller_creation"), .@item_id);
-	if (.@i == -1)
-		return 0;
-	return getelementofarray(getvariableofnpc(.CardOffer[0], "card_seller_creation"), .@i);
+	return bmc_cardoffer(.@item_id);
 
 S_GetTier:
 	.@item_id = getarg(0);
-	if (inarray(.Offer10[0], .@item_id) != -1)
-		return 3;
-	if (inarray(.MinibossCards[0], .@item_id) != -1)
-		return 2;
-	if (inarray(getvariableofnpc(.SpecialCardIds[0], "mvp_card_seller_creation"), .@item_id) != -1)
-		return 4;
-	if (callsub(S_GetOffer, .@item_id) > 0)
+	if (.@item_id == 6716 || .@item_id == 6717 || .@item_id == 6718)
 		return 1;
-	return 0;
+	return bmc_cardtier(.@item_id);
 
 OnInit:
 	.PageSize = 10;
 
-	// 156 MVP cards. Sources are the lowest-ID MVP dropper of each card.
-	setarray .Offer10[0], 4601,27383,4236,27294,27298,300382,4675,4359,4425,27113,27106,4147,4145,4662,4636,27126,300021,4352,300217,4592,27182,31023,4562,27334,4697,4560,27363,27362,4603,4563,27152,4574,4527,4168,4330,300248,300151,300145,27321,4386,4142,4134,4137,4123,27305,4451,27151,27265,27164,4441,4556,27104,27081,4681,4534,4576,4408,4509,4128,27162,300100,300080,27327,4580,4674,4566,4324,4363,4365,27381,4430,4263,4648,4650,4647,4649,4651,300014,300007,4403;
-	setarray .Offer10[80], 4525,4419,4376,4520,4357,4276,27025,4361,4146,4677,4399,300107,27318,4673,4132,4131,27326,4528,4457,4456,4652,27119,4143,4135,4144,4565,4148,4121,4561,4578,4507,300281,27319,4407,4676,4602,4604,300079,300013,27346,4680,4342,4679,4005,4610,4682,300227,300239,300099,300378,4367,4671,27180,4564,31026,4318,4672,300078,27020,4302,300262,4625,4305,300377,300175,27150,4374,4529,4683,4678,4557,4526,4372,300297,300473,300474;
-	setarray .MvpSources[0], 2476,20573,1511,20273,20277,21531,3221,1647,1785,3796,3073,1039,1874,3505,3450,2068,20618,1658,21301,2319,3181,2996,2238,20520,3124,2240,20422,20421,2475,2236,3621,2253,2187,1272,1418,20943,20811,20843,3097,1719,1046,1389,1112,1115,20340,1957,3628,2942,2529,1871,2564,3757,3758,3241,2194,2251,1768,2165,1086,1885,20668,20621,3029,2255,3220,2241,1252,1649,1651,20572,1832,1492,3426,3429,3427,3428,3430,20611,20601,1734;
-	setarray .MvpSources[80], 2202,1779,1688,2156,1646,1373,3658,1648,1147,3223,1708,20648,20346,3245,1059,1150,3000,2189,1956,2022,2362,3804,1087,1190,1038,2235,1157,1159,2237,2249,2087,20934,20381,1751,3222,3150,3151,20620,20610,20419,3240,1623,3225,1502,3190,3244,21314,21395,20667,21533,1650,3242,3741,2239,3473,1251,3243,20642,3254,1583,20928,3074,1312,21537,20891,3633,1685,2190,3246,3224,2564,2188,1630,20118,21996,21980;
-
-	if (getarraysize(.Offer10) != getarraysize(.MvpSources))
-		debugmes "Card Collector: MVP card and source arrays are not aligned.";
-	if (getarraysize(.Offer10) != 156)
-		debugmes "Card Collector: expected 156 MVP cards.";
-
-	// 93 Miniboss cards are a separate loyalty tier. Sources stay local so
-	// this catalog does not depend on another NPC's OnInit finishing first.
-	setarray .MinibossCards[0], 4605,4054,300274,4243,4241,300103,4591,4590,4391,27105,4428,27324,4426,4290,27343,4300,300268,300267,4392,27165,4169,27322,27323,4397,300228,4398,4179,27262,4266,4577,4250,27263,4423,4354,4047,27183,4508,4606,4163,4462,300275,4384,31024,31025,4646,4645,4642,4643,27109,4431,4524,4394,4395,4197,4393,27325,4203,4207,4440,4533,4396,4254,4238,4237,4632,4631,300276,300277,4581,4429,4130,4406,4575,4427,4463,4306,4696,4687,4692,4693;
-	setarray .MinibossCards[80], 4684,4691,4694,4688,4686,4685,4690,4689,4695,4183,4579,4608,4532;
-	setarray .MinibossSources[0], 2473,1096,20775,2988,1388,20647,2320,2317,1702,3756,1830,3091,1839,1307,20521,1283,20782,20783,1700,2530,1302,3105,3106,1705,21315,1707,1091,2562,1093,2252,1205,2563,1783,1681,1120,3191,2161,2474,1259,1990,20776,1720,3474,3475,3425,3424,3421,3422,3108,1833,2198,1703,1706,1090,1701,3092,1262,1203,1870,2192,1704,1204,1295,1320,2923,2921,20778,20777,2256,1831,1168,1754,2254,1829,1991,1089,3231,3211,3228,3229;
-	setarray .MinibossSources[80], 3208,3227,3230,3212,3210,3209,3226,3213,3232,1092,2250,20390,2208;
-	if (getarraysize(.MinibossCards) != getarraysize(.MinibossSources))
-		debugmes "Card Collector: Miniboss card and source arrays are not aligned.";
-
-	deletearray $@CC_MvpAlbumCards[0], getarraysize($@CC_MvpAlbumCards);
-	copyarray $@CC_MvpAlbumCards[0], .Offer10[0], getarraysize(.Offer10);
 	setunittitle(getnpcid(0), "<Card Collector>");
 	end;
 }
 
 function	script	F_OfflineMvpCardAlbum	{
-	.@size = getarraysize($@CC_MvpAlbumCards);
+	.@size = bmc_mvpcount();
 	if (.@size <= 0) {
 		message strcharinfo(0), "The MVP Card Album is not ready yet.";
 		getitem 35000,1;
 		return;
 	}
-	getitem $@CC_MvpAlbumCards[rand(.@size)],1;
+	getitem bmc_mvpid(rand(.@size)),1;
 	return;
 }
 

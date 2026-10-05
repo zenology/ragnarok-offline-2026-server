@@ -86,6 +86,7 @@ Footer:
     - Path: db/import/item_db_iro_hats_hard.yml
     - Path: db/import/item_db_iro_costume_garments.yml
     - Path: db/import/item_db_iro_shields.yml
+    - Path: db/import/item_db_iro_footgear.yml
     - Path: db/import/item_db_iro_accessories.yml
     # Weaver#offline functional garment imports and narrowly-scoped effect overrides.
     - Path: db/import/item_db_iro_garments.yml

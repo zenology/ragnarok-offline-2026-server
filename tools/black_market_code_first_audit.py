@@ -18,6 +18,7 @@ import shutil
 import sys
 import urllib.request
 from pathlib import Path
+from black_market_catalog import CARDS, read_all
 
 ROOT = Path(__file__).resolve().parents[2]
 SERVER = ROOT / "Server"
@@ -38,22 +39,25 @@ ITEM_ID = re.compile(r"^\s*- Id:\s*(\d+)")
 
 def seller_stock() -> dict[str, set[int]]:
     out: dict[str, set[int]] = {}
+    catalogs = read_all()
+    managed = {"hat_seller.txt": "harlan", "weapon_seller.txt": "soren",
+               "armor_seller.txt": "mordain", "shield_seller.txt": "kaedra",
+               "footgear_seller.txt": "tess", "garment_seller.txt": "weaver",
+               "accessory_seller.txt": "lady-seraphine",
+               "specialty_seller.txt": "madame-celestine",
+               "consumable_seller.txt": "rooke"}
     for path in sorted((SERVER / "npc" / "custom").glob("*_seller.txt")):
+        if path.name in managed:
+            out[path.name] = {row["Id"] for row in catalogs[managed[path.name]]}
+            continue
+        if path.name == "card_seller.txt":
+            out[path.name] = {row["Id"] for key in CARDS for row in catalogs[key]}
+            continue
         ids: set[int] = set()
         for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
             match = POINTSHOP.search(line)
             if match:
                 ids.update(int(value) for value in STOCK.findall(match.group(2)))
-        if path.name == "hat_seller.txt":
-            text = path.read_text(encoding="utf-8", errors="replace")
-            for match in ARRAY.finditer(text):
-                if match.group(1) in {"IroId", "RentBoxId", "EvtId"}:
-                    ids.update(int(value) for value in match.group(2).split(",") if value.strip())
-        elif path.name == "card_seller.txt":
-            text = path.read_text(encoding="utf-8", errors="replace")
-            for match in ARRAY.finditer(text):
-                if match.group(1) in {"CardIds", "MinibossCardIds", "MvpCardIds", "SpecialCardIds"}:
-                    ids.update(int(value) for value in match.group(2).split(",") if value.strip())
         out[path.name] = ids
     return out
 
