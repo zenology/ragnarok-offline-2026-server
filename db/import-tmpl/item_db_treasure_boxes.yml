@@ -51,7 +51,7 @@ Body:
       NoSell: false
   - Id: 9000006
     AegisName: Offline_Treasure_N_101_120
-    Name: Bronze Treasure Box I
+    Name: Silver Treasure Box I
     Type: Etc
     Buy: 1400000
     Sell: 700000
@@ -60,7 +60,7 @@ Body:
       NoSell: false
   - Id: 9000007
     AegisName: Offline_Treasure_N_121_140
-    Name: Bronze Treasure Box II
+    Name: Silver Treasure Box II
     Type: Etc
     Buy: 1700000
     Sell: 850000
@@ -69,7 +69,7 @@ Body:
       NoSell: false
   - Id: 9000008
     AegisName: Offline_Treasure_N_141_160
-    Name: Bronze Treasure Box III
+    Name: Silver Treasure Box III
     Type: Etc
     Buy: 1900000
     Sell: 950000
@@ -78,7 +78,7 @@ Body:
       NoSell: false
   - Id: 9000009
     AegisName: Offline_Treasure_N_161_180
-    Name: Bronze Treasure Box IV
+    Name: Silver Treasure Box IV
     Type: Etc
     Buy: 2200000
     Sell: 1100000
@@ -87,7 +87,7 @@ Body:
       NoSell: false
   - Id: 9000010
     AegisName: Offline_Treasure_N_181_200
-    Name: Bronze Treasure Box V
+    Name: Silver Treasure Box V
     Type: Etc
     Buy: 2500000
     Sell: 1250000
