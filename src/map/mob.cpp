@@ -2927,6 +2927,8 @@ map_session_data* mob_data::get_mvp_player(map_session_data* first_sd) {
 	return mvp_sd;
 }
 
+#include "../custom/mob_treasure_boxes.hpp"
+
 /*==========================================
  * Signals death of mob.
  * type&1 -> no drops, type&2 -> no exp
@@ -3329,8 +3331,7 @@ int32 mob_dead(mob_data *md, block_list *src, int32 type)
 			if (it == nullptr)
 				continue;
 
-			int32 item_drop_modifier = (it->type == IT_CARD) ? 100 : drop_modifier;
-			drop_rate = mob_getdroprate(src, md->db, entry->rate, item_drop_modifier, md);
+			drop_rate = mob_getdroprate(src, md->db, entry->rate, drop_modifier, md);
 
 			// attempt to drop the item
 			if (rnd() % 10000 >= drop_rate)
@@ -3354,6 +3355,8 @@ int32 mob_dead(mob_data *md, block_list *src, int32 type)
 			// By popular demand, use base drop rate for autoloot code. [Skotlex]
 			mob_item_drop(md, dlist, ditem, 0, battle_config.autoloot_adjust ? drop_rate : entry->rate, homkillonly || merckillonly);
 		}
+
+		mob_treasure_box_drop( md, src, dlist, homkillonly || merckillonly );
 
 		// Ore Discovery (triggers if owner has loot priority, does not require to be the killer)
 		if (first_sd != nullptr && pc_checkskill(first_sd, BS_FINDINGORE) > 0) {
@@ -3384,14 +3387,8 @@ int32 mob_dead(mob_data *md, block_list *src, int32 type)
 			// Process map wide drops
 			for( const auto& it : mapdrops->globals ){
 				uint32 final_rate;
-				int32 map_drop_modifier = drop_modifier;
-				std::shared_ptr<item_data> map_drop_item = item_db.find( it.second->nameid );
-
-				if (map_drop_item != nullptr && map_drop_item->type == IT_CARD)
-					map_drop_modifier = 100;
-
 				if ( battle_config.enable_bonus_map_drops ) {
-					final_rate = mob_getdroprate(first_sd, md->db, it.second->rate, map_drop_modifier, md, 10);
+					final_rate = mob_getdroprate(first_sd, md->db, it.second->rate, drop_modifier, md, 10);
 				} else {
 					final_rate = it.second->rate;
 				}
@@ -3410,14 +3407,8 @@ int32 mob_dead(mob_data *md, block_list *src, int32 type)
 			if( specific != mapdrops->specific.end() ){
 				for( const auto& it : specific->second ){
 					uint32 final_rate;
-					int32 map_drop_modifier = drop_modifier;
-					std::shared_ptr<item_data> map_drop_item = item_db.find( it.second->nameid );
-
-					if (map_drop_item != nullptr && map_drop_item->type == IT_CARD)
-						map_drop_modifier = 100;
-
 					if ( battle_config.enable_bonus_map_drops ) {
-						final_rate = mob_getdroprate(first_sd, md->db, it.second->rate, map_drop_modifier, md, 10);
+						final_rate = mob_getdroprate(first_sd, md->db, it.second->rate, drop_modifier, md, 10);
 					} else {
 						final_rate = it.second->rate;
 					}
@@ -3502,8 +3493,7 @@ int32 mob_dead(mob_data *md, block_list *src, int32 type)
 				temp = entry->rate;
 
 #if defined(RENEWAL_DROP)
-				if (i_data->type != IT_CARD)
-					temp = cap_value( apply_rate( temp, penalty ), 0, 10000 );
+				temp = cap_value( apply_rate( temp, penalty ), 0, 10000 );
 #endif
 
 				if (temp != 10000) {
@@ -6858,11 +6848,6 @@ static void mob_drop_ratio_adjust(void){
 
 			if( battle_config.drop_rateincrease && rate < 5000 ){
 				rate++;
-			}
-
-			// Normalize normal-monster card bases to Rate: 1; Miniboss and MVP rates stay database-defined.
-			if( id->type == IT_CARD && mob->get_bosstype() == BOSSTYPE_NONE ){
-				rate = 1;
 			}
 
 			// Treasure box drop rates [Skotlex]

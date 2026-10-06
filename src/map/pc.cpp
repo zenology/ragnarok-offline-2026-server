@@ -13158,6 +13158,9 @@ bool pc_isautolooting(map_session_data *sd, t_itemid nameid)
 {
 	uint8 i = 0;
 
+	if (sd->state.premium_treasureloot && nameid >= 9000001 && nameid <= 9000021)
+		return true;
+
 	if (sd->state.autoloottype && sd->state.autoloottype&(1<<itemdb_type(nameid)))
 		return true;
 

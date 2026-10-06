@@ -1,0 +1,237 @@
+# Project-owned level-tiered treasure boxes.
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 9000001
+    AegisName: Offline_Treasure_N_1_20
+    Name: Iron Treasure Box I
+    Type: Etc
+    Buy: 360000
+    Sell: 180000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000002
+    AegisName: Offline_Treasure_N_21_40
+    Name: Iron Treasure Box II
+    Type: Etc
+    Buy: 400000
+    Sell: 200000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000003
+    AegisName: Offline_Treasure_N_41_60
+    Name: Iron Treasure Box III
+    Type: Etc
+    Buy: 600000
+    Sell: 300000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000004
+    AegisName: Offline_Treasure_N_61_80
+    Name: Iron Treasure Box IV
+    Type: Etc
+    Buy: 700000
+    Sell: 350000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000005
+    AegisName: Offline_Treasure_N_81_100
+    Name: Iron Treasure Box V
+    Type: Etc
+    Buy: 800000
+    Sell: 400000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000006
+    AegisName: Offline_Treasure_N_101_120
+    Name: Silver Treasure Box I
+    Type: Etc
+    Buy: 1400000
+    Sell: 700000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000007
+    AegisName: Offline_Treasure_N_121_140
+    Name: Silver Treasure Box II
+    Type: Etc
+    Buy: 1700000
+    Sell: 850000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000008
+    AegisName: Offline_Treasure_N_141_160
+    Name: Silver Treasure Box III
+    Type: Etc
+    Buy: 1900000
+    Sell: 950000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000009
+    AegisName: Offline_Treasure_N_161_180
+    Name: Silver Treasure Box IV
+    Type: Etc
+    Buy: 2200000
+    Sell: 1100000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000010
+    AegisName: Offline_Treasure_N_181_200
+    Name: Silver Treasure Box V
+    Type: Etc
+    Buy: 2500000
+    Sell: 1250000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000011
+    AegisName: Offline_Treasure_N_201_220
+    Name: Gold Treasure Box I
+    Type: Etc
+    Buy: 4200000
+    Sell: 2100000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000012
+    AegisName: Offline_Treasure_N_221_240
+    Name: Gold Treasure Box II
+    Type: Etc
+    Buy: 4800000
+    Sell: 2400000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000013
+    AegisName: Offline_Treasure_N_241_260
+    Name: Gold Treasure Box III
+    Type: Etc
+    Buy: 5400000
+    Sell: 2700000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000014
+    AegisName: Offline_Treasure_N_261_280
+    Name: Gold Treasure Box IV
+    Type: Etc
+    Buy: 6000000
+    Sell: 3000000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000015
+    AegisName: Offline_Treasure_N_281_300
+    Name: Gold Treasure Box V
+    Type: Etc
+    Buy: 6600000
+    Sell: 3300000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000016
+    AegisName: Offline_Treasure_Mini_1_100
+    Name: Diamond Treasure Box I
+    Type: Etc
+    Buy: 10000000
+    Sell: 5000000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000017
+    AegisName: Offline_Treasure_Mini_101_200
+    Name: Diamond Treasure Box II
+    Type: Etc
+    Buy: 22000000
+    Sell: 11000000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000018
+    AegisName: Offline_Treasure_Mini_201_Plus
+    Name: Diamond Treasure Box III
+    Type: Etc
+    Buy: 42000000
+    Sell: 21000000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000019
+    AegisName: Offline_Treasure_MVP_1_100
+    Name: Platinum Treasure Box I
+    Type: Etc
+    Buy: 45000000
+    Sell: 22500000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000020
+    AegisName: Offline_Treasure_MVP_101_200
+    Name: Platinum Treasure Box II
+    Type: Etc
+    Buy: 70000000
+    Sell: 35000000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false
+  - Id: 9000021
+    AegisName: Offline_Treasure_MVP_201_Plus
+    Name: Platinum Treasure Box III
+    Type: Etc
+    Buy: 112000000
+    Sell: 56000000
+    Weight: 10
+    Flags:
+      DropEffect: CLIENT
+    Trade:
+      NoSell: false

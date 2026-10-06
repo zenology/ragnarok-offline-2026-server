@@ -160,10 +160,10 @@ BUILDIN_FUNC(blackmarketprice)
 	return SCRIPT_CMD_SUCCESS;
 }
 
-// Card Magnet is a Premi entitlement, not a new status-change enum.  The NPC
-// owns the account expiry; this command owns only the current session's card
-// autoloot bit and its matching client-side timed icon.
-BUILDIN_FUNC(premiumcardloot)
+// Treasure Magnet is a Premi entitlement, not a new status-change enum. The NPC
+// owns the account expiry; this command owns only the current session's treasure
+// autoloot flag and its matching client-side timed icon.
+BUILDIN_FUNC(premiumtreasureloot)
 {
 	TBL_PC* sd = nullptr;
 	if (!script_rid2sd(sd)) {
@@ -179,13 +179,11 @@ BUILDIN_FUNC(premiumcardloot)
 		return SCRIPT_CMD_SUCCESS;
 	}
 
-	constexpr uint16 card_autoloot_mask = (1 << IT_CARD);
+	sd->state.premium_treasureloot = (enable == 1);
 	if (enable == 1) {
-		sd->state.autoloottype |= card_autoloot_mask;
 		clif_status_change(sd, EFST_AID_PERIOD_ADDSTOREITEMCOUNT, 1,
 			static_cast<t_tick>(remaining_ms), 0, 0, 0);
 	} else {
-		sd->state.autoloottype &= ~card_autoloot_mask;
 		clif_status_change(sd, EFST_AID_PERIOD_ADDSTOREITEMCOUNT, 0, 0, 0, 0, 0);
 	}
 

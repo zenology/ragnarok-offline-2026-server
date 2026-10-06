@@ -28,7 +28,9 @@ export default function CostumePage(): ReactNode {
           <div className={styles.grid}>
             {acquisitionServices.map((service) => (
               <ServiceSummaryCard key={service.name} service={service}>
-                {service.name === 'Moth' && <Link to="/card-eater">Search accepted cards →</Link>}
+                {service.name === 'Moth' && (
+                  <Link to="/card-eater">See accepted treasures and rewards →</Link>
+                )}
               </ServiceSummaryCard>
             ))}
           </div>

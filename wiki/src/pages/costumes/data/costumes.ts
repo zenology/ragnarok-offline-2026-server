@@ -31,7 +31,7 @@ export const acquisitionServices: CostumeService[] = [
     name: 'Moth',
     location: 'Malangdo · 138, 140',
     description:
-      'Feed only the 120 Normal cards on the listed menu. Search the complete accepted-card list and reward tiers in the Moth / Card Eater reference.',
+      'Feed 15 Iron, Silver, and Gold Treasure Boxes for a choice of Silvervine Fruit or Cookie (Event Stone Coin). See every accepted treasure and its fixed reward in the Moth / Treasure Eater reference.',
     tag: 'Silvervine Exchange'
   }
 ]
