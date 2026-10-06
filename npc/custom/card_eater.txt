@@ -1,192 +1,184 @@
 //===== Ragnarok Offline =====================================
-//= Card Eater
-//===== Description: =========================================
-//= Feeds a curated 120-card Normal-monster whitelist into the
-//= Malangdo costume loop for an exclusive Silvervine or Cookie reward.
-//= Payout is based on the whitelist card's level class.
+//= Treasure Eater
+//= Iron, Silver, and Gold treasure boxes contain coin-bug snacks.
+//= Each exchange grants exclusively Silvervine or Cookie by box group.
 //============================================================
 
 malangdo,138,140,4	script	Moth#offline	4_CAT_ADV2,{
 L_Main:
+	clear;
 	if (!.Valid) {
 		mes "[Moth]";
 		mes "My menu is a mess. Come back after someone fixes my dinner list.";
 		close;
 	}
-
 	mes "[Moth]";
-	mes "Mrrr... cards are delicious. Crispy corners, inky middle, lovely paper.";
-	mes "I eat only the cards on my menu. Do not try to sneak me some weird boss scrap.";
+	mes "Mrrr... treasure smells delicious. Not the chest. The little coin bugs inside.";
 	next;
-	switch (select("Feed one card type.:Feed every accepted card.:Which cards do you eat?:Why do you like eating cards?:Leave.")) {
-	case 1:
-		goto L_Feed;
-	case 2:
-		goto L_Bulk;
-	case 3:
-		goto L_Catalog;
-	case 4:
-		goto L_WhyCards;
-	default:
-		close;
+	mes "[Moth]";
+	mes "Sometimes I bite a real coin by mistake. Ow. My teeth are still complaining.";
+	next;
+	switch (select("Feed one treasure type.:Feed every accepted treasure.:Which treasures do you eat?:Why do you eat treasure?:Leave.")) {
+	case 1: goto L_Feed;
+	case 2: goto L_Bulk;
+	case 3: goto L_Catalog;
+	case 4: goto L_WhyTreasure;
+	default: close;
 	}
 
-L_WhyCards:
+L_WhyTreasure:
+	clear;
 	mes "[Moth]";
-	mes "I dunno. Cards taste bland.";
-	mes "Not bad-bland. Paper-bland. Flat, dry, a little dusty... very respectable.";
+	mes "Those shiny coins have legs. They are coin bugs pretending to be treasure.";
 	next;
-	mes "A card is paper, right? Or is paper just a card that has not tried hard enough?";
-	mes "Hmm... no, that went in a circle.";
-	mes "Anyway, I like eating paper. Cards are just paper pretending to be important.";
-	mes "That is the whole answer. Do not make it complicated.";
+	mes "[Moth]";
+	mes "I eat the bugs inside. The chest is just their lunch box.";
+	next;
+	mes "[Moth]";
+	mes "Well... sometimes the coin does not have legs. I notice that after I bite it.";
+	next;
+	mes "[Moth]";
+	mes "Real coins taste awful. And they hurt my teeth. Very rude of them to look like dinner.";
+	next;
+	mes "[Moth]";
+	mes "Bring me Iron, Silver, or Gold Treasure Boxes. No cards, Diamond, or Platinum.";
 	next;
 	goto L_Main;
 
 L_Bulk:
+	clear;
 	getinventorylist;
 	deletearray .@bulk_ids[0], getarraysize(.@bulk_ids);
 	deletearray .@bulk_amounts[0], getarraysize(.@bulk_amounts);
-	deletearray .@bulk_classes[0], getarraysize(.@bulk_classes);
+	deletearray .@bulk_groups[0], getarraysize(.@bulk_groups);
+	setarray .@group_counts[0], 0,0,0,0,0;
 	.@bulk_count = 0;
-	.@bulk_cards = 0;
-	.@class1_count = 0;
-	.@class2_count = 0;
-	.@class3_count = 0;
-	.@class4_count = 0;
+	.@bulk_treasures = 0;
 	for (.@i = 0; .@i < @inventorylist_count; ++.@i) {
 		.@item_id = @inventorylist_id[.@i];
 		if (inarray(.@bulk_ids[0], .@item_id) != -1 ||
-			inarray(.AllCards[0], .@item_id) == -1 ||
-			getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
-			getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL)
+			inarray(.AllTreasures[0], .@item_id) == -1 ||
+			getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_ETC)
 			continue;
-		.@card_class = callsub(S_GetCardClass, .@item_id);
-		if (.@card_class < 1 || .@card_class > 4)
+		.@treasure_group = callsub(S_GetTreasureGroup, .@item_id);
+		if (.@treasure_group < 1 || .@treasure_group > 5)
 			continue;
 		.@amount = countitem(.@item_id);
 		if (.@amount < 1)
 			continue;
 		.@bulk_ids[.@bulk_count] = .@item_id;
 		.@bulk_amounts[.@bulk_count] = .@amount;
-		.@bulk_classes[.@bulk_count++] = .@card_class;
-		.@bulk_cards += .@amount;
-		switch (.@card_class) {
-		case 1: .@class1_count += .@amount; break;
-		case 2: .@class2_count += .@amount; break;
-		case 3: .@class3_count += .@amount; break;
-		case 4: .@class4_count += .@amount; break;
-		}
+		.@bulk_groups[.@bulk_count++] = .@treasure_group;
+		.@bulk_treasures += .@amount;
+		.@group_counts[.@treasure_group - 1] += .@amount;
 	}
-
 	if (!.@bulk_count) {
 		mes "[Moth]";
-		mes "Mrr? You called me over with no snacks? Rude.";
-		mes "Bring me one of the cards from my menu. I do not eat cards already stuck in equipment, either.";
+		mes "No snacks? Bring me an Iron, Silver, or Gold Treasure Box.";
+		next;
 		goto L_Main;
 	}
-
 	mes "[Moth]";
-	mes "Choose one reward for every card on my menu.";
-	mes "I do not serve both plates at once.";
+	mes "Choose Silvervine or Cookie. One plate, not both.";
 	next;
-	switch (select("Silvervine:Cookie:Keep every card.")) {
-	case 1:
+	.@mode = select("Silvervine:Cookie:Keep every treasure.");
+	clear;
+	if (.@mode == 3)
+		goto L_Main;
+	.@reward_amount = 0;
+	if (.@mode == 1) {
 		.@reward_id = 6417;
-		.@reward_amount = .@class1_count * .NormalFruit[0] + .@class2_count * .NormalFruit[1] + .@class3_count * .NormalFruit[2] + .@class4_count * .NormalFruit[3];
 		.@reward_name$ = "Silvervine Fruit";
-		break;
-	case 2:
+		for (.@i = 0; .@i < 5; ++.@i)
+			.@reward_amount += .@group_counts[.@i] * .FruitReward[.@i];
+	} else {
 		.@reward_id = 7000;
-		.@reward_amount = .@class1_count * .CookieCoin[0] + .@class2_count * .CookieCoin[1] + .@class3_count * .CookieCoin[2] + .@class4_count * .CookieCoin[3];
 		.@reward_name$ = "Event Stone Coin";
-		break;
-	default:
-		goto L_Main;
+		for (.@i = 0; .@i < 5; ++.@i)
+			.@reward_amount += .@group_counts[.@i] * .CookieReward[.@i];
 	}
-
 	mes "[Moth]";
-	mes "You are feeding me every card I accept.";
-	mes "^0055FF" + .@bulk_count + " card types, " + .@bulk_cards + " cards total.^000000";
-	mes "Class 1: " + .@class1_count + "  Class 2: " + .@class2_count;
-	mes "Class 3: " + .@class3_count + "  Class 4: " + .@class4_count;
-	mes "I will give you ^0055FF" + .@reward_amount + " " + .@reward_name$ + "^000000.";
-	mes "Once I crunch, there are no refunds. My stomach has no undo button.";
+	mes "^0055FF" + .@bulk_count + " treasure types, " + .@bulk_treasures + " boxes total.^000000";
 	next;
-	if (select("Feed every accepted card.:Keep everything.") != 1)
+	for (.@i = 0; .@i < 5; ++.@i) {
+		mes "[Moth]";
+		mes .GroupLabels$[.@i] + ": " + .@group_counts[.@i] + " boxes.";
+		next;
+	}
+	mes "[Moth]";
+	mes "I will give you ^0055FF" + .@reward_amount + " " + .@reward_name$ + "^000000.";
+	next;
+	mes "[Moth]";
+	mes "Once I crunch, there are no refunds.";
+	if (select("Feed every accepted treasure.:Keep everything.") != 1)
 		goto L_Main;
-
+	clear;
 	setarray .@reward_ids[0], .@reward_id;
 	setarray .@reward_amounts[0], .@reward_amount;
 	if (!checkweight2(.@reward_ids, .@reward_amounts)) {
 		mes "[Moth]";
-		mes "Your fruit bowl or shiny-crumb jar cannot hold that much.";
-		mes "Make room first. I will not eat anything yet.";
+		mes "Your reward will not fit. Make room first. Nothing was eaten.";
+		next;
 		goto L_Main;
 	}
-
+	// Validate the complete snapshot before deleting the first box.
 	for (.@i = 0; .@i < .@bulk_count; ++.@i) {
-		if (getiteminfo(.@bulk_ids[.@i], ITEMINFO_TYPE) != IT_CARD ||
-			getiteminfo(.@bulk_ids[.@i], ITEMINFO_SUBTYPE) != CARD_NORMAL ||
-			inarray(.AllCards[0], .@bulk_ids[.@i]) == -1 ||
-			callsub(S_GetCardClass, .@bulk_ids[.@i]) != .@bulk_classes[.@i] ||
+		if (getiteminfo(.@bulk_ids[.@i], ITEMINFO_TYPE) != IT_ETC ||
+			inarray(.AllTreasures[0], .@bulk_ids[.@i]) == -1 ||
+			callsub(S_GetTreasureGroup, .@bulk_ids[.@i]) != .@bulk_groups[.@i] ||
 			countitem(.@bulk_ids[.@i]) < .@bulk_amounts[.@i]) {
 			mes "[Moth]";
-			mes "Mrr. Something changed while you were staring at the menu.";
-			mes "I refuse uncertain food. Nothing was eaten.";
+			mes "Something changed in your bag. Nothing was eaten.";
+			next;
 			goto L_Main;
 		}
 	}
 	for (.@i = 0; .@i < .@bulk_count; ++.@i)
 		delitem .@bulk_ids[.@i], .@bulk_amounts[.@i];
 	getitem .@reward_id, .@reward_amount;
-	logmes "Card Eater: bulk ate " + .@bulk_cards + " cards across " + .@bulk_count + " item IDs; class 1 " + .@class1_count + "; class 2 " + .@class2_count + "; class 3 " + .@class3_count + "; class 4 " + .@class4_count + "; mode " + .@reward_name$ + "; reward item " + .@reward_id + "; reward amount " + .@reward_amount;
-
+	logmes "Treasure Eater: bulk ate " + .@bulk_treasures + " boxes across " + .@bulk_count + " item IDs; groups " + .@group_counts[0] + "," + .@group_counts[1] + "," + .@group_counts[2] + "," + .@group_counts[3] + "," + .@group_counts[4] + "; mode " + .@reward_name$ + "; reward item " + .@reward_id + "; reward amount " + .@reward_amount;
 	mes "[Moth]";
-	mes "Crunch. Crunch. That was a whole buffet.";
-	mes "There. Your reward. Now show me what else you are hiding.";
+	mes "Crunch. Shiny outside, buggy inside. Your reward is ready.";
 	next;
 	goto L_Feed;
 
 L_Feed:
+	clear;
 	getinventorylist;
-	deletearray .@card_ids[0], getarraysize(.@card_ids);
-	.@card_count = 0;
+	deletearray .@treasure_ids[0], getarraysize(.@treasure_ids);
+	.@treasure_count = 0;
 	for (.@i = 0; .@i < @inventorylist_count; ++.@i) {
 		.@item_id = @inventorylist_id[.@i];
-		if (inarray(.AllCards[0], .@item_id) == -1)
+		if (inarray(.AllTreasures[0], .@item_id) == -1 ||
+			getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_ETC)
 			continue;
-		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
-			getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL)
-			continue;
-		if (inarray(.@card_ids[0], .@item_id) == -1)
-			.@card_ids[.@card_count++] = .@item_id;
+		if (inarray(.@treasure_ids[0], .@item_id) == -1)
+			.@treasure_ids[.@treasure_count++] = .@item_id;
 	}
-
-	if (!.@card_count) {
+	if (!.@treasure_count) {
 		mes "[Moth]";
-		mes "Mrr? You called me over with no snacks? Rude.";
-		mes "Bring me one of the cards from my menu. I do not eat cards already stuck in equipment, either.";
+		mes "No snacks? Bring me an Iron, Silver, or Gold Treasure Box.";
+		next;
 		goto L_Main;
 	}
-
 	.@page = 0;
 	while (true) {
 		.@start = .@page * .PageSize;
-		.@end = min(.@start + .PageSize, .@card_count);
-
+		.@end = min(.@start + .PageSize, .@treasure_count);
 		mes "[Moth]";
-		mes "Pick my dinner by number. Use the blue number, not your paws.";
-		mes "^777777Page " + (.@page + 1) + " / " + ((.@card_count + .PageSize - 1) / .PageSize) + "^000000";
-		for (.@i = .@start; .@i < .@end; ++.@i)
-			mes "^0055FF" + (.@i + 1) + ".^000000 " + mesitemlink(.@card_ids[.@i], false) + " x" + countitem(.@card_ids[.@i]);
+		mes "Pick my dinner by number. Page " + (.@page + 1) + " / " + ((.@treasure_count + .PageSize - 1) / .PageSize) + ".";
 		next;
-
-		.@menu$ = "Choose a card.";
+		for (.@i = .@start; .@i < .@end; ++.@i) {
+			mes "[Moth]";
+			mes "^0055FF" + (.@i + 1) + ".^000000 " + mesitemlink(.@treasure_ids[.@i], false) + " x" + countitem(.@treasure_ids[.@i]);
+			if (.@i + 1 < .@end)
+				next;
+		}
+		.@menu$ = "Choose a treasure.";
 		.@next_option = 0;
 		.@previous_option = 0;
 		.@option = 2;
-		if (.@end < .@card_count) {
+		if (.@end < .@treasure_count) {
 			.@menu$ += ":Next page.";
 			.@next_option = .@option++;
 		}
@@ -196,8 +188,8 @@ L_Feed:
 		}
 		.@cancel_option = .@option;
 		.@menu$ += ":Cancel.";
-
 		.@action = select(.@menu$);
+		clear;
 		if (.@action == 1)
 			break;
 		if (.@action == .@next_option) {
@@ -211,28 +203,30 @@ L_Feed:
 		if (.@action == .@cancel_option)
 			goto L_Main;
 	}
-
 	mes "[Moth]";
-	mes "Enter the number shown beside the card.";
+	mes "Enter the number shown beside the treasure.";
 	input .@selection, .@start + 1, .@end;
-	.@selected_id = .@card_ids[.@selection - 1];
+	clear;
+	.@selected_id = .@treasure_ids[.@selection - 1];
 	.@owned = countitem(.@selected_id);
 	if (.@owned < 1)
 		goto L_Feed;
-
 	mes "[Moth]";
 	mes "You have " + .@owned + " " + mesitemlink(.@selected_id, false) + ".";
-	mes "How many should I crunch?";
-	input .@amount, 1, .@owned;
-
-	.@card_class = callsub(S_GetCardClass, .@selected_id);
-	.@silvervine_reward = .NormalFruit[.@card_class - 1] * .@amount;
-	.@cookie_reward = .CookieCoin[.@card_class - 1] * .@amount;
-
-	mes "[Moth]";
-	mes "Choose one reward. I do not serve both plates at once.";
 	next;
-	switch (select("Silvervine:Cookie:Keep the card.")) {
+	mes "[Moth]";
+	mes "How many boxes should I open for dinner?";
+	input .@amount, 1, .@owned;
+	clear;
+	.@treasure_group = callsub(S_GetTreasureGroup, .@selected_id);
+	if (.@treasure_group < 1 || .@treasure_group > 5)
+		goto L_Main;
+	.@silvervine_reward = .FruitReward[.@treasure_group - 1] * .@amount;
+	.@cookie_reward = .CookieReward[.@treasure_group - 1] * .@amount;
+	mes "[Moth]";
+	mes "Choose Silvervine or Cookie. One plate, not both.";
+	next;
+	switch (select("Silvervine:Cookie:Keep the treasure.")) {
 	case 1:
 		.@reward_id = 6417;
 		.@reward_amount = .@silvervine_reward;
@@ -243,175 +237,123 @@ L_Feed:
 		.@reward_amount = .@cookie_reward;
 		.@reward_name$ = "Event Stone Coin";
 		break;
-	default:
-		goto L_Feed;
+	default: goto L_Feed;
 	}
-
+	clear;
 	mes "[Moth]";
 	mes "^0055FF" + mesitemlink(.@selected_id, false) + " x" + .@amount + "^000000?";
-	mes "I will eat them and give you ^0055FF" + .@reward_amount + " " + .@reward_name$ + "^000000.";
-	mes "Once I crunch, there are no refunds. My stomach has no undo button.";
 	next;
-	if (select("Let the cat eat.:Keep the card.") != 1)
+	mes "[Moth]";
+	mes "I will give you ^0055FF" + .@reward_amount + " " + .@reward_name$ + "^000000.";
+	next;
+	mes "[Moth]";
+	mes "Once I crunch, there are no refunds.";
+	if (select("Let the cat eat.:Keep the treasure.") != 1)
 		goto L_Feed;
-
-	// Revalidate the card, amount, card class, and reward capacity immediately
-	// before changing inventory. No card is deleted when any check fails.
-	if (getiteminfo(.@selected_id, ITEMINFO_TYPE) != IT_CARD ||
-		getiteminfo(.@selected_id, ITEMINFO_SUBTYPE) != CARD_NORMAL ||
-		inarray(.AllCards[0], .@selected_id) == -1 ||
+	clear;
+	if (getiteminfo(.@selected_id, ITEMINFO_TYPE) != IT_ETC ||
+		inarray(.AllTreasures[0], .@selected_id) == -1 ||
 		countitem(.@selected_id) < .@amount ||
-		callsub(S_GetCardClass, .@selected_id) != .@card_class) {
+		callsub(S_GetTreasureGroup, .@selected_id) != .@treasure_group) {
 		mes "[Moth]";
-		mes "Mrr. Something changed while you were staring at the menu.";
-		mes "I refuse uncertain food. Nothing was eaten.";
-		goto L_Feed;
+		mes "Something changed in your bag. Nothing was eaten.";
+		next;
+		goto L_Main;
 	}
-
 	setarray .@reward_ids[0], .@reward_id;
 	setarray .@reward_amounts[0], .@reward_amount;
 	if (!checkweight2(.@reward_ids, .@reward_amounts)) {
 		mes "[Moth]";
-		mes "Your fruit bowl or shiny-crumb jar cannot hold that much.";
-		mes "Choose fewer cards, or make room first. I will not eat anything yet.";
-		goto L_Feed;
+		mes "Your reward will not fit. Make room first. Nothing was eaten.";
+		next;
+		goto L_Main;
 	}
-
 	delitem .@selected_id, .@amount;
 	getitem .@reward_id, .@reward_amount;
-	logmes "Card Eater: ate " + .@amount + " x item " + .@selected_id + "; card class " + .@card_class + "; mode " + .@reward_name$ + "; reward item " + .@reward_id + "; reward amount " + .@reward_amount;
-
+	logmes "Treasure Eater: single ate " + .@amount + " x item " + .@selected_id + "; group " + .@treasure_group + "; mode " + .@reward_name$ + "; reward item " + .@reward_id + "; reward amount " + .@reward_amount;
 	mes "[Moth]";
-	mes "Crunch. Crunch. Delicious paper.";
-	mes "There. Your reward. Now show me what else you are hiding.";
+	mes "Crunch. Shiny outside, buggy inside. Your reward is ready.";
 	next;
 	goto L_Feed;
 
 L_Catalog:
+	clear;
 	mes "[Moth]";
-	mes "These are the cards I want. Pick a level range; do not make me read all 120 at once.";
+	mes "Pick a treasure group. I eat Iron, Silver, and Gold, not Diamond or Platinum.";
 	next;
-	switch (select("Card level 1-50.:Card level 51-99.:Card level 100-199.:Card level 200+.:Back.")) {
-	case 1:
-		.@catalog_group = 1;
-		.@range$ = "Card level 1-50";
-		break;
-	case 2:
-		.@catalog_group = 2;
-		.@range$ = "Card level 51-99";
-		break;
-	case 3:
-		.@catalog_group = 3;
-		.@range$ = "Card level 100-199";
-		break;
-	case 4:
-		.@catalog_group = 4;
-		.@range$ = "Card level 200+";
-		break;
-	default:
+	.@catalog_group = select("Iron I-II.:Iron III-V.:Silver I-II.:Silver III-V.:Gold I-V.:Back.");
+	if (.@catalog_group == 6)
 		goto L_Main;
-	}
-
 	deletearray .@catalog_ids[0], getarraysize(.@catalog_ids);
 	switch (.@catalog_group) {
-	case 1: copyarray .@catalog_ids[0], .Class1[0], getarraysize(.Class1); break;
-	case 2: copyarray .@catalog_ids[0], .Class2[0], getarraysize(.Class2); break;
-	case 3: copyarray .@catalog_ids[0], .Class3[0], getarraysize(.Class3); break;
-	case 4: copyarray .@catalog_ids[0], .Class4[0], getarraysize(.Class4); break;
+	case 1: copyarray .@catalog_ids[0], .Group1[0], getarraysize(.Group1); break;
+	case 2: copyarray .@catalog_ids[0], .Group2[0], getarraysize(.Group2); break;
+	case 3: copyarray .@catalog_ids[0], .Group3[0], getarraysize(.Group3); break;
+	case 4: copyarray .@catalog_ids[0], .Group4[0], getarraysize(.Group4); break;
+	case 5: copyarray .@catalog_ids[0], .Group5[0], getarraysize(.Group5); break;
 	}
-
-	.@page = 0;
-	while (true) {
-		.@start = .@page * .PageSize;
-		.@end = min(.@start + .PageSize, getarraysize(.@catalog_ids));
+	for (.@i = 0; .@i < getarraysize(.@catalog_ids); ++.@i) {
 		mes "[Moth]";
-		mes "Cards I want from card level range ^0055FF" + .@range$ + "^000000:";
-		mes "^777777Page " + (.@page + 1) + " / " + ((getarraysize(.@catalog_ids) + .PageSize - 1) / .PageSize) + "^000000";
-		for (.@i = .@start; .@i < .@end; ++.@i)
-			mes "^0055FF" + (.@i + 1) + ".^000000 " + mesitemlink(.@catalog_ids[.@i], false);
-		next;
-
-		.@next_option = 0;
-		.@previous_option = 0;
-		.@option = 1;
-		if (.@end < getarraysize(.@catalog_ids)) {
-			.@menu$ = "Next page.";
-			.@next_option = .@option++;
-		}
-		if (.@page > 0) {
-			if (.@option == 1)
-				.@menu$ = "Previous page.";
-			else
-				.@menu$ += ":Previous page.";
-			.@previous_option = .@option++;
-		}
-		.@back_option = .@option;
-		if (.@option == 1)
-			.@menu$ = "Back to ranges.";
-		else
-			.@menu$ += ":Back to ranges.";
-		.@action = select(.@menu$);
-		if (.@action == .@back_option)
-			goto L_Catalog;
-		if (.@action == .@next_option) {
-			++.@page;
-			continue;
-		}
-		if (.@action == .@previous_option) {
-			--.@page;
-			continue;
-		}
+		mes mesitemlink(.@catalog_ids[.@i], false) + ": " + .FruitReward[.@catalog_group - 1] + " Silvervine or " + .CookieReward[.@catalog_group - 1] + " Cookie per box.";
+		if (.@i + 1 < getarraysize(.@catalog_ids))
+			next;
 	}
+	if (select("Back to groups.:Back to main.") == 1)
+		goto L_Catalog;
+	goto L_Main;
 
-S_GetCardClass:
+S_GetTreasureGroup:
 	.@item_id = getarg(0);
-	if (inarray(.Class1[0], .@item_id) != -1)
-		return 1;
-	if (inarray(.Class2[0], .@item_id) != -1)
-		return 2;
-	if (inarray(.Class3[0], .@item_id) != -1)
-		return 3;
-	if (inarray(.Class4[0], .@item_id) != -1)
-		return 4;
+	if (inarray(.Group1[0], .@item_id) != -1) return 1;
+	if (inarray(.Group2[0], .@item_id) != -1) return 2;
+	if (inarray(.Group3[0], .@item_id) != -1) return 3;
+	if (inarray(.Group4[0], .@item_id) != -1) return 4;
+	if (inarray(.Group5[0], .@item_id) != -1) return 5;
 	return 0;
 
 OnInit:
 	freeloop 1;
 	.PageSize = 10;
-	setarray .NormalFruit[0], 2,8,14,30;
-	setarray .CookieCoin[0], 10,30,50,90;
-
-	setarray .Class1[0], 4659,4663,4664,4021,4017,4022,4037,4034,4031,4036,4007,4006,4009,4030,4040,4014,4032,4020,4025,4033,4013,4074,4039,4063,4048,4044,4052,4041,4045,4066;
-	setarray .Class2[0], 4104,4064,4117,4079,4114,4120,4118,27122,27123,27124,4325,4150,4161,4228,4299,4313,4185,4268,4194,4222,4171,4422,4082,4091,4167,4124,4166,4158,4432,4369;
-	setarray .Class3[0], 4404,4405,300001,300005,300006,300004,27347,27352,27354,27356,4411,4412,4380,4378,4448,4469,4442,4447,4640,4638,300211,300215,27085,27102,27101,27110,27115,300140,300148,300106;
-	setarray .Class4[0], 300240,300241,300242,300243,300244,300246,300247,300245,300249,300250,300252,300251,300253,300254,300255,300256,300257,300258,300259,300260,300261,300146,300147,300149,300150,27355,27357,27358,27359,27360;
-
-	deletearray .AllCards[0], getarraysize(.AllCards);
-	copyarray .AllCards[0], .Class1[0], getarraysize(.Class1);
-	copyarray .AllCards[30], .Class2[0], getarraysize(.Class2);
-	copyarray .AllCards[60], .Class3[0], getarraysize(.Class3);
-	copyarray .AllCards[90], .Class4[0], getarraysize(.Class4);
-
+	setarray .FruitReward[0], 2,8,14,20,30;
+	setarray .CookieReward[0], 10,30,50,60,90;
+	setarray .GroupLabels$[0], "Iron I-II", "Iron III-V", "Silver I-II", "Silver III-V", "Gold I-V";
+	setarray .Group1[0], 9000001,9000002;
+	setarray .Group2[0], 9000003,9000004,9000005;
+	setarray .Group3[0], 9000006,9000007;
+	setarray .Group4[0], 9000008,9000009,9000010;
+	setarray .Group5[0], 9000011,9000012,9000013,9000014,9000015;
+	deletearray .AllTreasures[0], getarraysize(.AllTreasures);
+	copyarray .AllTreasures[0], .Group1[0], getarraysize(.Group1);
+	copyarray .AllTreasures[2], .Group2[0], getarraysize(.Group2);
+	copyarray .AllTreasures[5], .Group3[0], getarraysize(.Group3);
+	copyarray .AllTreasures[7], .Group4[0], getarraysize(.Group4);
+	copyarray .AllTreasures[10], .Group5[0], getarraysize(.Group5);
 	.Valid = 1;
-	if (getarraysize(.Class1) != 30 || getarraysize(.Class2) != 30 || getarraysize(.Class3) != 30 || getarraysize(.Class4) != 30 || getarraysize(.AllCards) != 120) {
-		debugmes "Card Eater: whitelist must contain 30 cards per class and 120 cards total.";
+	if (getarraysize(.Group1) != 2 || getarraysize(.Group2) != 3 || getarraysize(.Group3) != 2 || getarraysize(.Group4) != 3 || getarraysize(.Group5) != 5 || getarraysize(.AllTreasures) != 15) {
+		debugmes "Treasure Eater: expected 15 boxes in groups 2/3/2/3/5.";
 		.Valid = 0;
 	}
-	for (.@i = 0; .@i < getarraysize(.AllCards); ++.@i) {
-		.@item_id = .AllCards[.@i];
-		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD || getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL) {
-			debugmes "Card Eater: whitelist item " + .@item_id + " is not a Normal card.";
+	setarray .@expected_fruit[0], 2,8,14,20,30;
+	setarray .@expected_cookie[0], 10,30,50,60,90;
+	if (getarraysize(.FruitReward) != 5 || getarraysize(.CookieReward) != 5)
+		.Valid = 0;
+	for (.@i = 0; .@i < 5; ++.@i) {
+		if (.FruitReward[.@i] != .@expected_fruit[.@i] || .CookieReward[.@i] != .@expected_cookie[.@i]) {
+			debugmes "Treasure Eater: incorrect rewards for group " + (.@i + 1) + ".";
 			.Valid = 0;
 		}
-		if (inarray(.AllCards[0], .@item_id) != .@i) {
-			debugmes "Card Eater: duplicate whitelist item " + .@item_id + ".";
+	}
+	for (.@i = 0; .@i < getarraysize(.AllTreasures); ++.@i) {
+		.@item_id = .AllTreasures[.@i];
+		if (.@item_id != 9000001 + .@i || getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_ETC || inarray(.AllTreasures[0], .@item_id) != .@i) {
+			debugmes "Treasure Eater: invalid or duplicate treasure item " + .@item_id + ".";
 			.Valid = 0;
 		}
 	}
 	if (!.Valid)
-		debugmes "Card Eater: disabled interaction because whitelist validation failed.";
+		debugmes "Treasure Eater: disabled interaction because menu validation failed.";
 	else
-		debugmes "Card Eater: loaded 120 whitelist cards (30/30/30/30).";
+		debugmes "Treasure Eater: loaded 15 treasure boxes (2/3/2/3/5).";
 	freeloop 0;
 	end;
 }

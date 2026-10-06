@@ -58,8 +58,8 @@ export default function EnchantmentPage(): ReactNode {
           <div className={styles.grid}>
             {materialServices.map((service) => (
               <ServiceSummaryCard key={service.name} service={service}>
-                {service.name === 'Card Eater' && (
-                  <Link to="/card-eater">Search accepted cards →</Link>
+                {service.name === 'Moth' && (
+                  <Link to="/card-eater">See accepted treasures and rewards →</Link>
                 )}
                 {service.name === 'Rooke · Upgrade' && (
                   <Link to="/black-market">Open the Black Market guide →</Link>

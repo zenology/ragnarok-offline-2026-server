@@ -7,18 +7,9 @@ import { css } from 'styled-system/css'
 import { Callout } from '@/components/molecules'
 import { GuideSection, HeaderSection } from '@/components/templates'
 
-import { cardEaterCards, type CardEaterCard } from './data/cards'
+import { treasureEaterItems, type TreasureEaterItem } from './data/cards'
 
-const tierLabels = ['1–50', '51–99', '100–199', '200+'] as const
-const cardImageModules = import.meta.glob('../../assets/card-eater/cards/*.png', {
-  eager: true,
-  import: 'default',
-  query: '?url'
-}) as Record<string, string>
-
-const cardImages = new Map(
-  Object.entries(cardImageModules).map(([path, url]) => [path.match(/(\d+)\.png$/)?.[1], url])
-)
+const groupLabels = ['Iron I–II', 'Iron III–V', 'Silver I–II', 'Silver III–V', 'Gold I–V'] as const
 
 function normalize(value: string): string {
   return value.toLocaleLowerCase().trim().replace(/\s+/g, ' ')
@@ -61,33 +52,20 @@ function fuzzyScore(name: string, query: string): number | undefined {
   return score
 }
 
-function searchCards(query: string): CardEaterCard[] {
+function searchTreasures(query: string): TreasureEaterItem[] {
   const normalizedQuery = normalize(query)
+  const numericQuery = /^\d+$/.test(normalizedQuery)
 
-  return cardEaterCards
-    .map((card) => ({ card, score: fuzzyScore(card.name, normalizedQuery) }))
-    .filter((entry): entry is { card: CardEaterCard; score: number } => entry.score !== undefined)
-    .sort(
-      (left, right) =>
-        left.card.name.localeCompare(right.card.name) || left.card.itemId - right.card.itemId
+  return treasureEaterItems
+    .filter((item) =>
+      numericQuery
+        ? String(item.itemId) === normalizedQuery
+        : fuzzyScore(item.name, normalizedQuery) !== undefined
     )
-    .map((entry) => entry.card)
+    .sort((left, right) => left.name.localeCompare(right.name) || left.itemId - right.itemId)
 }
 
-function sortCardsByMonsterLevel(cards: CardEaterCard[]): CardEaterCard[] {
-  return [...cards].sort(
-    (left, right) =>
-      left.monsterLevel - right.monsterLevel ||
-      left.name.localeCompare(right.name) ||
-      left.itemId - right.itemId
-  )
-}
-
-function rewardText(card: CardEaterCard): string {
-  return `Silvervine mode: ${card.silvervineReward} Silvervine · Event Stone Coin mode: ${card.eventStoneCoinReward} Event Stone Coins`
-}
-
-function CardGrid({ cards }: { cards: CardEaterCard[] }): ReactNode {
+function TreasureGrid({ items }: { items: TreasureEaterItem[] }): ReactNode {
   return (
     <div
       className={css({
@@ -97,9 +75,9 @@ function CardGrid({ cards }: { cards: CardEaterCard[] }): ReactNode {
         _mobile: { gridTemplateColumns: '1fr' }
       })}
     >
-      {cards.map((card) => (
+      {items.map((item) => (
         <article
-          key={card.itemId}
+          key={item.itemId}
           className={css({
             display: 'grid',
             gap: '8px',
@@ -109,18 +87,6 @@ function CardGrid({ cards }: { cards: CardEaterCard[] }): ReactNode {
             backgroundColor: 'surface.default'
           })}
         >
-          <img
-            src={cardImages.get(String(card.itemId))}
-            alt={`${card.name} artwork`}
-            loading="lazy"
-            className={css({
-              width: '100%',
-              height: '220px',
-              objectFit: 'contain',
-              backgroundColor: 'surface.raised',
-              borderRadius: '4px'
-            })}
-          />
           <h3
             className={css({
               margin: 0,
@@ -129,16 +95,14 @@ function CardGrid({ cards }: { cards: CardEaterCard[] }): ReactNode {
               fontSize: '18px'
             })}
           >
-            {card.name}
+            {item.name}
           </h3>
           <p className={css({ margin: 0, color: 'accent.soft', fontSize: '13px' })}>
-            Item ID {card.itemId}
-          </p>
-          <p className={css({ margin: 0, color: 'text.muted', fontSize: '14px' })}>
-            Monster Lv. {card.monsterLevel} · {card.monsterName}
+            Item ID {item.itemId}
           </p>
           <p className={css({ margin: 0, color: 'text.muted', fontSize: '14px', lineHeight: 1.5 })}>
-            {rewardText(card)}
+            Per box: {item.silvervineReward} Silvervine Fruit or {item.eventStoneCoinReward} Event
+            Stone Coins (Cookie).
           </p>
         </article>
       ))}
@@ -150,39 +114,39 @@ export default function CardEaterPage(): ReactNode {
   const [query, setQuery] = useState('')
   const hasQuery = normalize(query).length > 0
   const results = useMemo(
-    () => (hasQuery ? searchCards(query) : sortCardsByMonsterLevel(cardEaterCards)),
+    () =>
+      hasQuery
+        ? searchTreasures(query)
+        : [...treasureEaterItems].sort((left, right) => left.itemId - right.itemId),
     [hasQuery, query]
   )
-  const resultsByTier = tierLabels.map((label, index) => ({
+  const resultsByGroup = groupLabels.map((label, index) => ({
     label,
-    cards: sortCardsByMonsterLevel(results.filter((card) => card.tier === index + 1))
+    items: results.filter((item) => item.group === index + 1)
   }))
 
   return (
     <main
-      aria-label="Card Eater player guide"
-      className={css({ minHeight: '100vh', background: 'var(--colors-surface-canvas)' })}
+      aria-label="Treasure Eater player guide"
+      className={css({
+        minHeight: '100vh',
+        background: 'var(--colors-surface-canvas)',
+        '& > header': { boxSizing: 'border-box' }
+      })}
     >
       <HeaderSection
         eyebrow="MALANGDO · PLAYER GUIDE"
-        title="Card Eater"
-        description="A searchable reference for every Normal monster card accepted by the Malangdo Card Eater."
+        title="Moth / Treasure Eater"
+        description="Find every Iron, Silver, and Gold Treasure Box on Moth's menu and its reward per box."
       />
-      <div
-        className={css({
-          width: 'min(calc(100% - 48px), 1180px)',
-          margin: '0 auto',
-          paddingBottom: '96px',
-          _mobile: { width: 'min(calc(100% - 32px), 1180px)' }
-        })}
-      >
-        <GuideSection id="search" number="01" eyebrow="Find a card" title="Accepted cards">
+      <div className={css({ maxWidth: '1120px', margin: '0 auto', padding: '0 24px 96px' })}>
+        <GuideSection id="search" number="01" eyebrow="Find a treasure" title="Accepted treasures">
           <Callout variant="notice">
-            The Card Eater accepts 120 loose Normal monster cards. Cards inserted into equipment and
-            MVP or miniboss cards are not on this menu.
+            Moth accepts 15 Iron, Silver, and Gold Treasure Boxes. Cards, Diamond and Platinum
+            boxes, and all other chests are not accepted.
           </Callout>
           <label
-            htmlFor="card-eater-search"
+            htmlFor="treasure-eater-search"
             className={css({
               display: 'grid',
               gap: '8px',
@@ -191,13 +155,13 @@ export default function CardEaterPage(): ReactNode {
               fontWeight: 600
             })}
           >
-            Search by card name
+            Search by treasure name or exact item ID
             <input
-              id="card-eater-search"
+              id="treasure-eater-search"
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Try Lunatic or savag babe"
+              placeholder="Try Silver, tresure, or 9000003"
               className={css({
                 minHeight: '48px',
                 padding: '0 14px',
@@ -231,82 +195,64 @@ export default function CardEaterPage(): ReactNode {
             Clear search
           </button>
           <p aria-live="polite" className={css({ color: 'text.muted', margin: '18px 0' })}>
-            {results.length} of 120 cards shown
+            {results.length} of 15 treasures shown
           </p>
           {results.length === 0 ? (
             <p role="status">
-              No accepted cards match “{query}”. Try a longer part of the card name.
+              No accepted treasures match “{query}”. Try a longer part of the treasure name or an
+              exact item ID.
             </p>
           ) : hasQuery ? (
             <div className={css({ marginTop: '28px' })}>
-              <CardGrid cards={results} />
+              <TreasureGrid items={results} />
             </div>
           ) : (
             <div className={css({ display: 'grid', gap: '36px', marginTop: '28px' })}>
-              {resultsByTier.map(({ label, cards }) => (
-                <section key={label} aria-labelledby={`tier-${label}`}>
-                  <div
+              {resultsByGroup.map(({ label, items }, index) => (
+                <section key={label} aria-labelledby={`group-${index + 1}`}>
+                  <h2
+                    id={`group-${index + 1}`}
                     className={css({
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'baseline',
-                      gap: '16px',
-                      marginBottom: '14px'
+                      margin: '0 0 14px',
+                      color: 'text.default',
+                      fontFamily: 'siteHeading',
+                      fontSize: '24px'
                     })}
                   >
-                    <h2
-                      id={`tier-${label}`}
-                      className={css({
-                        margin: 0,
-                        color: 'text.default',
-                        fontFamily: 'siteHeading',
-                        fontSize: '24px'
-                      })}
-                    >
-                      Card Tier {label}
-                    </h2>
-                    <span className={css({ color: 'text.muted', fontSize: '14px' })}>
-                      {cards.length} cards
-                    </span>
-                  </div>
-                  <CardGrid cards={cards} />
+                    {label}
+                  </h2>
+                  <TreasureGrid items={items} />
                 </section>
               ))}
             </div>
           )}
         </GuideSection>
-        <GuideSection id="tiers" number="02" eyebrow="Know the payout" title="Four card tiers">
-          <div
-            className={css({
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-              gap: '12px',
-              _mobile: { gridTemplateColumns: 'repeat(2, minmax(0, 1fr))' }
-            })}
-          >
-            {tierLabels.map((label, index) => (
-              <div
-                key={label}
-                className={css({
-                  padding: '16px',
-                  border: '1px solid var(--colors-line-default)',
-                  borderRadius: '6px',
-                  backgroundColor: 'surface.raised'
-                })}
-              >
-                <strong>{label}</strong>
-                <p className={css({ margin: '8px 0 0', color: 'text.muted', fontSize: '14px' })}>
-                  {cardEaterCards.filter((card) => card.tier === index + 1).length} cards
-                </p>
-              </div>
-            ))}
-          </div>
+        <GuideSection id="exchange" number="02" eyebrow="Feed Moth" title="One reward per exchange">
+          <p>
+            Moth waits in Malangdo at 138, 140, under the Silvervine Exchange sign. He eats the coin
+            bugs hiding among the treasure inside your boxes.
+          </p>
+          <p>
+            Choose one treasure type and a quantity, or feed every accepted treasure in your
+            inventory. Pick Silvervine Fruit or Cookie (Event Stone Coin), review the total, then
+            confirm.
+          </p>
+          <p>
+            Rewards are fixed by treasure group. There is no random payout or player-level bonus,
+            and one exchange never grants both currencies. Feeding does not advance Costume Roulette
+            pity.
+          </p>
+          <p>
+            Canceling, missing boxes, or insufficient reward capacity spends nothing. Once confirmed
+            successfully, the boxes are consumed and cannot also be sold for Zeny or exchanged for
+            Black Market Points.
+          </p>
           <p className={css({ color: 'text.muted', marginTop: '24px' })}>
             See the{' '}
             <Link to="/costumes" className={css({ color: 'accent.soft' })}>
               Malangdo Costumes guide
             </Link>{' '}
-            for the complete service route.
+            for places to spend your rewards.
           </p>
         </GuideSection>
       </div>

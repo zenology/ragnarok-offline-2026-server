@@ -71,11 +71,11 @@ export const costServices: ServiceSummary[] = [
 
 export const materialServices: ServiceSummary[] = [
   {
-    name: 'Card Eater',
+    name: 'Moth',
     location: 'Malangdo · 138, 140',
     tag: 'Silvervine Fruit',
     description:
-      'Feed the listed Normal cards for Silvervine Fruit. Fruit is shared with Costume Roulette and these enchant NPCs.'
+      'Feed Iron, Silver, and Gold Treasure Boxes and choose Silvervine Fruit. Fruit is shared with Costume Roulette and these enchant NPCs. Cookie (Event Stone Coin) is the alternative reward.'
   },
   {
     name: 'Rooke · Upgrade',
