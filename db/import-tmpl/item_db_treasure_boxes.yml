@@ -143,8 +143,8 @@ Body:
     AegisName: Offline_Treasure_Mini_1_100
     Name: Diamond Treasure Box I
     Type: Etc
-    Buy: 5000000
-    Sell: 2500000
+    Buy: 10000000
+    Sell: 5000000
     Weight: 10
     Trade:
       NoSell: false
@@ -152,8 +152,8 @@ Body:
     AegisName: Offline_Treasure_Mini_101_200
     Name: Diamond Treasure Box II
     Type: Etc
-    Buy: 9000000
-    Sell: 4500000
+    Buy: 22000000
+    Sell: 11000000
     Weight: 10
     Trade:
       NoSell: false
