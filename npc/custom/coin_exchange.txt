@@ -1,11 +1,9 @@
 //===== Ragnarok Offline =====================================
 //= Coin Exchange
 //===== Description: =========================================
-//= Converts Zeny into character-local Black Market Points and cash-out
-//= Black Market Points back into Zeny.
+//= Converts Zeny into character-local Black Market Points.
 //= Buy rate: 1,000 Zeny for 1 Black Market Point.
 //= Buy promotion: every 10 purchased points awards 1 bonus point.
-//= Cash-out rate: 1 Black Market Point for 500 Zeny. No cash-out bonus.
 //= Optional gacha: one 0-100 roll with a stake multiplier of
 //= 1 per 1,000 Zeny.
 //============================================================
@@ -14,9 +12,8 @@ paramk,26,181,4	script	Coin Exchange#offline	563,{
 	mes "[Coin Exchange]";
 	mes "^777777The slot machine rattles as its coin counter lights up.^000000";
 	mes "Insert ^0055FF" + .ZenyPerPoint + " Zeny^000000 to receive ^0055FF1 Black Market Point^000000.";
-	mes "Cash out ^0055FF1 Black Market Point^000000 for ^0055FF" + .ZenyPerCashOut + " Zeny^000000.";
 	next;
-	switch (select("Exchange Zeny.:Exchange Black Market Points.:Spin the gacha.:Check my Black Market Points.:Leave.")) {
+	switch (select("Exchange Zeny.:Spin the gacha.:Check my Black Market Points.:Leave.")) {
 	case 1:
 		clear;
 		.@max_points = Zeny / .ZenyPerPoint;
@@ -72,62 +69,6 @@ paramk,26,181,4	script	Coin Exchange#offline	563,{
 		close;
 
 	case 2:
-		clear;
-		if (BlackMarketPoints < 1) {
-			mes "[Coin Exchange]";
-			mes "You have no Black Market Points to cash out.";
-			close;
-		}
-		.@max_by_zeny = (MAX_ZENY - Zeny) / .ZenyPerCashOut;
-		if (.@max_by_zeny < 1) {
-			mes "[Coin Exchange]";
-			mes "Your Zeny pouch is already full.";
-			mes "The machine cannot spit out more coins.";
-			close;
-		}
-		.@max_points = BlackMarketPoints;
-		if (.@max_points > .@max_by_zeny)
-			.@max_points = .@max_by_zeny;
-
-		mes "[Coin Exchange]";
-		mes "You can cash out up to ^0055FF" + .@max_points + " Black Market Points^000000.";
-		mes "Each point returns ^0055FF" + .ZenyPerCashOut + " Zeny^000000. No extras.";
-		mes "How many points do you want to cash out?";
-		next;
-		input .@points, 1, .@max_points;
-		clear;
-		.@payout = .@points * .ZenyPerCashOut;
-
-		mes "[Coin Exchange]";
-		mes "Insert ^0055FF" + .@points + " Black Market Points^000000";
-		mes "Receive ^0055FF" + .@payout + " Zeny^000000.";
-		next;
-		if (select("Cash out.:Cancel.") != 1)
-			close;
-		clear;
-
-		// Revalidate immediately before committing the cash-out.
-		if (.@points < 1 ||
-			.@payout != .@points * .ZenyPerCashOut ||
-			BlackMarketPoints < .@points ||
-			.@payout > MAX_ZENY - Zeny) {
-			mes "[Coin Exchange]";
-			mes "The machine rejects the transaction.";
-			mes "Check your Black Market Points and Zeny, then try again.";
-			close;
-		}
-
-		BlackMarketPoints -= .@points;
-		Zeny += .@payout;
-		logmes "Coin Exchange: cashed out " + .@points + " Black Market Points for " + .@payout + " Zeny; balance " + BlackMarketPoints;
-
-		mes "[Coin Exchange]";
-		mes "^777777The hopper clanks. Coins spill into the tray--fewer than went in.^000000";
-		mes "You received ^0055FF" + .@payout + " Zeny^000000.";
-		mes "Current balance: ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
-		close;
-
-	case 3:
 		clear;
 		.@max_multiplier = Zeny / .ZenyPerPoint;
 		if (.@max_multiplier < 1) {
@@ -212,7 +153,7 @@ paramk,26,181,4	script	Coin Exchange#offline	563,{
 		mes "Current balance: ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
 		close;
 
-	case 4:
+	case 3:
 		clear;
 		mes "[Coin Exchange]";
 		mes "You have ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
@@ -224,7 +165,6 @@ paramk,26,181,4	script	Coin Exchange#offline	563,{
 
 OnInit:
 	.ZenyPerPoint = 1000;
-	.ZenyPerCashOut = 500;
 	.PromotionSize = 10;
 	setunittitle(getnpcid(0), "<Black Market Point Exchange>");
 	end;
