@@ -9,7 +9,7 @@
  **/
 
 //BUILDIN_DEF(example,""),
-BUILDIN_DEF(premiumcardloot,"ii"),
+BUILDIN_DEF(premiumtreasureloot,"ii"),
 BUILDIN_DEF(callblackmarketshop,"sii"),
 BUILDIN_DEF(bmc_load,""),
 BUILDIN_DEF(bmc_ready,"s"),

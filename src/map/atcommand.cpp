@@ -8177,8 +8177,7 @@ ACMD_FUNC(mobinfo)
 				if (id == nullptr)
 					continue;
 
-				int32 item_drop_modifier = (id->type == IT_CARD) ? 100 : drop_modifier;
-				int32 droprate = mob_getdroprate( sd, mob, entry->rate, item_drop_modifier );
+				int32 droprate = mob_getdroprate( sd, mob, entry->rate, drop_modifier );
 
 				sprintf(atcmd_output2, " - %s  %02.02f%%", item_db.create_item_link( id ).c_str(), (float)droprate / 100);
 				strcat(atcmd_output, atcmd_output2);
@@ -8736,8 +8735,7 @@ ACMD_FUNC(whodrops)
 
 #ifdef RENEWAL_DROP
 				if( battle_config.atcommand_mobinfo_type ) {
-					if (id->type != IT_CARD)
-						dropchance = dropchance * pc_level_penalty_mod( sd, PENALTY_DROP, mob ) / 100;
+					dropchance = dropchance * pc_level_penalty_mod( sd, PENALTY_DROP, mob ) / 100;
 					if (dropchance <= 0 && !battle_config.drop_rate0item)
 						dropchance = 1;
 				}

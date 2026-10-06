@@ -131,7 +131,7 @@ function	script	F_PremiumExtraRunning	{
 	.@exp = (#PREMIUM_EXPUP > .@now || getstatus(SC_PERIOD_PLUSEXP_2ND));
 	.@item = (#PREMIUM_ITEMUP > .@now || getstatus(SC_PERIOD_RECEIVEITEM_2ND));
 	.@death = (#PREMIUM_DEATHDOWN > .@now || getstatus(SC_LIFEINSURANCE));
-	.@card = (#PREMIUM_CARDLOOT > .@now);
+	.@treasure = (#PREMIUM_CARDLOOT > .@now);
 	if (.@kind == 1)
 		return .@exp;
 	if (.@kind == 2)
@@ -139,29 +139,29 @@ function	script	F_PremiumExtraRunning	{
 	if (.@kind == 3)
 		return .@death;
 	if (.@kind == 4)
-		return .@card;
+		return .@treasure;
 	if (.@kind == 5)
-		return (.@exp || .@item || .@death || .@card);
+		return (.@exp || .@item || .@death || .@treasure);
 	return 0;
 }
 
-// Keep Card Magnet account-wide without creating a new SC_* enum. A nonzero
-// expired stamp is deliberately cleared here; a zero stamp must not disturb a
-// player's independent @aloottype +card choice.
-function	script	F_PremiumSyncCardLoot	{
-	deltimer "PremiumLogin#offline::OnCardLootExpire";
+// Keep Treasure Magnet account-wide without creating a new SC_* enum.
+// Retain #PREMIUM_CARDLOOT as its expiry key so previously purchased time is preserved.
+// This service never changes the player's independent autoloot settings.
+function	script	F_PremiumSyncTreasureLoot	{
+	deltimer "PremiumLogin#offline::OnTreasureLootExpire";
 	.@now = gettimetick(2);
 	if (#PREMIUM_CARDLOOT <= .@now) {
 		if (#PREMIUM_CARDLOOT > 0) {
 			#PREMIUM_CARDLOOT = 0;
-			premiumcardloot 0,0;
 		}
+		premiumtreasureloot 0,0;
 		return 0;
 	}
 	.@ms = (#PREMIUM_CARDLOOT - .@now) * 1000;
-	if (premiumcardloot(1, .@ms) == 0)
+	if (premiumtreasureloot(1, .@ms) == 0)
 		return 0;
-	addtimer .@ms, "PremiumLogin#offline::OnCardLootExpire";
+	addtimer .@ms, "PremiumLogin#offline::OnTreasureLootExpire";
 	return 1;
 }
 
@@ -172,7 +172,7 @@ function	script	F_PremiumApplyExtra	{
 	.@now = gettimetick(2);
 	.@until = .@now + 86400;
 	if (.@kind == 4 || .@kind == 5) {
-		if (premiumcardloot(1, 86400000) == 0)
+		if (premiumtreasureloot(1, 86400000) == 0)
 			return 0;
 		#PREMIUM_CARDLOOT = .@until;
 	}
@@ -189,7 +189,7 @@ function	script	F_PremiumApplyExtra	{
 		sc_start SC_LIFEINSURANCE, 86400000, 0;
 	}
 	if (.@kind == 4 || .@kind == 5)
-		callfunc("F_PremiumSyncCardLoot");
+		callfunc("F_PremiumSyncTreasureLoot");
 	return 1;
 }
 
@@ -201,7 +201,7 @@ function	script	F_PremiumSyncExtras	{
 		sc_start SC_PERIOD_RECEIVEITEM_2ND, (#PREMIUM_ITEMUP - .@now) * 1000, 30;
 	if (#PREMIUM_DEATHDOWN > .@now)
 		sc_start SC_LIFEINSURANCE, (#PREMIUM_DEATHDOWN - .@now) * 1000, 0;
-	callfunc("F_PremiumSyncCardLoot");
+	callfunc("F_PremiumSyncTreasureLoot");
 	return;
 }
 
@@ -268,17 +268,17 @@ OnPCLoginEvent:
 	callfunc("F_PremiumSyncExtras");
 	end;
 
-OnCardLootExpire:
+OnTreasureLootExpire:
 	.@now = gettimetick(2);
 	if (#PREMIUM_CARDLOOT > .@now) {
-		callfunc("F_PremiumSyncCardLoot");
+		callfunc("F_PremiumSyncTreasureLoot");
 		end;
 	}
 	if (#PREMIUM_CARDLOOT > 0) {
 		#PREMIUM_CARDLOOT = 0;
-		premiumcardloot 0,0;
-		dispbottom "Card Magnet expired.";
+		dispbottom "Treasure Magnet expired.";
 	}
+	premiumtreasureloot 0,0;
 	end;
 
 OnGmVipSync:
@@ -453,7 +453,7 @@ S_ExtrasMenu:
 	mes "Extra options last 24 hours for every character on this account!";
 	mes "They cost Nyangvine, and I won't sell one that's already running.";
 	next;
-	.@menu$ = "EXP UP (4 Nyangvine):ITEM UP (2 Nyangvine):DEATH DOWN (1 Nyangvine):CARD MAGNET (1 Nyangvine):Advanced Package (8 Nyangvine):Just checking:";
+	.@menu$ = "EXP UP (4 Nyangvine):ITEM UP (2 Nyangvine):DEATH DOWN (1 Nyangvine):TREASURE MAGNET (1 Nyangvine):Advanced Package (8 Nyangvine):Just checking:";
 	switch (select(.@menu$)) {
 	case 1:
 		callsub S_RefuseIfRunning, 1;
@@ -469,7 +469,7 @@ S_ExtrasMenu:
 		end;
 	case 4:
 		callsub S_RefuseIfRunning, 4;
-		callsub S_Buy, 1, 4, "Card Magnet";
+		callsub S_Buy, 1, 4, "Treasure Magnet";
 		end;
 	case 5:
 		callsub S_RefuseIfRunning, 5;
