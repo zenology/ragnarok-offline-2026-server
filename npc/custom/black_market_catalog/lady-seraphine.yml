@@ -199,8 +199,6 @@ Body:
   - {"Id": 490640, "Price": 12150, "DisplayName": "Scroll of Essential Arts", "Category": 0}
   - {"Id": 490561, "Price": 2550, "DisplayName": "Scroll of Time and Space", "Category": 0}
   - {"Id": 2730, "Price": 2250, "DisplayName": "Seal of Continental Guard", "Category": 0}
-  - {"Id": 2642, "Price": 100, "DisplayName": "Serin's Gold Ring", "Category": 0}
-  - {"Id": 2643, "Price": 100, "DisplayName": "Serin's Gold Ring", "Category": 0}
   - {"Id": 2778, "Price": 240, "DisplayName": "Shaman Earrings", "Category": 0}
   - {"Id": 2825, "Price": 240, "DisplayName": "Shaman Earrings", "Category": 0}
   - {"Id": 2777, "Price": 1500, "DisplayName": "Shaman Ring", "Category": 0}
