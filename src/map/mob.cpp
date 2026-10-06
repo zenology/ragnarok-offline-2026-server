@@ -2927,6 +2927,8 @@ map_session_data* mob_data::get_mvp_player(map_session_data* first_sd) {
 	return mvp_sd;
 }
 
+#include "../custom/mob_treasure_boxes.hpp"
+
 /*==========================================
  * Signals death of mob.
  * type&1 -> no drops, type&2 -> no exp
@@ -3354,6 +3356,8 @@ int32 mob_dead(mob_data *md, block_list *src, int32 type)
 			// By popular demand, use base drop rate for autoloot code. [Skotlex]
 			mob_item_drop(md, dlist, ditem, 0, battle_config.autoloot_adjust ? drop_rate : entry->rate, homkillonly || merckillonly);
 		}
+
+		mob_treasure_box_drop( md, src, dlist, homkillonly || merckillonly );
 
 		// Ore Discovery (triggers if owner has loot priority, does not require to be the killer)
 		if (first_sd != nullptr && pc_checkskill(first_sd, BS_FINDINGORE) > 0) {

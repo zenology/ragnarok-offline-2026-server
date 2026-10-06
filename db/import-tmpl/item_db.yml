@@ -170,6 +170,7 @@ Footer:
   Imports:
     - Path: db/import/item_db_iro_hats.yml
     - Path: db/import/item_db_iro_hats_hard.yml
+    - Path: db/import/item_db_treasure_boxes.yml
 
 #Body:
 # THQ Quest Items
