@@ -3,7 +3,6 @@ Header:
   Version: 1
 Body:
   - {Id: 15061, Price: 540, DisplayName: "Aegir Armor", Category: 0}
-  - {Id: 15138, Price: 1500, DisplayName: "Aegir Armor", Category: 0}
   - {Id: 450164, Price: 1500, DisplayName: "Aegirnian Armor", Category: 0}
   - {Id: 15065, Price: 1000, DisplayName: "American Chace Penta", Category: 0}
   - {Id: 2355, Price: 2250, DisplayName: "Angelic Protection", Category: 0}

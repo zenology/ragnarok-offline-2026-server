@@ -37,7 +37,6 @@ Body:
   - {Id: 5242, Price: 1000, DisplayName: "Yellow Magician Hat"}
   - {Id: 5245, Price: 1200, DisplayName: "Elven Sunglasses"}
   - {Id: 5255, Price: 1200, DisplayName: "Triple Poring Hat"}
-  - {Id: 5269, Price: 2000, DisplayName: "Flapping Angel Wings"}
   - {Id: 5276, Price: 1000, DisplayName: "Fantastic Wig"}
   - {Id: 5284, Price: 1560, DisplayName: "Water Lily Crown"}
   - {Id: 5285, Price: 260, DisplayName: "Vane Hairpin"}
@@ -84,7 +83,6 @@ Body:
   - {Id: 5421, Price: 3100, DisplayName: "Ears of Ifrit"}
   - {Id: 5451, Price: 5075, DisplayName: "Gold Dragon Helm"}
   - {Id: 5454, Price: 3750, DisplayName: "Puppy Hat"}
-  - {Id: 5459, Price: 1000, DisplayName: "Drooping Bunny"}
   - {Id: 5464, Price: 3000, DisplayName: "Bacsojin Doll Hat"}
   - {Id: 5490, Price: 1920, DisplayName: "Anubis Helm"}
   - {Id: 5497, Price: 2040, DisplayName: "Tiger King Doll Hat"}
@@ -114,7 +112,6 @@ Body:
   - {Id: 5582, Price: 1300, DisplayName: "Cancer Crown"}
   - {Id: 5585, Price: 2400, DisplayName: "Rune Hairband"}
   - {Id: 5611, Price: 1200, DisplayName: "Turtle Hat"}
-  - {Id: 5663, Price: 1200, DisplayName: "Libra Diadem"}
   - {Id: 5676, Price: 1950, DisplayName: "Scorpio Crown"}
   - {Id: 5677, Price: 1300, DisplayName: "Scorpio Diadem"}
   - {Id: 5683, Price: 100, DisplayName: "Majestic Goat Model"}
@@ -207,7 +204,6 @@ Body:
   - {Id: 19083, Price: 1000, DisplayName: "Mask of Hero"}
   - {Id: 19086, Price: 300, DisplayName: "Robo Eyes"}
   - {Id: 19087, Price: 1300, DisplayName: "Angel Spirit"}
-  - {Id: 19095, Price: 100, DisplayName: "Happy Balloon"}
   - {Id: 19102, Price: 5300, DisplayName: "Night Sparrow Hat"}
   - {Id: 19114, Price: 1980, DisplayName: "Sting Silk Ribbon"}
   - {Id: 19116, Price: 2500, DisplayName: "Red Baby Dragon"}
@@ -226,7 +222,6 @@ Body:
   - {Id: 19171, Price: 6450, DisplayName: "Magician Knit Hat"}
   - {Id: 19172, Price: 4200, DisplayName: "Sitting Pope(Casual)"}
   - {Id: 19181, Price: 3000, DisplayName: "New Wave Sunglasses"}
-  - {Id: 19244, Price: 1440, DisplayName: "Rosario Necklace"}
   - {Id: 19246, Price: 1800, DisplayName: "Royal Guard Necklace"}
   - {Id: 19249, Price: 4200, DisplayName: "Spell Circuit"}
   - {Id: 19263, Price: 4200, DisplayName: "General's Helm"}
@@ -325,10 +320,8 @@ Body:
   - {Id: 18946, Price: 1000, DisplayName: "Very Cute Doll Hat"}
   - {Id: 18961, Price: 100, DisplayName: "Refined Lunatic Hat"}
   - {Id: 18963, Price: 200, DisplayName: "Happy Parrot"}
-  - {Id: 18964, Price: 200, DisplayName: "Crown of Saint"}
   - {Id: 18967, Price: 200, DisplayName: "Jinn Poring Balloon"}
   - {Id: 18986, Price: 260, DisplayName: "Happy Parrot"}
-  - {Id: 18994, Price: 1300, DisplayName: "Black Veil"}
   - {Id: 18996, Price: 1300, DisplayName: "Lady's Ribbon"}
   - {Id: 19005, Price: 2200, DisplayName: "Party Balloon"}
   - {Id: 19335, Price: 100, DisplayName: "Sweets Bonbon"}
@@ -375,7 +368,6 @@ Body:
   - {Id: 420590, Price: 2400, DisplayName: "Frosty Breath"}
   - {Id: 420777, Price: 4600, DisplayName: "Buffalo Bandit Scarf"}
   - {Id: 18794, Price: 22425, DisplayName: "Plain Black Magician Hat"}
-  - {Id: 18795, Price: 3800, DisplayName: "Night Sparrow Hat"}
   - {Id: 400078, Price: 2850, DisplayName: "Goral Crown"}
   - {Id: 400079, Price: 4400, DisplayName: "Trial Diadem"}
   - {Id: 400094, Price: 2640, DisplayName: "Jade Crown"}
@@ -409,7 +401,6 @@ Body:
   - {Id: 5390, Price: 1200, DisplayName: "Twin Pom Blue Santa Hat"}
   - {Id: 5388, Price: 975, DisplayName: "Snake Head"}
   - {Id: 5393, Price: 1000, DisplayName: "Valentine Hat"}
-  - {Id: 5802, Price: 975, DisplayName: "Upgrade Elephant Hat"}
   - {Id: 5054, Price: 100, DisplayName: "Assassin Mask"}
   - {Id: 5107, Price: 900, DisplayName: "Crunch Toast"}
   - {Id: 2234, Price: 240, DisplayName: "Tiara"}
@@ -458,7 +449,6 @@ Body:
   - {Id: 5086, Price: 1800, DisplayName: "Alarm Mask"}
   - {Id: 5108, Price: 975, DisplayName: "Renown Detective's Cap"}
   - {Id: 5121, Price: 3900, DisplayName: "Zealotus Mask"}
-  - {Id: 5146, Price: 440, DisplayName: "Elephant Hat"}
   - {Id: 5151, Price: 2500, DisplayName: "Note Headphone"}
   - {Id: 5152, Price: 320, DisplayName: "Chinese Crown"}
   - {Id: 5170, Price: 2400, DisplayName: "Feather Beret"}

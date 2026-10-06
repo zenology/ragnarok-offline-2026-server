@@ -58,8 +58,6 @@ Body:
   - {Id: 470153, Price: 1500, DisplayName: "Herosria Speed Boots", Category: 0}
   - {Id: 470409, Price: 1300, DisplayName: "Holiday Cozy Socks", Category: 0}
   - {Id: 470036, Price: 4500, DisplayName: "Illusion Military Boots", Category: 0}
-  - {Id: 2429, Price: 100, DisplayName: "Iron Boots", Category: 0}
-  - {Id: 2430, Price: 100, DisplayName: "Iron Boots", Category: 0}
   - {Id: 470452, Price: 1500, DisplayName: "Issgard Boots", Category: 0}
   - {Id: 470454, Price: 1500, DisplayName: "Issgard Shoes", Category: 0}
   - {Id: 470027, Price: 6800, DisplayName: "Juggernaut", Category: 0}

@@ -42,10 +42,10 @@ Body:
   - {"Id": 2746, "Price": 240, "DisplayName": "Cold Heart", "Category": 0}
   - {"Id": 2728, "Price": 2250, "DisplayName": "Cursed Hand", "Category": 0}
   - {"Id": 28381, "Price": 1800, "DisplayName": "Cute Grass Necklace", "Category": 0}
-  - {"Id": 2779, "Price": 240, "DisplayName": "Dark Knight Belt", "Category": 0}
-  - {"Id": 2826, "Price": 240, "DisplayName": "Dark Knight Belt", "Category": 0}
-  - {"Id": 2780, "Price": 1800, "DisplayName": "Dark Knight Glove", "Category": 0}
-  - {"Id": 2827, "Price": 1440, "DisplayName": "Dark Knight Glove", "Category": 0}
+  - {"Id": 2779, "Price": 240, "DisplayName": "Dark Knight Belt (Type A)", "Category": 0}
+  - {"Id": 2826, "Price": 240, "DisplayName": "Dark Knight Belt (Type B)", "Category": 0}
+  - {"Id": 2780, "Price": 1800, "DisplayName": "Dark Knight Glove (Type A)", "Category": 0}
+  - {"Id": 2827, "Price": 1440, "DisplayName": "Dark Knight Glove (Type B)", "Category": 0}
   - {"Id": 490037, "Price": 3000, "DisplayName": "Dark Ring", "Category": 0}
   - {"Id": 2732, "Price": 2250, "DisplayName": "Death Loop", "Category": 0}
   - {"Id": 490013, "Price": 4050, "DisplayName": "Devil Rakshasa Ring", "Category": 0}
@@ -55,8 +55,6 @@ Body:
   - {"Id": 490617, "Price": 151371, "DisplayName": "Dictator Bracelet", "Category": 0}
   - {"Id": 490084, "Price": 3000, "DisplayName": "Dictator Earrings", "Category": 0}
   - {"Id": 32244, "Price": 3600, "DisplayName": "Dictator Necklace", "Category": 0}
-  - {"Id": 2734, "Price": 100, "DisplayName": "Directive", "Category": 0}
-  - {"Id": 2735, "Price": 100, "DisplayName": "Directive", "Category": 0}
   - {"Id": 490553, "Price": 6960, "DisplayName": "Divine Bell", "Category": 0}
   - {"Id": 490679, "Price": 8250, "DisplayName": "Drop of Seven Colors", "Category": 0}
   - {"Id": 490523, "Price": 6750, "DisplayName": "Duelist Gold Coin", "Category": 0}
@@ -93,7 +91,6 @@ Body:
   - {"Id": 2636, "Price": 200, "DisplayName": "Gold Christmas Ring", "Category": 0}
   - {"Id": 2610, "Price": 100, "DisplayName": "Gold Ring", "Category": 0}
   - {"Id": 2704, "Price": 1000, "DisplayName": "Golden Accessory", "Category": 0}
-  - {"Id": 2705, "Price": 100, "DisplayName": "Golden Accessory", "Category": 0}
   - {"Id": 28421, "Price": 300, "DisplayName": "Greater Bunny Talisman", "Category": 0}
   - {"Id": 28418, "Price": 300, "DisplayName": "Greater Leaf Talisman", "Category": 0}
   - {"Id": 28415, "Price": 300, "DisplayName": "Greater Tuna Talisman", "Category": 0}
@@ -126,16 +123,14 @@ Body:
   - {"Id": 2928, "Price": 2820, "DisplayName": "LUK Glove", "Category": 0}
   - {"Id": 2775, "Price": 100, "DisplayName": "Lure", "Category": 0}
   - {"Id": 2794, "Price": 260, "DisplayName": "Magic Stone Ring", "Category": 0}
-  - {"Id": 2796, "Price": 100, "DisplayName": "Magical Stone", "Category": 0}
-  - {"Id": 2797, "Price": 100, "DisplayName": "Magical Stone", "Category": 0}
   - {"Id": 2768, "Price": 1200, "DisplayName": "Magician Figure", "Category": 0}
   - {"Id": 490381, "Price": 6200, "DisplayName": "Majesty of Yggdrasil", "Category": 0}
-  - {"Id": 2720, "Price": 1600, "DisplayName": "Medal of Honor", "Category": 0}
-  - {"Id": 2721, "Price": 1600, "DisplayName": "Medal of Honor", "Category": 0}
-  - {"Id": 2722, "Price": 1600, "DisplayName": "Medal of Honor", "Category": 0}
-  - {"Id": 2723, "Price": 1600, "DisplayName": "Medal of Honor", "Category": 0}
-  - {"Id": 2724, "Price": 2400, "DisplayName": "Medal of Honor", "Category": 0}
-  - {"Id": 2725, "Price": 2400, "DisplayName": "Medal of Honor", "Category": 0}
+  - {"Id": 2720, "Price": 1600, "DisplayName": "Medal of Honor (Swordman)", "Category": 0}
+  - {"Id": 2721, "Price": 1600, "DisplayName": "Medal of Honor (Thief)", "Category": 0}
+  - {"Id": 2722, "Price": 1600, "DisplayName": "Medal of Honor (Acolyte)", "Category": 0}
+  - {"Id": 2723, "Price": 1600, "DisplayName": "Medal of Honor (Mage)", "Category": 0}
+  - {"Id": 2724, "Price": 2400, "DisplayName": "Medal of Honor (Archer)", "Category": 0}
+  - {"Id": 2725, "Price": 2400, "DisplayName": "Medal of Honor (Merchant)", "Category": 0}
   - {"Id": 28420, "Price": 300, "DisplayName": "Medium Bunny Talisman", "Category": 0}
   - {"Id": 28417, "Price": 300, "DisplayName": "Medium Leaf Talisman", "Category": 0}
   - {"Id": 28414, "Price": 300, "DisplayName": "Medium Tuna Talisman", "Category": 0}
@@ -199,7 +194,6 @@ Body:
   - {"Id": 490640, "Price": 12150, "DisplayName": "Scroll of Essential Arts", "Category": 0}
   - {"Id": 490561, "Price": 2550, "DisplayName": "Scroll of Time and Space", "Category": 0}
   - {"Id": 2730, "Price": 2250, "DisplayName": "Seal of Continental Guard", "Category": 0}
-  - {"Id": 2778, "Price": 240, "DisplayName": "Shaman Earrings", "Category": 0}
   - {"Id": 2825, "Price": 240, "DisplayName": "Shaman Earrings", "Category": 0}
   - {"Id": 2777, "Price": 1500, "DisplayName": "Shaman Ring", "Category": 0}
   - {"Id": 2733, "Price": 2400, "DisplayName": "Sheriff Badge", "Category": 0}
@@ -236,8 +230,6 @@ Body:
   - {"Id": 32234, "Price": 6750, "DisplayName": "Warrior Ring", "Category": 0}
   - {"Id": 2673, "Price": 1200, "DisplayName": "Warrior's Shining Ring", "Category": 0}
   - {"Id": 2994, "Price": 1200, "DisplayName": "Water Crystal Stone", "Category": 0}
-  - {"Id": 2634, "Price": 100, "DisplayName": "Wedding Ring", "Category": 0}
-  - {"Id": 2635, "Price": 100, "DisplayName": "Wedding Ring", "Category": 0}
   - {"Id": 490691, "Price": 7650, "DisplayName": "White Fox Charm", "Category": 0}
   - {"Id": 2798, "Price": 100, "DisplayName": "Will of Exhausted Warrior", "Category": 0}
   - {"Id": 2726, "Price": 1200, "DisplayName": "Wing of Icarus", "Category": 0}
@@ -349,7 +341,6 @@ Body:
   - {"Id": 490787, "Price": 3600, "DisplayName": "Dragon Thorns Plant Hero", "Category": 2}
   - {"Id": 490749, "Price": 6960, "DisplayName": "Dual Coin", "Category": 2}
   - {"Id": 490771, "Price": 6960, "DisplayName": "Falcon Claw", "Category": 2}
-  - {"Id": 490466, "Price": 6240, "DisplayName": "Fallen Seraphim Ring", "Category": 2}
   - {"Id": 490753, "Price": 6960, "DisplayName": "Fallen Seraphim Ring", "Category": 2}
   - {"Id": 490877, "Price": 4140, "DisplayName": "False Document Mage I", "Category": 2}
   - {"Id": 490876, "Price": 3168, "DisplayName": "False Document Swordman I", "Category": 2}

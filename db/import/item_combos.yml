@@ -4053,3 +4053,59 @@ Body:
       skill "CD_RELIGIO",5;
       bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
       bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  # Dark Knight: suppress every mixed A/B trio so only matched sets activate.
+  - Combos:
+      - Combo:
+          - Dark_Knight_Belt
+          - Dark_Knight_Glove
+          - Dark_Knight_MaskB
+    Clear: true
+  - Combos:
+      - Combo:
+          - Dark_Knight_Belt
+          - Dark_Knight_GloveB
+          - Dark_Knight_Mask
+    Clear: true
+  - Combos:
+      - Combo:
+          - Dark_Knight_Belt
+          - Dark_Knight_GloveB
+          - Dark_Knight_MaskB
+    Clear: true
+  - Combos:
+      - Combo:
+          - Dark_Knight_BeltB
+          - Dark_Knight_Glove
+          - Dark_Knight_Mask
+    Clear: true
+  - Combos:
+      - Combo:
+          - Dark_Knight_BeltB
+          - Dark_Knight_Glove
+          - Dark_Knight_MaskB
+    Clear: true
+  - Combos:
+      - Combo:
+          - Dark_Knight_BeltB
+          - Dark_Knight_GloveB
+          - Dark_Knight_Mask
+    Clear: true
+  # Reapply only the matched A+A+A and B+B+B sets with the selected iRO bonus.
+  - Combos:
+      - Combo:
+          - Dark_Knight_Belt
+          - Dark_Knight_Glove
+          - Dark_Knight_Mask
+    Script: |
+      bonus bInt,5;
+      bonus bMatkRate,15;
+      bonus2 bSubRace,RC_Angel,10;
+  - Combos:
+      - Combo:
+          - Dark_Knight_BeltB
+          - Dark_Knight_GloveB
+          - Dark_Knight_MaskB
+    Script: |
+      bonus bInt,5;
+      bonus bMatkRate,15;
+      bonus2 bSubRace,RC_Angel,10;
