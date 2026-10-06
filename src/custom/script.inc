@@ -19,8 +19,127 @@
 //}
 
 #include "black_market_cashshop.hpp"
+#include "black_market_catalog.hpp"
 #include "silvervine_enchant.hpp"
 #include "silvervine_enchant_upgrade.hpp"
+
+BUILDIN_FUNC(bmc_load) {
+	script_pushint(st, bmc::load());
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_ready) {
+	script_pushint(st, bmc::ready(script_getstr(st, 2)));
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_categorycount) {
+	std::string key = script_getstr(st, 2);
+	script_pushint(st, bmc::ready(key) && key != "riven" ? bmc::catalogs[key].drawers.size() : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
+static int32 bmc_category_at(const std::string& key, int64 position) {
+	if (!bmc::ready(key) || key == "riven" || position < 0) return -1;
+	auto& categories = bmc::catalogs[key].drawers;
+	if (static_cast<uint64>(position) >= categories.size()) return -1;
+	auto it = categories.begin(); std::advance(it, position);
+	return it->first;
+}
+BUILDIN_FUNC(bmc_categorykey) {
+	script_pushint(st, bmc_category_at(script_getstr(st, 2), script_getnum64(st, 3)));
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_categorylabel) {
+	std::string key = script_getstr(st, 2);
+	int32 category = bmc_category_at(key, script_getnum64(st, 3));
+	auto p = bmc::profile_for(key);
+	script_pushstrcopy(st, category >= 0 && p ? p->labels[category].c_str() : "");
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_drawercount) {
+	auto rows = bmc::drawers(script_getstr(st, 2), script_getnum64(st, 3));
+	script_pushint(st, rows ? rows->size() : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_drawerlabel) {
+	auto rows = bmc::drawers(script_getstr(st, 2), script_getnum64(st, 3));
+	int64 index = script_getnum64(st, 4);
+	script_pushstrcopy(st, rows && index >= 0 && static_cast<uint64>(index) < rows->size() ? (*rows)[index].label.c_str() : "");
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_drawershop) {
+	auto rows = bmc::drawers(script_getstr(st, 2), script_getnum64(st, 3));
+	int64 index = script_getnum64(st, 4);
+	script_pushstrcopy(st, rows && index >= 0 && static_cast<uint64>(index) < rows->size() ? (*rows)[index].shop.c_str() : "");
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_shopcount) {
+	const char* name = script_getstr(st, 2);
+	auto nd = bmc::shop(name);
+	script_pushint(st, nd && bmc::managed_ready(name) ? nd->u.shop.count : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
+// Resolve numeric arrays using the same registry/ref rules as native setarray.
+static bool bmc_array_ref(script_state* st, int argument, script_data*& data, TBL_PC*& sd) {
+	data = script_getdata(st, argument);
+	if (!data_isreference(data)) return false;
+	const char* name = reference_getname(data);
+	if (is_string_variable(name)) return false;
+	if (not_server_variable(*name) && !script_rid2sd(sd)) return false;
+	return script_array_src(st, sd, name, reference_getref(data)) != nullptr;
+}
+BUILDIN_FUNC(bmc_search) {
+	script_data* data = nullptr; TBL_PC* sd = nullptr;
+	if (!bmc_array_ref(st, 3, data, sd)) { script_pushint(st, -1); return SCRIPT_CMD_FAILURE; }
+	const char* name = reference_getname(data);
+	uint32 start = reference_getindex(data), id = reference_getid(data);
+	if (start >= SCRIPT_MAX_ARRAYSIZE) { script_pushint(st, -1); return SCRIPT_CMD_FAILURE; }
+	uint32 end = script_array_highest_key(st, sd, name, reference_getref(data));
+	for (uint32 i = start; i < end; ++i) clear_reg(st, sd, reference_uid(id, i), name, reference_getref(data));
+	std::vector<t_itemid> result;
+	int count = bmc::search(script_getstr(st, 2), result);
+	if (count >= 0 && result.size() > SCRIPT_MAX_ARRAYSIZE - start) { script_pushint(st, -1); return SCRIPT_CMD_FAILURE; }
+	for (size_t i = 0; i < result.size(); ++i) set_reg_num(st, sd, reference_uid(id, start + i), name, result[i], reference_getref(data));
+	script_pushint(st, count);
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_searchprepare) {
+	script_data* data = nullptr; TBL_PC* sd = nullptr;
+	if (!bmc_array_ref(st, 2, data, sd)) { bmc::clear_shop("Riven_SearchShop"); script_pushint(st, 0); return SCRIPT_CMD_FAILURE; }
+	const char* name = reference_getname(data);
+	uint32 end = script_array_highest_key(st, sd, name, reference_getref(data));
+	std::vector<t_itemid> ids;
+	for (uint32 i = reference_getindex(data); i < end; ++i) {
+		int64 value = get_val2_num(st, reference_uid(reference_getid(data), i), reference_getref(data));
+		if (value <= 0 || value > INT32_MAX) { bmc::clear_shop("Riven_SearchShop"); script_pushint(st, 0); return SCRIPT_CMD_SUCCESS; }
+		ids.push_back(static_cast<t_itemid>(value));
+	}
+	script_pushint(st, bmc::search_prepare(ids));
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_cardoffer) {
+	int64 id = script_getnum64(st, 2);
+	auto row = id > 0 && id <= INT32_MAX ? bmc::card(static_cast<t_itemid>(id)) : nullptr;
+	script_pushint(st, row ? row->offer : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_cardtier) {
+	int64 id = script_getnum64(st, 2); int tier = 0;
+	if (id > 0 && id <= INT32_MAX) bmc::card(static_cast<t_itemid>(id), &tier);
+	script_pushint(st, tier);
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_mvpcount) {
+	script_pushint(st, bmc::ready("card-mvp") ? bmc::catalogs["card-mvp"].db->ordered.size() : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(bmc_mvpid) {
+	int64 index = script_getnum64(st, 2); t_itemid id = 0;
+	if (bmc::ready("card-mvp")) {
+		auto& rows = bmc::catalogs["card-mvp"].db->ordered;
+		if (index >= 0 && static_cast<uint64>(index) < rows.size()) id = rows[index]->id;
+	}
+	script_pushint(st, id);
+	return SCRIPT_CMD_SUCCESS;
+}
 
 BUILDIN_FUNC(blackmarketprice)
 {
@@ -285,6 +404,11 @@ BUILDIN_FUNC(replaceequipped)
 BUILDIN_FUNC(callblackmarketshop)
 {
 	const char *shopname = script_getstr(st, 2);
+	if (!bmc::managed_ready(shopname)) {
+		ShowError("buildin_callblackmarketshop: managed catalog for shop [%s] is unavailable.\n", shopname);
+		script_pushint(st, 0);
+		return SCRIPT_CMD_FAILURE;
+	}
 	const int32 flag = script_getnum(st, 3);
 	const int32 rate = script_getnum(st, 4);
 	TBL_PC *sd = nullptr;

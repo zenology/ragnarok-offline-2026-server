@@ -79,6 +79,34 @@ Body:
   - Id: 23216
     Script: |
       callfunc("F_PremiumSubscription",14400);
+  - Id: 2779
+    Name: Dark Knight Belt (Type A)
+  - Id: 2826
+    Name: Dark Knight Belt (Type B)
+  - Id: 2780
+    Name: Dark Knight Glove (Type A)
+    Script: |
+      autobonus "{ bonus bAspdRate,2; }",10,10000,BF_WEAPON|BF_NORMAL|BF_SKILL,"{ specialeffect2 EF_ENHANCE; }";
+  - Id: 2827
+    Name: Dark Knight Glove (Type B)
+    Script: |
+      autobonus2 "{ bonus bMaxHPrate,10; }",10,10000,BF_WEAPON|BF_NORMAL|BF_SKILL,"{ specialeffect2 EF_ENHANCE; }";
+  - Id: 5482
+    Name: Dark Knight Mask (Type A)
+  - Id: 5577
+    Name: Dark Knight Mask (Type B)
+  - Id: 2720
+    Name: Medal of Honor (Swordman)
+  - Id: 2721
+    Name: Medal of Honor (Thief)
+  - Id: 2722
+    Name: Medal of Honor (Acolyte)
+  - Id: 2723
+    Name: Medal of Honor (Mage)
+  - Id: 2724
+    Name: Medal of Honor (Archer)
+  - Id: 2725
+    Name: Medal of Honor (Merchant)
 
 Footer:
   Imports:
@@ -86,6 +114,7 @@ Footer:
     - Path: db/import/item_db_iro_hats_hard.yml
     - Path: db/import/item_db_iro_costume_garments.yml
     - Path: db/import/item_db_iro_shields.yml
+    - Path: db/import/item_db_iro_footgear.yml
     - Path: db/import/item_db_iro_accessories.yml
     # Weaver#offline functional garment imports and narrowly-scoped effect overrides.
     - Path: db/import/item_db_iro_garments.yml

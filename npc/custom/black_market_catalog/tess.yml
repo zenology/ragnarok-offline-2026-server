@@ -1,0 +1,112 @@
+Header:
+  Type: BLACK_MARKET_CATALOG
+  Version: 1
+Body:
+  - {Id: 2495, Price: 1500, DisplayName: "Aegir Shoes", Category: 0}
+  - {Id: 470070, Price: 2250, DisplayName: "Aegirnian Shoes", Category: 0}
+  - {Id: 470340, Price: 3200, DisplayName: "Ancient Knight Shoes", Category: 0}
+  - {Id: 470352, Price: 3400, DisplayName: "Ancient Royal Guard Greaves", Category: 0}
+  - {Id: 470372, Price: 4000, DisplayName: "Ancient Sky Emperor Shoes", Category: 0}
+  - {Id: 470354, Price: 4600, DisplayName: "Applause Sandals-LT", Category: 0}
+  - {Id: 2492, Price: 1300, DisplayName: "Bangungot Boots of Bayani Nightmare", Category: 0}
+  - {Id: 2491, Price: 3600, DisplayName: "Bangungot Boots of Nightmare", Category: 0}
+  - {Id: 2437, Price: 2700, DisplayName: "Battle Boots", Category: 0}
+  - {Id: 2435, Price: 2700, DisplayName: "Battle Greaves", Category: 0}
+  - {Id: 2425, Price: 240, DisplayName: "Black Leather Boots", Category: 0}
+  - {Id: 22195, Price: 4620, DisplayName: "Booster Shoes", Category: 0}
+  - {Id: 470057, Price: 4050, DisplayName: "Chaser's Shoes", Category: 0}
+  - {Id: 2436, Price: 2700, DisplayName: "Combat Boots", Category: 0}
+  - {Id: 470343, Price: 4400, DisplayName: "Corruption Boots", Category: 0}
+  - {Id: 470414, Price: 5360, DisplayName: "Cycle Follower Greaves", Category: 0}
+  - {Id: 470061, Price: 7800, DisplayName: "Cylinder Boots", Category: 0}
+  - {Id: 2465, Price: 1950, DisplayName: "Dance Shoes", Category: 0}
+  - {Id: 470349, Price: 2700, DisplayName: "Dark Chaser Boots", Category: 0}
+  - {Id: 470097, Price: 2700, DisplayName: "Demon Hunting Shoes", Category: 0}
+  - {Id: 2433, Price: 4500, DisplayName: "Diabolus Boots", Category: 0}
+  - {Id: 470440, Price: 3600, DisplayName: "Dragon God Boots", Category: 0}
+  - {Id: 2456, Price: 1200, DisplayName: "Eden Group Boots I", Category: 0}
+  - {Id: 2457, Price: 1200, DisplayName: "Eden Group Boots II", Category: 0}
+  - {Id: 2458, Price: 1200, DisplayName: "Eden Group Boots III", Category: 0}
+  - {Id: 2473, Price: 1200, DisplayName: "Eden Group Boots IV", Category: 0}
+  - {Id: 470033, Price: 5400, DisplayName: "Elemental Boots", Category: 0}
+  - {Id: 470130, Price: 7800, DisplayName: "End of the World", Category: 0}
+  - {Id: 22014, Price: 1300, DisplayName: "Enhanced Variant Shoes", Category: 0}
+  - {Id: 2462, Price: 1200, DisplayName: "Ephemeral Sleipnir", Category: 0}
+  - {Id: 470183, Price: 6580, DisplayName: "Exotic Temporal Boots-LT", Category: 0}
+  - {Id: 22056, Price: 975, DisplayName: "Fallen Angel's Shoes", Category: 0}
+  - {Id: 470417, Price: 7200, DisplayName: "Fierce Boots", Category: 0}
+  - {Id: 470192, Price: 6600, DisplayName: "Fifth Element", Category: 0}
+  - {Id: 2443, Price: 100, DisplayName: "Fisher's Boots", Category: 0}
+  - {Id: 470008, Price: 5600, DisplayName: "Fluffy Dandelion Shoes", Category: 0}
+  - {Id: 470362, Price: 5600, DisplayName: "Flush Sandals", Category: 0}
+  - {Id: 22234, Price: 1500, DisplayName: "Frontier Boots", Category: 0}
+  - {Id: 22106, Price: 5100, DisplayName: "Gigant Boots", Category: 0}
+  - {Id: 2446, Price: 1000, DisplayName: "Glorious Mass-Production Shoes", Category: 0}
+  - {Id: 2445, Price: 1000, DisplayName: "Glorious Popularized Shoes", Category: 0}
+  - {Id: 2444, Price: 2880, DisplayName: "Glorious Shoes", Category: 0}
+  - {Id: 2419, Price: 3600, DisplayName: "Goibne's Greaves", Category: 0}
+  - {Id: 2427, Price: 1000, DisplayName: "Golden Shoes", Category: 0}
+  - {Id: 470426, Price: 5000, DisplayName: "Grand Arcanist Boots", Category: 0}
+  - {Id: 470443, Price: 4600, DisplayName: "Heretic Acolyte Boots", Category: 0}
+  - {Id: 470461, Price: 4000, DisplayName: "Heretic Merchant Boots", Category: 0}
+  - {Id: 470451, Price: 4600, DisplayName: "Heretic Swordman Boots", Category: 0}
+  - {Id: 470467, Price: 4000, DisplayName: "Heretic Taekwon Boots", Category: 0}
+  - {Id: 470154, Price: 2000, DisplayName: "Herosria Casting Shoes", Category: 0}
+  - {Id: 470157, Price: 2000, DisplayName: "Herosria Cool Sandals", Category: 0}
+  - {Id: 470155, Price: 2000, DisplayName: "Herosria Critical Shoes", Category: 0}
+  - {Id: 470156, Price: 2000, DisplayName: "Herosria Fix Sandals", Category: 0}
+  - {Id: 470153, Price: 1500, DisplayName: "Herosria Speed Boots", Category: 0}
+  - {Id: 470409, Price: 1300, DisplayName: "Holiday Cozy Socks", Category: 0}
+  - {Id: 470036, Price: 4500, DisplayName: "Illusion Military Boots", Category: 0}
+  - {Id: 470452, Price: 1500, DisplayName: "Issgard Boots", Category: 0}
+  - {Id: 470454, Price: 1500, DisplayName: "Issgard Shoes", Category: 0}
+  - {Id: 470027, Price: 6800, DisplayName: "Juggernaut", Category: 0}
+  - {Id: 470404, Price: 4050, DisplayName: "Last Performer", Category: 0}
+  - {Id: 470345, Price: 4050, DisplayName: "Legendary Dragon Shoes", Category: 0}
+  - {Id: 22243, Price: 1800, DisplayName: "Mamaragan", Category: 0}
+  - {Id: 470247, Price: 5780, DisplayName: "Midgard Knight Shoes", Category: 0}
+  - {Id: 470112, Price: 3700, DisplayName: "Moaning of Evil Spirits", Category: 0}
+  - {Id: 22109, Price: 1770, DisplayName: "Modified AGI Boots", Category: 0}
+  - {Id: 22015, Price: 1500, DisplayName: "Modified Angel's Reincarnation", Category: 0}
+  - {Id: 22111, Price: 2760, DisplayName: "Modified DEX Boots", Category: 0}
+  - {Id: 22108, Price: 1180, DisplayName: "Modified INT Boots", Category: 0}
+  - {Id: 22112, Price: 1980, DisplayName: "Modified LUK Boots", Category: 0}
+  - {Id: 22107, Price: 1180, DisplayName: "Modified STR Boots", Category: 0}
+  - {Id: 22110, Price: 1180, DisplayName: "Modified VIT Boots", Category: 0}
+  - {Id: 470363, Price: 5600, DisplayName: "Muqaddas Shoes", Category: 0}
+  - {Id: 22264, Price: 3750, DisplayName: "Nameless Swordsman's Boots", Category: 0}
+  - {Id: 2464, Price: 200, DisplayName: "NoFear Shoes", Category: 0}
+  - {Id: 2414, Price: 100, DisplayName: "Novice Slippers", Category: 0}
+  - {Id: 470355, Price: 8800, DisplayName: "Pantheon Boots", Category: 0}
+  - {Id: 2438, Price: 1000, DisplayName: "Paw of Cat", Category: 0}
+  - {Id: 470128, Price: 3800, DisplayName: "Pegasus Shoes", Category: 0}
+  - {Id: 470382, Price: 4000, DisplayName: "Poison Shoes", Category: 0}
+  - {Id: 470025, Price: 6800, DisplayName: "Pretty Pig Shoes", Category: 0}
+  - {Id: 470084, Price: 4400, DisplayName: "Rune Greaves", Category: 0}
+  - {Id: 2413, Price: 100, DisplayName: "Safety Boots", Category: 0}
+  - {Id: 470324, Price: 1300, DisplayName: "Santa Boots", Category: 0}
+  - {Id: 22174, Price: 1500, DisplayName: "Scaraba High Heels", Category: 0}
+  - {Id: 2426, Price: 1440, DisplayName: "Shadow Walk", Category: 0}
+  - {Id: 2486, Price: 1560, DisplayName: "Shadow Walk", Category: 0}
+  - {Id: 22169, Price: 1800, DisplayName: "Short-term Hunting Boots", Category: 0}
+  - {Id: 2484, Price: 8100, DisplayName: "Siege Boots", Category: 0}
+  - {Id: 2483, Price: 8100, DisplayName: "Siege Greaves", Category: 0}
+  - {Id: 2485, Price: 4050, DisplayName: "Siege Shoes", Category: 0}
+  - {Id: 2410, Price: 1200, DisplayName: "Sleipnir", Category: 0}
+  - {Id: 470006, Price: 4000, DisplayName: "Sniping Shoes", Category: 0}
+  - {Id: 22203, Price: 5000, DisplayName: "Space Shoes", Category: 0}
+  - {Id: 2440, Price: 1800, DisplayName: "Sprint Shoes", Category: 0}
+  - {Id: 22131, Price: 1300, DisplayName: "Spurred Boots", Category: 0}
+  - {Id: 470048, Price: 2400, DisplayName: "Striking Shoes", Category: 0}
+  - {Id: 22064, Price: 1500, DisplayName: "Thorn Shoes", Category: 0}
+  - {Id: 22079, Price: 260, DisplayName: "Union AGI Boots", Category: 0}
+  - {Id: 22080, Price: 260, DisplayName: "Union DEX Boots", Category: 0}
+  - {Id: 22081, Price: 260, DisplayName: "Union INT Boots", Category: 0}
+  - {Id: 470114, Price: 3125, DisplayName: "Unknown Adventurer Shoes", Category: 0}
+  - {Id: 2460, Price: 1300, DisplayName: "Upgrade Boots", Category: 0}
+  - {Id: 2461, Price: 1300, DisplayName: "Upgrade Greaves", Category: 0}
+  - {Id: 2421, Price: 4500, DisplayName: "Valkyrie Shoes", Category: 0}
+  - {Id: 2431, Price: 1000, DisplayName: "Valley Shoes", Category: 0}
+  - {Id: 2423, Price: 3000, DisplayName: "Variant Shoes", Category: 0}
+  - {Id: 2450, Price: 1200, DisplayName: "Vital Tree Shoes", Category: 0}
+  - {Id: 470457, Price: 4600, DisplayName: "Wandering Thief Shoes", Category: 0}

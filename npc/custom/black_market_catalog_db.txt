@@ -1,0 +1,32 @@
+// Black Market catalogs are loaded once after all NPC declarations exist.
+// Reload this file after a YAML-only edit, with every shop window closed.
+-	script	black_market_catalog_db	-1,{
+OnInit:
+	.@ready = bmc_load();
+	debugmes "Black Market catalogs: " + .@ready + "/13 ready.";
+	end;
+}
+
+function	script	F_BlackMarketBrowse	{
+	.@key$ = getarg(0);
+	.@count = bmc_categorycount(.@key$);
+	if (.@count == 0)
+		return "";
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@count; ++.@i)
+		.@menu$ += bmc_categorylabel(.@key$, .@i) + ":";
+	.@choice = 0;
+	if (.@count > 1)
+		.@choice = select(.@menu$) - 1;
+	.@category = bmc_categorykey(.@key$, .@choice);
+	.@count = bmc_drawercount(.@key$, .@category);
+	if (.@count == 0)
+		return "";
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@count; ++.@i)
+		.@menu$ += bmc_drawerlabel(.@key$, .@category, .@i) + ":";
+	.@choice = 0;
+	if (.@count > 1)
+		.@choice = select(.@menu$) - 1;
+	return bmc_drawershop(.@key$, .@category, .@choice);
+}

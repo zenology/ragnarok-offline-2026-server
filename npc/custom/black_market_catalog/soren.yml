@@ -1,0 +1,273 @@
+Header:
+  Type: BLACK_MARKET_CATALOG
+  Version: 1
+Body:
+  - {Id: 1586, Price: 1200, DisplayName: "Bellum Bible", Category: 0}
+  - {Id: 1587, Price: 3120, DisplayName: "Bellum Encyclopedia", Category: 0}
+  - {Id: 1550, Price: 1200, DisplayName: "Book", Category: 0}
+  - {Id: 1557, Price: 3800, DisplayName: "Book of Apocalypse", Category: 0}
+  - {Id: 1570, Price: 1200, DisplayName: "Book of Blazing Sun", Category: 0}
+  - {Id: 28618, Price: 2700, DisplayName: "Book of Sun God", Category: 0}
+  - {Id: 540057, Price: 5850, DisplayName: "Book of Thoth", Category: 0}
+  - {Id: 28604, Price: 1600, DisplayName: "Crimson Bible", Category: 0}
+  - {Id: 1565, Price: 4200, DisplayName: "Death Note", Category: 0}
+  - {Id: 28608, Price: 800, DisplayName: "Elemental Origin", Category: 0}
+  - {Id: 1561, Price: 260, DisplayName: "Hardcover Book", Category: 0}
+  - {Id: 1559, Price: 360, DisplayName: "Legacy of Dragon", Category: 0}
+  - {Id: 28640, Price: 2400, DisplayName: "Papa HooDoo Manual", Category: 0}
+  - {Id: 1552, Price: 975, DisplayName: "Tablet", Category: 0}
+  - {Id: 1722, Price: 100, DisplayName: "Ballista", Category: 1}
+  - {Id: 1727, Price: 3900, DisplayName: "Ballista", Category: 1}
+  - {Id: 18114, Price: 3900, DisplayName: "Bellum Crossbow", Category: 1}
+  - {Id: 1730, Price: 2250, DisplayName: "Burning Bow", Category: 1}
+  - {Id: 18130, Price: 2400, DisplayName: "Crimson Bow", Category: 1}
+  - {Id: 1741, Price: 340, DisplayName: "Cursed Lyre", Category: 1}
+  - {Id: 700109, Price: 8780, DisplayName: "Divine Bow Gandiva", Category: 1}
+  - {Id: 1736, Price: 1920, DisplayName: "Double Bound", Category: 1}
+  - {Id: 1724, Price: 5400, DisplayName: "Dragon Wing", Category: 1}
+  - {Id: 1732, Price: 1500, DisplayName: "Earth Bow", Category: 1}
+  - {Id: 1746, Price: 300, DisplayName: "Elven Bow", Category: 1}
+  - {Id: 1745, Price: 5950, DisplayName: "Falken Blitz", Category: 1}
+  - {Id: 1737, Price: 2250, DisplayName: "Ixion Wings", Category: 1}
+  - {Id: 1723, Price: 2400, DisplayName: "Luna Bow", Category: 1}
+  - {Id: 1725, Price: 1560, DisplayName: "Minstrel Bow", Category: 1}
+  - {Id: 700078, Price: 36125, DisplayName: "Moonflower Bow", Category: 1}
+  - {Id: 18103, Price: 3000, DisplayName: "Mystic Bow", Category: 1}
+  - {Id: 1720, Price: 12600, DisplayName: "Rudra Bow", Category: 1}
+  - {Id: 18199, Price: 2400, DisplayName: "The Big Bow", Category: 1}
+  - {Id: 18145, Price: 440, DisplayName: "Vigilante Bow", Category: 1}
+  - {Id: 13062, Price: 1680, DisplayName: "Ancient Dagger", Category: 2}
+  - {Id: 1232, Price: 3000, DisplayName: "Assassin Dagger", Category: 2}
+  - {Id: 13011, Price: 1200, DisplayName: "Asura", Category: 2}
+  - {Id: 1235, Price: 100, DisplayName: "Azoth", Category: 2}
+  - {Id: 13061, Price: 2700, DisplayName: "Black Wing", Category: 2}
+  - {Id: 1228, Price: 12000, DisplayName: "Combat Knife", Category: 2}
+  - {Id: 28705, Price: 1600, DisplayName: "Crimson Dagger", Category: 2}
+  - {Id: 1241, Price: 3600, DisplayName: "Cursed Dagger", Category: 2}
+  - {Id: 1242, Price: 1500, DisplayName: "Dagger of Counter", Category: 2}
+  - {Id: 13038, Price: 2640, DisplayName: "Dagger of Hunter", Category: 2}
+  - {Id: 13034, Price: 1600, DisplayName: "Desert Twilight", Category: 2}
+  - {Id: 13001, Price: 1800, DisplayName: "Dragon Killer", Category: 2}
+  - {Id: 1233, Price: 10200, DisplayName: "Exorciser", Category: 2}
+  - {Id: 13089, Price: 1560, DisplayName: "Faceworm Leg", Category: 2}
+  - {Id: 13090, Price: 4200, DisplayName: "Faceworm Queen Leg", Category: 2}
+  - {Id: 1223, Price: 1500, DisplayName: "Fortune Sword", Category: 2}
+  - {Id: 13002, Price: 1400, DisplayName: "Ginnungagap", Category: 2}
+  - {Id: 1237, Price: 3000, DisplayName: "Grimtooth", Category: 2}
+  - {Id: 13015, Price: 1560, DisplayName: "Hakujin", Category: 2}
+  - {Id: 1230, Price: 3000, DisplayName: "Ice pick", Category: 2}
+  - {Id: 13017, Price: 3900, DisplayName: "Ice Pick", Category: 2}
+  - {Id: 13039, Price: 2400, DisplayName: "Ivory Knife", Category: 2}
+  - {Id: 13008, Price: 780, DisplayName: "Jitte", Category: 2}
+  - {Id: 13046, Price: 6600, DisplayName: "Krieg", Category: 2}
+  - {Id: 28721, Price: 4550, DisplayName: "Monokage", Category: 2}
+  - {Id: 1234, Price: 3000, DisplayName: "Moonlight Sword", Category: 2}
+  - {Id: 13092, Price: 2280, DisplayName: "RWC Memory Knife", Category: 2}
+  - {Id: 13035, Price: 2000, DisplayName: "Sandstorm", Category: 2}
+  - {Id: 13027, Price: 2500, DisplayName: "Scalpel", Category: 2}
+  - {Id: 1236, Price: 3600, DisplayName: "Sucsamad", Category: 2}
+  - {Id: 28781, Price: 2400, DisplayName: "The Razor of Ramona", Category: 2}
+  - {Id: 28717, Price: 4800, DisplayName: "Valkyrie Knife", Category: 2}
+  - {Id: 13085, Price: 1900, DisplayName: "Volcano Knife", Category: 2}
+  - {Id: 13047, Price: 4200, DisplayName: "Weihna", Category: 2}
+  - {Id: 28241, Price: 520, DisplayName: "Calf Diamond Back", Category: 3}
+  - {Id: 28243, Price: 3900, DisplayName: "Calf Python", Category: 4}
+  - {Id: 13162, Price: 975, DisplayName: "Inferno", Category: 4}
+  - {Id: 13327, Price: 1600, DisplayName: "Crimson Huuma Shuriken", Category: 5}
+  - {Id: 13303, Price: 1200, DisplayName: "Huuma Blaze Shuriken", Category: 5}
+  - {Id: 13314, Price: 1200, DisplayName: "Huuma Fluttering Snow", Category: 5}
+  - {Id: 13332, Price: 3600, DisplayName: "Huuma Shuriken of Dancing Petals", Category: 5}
+  - {Id: 13313, Price: 2000, DisplayName: "Huuma Swirling Petal", Category: 5}
+  - {Id: 13315, Price: 3600, DisplayName: "Huuma Thunderstorm", Category: 5}
+  - {Id: 13300, Price: 200, DisplayName: "Huuma Wing Shuriken", Category: 5}
+  - {Id: 32114, Price: 2400, DisplayName: "Accolade Lute", Category: 6}
+  - {Id: 1920, Price: 1500, DisplayName: "Berserk Guitar", Category: 6}
+  - {Id: 1925, Price: 320, DisplayName: "Cello", Category: 6}
+  - {Id: 1934, Price: 1600, DisplayName: "Contrabass", Category: 6}
+  - {Id: 1939, Price: 1600, DisplayName: "Crimson Violin", Category: 6}
+  - {Id: 1930, Price: 975, DisplayName: "Green Whistle", Category: 6}
+  - {Id: 1944, Price: 2400, DisplayName: "Hippie Guitar", Category: 6}
+  - {Id: 610029, Price: 6475, DisplayName: "Awakened Old King's Twin Blades", Category: 7}
+  - {Id: 1271, Price: 1680, DisplayName: "Bloody Tears", Category: 7}
+  - {Id: 1295, Price: 1920, DisplayName: "Bloody Tears", Category: 7}
+  - {Id: 1285, Price: 2200, DisplayName: "Chakram", Category: 7}
+  - {Id: 28007, Price: 1600, DisplayName: "Crimson Katar", Category: 7}
+  - {Id: 1270, Price: 1560, DisplayName: "Drill Katar", Category: 7}
+  - {Id: 28050, Price: 2400, DisplayName: "Frozen Creul Katar", Category: 7}
+  - {Id: 1281, Price: 6300, DisplayName: "Glorious Bloody Roar", Category: 7}
+  - {Id: 1269, Price: 1440, DisplayName: "Inverse Scale", Category: 7}
+  - {Id: 1297, Price: 1680, DisplayName: "Inverse Scale", Category: 7}
+  - {Id: 28010, Price: 4800, DisplayName: "Juliette de Rachel", Category: 7}
+  - {Id: 1284, Price: 2640, DisplayName: "Krishna", Category: 7}
+  - {Id: 1262, Price: 900, DisplayName: "Loki's Nail", Category: 7}
+  - {Id: 1260, Price: 100, DisplayName: "Sharpened Leg Bone of Ghoul", Category: 7}
+  - {Id: 1264, Price: 2000, DisplayName: "Various Jur", Category: 7}
+  - {Id: 1268, Price: 1560, DisplayName: "Wild Beast Claw", Category: 7}
+  - {Id: 1832, Price: 5400, DisplayName: "Bellum Claw", Category: 8}
+  - {Id: 1814, Price: 1500, DisplayName: "Berserk", Category: 8}
+  - {Id: 1839, Price: 1600, DisplayName: "Crimson Knuckle", Category: 8}
+  - {Id: 1815, Price: 5100, DisplayName: "Hatii Claw", Category: 8}
+  - {Id: 1825, Price: 1920, DisplayName: "Horn of Hillslion", Category: 8}
+  - {Id: 1837, Price: 1950, DisplayName: "Iron Nail", Category: 8}
+  - {Id: 1835, Price: 840, DisplayName: "Spartacus", Category: 8}
+  - {Id: 1830, Price: 3125, DisplayName: "Sura's Rampage", Category: 8}
+  - {Id: 16003, Price: 1600, DisplayName: "Carga Mace", Category: 9}
+  - {Id: 16040, Price: 1600, DisplayName: "Crimson Mace", Category: 9}
+  - {Id: 16000, Price: 7800, DisplayName: "Erde", Category: 9}
+  - {Id: 1524, Price: 4500, DisplayName: "Golden Mace", Category: 9}
+  - {Id: 1528, Price: 3000, DisplayName: "Grand Cross", Category: 9}
+  - {Id: 1529, Price: 3000, DisplayName: "Iron Driver", Category: 9}
+  - {Id: 1525, Price: 3600, DisplayName: "Long Mace", Category: 9}
+  - {Id: 1544, Price: 2655, DisplayName: "Lunakaligo", Category: 9}
+  - {Id: 1541, Price: 1560, DisplayName: "Nemesis", Category: 9}
+  - {Id: 16022, Price: 2040, DisplayName: "Nemesis", Category: 9}
+  - {Id: 16029, Price: 2250, DisplayName: "Noble Cross", Category: 9}
+  - {Id: 1527, Price: 5400, DisplayName: "Quadrille", Category: 9}
+  - {Id: 16024, Price: 6600, DisplayName: "Quadrille", Category: 9}
+  - {Id: 16010, Price: 6475, DisplayName: "Red Ether Bag", Category: 9}
+  - {Id: 16001, Price: 8310, DisplayName: "Red Square Bag", Category: 9}
+  - {Id: 16026, Price: 2280, DisplayName: "RWC Memory Mace", Category: 9}
+  - {Id: 16039, Price: 2250, DisplayName: "Spoon", Category: 9}
+  - {Id: 16051, Price: 3600, DisplayName: "Valkyrie Hammer", Category: 9}
+  - {Id: 1548, Price: 2400, DisplayName: "Veteran Hammer", Category: 9}
+  - {Id: 1531, Price: 5400, DisplayName: "Wrench", Category: 9}
+  - {Id: 1338, Price: 2400, DisplayName: "Duggan Hacker", Category: 10}
+  - {Id: 1310, Price: 6300, DisplayName: "Glorious Cleaver", Category: 10}
+  - {Id: 520003, Price: 4950, DisplayName: "Scythe of Ice Flame", Category: 10}
+  - {Id: 1311, Price: 2955, DisplayName: "Vecer Axe", Category: 10}
+  - {Id: 1306, Price: 260, DisplayName: "War Axe", Category: 10}
+  - {Id: 1307, Price: 1500, DisplayName: "Windhawk", Category: 10}
+  - {Id: 1436, Price: 6000, DisplayName: "Bellum Spear", Category: 11}
+  - {Id: 1415, Price: 3300, DisplayName: "Brocca", Category: 11}
+  - {Id: 1443, Price: 1600, DisplayName: "Crimson Spear", Category: 11}
+  - {Id: 1414, Price: 1200, DisplayName: "Gelerdria", Category: 11}
+  - {Id: 1449, Price: 1800, DisplayName: "Gelerdria", Category: 11}
+  - {Id: 1426, Price: 6300, DisplayName: "Glorious Spear", Category: 11}
+  - {Id: 1413, Price: 3600, DisplayName: "Gungnir", Category: 11}
+  - {Id: 1422, Price: 8100, DisplayName: "Hunting Spear", Category: 11}
+  - {Id: 1433, Price: 4050, DisplayName: "Imperial Spear", Category: 11}
+  - {Id: 1420, Price: 1020, DisplayName: "Long Horn", Category: 11}
+  - {Id: 32013, Price: 8400, DisplayName: "Metal Stick", Category: 11}
+  - {Id: 1447, Price: 6000, DisplayName: "Poisonous Violence Spear", Category: 11}
+  - {Id: 32032, Price: 2400, DisplayName: "The Berg Golden Spear", Category: 11}
+  - {Id: 1140, Price: 6600, DisplayName: "Byeollungum", Category: 12}
+  - {Id: 13431, Price: 1000, DisplayName: "Chrome Metal Sword", Category: 12}
+  - {Id: 13454, Price: 1600, DisplayName: "Crimson Saber", Category: 12}
+  - {Id: 1135, Price: 3000, DisplayName: "Cutlus", Category: 12}
+  - {Id: 500009, Price: 2480, DisplayName: "Dragon Slayer's Longsword", Category: 12}
+  - {Id: 1132, Price: 3600, DisplayName: "Edge", Category: 12}
+  - {Id: 1137, Price: 200, DisplayName: "Excalibur", Category: 12}
+  - {Id: 1133, Price: 3000, DisplayName: "Fire Brand", Category: 12}
+  - {Id: 1131, Price: 4200, DisplayName: "Ice Falchion", Category: 12}
+  - {Id: 1141, Price: 3000, DisplayName: "Immaterial Sword", Category: 12}
+  - {Id: 500005, Price: 3750, DisplayName: "Infinity Blade", Category: 12}
+  - {Id: 1130, Price: 4200, DisplayName: "Nagan", Category: 12}
+  - {Id: 13442, Price: 5400, DisplayName: "Old Parasol", Category: 12}
+  - {Id: 1124, Price: 3600, DisplayName: "Orcish Sword", Category: 12}
+  - {Id: 13404, Price: 1950, DisplayName: "Platinum Shotel", Category: 12}
+  - {Id: 13421, Price: 3000, DisplayName: "Ruber", Category: 12}
+  - {Id: 13465, Price: 5400, DisplayName: "Save the King", Category: 12}
+  - {Id: 1134, Price: 1800, DisplayName: "Scissor Sword", Category: 12}
+  - {Id: 13461, Price: 4800, DisplayName: "Sealed Evil Sword", Category: 12}
+  - {Id: 13460, Price: 4800, DisplayName: "Sealed Magic Sword", Category: 12}
+  - {Id: 13462, Price: 4800, DisplayName: "Sealed Maximum Sword", Category: 12}
+  - {Id: 1136, Price: 3000, DisplayName: "Solar Sword", Category: 12}
+  - {Id: 1148, Price: 1020, DisplayName: "Star Dust Blade", Category: 12}
+  - {Id: 32356, Price: 2400, DisplayName: "The Twist of Fates", Category: 12}
+  - {Id: 1139, Price: 100, DisplayName: "Tirfing", Category: 12}
+  - {Id: 13412, Price: 5400, DisplayName: "Twin Edge of Naght Sieger(B)", Category: 12}
+  - {Id: 13413, Price: 5400, DisplayName: "Twin Edge of Naght Sieger(R)", Category: 12}
+  - {Id: 13146, Price: 3600, DisplayName: "Calf Deathadder", Category: 13}
+  - {Id: 13127, Price: 2400, DisplayName: "Crimson Revolver", Category: 13}
+  - {Id: 13101, Price: 1400, DisplayName: "Six Shooter", Category: 13}
+  - {Id: 13107, Price: 2100, DisplayName: "Wasteland's Outlaw", Category: 13}
+  - {Id: 28240, Price: 3300, DisplayName: "Calf King Cobra", Category: 14}
+  - {Id: 13170, Price: 2100, DisplayName: "Lever Action Rifle", Category: 14}
+  - {Id: 28260, Price: 2400, DisplayName: "The Fastest Shooter", Category: 14}
+  - {Id: 28242, Price: 2880, DisplayName: "Calf Anaconda", Category: 15}
+  - {Id: 13167, Price: 1200, DisplayName: "Gate Keeper-DD", Category: 15}
+  - {Id: 1643, Price: 1200, DisplayName: "Ancient Tree Wood Cane", Category: 16}
+  - {Id: 1680, Price: 1600, DisplayName: "Crimson Rod", Category: 16}
+  - {Id: 1647, Price: 1800, DisplayName: "Croce Staff", Category: 16}
+  - {Id: 1637, Price: 1500, DisplayName: "Eraser", Category: 16}
+  - {Id: 1615, Price: 240, DisplayName: "Evil Bone Wand", Category: 16}
+  - {Id: 1696, Price: 1600, DisplayName: "Exquisite Foxtail Model", Category: 16}
+  - {Id: 1697, Price: 2040, DisplayName: "Exquisite Yellow Foxtail Model", Category: 16}
+  - {Id: 1629, Price: 300, DisplayName: "Gentleman Staff", Category: 16}
+  - {Id: 1631, Price: 4500, DisplayName: "Holy Stick", Category: 16}
+  - {Id: 1646, Price: 4400, DisplayName: "La'cryma Stick", Category: 16}
+  - {Id: 1692, Price: 1600, DisplayName: "Magic Foxtail Wand", Category: 16}
+  - {Id: 1693, Price: 1800, DisplayName: "Magic Yellow Foxtail Wand", Category: 16}
+  - {Id: 1661, Price: 1500, DisplayName: "Mental Destroyer", Category: 16}
+  - {Id: 1654, Price: 2100, DisplayName: "Mental Stick", Category: 16}
+  - {Id: 1670, Price: 2280, DisplayName: "RWC Memory Staff", Category: 16}
+  - {Id: 1672, Price: 3000, DisplayName: "Safety Rod", Category: 16}
+  - {Id: 1648, Price: 3000, DisplayName: "Staff of Bordeaux", Category: 16}
+  - {Id: 1668, Price: 2400, DisplayName: "Sword Stick", Category: 16}
+  - {Id: 26173, Price: 2400, DisplayName: "The Rowdy Pipe", Category: 16}
+  - {Id: 1636, Price: 4800, DisplayName: "Thorn Staff of Darkness", Category: 16}
+  - {Id: 1614, Price: 200, DisplayName: "Wand of Occult", Category: 16}
+  - {Id: 1616, Price: 2400, DisplayName: "Wing Staff", Category: 16}
+  - {Id: 1396, Price: 2520, DisplayName: "Bellum Guillotine", Category: 17}
+  - {Id: 1375, Price: 3250, DisplayName: "Berdysz", Category: 17}
+  - {Id: 1363, Price: 3000, DisplayName: "Bloody Axe", Category: 17}
+  - {Id: 1385, Price: 100, DisplayName: "Bradium Stone Hammer", Category: 17}
+  - {Id: 28106, Price: 1600, DisplayName: "Crimson Two-Handed Axe", Category: 17}
+  - {Id: 1371, Price: 4410, DisplayName: "Doom Slayer", Category: 17}
+  - {Id: 1387, Price: 6210, DisplayName: "Giant Axe", Category: 17}
+  - {Id: 1364, Price: 900, DisplayName: "Great Axe", Category: 17}
+  - {Id: 1369, Price: 3000, DisplayName: "Guillotine", Category: 17}
+  - {Id: 1376, Price: 1950, DisplayName: "Heart Breaker", Category: 17}
+  - {Id: 1377, Price: 5700, DisplayName: "Hurricane Fury", Category: 17}
+  - {Id: 1366, Price: 3600, DisplayName: "Light Epsilon", Category: 17}
+  - {Id: 28116, Price: 3600, DisplayName: "Mine Worker Pickaxe", Category: 17}
+  - {Id: 1365, Price: 3000, DisplayName: "Sabbath", Category: 17}
+  - {Id: 1368, Price: 3000, DisplayName: "Tomahawk", Category: 17}
+  - {Id: 1384, Price: 1920, DisplayName: "Veteran Axe", Category: 17}
+  - {Id: 1492, Price: 3120, DisplayName: "Bellum Glaive", Category: 18}
+  - {Id: 1470, Price: 1200, DisplayName: "Brionac", Category: 18}
+  - {Id: 1484, Price: 1950, DisplayName: "Cardo", Category: 18}
+  - {Id: 1466, Price: 3000, DisplayName: "Crescent Scythe", Category: 18}
+  - {Id: 1476, Price: 3900, DisplayName: "Crescent Scythe", Category: 18}
+  - {Id: 1498, Price: 1600, DisplayName: "Crimson Lance", Category: 18}
+  - {Id: 1474, Price: 7200, DisplayName: "Gae Bolg", Category: 18}
+  - {Id: 1471, Price: 1200, DisplayName: "Hellfire", Category: 18}
+  - {Id: 1483, Price: 2250, DisplayName: "Ivory Lance", Category: 18}
+  - {Id: 1469, Price: 4800, DisplayName: "Longinus's Spear", Category: 18}
+  - {Id: 1477, Price: 9900, DisplayName: "Spectral Spear", Category: 18}
+  - {Id: 1468, Price: 1440, DisplayName: "Zephyrus", Category: 18}
+  - {Id: 2025, Price: 1600, DisplayName: "Crimson Staff", Category: 19}
+  - {Id: 2005, Price: 4500, DisplayName: "Dea Staff", Category: 19}
+  - {Id: 2001, Price: 480, DisplayName: "Divine Cross", Category: 19}
+  - {Id: 2059, Price: 2480, DisplayName: "Illusion Survivor's Staff", Category: 19}
+  - {Id: 2004, Price: 1680, DisplayName: "Kronos", Category: 19}
+  - {Id: 1472, Price: 240, DisplayName: "Soul Staff", Category: 19}
+  - {Id: 2000, Price: 5100, DisplayName: "Staff of Destruction", Category: 19}
+  - {Id: 2027, Price: 5400, DisplayName: "Sunflower Boy", Category: 19}
+  - {Id: 1473, Price: 240, DisplayName: "Wizardry Staff", Category: 19}
+  - {Id: 1191, Price: 3000, DisplayName: "Alca Bringer", Category: 20}
+  - {Id: 1175, Price: 3810, DisplayName: "Atroce Weapon", Category: 20}
+  - {Id: 21001, Price: 3600, DisplayName: "Bellum Claymore", Category: 20}
+  - {Id: 1182, Price: 2100, DisplayName: "Bloody Eater", Category: 20}
+  - {Id: 1196, Price: 1000, DisplayName: "Chrome Metal Two-Handed Sword", Category: 20}
+  - {Id: 21015, Price: 1600, DisplayName: "Crimson Two-Handed Sword", Category: 20}
+  - {Id: 1186, Price: 2400, DisplayName: "Death Guidance", Category: 20}
+  - {Id: 1166, Price: 6000, DisplayName: "Dragon Slayer", Category: 20}
+  - {Id: 1169, Price: 7600, DisplayName: "Executioner", Category: 20}
+  - {Id: 21053, Price: 2850, DisplayName: "Full Force", Category: 20}
+  - {Id: 1170, Price: 1000, DisplayName: "Katzbalger", Category: 20}
+  - {Id: 1189, Price: 4710, DisplayName: "Krasnaya", Category: 20}
+  - {Id: 21018, Price: 4800, DisplayName: "Lindy Hop", Category: 20}
+  - {Id: 1165, Price: 3000, DisplayName: "Masamune", Category: 20}
+  - {Id: 1176, Price: 1920, DisplayName: "Muscle Cutter", Category: 20}
+  - {Id: 1167, Price: 3000, DisplayName: "Schweizersabel", Category: 20}
+  - {Id: 1181, Price: 4200, DisplayName: "Tae Goo Lyeon", Category: 20}
+  - {Id: 21059, Price: 2400, DisplayName: "The Ultimate", Category: 20}
+  - {Id: 1188, Price: 540, DisplayName: "Veteran Sword", Category: 20}
+  - {Id: 1168, Price: 3600, DisplayName: "Zweihander", Category: 20}
+  - {Id: 1995, Price: 1600, DisplayName: "Crimson Wire", Category: 21}
+  - {Id: 26200, Price: 2400, DisplayName: "Hippie Rope", Category: 21}
+  - {Id: 1989, Price: 2400, DisplayName: "Rhythmic Gymnastics Ribbon", Category: 21}
+  - {Id: 1985, Price: 3000, DisplayName: "Rosevine", Category: 21}
+  - {Id: 1984, Price: 975, DisplayName: "Stem Whip", Category: 21}
+  - {Id: 26219, Price: 2400, DisplayName: "The Ol' Clothesline", Category: 21}

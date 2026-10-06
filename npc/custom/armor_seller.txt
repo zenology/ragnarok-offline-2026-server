@@ -5,34 +5,15 @@
 //============================================================
 
 paramk,37,163,2	script	Mordain#offline	4_EP21_GALAXIA_A,{
+	if (!bmc_ready("mordain")) {
+		mes "[Mordain]";
+		mes "This stall's catalog is unavailable. Please try again later.";
+		close;
+	}
 	mes "[Mordain]";
 	mes "Body armor, sorted for the discerning knight.";
-	.@letter = -1;
-	.@shop$ = "";
-		.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:N:O:P:R:S:T:U:V:W:Y:") - 1;
-		if (.@letter == 0) .@shop$ = "arm0#A";
-		if (.@letter == 1) .@shop$ = "arm0#B";
-		if (.@letter == 2) .@shop$ = "arm0#C";
-		if (.@letter == 3) .@shop$ = "arm0#D";
-		if (.@letter == 4) .@shop$ = "arm0#E";
-		if (.@letter == 5) .@shop$ = "arm0#F";
-		if (.@letter == 6) .@shop$ = "arm0#G";
-		if (.@letter == 7) .@shop$ = "arm0#H";
-		if (.@letter == 8) .@shop$ = "arm0#I";
-		if (.@letter == 9) .@shop$ = "arm0#K";
-		if (.@letter == 10) .@shop$ = "arm0#L";
-		if (.@letter == 11) .@shop$ = "arm0#M";
-		if (.@letter == 12) .@shop$ = "arm0#N";
-		if (.@letter == 13) .@shop$ = "arm0#O";
-		if (.@letter == 14) .@shop$ = "arm0#P";
-		if (.@letter == 15) .@shop$ = "arm0#R";
-		if (.@letter == 16) .@shop$ = "arm0#S";
-		if (.@letter == 17) .@shop$ = "arm0#T";
-		if (.@letter == 18) .@shop$ = "arm0#U";
-		if (.@letter == 19) .@shop$ = "arm0#V";
-		if (.@letter == 20) .@shop$ = "arm0#W";
-		if (.@letter == 21) .@shop$ = "arm0#Y";
-		if (.@shop$ == "") { close; }
+	.@shop$ = callfunc("F_BlackMarketBrowse", "mordain");
+	if (.@shop$ == "") { close; }
 	callfunc "F_BlackMarketDailyRemark", "Mordain", $BlackMarketRateMordain;
 	close2;
 	callblackmarketshop .@shop$, 1, $BlackMarketRateMordain;
@@ -43,25 +24,34 @@ OnInit:
 	end;
 }
 
--	pointshop	arm0#A	-1,BlackMarketPoints,15061:540,15138:1500,450164:1500,15065:1000,2355:2250,15362:2880,15099:1400,2378:2700,450251:3000,2376:2700,15367:3600
-	pointshop	arm0#A	-1,BlackMarketPoints,15061:540,15138:1500,450164:1500,15163:2100,15065:1000,15141:1500,2355:2250,450149:2850,15073:1500,15362:2880,15099:1400,15024:100,2378:2700,450251:3000,2376:2700,15367:3600
--	pointshop	arm0#B	-1,BlackMarketPoints,15432:480,15051:2700,15052:380,2356:1900,450135:2300,15409:4200,15000:4440,450404:11250,2383:1200
--	pointshop	arm0#C	-1,BlackMarketPoints,450272:12180,450220:6750,2350:3000,450180:3300
--	pointshop	arm0#D	-1,BlackMarketPoints,450214:2250,450252:2250,2375:8100,2374:4500,15430:2880,2366:8600,15209:1300
--	pointshop	arm0#E	-1,BlackMarketPoints,2348:3000,15189:3600,15156:1500,15177:1800,2381:2700,2377:2700,2382:2700,15066:1300,15107:2125,15113:2125,18863:2200,450299:8780
--	pointshop	arm0#F	-1,BlackMarketPoints,15405:4800,450210:5000,450226:3800,15100:975
--	pointshop	arm0#G	-1,BlackMarketPoints,2396:1000,2395:1200,2394:2400,2354:3600,2368:1000,15178:1800,15091:2250
--	pointshop	arm0#H	-1,BlackMarketPoints,15101:975,450233:3600,450232:3240,450229:2700,450231:2700,450230:2700,15180:1440,2327:5700
--	pointshop	arm0#I	-1,BlackMarketPoints,15420:1680,450209:10600
--	pointshop	arm0#K	-1,BlackMarketPoints,15105:2500,2388:1950,15421:3450
--	pointshop	arm0#L	-1,BlackMarketPoints,2391:1560,15089:3600,2344:100,2345:3900,15374:3800,15129:1500
--	pointshop	arm0#M	-1,BlackMarketPoints,450132:8550,15363:8100,2380:2700,15431:4800,2364:3125,15179:1800,15068:1500
--	pointshop	arm0#N	-1,BlackMarketPoints,15433:5000,15054:1500,2393:975
--	pointshop	arm0#O	-1,BlackMarketPoints,450189:1620,5829:100
--	pointshop	arm0#P	-1,BlackMarketPoints,450208:3100,450257:4350
--	pointshop	arm0#R	-1,BlackMarketPoints,15282:2980,450143:1200,450151:2000,450215:5400,2360:2600,15002:975
--	pointshop	arm0#S	-1,BlackMarketPoints,2346:1200,2347:5700,15196:5000,15247:2000,15046:8100,15048:4050,15047:4050,2367:2600,450401:13800,2387:1800,450165:4050
--	pointshop	arm0#T	-1,BlackMarketPoints,15032:8400,15033:100,15034:975,450216:9400
--	pointshop	arm0#U	-1,BlackMarketPoints,15152:1300,15153:1300,15155:260,15154:1950,2370:1000
--	pointshop	arm0#V	-1,BlackMarketPoints,2357:8100,15365:2400,15176:360
--	pointshop	arm0#W	-1,BlackMarketPoints,2379:2700,15407:5400,15419:1300,450419:7800
+-	pointshop	arm0#ALL	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#AH	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#IP	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#QZ9	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#0	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#A	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#B	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#C	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#D	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#E	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#F	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#G	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#H	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#I	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#J	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#K	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#L	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#M	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#N	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#O	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#P	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#Q	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#R	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#S	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#T	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#U	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#V	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#W	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#X	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#Y	-1,BlackMarketPoints,501:1
+-	pointshop	arm0#Z	-1,BlackMarketPoints,501:1

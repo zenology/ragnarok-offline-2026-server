@@ -69,7 +69,7 @@ paramk,39,185,4	script	Rooke#offline	542,{
 S_OpenCategory:
 	.@cat = getarg(0);
 	.@tier = callsub(S_GetTier);
-	if (!getvariableofnpc(.CatHas[.@tier * 9 + .@cat], "cons_seller_db")) {
+	if (!bmc_shopcount("cons" + .@cat + "#T" + .@tier)) {
 		clear;
 		mes "[Rooke]";
 		mes "Tch. Empty bottle. Ask me for something else.";
@@ -134,7 +134,7 @@ prt_in,55,68,4	script	Pip#rooke_delivery	4_M_KID1,{
 		close;
 	}
 	.@tier = callsub(S_GetTier);
-	if (!getvariableofnpc(.CourierHas[.@tier], "cons_seller_db")) {
+	if (!bmc_shopcount("rookup#T" + .@tier)) {
 		clear;
 		mes "[" + strnpcinfo(1) + "]";
 		mes callsub(S_CourierLine, 7);
@@ -242,201 +242,64 @@ yuno_in01,168,21,4	duplicate(Pip#rooke_delivery)	Ada#rooke_yuno	4_F_KID2
 ein_in01,21,87,4	duplicate(Pip#rooke_delivery)	Finn#rooke_ein	4_M_KID2
 lhz_in02,285,20,4	duplicate(Pip#rooke_delivery)	Lio#rooke_lhz	4_M_RUSCHILD
 
-// Nine categories x six progression tiers. They are populated by cons_seller_db.
--	pointshop	cons0#T0	-1,BlackMarketPoints,501:2
--	pointshop	cons0#T1	-1,BlackMarketPoints,501:2
--	pointshop	cons0#T2	-1,BlackMarketPoints,501:2
--	pointshop	cons0#T3	-1,BlackMarketPoints,501:2
--	pointshop	cons0#T4	-1,BlackMarketPoints,501:2
--	pointshop	cons0#T5	-1,BlackMarketPoints,501:2
--	pointshop	cons1#T0	-1,BlackMarketPoints,501:2
--	pointshop	cons1#T1	-1,BlackMarketPoints,501:2
--	pointshop	cons1#T2	-1,BlackMarketPoints,501:2
--	pointshop	cons1#T3	-1,BlackMarketPoints,501:2
--	pointshop	cons1#T4	-1,BlackMarketPoints,501:2
--	pointshop	cons1#T5	-1,BlackMarketPoints,501:2
--	pointshop	cons2#T0	-1,BlackMarketPoints,501:2
--	pointshop	cons2#T1	-1,BlackMarketPoints,501:2
--	pointshop	cons2#T2	-1,BlackMarketPoints,501:2
--	pointshop	cons2#T3	-1,BlackMarketPoints,501:2
--	pointshop	cons2#T4	-1,BlackMarketPoints,501:2
--	pointshop	cons2#T5	-1,BlackMarketPoints,501:2
--	pointshop	cons3#T0	-1,BlackMarketPoints,501:2
--	pointshop	cons3#T1	-1,BlackMarketPoints,501:2
--	pointshop	cons3#T2	-1,BlackMarketPoints,501:2
--	pointshop	cons3#T3	-1,BlackMarketPoints,501:2
--	pointshop	cons3#T4	-1,BlackMarketPoints,501:2
--	pointshop	cons3#T5	-1,BlackMarketPoints,501:2
--	pointshop	cons4#T0	-1,BlackMarketPoints,501:2
--	pointshop	cons4#T1	-1,BlackMarketPoints,501:2
--	pointshop	cons4#T2	-1,BlackMarketPoints,501:2
--	pointshop	cons4#T3	-1,BlackMarketPoints,501:2
--	pointshop	cons4#T4	-1,BlackMarketPoints,501:2
--	pointshop	cons4#T5	-1,BlackMarketPoints,501:2
--	pointshop	cons5#T0	-1,BlackMarketPoints,501:2
--	pointshop	cons5#T1	-1,BlackMarketPoints,501:2
--	pointshop	cons5#T2	-1,BlackMarketPoints,501:2
--	pointshop	cons5#T3	-1,BlackMarketPoints,501:2
--	pointshop	cons5#T4	-1,BlackMarketPoints,501:2
--	pointshop	cons5#T5	-1,BlackMarketPoints,501:2
--	pointshop	cons6#T0	-1,BlackMarketPoints,501:2
--	pointshop	cons6#T1	-1,BlackMarketPoints,501:2
--	pointshop	cons6#T2	-1,BlackMarketPoints,501:2
--	pointshop	cons6#T3	-1,BlackMarketPoints,501:2
--	pointshop	cons6#T4	-1,BlackMarketPoints,501:2
--	pointshop	cons6#T5	-1,BlackMarketPoints,501:2
--	pointshop	cons7#T0	-1,BlackMarketPoints,501:2
--	pointshop	cons7#T1	-1,BlackMarketPoints,501:2
--	pointshop	cons7#T2	-1,BlackMarketPoints,501:2
--	pointshop	cons7#T3	-1,BlackMarketPoints,501:2
--	pointshop	cons7#T4	-1,BlackMarketPoints,501:2
--	pointshop	cons7#T5	-1,BlackMarketPoints,501:2
--	pointshop	cons8#T0	-1,BlackMarketPoints,501:2
--	pointshop	cons8#T1	-1,BlackMarketPoints,501:2
--	pointshop	cons8#T2	-1,BlackMarketPoints,501:2
--	pointshop	cons8#T3	-1,BlackMarketPoints,501:2
--	pointshop	cons8#T4	-1,BlackMarketPoints,501:2
--	pointshop	cons8#T5	-1,BlackMarketPoints,501:2
--	pointshop	rookup#T0	-1,BlackMarketPoints,501:2
--	pointshop	rookup#T1	-1,BlackMarketPoints,501:2
--	pointshop	rookup#T2	-1,BlackMarketPoints,501:2
--	pointshop	rookup#T3	-1,BlackMarketPoints,501:2
--	pointshop	rookup#T4	-1,BlackMarketPoints,501:2
--	pointshop	rookup#T5	-1,BlackMarketPoints,501:2
-
--	script	cons_seller_db	-1,{
-	end;
-
-OnInit:
-	// The bounded 106 SKU x 6 tier builder exceeds rAthena's goto-count guard.
-	// It is not an unbounded loop; re-enable the guard before this event ends.
-	freeloop(1);
-	// Tier order: Normal 1-50, Normal 51-99, Rebirth 1-50,
-	// Rebirth 51-99, all jobs 100-200, all jobs 201+.
-	// Prices are Black Market Points; zero is deliberately unavailable.
-	setarray .ItemId[0],
-		12208,12872,14533,12411,14545,14592,12312,12210,12562,12412,
-		12086,12092,12077,12087,12083,12093,12074,12206,12204,12205,12203,12202,12207,
-		12418,12419,12424,12775,12791,12792,12796,14766,12883,14536,14601,23607,100232,100233,102803,12437,12684,12299,
-		12217,12215,12216,12220,12218,12219,14531,
-		14534,14535,14537,14509,14510,14511,17263,17264,17265,
-		12910,17608,17251,17474,17229,14582,14583,14584,14585,14527,12214,12209,14500,6413,7621,13621,12211,7776,17176,17162,16683,
-		6046,6047,6959,6320,12213,
-		985,984,7619,7620,6241,6240,6226,6225,6635,1000322,25729,25731,23436,
-		6909,23209,23216,23207,1000284,1000285,1000286,1000282,1000287,1000288;
-	setarray .ItemCat[0],
-		0,0,0,0,0,0,0,0,0,0,
-		1,1,1,1,1,1,1,1,1,1,1,1,1,
-		2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-		3,3,3,3,3,3,3,
-		4,4,4,4,4,4,4,4,4,
-		5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
-		6,6,6,6,6,
-		7,7,7,7,7,7,7,7,7,7,7,7,7,
-		8,8,8,8,8,8,8,8,8,8;
-	setarray .Tier0[0],
-		50,0,0,0,0,50,0,70,0,0,
-		0,0,0,0,0,0,0,0,0,0,0,0,0,
-		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		10,5,5,8,8,5,3,
-		0,0,0,5,7,10,0,0,0,
-		30,1500,4500,4000,6000,2,3,4,7,7,30,40,70,100,30,15,5,1000,5000,10000,30000,
-		5000,3000,0,10000,10000,
-		10,10,30,30,50,50,0,0,100,0,0,0,0,
-		10,500,4000,10000,100000,120000,150000,170000,190000,200000;
-	setarray .Tier1[0],
-		70,0,0,0,0,70,0,90,0,0,
-		0,0,0,0,0,0,0,0,0,0,0,0,0,
-		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		12,7,7,10,10,7,4,
-		0,0,0,7,9,12,0,0,0,
-		30,1500,4500,4000,6000,7,8,9,12,12,40,50,80,110,40,30,10,1200,5000,10000,30000,
-		5000,3000,0,12000,12000,
-		20,20,40,40,60,60,0,0,120,0,0,0,0,
-		20,1000,8000,20000,100000,120000,150000,170000,190000,200000;
-	setarray .Tier2[0],
-		70,80,0,0,0,70,0,90,0,0,
-		0,0,0,0,0,0,0,0,0,0,0,0,0,
-		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		12,7,7,10,10,7,4,
-		0,0,0,7,9,12,1500,1700,2000,
-		50,2000,5000,4500,6500,12,13,14,17,17,40,50,80,110,50,45,10,1500,6000,12000,35000,
-		10000,7000,0,12000,12000,
-		20,20,40,40,60,60,0,0,120,0,0,0,0,
-		30,1000,8000,20000,100000,120000,150000,170000,190000,200000;
-	setarray .Tier3[0],
-		70,80,90,0,0,70,0,90,120,0,
-		0,0,0,0,0,0,0,0,0,0,0,0,0,
-		0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-		12,7,7,10,10,7,6,
-		0,0,0,7,9,12,1500,1700,2000,
-		50,2500,5500,5000,7000,17,18,19,22,22,40,50,80,110,50,45,20,1500,6000,12000,35000,
-		10000,7000,0,15000,15000,
-		30,30,50,50,70,70,0,0,150,0,0,0,3000,
-		40,2000,16000,40000,100000,120000,150000,170000,190000,200000;
-	setarray .Tier4[0],
-		100,120,130,150,180,100,180,130,150,220,
-		70,80,80,80,90,90,90,100,100,100,100,100,100,
-		80,80,100,120,120,200,400,400,100,100,120,150,250,250,0,30,100,300,
-		15,10,10,13,13,10,10,
-		120,150,75,12,14,17,2500,2700,3000,
-		100,3500,6500,6000,8000,22,23,24,27,27,60,70,100,130,100,100,50,3000,10000,15000,45000,
-		12000,10000,15000,20000,20000,
-		100,100,120,120,150,150,300,300,200,150,150,150,5000,
-		50,4000,32000,80000,100000,120000,150000,170000,190000,200000;
-	setarray .Tier5[0],
-		120,140,150,170,200,120,200,150,170,240,
-		120,130,130,130,140,140,140,150,150,150,150,150,150,
-		130,130,150,170,170,250,500,500,150,150,170,200,300,300,1000,80,150,400,
-		20,15,15,18,18,15,15,
-		200,250,100,22,24,27,3500,3700,4000,
-		300,4500,7500,7000,9000,27,28,29,32,32,110,120,150,180,150,120,60,5000,12000,17000,47000,
-		20000,15000,25000,50000,50000,
-		200,200,250,250,300,300,500,500,300,300,300,300,10000,
-		50,8000,64000,160000,100000,120000,150000,170000,190000,200000;
-
-	.ItemCount = 106;
-	deletearray .CatHas[0], 54;
-	deletearray .CourierHas[0], 6;
-	for (.@cat = 0; .@cat < 9; ++.@cat)
-		for (.@tier = 0; .@tier < 6; ++.@tier)
-			npcshopdelitem "cons" + .@cat + "#T" + .@tier, 501;
-	for (.@tier = 0; .@tier < 6; ++.@tier)
-		npcshopdelitem "rookup#T" + .@tier, 501;
-
-	for (.@i = 0; .@i < .ItemCount; ++.@i) {
-		.@id = .ItemId[.@i];
-		.@type = getiteminfo(.@id, ITEMINFO_TYPE);
-		.@name$ = getitemname(.@id);
-		if (.@name$ == "" || .@name$ == "Unknown Item") {
-			debugmes "Consumable Seller: missing item " + .@id + ".";
-			continue;
-		}
-		if (.@type != IT_USABLE && .@type != IT_HEALING && .@type != IT_DELAYCONSUME && .@type != IT_ETC && .@type != IT_CASH) {
-			debugmes "Consumable Seller: rejected type for item " + .@id + " (" + .@name$ + ").";
-			continue;
-		}
-		.@cat = .ItemCat[.@i];
-		for (.@tier = 0; .@tier < 6; ++.@tier) {
-			switch (.@tier) {
-			case 0: .@price = .Tier0[.@i]; break;
-			case 1: .@price = .Tier1[.@i]; break;
-			case 2: .@price = .Tier2[.@i]; break;
-			case 3: .@price = .Tier3[.@i]; break;
-			case 4: .@price = .Tier4[.@i]; break;
-			case 5: .@price = .Tier5[.@i]; break;
-			}
-			if (.@price <= 0)
-				continue;
-			.CatHas[.@tier * 9 + .@cat] = true;
-			npcshopadditem "cons" + .@cat + "#T" + .@tier, .@id, .@price;
-			if (.@cat == 7) {
-				.@courier_price = (.@price * 120 + 50) / 100;
-				npcshopadditem "rookup#T" + .@tier, .@id, .@courier_price;
-				.CourierHas[.@tier] = true;
-			}
-		}
-	}
-	freeloop(0);
-	end;
-}
+// Nine categories x six progression tiers, populated from rooke.yml.
+-	pointshop	cons0#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons0#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons0#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons0#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons0#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons0#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons1#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons1#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons1#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons1#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons1#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons1#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons2#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons2#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons2#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons2#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons2#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons2#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons3#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons3#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons3#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons3#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons3#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons3#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons4#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons4#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons4#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons4#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons4#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons4#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons5#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons5#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons5#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons5#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons5#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons5#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons6#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons6#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons6#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons6#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons6#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons6#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons7#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons7#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons7#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons7#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons7#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons7#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons8#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons8#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons8#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons8#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons8#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons8#T5	-1,BlackMarketPoints,501:1
+-	pointshop	rookup#T0	-1,BlackMarketPoints,501:1
+-	pointshop	rookup#T1	-1,BlackMarketPoints,501:1
+-	pointshop	rookup#T2	-1,BlackMarketPoints,501:1
+-	pointshop	rookup#T3	-1,BlackMarketPoints,501:1
+-	pointshop	rookup#T4	-1,BlackMarketPoints,501:1
+-	pointshop	rookup#T5	-1,BlackMarketPoints,501:1

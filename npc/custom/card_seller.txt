@@ -2,6 +2,7 @@
 //= Monster Card Sellers A-Z
 //===== Description: =========================================
 //= Separate Normal, Miniboss, and MVP Card Sellers use character-local Black Market Points.
+//= Stock and Collector data are loaded from black_market_catalog/card-*.yml.
 //= Cards are grouped alphabetically. A 0-9 drawer appears before A
 //= when a display name starts with a digit. Normal, Miniboss, and MVP cards
 //= cost the Card Collector offer plus 30%, rounded to the nearest point.
@@ -94,13 +95,27 @@ function	script	F_OfflineLetterShop	{
 	return 0;
 }
 
+function	script	F_OfflineCardBrowseKey	{
+	.@letter = getarg(0);
+	.@count = getarg(1);
+	if (.@count < 100)
+		return "ALL";
+	if (.@count < 200) {
+		if (.@letter >= 0 && .@letter <= 7)
+			return "AH";
+		if (.@letter >= 8 && .@letter <= 15)
+			return "IP";
+		return "QZ9";
+	}
+	if (.@letter == 26)
+		return "0";
+	return charat("ABCDEFGHIJKLMNOPQRSTUVWXYZ", .@letter);
+}
+
 paramk,47,186,4	script	Corvin#offline	512,{
-	.@menu$ = getvariableofnpc( .alphabet_menu$, "card_seller_creation" );
-	if (.@menu$ == "") {
+	if (!bmc_ready("card-normal")) {
 		mes "[Corvin]";
-		mes "I am sorry, it seems like something went wrong.";
-		mes "I cannot find any cards in our database at the moment.";
-		mes "Please contact a game master.";
+		mes "This stall's catalog is unavailable. Please try again later.";
 		close;
 	}
 	if ((eaclass()&EAJ_BASEMASK) == EAJ_SUMMONER) {
@@ -129,10 +144,11 @@ paramk,47,186,4	script	Corvin#offline	512,{
 	mes "Please do not compare my shelves to theirs.";
 	mes "Would you like to browse the collection?";
 	next;
-	.@s = select(.@menu$) -1;
+	.@shop$ = callfunc("F_BlackMarketBrowse", "card-normal");
+	if (.@shop$ == "") close;
 	callfunc "F_BlackMarketDailyRemark", "Corvin", $BlackMarketRateCards;
 	close2;
-	callblackmarketshop "card_mob#"+ getvariableofnpc( .alphabet$[.@s], "card_seller_creation" ), 1, $BlackMarketRateCards;
+	callblackmarketshop .@shop$, 1, $BlackMarketRateCards;
 	end;
 
 OnInit:
@@ -141,12 +157,9 @@ OnInit:
 }
 
 paramk,49,186,4	script	Corven#offline	512,{
-	.@menu$ = getvariableofnpc( .alphabet_menu$, "miniboss_card_seller_creation" );
-	if (.@menu$ == "") {
+	if (!bmc_ready("card-miniboss")) {
 		mes "[Corven]";
-		mes "I am sorry, it seems like something went wrong.";
-		mes "I cannot find any cards in our database at the moment.";
-		mes "Please contact a game master.";
+		mes "This stall's catalog is unavailable. Please try again later.";
 		close;
 	}
 	.@eac = eaclass();
@@ -190,10 +203,11 @@ paramk,49,186,4	script	Corven#offline	512,{
 	mes "Every card here came from a monster worth remembering.";
 	mes "Would you like to browse the collection?";
 	next;
-	.@s = select(.@menu$) -1;
+	.@shop$ = callfunc("F_BlackMarketBrowse", "card-miniboss");
+	if (.@shop$ == "") close;
 	callfunc "F_BlackMarketDailyRemark", "Corven", $BlackMarketRateCards;
 	close2;
-	callblackmarketshop "card_miniboss#"+ getvariableofnpc( .alphabet$[.@s], "miniboss_card_seller_creation" ), 1, $BlackMarketRateCards;
+	callblackmarketshop .@shop$, 1, $BlackMarketRateCards;
 	end;
 
 OnInit:
@@ -202,13 +216,11 @@ OnInit:
 }
 
 paramk,51,186,4	script	Veynar#offline	10576,{
-	.@mvp_menu$ = getvariableofnpc( .alphabet_menu$, "mvp_card_seller_creation" );
-	.@special_menu$ = getvariableofnpc( .special_alphabet_menu$, "mvp_card_seller_creation" );
-	if (.@mvp_menu$ == "" || .@special_menu$ == "") {
+	.@mvp_count = bmc_ready("card-mvp") ? bmc_drawercount("card-mvp", 0) : 0;
+	.@special_count = bmc_ready("card-special") ? bmc_drawercount("card-special", 0) : 0;
+	if (.@mvp_count == 0 && .@special_count == 0) {
 		mes "[Veynar]";
-		mes "I am sorry, it seems like something went wrong.";
-		mes "I cannot find any cards in our database at the moment.";
-		mes "Please contact a game master.";
+		mes "This stall's catalog is unavailable. Please try again later.";
 		close;
 	}
 	if (!(eaclass()&EAJL_THIRD) && Class != JOB_SPIRIT_HANDLER) {
@@ -261,12 +273,24 @@ paramk,51,186,4	script	Veynar#offline	10576,{
 	mes "Do not confuse their stock with mine.";
 	mes "Which collection have you come to see?";
 	next;
-	switch (select("Show me your MVP cards.:I know you have something more valuable.:")) {
+	.@collection$ = "";
+	if (.@mvp_count > 0)
+		.@collection$ = "Show me your MVP cards.:";
+	if (.@special_count > 0)
+		.@collection$ += "I know you have something more valuable.:";
+	if (.@mvp_count == 0)
+		.@choice = 2;
+	else if (.@special_count == 0)
+		.@choice = 1;
+	else
+		.@choice = select(.@collection$);
+	switch (.@choice) {
 	case 1:
-		.@s = select(.@mvp_menu$) - 1;
+		.@shop$ = callfunc("F_BlackMarketBrowse", "card-mvp");
+		if (.@shop$ == "") close;
 		callfunc "F_BlackMarketDailyRemark", "Veynar", $BlackMarketRateCards;
 		close2;
-		callblackmarketshop "card_mvp#" + getvariableofnpc( .alphabet$[.@s], "mvp_card_seller_creation" ), 1, $BlackMarketRateCards;
+		callblackmarketshop .@shop$, 1, $BlackMarketRateCards;
 		end;
 	case 2:
 		clear;
@@ -284,10 +308,11 @@ paramk,51,186,4	script	Veynar#offline	10576,{
 		mes "[Veynar]";
 		mes "Very well. You may look upon the cards no other merchant can offer.";
 		next;
-		.@s = select(.@special_menu$) - 1;
+		.@shop$ = callfunc("F_BlackMarketBrowse", "card-special");
+		if (.@shop$ == "") close;
 		callfunc "F_BlackMarketDailyRemark", "Veynar", $BlackMarketRateCards;
 		close2;
-		callblackmarketshop "card_special#" + getvariableofnpc( .special_alphabet$[.@s], "mvp_card_seller_creation" ), 1, $BlackMarketRateCards;
+		callblackmarketshop .@shop$, 1, $BlackMarketRateCards;
 		end;
 	}
 	end;
@@ -297,465 +322,127 @@ OnInit:
 	end;
 }
 
--	script	card_seller_creation	-1,{
-	end;
-OnInit:
-	freeloop 1;
-	deletearray .alphabet$[0], getarraysize(.alphabet$);
-	deletearray .HasAlphabet[0], getarraysize(.HasAlphabet);
-	.size_alphabet = 0;
-	.alphabet_menu$ = "";
-	.HasNum = false;
-	.@alphabet$ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	setarray .CardDisp$[0], " Rigid Earth Deleter Card","Abandoned Teddy Bear Card","Abysmal Knight Card","Abyssman Card","Agav Card","Airship Raid Card","Alarm Card","Alice Card","Alicel Card","Aliot Card","Aliza Card","Alligator Card","Alphoccio Card","Am Mut Card","Ambernite Card","Amitera Card","Anacondaq Card","Ancient Megalith Card","Ancient Mimic Card","Ancient Mummy Card";
-	setarray .CardDisp$[20], "Ancient Stalactic Golem Card","Ancient Stone Shooter Card","Ancient Tree Card","Ancient Tri Joint Card","Ancient Wootan Fighter Card","Ancient Wootan Shooter Card","Ancient Worm Card","Andre Card","Andre Egg Card","Angel Slug Card","Angelgolt Card","Angra Mantis Card","Anolian Card","Anopheles Card","Antique Book Card","Anubis Card","Apocalipse Card","Aqua Elemental Card","Arc Elder Card","Arch Plasma Card";
-	setarray .CardDisp$[40], "Archdam Card","Archer Skeleton Card","Arclouze Card","Argiope Card","Argos Card","Arhi Card","Aries Card","Armeyer Dinze Card","Ash Hopper Card","Ash Toad Card","Ashring Card","Assaulter Card","Aster Card","Aunoe Card","Baby Desert Wolf Card","Baby Leopard Card","Banaspaty Card","Banshee Card","Banshee Master Card","Baphomet Jr. Card";
-	setarray .CardDisp$[60], "Bath Manager Card","Bathory Card","Bear Bug Card","Beetle King Card","Beholder Card","Beholder Master Card","Bellare Card","Big Bell Card","Big Ben Card","Bigfoot Card","Black Acidus Card","Blazzer Card","Bloody Butterfly Card","Bloody Knight Card","Bloody Murderer Card","Blue Acidus Card","Blue Moon Loli Ruri Card","Blue Pitaya Card","Boiling Marc Card","Boiling Phen Card";
-	setarray .CardDisp$[80], "Boiling Piranha Card","Boiling Swordfish Card","Bone Acidus Card","Bone Ferus Card","Bongun Card","Book of Death Card","Bookworm Card","Bradium Golem Card","Brain Sucker Card","Breeze Card","Brilight Card","Broken Cleaner Card","Broken Cleaning Robot Omega Card","Broken Gardener Beta Card","Broken Guard Beta Card","Brown Rat Card","Brutal Murderer Card","Brute Haase Card","Bungisngis Card","Bushring Card";
-	setarray .CardDisp$[100], "Butoijo Card","Calmaring Card","Caramel Card","Carat Card","Caterpillar Card","Cave Calmaring Card","Cave Flower Card","Cecil Damon Card","Celia Card","Cendrawasih Card","Cenere Card","Centipede Card","Centipede Larva Card","Chaos Baphomet Jr. Card","Chaos Ghostring Card","Chaos Hunter Fly Card","Chaos Killer Mantis Card","Chaos Mantis Card","Chaos Poporing Card","Chaos Sidewinder Card";
-	setarray .CardDisp$[120], "Chaos Stem Worm Card","Charge Basilisk Card","Chen Card","Chepet Card","Choco Card","Chonchon Card","Christmas Cookie Card","Cliolima Card","Clock Card","Cloud Hermit Card","Cobalt Mineral Card","Coco Card","Colorful Teddy Bear Card","Comodo Card","Condor Card","Contaminated Raydric Archer Card","Contaminated Raydric Card","Contaminated Sting Card","Contaminated Wanderer Card","Cookie Card";
-	setarray .CardDisp$[140], "Copo Card","Cornus Card","Cornutus Card","Coyote Card","Crab Card","Cramp Card","Creamy Card","Creamy Fear Card","Creepy Demon Card","Cruiser Card","Cursed Raydric Archer Card","Cursed Raydric Card","Curupira Card","Dancing Marionette Card","Dark Frame Card","Dark Pinguicula Card","Dark Priest Card","Dark Shadow Card","Deadre Card","Death Word Card";
-	setarray .CardDisp$[160], "Decorated Evil Tree Card","Deep Sea Deviace Card","Deep Sea King Dramoh Card","Deep Sea Marse Card","Deep Sea Merman Card","Deep Sea Obeaune Card","Deep Sea Phen Card","Deep Sea Sedora Card","Deep Sea Sropho Card","Deep Sea Strouf Card","Deep Sea Swordfish Card","Demon Fungus Card","Desert Wolf Card","Deviace Card","Deviruchi Card","Diabolic Card","Diligent Andre Card","Diligent Andre Larva Card","Diligent Deniro Card","Diligent Piere Card";
-	setarray .CardDisp$[180], "Diligent Soldier Andre Card","Diligent Vitata Card","Dimik Card","Dio Anemos Card","Disguise Card","Disguiser Card","Dokkaebi Card","Dolomedes Card","Dolor Card","Dolorian Card","DR815 Card","Draco Card","Draco Egg Card","Dragon Egg Card","Dragon Tail Card","Drainliar Card","Dried Rafflesia Card","Driller Card","Drops Card","Drosera Card";
-	setarray .CardDisp$[200], "Dryad Card","Dullahan Card","Dumpling Kid Card","Duneyrr Card","Dustiness Card","E-EA1L Card","EA2S Card","Earth Deleter Card","Earth Petite Card","Echio Card","Eggring Card","Eggyra Card","Egnigem Cenia Card","Elder Card","Elder Irene Card","Elder Willow Card","Eldest Card","Elite Bellare Card","Elite Revolver Buffalo Bandit Card","Elite Scimitar Buffalo Bandit Card";
-	setarray .CardDisp$[220], "Elite Shotgun Buffalo Bandit Card","Empathizer Card","Enchanted Peach Tree Card","Engkanto Card","Enhanced Amdarais Card","Entangled Intermediate Rgan Card","Eremes Guile Card","Errende Ebecee Card","Erzsebet Card","Evil Druid Card","Evil Dwelling Box Card","Evil Nymph Card","Evil Shadow Card","Exploration Rover Turbo Card","Explosion Card","Extra Joker Card","Fabre Card","Faceworm Card","Faceworm Egg Card","Faceworm Larva Card";
-	setarray .CardDisp$[240], "Faithful Manager Card","Fallen One Card","False Angel Card","Familiar Card","Fanat Card","Female Thiefbug Card","Fillia Card","Fire Condor Card","Fire Frilldora Card","Fire Golem Card","Fire Sandman Card","Fire Spark Card","Fire Wind Kite Card","Firelock Soldier Card","Flame Ghost Card","Flame Skull Card","Flamel Card","Flora Card","Freezer Card","Frilldora Card";
-	setarray .CardDisp$[260], "Frozen Gargoyle Card","Frozen Wolf Card","Fruit Pom Spider Card","Frus Card","Fulbuk Card","Fulgor Card","Fur Seal Card","Furious Gazeti Card","Furious Hero Card","Furious Ice Titan Card","Furious Nine Tails Card","Furious Snowier Card","Gajomart Card","Galapago Card","Galensis Card","Gan Ceann Card","Gargoyle Card","Gaster Card","Gazeti Card","GC109 Card";
-	setarray .CardDisp$[280], "Geffen Bully Card","Geffen Gangster Card","Geffen Shoplifter Card","General Orc Card","Geographer Card","Gertie Card","Ghost Cube Card","Ghost Wolf Card","Ghoul Card","Giant Caput Card","Giant Hornet Card","Giant Spider Card","Giant Whisper Card","Gibbet Card","Giearth Card","Gig Card","Goat Card","Goblin Archer Card","Goblin Card","Goblin Leader Card";
-	setarray .CardDisp$[300], "Goblin Steamrider Card","Gold Acidus Card","Golem Card","Grand Peco Card","Grass Fabre Card","Grave Worm Card","Gray Icewind Card","Gray Wolf Card","Greater Aries Card","Greater Bellare Card","Greater Broken Gardener Beta Card","Greater Dried Rafflesia Card","Greater Papila Cae Card","Greater Papila Card","Greater Papila Ruba Card","Greater Research Assistant Bot Card","Greater Sanare Card","Greater Special Alnoldi Card","Greatest General Card","Green Cenere Card";
-	setarray .CardDisp$[320], "Green Ferus Card","Green Maiden Card","Green Pitaya Card","Gremlin Card","Grizzly Card","Grote Card","Grove Card","Gullinbursti Card","Gutsy Familiar Card","Gutsy Giearth Card","Hallucigenia Baby Card","Hallucigenia Card","Happiness Giver Card","Harpy Card","Hatii Bebe Card","Headless Mule Card","Heart Hunter AT Card","Heart Hunter Card","Heater Card","Heavy Metalring Card";
-	setarray .CardDisp$[340], "Hell Apocalypse Card","Hell Poodle Card","Hermit Plant Card","High Orc Card","Hill Wind Card","Hillslion Card","Hode Card","Hodremlin Card","Holden Card","Hollow Archer Skeleton Card","Hollow Bongun Card","Hollow Munak Card","Hollow Sohee Card","Holy Frus Card","Holy Skogul Card","Horn Card","Hornet Card","Horong Card","Hot Molar Card","Howard Alt-Eisen Card";
-	setarray .CardDisp$[360], "Humanoid Chimera Card","Hunter Fly Card","Hunter Wolf Card","Hydra Card","Hylozoist Card","Iara Card","Ice Gangu Card","Ice Ghost Card","Ice Seahorse Card","Ice Straw Card","Ice Titan Card","Icewind's Egg Card","Immortal Corps Card","Imp Card","Incubus Card","Infinite Vocal Card","Injustice Card","Intermediate Rgan Card","Ipodus Card","Iron Fist Card";
-	setarray .CardDisp$[380], "Isilla Card","Isis Card","Jaguar Card","Jakk Card","Jejeling Card","Jennifer Card","Jewelry Ant Card","Jing Guai Card","Joker Card","Jormungandr Church Bishop Card","Jormungandr Church Shaman Card","Jormungandr Guardian Card","Jormungandr Sanctuary Cleaner Card","Jormungandr Sanctuary Guardian Card","Ju Card","Jungle Mandragora Card","Kaho Card","Kapha Card","Karakasa Card","Kathryne Keyron Card";
-	setarray .CardDisp$[400], "Kavach Icarus Card","Khalitzburg Card","Khalitzburg Knight Card","Kick & Kick Card","Kick Step Card","Killer Mantis Card","Knocker Card","Kobold Archer Card","Kobold Card","Kobold Leader Card","Kraben Card","Kukre Card","Kuro Akuma Card","Laurell Weinder Card","Lava Golem Card","Lava Toad Card","Lavaeter Card","Leaf Cat Card","Leaf Lunatic Card","Leib Olmai Card";
-	setarray .CardDisp$[420], "Les Card","Lesser Rgan Card","Letterster Card","Licheniyes Card","Lichtern Blue Card","Lichtern Green Card","Lichtern Red Card","Lichtern Yellow Card","Limacina Card","Little Fatum Card","Litus Card","Lock Step Card","Loli Ruri Card","Lowest Rgan Card","Luciola Vespa Card","Lude Card","Lude Gal Card","Lunatic Card","Magic Poison Dolor Card","Magic Poison Plaga Card";
-	setarray .CardDisp$[440], "Magic Poison Sanara Card","Magmaring Card","Magnolia Card","Majoruros Card","Male Thiefbug Card","Malicious Baby Ghost Card","Manananggal Card","Mandragora Card","Mangkukulam Card","Mantis Card","Mao Guai Card","Marc Card","Marduk Card","Margaretha Sorin Card","Marin Card","Marina Card","Marine Sphere Card","Marionette Card","Marse Card","Marsh Arclouse Card";
-	setarray .CardDisp$[460], "Martin Card","Material Chimera Card","Matt Drainliar Card","Matyr Card","Mavka Card","Medusa Card","Megalith Card","Megalodon Card","Melibe Slug Card","Melted Poring Card","Menblatt Card","Merman Card","Metaling Card","Metaller Card","Mi Gao Card","Mimic Card","Miming Card","Miner Pitman Card","Mineral Card","Mini Demon Card";
-	setarray .CardDisp$[480], "Minorous Card","Miyabi Doll Card","Mobster Card","Modified Senior Rgan Card","Mosquilo Card","Muka Card","Mummy Card","Munak Card","Muscipular Card","Mushy Ant Egg Card","Mutated Khalitzburg Card","Mutated White Knight Card","Myst Card","Myst Case Card","Naga Card","Napeo Card","Neo Mineral Card","Neo Punk Card","Nepenthes Card","Nereid Card";
-	setarray .CardDisp$[500], "Nightmare Ancient Mummy Card","Nightmare Arclouse Card","Nightmare Card","Nightmare Mimic Card","Nightmare Minotaur Card","Nightmare Mummy Card","Nightmare Terror Card","Nightmare Verit Card","Nine Tail Card","Novice Poring Card","Noxious Card","Obeaune Card","Obsidian Card","Odoric Card","Ominous Assaulter Card","Ominous Freezer Card","Ominous Heater Card","Ominous Permeter Card","Ominous Solider Card","One Eye Dollocaris Card";
-	setarray .CardDisp$[520], "Orc Archer Card","Orc Baby Card","Orc Lady Card","Orc Skeleton Card","Orc Warrior Card","Orc Zombie Card","Ordre Card","Paiement Card","Panzer Goblin Card","Papila Cae Card","Papila Card","Papila Ruba Card","Parasite Card","Parus Card","Pasana Card","Payon Soldier Card","Pecopeco Card","Pecopeco Egg Card","Penomena Card","Permeter Card";
-	setarray .CardDisp$[540], "Pest Card","Petal Card","Phen Card","Phendark Card","Phylla Card","Picky Card","Picky Egg Card","Pierrotzoist Card","Pinguicula Card","Piranha Card","Pirate Skel Card","Pitman Card","Plaga Card","Plagarion Card","Plankton Card","Plasma Card","Playing Pere Card","Poison Spore Card","Poisonous Card","Poisonous Toad Card";
-	setarray .CardDisp$[560], "Pom Spider Card","PoPoring Card","Porcellio Card","Poring Card","Pot Dofle Card","Powerful Archer Skeleton Card","Powerful Magic Card","Powerful Skeleton Card","Powerful Soldier Skeleton Card","Pray Giver Card","Primitive Rgan Card","Prison Breaker Card","Punk Card","Pupa Card","Purple Ferus Card","Purple Pitaya Card","Quve Card","Rafflesia Alnoldi Card","Rafflesia Card","Ragged Zombie Card";
-	setarray .CardDisp$[580], "Raggler Card","Rake Hand Card","Randel Card","Rata Card","Raydric Archer Card","Raydric Card","Red Eruma Card","Red Ferus Card","Red Novus Card","Red Pitaya Card","Regenschirm Scientist Card","Rekenber Guard Card","Rekenber Senior Guard Card","Remover Card","Repair Robot Turbo Card","Requiem Card","Research Assistant Bot Card","Restless Dead Card","Revolver Buffalo Bandit Card","Rhyncho Card";
-	setarray .CardDisp$[600], "Rideword Card","Rigid Blazer Card","Rigid Explosion Card","Rigid Kaho Card","Rigid Lava Golem Card","Rigid Nightmare Terror Card","Rigid Sky Deleter Card","Roaming Spellbook Card","Rocker Card","Rockstriker Card","Roda Frog Card","Rotar Zairo Card","Rotten Wood Card","Roween Card","Rybio Card","Sage Worm Card","Sanare Card","Sandman Card","Sasquatch Card","Savage Bebe Card";
-	setarray .CardDisp$[620], "Savage Card","Scalleg Card","Scaraba Card","Scimitar Buffalo Bandit Card","Scorpion Card","Scout Basilisk Card","Scrap Robot Card","Sea-Otter Card","Seawind Card","Sedora Card","Seeker Card","Sewage Cramp Card","Sewage Venenum Card","Sewage Waterfall Card","Seyren Windsor Card","Sharp Magic Card","Shell Fish Card","Shining Seaweed Card","Shinobi Card","Shiny Teddy Bear Card";
-	setarray .CardDisp$[640], "Shotgun Buffalo Bandit Card","Sidewinder Card","Sieglouse Card","Silver Acidus Card","Singing Pere Card","Siorava Card","Siroma Card","Skel Prisoner Card","Skel Worker Card","Skeleton Card","Skeleton General Card","Skipskipper Card","Skogul Card","Sky Deleter Card","Sky Petite Card","Sleeper Card","Smile Giver Card","Smokie Card","Snake Card","Snow Rabbit Slug Card";
-	setarray .CardDisp$[660], "Snowier Card","Sohee Card","Soldier Skeleton Card","Solider Card","Soul Fragment Card","Special Alnoldi Card","Spectrum Plasma Card","Spore Card","Spring Rabbit Card","Sropho Card","Stainer Card","Stalactic Golem Card","Stapo Card","Steel Chonchon Card","Stem Worm Card","Step Card","Sting Card","Stone Shooter Card","Strouf Card","Succubus Card";
-	setarray .CardDisp$[680], "Superior Rgan Healer Card","Superior Rgan Shaman Card","Suspicious Irwin Soldier Card","Sweet Nightmare Card","Sweet Roda Frog Card","Swordfish Card","Taffy Card","Tamruan Card","Tarou Card","Tatacho Card","Teddy Bear Card","Tengu Card","Thara Frog Card","The Paper Card","Thief Bug Card","Thiefbug Egg Card","Tikbalang Card","Time Keeper Card","Tiyanak Card","Toucan Card";
-	setarray .CardDisp$[700], "Tower Keeper Card","Toxious Card","Trance Spore Card","Treasure Mimic Card","Trentini Card","Tri Joint Card","Twin Caput Card","Two Eyes Dollocaris Card","Unfrost Flower Card","Ungoliant Card","Unleashed Magic Card","Uzhas Card","Vadon Card","Vanberk Card","Vanilaqus Card","Variant Dolor Card","Variant Plaga Card","Variant Twin Caput Card","Variant Venenum Card","Vavayaga Card";
-	setarray .CardDisp$[720], "Velelling Card","Venatu Card","Venedi Card","Venenum Card","Venomous Card","Verit Card","Verporta Card","Verporte Card","Vicious Cookie Card","Vicious Enchanted Obsidian Card","Violy Card","Vitata Card","Vocal Card","Void Mimic Card","Volkering Card","Wakwak Card","Wanderer Card","Waste Stove Card","Wasted Intermediate Rgan Card","Wasted Primitive Rgan Card";
-	setarray .CardDisp$[740], "Watcher Card","Whisper Card","White Porcellio Card","Wickebine Tres Card","Wild Honet Card","Wild Rose Card","Willow Card","Wind Ghost Card","Wizard of Veritas Card","Wolf Card","Wood Goblin Card","Wooden Golem Card","Wootan Fighter Card","Wootan Shooter Card","Wormtail Card","Wraith Card","Wraith Dead Card","Yao Jun Card","Yellow Novus Card","Yellow Pitaya Card";
-	setarray .CardDisp$[760], "Yordos Executor Card","Yormi Card","Yormi Missionary Card","Yoscopus Guardian Card","Yoscopus Sorcerer Card","Yoster Cleaner Card","Yoster Collector Card","Yoster Cooker Card","Yoster Fixer Card","Yoster Negotiator Card","Yoyo Card","Zakudam Card","Zealotus Card","Zenorc Card","Zerom Card","Zhu Po Long Card","Zipper Bear Card","Zombie Card","Zombie Guard Card","Zombie Master Card";
-	setarray .CardDisp$[780], "Zombie Prisoner Card","Zombie Slaughter Card","Icewind Card";
-
-	// Reviewed Normal monster cards and their canonical source monsters.
-	setarray .CardIds[0], 27350,31022,4140,300005,4409,27181,4244,4253,4401,4402,4400,4252,4567,4245,4032,300254,4062,27293,4387,4248,27292,27295,4473,27291,27297,27296,4249,4043,4013,300467,300008,4513,4234,4344,4596,4138,4242,4443,4629,300010,4371,4094,4240,4114,4075,27249,300097,4347,300218,300211,300219,4246,4247,4464,4023,4233,4518,4438,4450,4129,300102,4119,300470,4307,4356,4466,27306,4627,4626,4074,300017,4215,4327,4320,4214,4379,300245,300124,300121,300118;
-	setarray .CardIds[80], 300120,300119,300020,300019,4212,300279,300104,4472,300172,4390,4213,300101,300077,300087,300076,27176,300241,27256,4582,300221,4519,300364,4063,4288,4289,300371,300372,4368,4568,4517,4595,4447,4452,27335,27339,27337,27340,27338,27341,27336,27342,4661,4569,4284,4285,4009,4235,300510,4299,4262,4475,4041,27286,4516,4015,27355,27354,27357,27361,4293,300455,4448,4061,27179,4153,4296,4040,4298,31019,4297,27387,27386,27122,31021,4170,4468,4171,4449,300252,4388;
-	setarray .CardIds[160], 31016,300142,300150,300143,300144,300141,300149,300146,300140,300148,300147,4173,4082,4125,4122,4182,300230,300232,300233,300234,300231,300238,4370,27250,4181,300244,4098,4506,27312,300250,27019,4444,4471,4385,4178,4069,300083,4180,4004,4421,4177,4176,4154,4458,4056,27320,27304,4279,4118,4410,4659,4070,4346,4251,27168,4052,300269,300111,27174,27175,27173,300270,4217,4583,4635,300380,4360,4349,300293,4141,31018,4258,27264,27016,4267,300292,4002,27163,27166,27167;
-	setarray .CardIds[240], 4607,27328,4316,4020,4465,4026,300256,27026,27028,27029,27027,300213,300222,4160,27360,4439,4570,4080,4319,4088,27356,4640,4670,4405,27030,300259,4312,27110,27088,27112,27082,27111,4151,4152,300261,300240,4149,27178,4418,27018,27252,27251,27253,300295,4280,4571,300242,300223,4110,300249,4271,4270,4303,4278,4087,4165,4150,4157,4060,4155,4156,4378,4072,4161,4664,300171,300457,300220,300098,27307,300088,300084,300096,300092,300094,300082,27309,300086,4283,27014;
-	setarray .CardIds[320], 4381,4373,300125,4355,4162,300246,4377,4164,300237,300236,300373,300374,300271,4325,4323,27125,300381,27149,4331,4467,4477,4437,4232,4322,4345,4453,4081,4413,4343,27086,27083,27085,27084,300011,300012,4045,4019,4103,300214,4362,27147,4115,4667,4035,4321,27120,300359,27359,300512,300361,4417,300456,4637,4433,4269,4644,4268,300368,27258,4239,4412,4116,27124,4109,4589,300294,300006,4265,4139,300459,300464,300460,300466,300465,27261,4669,4065,4287,4286,4366;
-	setarray .CardIds[400], 4351,4136,4609,27013,27012,4301,4434,4292,4091,4291,4295,4027,27257,4350,4184,300216,300258,4195,4663,4188,27158,300367,300509,27259,4597,4600,4599,4598,300363,4511,300255,4699,4191,300366,4445,4193,300243,4006,300112,300114,300115,4432,4076,4201,4050,31020,4584,4030,4585,4079,4202,4105,4112,4364,4196,4055,4084,4113,4095,27177,4046,27148,27102,4097,27161,4124,4200,4067,300469,300174,4593,4199,4341,4057,4231,4205,4510,27288,4339,4204;
-	setarray .CardIds[480], 4126,4208,4317,300379,300173,4036,4106,4090,4420,300235,27385,27384,4108,4206,4469,300260,300004,4628,4470,4167,4657,4653,4127,4654,4655,4656,4166,4658,4159,4545,4334,4093,4338,27260,27117,27118,27116,27115,27114,300375,4256,4375,4255,4085,4066,4071,27255,27254,4310,300095,300091,300093,4309,4512,4099,27169,4031,4007,4314,4311,4315,4594,4077,4329,4461,4008,4011,300247,4476,27121,4073,4335,27310,300251,4024,4389,27107,4048,300001,4175;
-	setarray .CardIds[560], 4514,4033,4337,4001,4523,4633,300116,4446,4634,300272,300365,27358,4313,4003,300015,300123,4294,4515,4083,4436,4186,300212,4572,4459,4187,4133,4531,4380,4383,300106,300265,300263,300264,4353,27015,4104,300081,27103,27171,4460,4185,27353,27349,27347,27348,27352,27351,300105,4021,300511,4014,4192,300170,4422,4194,4219,27308,4101,4216,4017,4078,300506,4505,27172,4068,4660,27017,4326,300505,4521,4414,300109,300108,300110,4358,300117,4273,300360,4230,27287;
-	setarray .CardIds[640], 27170,4117,300296,300018,27108,4530,4416,4222,4092,4025,4221,300508,4404,4158,4120,4228,300273,4044,4037,300468,4415,4100,4086,4220,27289,300085,300009,4022,4227,4522,4039,4223,4424,4042,4224,4698,4226,4225,4111,4218,300463,300462,300461,27101,4666,4089,4639,4304,4028,4442,4340,4282,4058,4172,4016,4012,4586,4630,4587,27123,4229,300002,4668,300016,4573,4308,27316,300376,300362,4336,300113,27159,4049,4411,300257,27313,27311,27317,27315,27160;
-	setarray .CardIds[720], 300507,4369,300253,27314,4333,4107,300089,300090,31017,27290,4209,4053,4211,300278,300215,4588,4210,4332,300370,300369,4638,4102,300003,4348,4665,4257,4010,4264,27087,4029,27157,4259,4261,4260,4034,4190,4189,4328,4382,300122,300523,300519,300520,300524,300525,300514,300516,300518,300515,300517,4051,4474,4277,4096,4064,4272,4281,4038,4641,4274,4275,4435,300458;
-	setarray .SourceMobIds[0], 20375,2995,1219,20603,1769,3175,1193,1275,1735,1736,1737,1271,2226,1301,1094,20924,1030,20272,1699,1297,20271,20274,2019,20270,20276,20275,1305,1095,1097,21983,20604,2133,1206,1627,2366,1098,1365,2016,2920,20608,1668,1016,1194,1099,1100,2549,20677,1654,21302,21295,21303,1315,1266,1796,1107,1415,2154,1867,1974,1101,20635,1102,21971,1494,1633,1975,20350,2917,2916,1060,20614,1367,1408,1268,1507,1716,20940,20651,20644,20643;
-	setarray .SourceMobIds[80], 20646,20645,20617,20616,1188,20780,20683,2024,20889,1692,1211,20633,20641,20631,20639,3788,20937,2556,2309,21305,2155,21522,1103,1267,1300,21540,21541,1638,2223,2153,2365,1987,1999,20525,20529,20527,20530,20528,20531,20526,20532,3503,2224,1250,1214,1011,1246,22320,1269,1412,1976,1104,20255,2152,1009,20368,20367,20370,20420,1265,21965,1992,1067,3739,1073,1209,1018,1293,2992,1248,20578,20577,2074,2994,1260,2015,1198,2023,20932,1698;
-	setarray .SourceMobIds[160], 2987,20803,20810,20804,20805,20802,20809,20806,20801,20808,20807,1378,1106,1108,1109,1382,21386,21388,21389,21390,21387,21394,1669,2550,1506,20936,1110,2092,20349,20930,3252,2013,2014,1721,1321,1111,20624,1380,1113,1781,1493,1504,1409,2018,1114,20341,20342,1385,1155,1770,3495,1116,1652,1377,2542,1033,20781,20688,3748,3749,3747,20773,1410,2310,3448,21601,1635,1655,20176,1117,2991,1416,2939,3249,1383,20175,1007,2528,2540,2541;
-	setarray .SourceMobIds[240], 2371,3010,1371,1005,1797,1053,20926,3020,3022,3023,3021,21297,21306,1403,20380,1869,2222,1118,1319,1119,20369,3442,3507,1753,3027,20921,1317,3792,3765,3794,3759,3793,1309,1391,20923,20935,1253,3740,1778,3251,2552,2553,2551,20178,1368,2225,20938,21307,1036,20929,1303,1304,1186,1503,1121,1387,1372,1258,1122,1299,1280,1713,1040,1369,3497,20888,21966,21304,20678,20356,20632,20625,20675,20670,20672,20623,20358,20627,1277,3247;
-	setarray .SourceMobIds[320], 1717,1631,20653,1632,1381,20941,1687,1311,21393,21392,21543,21542,20774,1376,1515,2071,21599,3626,1318,1977,1978,1866,1413,1213,1629,1989,1127,1773,1628,3763,3761,3760,3762,20606,20607,1128,1004,1129,21298,1636,3631,1035,3500,1068,1510,2069,21525,20379,22318,21523,1777,21984,3451,1837,1374,3423,1257,21529,2558,1212,1772,1029,2072,1130,2316,20177,20598,1517,1131,21988,21987,21972,21990,21989,2561,3506,1072,1406,1400,1639;
-	setarray .SourceMobIds[400], 1656,1132,20388,3128,3127,1294,1838,1282,1133,1296,1587,1070,2557,1657,1366,21300,20920,1586,3496,1306,1881,21528,22316,2559,2367,2370,2369,2368,21520,2136,20925,3126,1505,21527,1994,1509,20939,1063,20689,20691,20692,1836,1138,1310,1054,2993,2311,1020,2312,1139,1513,1045,1140,1637,1242,1141,1142,1143,1144,3787,1145,3632,3750,1146,1884,1148,1274,1064,21970,20887,2363,1264,1613,1058,1516,1191,2137,20261,1614,1292;
-	setarray .SourceMobIds[480], 1149,1404,1313,21600,20890,1055,1041,1026,1780,21391,20576,20574,1151,1249,1993,20922,20594,2919,1988,1255,2360,2358,1061,2356,2353,2354,1379,2355,1180,2398,1620,1044,1615,2560,3799,3801,3803,3800,3802,21544,1189,1686,1273,1152,1023,1153,2555,2554,1308,20674,20669,20671,1500,2134,1154,2543,1019,1047,1216,1314,1256,2364,1158,1202,2021,1049,1050,20942,1995,2070,1071,1616,20359,20931,1161,1693,3069,1077,20592,1402;
-	setarray .SourceMobIds[560], 2132,1031,1619,1002,2203,3445,20693,3446,3447,20844,21526,20371,1199,1008,20612,20652,1508,2151,1162,1865,1254,21296,2221,2017,1276,1163,2197,1714,1715,20649,20543,20542,20541,1682,3248,1164,20622,3751,3737,2020,1195,20372,20376,20377,20378,20373,20374,20684,1052,22317,1012,1392,20886,1782,1201,1281,20357,1165,1243,1167,1166,22314,2083,3738,1001,3502,3250,1323,22313,2204,1774,20686,20685,20687,1634,20694,1074,21524,1401,20260;
-	setarray .SourceMobIds[640], 3736,1037,20179,20615,3070,2199,1776,1196,1169,1076,1290,22319,1752,1384,1156,1386,20845,1056,1025,21969,1775,1170,1028,1316,20262,20626,20609,1014,1322,2201,1174,1278,1784,1042,1215,3125,1207,1495,1065,1370,21986,21985,21974,3754,3499,1069,3443,1584,1175,1986,1622,1405,1034,1375,1051,1048,2313,2918,2314,2073,1270,20593,3501,20613,2227,1279,20348,21545,21521,1618,20690,1883,1066,1771,20927,20362,20360,20366,20364,1882;
-	setarray .SourceMobIds[720], 22315,1675,20933,20363,1621,1032,20665,20666,2989,20263,1390,1176,1088,20779,21299,2315,1208,1617,21539,21538,3444,1179,20602,1653,3498,1261,1010,1263,3764,1013,1880,1497,1499,1498,1024,1192,1291,1512,1718,20650,22357,22353,22354,22358,22359,22323,22325,22327,22324,22326,1057,1979,1200,1177,1178,1514,1417,1015,3452,1298,1197,1864,21967;
-	setarray .CardOffer[0], 1800,1600,1600,2700,1500,1400,1000,1100,1200,1400,1800,800,1500,2400,330,4170,550,1950,1000,1800,2850,2400,1200,1950,2400,2250,1800,330,360,4200,1800,1800,1800,600,1100,1600,1200,1400,2100,1950,1600,360,1200,700,630,800,2000,1200,1650,1650,1950,1100,390,1400,300,600,700,3200,1100,600,2400,650,3900,650,1000,1600,1900,2100,2100,480,3300,1200,1550,1800,1800,1700,6300,1950,1400,3000;
-	setarray .CardOffer[80], 1200,2400,3600,3600,1300,4800,2400,1400,5400,750,700,2400,3600,2600,3600,1300,4470,1400,1200,1800,600,3300,360,1200,1300,3300,4200,1300,1100,500,1200,1400,1100,1800,2250,2850,2100,1500,2850,3750,2550,2800,1100,540,390,330,540,4800,900,600,1200,630,1950,600,330,1800,1800,1650,2100,480,5400,1400,390,2400,390,600,300,1400,1600,660,1800,1800,550,1400,700,1300,650,1400,3600,2800;
-	setarray .CardOffer[160], 1500,1600,4200,1900,1100,1100,2100,2100,1300,4800,2100,700,1300,1100,1000,1300,2700,2100,2700,2700,2400,1800,500,700,1400,5700,700,1000,1200,4170,1620,1400,1200,1200,1150,330,2600,650,330,1400,750,1800,750,2100,700,1100,1300,1600,600,1300,360,650,1000,1000,1100,300,3900,3000,2400,2100,1600,2100,900,1800,690,8100,1800,1800,4200,700,1600,600,2200,2100,900,4800,360,1200,1300,1400;
-	setarray .CardOffer[240], 2400,3000,1300,450,1500,330,3600,2100,1100,1400,1400,3000,1650,700,1650,6600,1400,600,900,500,4350,1200,1100,1700,1400,3600,600,1600,2000,1100,1600,1900,1800,450,4800,4470,600,2200,1800,1180,800,800,700,4800,900,1100,4200,1800,1050,4170,1500,1400,800,1100,690,650,600,900,420,600,900,2400,650,900,360,10200,7800,1800,5100,2850,4950,2100,2700,3000,2700,2100,1800,2400,900,1500;
-	setarray .CardOffer[320], 1200,600,3600,1200,700,8400,600,1800,2700,4800,8700,6000,4200,950,900,600,4500,1200,700,1600,1200,1800,750,850,840,1100,700,1800,500,2000,1200,1200,1300,3900,5700,480,330,500,3600,1300,535,650,360,420,1200,500,6300,1650,4800,4200,1100,7500,2400,2100,1500,1100,900,4500,1400,540,2400,700,700,700,600,3600,2700,600,500,6300,3900,6000,5100,9600,4200,1100,550,550,700,1700;
-	setarray .CardOffer[400], 1400,1600,2300,1600,1800,1400,1400,1800,1200,1200,700,300,3500,2200,1200,3300,3600,750,360,1500,650,3600,4800,1600,1200,1800,1200,1200,6900,1400,3600,1600,1800,4500,1400,1800,4200,420,2400,1950,3600,2400,750,1400,300,1600,1500,330,1500,500,550,1150,1000,1800,360,450,500,700,420,1300,630,535,2000,600,600,2600,550,630,3900,7200,1200,800,900,750,2000,600,1800,1950,600,2400;
-	setarray .CardOffer[480], 650,900,800,12000,5100,390,550,1200,2600,2100,3450,2250,420,360,1200,3600,1650,3300,1200,800,1400,2200,1000,1400,1400,1800,1400,1600,550,300,950,500,500,1400,2550,3570,2400,2250,1920,5100,600,420,360,550,660,700,1400,2100,900,2000,3200,2000,700,1600,700,1200,360,360,800,800,700,1400,1250,1600,2000,330,360,5100,1200,700,300,1100,1800,3600,450,1200,1100,300,1650,1000;
-	setarray .CardOffer[560], 1200,300,600,360,1900,1180,3600,1480,1800,3900,3600,5100,900,360,5400,2100,900,800,800,3000,300,2100,1100,2400,600,1300,700,2200,700,1950,2085,2385,2385,1500,3300,700,2000,1300,1200,1300,550,2850,2850,1650,1650,1800,1800,2600,330,4800,420,540,5100,900,700,600,1300,700,700,420,500,4200,1300,1200,360,660,3600,450,4800,1400,2100,2400,2400,2400,1000,3600,390,6900,900,1650;
-	setarray .CardOffer[640], 1100,500,4800,3300,1100,500,1050,700,390,450,1800,4800,1400,1300,800,600,3900,300,450,4200,1500,750,360,600,1950,1500,1950,300,750,1400,630,1050,500,420,600,1600,1200,600,600,1500,6000,6000,5100,2100,420,700,1000,1150,300,1400,800,600,660,850,300,360,1200,2700,3000,600,750,2700,300,3900,1500,650,1400,8700,4500,1150,2400,600,330,2000,3600,2850,2100,1800,2100,550;
-	setarray .CardOffer[720], 4200,500,3600,1400,700,700,2000,1800,1600,2250,1800,300,330,4200,1800,1100,1900,550,3300,3300,1400,420,1650,1800,330,600,360,900,2900,390,900,700,1050,1050,300,600,1400,650,750,2100,6000,5400,5400,6000,6000,4800,4800,4800,4500,4500,360,1400,2200,750,500,600,800,390,1300,1300,900,2100,7800;
-	setarray .CardPrice[0], 2340,2080,2080,3510,1950,1820,1300,1430,1560,1820,2340,1040,1950,3120,429,5421,715,2535,1300,2340,3705,3120,1560,2535,3120,2925,2340,429,468,5460,2340,2340,2340,780,1430,2080,1560,1820,2730,2535,2080,468,1560,910,819,1040,2600,1560,2145,2145,2535,1430,507,1820,390,780,910,4160,1430,780,3120,845,5070,845,1300,2080,2470,2730,2730,624,4290,1560,2015,2340,2340,2210,8190,2535,1820,3900;
-	setarray .CardPrice[80], 1560,3120,4680,4680,1690,6240,3120,1820,7020,975,910,3120,4680,3380,4680,1690,5811,1820,1560,2340,780,4290,468,1560,1690,4290,5460,1690,1430,650,1560,1820,1430,2340,2925,3705,2730,1950,3705,4875,3315,3640,1430,702,507,429,702,6240,1170,780,1560,819,2535,780,429,2340,2340,2145,2730,624,7020,1820,507,3120,507,780,390,1820,2080,858,2340,2340,715,1820,910,1690,845,1820,4680,3640;
-	setarray .CardPrice[160], 1950,2080,5460,2470,1430,1430,2730,2730,1690,6240,2730,910,1690,1430,1300,1690,3510,2730,3510,3510,3120,2340,650,910,1820,7410,910,1300,1560,5421,2106,1820,1560,1560,1495,429,3380,845,429,1820,975,2340,975,2730,910,1430,1690,2080,780,1690,468,845,1300,1300,1430,390,5070,3900,3120,2730,2080,2730,1170,2340,897,10530,2340,2340,5460,910,2080,780,2860,2730,1170,6240,468,1560,1690,1820;
-	setarray .CardPrice[240], 3120,3900,1690,585,1950,429,4680,2730,1430,1820,1820,3900,2145,910,2145,8580,1820,780,1170,650,5655,1560,1430,2210,1820,4680,780,2080,2600,1430,2080,2470,2340,585,6240,5811,780,2860,2340,1534,1040,1040,910,6240,1170,1430,5460,2340,1365,5421,1950,1820,1040,1430,897,845,780,1170,546,780,1170,3120,845,1170,468,13260,10140,2340,6630,3705,6435,2730,3510,3900,3510,2730,2340,3120,1170,1950;
-	setarray .CardPrice[320], 1560,780,4680,1560,910,10920,780,2340,3510,6240,11310,7800,5460,1235,1170,780,5850,1560,910,2080,1560,2340,975,1105,1092,1430,910,2340,650,2600,1560,1560,1690,5070,7410,624,429,650,4680,1690,696,845,468,546,1560,650,8190,2145,6240,5460,1430,9750,3120,2730,1950,1430,1170,5850,1820,702,3120,910,910,910,780,4680,3510,780,650,8190,5070,7800,6630,12480,5460,1430,715,715,910,2210;
-	setarray .CardPrice[400], 1820,2080,2990,2080,2340,1820,1820,2340,1560,1560,910,390,4550,2860,1560,4290,4680,975,468,1950,845,4680,6240,2080,1560,2340,1560,1560,8970,1820,4680,2080,2340,5850,1820,2340,5460,546,3120,2535,4680,3120,975,1820,390,2080,1950,429,1950,650,715,1495,1300,2340,468,585,650,910,546,1690,819,696,2600,780,780,3380,715,819,5070,9360,1560,1040,1170,975,2600,780,2340,2535,780,3120;
-	setarray .CardPrice[480], 845,1170,1040,15600,6630,507,715,1560,3380,2730,4485,2925,546,468,1560,4680,2145,4290,1560,1040,1820,2860,1300,1820,1820,2340,1820,2080,715,390,1235,650,650,1820,3315,4641,3120,2925,2496,6630,780,546,468,715,858,910,1820,2730,1170,2600,4160,2600,910,2080,910,1560,468,468,1040,1040,910,1820,1625,2080,2600,429,468,6630,1560,910,390,1430,2340,4680,585,1560,1430,390,2145,1300;
-	setarray .CardPrice[560], 1560,390,780,468,2470,1534,4680,1924,2340,5070,4680,6630,1170,468,7020,2730,1170,1040,1040,3900,390,2730,1430,3120,780,1690,910,2860,910,2535,2711,3101,3101,1950,4290,910,2600,1690,1560,1690,715,3705,3705,2145,2145,2340,2340,3380,429,6240,546,702,6630,1170,910,780,1690,910,910,546,650,5460,1690,1560,468,858,4680,585,6240,1820,2730,3120,3120,3120,1300,4680,507,8970,1170,2145;
-	setarray .CardPrice[640], 1430,650,6240,4290,1430,650,1365,910,507,585,2340,6240,1820,1690,1040,780,5070,390,585,5460,1950,975,468,780,2535,1950,2535,390,975,1820,819,1365,650,546,780,2080,1560,780,780,1950,7800,7800,6630,2730,546,910,1300,1495,390,1820,1040,780,858,1105,390,468,1560,3510,3900,780,975,3510,390,5070,1950,845,1820,11310,5850,1495,3120,780,429,2600,4680,3705,2730,2340,2730,715;
-	setarray .CardPrice[720], 5460,650,4680,1820,910,910,2600,2340,2080,2925,2340,390,429,5460,2340,1430,2470,715,4290,4290,1820,546,2145,2340,429,780,468,1170,3770,507,1170,910,1365,1365,390,780,1820,845,975,2730,7800,7020,7020,7800,7800,6240,6240,6240,5850,5850,468,1820,2860,975,650,780,1040,507,1690,1690,1170,2730,10140;
-	// FERUS_P is confirmed externally as monster 20612 (Lv. 202); the
-	// local mob row is absent, so keep this normal-card entry explicit.
-
-	for (.@i = 0; .@i < 26; ++.@i)
-		npcshopdelitem "card_mob#" + charat(.@alphabet$, .@i), 501;
-	npcshopdelitem "card_mob#0", 501;
-
-	.@card_count = getarraysize(.CardIds);
-	if (.@card_count != getarraysize(.SourceMobIds) || .@card_count != getarraysize(.CardPrice)) {
-		debugmes "Card Seller: card/source/price arrays are not aligned.";
-		freeloop 0;
-		end;
-	}
-
-	for (.@i = 0; .@i < .@card_count; ++.@i) {
-		.@item_id = .CardIds[.@i];
-		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
-			getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL)
-			continue;
-		.@price = .CardPrice[.@i];
-		if (.@price < 1)
-			continue;
-		.@drawer = callfunc("F_OfflineLetterShop", .CardDisp$[.@i], 1);
-		if (.@drawer < 0)
-			continue;
-		if (.@drawer == 26) {
-			.@letter$ = "0";
-			.HasNum = true;
-		} else {
-			.@letter$ = charat(.@alphabet$, .@drawer);
-			.HasAlphabet[.@drawer] = true;
-		}
-		npcshopadditem "card_mob#" + .@letter$, .@item_id, .@price;
-	}
-
-	if (.HasNum) {
-		.alphabet$[.size_alphabet++] = "0";
-		.alphabet_menu$ += "0-9 Cards:";
-	}
-	for (.@i = 0; .@i < 26; ++.@i) {
-		if (.HasAlphabet[.@i]) {
-			.@letter$ = charat(.@alphabet$, .@i);
-			.alphabet$[.size_alphabet++] = .@letter$;
-			.alphabet_menu$ += .@letter$ + " Cards:";
-		}
-	}
-	freeloop 0;
-	end;
-}
--	pointshop	card_mob#0	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#A	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#B	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#C	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#D	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#E	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#F	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#G	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#H	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#I	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#J	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#K	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#L	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#M	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#N	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#O	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#P	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#Q	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#R	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#S	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#T	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#U	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#V	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#W	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#X	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#Y	-1,BlackMarketPoints,501:10
--	pointshop	card_mob#Z	-1,BlackMarketPoints,501:10
-
--	script	miniboss_card_seller_creation	-1,{
-	end;
-OnInit:
-	freeloop 1;
-	deletearray .alphabet$[0], getarraysize(.alphabet$);
-	deletearray .HasAlphabet[0], getarraysize(.HasAlphabet);
-	.size_alphabet = 0;
-	.alphabet_menu$ = "";
-	.HasNum = false;
-	.@alphabet$ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	setarray .CardDisp$[0], "Agony of Royal Knight Card","Angelring Card","Anger of Thanatos Card","Antonio Card","Arc Angelring Card","Azure Princess Card","Bakonawa Card","Bangungot Card","Baroness of Retribution Card","Bomi Card","Bow Guardian Card","Brinaranea Card","Byorgue Card","Cat O' Nine Tails Card","Chaos Acolyte Card","Chimera Card","Crow Duke Card","Crown Baron Card","Dame of Sentinel Card","Dark Faceworm Card";
-	setarray .CardDisp$[20], "Dark Illusion Card","Demon God's Apostle Ahat Card","Demon God's Apostle Shinaim Card","Despero of Thanatos Card","Distorted God Card","Dolor of Thanatos Card","Dragonfly Card","Dwigh Card","Eclipse Card","Elvira Card","Executioner Card","Fei Kanavian Card","Galion Card","Gemini-S58 Card","Ghostring Card","Gigantes Card","Gold Scaraba Card","Grudge of Royal Knight Card","Gryphon Card","Hardrock Mammoth Card";
-	setarray .CardDisp$[40], "Horror of Thanatos Card","Hydrolancer Card","Immortal Cursed Knight Card","Immortal Wind Ghost Card","Infinite Chimera Card","Infinite Eclipse Card","Infinite Toad Card","Infinite Wandering Wolf Card","Jitterbug Card","Kasa Card","King Dramoh Card","Lady Solace Card","Maero of Thanatos Card","Mastering Card","Mistress of Shelter Card","Muspellskoll Card","Mutant Dragonoid Card","Mysteltainn Card","Necromancer Card","Octopus Card";
-	setarray .CardDisp$[60], "Odium of Thanatos Card","Ogretooth Card","Owl Baron Card","Owl Duke Card","Owl Marquees Card","Owl Viscount Card","Regret of Thanatos Card","Resentment of Thanatos Card","Rudo Card","Salamander Card","Scorpion King Card","Skeggiold Card","Soheon Card","Sword Guardian Card","Tendrillion Card","Toad Card","True Alphoccio Basil Card","True Cecil Damon Card","True Celia Aldea Card","True Chen Liu Card";
-	setarray .CardDisp$[80], "True Eremes Guile Card","True Flamel Emure Card","True Gertie Wi Card","True Howard Alt-Eisen Card","True Kathryne Keyron Card","True Margaretha Sorin Card","True Randel Lawrence Card","True Seyren Windsor Card","True Trentini Card","Wandering Wolf Card","Warrior Lola Card","White Knight Card","Wild Rider Card";
-
-	// Reviewed Miniboss cards and their canonical source monsters.
-	setarray .CardIds[0], 4605,4054,300274,4243,4241,300103,4591,4590,4391,27105,4428,27324,4426,4290,27343,4300,300268,300267,4392,27165,4169,27322,27323,4397,300228,4398,4179,27262,4266,4577,4250,27263,4423,4354,4047,27183,4508,4606,4163,4462,300275,4384,31024,31025,4646,4645,4642,4643,27109,4431,4524,4394,4395,4197,4393,27325,4203,4207,4440,4533,4396,4254,4238,4237,4632,4631,300276,300277,4581,4429,4130,4406,4575,4427,4463,4306,4696,4687,4692,4693;
-	setarray .CardIds[80], 4684,4691,4694,4688,4686,4685,4690,4689,4695,4183,4579,4608,4532;
-	setarray .SourceMobIds[0], 2473,1096,20775,2988,1388,20647,2320,2317,1702,3756,1830,3091,1839,1307,20521,1283,20782,20783,1700,2530,1302,3105,3106,1705,21315,1707,1091,2562,1093,2252,1205,2563,1783,1681,1120,3191,2161,2474,1259,1990,20776,1720,3474,3475,3425,3424,3421,3422,3108,1833,2198,1703,1706,1090,1701,3092,1262,1203,1870,2192,1704,1204,1295,1320,2923,2921,20778,20777,2256,1831,1168,1754,2254,1829,1991,1089,3231,3211,3228,3229;
-	setarray .SourceMobIds[80], 3208,3227,3230,3212,3210,3209,3226,3213,3232,1092,2250,20390,2208;
-	setarray .CardOffer[0], 7500,3900,42000,9000,5400,10000,18000,9000,6000,5000,9500,11000,6000,5100,15000,4200,41700,41700,5000,7500,5700,6000,6000,5000,18000,6000,1000,12000,1000,6000,8500,19000,3600,25000,4800,14000,6500,7500,10500,8000,42000,9000,20000,20000,7000,6000,6000,5500,7500,13000,5000,9000,9500,1000,5000,13000,5700,8500,11000,4200,5000,8500,9000,5400,18000,12000,41700,48000,6000,11000,1100,6000,7500,9500,7500,1200,16000,16000,16000,16000;
-	setarray .CardOffer[80], 16000,16000,16000,16000,16000,16000,16000,16000,16000,3000,6500,7500,5400;
-	setarray .CardPrice[0], 9750,5070,54600,11700,7020,13000,23400,11700,7800,6500,12350,14300,7800,6630,19500,5460,54210,54210,6500,9750,7410,7800,7800,6500,23400,7800,1300,15600,1300,7800,11050,24700,4680,32500,6240,18200,8450,9750,13650,10400,54600,11700,26000,26000,9100,7800,7800,7150,9750,16900,6500,11700,12350,1300,6500,16900,7410,11050,14300,5460,6500,11050,11700,7020,23400,15600,54210,62400,7800,14300,1430,7800,9750,12350,9750,1560,20800,20800,20800,20800;
-	setarray .CardPrice[80], 20800,20800,20800,20800,20800,20800,20800,20800,20800,3900,8450,9750,7020;
-
-	for (.@i = 0; .@i < 26; ++.@i)
-		npcshopdelitem "card_miniboss#" + charat(.@alphabet$, .@i), 501;
-	npcshopdelitem "card_miniboss#0", 501;
-
-	.@card_count = getarraysize(.CardIds);
-	if (.@card_count != getarraysize(.SourceMobIds) || .@card_count != getarraysize(.CardPrice)) {
-		debugmes "Miniboss Card Seller: card/source/price arrays are not aligned.";
-		freeloop 0;
-		end;
-	}
-
-	for (.@i = 0; .@i < .@card_count; ++.@i) {
-		.@item_id = .CardIds[.@i];
-		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
-			getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL)
-			continue;
-		.@price = .CardPrice[.@i];
-		if (.@price < 1)
-			continue;
-		.@drawer = callfunc("F_OfflineLetterShop", .CardDisp$[.@i], 1);
-		if (.@drawer < 0)
-			continue;
-		if (.@drawer == 26) {
-			.@letter$ = "0";
-			.HasNum = true;
-		} else {
-			.@letter$ = charat(.@alphabet$, .@drawer);
-			.HasAlphabet[.@drawer] = true;
-		}
-		npcshopadditem "card_miniboss#" + .@letter$, .@item_id, .@price;
-	}
-
-	if (.HasNum) {
-		.alphabet$[.size_alphabet++] = "0";
-		.alphabet_menu$ += "0-9 Cards:";
-	}
-	for (.@i = 0; .@i < 26; ++.@i) {
-		if (.HasAlphabet[.@i]) {
-			.@letter$ = charat(.@alphabet$, .@i);
-			.alphabet$[.size_alphabet++] = .@letter$;
-			.alphabet_menu$ += .@letter$ + " Cards:";
-		}
-	}
-	freeloop 0;
-	end;
-}
--	pointshop	card_miniboss#0	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#A	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#B	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#C	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#D	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#E	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#F	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#G	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#H	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#I	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#J	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#K	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#L	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#M	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#N	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#O	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#P	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#Q	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#R	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#S	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#T	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#U	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#V	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#W	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#X	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#Y	-1,BlackMarketPoints,501:50
--	pointshop	card_miniboss#Z	-1,BlackMarketPoints,501:50
-
--	script	mvp_card_seller_creation	-1,{
-	end;
-OnInit:
-	freeloop 1;
-	deletearray .alphabet$[0], getarraysize(.alphabet$);
-	deletearray .HasAlphabet[0], getarraysize(.HasAlphabet);
-	deletearray .special_alphabet$[0], getarraysize(.special_alphabet$);
-	deletearray .SpecialHasAlphabet[0], getarraysize(.SpecialHasAlphabet);
-	.size_alphabet = 0;
-	.special_size_alphabet = 0;
-	.alphabet_menu$ = "";
-	.special_alphabet_menu$ = "";
-	.HasNum = false;
-	.SpecialHasNum = false;
-	.@alphabet$ = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	setarray .CardDisp$[0], "Amdarais Card","Amdarais's Phantom Card","Amon Ra Card","Ancient Tao Gunka Card","Ancient Wootan Defender Card","Aquila Card","Archbishop Margaretha Card","Assassin Cross Card","Atroce Card","Awaken Ktullanux Card","Awaken Pere Card","Baphomet Card","Beelzebub Card","Big Eggring Card","Bijou Card","Boitata Card","Bone Detardeurus Card","Boss Egnigem Card","Burning Fang Card","Buwaya Card";
-	setarray .CardDisp$[20], "Captain Ferlock Card","Celine Kimi Card","Champion Card","Chaos Baphomet Card","Charleston Card","Clown Card","Contaminated Dark Lord Card","Contaminated Spider Queen Card","Corruption Root Card","Creator Card","Cutie Card","Daehyon Card","Dark Coelacanth Card","Dark Lord Card","Dark Snake Lord Card","Death Witch Card","Deep Sea Kraken Card","Deep Sea Witch Card","Despair God Morocc Card","Detardeurus Card";
-	setarray .CardDisp$[40], "Doppelganger Card","Dracula Card","Drake Card","Eddga Card","EL A17T Card","Entweihen Crothen Card","Evil Card","Evil Fanatic Card","Faceworm Queen Card","Fallen Bishop Card","Fenrir Card","Furious Dracula Card","Furious Moonlight Flower Card","Genetic Flamel Card","Giant Octopus Card","Gioia Card","Gloom Under Night Card","Gold Queen Scaraba Card","Golden Thiefbug Card","Gopinich Card";
-	setarray .CardDisp$[60], "Grand Papilia Card","Greater Red Pepper Card","Grim Reaper Ankou Card","Guardian Kades Card","Guillotine Cross Eremes Card","Gypsy Card","Hatii Card","High Priest Card","High Wizard Card","Himelmez's Phantom Card","Ifrit Card","Incantation Samurai Card","Infinite Eddga Card","Infinite Orc Hero Card","Infinite Osiris Card","Infinite Phreeoni Card","Infinite Tao Gunka Card","Ingrid Card","Jeweled Ungoliant Card","Kiel-D-01 Card";
-	setarray .CardDisp$[80], "Kraken Card","Ktullanux Card","Lady Tanee Card","Leak Card","Lord Knight Card","Lord of The Dead Card","Lord of The Dead Card","Mastersmith Card","Maya Card","Mechanic Howard Card","Memory of Thanatos Card","Meow Card","Miguel Card","Minstrel Alphoccio Card","Mistress Card","Moonlight Flower Card","Morocc's Servant Card","Mutant Coelacanth Card","Naght Seiger Card","Nidhoggur Shadow Card";
-	setarray .CardDisp$[100], "Nightmare Amon Ra Card","Ominous Turtle General Card","Orc Hero Card","Orc Lord Card","Osiris Card","Paladin Card","Pharaoh Card","Phreeoni Card","Professor Card","Pyuriel Card","Queen Scaraba Card","R001-Bestia Card","R48-85-BESTIA Card","Randgris Card","Ranger Cecil Card","Realized Amdarais Card","Realized Corruption Root Card","Red Pepper Card","Reginleif Card","Rigid Muspellskoll Card";
-	setarray .CardDisp$[120], "Royal Guard Randel Card","RSX-0806 Card","Rune Knight Seyren Card","Santa Poring Card","Sarah Card","Shadow Chaser Gertie Card","Shulan Card","Silent Maya Card","Silva Papilia Card","Simulation Juncea Card","Sniper Card","Sorcerer Celia Card","Spider Tank Card","Stalker Card","Stephane Jack Earnest Wolf Card","Stormy Knight Card","Sura Chen Card","Sweetie Card","T W O Card","Tao Gunka Card";
-	setarray .CardDisp$[140], "The One Card","Timeholder Card","Turtle General Card","Ultra Limacina Card","Unknown Creature Card","Venom Enchanted Chimera Card","Vesper Card","Violent Coelacanth Card","Wanderer Trentini Card","Warlock Kathryne Card","Weakened Fenrir Card","Weird Coelacanth Card","White Lady Card","Goblin King Card","Snowstorm Angel Card","Sanctuary Cleaning Chief Card";
-	setarray .SpecialCardDisp$[0], "[LoVA] Bahamut Card","[LoVA] Hades Card","[LoVA] Kima Card","[LoVA] Lulu Card","[LoVA] Ragnarok Card","[LoVA] Realization Bahamut Card","[LoVA] Realization Hades Card","[LoVA] Realization Kima Card","[LoVA] Realization Lulu Card","[LoVA] Realization Ragnarok Card","A-ji & Geffen","Agnes Card","Agnes Roegenburgs Card","Andre Larva Card","Arena Arhi Card","Arena Blut Hase Card","Arena Bully Card","Arena Dio Anemos Card","Arena Dwigh Card","Arena Fay Kanavian Card";
-	setarray .SpecialCardDisp$[20], "Arena Faymont Card","Arena Gangster Card","Arena Ifodes Card","Arena Ju Card","Arena Kuro Akuma Card","Arena Licheniyes Card","Arena Odoric Card","Arena Ordre Card","Arena Shoplifter Card","Catherine Card","Catherine Gaebolg Card","Cotness Card","Crux Card","Crux Findel Card","Death Card","Devilring Card","Diego Card","Dien Card","Elena Card","Enhanced Byorgue Card";
-	setarray .SpecialCardDisp$[40], "Enhanced Necromancer Card","Enhanced Salamander Card","Est Card","Fei-Chai and Morroc Card","Friedrich Card","Friedrich S. Heine Card","Gony Card","Helmut Card","Helmut Lugenburg Card","Isaac Card","Isaac Wagner Card","Juergen Card","Juergen Wigner Card","Justice Card","Kathryne Card","Kathryne Wigner Card","Knight Sakray Card","Kronecker Card","Kronecker G. Heine Card","Kung Fu Panda Card";
-	setarray .SpecialCardDisp$[60], "Labyrinth Baphomet card","Labyrinth Doppelganger Card","Labyrinth Dracula Card","Leizi Card","Lookie Card","Luke and Alberta Card","Manny Card","Maya Purple Card","Meyer Card","Meyer Lugenburg Card","Nihil Card","Nihil M. Heine Card","Poe Card","Poe Richard Card","Rebellion Cotness Card","Rebellion Dien Card","Rebellion Elena Volkova Card","Rebellion Est Loveroy Card","Rebellion Gony Card","Rebellion Lookie Card";
-	setarray .SpecialCardDisp$[80], "Rebellion Ridsh Card","Reversed Death Card","Reversed Fool's Card","Reversed Justice Card","Reversed Strength Card","Reversed Temperance Card","Reversed The Chariot Card","Reversed The Devil Card","Reversed The Emperor Card","Reversed The Hanged Man Card","Reversed The Hermit Card","Reversed The Hierophant Card","Reversed The Lovers Card","Reversed The Moon Card","Reversed The Moon Card","Reversed The Star Card","Reversed The Tower Card","Reversed World Card","Ridsh Card","Sakrai Card";
-	setarray .SpecialCardDisp$[100], "Scrat Card","Sealed Amon Ra Card","Sealed Atroce Card","Sealed B Ygnizem Card","Sealed Baphomet Card","Sealed Beelzebub Card","Sealed Beelzebub Card","Sealed Boitata Card","Sealed Champion Card","Sealed Clown Card","Sealed Contaminated Spider Queen Card","Sealed Creator Card","Sealed Dark Lord Card","Sealed Dark Snake Lord Card","Sealed Detardeurus Card","Sealed Dracula Card","Sealed Drake Card","Sealed Eddga Card","Sealed Fallen Bishop Card","Sealed Fallen Pyuriel Card";
-	setarray .SpecialCardDisp$[120], "Sealed General Daehyon Card","Sealed Gioia Card","Sealed Gloom Card","Sealed Guardian Kades Card","Sealed Gypsy Card","Sealed Hatii Card","Sealed High Priest Card","Sealed High Wizard Card","Sealed Ifrit Card","Sealed Incantation Samurai Card","Sealed Kiel Card","Sealed Ktullanux Card","Sealed Lady Tanee Card","Sealed Lord Of The Death Card","Sealed MasterSmith Card","Sealed Maya Card","Sealed Mistress Card","Sealed Moonlight Flower Card","Sealed Nightmare Amon Ra Card","Sealed Orc Hero Card";
-	setarray .SpecialCardDisp$[140], "Sealed Orc Lord Card","Sealed Paladin Card","Sealed Pharaoh Card","Sealed Phreeoni Card","Sealed Professor Card","Sealed Queen Scaraba Card","Sealed Randgris Card","Sealed Rigid Muspellskoll Card","Sealed Sniper Card","Sealed Stalker Card","Sealed Stormy Knight Card","Sealed Tao Gunka Card","Sealed Time Holder Card","Sealed Turtle General Card","Sealed Vesper Card","Sealed White Lady Card","Secret Wing Leizi Card","Secret Wing Philopontes Card","Sid Card","Skia Nerious Card";
-	setarray .SpecialCardDisp$[160], "Skier Card","Spica Card","Spica Nerious Card","Strength Card","Tai-zi & Niflheim","Temperance Card","Tes Card","The Chariot Card","The Devil Card","The Emperor Card","The Fool Card","The Hanged Man Card","The Hermit Card","The Hierophant Card","The Lovers Card","The Moon Card","The Star Card","The Tower Card","Tiara Card","Unidentified Creature Card";
-	setarray .SpecialCardDisp$[180], "Upgrade Bow Guardian Card","Upgrade Maya Purple Card","Wheel of Fortune Card","Wolf Card","Wolf Roegenburgs Card","World Card","Yordos Investigator Card","Yordos Judge Card","Yorker Religious Worker Card","Yorker Worker Card","Yortus Bishop Card","Yortus Conjurator Card";
-
-	// Reviewed MVP cards and their canonical source monsters.
-	// Sources are the lowest-ID MVP dropper of each card.
-	setarray .CardIds[0], 4601,27383,4236,27294,27298,300382,4675,4359,4425,27113,27106,4147,4145,4662,4636,27126,300021,4352,300217,4592,27182,31023,4562,27334,4697,4560,27363,27362,4603,4563,27152,4574,4527,4168,4330,300248,300151,300145,27321,4386,4142,4134,4137,4123,27305,4451,27151,27265,27164,4441,4556,27104,27081,4681,4534,4576,4408,4509,4128,27162,300100,300080,27327,4580,4674,4566,4324,4363,4365,27381,4430,4263,4648,4650,4647,4649,4651,300014,300007,4403;
-	setarray .CardIds[80], 4525,4419,4376,4520,4357,4276,27025,4361,4146,4677,4399,300107,27318,4673,4132,4131,27326,4528,4457,4456,4652,27119,4143,4135,4144,4565,4148,4121,4561,4578,4507,300281,27319,4407,4676,4602,4604,300079,300013,27346,4680,4342,4679,4005,4610,4682,300227,300239,300099,300378,4367,4671,27180,4564,31026,4318,4672,300078,27020,4302,300262,4625,4305,300377,300175,27150,4374,4529,4683,4678,4557,4526,4372,300297,300473,300474;
-	setarray .SourceMobIds[0], 2476,20573,1511,20273,20277,21531,3221,1647,1785,3796,3073,1039,1874,3505,3450,2068,20618,1658,21301,2319,3181,2996,2238,20520,3124,2240,20422,20421,2475,2236,3621,2253,2187,1272,1418,20943,20811,20843,3097,1719,1046,1389,1112,1115,20340,1957,3628,2942,2529,1871,2564,3757,3758,3241,2194,2251,1768,2165,1086,1885,20668,20621,3029,2255,3220,2241,1252,1649,1651,20572,1832,1492,3426,3429,3427,3428,3430,20611,20601,1734;
-	setarray .SourceMobIds[80], 2202,1779,1688,2156,1646,1373,3658,1648,1147,3223,1708,20648,20346,3245,1059,1150,3000,2189,1956,2022,2362,3804,1087,1190,1038,2235,1157,1159,2237,2249,2087,20934,20381,1751,3222,3150,3151,20620,20610,20419,3240,1623,3225,1502,3190,3244,21314,21395,20667,21533,1650,3242,3741,2239,3473,1251,3243,20642,3254,1583,20928,3074,1312,21537,20891,3633,1685,2190,3246,3224,2564,2188,1630,20118,21996,21980;
-	setarray .SpecialCollectorOffer[0], 54000,32000,32000,32000,38000,54000,38000,32000,32000,38000,34000,20000,24000,24000,34000,28000,32000,24000,26000,42000,40000,32000,28000,56000,70000,28000,28000,24000,24000,20000,30000,20000,20000,30000,44000,80000,24000,20000,20000,36000,32000,44000,20000,22000,20000,28000,20000,20000,28000,20000,30000,20000,28000,44000,20000,30000,30000,20000,30000,32000,20000,24000,20000,20000,20000,34000,24000,24000,20000,22000,20000,24000,20000,28000,24000,22000,56000,56000,72000,72000;
-	setarray .SpecialCollectorOffer[80], 24000,44000,44000,44000,44000,44000,44000,44000,44000,44000,44000,44000,44000,44000,44000,44000,44000,44000,20000,42000,24000,36000,42000,40000,44000,30000,30000,52000,60000,22000,40000,60000,36000,60000,58000,26000,28000,28000,40000,60000,24000,40000,32000,104000,24000,28000,36000,48000,44000,32000,30000,38000,38000,68000,24000,44000,24000,20000,32000,40000,32000,60000,20000,22000,60000,32000,40000,84000,26000,40000,44000,28000,28000,40000,32000,26000,70000,54000,24000,24000;
-	setarray .SpecialCollectorOffer[160], 20000,20000,28000,44000,22000,44000,20000,44000,44000,44000,36000,44000,44000,44000,44000,44000,44000,44000,42000,28000,62000,24000,44000,20000,28000,44000,42000,42000,34000,34000,32000,36000;
-	setarray .CardOffer[0], 48000,70000,54000,80000,80000,105000,74000,50000,84000,44000,44000,63000,60000,44000,88000,54000,112000,80000,105000,90000,92000,100000,90000,90000,56000,55000,60000,75000,140000,100000,56000,44000,39000,54000,120000,112000,98000,105000,100000,116000,36000,39000,48000,42000,72000,33000,60000,90000,90000,80000,80000,40000,40000,64000,36000,60000,64000,88000,60000,39000,95000,80000,110000,136000,69000,55000,42000,90000,120000,75000,88000,48000,72000,56000,52000,48000,48000,112000,80000,60000;
-	setarray .CardOffer[80], 76000,57000,57000,54000,60000,102000,48000,60000,48000,64000,63000,80000,80000,69000,36000,36000,60000,70000,33000,60000,64000,90000,40000,48000,36000,100000,30000,33000,100000,80000,56000,112000,55000,88000,69000,60000,175000,64000,112000,170000,64000,36000,69000,33000,65000,69000,90000,80000,76000,126000,65000,69000,60000,95000,225000,66000,69000,64000,90000,56000,112000,60000,80000,175000,105000,72000,64000,60000,69000,64000,55000,39000,39000,182000,140000,140000;
-	setarray .SpecialCardPrice[0], 70200,41600,41600,41600,49400,70200,49400,41600,41600,49400,44200,26000,31200,31200,44200,36400,41600,31200,33800,54600,52000,41600,36400,72800,91000,36400,36400,31200,31200,26000,39000,26000,26000,39000,57200,104000,31200,26000,26000,46800,41600,57200,26000,28600,26000,36400,26000,26000,36400,26000,39000,26000,36400,57200,26000,39000,39000,26000,39000,41600,26000,31200,26000,26000,26000,44200,31200,31200,26000,28600,26000,31200,26000,36400,31200,28600,72800,72800,93600,93600;
-	setarray .SpecialCardPrice[80], 31200,57200,57200,57200,57200,57200,57200,57200,57200,57200,57200,57200,57200,57200,57200,57200,57200,57200,26000,54600,31200,46800,54600,52000,57200,39000,39000,67600,78000,28600,52000,78000,46800,78000,75400,33800,36400,36400,52000,78000,31200,52000,41600,135200,31200,36400,46800,62400,57200,41600,39000,49400,49400,88400,31200,57200,31200,26000,41600,52000,41600,78000,26000,28600,78000,41600,52000,109200,33800,52000,57200,36400,36400,52000,41600,33800,91000,70200,31200,31200;
-	setarray .SpecialCardPrice[160], 26000,26000,36400,57200,28600,57200,26000,57200,57200,57200,46800,57200,57200,57200,57200,57200,57200,57200,54600,36400,80600,31200,57200,26000,36400,57200,54600,54600,44200,44200,41600,46800;
-	setarray .CardPrice[0], 62400,91000,70200,104000,104000,136500,96200,65000,109200,57200,57200,81900,78000,57200,114400,70200,145600,104000,136500,117000,119600,130000,117000,117000,72800,71500,78000,97500,182000,130000,72800,57200,50700,70200,156000,145600,127400,136500,130000,150800,46800,50700,62400,54600,93600,42900,78000,117000,117000,104000,104000,52000,52000,83200,46800,78000,83200,114400,78000,50700,123500,104000,143000,176800,89700,71500,54600,117000,156000,97500,114400,62400,93600,72800,67600,62400,62400,145600,104000,78000;
-	setarray .CardPrice[80], 98800,74100,74100,70200,78000,132600,62400,78000,62400,83200,81900,104000,104000,89700,46800,46800,78000,91000,42900,78000,83200,117000,52000,62400,46800,130000,39000,42900,130000,104000,72800,145600,71500,114400,89700,78000,227500,83200,145600,221000,83200,46800,89700,42900,84500,89700,117000,104000,98800,163800,84500,89700,78000,123500,292500,85800,89700,83200,117000,72800,145600,78000,104000,227500,136500,93600,83200,78000,89700,83200,71500,50700,50700,236600,182000,182000;
-
-	// Usable special/event cards with no active monster drop or ordinary
-	// acquisition path in this offline implementation. Includes sealed,
-	// anniversary, collaboration, tournament, labyrinth, Royal, Tarot,
-	// enhanced, and Chaotic card sets supported by the selected client.
-	setarray .SpecialCardIds[0], 31012,31006,31010,31008,31014,31013,31007,31011,31009,31015,300551,27201,27197,4018,300177,300184,300181,300178,300191,300190,300182,300180,300186,300189,300185,300188,300187,300183,300179,300421,300422,300605,300425,300426,27133,4174,4554,300603,300486,4547,4551,4548,300490,300550,300423,300424,300492,300309,300310,27395,27396,27202,27198,27129,27393,27394,27184,27330,27331,300618,27031,27301,27032,300496,300488,300547,4552,4198,300307,300308,27200,27196,300129,300130,300608,300606,300487,300491,300493,300489;
-	setarray .SpecialCardIds[80], 300607,300135,300283,300131,300164,300133,300134,300165,300163,300285,300282,300284,300136,300166,300167,300132,300289,300168,300604,300192,4555,4495,4536,4482,27211,4486,22875,300195,27215,27213,300201,27216,4488,4544,4542,4483,4496,4504,4539,27222,27220,27221,4485,27224,27219,4543,4501,4541,4487,4499,4480,4481,4498,4540,4502,27212,4484,4490,300209,4492,4500,27218,4489,4537,27214,27209,4535,300203,4491,27217,4497,4493,27225,4494,4503,4538,300497,300495,4553,27333;
-	setarray .SpecialCardIds[160], 27332,27203,27199,27140,300552,27131,300494,27132,27139,27135,27364,27366,27134,27138,27137,27136,27130,300288,300193,300176,4550,4549,27365,300127,300128,27367,300521,300522,300527,300526,300528,300529;
-
-	for (.@i = 0; .@i < 26; ++.@i) {
-		npcshopdelitem "card_mvp#" + charat(.@alphabet$, .@i), 501;
-		npcshopdelitem "card_special#" + charat(.@alphabet$, .@i), 501;
-	}
-	npcshopdelitem "card_mvp#0", 501;
-	npcshopdelitem "card_special#0", 501;
-
-	.@card_count = getarraysize(.CardIds);
-	if (.@card_count != getarraysize(.SourceMobIds) || .@card_count != getarraysize(.CardPrice)) {
-		debugmes "MVP Card Seller: card/source/price arrays are not aligned.";
-		freeloop 0;
-		end;
-	}
-	for (.@i = 0; .@i < .@card_count; ++.@i) {
-		.@item_id = .CardIds[.@i];
-		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
-			getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL)
-			continue;
-		.@price = .CardPrice[.@i];
-		if (.@price < 1)
-			continue;
-		.@drawer = callfunc("F_OfflineLetterShop", .CardDisp$[.@i], 1);
-		if (.@drawer < 0)
-			continue;
-		if (.@drawer == 26) {
-			.@letter$ = "0";
-			.HasNum = true;
-		} else {
-			.@letter$ = charat(.@alphabet$, .@drawer);
-			.HasAlphabet[.@drawer] = true;
-		}
-		npcshopadditem "card_mvp#" + .@letter$, .@item_id, .@price;
-	}
-
-	.@special_count = getarraysize(.SpecialCardIds);
-	if (.@special_count != getarraysize(.SpecialCardDisp$) || .@special_count != getarraysize(.SpecialCardPrice)) {
-		debugmes "MVP Card Seller: special ID/display/price arrays are not aligned.";
-		freeloop 0;
-		end;
-	}
-	for (.@i = 0; .@i < .@special_count; ++.@i) {
-		.@item_id = .SpecialCardIds[.@i];
-		.@price = .SpecialCardPrice[.@i];
-		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD ||
-			getiteminfo(.@item_id, ITEMINFO_SUBTYPE) != CARD_NORMAL || .@price < 1)
-			continue;
-		.@drawer = callfunc("F_OfflineLetterShop", .SpecialCardDisp$[.@i]);
-		if (.@drawer == 26) {
-			.@letter$ = "0";
-			.SpecialHasNum = true;
-		} else {
-			.@letter$ = charat(.@alphabet$, .@drawer);
-			.SpecialHasAlphabet[.@drawer] = true;
-		}
-		npcshopadditem "card_special#" + .@letter$, .@item_id, .@price;
-	}
-
-	if (.HasNum) {
-		.alphabet$[.size_alphabet++] = "0";
-		.alphabet_menu$ += "0-9 Cards:";
-	}
-	if (.SpecialHasNum) {
-		.special_alphabet$[.special_size_alphabet++] = "0";
-		.special_alphabet_menu$ += "0-9 Cards:";
-	}
-	for (.@i = 0; .@i < 26; ++.@i) {
-		if (.HasAlphabet[.@i]) {
-			.@letter$ = charat(.@alphabet$, .@i);
-			.alphabet$[.size_alphabet++] = .@letter$;
-			.alphabet_menu$ += .@letter$ + " Cards:";
-		}
-		if (.SpecialHasAlphabet[.@i]) {
-			.@letter$ = charat(.@alphabet$, .@i);
-			.special_alphabet$[.special_size_alphabet++] = .@letter$;
-			.special_alphabet_menu$ += .@letter$ + " Cards:";
-		}
-	}
-	freeloop 0;
-	end;
-}
--	pointshop	card_mvp#0	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#A	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#B	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#C	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#D	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#E	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#F	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#G	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#H	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#I	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#J	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#K	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#L	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#M	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#N	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#O	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#P	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#Q	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#R	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#S	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#T	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#U	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#V	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#W	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#X	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#Y	-1,BlackMarketPoints,501:100
--	pointshop	card_mvp#Z	-1,BlackMarketPoints,501:100
--	pointshop	card_special#0	-1,BlackMarketPoints,501:120
--	pointshop	card_special#A	-1,BlackMarketPoints,501:120
--	pointshop	card_special#B	-1,BlackMarketPoints,501:120
--	pointshop	card_special#C	-1,BlackMarketPoints,501:120
--	pointshop	card_special#D	-1,BlackMarketPoints,501:120
--	pointshop	card_special#E	-1,BlackMarketPoints,501:120
--	pointshop	card_special#F	-1,BlackMarketPoints,501:120
--	pointshop	card_special#G	-1,BlackMarketPoints,501:120
--	pointshop	card_special#H	-1,BlackMarketPoints,501:120
--	pointshop	card_special#I	-1,BlackMarketPoints,501:120
--	pointshop	card_special#J	-1,BlackMarketPoints,501:120
--	pointshop	card_special#K	-1,BlackMarketPoints,501:120
--	pointshop	card_special#L	-1,BlackMarketPoints,501:120
--	pointshop	card_special#M	-1,BlackMarketPoints,501:120
--	pointshop	card_special#N	-1,BlackMarketPoints,501:120
--	pointshop	card_special#O	-1,BlackMarketPoints,501:120
--	pointshop	card_special#P	-1,BlackMarketPoints,501:120
--	pointshop	card_special#Q	-1,BlackMarketPoints,501:120
--	pointshop	card_special#R	-1,BlackMarketPoints,501:120
--	pointshop	card_special#S	-1,BlackMarketPoints,501:120
--	pointshop	card_special#T	-1,BlackMarketPoints,501:120
--	pointshop	card_special#U	-1,BlackMarketPoints,501:120
--	pointshop	card_special#V	-1,BlackMarketPoints,501:120
--	pointshop	card_special#W	-1,BlackMarketPoints,501:120
--	pointshop	card_special#X	-1,BlackMarketPoints,501:120
--	pointshop	card_special#Y	-1,BlackMarketPoints,501:120
--	pointshop	card_special#Z	-1,BlackMarketPoints,501:120
+-	pointshop	card_mob#ALL	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#AH	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#IP	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#QZ9	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#0	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#A	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#B	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#C	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#D	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#E	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#F	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#G	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#H	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#I	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#J	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#K	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#L	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#M	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#N	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#O	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#P	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#Q	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#R	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#S	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#T	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#U	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#V	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#W	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#X	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#Y	-1,BlackMarketPoints,501:1
+-	pointshop	card_mob#Z	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#ALL	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#AH	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#IP	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#QZ9	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#0	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#A	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#B	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#C	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#D	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#E	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#F	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#G	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#H	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#I	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#J	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#K	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#L	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#M	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#N	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#O	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#P	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#Q	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#R	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#S	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#T	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#U	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#V	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#W	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#X	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#Y	-1,BlackMarketPoints,501:1
+-	pointshop	card_miniboss#Z	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#ALL	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#AH	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#IP	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#QZ9	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#0	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#A	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#B	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#C	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#D	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#E	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#F	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#G	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#H	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#I	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#J	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#K	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#L	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#M	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#N	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#O	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#P	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#Q	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#R	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#S	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#T	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#U	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#V	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#W	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#X	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#Y	-1,BlackMarketPoints,501:1
+-	pointshop	card_mvp#Z	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#ALL	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#AH	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#IP	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#QZ9	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#0	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#A	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#B	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#C	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#D	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#E	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#F	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#G	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#H	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#I	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#J	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#K	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#L	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#M	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#N	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#O	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#P	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#Q	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#R	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#S	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#T	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#U	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#V	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#W	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#X	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#Y	-1,BlackMarketPoints,501:1
+-	pointshop	card_special#Z	-1,BlackMarketPoints,501:1
