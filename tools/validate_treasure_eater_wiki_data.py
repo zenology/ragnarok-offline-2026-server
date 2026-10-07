@@ -1,4 +1,4 @@
-"""Read-only Treasure Eater consistency check; retains the former command name."""
+"""Read-only Treasure Eater consistency check."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-NPC = ROOT / 'npc' / 'custom' / 'card_eater.txt'
+NPC = ROOT / 'npc' / 'custom' / 'treasure_eater.txt'
 ITEM_DB = ROOT / 'db' / 'import' / 'item_db_treasure_boxes.yml'
 CATALOG = ROOT / 'wiki' / 'src' / 'pages' / 'card-eater' / 'data' / 'cards.ts'
 GROUPS = [list(range(9000001, 9000003)), list(range(9000003, 9000006)),

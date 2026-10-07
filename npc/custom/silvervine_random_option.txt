@@ -1,5 +1,5 @@
 // Malangdo Stripe: dedicated RO pools plus ticketed per-slot generic fallback.
-// Dedicated: silvervine_enchant_item_pools.yml; shared: equipment_enhancement_db.txt.
+// Dedicated: silvervine_enchant_item_pools.yml; shared: shared_random_option_db.txt.
 
 function	script	F_SVE_RoText	{
 	.@id = getarg(0);
@@ -275,30 +275,30 @@ function	script	F_SVE_StripeTierCosts	{
 
 // Caller keeps freeloop enabled while checking the complete shared registry.
 function	script	F_SVE_SharedRoReady	{
-	if (!getnpcid(0, "equipment_enhancement_db")) return 0;
-	if (getarraysize(getvariableofnpc(.OptionId[0], "equipment_enhancement_db")) != 368 ||
-		getarraysize(getvariableofnpc(.OptionMin[0], "equipment_enhancement_db")) != 368 ||
-		getarraysize(getvariableofnpc(.OptionMax[0], "equipment_enhancement_db")) != 368 ||
-		getarraysize(getvariableofnpc(.PoolStart[0], "equipment_enhancement_db")) != 10 ||
-		getarraysize(getvariableofnpc(.PoolCount[0], "equipment_enhancement_db")) != 10 ||
-		getarraysize(getvariableofnpc(.CrimsonItemId[0], "equipment_enhancement_db")) != 17 ||
-		getarraysize(getvariableofnpc(.CrimsonOptionId[0], "equipment_enhancement_db")) != 10 ||
-		getarraysize(getvariableofnpc(.CrimsonOptionWeight[0], "equipment_enhancement_db")) != 10) return 0;
+	if (!getnpcid(0, "shared_random_option_db")) return 0;
+	if (getarraysize(getvariableofnpc(.OptionId[0], "shared_random_option_db")) != 368 ||
+		getarraysize(getvariableofnpc(.OptionMin[0], "shared_random_option_db")) != 368 ||
+		getarraysize(getvariableofnpc(.OptionMax[0], "shared_random_option_db")) != 368 ||
+		getarraysize(getvariableofnpc(.PoolStart[0], "shared_random_option_db")) != 10 ||
+		getarraysize(getvariableofnpc(.PoolCount[0], "shared_random_option_db")) != 10 ||
+		getarraysize(getvariableofnpc(.CrimsonItemId[0], "shared_random_option_db")) != 17 ||
+		getarraysize(getvariableofnpc(.CrimsonOptionId[0], "shared_random_option_db")) != 10 ||
+		getarraysize(getvariableofnpc(.CrimsonOptionWeight[0], "shared_random_option_db")) != 10) return 0;
 	setarray .@starts[0],0,35,90,159,217,226,253,319,342,359;
 	setarray .@counts[0],35,55,69,58,9,27,66,23,17,9;
 	for (.@i = 0; .@i < 10; ++.@i) {
-		if (getelementofarray(getvariableofnpc(.PoolStart[0], "equipment_enhancement_db"), .@i) != .@starts[.@i] ||
-			getelementofarray(getvariableofnpc(.PoolCount[0], "equipment_enhancement_db"), .@i) != .@counts[.@i] ||
-			getelementofarray(getvariableofnpc(.CrimsonOptionId[0], "equipment_enhancement_db"), .@i) != 175 + .@i ||
-			getelementofarray(getvariableofnpc(.CrimsonOptionWeight[0], "equipment_enhancement_db"), .@i) != (.@i < 5 ? 15 : 5)) return 0;
+		if (getelementofarray(getvariableofnpc(.PoolStart[0], "shared_random_option_db"), .@i) != .@starts[.@i] ||
+			getelementofarray(getvariableofnpc(.PoolCount[0], "shared_random_option_db"), .@i) != .@counts[.@i] ||
+			getelementofarray(getvariableofnpc(.CrimsonOptionId[0], "shared_random_option_db"), .@i) != 175 + .@i ||
+			getelementofarray(getvariableofnpc(.CrimsonOptionWeight[0], "shared_random_option_db"), .@i) != (.@i < 5 ? 15 : 5)) return 0;
 	}
 	setarray .@crimson[0],1443,1498,1680,1839,1939,1995,2025,13127,13327,13454,16040,18130,21015,28007,28106,28604,28705;
 	for (.@i = 0; .@i < 17; ++.@i)
-		if (getelementofarray(getvariableofnpc(.CrimsonItemId[0], "equipment_enhancement_db"), .@i) != .@crimson[.@i]) return 0;
+		if (getelementofarray(getvariableofnpc(.CrimsonItemId[0], "shared_random_option_db"), .@i) != .@crimson[.@i]) return 0;
 	for (.@i = 0; .@i < 368; ++.@i) {
-		.@id = getelementofarray(getvariableofnpc(.OptionId[0], "equipment_enhancement_db"), .@i);
-		.@min = getelementofarray(getvariableofnpc(.OptionMin[0], "equipment_enhancement_db"), .@i);
-		.@max = getelementofarray(getvariableofnpc(.OptionMax[0], "equipment_enhancement_db"), .@i);
+		.@id = getelementofarray(getvariableofnpc(.OptionId[0], "shared_random_option_db"), .@i);
+		.@min = getelementofarray(getvariableofnpc(.OptionMin[0], "shared_random_option_db"), .@i);
+		.@max = getelementofarray(getvariableofnpc(.OptionMax[0], "shared_random_option_db"), .@i);
 		if (.@id < 1 || .@id > 32767 || .@min < -32768 || .@max > 32767 || .@min > .@max) return 0;
 	}
 	return 1;
@@ -312,28 +312,28 @@ function	script	F_SVE_RollSharedRo	{
 	.@item = getarg(0);
 	.@index = getarg(1);
 	.@force_max = getarg(2);
-	if (!getnpcid(0, "equipment_enhancement_db") || .@index < 0 || .@index > 4) return 0;
+	if (!getnpcid(0, "shared_random_option_db") || .@index < 0 || .@index > 4) return 0;
 	.@type = getiteminfo(.@item, ITEMINFO_TYPE);
 	if (.@type != IT_WEAPON && .@type != IT_ARMOR) return 0;
-	if (.@index == 0 && inarray(getvariableofnpc(.CrimsonItemId[0], "equipment_enhancement_db"), .@item) != -1) {
+	if (.@index == 0 && inarray(getvariableofnpc(.CrimsonItemId[0], "shared_random_option_db"), .@item) != -1) {
 		.@roll = rand(100);
 		for (.@i = 0; .@i < 10; ++.@i) {
-			.@roll -= getelementofarray(getvariableofnpc(.CrimsonOptionWeight[0], "equipment_enhancement_db"), .@i);
+			.@roll -= getelementofarray(getvariableofnpc(.CrimsonOptionWeight[0], "shared_random_option_db"), .@i);
 			if (.@roll < 0) {
-				set getarg(3), getelementofarray(getvariableofnpc(.CrimsonOptionId[0], "equipment_enhancement_db"), .@i);
+				set getarg(3), getelementofarray(getvariableofnpc(.CrimsonOptionId[0], "shared_random_option_db"), .@i);
 				return 1;
 			}
 		}
 		return 0;
 	}
 	.@pool = (.@type == IT_WEAPON ? 0 : 5) + .@index;
-	.@start = getelementofarray(getvariableofnpc(.PoolStart[0], "equipment_enhancement_db"), .@pool);
-	.@count = getelementofarray(getvariableofnpc(.PoolCount[0], "equipment_enhancement_db"), .@pool);
+	.@start = getelementofarray(getvariableofnpc(.PoolStart[0], "shared_random_option_db"), .@pool);
+	.@count = getelementofarray(getvariableofnpc(.PoolCount[0], "shared_random_option_db"), .@pool);
 	if (.@count < 1 || .@start < 0 || .@start + .@count > 368) return 0;
 	.@entry = .@start + rand(.@count);
-	.@id = getelementofarray(getvariableofnpc(.OptionId[0], "equipment_enhancement_db"), .@entry);
-	.@min = getelementofarray(getvariableofnpc(.OptionMin[0], "equipment_enhancement_db"), .@entry);
-	.@max = getelementofarray(getvariableofnpc(.OptionMax[0], "equipment_enhancement_db"), .@entry);
+	.@id = getelementofarray(getvariableofnpc(.OptionId[0], "shared_random_option_db"), .@entry);
+	.@min = getelementofarray(getvariableofnpc(.OptionMin[0], "shared_random_option_db"), .@entry);
+	.@max = getelementofarray(getvariableofnpc(.OptionMax[0], "shared_random_option_db"), .@entry);
 	if (.@id < 1 || .@id > 32767 || .@min < -32768 || .@max > 32767 || .@min > .@max) return 0;
 	set getarg(3), .@id;
 	if (.@force_max)
@@ -444,7 +444,7 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	.@item = .@chosen_item[.@choice];
 	.@uid$ = .@chosen_uid$[.@choice];
 	.@type = getiteminfo(.@item, ITEMINFO_TYPE);
-	.@is_crimson = inarray(getvariableofnpc(.CrimsonItemId[0], "equipment_enhancement_db"), .@item) != -1;
+	.@is_crimson = inarray(getvariableofnpc(.CrimsonItemId[0], "shared_random_option_db"), .@item) != -1;
 	.@pool_count = sve_ropoolcount(.@item);
 	.@pool_index = -1;
 	.@dedicated_max = 0;
