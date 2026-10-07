@@ -89,6 +89,15 @@ Header:
   Version: 3
 
 Body:
+  - Id: 9000100
+    AegisName: Concentrated_W_P
+    Name: Concentrated Pure Syrup Potion
+    Type: Healing
+    Buy: 10
+    Weight: 2
+    EquipLevelMin: 200
+    Script: |
+      itemheal 4500,0;
   - Id: 35000
     AegisName: Offline_MVP_Card_Album
     Name: MVP Card Album
