@@ -67,7 +67,7 @@ OnInit:
 	end;
 }
 
-paramk,34,184,4	script	Suribell#suribell	4_F_FRUIT,{
+paramk,32,184,4	script	Suribell#suribell	4_F_FRUIT,{
 	mes "[Suribell]";
 	mes "Welcome to Paramarket's Grade Enhancement Center.";
 	mes "...That is what I am supposed to say.";
