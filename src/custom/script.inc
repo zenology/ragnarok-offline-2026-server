@@ -191,6 +191,206 @@ BUILDIN_FUNC(premiumtreasureloot)
 	return SCRIPT_CMD_SUCCESS;
 }
 
+// Return the highest occupied native socket containing an actual normal card.
+// Both Vesper commands use this predicate; enchant stones and CARD0_* are excluded.
+static int32 vesper_card_target(map_session_data* sd, int32 slot, int16& index)
+{
+	index = -1;
+	if (slot != EQI_HEAD_TOP && slot != EQI_HEAD_MID && slot != EQI_HEAD_LOW &&
+		slot != EQI_ARMOR && slot != EQI_HAND_L && slot != EQI_HAND_R &&
+		slot != EQI_GARMENT && slot != EQI_SHOES && slot != EQI_ACC_L && slot != EQI_ACC_R)
+		return 0;
+	index = pc_checkequip(sd, equip_bitmask[slot]);
+	if (index < 0 || !sd->inventory_data[index])
+		return 0;
+	const item& equipped = sd->inventory.u.items_inventory[index];
+	const item_data* data = sd->inventory_data[index];
+	if (!equipped.equip || !equipped.unique_id || equipped.attribute == 1 ||
+		itemdb_isspecial(equipped.card[0]) ||
+		(data->type != IT_WEAPON && data->type != IT_ARMOR) ||
+		(data->type == IT_WEAPON && slot != EQI_HAND_R && slot != EQI_HAND_L) ||
+		(data->type == IT_ARMOR && slot == EQI_HAND_R))
+		return 0;
+	for (int32 card_index = std::min<int32>(data->slots, MAX_SLOTS) - 1; card_index >= 0; --card_index) {
+		const auto card = item_db.find(equipped.card[card_index]);
+		if (card && card->type == IT_CARD && card->subtype == CARD_NORMAL)
+			return card_index + 1;
+	}
+	return 0;
+}
+
+BUILDIN_FUNC(vespercardtarget)
+{
+	map_session_data* sd = nullptr;
+	int16 index = -1;
+	script_pushint(st, script_rid2sd(sd) ? vesper_card_target(sd, script_getnum(st, 2), index) : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
+
+// 1=removed, 2=stale selection, 3=insufficient BP, 4=invalid state/arguments,
+// 5=missing protection materials, 6=failed/broken, 7=failed/protected, 8=rolled back.
+BUILDIN_FUNC(vesperremovecard)
+{
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) {
+		script_pushint(st, 4);
+		return SCRIPT_CMD_FAILURE;
+	}
+	const int32 slot = script_getnum(st, 2);
+	const char* uid = script_getstr(st, 3);
+	const int32 card_index = script_getnum(st, 4);
+	const int64 card_id = script_getnum64(st, 5);
+	const int32 protect = script_getnum(st, 6);
+	uint64 expected_uid = 0;
+	if (!*uid || card_index < 0 || card_index >= MAX_SLOTS || card_id <= 0 ||
+		(protect != 0 && protect != 1)) {
+		script_pushint(st, 4);
+		return SCRIPT_CMD_SUCCESS;
+	}
+	for (const char* digit = uid; *digit; ++digit) {
+		if (*digit < '0' || *digit > '9' || expected_uid > (UINT64_MAX - (*digit - '0')) / 10) {
+			script_pushint(st, 4);
+			return SCRIPT_CMD_SUCCESS;
+		}
+		expected_uid = expected_uid * 10 + (*digit - '0');
+	}
+	int16 index = -1;
+	const int32 target = vesper_card_target(sd, slot, index);
+	if (!target || target != card_index + 1 ||
+		sd->inventory.u.items_inventory[index].unique_id != expected_uid ||
+		sd->inventory.u.items_inventory[index].card[card_index] != card_id) {
+		script_pushint(st, 2);
+		return SCRIPT_CMD_SUCCESS;
+	}
+	// Refuse a state which cannot safely re-equip the currently worn specimen.
+	if (DIFF_TICK(sd->canequip_tick, gettick()) > 0 || pc_isequip(sd, index) != ITEM_EQUIP_ACK_OK) {
+		script_pushint(st, 4);
+		return SCRIPT_CMD_SUCCESS;
+	}
+	const int32 price = sd->status.base_level >= 201 ? 600 : sd->status.base_level >= 100 ? 500 :
+		(sd->class_ & JOBL_UPPER) ? (sd->status.base_level <= 50 ? 300 : 350) :
+		(sd->status.base_level <= 50 ? 200 : 250);
+	const int64 points = pc_readreg2(sd, BLACK_MARKET_POINT_VAR);
+	if (points < price) {
+		script_pushint(st, 3);
+		return SCRIPT_CMD_SUCCESS;
+	}
+	const t_itemid material_id[2] = { 6635, 1000322 };
+	int16 material_index[2] = { -1, -1 };
+	item materials[2]{};
+	item_data* material_data[2] = { nullptr, nullptr };
+	if (protect) {
+		for (int32 i = 0; i < 2; ++i) {
+			material_index[i] = pc_search_inventory(sd, material_id[i]);
+			if (material_index[i] < 0 || !sd->inventory_data[material_index[i]] ||
+				sd->inventory.u.items_inventory[material_index[i]].equip ||
+				sd->inventory.u.items_inventory[material_index[i]].amount < 1) {
+				script_pushint(st, 5);
+				return SCRIPT_CMD_SUCCESS;
+			}
+			materials[i] = sd->inventory.u.items_inventory[material_index[i]];
+			material_data[i] = sd->inventory_data[material_index[i]];
+		}
+	}
+	const item original = sd->inventory.u.items_inventory[index];
+	const bool success = rnd() % 100 < (card_index + 1) * 20;
+	bool changed = false;
+	bool paid = false;
+	bool consumed[2] = { false, false };
+	// Only this transaction's item, registry value and consumed stacks are restored.
+	const auto rollback = [&]() {
+		bool restored = true;
+		for (int32 i = 0; i < 2; ++i) {
+			if (!consumed[i]) continue;
+			item& stack = sd->inventory.u.items_inventory[material_index[i]];
+			if ((materials[i].amount == 1 && stack.nameid != 0) ||
+				(materials[i].amount > 1 && (stack.nameid != materials[i].nameid ||
+				stack.amount != materials[i].amount - 1))) {
+				restored = false;
+				continue;
+			}
+			stack = materials[i];
+			sd->inventory_data[material_index[i]] = material_data[i];
+			sd->weight += material_data[i]->weight;
+			log_pick_pc(sd, LOG_TYPE_SCRIPT, 1, &stack);
+			clif_additem(sd, material_index[i], 1, 0);
+		}
+		if (paid && !set_reg_num(nullptr, sd, add_str(BLACK_MARKET_POINT_VAR), BLACK_MARKET_POINT_VAR, points, nullptr))
+			restored = false;
+		if (changed) {
+			item& equipped = sd->inventory.u.items_inventory[index];
+			if (equipped.equip && !pc_unequipitem(sd, index, 2 | 4))
+				restored = false;
+			if (!equipped.equip) {
+				equipped = original;
+				equipped.equip = 0;
+				clif_delitem(*sd, index, 1, 3);
+				clif_additem(sd, index, 1, 0);
+				if (!pc_equipitem(sd, index, original.equip) || equipped.equip != original.equip)
+					restored = false;
+			}
+		}
+		clif_updatestatus(*sd, SP_WEIGHT);
+		clif_equiplist(sd);
+		pc_show_questinfo(sd);
+		if (!restored)
+			ShowError("buildin_vesperremovecard: rollback failed (CID=%d/AID=%d).\n", sd->status.char_id, sd->status.account_id);
+		script_pushint(st, 8);
+	};
+	if (success) {
+		// Flag 4 suppresses collateral ammunition unequip during a successful update.
+		if (!pc_unequipitem(sd, index, 2 | 4)) {
+			rollback();
+			return SCRIPT_CMD_SUCCESS;
+		}
+		changed = true;
+		sd->inventory.u.items_inventory[index].card[card_index] = 0;
+		clif_delitem(*sd, index, 1, 3);
+		clif_additem(sd, index, 1, 0);
+		if (!pc_equipitem(sd, index, original.equip) ||
+			sd->inventory.u.items_inventory[index].equip != original.equip) {
+			rollback();
+			return SCRIPT_CMD_SUCCESS;
+		}
+	} else if (!protect) {
+		changed = true;
+		sd->inventory.u.items_inventory[index].attribute = 1;
+		if (!pc_unequipitem(sd, index, 3)) {
+			// Unequip failed before changing equipment indices; restore the broken flag.
+			sd->inventory.u.items_inventory[index].attribute = original.attribute;
+			changed = false;
+			rollback();
+			return SCRIPT_CMD_SUCCESS;
+		}
+		clif_equiplist(sd);
+	}
+	// Equip/unequip scripts run synchronously: do not overwrite a changed balance.
+	if (pc_readreg2(sd, BLACK_MARKET_POINT_VAR) != points ||
+		!set_reg_num(nullptr, sd, add_str(BLACK_MARKET_POINT_VAR), BLACK_MARKET_POINT_VAR, points - price, nullptr)) {
+		rollback();
+		return SCRIPT_CMD_SUCCESS;
+	}
+	paid = true;
+	if (protect) {
+		for (int32 i = 0; i < 2; ++i) {
+			const item& stack = sd->inventory.u.items_inventory[material_index[i]];
+			if (stack.nameid != materials[i].nameid || stack.unique_id != materials[i].unique_id ||
+				stack.amount != materials[i].amount ||
+				pc_delitem(sd, material_index[i], 1, 0, 0, LOG_TYPE_SCRIPT) != 0) {
+				rollback();
+				return SCRIPT_CMD_SUCCESS;
+			}
+			consumed[i] = true;
+		}
+	}
+	if (changed) {
+		log_pick_pc(sd, LOG_TYPE_SCRIPT, -1, &original);
+		log_pick_pc(sd, LOG_TYPE_SCRIPT, 1, &sd->inventory.u.items_inventory[index]);
+	}
+	script_pushint(st, success ? 1 : protect ? 7 : 6);
+	return SCRIPT_CMD_SUCCESS;
+}
+
 // Result codes: 1=success, 2=selected item changed, 3=insufficient Black Market Points,
 // 4=invalid generated/script data. The NPC owns the roll; this command owns the
 // atomic validation, character-point debit, mutation, client refresh, and re-equip.
