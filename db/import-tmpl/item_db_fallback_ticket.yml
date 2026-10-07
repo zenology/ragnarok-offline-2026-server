@@ -1,0 +1,12 @@
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 9000022
+    AegisName: Fallback_Enchantment_Ticket
+    Name: Stripe Enchantment Ticket
+    Type: Etc
+    Buy: 0
+    Sell: 0
+    Weight: 10
