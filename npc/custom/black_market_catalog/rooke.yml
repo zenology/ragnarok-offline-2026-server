@@ -51,6 +51,10 @@ Body:
   - {Id: 12218, Category: 3, TierPrices: {Normal1_50: 8, Normal51_99: 10, Rebirth1_50: 10, Rebirth51_99: 10, Level100_200: 13, Level201Plus: 18}}
   - {Id: 12219, Category: 3, TierPrices: {Normal1_50: 5, Normal51_99: 7, Rebirth1_50: 7, Rebirth51_99: 7, Level100_200: 10, Level201Plus: 15}}
   - {Id: 14531, Category: 3, TierPrices: {Normal1_50: 3, Normal51_99: 4, Rebirth1_50: 4, Rebirth51_99: 6, Level100_200: 10, Level201Plus: 15}}
+  - {Id: 1100003, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 5, Level201Plus: 10}}
+  - {Id: 1100005, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 10, Level201Plus: 20}}
+  - {Id: 9000100, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 20, Level201Plus: 40}}
+  - {Id: 1100004, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 20, Level201Plus: 40}}
   - {Id: 14534, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 120, Level201Plus: 200}}
   - {Id: 14535, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 150, Level201Plus: 250}}
   - {Id: 14537, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 75, Level201Plus: 100}}
