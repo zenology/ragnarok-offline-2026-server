@@ -1,0 +1,131 @@
+// Vesper destroys one normal card in the highest occupied native card socket.
+// Native commands own the roll, BP/material debit and in-place item transaction.
+
+paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
+	disable_items;
+	.@eac = eaclass();
+	mes "[Vesper]";
+	if ((.@eac & EAJ_BASEMASK) == EAJ_SUMMONER)
+		mes "A talking cat! Keep those inquisitive paws away from my instruments.";
+	else if (.@eac & EAJL_BABY)
+		mes "Such a tiny test subject... and such dangerous readings. Fascinating.";
+	else if (.@eac & EAJL_UPPER)
+		mes "A familiar spark in a renewed specimen. You have survived an experiment or two.";
+	else if (!(.@eac & EAJL_2))
+		mes "A fresh specimen! Keep still; this is a card experiment, not an anatomy lesson.";
+	else
+		mes "Excellent... a properly equipped test subject. Keep still while I prepare my instruments.";
+	next;
+	mes "[Vesper]";
+	mes "I can remove one ordinary card at a time from your equipped items.";
+	next;
+	mes "[Vesper]";
+	mes "The removed card is destroyed. Enchantments and Random Options are outside this experiment.";
+	next;
+	mes "[Vesper]";
+	mes "I always work on the highest occupied card socket first. A failed attempt can break your equipment.";
+	next;
+	mes "[Vesper]";
+	mes "Wear the specimen you want me to work on. Let us see what qualifies.";
+
+	.@count = 0;
+	for (.@scan = 0; .@scan < 10; ++.@scan) {
+		.@slot = (.@scan == 0 ? EQI_HEAD_TOP : .@scan == 1 ? EQI_HEAD_MID : .@scan == 2 ? EQI_HEAD_LOW : .@scan == 3 ? EQI_HAND_R : .@scan == 4 ? EQI_HAND_L : .@scan == 5 ? EQI_ARMOR : .@scan == 6 ? EQI_GARMENT : .@scan == 7 ? EQI_SHOES : .@scan == 8 ? EQI_ACC_L : EQI_ACC_R);
+		.@target = vespercardtarget(.@slot);
+		if (.@target == 0) continue;
+		.@item = getequipid(.@slot);
+		.@type = getiteminfo(.@item, ITEMINFO_TYPE);
+		.@uid$ = getequipuniqueid(.@slot);
+		.@label$ = (.@slot == EQI_HEAD_TOP ? "Top" : .@slot == EQI_HEAD_MID ? "Middle" : .@slot == EQI_HEAD_LOW ? "Lower" : .@slot == EQI_HAND_R ? "Weapon Right" : .@slot == EQI_HAND_L && .@type == IT_WEAPON ? "Weapon Left" : .@slot == EQI_HAND_L ? "Shield" : .@slot == EQI_ARMOR ? "Armor" : .@slot == EQI_GARMENT ? "Garment" : .@slot == EQI_SHOES ? "Shoes" : .@slot == EQI_ACC_L ? "Accessory Left" : "Accessory Right");
+		.@found = -1;
+		for (.@i = 0; .@i < .@count; ++.@i)
+			if (.@chosen_uid$[.@i] == .@uid$) .@found = .@i;
+		if (.@found >= 0) {
+			.@chosen_label$[.@found] += "/" + .@label$;
+			continue;
+		}
+		.@chosen_slot[.@count] = .@slot;
+		.@chosen_uid$[.@count] = .@uid$;
+		.@chosen_label$[.@count] = .@label$;
+		.@chosen_item[.@count] = .@item;
+		.@chosen_index[.@count] = .@target - 1;
+		.@chosen_card[.@count] = getequipcardid(.@slot, .@target - 1);
+		++.@count;
+	}
+	if (.@count < 1) {
+		next;
+		mes "[Vesper]";
+		mes "Wear an unbroken ordinary piece of equipment with a normal card. Bag items, Costumes, Shadow Equipment and ammunition do not qualify.";
+		close;
+	}
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@count; ++.@i)
+		.@menu$ += .@chosen_label$[.@i] + " - " + getitemname(.@chosen_item[.@i]) + ":";
+	.@choice = select(.@menu$ + "Cancel") - 1;
+	if (.@choice == .@count) close;
+	clear;
+	.@slot = .@chosen_slot[.@choice];
+	.@uid$ = .@chosen_uid$[.@choice];
+	.@index = .@chosen_index[.@choice];
+	.@card = .@chosen_card[.@choice];
+	.@price = callsub(S_GetPrice);
+	mes "[Vesper]";
+	mes "Ah, ^0055FF" + getitemname(.@chosen_item[.@choice]) + "^000000 (" + .@chosen_label$[.@choice] + "). A splendid specimen.";
+	next;
+	mes "[Vesper]";
+	mes "I will destroy ^0055FF" + getitemname(.@card) + "^000000 in card socket " + (.@index + 1) + ". Success chance: ^0055FF" + ((.@index + 1) * 20) + "%^000000.";
+	next;
+	mes "[Vesper]";
+	mes "Each attempt costs ^0055FF" + .@price + " Black Market Points^000000, whether it succeeds or fails.";
+	next;
+	mes "[Vesper]";
+	mes "Protection costs one Blacksmith Blessing and one Etel Dust per attempt. It prevents breakage, but does not improve the chance.";
+	.@mode = select("Standard removal:Protect with 1 Blessing + 1 Etel Dust:Cancel");
+	if (.@mode == 3) close;
+	clear;
+	.@protect = .@mode == 2;
+	mes "[Vesper]";
+	if (.@protect)
+		mes "Cost: " + .@price + " BP, 1 Blacksmith Blessing and 1 Etel Dust, even on failure. Failure leaves the card and worn equipment intact.";
+	else
+		mes "Cost: " + .@price + " BP, even on failure. Failure keeps the card, but breaks and unequips the specimen. Repair and wear it again before returning.";
+	next;
+	mes "[Vesper]";
+	mes "Success destroys only " + getitemname(.@card) + " in socket " + (.@index + 1) + " and leaves your equipment worn. Shall I begin?";
+	if (select("Confirm removal:Cancel") == 2) close;
+	clear;
+	if (callsub(S_GetPrice) != .@price) {
+		mes "[Vesper]";
+		mes "Your pricing tier changed. Speak to me again for a fresh quote. No points or materials were charged.";
+		close;
+	}
+	.@result = vesperremovecard(.@slot, .@uid$, .@index, .@card, .@protect);
+	mes "[Vesper]";
+	if (.@result == 1) {
+		specialeffect2 EF_REPAIRWEAPON;
+		mes "Magnificent! The card is gone, and your specimen remains equipped. Click me again if another card must go.";
+	} else if (.@result == 6) {
+		specialeffect2 EF_REFINEFAIL;
+		mes "An unfortunate fracture. Your card is still there, but the equipment is broken in your bag. Repair it and put it back on before our next attempt.";
+	} else if (.@result == 7) {
+		specialeffect2 EF_REFINEFAIL;
+		mes "The card resisted, but the protection held. Your equipment remains intact and worn. This attempt consumed its points and materials.";
+	} else if (.@result == 2)
+		mes "The specimen or its card changed before I could begin. No points or materials were charged.";
+	else if (.@result == 3)
+		mes "Insufficient Black Market Points. No changes were made.";
+	else if (.@result == 5)
+		mes "Bring one Blacksmith Blessing and one Etel Dust for protection. No points or materials were charged.";
+	else if (.@result == 8)
+		mes "The experiment could not be completed. I have requested restoration of your specimen and payment; please stop here and have the server log checked.";
+	else
+		mes "The specimen cannot be handled safely in its current state. No points or materials were charged.";
+	close;
+
+S_GetPrice:
+	if (BaseLevel >= 201) return 600;
+	if (BaseLevel >= 100) return 500;
+	.@rebirth = (eaclass() & EAJL_UPPER) != 0;
+	if (BaseLevel <= 50) return .@rebirth ? 300 : 200;
+	return .@rebirth ? 350 : 250;
+}

@@ -89,6 +89,23 @@ Header:
   Version: 3
 
 Body:
+  - Id: 9000100
+    AegisName: Concentrated_W_P
+    Name: Concentrated Pure Syrup Potion
+    Type: Healing
+    Buy: 10
+    Weight: 20
+    EquipLevelMin: 200
+    Script: |
+      itemheal 4500,0;
+  - Id: 1100003
+    Weight: 20
+    Script: |
+      itemheal 1800,0;
+  - Id: 1100004
+    Weight: 20
+  - Id: 1100005
+    Weight: 20
   - Id: 35000
     AegisName: Offline_MVP_Card_Album
     Name: MVP Card Album
@@ -171,6 +188,7 @@ Footer:
     - Path: db/import/item_db_iro_hats.yml
     - Path: db/import/item_db_iro_hats_hard.yml
     - Path: db/import/item_db_treasure_boxes.yml
+    - Path: db/import/item_db_fallback_ticket.yml
 
 #Body:
 # THQ Quest Items
