@@ -20,7 +20,7 @@ TIERS = ("Normal1_50", "Normal51_99", "Rebirth1_50", "Rebirth51_99",
          "Level100_200", "Level201Plus")
 CATEGORY_MAX = {"harlan": 0, "soren": 21, "mordain": 0, "kaedra": 0,
                 "tess": 0, "weaver": 0, "lady-seraphine": 2,
-                "madame-celestine": 89, "rooke": 8, **dict.fromkeys(CARDS, 0)}
+                "madame-celestine": 89, "rooke": 9, **dict.fromkeys(CARDS, 0)}
 PREFIXES = {"harlan": ("hat0", "hat1", "hat2"),
             "soren": tuple(f"wep{i}_0" for i in range(22)),
             "mordain": ("arm0",), "kaedra": ("shd0",), "tess": ("ftr0",),
@@ -257,7 +257,7 @@ def catalog_inventory(key: str, directory: Path = CATALOG_DIR,
         items = read_items() if items is None else items
         rows = [row for row in rows if admitted(key, row, items)]
     if key == "rooke":
-        stock = {f"cons{category}#T{tier}": [] for category in range(9) for tier in range(6)}
+        stock = {f"cons{category}#T{tier}": [] for category in range(10) for tier in range(6)}
         stock.update({f"rookup#T{tier}": [] for tier in range(6)})
         for row in rows:
             for tier, field in enumerate(TIERS):

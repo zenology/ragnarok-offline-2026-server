@@ -1,41 +1,38 @@
 //===== Ragnarok Offline =====================================
 //= Black-Market Consumable Seller
 //===== Description: =========================================
-//= Rooke sells a curated cash-origin consumable whitelist for
+//= Rooke and Silas share a curated cash-origin consumable whitelist for
 //= character-local Black Market Points. Each category has one hidden
 //= pointshop per player-progression price tier, so simultaneous players
 //= never share a catalog or price. A zero tier price means the SKU is not
 //= sold in that tier. Full-row exclusions are absent from the catalog.
 //============================================================
 
-paramk,39,185,4	script	Rooke#offline	542,{
+paramk,39,185,4	script	Rooke#offline	4_CH1_NEUMANN,{
 	.@eac = eaclass();
 	if ((.@eac&EAJ_BASEMASK) == EAJ_SUMMONER) {
 		mes "[Rooke]";
-		mes "Hey--the cat talks.";
-		mes "That's new. That's fine. I've mixed stranger things.";
-		mes "Come here. I can get you almost anything that goes in a bottle.";
+		mes "A talking cat. Interesting. Keep your paws off the samples.";
 		next;
 	} else if (.@eac&EAJL_BABY) {
 		mes "[Rooke]";
-		mes "A kid?";
-		mes "...No. You don't feel like a kid.";
-		mes "Lucky for you, I don't check ages. I check whether you can pay.";
+		mes "Small frame, dangerous readings. I'll keep the fragile samples back here.";
+		next;
+	} else if (.@eac&EAJL_UPPER) {
+		mes "[Rooke]";
+		mes "New appearance, familiar reactions. You've done this before.";
+		next;
+	} else if (!(.@eac&EAJL_2)) {
+		mes "[Rooke]";
+		mes "Start with a small dose. Take notes before you take another.";
 		next;
 	}
 	mes "[Rooke]";
-	mes "Hey. Hey, don't walk past.";
-	mes "You look like you need something.";
-	mes "I can get medicine. Almost every kind.";
-	mes "The good kind. The kind the Kafra ladies pretend not to know about.";
+	mes "Rooke. I study what keeps adventurers moving and monsters nervous.";
 	next;
 	mes "[Rooke]";
-	mes "Manuals, gum, tonics, tickets... stones, if you know how to ask.";
-	mes "If it goes in a bottle, under the tongue, or into a forge, I can source it.";
-	mes "First taste is honest. ^0055FFBlack Market Points^000000 only.";
-	mes "Tell me what you're craving.";
-	next;
-	switch (select("EXP and Drop:Consumable#1:Consumable#2:Scrolls:Potions:Convenience:Style / Reset:Upgrade:Premium Service:")) {
+	mes "Tonics, manuals, scrolls, and battle supplies. Silas handles the other shelves.";
+	switch (select("EXP and Drop:Consumable#1:Consumable#2:Scrolls:Potions:Battle Tools")) {
 	case 1:
 		callsub S_OpenCategory, 0;
 		end;
@@ -52,16 +49,7 @@ paramk,39,185,4	script	Rooke#offline	542,{
 		callsub S_OpenCategory, 4;
 		end;
 	case 6:
-		callsub S_OpenCategory, 5;
-		end;
-	case 7:
-		callsub S_OpenCategory, 6;
-		end;
-	case 8:
-		callsub S_OpenCategory, 7;
-		end;
-	case 9:
-		callsub S_OpenCategory, 8;
+		callsub S_OpenCategory, 9;
 		end;
 	}
 	end;
@@ -90,7 +78,75 @@ S_GetTier:
 	return .@rebirth ? 3 : 1;
 
 OnInit:
-	setunittitle(getnpcid(0), "<Alchemist>");
+	setunittitle(getnpcid(0), "<Scientist>");
+	end;
+}
+
+paramk,36,185,4	script	Silas#offline	4_EP17_BOY_A,{
+	.@eac = eaclass();
+	if ((.@eac&EAJ_BASEMASK) == EAJ_SUMMONER) {
+		mes "[Silas]";
+		mes "A talking cat. Keep your tail clear of the moving parts.";
+		next;
+	} else if (.@eac&EAJL_BABY) {
+		mes "[Silas]";
+		mes "Small frame, serious power. I'll keep the tools out of your way.";
+		next;
+	} else if (.@eac&EAJL_UPPER) {
+		mes "[Silas]";
+		mes "Fresh face, experienced hands. You've worked with this gear before.";
+		next;
+	} else if (!(.@eac&EAJL_2)) {
+		mes "[Silas]";
+		mes "Starting out? Browse first. Buy what you can actually use.";
+		next;
+	}
+	mes "[Silas]";
+	mes "I'm Silas, an engineer working under Rooke.";
+	next;
+	mes "[Silas]";
+	mes "Travel supplies, style and reset tickets, upgrade materials, and premium goods. My couriers carry the upgrade stock.";
+	switch (select("Convenience:Style / Reset:Upgrade:Premium Service")) {
+	case 1:
+		callsub S_OpenCategory, 5;
+		end;
+	case 2:
+		callsub S_OpenCategory, 6;
+		end;
+	case 3:
+		callsub S_OpenCategory, 7;
+		end;
+	case 4:
+		callsub S_OpenCategory, 8;
+		end;
+	}
+	end;
+
+S_OpenCategory:
+	.@cat = getarg(0);
+	.@tier = callsub(S_GetTier);
+	if (!bmc_shopcount("cons" + .@cat + "#T" + .@tier)) {
+		clear;
+		mes "[Silas]";
+		mes "That shelf is empty for you today. Try another.";
+		close;
+	}
+	close2;
+	callshop "cons" + .@cat + "#T" + .@tier, 1;
+	end;
+
+S_GetTier:
+	if (BaseLevel >= 201)
+		return 5;
+	if (BaseLevel >= 100)
+		return 4;
+	.@rebirth = (eaclass() & EAJL_UPPER) != 0;
+	if (BaseLevel <= 50)
+		return .@rebirth ? 2 : 0;
+	return .@rebirth ? 3 : 1;
+
+OnInit:
+	setunittitle(getnpcid(0), "<Engineer>");
 	end;
 }
 
@@ -164,9 +220,9 @@ S_CourierLine:
 			"You're small, but the air feels heavy around you. I'll stand over here.",
 			"Fresh boots, old footsteps. You've walked this road before.",
 			"Don't chase the biggest hammer yet. Start with what you can carry.",
-			"Rooke found me sleeping beside a cold furnace. I've had a bed ever since.",
+			"Silas found me sleeping beside a cold furnace. I've had a bed ever since.",
 			"His upgrade stones are in this crate. Need some?",
-			"Nothing left. I'll ask Rooke to send another crate.";
+			"Nothing left. I'll ask Silas to send another crate.";
 	} else if (.@courier$ == "rooke_pay") {
 		setarray .@lines$[0],
 			"Oh... hello. I'm Mira. Please don't trip over the little basket.",
@@ -174,9 +230,9 @@ S_CourierLine:
 			"You look little, but... I think the forest would go quiet for you.",
 			"You seem familiar. Maybe it's the way you hold yourself.",
 			"Everyone starts somewhere. Please be careful with your first weapon.",
-			"Rooke kept a lamp on for me when I had no home to go back to.",
+			"Silas kept a lamp on for me when I had no home to go back to.",
 			"I brought his upgrade supplies. Would you like to see them?",
-			"Oh... the basket is empty. I'll leave Rooke a note.";
+			"Oh... the basket is empty. I'll leave Silas a note.";
 	} else if (.@courier$ == "rooke_alb") {
 		setarray .@lines$[0],
 			"Nell, fastest parcel runner on this dock! Unless there's a snack stall.",
@@ -184,9 +240,9 @@ S_CourierLine:
 			"We're the same height! Why do I feel like I should hide behind the crate?",
 			"You have that been-everywhere look. Any good dock stories?",
 			"First proper weapon? Don't drop it in the sea. I've tried fishing one out.",
-			"I didn't have a home then. Rooke carried me in and said I could make noise.",
+			"I didn't have a home then. Silas carried me in and said I could make noise.",
 			"Want his upgrade supplies? I even kept the crate dry!",
-			"All gone! I'll catch Rooke before the next shipment.";
+			"All gone! I'll catch Silas before the next shipment.";
 	} else if (.@courier$ == "rooke_yuno") {
 		setarray .@lines$[0],
 			"I'm Ada. These labels are in order. Please help me keep them that way.",
@@ -194,9 +250,9 @@ S_CourierLine:
 			"Small stature, considerable power. I'll amend my first impression.",
 			"Your equipment looks new. Your handling of it suggests otherwise.",
 			"Start with the basics. A sound foundation saves expensive mistakes.",
-			"My first address was Rooke's. I had no family name to write above it.",
+			"My first address was Silas's. I had no family name to write above it.",
 			"His upgrade supplies are catalogued here. Shall I open the crate?",
-			"No stock in this crate. I'll send Rooke an exact list.";
+			"No stock in this crate. I'll send Silas an exact list.";
 	} else if (.@courier$ == "rooke_ein") {
 		setarray .@lines$[0],
 			"Finn. Give me a second to wipe the soot off. There. Ready!",
@@ -204,9 +260,9 @@ S_CourierLine:
 			"You look like me, but you feel stronger than the whole hammer rack.",
 			"You handle that gear like an old hand. No need for my beginner advice.",
 			"New to the forge? Keep a firm grip and listen to the smith.",
-			"Rooke taught me to count nails when I was small. Back then, he was all I had.",
+			"Silas taught me to count nails when I was small. Back then, he was all I had.",
 			"I've checked his upgrade supplies twice. Want to inspect them?",
-			"Crate's empty. I'll tell Rooke before the forge shift ends.";
+			"Crate's empty. I'll tell Silas before the forge shift ends.";
 	} else if (.@courier$ == "rooke_lhz") {
 		setarray .@lines$[0],
 			"Lio, at your service. Mind the crate. I've just polished the latch.",
@@ -214,24 +270,24 @@ S_CourierLine:
 			"You look young. I'll take that dangerous feeling as my cue to be polite.",
 			"A fresh appearance, an experienced eye. Welcome back to the trade.",
 			"A modest weapon can still deserve excellent care. Shall we start there?",
-			"Nobody came to claim me. Rooke did, without asking for a family name.",
+			"Nobody came to claim me. Silas did, without asking for a family name.",
 			"I keep his upgrade supplies neatly packed. May I show you?",
-			"I'm afraid the crate is empty. Rooke will hear about it promptly.";
+			"I'm afraid the crate is empty. Silas will hear about it promptly.";
 	} else {
 		setarray .@lines$[0],
 			"Hi! I'm Pip. I help with deliveries. This one's nearly as big as me!",
-			"A talking cat? Rooke left that bit off the delivery slip!",
+			"A talking cat? Silas left that bit off the delivery slip!",
 			"You're my size... but I think I'll let you carry the heavy crate.",
 			"You look like you've made this trip before. Did you ever get lost?",
-			"Starting small? Me too. Rooke says that still counts as starting.",
-			"Rooke gave me my first house key. Before that, I waited outside other people's doors.",
+			"Starting small? Me too. Silas says that still counts as starting.",
+			"Silas gave me my first house key. Before that, I waited outside other people's doors.",
 			"I've got his upgrade supplies right here! Want to take a look?",
-			"The crate's empty. I'll check with Rooke. I know where he keeps the spare key.";
+			"The crate's empty. I'll check with Silas. I know where he keeps the spare key.";
 	}
 	return .@lines$[getarg(0)];
 
 OnInit:
-	setunittitle(getnpcid(0), "<Rooke's Courier>");
+	setunittitle(getnpcid(0), "<Silas's Courier>");
 	end;
 }
 
@@ -242,7 +298,7 @@ yuno_in01,168,21,4	duplicate(Pip#rooke_delivery)	Ada#rooke_yuno	4_F_KID2
 ein_in01,21,87,4	duplicate(Pip#rooke_delivery)	Finn#rooke_ein	4_M_KID2
 lhz_in02,285,20,4	duplicate(Pip#rooke_delivery)	Lio#rooke_lhz	4_M_RUSCHILD
 
-// Nine categories x six progression tiers, populated from rooke.yml.
+// Ten categories x six progression tiers, populated from rooke.yml.
 -	pointshop	cons0#T0	-1,BlackMarketPoints,501:1
 -	pointshop	cons0#T1	-1,BlackMarketPoints,501:1
 -	pointshop	cons0#T2	-1,BlackMarketPoints,501:1
@@ -297,6 +353,12 @@ lhz_in02,285,20,4	duplicate(Pip#rooke_delivery)	Lio#rooke_lhz	4_M_RUSCHILD
 -	pointshop	cons8#T3	-1,BlackMarketPoints,501:1
 -	pointshop	cons8#T4	-1,BlackMarketPoints,501:1
 -	pointshop	cons8#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T5	-1,BlackMarketPoints,501:1
 -	pointshop	rookup#T0	-1,BlackMarketPoints,501:1
 -	pointshop	rookup#T1	-1,BlackMarketPoints,501:1
 -	pointshop	rookup#T2	-1,BlackMarketPoints,501:1
