@@ -35,7 +35,7 @@ paramk,39,185,4	script	Rooke#offline	542,{
 	mes "First taste is honest. ^0055FFBlack Market Points^000000 only.";
 	mes "Tell me what you're craving.";
 	next;
-	switch (select("EXP and Drop:Consumable#1:Consumable#2:Scrolls:Potions:Convenience:Style / Reset:Upgrade:Premium Service:")) {
+	switch (select("EXP and Drop:Consumable#1:Consumable#2:Scrolls:Potions:Battle Tools:Convenience:Style / Reset:Upgrade:Premium Service:")) {
 	case 1:
 		callsub S_OpenCategory, 0;
 		end;
@@ -52,15 +52,18 @@ paramk,39,185,4	script	Rooke#offline	542,{
 		callsub S_OpenCategory, 4;
 		end;
 	case 6:
-		callsub S_OpenCategory, 5;
+		callsub S_OpenCategory, 9;
 		end;
 	case 7:
-		callsub S_OpenCategory, 6;
+		callsub S_OpenCategory, 5;
 		end;
 	case 8:
-		callsub S_OpenCategory, 7;
+		callsub S_OpenCategory, 6;
 		end;
 	case 9:
+		callsub S_OpenCategory, 7;
+		end;
+	case 10:
 		callsub S_OpenCategory, 8;
 		end;
 	}
@@ -242,7 +245,7 @@ yuno_in01,168,21,4	duplicate(Pip#rooke_delivery)	Ada#rooke_yuno	4_F_KID2
 ein_in01,21,87,4	duplicate(Pip#rooke_delivery)	Finn#rooke_ein	4_M_KID2
 lhz_in02,285,20,4	duplicate(Pip#rooke_delivery)	Lio#rooke_lhz	4_M_RUSCHILD
 
-// Nine categories x six progression tiers, populated from rooke.yml.
+// Ten categories x six progression tiers, populated from rooke.yml.
 -	pointshop	cons0#T0	-1,BlackMarketPoints,501:1
 -	pointshop	cons0#T1	-1,BlackMarketPoints,501:1
 -	pointshop	cons0#T2	-1,BlackMarketPoints,501:1
@@ -297,6 +300,12 @@ lhz_in02,285,20,4	duplicate(Pip#rooke_delivery)	Lio#rooke_lhz	4_M_RUSCHILD
 -	pointshop	cons8#T3	-1,BlackMarketPoints,501:1
 -	pointshop	cons8#T4	-1,BlackMarketPoints,501:1
 -	pointshop	cons8#T5	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T0	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T1	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T2	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T3	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T4	-1,BlackMarketPoints,501:1
+-	pointshop	cons9#T5	-1,BlackMarketPoints,501:1
 -	pointshop	rookup#T0	-1,BlackMarketPoints,501:1
 -	pointshop	rookup#T1	-1,BlackMarketPoints,501:1
 -	pointshop	rookup#T2	-1,BlackMarketPoints,501:1
