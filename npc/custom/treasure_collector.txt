@@ -2,9 +2,9 @@
 //= Treasure Collector
 //===== Description: =========================================
 //= Buys the 21 project Treasure Boxes for fixed Black Market Points.
-//= Iron, Silver, and Gold share 30-box loyalty milestones.
-//= Diamond and Platinum use five-box milestones.
-//= Platinum milestones have an 81% Platinum III reward and 19% backstab.
+//= Normal and boss treasures use separate 30-box loyalty counters.
+//= Each pool rewards its highest family actually sold; remainders carry forward.
+//= Platinum-led boss milestones have an 81% Platinum III reward and 19% backstab.
 //============================================================
 
 paramk,41,159,4	script	Black Market Boss#offline	4_M_MANAGER,{
@@ -33,10 +33,11 @@ paramk,41,159,4	script	Black Market Boss#offline	4_M_MANAGER,{
 		mes "Iron, Silver, and Gold loyalty: ^0055FF" + #CC_Normal + " / 30^000000.";
 		next;
 		mes "[Black Market Boss]";
-		mes "Diamond loyalty: ^0055FF" + #CC_Mini + " / 5^000000.";
+		.@boss_balance = #CC_Boss + #CC_Mini + #CC_MVP;
+		mes "Diamond and Platinum loyalty: ^0055FF" + .@boss_balance + " / 30^000000.";
 		next;
 		mes "[Black Market Boss]";
-		mes "Platinum loyalty: ^0055FF" + #CC_MVP + " / 5^000000.";
+		mes "Every 30 treasures in either pool earns one reward. Extra treasures stay in their own pool.";
 		next;
 		mes "[Black Market Boss]";
 		mes "Normal rewards advance Iron to Silver I, Silver to Gold I, or Gold to Diamond I.";
@@ -57,7 +58,6 @@ L_Single:
 		.@sale_ids[.@sale_count] = .@item_id;
 		.@sale_amounts[.@sale_count] = countitem(.@item_id);
 		.@sale_offers[.@sale_count] = callsub(S_GetOffer, .@item_id);
-		.@sale_tiers[.@sale_count] = callsub(S_GetTier, .@item_id);
 		.@sale_families[.@sale_count++] = callsub(S_GetFamily, .@item_id);
 	}
 	if (!.@sale_count) {
@@ -108,54 +108,62 @@ L_Single:
 		close;
 	.@selected_id = .@sale_ids[.@selected];
 	.@selected_offer = .@sale_offers[.@selected];
-	.@selected_tier = .@sale_tiers[.@selected];
 	.@selected_family = .@sale_families[.@selected];
 	.@sale_ids[0] = .@selected_id;
 	.@sale_amounts[0] = .@amount;
 	.@sale_offers[0] = .@selected_offer;
-	.@sale_tiers[0] = .@selected_tier;
 	.@sale_families[0] = .@selected_family;
 	.@sale_count = 1;
 	L_Review:
 	.@sale_total = 0;
 	.@sale_normal = 0;
-	.@sale_diamond = 0;
-	.@sale_platinum = 0;
+	.@sale_boss = 0;
 	.@highest_normal_family = 0;
+	.@highest_boss_family = 0;
 	for (.@i = 0; .@i < .@sale_count; ++.@i) {
 		.@sale_total += .@sale_amounts[.@i] * .@sale_offers[.@i];
-		switch (.@sale_tiers[.@i]) {
-		case 1:
+		if (.@sale_families[.@i] <= 3) {
 			.@sale_normal += .@sale_amounts[.@i];
-			.@highest_normal_family = max(.@highest_normal_family, .@sale_families[.@i]);
-			break;
-		case 2: .@sale_diamond += .@sale_amounts[.@i]; break;
-		case 3: .@sale_platinum += .@sale_amounts[.@i]; break;
+			if (.@sale_families[.@i] > .@highest_normal_family)
+				.@highest_normal_family = .@sale_families[.@i];
+		} else {
+			.@sale_boss += .@sale_amounts[.@i];
+			if (.@sale_families[.@i] > .@highest_boss_family)
+				.@highest_boss_family = .@sale_families[.@i];
 		}
 	}
 	.@normal_before = #CC_Normal;
-	.@diamond_before = #CC_Mini;
-	.@platinum_before = #CC_MVP;
-	.@normal_total = .@normal_before + .@sale_normal;
-	.@diamond_total = .@diamond_before + .@sale_diamond;
-	.@platinum_total = .@platinum_before + .@sale_platinum;
-	.@normal_milestones = .@normal_total / 30;
-	.@diamond_milestones = .@diamond_total / 5;
-	.@platinum_milestones = .@platinum_total / 5;
-	.@normal_remainder = .@normal_total % 30;
-	.@diamond_remainder = .@diamond_total % 5;
-	.@platinum_remainder = .@platinum_total % 5;
+	.@boss_before = #CC_Boss;
+	.@legacy_diamond_before = #CC_Mini;
+	.@legacy_platinum_before = #CC_MVP;
+	// Merge legacy boss progress only when a fully validated sale commits.
+	.@boss_combined_before = .@boss_before + .@legacy_diamond_before + .@legacy_platinum_before;
+	.@normal_milestones = 0;
+	.@boss_milestones = 0;
+	.@normal_remainder = .@normal_before;
+	.@boss_remainder = .@boss_combined_before;
+	if (.@sale_normal) {
+		.@normal_total = .@normal_before + .@sale_normal;
+		.@normal_milestones = .@normal_total / 30;
+		.@normal_remainder = .@normal_total % 30;
+	}
+	if (.@sale_boss) {
+		.@boss_total = .@boss_combined_before + .@sale_boss;
+		.@boss_milestones = .@boss_total / 30;
+		.@boss_remainder = .@boss_total % 30;
+	}
 	.@reward_count = 0;
 	.@backstabs = 0;
-	for (.@i = 0; .@i < .@normal_milestones; ++.@i) {
-		.@reward_id = 9000001;
-		if (.@highest_normal_family == 1) .@reward_id = 9000006;
-		else if (.@highest_normal_family == 2) .@reward_id = 9000011;
-		else if (.@highest_normal_family == 3) .@reward_id = 9000016;
-		.@reward_ids[.@reward_id - 9000001] += 1;
+	.@reward_id = 0;
+	switch (.@highest_normal_family) {
+	case 1: .@reward_id = 9000006; break;
+	case 2: .@reward_id = 9000011; break;
+	case 3: .@reward_id = 9000016; break;
 	}
-	for (.@i = 0; .@i < .@diamond_milestones; ++.@i)
-		.@reward_ids[18] += 1;
+	if (.@reward_id && .@normal_milestones)
+		.@reward_ids[.@reward_id - 9000001] = .@normal_milestones;
+	if (.@highest_boss_family == 4 && .@boss_milestones)
+		.@reward_ids[18] = .@boss_milestones;
 	clear;
 	for (.@i = 0; .@i < .@sale_count; ++.@i) {
 		mes "[Black Market Boss]";
@@ -163,7 +171,7 @@ L_Single:
 		next;
 	}
 	mes "[Black Market Boss]";
-	mes "Iron/Silver/Gold: " + .@sale_normal + "; Diamond: " + .@sale_diamond + "; Platinum: " + .@sale_platinum + ".";
+	mes "Normal treasures: " + .@sale_normal + "; boss treasures: " + .@sale_boss + ".";
 	next;
 	mes "[Black Market Boss]";
 	mes "My total offer is ^0055FF" + .@sale_total + " Black Market Points^000000.";
@@ -174,11 +182,13 @@ L_Single:
 	if (select("Sell the treasure.:Keep it.") != 1)
 		close;
 	clear;
-	for (.@i = 0; .@i < .@platinum_milestones; ++.@i) {
-		if (rand(100) < 81)
-			.@reward_ids[20] += 1;
-		else
-			++.@backstabs;
+	if (.@highest_boss_family == 5) {
+		for (.@i = 0; .@i < .@boss_milestones; ++.@i) {
+			if (rand(100) < 81)
+				.@reward_ids[20] += 1;
+			else
+				++.@backstabs;
+		}
 	}
 	deletearray .@reward_list_ids[0], getarraysize(.@reward_list_ids);
 	deletearray .@reward_list_amounts[0], getarraysize(.@reward_list_amounts);
@@ -195,7 +205,8 @@ L_Single:
 		mes "My reward will not fit in your pockets. Make room and return.";
 		close;
 	}
-	if (#CC_Normal != .@normal_before || #CC_Mini != .@diamond_before || #CC_MVP != .@platinum_before) {
+	if (#CC_Normal != .@normal_before || #CC_Boss != .@boss_before ||
+		#CC_Mini != .@legacy_diamond_before || #CC_MVP != .@legacy_platinum_before) {
 		mes "[Black Market Boss]";
 		mes "Something changed before the deal was closed. I do not conduct uncertain business.";
 		close;
@@ -203,7 +214,7 @@ L_Single:
 	for (.@i = 0; .@i < .@sale_count; ++.@i) {
 		if (getiteminfo(.@sale_ids[.@i], ITEMINFO_TYPE) != IT_ETC ||
 			callsub(S_GetOffer, .@sale_ids[.@i]) != .@sale_offers[.@i] ||
-			callsub(S_GetTier, .@sale_ids[.@i]) != .@sale_tiers[.@i] ||
+			callsub(S_GetFamily, .@sale_ids[.@i]) != .@sale_families[.@i] ||
 			countitem(.@sale_ids[.@i]) < .@sale_amounts[.@i]) {
 			mes "[Black Market Boss]";
 			mes "Something changed before the deal was closed. I do not conduct uncertain business.";
@@ -214,14 +225,15 @@ L_Single:
 		delitem .@sale_ids[.@i], .@sale_amounts[.@i];
 	BlackMarketPoints += .@sale_total;
 	#CC_Normal = .@normal_remainder;
-	#CC_Mini = .@diamond_remainder;
-	#CC_MVP = .@platinum_remainder;
+	#CC_Boss = .@boss_remainder;
+	#CC_Mini = 0;
+	#CC_MVP = 0;
 	for (.@i = 0; .@i < .@reward_count; ++.@i)
 		getitem .@reward_list_ids[.@i], .@reward_list_amounts[.@i];
 	.@log$ = "Treasure Collector: sold";
 	for (.@i = 0; .@i < .@sale_count; ++.@i)
 		.@log$ += " " + .@sale_ids[.@i] + "x" + .@sale_amounts[.@i];
-	.@log$ += " for " + .@sale_total + " Black Market Points; highest Normal family " + .@highest_normal_family + "; milestones " + .@normal_milestones + "/" + .@diamond_milestones + "/" + .@platinum_milestones + "; remainders " + .@normal_remainder + "/" + .@diamond_remainder + "/" + .@platinum_remainder + "; backstabs " + .@backstabs + "; balance " + BlackMarketPoints;
+	.@log$ += " for " + .@sale_total + " Black Market Points; highest sold Normal/Boss family " + .@highest_normal_family + "/" + .@highest_boss_family + "; loyalty before " + .@normal_before + "/" + .@boss_combined_before + "; milestones " + .@normal_milestones + "/" + .@boss_milestones + "; remainders " + .@normal_remainder + "/" + .@boss_remainder + "; backstabs " + .@backstabs + "; balance " + BlackMarketPoints;
 	for (.@i = 0; .@i < .@reward_count; ++.@i)
 		.@log$ += "; reward " + .@reward_list_ids[.@i] + "x" + .@reward_list_amounts[.@i];
 	logmes .@log$;
@@ -261,7 +273,6 @@ L_Bulk:
 		.@sale_ids[.@sale_count] = .@item_id;
 		.@sale_amounts[.@sale_count] = .@amount;
 		.@sale_offers[.@sale_count] = callsub(S_GetOffer, .@item_id);
-		.@sale_tiers[.@sale_count] = callsub(S_GetTier, .@item_id);
 		.@sale_families[.@sale_count++] = callsub(S_GetFamily, .@item_id);
 	}
 	if (!.@sale_count) {
@@ -312,13 +323,6 @@ S_GetOffer:
 	if (.@item_id < 9000001 || .@item_id > 9000021 || getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_ETC)
 		return 0;
 	return .TreasureOffers[.@item_id - 9000001];
-
-S_GetTier:
-	.@item_id = getarg(0);
-	if (.@item_id >= 9000001 && .@item_id <= 9000015) return 1;
-	if (.@item_id >= 9000016 && .@item_id <= 9000018) return 2;
-	if (.@item_id >= 9000019 && .@item_id <= 9000021) return 3;
-	return 0;
 
 S_GetFamily:
 	.@item_id = getarg(0);

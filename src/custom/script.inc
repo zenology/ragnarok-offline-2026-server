@@ -22,6 +22,39 @@
 #include "black_market_catalog.hpp"
 #include "silvervine_enchant.hpp"
 #include "silvervine_enchant_upgrade.hpp"
+#include "premium_service.hpp"
+#include "premium_autobuff.hpp"
+
+BUILDIN_FUNC(premibuffbuy) {
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) {
+		script_pushint(st, -6);
+		return SCRIPT_CMD_FAILURE;
+	}
+	script_pushint(st, offline_premi_autobuff::buy(*sd, script_getnum64(st, 2), script_getnum64(st, 3)));
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(premisummon) {
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) {
+		script_pushstrcopy(st, "");
+		return SCRIPT_CMD_FAILURE;
+	}
+	npc_data* duplicate = offline_premi::summon(*sd);
+	script_pushstrcopy(st, duplicate == nullptr ? "" : duplicate->exname);
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(premiumopenstorage) {
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_FAILURE;
+	}
+	script_pushint(st, storage_storageopen(sd) == 0 ? 1 : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
 
 BUILDIN_FUNC(bmc_load) {
 	script_pushint(st, bmc::load());

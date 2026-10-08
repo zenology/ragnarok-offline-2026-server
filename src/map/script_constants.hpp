@@ -2006,6 +2006,8 @@
 	export_constant(SC_GROUND_CHARM_POWER);
 	export_constant(SC_AID_PERIOD_PLUSEXP);
 	export_constant(SC_AID_PERIOD_RECEIVEITEM);
+	export_constant(SC_AUTOBUFF);
+	export_constant(EFST_AUTOBUFF);
 
 /// Do not modify code below this, until the end of the API hook, since it will be automatically generated again
 /// @APIHOOK_START(EFST_CONST)

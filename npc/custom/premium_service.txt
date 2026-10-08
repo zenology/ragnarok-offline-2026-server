@@ -7,7 +7,8 @@
 //= GM @vip <seconds> applies to self; @vip <char_name> <seconds>
 //= adds seconds; 0 clears VIP, #PREMIUM_UNTIL, AID icons, and the rental wand.
 //= #vip is disabled. Player group cannot use @vip.
-//= Using the wand duplicates Premi next to the player.
+//= Using the wand duplicates Premi through the custom premisummon wrapper.
+//= Premi-only Teleport effects and paid Kafra Storage live in src/custom.
 //= Premi#src must sit on a real map cell (izlude 1,1). A floating
 //= "-" source becomes JT_FAKENPC and duplicate_dynamic never spawns.
 //= Premi and AID icons follow #PREMIUM_UNTIL, not vip_status.
@@ -61,6 +62,7 @@ function	script	F_PremiumResyncStaff	{
 		delitem 23165, rentalcountitem(23165);
 	if (.@remain <= 0) {
 		#PREMIUM_UNTIL = 0;
+		sc_end SC_AUTOBUFF;
 		sc_end SC_AID_PERIOD_PLUSEXP;
 		sc_end SC_AID_PERIOD_RECEIVEITEM;
 		return;
@@ -112,7 +114,7 @@ function	script	F_PremiumServiceStaff	{
 		dispbottom "The Premium Service Staff cannot be called on this map.";
 		return;
 	}
-	.@dup$ = duplicate_dynamic("Premi#src");
+	.@dup$ = premisummon();
 	if (.@dup$ == "") {
 		dispbottom "Premi is already nearby, or there is no open cell. Move a few steps and try again.";
 		return;
@@ -167,7 +169,7 @@ function	script	F_PremiumSyncTreasureLoot	{
 
 function	script	F_PremiumApplyExtra	{
 	.@kind = getarg(0);
-	if (callfunc("F_PremiumExtraRunning", .@kind))
+	if (.@kind != 5 && callfunc("F_PremiumExtraRunning", .@kind))
 		return 0;
 	.@now = gettimetick(2);
 	.@until = .@now + 86400;
@@ -175,6 +177,13 @@ function	script	F_PremiumApplyExtra	{
 		if (premiumtreasureloot(1, 86400000) == 0)
 			return 0;
 		#PREMIUM_CARDLOOT = .@until;
+	}
+	// A full-price Advanced Package replaces all four extras with fresh time.
+	// Clear shared statuses so even a stronger existing effect is replaced.
+	if (.@kind == 5) {
+		sc_end SC_PERIOD_PLUSEXP_2ND;
+		sc_end SC_PERIOD_RECEIVEITEM_2ND;
+		sc_end SC_LIFEINSURANCE;
 	}
 	if (.@kind == 1 || .@kind == 5) {
 		#PREMIUM_EXPUP = .@until;
@@ -203,61 +212,6 @@ function	script	F_PremiumSyncExtras	{
 		sc_start SC_LIFEINSURANCE, (#PREMIUM_DEATHDOWN - .@now) * 1000, 0;
 	callfunc("F_PremiumSyncTreasureLoot");
 	return;
-}
-
-// Return the classic Soul Link skill that applies to this character's lineage.
-// A zero result intentionally means that Premi still sells Package 5, but only
-// gives Packages 1-4 and scolds the player for choosing a linkless job.
-function	script	F_PremiumSoulLinkSkill	{
-	.@eac = eaclass();
-	.@base = .@eac&EAJ_BASEMASK;
-
-	// Spirit of Rebirth is limited by rAthena to High First Classes below Lv. 70.
-	if ((.@eac&EAJL_UPPER) && !(.@eac&EAJL_2) && !(.@eac&EAJL_THIRD) && !(.@eac&EAJL_FOURTH) && BaseLevel < 70) {
-		if (.@base == EAJ_SWORDMAN || .@base == EAJ_MAGE || .@base == EAJ_ARCHER || .@base == EAJ_ACOLYTE || .@base == EAJ_MERCHANT || .@base == EAJ_THIEF)
-			return 494; // SL_HIGH / Spirit of Rebirth
-	}
-
-	// EAJ_UPPERMASK is only enough for second/trans-second jobs. Third and
-	// Fourth jobs retain their own map IDs there, so resolve their lineage from
-	// EAJ_THIRDMASK first (it strips the Fourth-job bit as well).
-	switch (.@eac&EAJ_THIRDMASK) {
-	case EAJ_RUNE_KNIGHT: return 452; // SL_KNIGHT
-	case EAJ_WARLOCK: return 453; // SL_WIZARD
-	case EAJ_RANGER: return 460; // SL_HUNTER
-	case EAJ_ARCH_BISHOP: return 454; // SL_PRIEST, including Cardinal
-	case EAJ_MECHANIC: return 458; // SL_BLACKSMITH
-	case EAJ_GUILLOTINE_CROSS: return 457; // SL_ASSASIN
-	case EAJ_ROYAL_GUARD: return 450; // SL_CRUSADER
-	case EAJ_SORCERER: return 449; // SL_SAGE
-	case EAJ_MINSTRELWANDERER: return 455; // SL_BARDDANCER
-	case EAJ_SURA: return 447; // SL_MONK
-	case EAJ_GENETIC: return 445; // SL_ALCHEMIST
-	case EAJ_SHADOW_CHASER: return 456; // SL_ROGUE
-	case EAJ_SOUL_REAPER: return 461; // SL_SOULLINKER
-	case EAJ_STAR_EMPEROR: return 448; // SL_STAR
-	case EAJ_SUPER_NOVICE_E: return 451; // SL_SUPERNOVICE
-	}
-
-	switch (.@eac&EAJ_UPPERMASK) {
-	// Skill names are not script constants. Keep these verified skill_db IDs.
-	case EAJ_ALCHEMIST: return 445; // SL_ALCHEMIST
-	case EAJ_ASSASSIN: return 457; // SL_ASSASIN
-	case EAJ_BARDDANCER: return 455; // SL_BARDDANCER
-	case EAJ_BLACKSMITH: return 458; // SL_BLACKSMITH
-	case EAJ_CRUSADER: return 450; // SL_CRUSADER
-	case EAJ_HUNTER: return 460; // SL_HUNTER
-	case EAJ_KNIGHT: return 452; // SL_KNIGHT
-	case EAJ_MONK: return 447; // SL_MONK
-	case EAJ_PRIEST: return 454; // SL_PRIEST, including High Priest
-	case EAJ_ROGUE: return 456; // SL_ROGUE
-	case EAJ_SAGE: return 449; // SL_SAGE
-	case EAJ_SOULLINKER: return 461; // SL_SOULLINKER
-	case EAJ_STARGLADIATOR: return 448; // SL_STAR
-	case EAJ_SUPERNOVICE: return 451; // SL_SUPERNOVICE
-	case EAJ_WIZARD: return 453; // SL_WIZARD
-	}
-	return 0;
 }
 
 -	script	PremiumLogin#offline	-1,{
@@ -332,24 +286,72 @@ izlude,1,1,4	script	Premi#src	4_F_PREMI,{
 	mes "What do you need?";
 	next;
 	.@in_black_market = (strcharinfo(3) == "paramk");
-	.@menu$ = "Buff me.:Premium extras.:";
+	.@cancel_auto = getstatus(SC_AUTOBUFF);
+	.@menu$ = (.@cancel_auto ? "Cancel Auto Buff:" : "Buff me.:") + "Premium extras.:Open Storage (1 Nyangvine):";
 	if (!.@in_black_market)
 		.@menu$ += "Take me to the Black Market. (1 Nyangvine):";
 	.@menu$ += "Just checking:";
 	.@choice = select(.@menu$);
 	if (.@choice == 1) {
+		if (.@cancel_auto) {
+			if (getstatus(SC_AUTOBUFF)) {
+				sc_end SC_AUTOBUFF;
+				mes "[Premi]";
+				mes "Auto Buff canceled. Your paid buffs remain.";
+			}
+			goto L_End;
+		}
 		goto S_BuffMenu;
 	}
 	if (.@choice == 2) {
 		goto S_ExtrasMenu;
 	}
-	if (!.@in_black_market && .@choice == 3) {
+	if (.@choice == 3) {
+		goto S_Storage;
+	}
+	if (!.@in_black_market && .@choice == 4) {
 		goto S_BlackMarket;
 	}
 	cutin "prm_3",2;
 	mes "[Premi]";
 	mes "Okay! Call me again if you need anything!";
 	goto L_End;
+
+S_Storage:
+	if (!callfunc("F_CanOpenStorage")) {
+		mes "[Premi]";
+		mes "You need Basic Skill Level 6 to use Storage.";
+		goto L_End;
+	}
+	if (countitem(6909) < 1) {
+		mes "[Premi]";
+		mes "I need 1 Nyangvine to open your Storage.";
+		goto L_End;
+	}
+	mes "[Premi]";
+	mes "I'll open your Kafra Storage for 1 Nyangvine!";
+	next;
+	if (select("Pay:Never mind") == 2)
+		goto L_End;
+	callfunc "F_CheckKafCode";
+	if (!callfunc("F_CanOpenStorage")) {
+		mes "[Premi]";
+		mes "You need Basic Skill Level 6 to use Storage.";
+		goto L_End;
+	}
+	if (countitem(6909) < 1) {
+		mes "[Premi]";
+		mes "I need 1 Nyangvine to open your Storage.";
+		goto L_End;
+	}
+	close2;
+	cutin "",255;
+	if (premiumopenstorage() == 1) {
+		delitem 6909,1;
+		end;
+	}
+	dispbottom "I couldn't open your Storage. No Nyangvine was charged.";
+	end;
 
 S_BlackMarket:
 	// Premi is duplicated onto the invoking player's current map. With no mode
@@ -414,6 +416,11 @@ S_BlackMarket:
 	end;
 
 S_BuffMenu:
+	if (getstatus(SC_AUTOBUFF)) {
+		mes "[Premi]";
+		mes "Auto Buff is already active. Cancel it before buying another package.";
+		goto L_End;
+	}
 	cutin "prm_2",2;
 	mes "[Premi]";
 	mes "All package buffs last 5 minutes, just for this character!";
@@ -451,7 +458,12 @@ S_ExtrasMenu:
 	cutin "prm_1",2;
 	mes "[Premi]";
 	mes "Extra options last 24 hours for every character on this account!";
-	mes "They cost Nyangvine, and I won't sell one that's already running.";
+	next;
+	mes "[Premi]";
+	mes "I won't sell an individual extra that's already running.";
+	next;
+	mes "[Premi]";
+	mes "Advanced Package costs 8 Nyangvine and resets all four extras to a fresh 24 hours!";
 	next;
 	.@menu$ = "EXP UP (4 Nyangvine):ITEM UP (2 Nyangvine):DEATH DOWN (1 Nyangvine):TREASURE MAGNET (1 Nyangvine):Advanced Package (8 Nyangvine):Just checking:";
 	switch (select(.@menu$)) {
@@ -472,7 +484,6 @@ S_ExtrasMenu:
 		callsub S_Buy, 1, 4, "Treasure Magnet";
 		end;
 	case 5:
-		callsub S_RefuseIfRunning, 5;
 		callsub S_Buy, 8, 5, "Advanced Package";
 		end;
 	default:
@@ -486,70 +497,82 @@ S_BuyBuff:
 	.@tier = getarg(0);
 	.@cost = getarg(1);
 	.@label$ = getarg(2);
-	// Resolve once here so the paid Package 5 result and its dialogue use
-	// exactly the same Soul Link decision.
-	.@spirit = 0;
-	if (.@tier == 5)
-		.@spirit = callfunc("F_PremiumSoulLinkSkill");
-	if (countitem(6909) < .@cost) {
-		cutin "prm_4",2;
+	if (getstatus(SC_AUTOBUFF)) {
 		mes "[Premi]";
-		mes "That's " + .@cost + " Nyangvine for " + .@label$ + "...";
-		mes "You don't have enough. Dang it...";
+		mes "Auto Buff is already active. Cancel it before buying another package.";
 		return;
+	}
+	.@duration = 0;
+	.@fee = 0;
+	.@mode = select("One-time buff:Enable Auto Buff:Never mind");
+	if (.@mode == 3) return;
+	if (.@mode == 2) {
+		switch (select("30 minutes (20 Nyangvine opening fee):1 hour (40 Nyangvine opening fee):3 hours (80 Nyangvine opening fee):Never mind")) {
+		case 1: .@duration = 1800; .@fee = 20; break;
+		case 2: .@duration = 3600; .@fee = 40; break;
+		case 3: .@duration = 10800; .@fee = 80; break;
+		default: return;
+		}
 	}
 	cutin "prm_2",2;
 	mes "[Premi]";
 	mes .@label$ + " costs " + .@cost + " Nyangvine for 5 minutes.";
 	next;
+	if (.@duration) {
+		mes "[Premi]";
+		mes "Auto Buff lasts " + (.@duration / 60) + " minutes. Opening fee: " + .@fee + " Nyangvine.";
+		next;
+		mes "[Premi]";
+		mes "Pay " + (.@fee + .@cost) + " Nyangvine now, including the first package.";
+		next;
+		mes "[Premi]";
+		mes "Each renewal costs " + .@cost + " Nyangvine, 5-10 seconds after its 5-minute round ends.";
+		next;
+	}
 	if (select("Pay:Never mind") == 2) {
 		cutin "prm_5",2;
 		mes "[Premi]";
 		mes "Ah... o-okay. Never mind then.";
 		return;
 	}
-	if (countitem(6909) < .@cost) {
-		cutin "prm_4",2;
+	if (getstatus(SC_AUTOBUFF)) {
 		mes "[Premi]";
-		mes "The Nyangvine is gone...";
+		mes "Auto Buff is already active. Cancel it before buying another package.";
 		return;
 	}
-	delitem 6909, .@cost;
-	callsub S_ApplyBuffPackage, .@tier, .@spirit;
+	.@spirit = premibuffbuy(.@tier, .@duration);
+	if (.@spirit < 0) {
+		cutin "prm_4",2;
+		mes "[Premi]";
+		if (.@spirit == -4)
+			mes "Auto Buff is already active. Cancel it before buying another package.";
+		else if (.@spirit == -5)
+			mes "You don't have enough Nyangvine for this purchase.";
+		else if (.@spirit == -3)
+			mes "Auto Buff stopped: Premium expired.";
+		else if (.@spirit == -2)
+			mes "You must be alive to buy a buff package.";
+		else
+			mes "The purchase could not be completed. Please try again.";
+		return;
+	}
 	cutin "prm_3",2;
 	mes "[Premi]";
 	mes "Yay! " + .@label$ + " is running for 5 minutes!";
+	if (.@duration) {
+		next;
+		mes "[Premi]";
+		mes "Auto Buff is active. Cancel it here whenever you want.";
+	}
 	if (.@tier == 5 && !.@spirit) {
+		next;
 		cutin "prm_4",2;
+		mes "[Premi]";
 		mes "Your job doesn't have a classic Soul Link...";
+		next;
+		mes "[Premi]";
 		mes "You paid for Package 5 without checking first. That's on you!";
 	}
-	return;
-
-S_ApplyBuffPackage:
-	.@tier = getarg(0);
-	.@spirit = getarg(1);
-	.@buff_time = 300000;
-	sc_start SC_INCREASEAGI, .@buff_time, 10;
-	sc_start SC_BLESSING, .@buff_time, 10;
-	sc_start SC_ANGELUS, .@buff_time, 10;
-	if (.@tier >= 2) {
-		sc_start SC_MAGNIFICAT, .@buff_time, 5;
-		sc_start SC_KYRIE, .@buff_time, 10;
-	}
-	if (.@tier >= 3) {
-		sc_start SC_IMPOSITIO, .@buff_time, 5;
-		sc_start SC_ASSUMPTIO, .@buff_time, 5;
-		sc_start SC_SUFFRAGIUM, .@buff_time, 3;
-	}
-	if (.@tier >= 4) {
-		sc_start SC_WINDWALK, .@buff_time, 10;
-		// val2 = 1 gives the self-cast Power-Thrust Lv.5 effect.
-		sc_start2 SC_OVERTHRUST, .@buff_time, 5, 1;
-		sc_start SC_WEAPONPERFECTION, .@buff_time, 5;
-	}
-	if (.@tier == 5 && .@spirit)
-		sc_start2 SC_SPIRIT, .@buff_time, 5, .@spirit;
 	return;
 
 S_RefuseIfRunning:
@@ -581,7 +604,7 @@ S_Buy:
 	.@cost = getarg(0);
 	.@kind = getarg(1);
 	.@label$ = getarg(2);
-	if (callfunc("F_PremiumExtraRunning", .@kind)) {
+	if (.@kind != 5 && callfunc("F_PremiumExtraRunning", .@kind)) {
 		callsub S_RefuseIfRunning, .@kind;
 		end;
 	}
@@ -596,13 +619,18 @@ S_Buy:
 	mes "[Premi]";
 	mes .@label$ + " for 24 hours! " + .@cost + " Nyangvine, okay?";
 	next;
+	if (.@kind == 5) {
+		mes "[Premi]";
+		mes "I'll replace all four extras. Their remaining time won't be added.";
+		next;
+	}
 	if (select("Pay:Never mind") == 2) {
 		cutin "prm_5",2;
 		mes "[Premi]";
 		mes "Ah... o-okay. Never mind then.";
 		goto L_End;
 	}
-	if (callfunc("F_PremiumExtraRunning", .@kind)) {
+	if (.@kind != 5 && callfunc("F_PremiumExtraRunning", .@kind)) {
 		callsub S_RefuseIfRunning, .@kind;
 		end;
 	}

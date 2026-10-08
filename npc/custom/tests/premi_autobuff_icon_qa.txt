@@ -1,0 +1,26 @@
+// Test-only: load explicitly; never include in the production import list.
+-	script	PremiAutoBuffIconQA	-1,{
+	end;
+OnInit:
+	bindatcmd "autobufficonqa", strnpcinfo(3) + "::OnQA", 99, 99;
+	end;
+OnQA:
+	mes "[Auto Buff Icon QA]";
+	mes "This test shows the icon for 15 seconds without charging Nyangvine or giving combat buffs.";
+	next;
+	if (select("Show Auto Buff icon for 15 seconds:Finish QA") == 2) {
+		unbindatcmd "autobufficonqa";
+		mes "[Auto Buff Icon QA]";
+		mes "QA command unbound. You can unload this test NPC now.";
+		close;
+	}
+	if (callfunc("F_PremiumRemainingSeconds") <= 0 || Hp <= 0 || getstatus(SC_AUTOBUFF)) {
+		mes "[Auto Buff Icon QA]";
+		mes "You need active Premium, must be alive, and must have no Auto Buff running.";
+		close;
+	}
+	.@before = countitem(6909);
+	sc_start SC_AUTOBUFF,15000,1;
+	dispbottom "Auto Buff icon QA: Nyangvine before = " + .@before + ", after = " + countitem(6909) + ".";
+	close;
+}
