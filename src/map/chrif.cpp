@@ -32,6 +32,7 @@
 #include "pet.hpp"
 #include "script.hpp" // script_config
 #include "storage.hpp"
+#include <custom/premium_autobuff.hpp>
 
 static TIMER_FUNC(check_connect_char_server);
 
@@ -1303,6 +1304,8 @@ int32 chrif_save_scdata( const map_session_data* sd ) { //parses the sc_data of 
 		data.val2 = sce.val2;
 		data.val3 = sce.val3;
 		data.val4 = sce.val4;
+		if (!offline_premi_autobuff::prepare_status_save(type, sce, tick, data))
+			continue;
 		memcpy(WFIFOP(char_fd,14 +count*sizeof(struct status_change_data)),
 			&data, sizeof(struct status_change_data));
 		count++;

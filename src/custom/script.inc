@@ -23,6 +23,17 @@
 #include "silvervine_enchant.hpp"
 #include "silvervine_enchant_upgrade.hpp"
 #include "premium_service.hpp"
+#include "premium_autobuff.hpp"
+
+BUILDIN_FUNC(premibuffbuy) {
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) {
+		script_pushint(st, -6);
+		return SCRIPT_CMD_FAILURE;
+	}
+	script_pushint(st, offline_premi_autobuff::buy(*sd, script_getnum64(st, 2), script_getnum64(st, 3)));
+	return SCRIPT_CMD_SUCCESS;
+}
 
 BUILDIN_FUNC(premisummon) {
 	map_session_data* sd = nullptr;

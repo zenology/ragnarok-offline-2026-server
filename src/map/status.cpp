@@ -35,6 +35,7 @@
 #include "pc_groups.hpp"
 #include "pet.hpp"
 #include "script.hpp"
+#include <custom/premium_autobuff.hpp>
 
 using namespace rathena;
 
@@ -10812,6 +10813,10 @@ static bool status_change_start_post_delay(block_list* src, block_list* bl, sc_t
 	if(!(flag&SCSTART_LOADED)) // &4 - Do not parse val settings when loading SCs
 	switch(type)
 	{
+		case SC_AUTOBUFF:
+			if (!offline_premi_autobuff::start_status(sd, val1, tick, val2, val3, val4, tick_time))
+				return false;
+			break;
 		/* Permanent effects */
 		case SC_AETERNA:
 		case SC_MODECHANGE:
@@ -13027,6 +13032,10 @@ static bool status_change_start_post_delay(block_list* src, block_list* bl, sc_t
 			}
 	} else // Special considerations when loading SC data.
 		switch( type ) {
+			case SC_AUTOBUFF:
+				if (!offline_premi_autobuff::load_status(sd, val1, tick, val2, val3, val4, tick_time))
+					return false;
+				break;
 			case SC_WEDDING:
 			case SC_XMAS:
 			case SC_SUMMER:
@@ -13447,6 +13456,7 @@ int32 status_change_end( block_list* bl, enum sc_type type, int32 tid ){
 	if( status_change_entry* sce = sc->getSCE( type ); sce != nullptr ){
 		if (sce->timer != tid && tid != INVALID_TIMER)
 			return 0;
+		offline_premi_autobuff::log_status_end(bl, type, *sce);
 
 		if (tid == INVALID_TIMER) {
 			if (type == SC_ENDURE && sce->val4)
@@ -14170,6 +14180,10 @@ TIMER_FUNC(status_change_timer){
 	FreeBlockLock freeLock(false);
 
 	switch(type) {
+	case SC_AUTOBUFF:
+		if (offline_premi_autobuff::run_status_timer(sd, *sce))
+			return 0;
+		break;
 	case SC_MAXIMIZEPOWER:
 	case SC_CLOAKING:
 		if(!status_damage(nullptr, bl, 0, 1, 0, 3, 0))

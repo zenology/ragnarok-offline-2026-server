@@ -12,6 +12,7 @@
 BUILDIN_DEF(premiumtreasureloot,"ii"),
 BUILDIN_DEF(premisummon,""),
 BUILDIN_DEF(premiumopenstorage,""),
+BUILDIN_DEF(premibuffbuy,"ii"),
 BUILDIN_DEF(callblackmarketshop,"sii"),
 BUILDIN_DEF(bmc_load,""),
 BUILDIN_DEF(bmc_ready,"s"),

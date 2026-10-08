@@ -18,6 +18,7 @@
 #include "char.hpp"
 #include "char_logif.hpp"
 #include "inter.hpp"
+#include <custom/char_saved_status.hpp>
 
 using namespace rathena;
 
@@ -293,18 +294,21 @@ int32 chmapif_parse_askscdata(int32 fd){
 			Sql_ShowDebug(sql_handle);
 			return 1;
 		}
-		if( Sql_NumRows(sql_handle) > 0 )
+		const int32 row_limit = offline_saved_status::row_limit(Sql_NumRows(sql_handle), aid, cid);
+		if( row_limit > 0 )
 		{
 			struct status_change_data scdata;
 			int32 count;
 			char* data;
 
-			WFIFOHEAD(fd,14+50*sizeof(struct status_change_data));
+			WFIFOHEAD(fd,14+row_limit*sizeof(struct status_change_data));
 			WFIFOW(fd,0) = 0x2b1d;
 			WFIFOL(fd,4) = aid;
 			WFIFOL(fd,8) = cid;
-			for( count = 0; count < 50 && SQL_SUCCESS == Sql_NextRow(sql_handle); ++count )
+			for( count = 0; count < row_limit && SQL_SUCCESS == Sql_NextRow(sql_handle); ++count )
 			{
+				if (!offline_saved_status::validate_current_row(sql_handle))
+					break;
 				Sql_GetData(sql_handle, 0, &data, nullptr); scdata.type = atoi(data);
 				Sql_GetData(sql_handle, 1, &data, nullptr); scdata.tick = strtoll( data, nullptr, 10 );
 				Sql_GetData(sql_handle, 2, &data, nullptr); scdata.val1 = atoi(data);
@@ -313,9 +317,7 @@ int32 chmapif_parse_askscdata(int32 fd){
 				Sql_GetData(sql_handle, 5, &data, nullptr); scdata.val4 = atoi(data);
 				memcpy(WFIFOP(fd, 14+count*sizeof(struct status_change_data)), &scdata, sizeof(struct status_change_data));
 			}
-			if (count >= 50)
-				ShowWarning("Too many status changes for %d:%d, some of them were not loaded.\n", aid, cid);
-			if (count > 0)
+			count = offline_saved_status::response_count(row_limit, count, aid, cid);
 			{
 				WFIFOW( fd, 2 ) = static_cast<int16>( 14 + count * sizeof( struct status_change_data ) );
 				WFIFOW(fd,12) = count;

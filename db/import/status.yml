@@ -3,6 +3,13 @@ Header:
   Version: 4
 
 Body:
+  - Status: Autobuff
+    Icon: EFST_AUTOBUFF
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
   # Offline Premium Buff display only. EXP/drop +20% still comes from VIP.
   # CalcFlags All re-runs equipped vip_status / AID-icon hat extras.
   # Do not add Script bonuses here or they will stack on vip_*_increase.
