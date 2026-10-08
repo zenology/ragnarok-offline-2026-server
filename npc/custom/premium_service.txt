@@ -167,7 +167,7 @@ function	script	F_PremiumSyncTreasureLoot	{
 
 function	script	F_PremiumApplyExtra	{
 	.@kind = getarg(0);
-	if (callfunc("F_PremiumExtraRunning", .@kind))
+	if (.@kind != 5 && callfunc("F_PremiumExtraRunning", .@kind))
 		return 0;
 	.@now = gettimetick(2);
 	.@until = .@now + 86400;
@@ -175,6 +175,13 @@ function	script	F_PremiumApplyExtra	{
 		if (premiumtreasureloot(1, 86400000) == 0)
 			return 0;
 		#PREMIUM_CARDLOOT = .@until;
+	}
+	// A full-price Advanced Package replaces all four extras with fresh time.
+	// Clear shared statuses so even a stronger existing effect is replaced.
+	if (.@kind == 5) {
+		sc_end SC_PERIOD_PLUSEXP_2ND;
+		sc_end SC_PERIOD_RECEIVEITEM_2ND;
+		sc_end SC_LIFEINSURANCE;
 	}
 	if (.@kind == 1 || .@kind == 5) {
 		#PREMIUM_EXPUP = .@until;
@@ -451,7 +458,12 @@ S_ExtrasMenu:
 	cutin "prm_1",2;
 	mes "[Premi]";
 	mes "Extra options last 24 hours for every character on this account!";
-	mes "They cost Nyangvine, and I won't sell one that's already running.";
+	next;
+	mes "[Premi]";
+	mes "I won't sell an individual extra that's already running.";
+	next;
+	mes "[Premi]";
+	mes "Advanced Package costs 8 Nyangvine and resets all four extras to a fresh 24 hours!";
 	next;
 	.@menu$ = "EXP UP (4 Nyangvine):ITEM UP (2 Nyangvine):DEATH DOWN (1 Nyangvine):TREASURE MAGNET (1 Nyangvine):Advanced Package (8 Nyangvine):Just checking:";
 	switch (select(.@menu$)) {
@@ -472,7 +484,6 @@ S_ExtrasMenu:
 		callsub S_Buy, 1, 4, "Treasure Magnet";
 		end;
 	case 5:
-		callsub S_RefuseIfRunning, 5;
 		callsub S_Buy, 8, 5, "Advanced Package";
 		end;
 	default:
@@ -581,7 +592,7 @@ S_Buy:
 	.@cost = getarg(0);
 	.@kind = getarg(1);
 	.@label$ = getarg(2);
-	if (callfunc("F_PremiumExtraRunning", .@kind)) {
+	if (.@kind != 5 && callfunc("F_PremiumExtraRunning", .@kind)) {
 		callsub S_RefuseIfRunning, .@kind;
 		end;
 	}
@@ -596,13 +607,18 @@ S_Buy:
 	mes "[Premi]";
 	mes .@label$ + " for 24 hours! " + .@cost + " Nyangvine, okay?";
 	next;
+	if (.@kind == 5) {
+		mes "[Premi]";
+		mes "I'll replace all four extras. Their remaining time won't be added.";
+		next;
+	}
 	if (select("Pay:Never mind") == 2) {
 		cutin "prm_5",2;
 		mes "[Premi]";
 		mes "Ah... o-okay. Never mind then.";
 		goto L_End;
 	}
-	if (callfunc("F_PremiumExtraRunning", .@kind)) {
+	if (.@kind != 5 && callfunc("F_PremiumExtraRunning", .@kind)) {
 		callsub S_RefuseIfRunning, .@kind;
 		end;
 	}
