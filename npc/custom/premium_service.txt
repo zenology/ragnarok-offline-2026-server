@@ -7,7 +7,8 @@
 //= GM @vip <seconds> applies to self; @vip <char_name> <seconds>
 //= adds seconds; 0 clears VIP, #PREMIUM_UNTIL, AID icons, and the rental wand.
 //= #vip is disabled. Player group cannot use @vip.
-//= Using the wand duplicates Premi next to the player.
+//= Using the wand duplicates Premi through the custom premisummon wrapper.
+//= Premi-only Teleport effects and paid Kafra Storage live in src/custom.
 //= Premi#src must sit on a real map cell (izlude 1,1). A floating
 //= "-" source becomes JT_FAKENPC and duplicate_dynamic never spawns.
 //= Premi and AID icons follow #PREMIUM_UNTIL, not vip_status.
@@ -112,7 +113,7 @@ function	script	F_PremiumServiceStaff	{
 		dispbottom "The Premium Service Staff cannot be called on this map.";
 		return;
 	}
-	.@dup$ = duplicate_dynamic("Premi#src");
+	.@dup$ = premisummon();
 	if (.@dup$ == "") {
 		dispbottom "Premi is already nearby, or there is no open cell. Move a few steps and try again.";
 		return;
@@ -339,7 +340,7 @@ izlude,1,1,4	script	Premi#src	4_F_PREMI,{
 	mes "What do you need?";
 	next;
 	.@in_black_market = (strcharinfo(3) == "paramk");
-	.@menu$ = "Buff me.:Premium extras.:";
+	.@menu$ = "Buff me.:Premium extras.:Open Storage (1 Nyangvine):";
 	if (!.@in_black_market)
 		.@menu$ += "Take me to the Black Market. (1 Nyangvine):";
 	.@menu$ += "Just checking:";
@@ -350,13 +351,52 @@ izlude,1,1,4	script	Premi#src	4_F_PREMI,{
 	if (.@choice == 2) {
 		goto S_ExtrasMenu;
 	}
-	if (!.@in_black_market && .@choice == 3) {
+	if (.@choice == 3) {
+		goto S_Storage;
+	}
+	if (!.@in_black_market && .@choice == 4) {
 		goto S_BlackMarket;
 	}
 	cutin "prm_3",2;
 	mes "[Premi]";
 	mes "Okay! Call me again if you need anything!";
 	goto L_End;
+
+S_Storage:
+	if (!callfunc("F_CanOpenStorage")) {
+		mes "[Premi]";
+		mes "You need Basic Skill Level 6 to use Storage.";
+		goto L_End;
+	}
+	if (countitem(6909) < 1) {
+		mes "[Premi]";
+		mes "I need 1 Nyangvine to open your Storage.";
+		goto L_End;
+	}
+	mes "[Premi]";
+	mes "I'll open your Kafra Storage for 1 Nyangvine!";
+	next;
+	if (select("Pay:Never mind") == 2)
+		goto L_End;
+	callfunc "F_CheckKafCode";
+	if (!callfunc("F_CanOpenStorage")) {
+		mes "[Premi]";
+		mes "You need Basic Skill Level 6 to use Storage.";
+		goto L_End;
+	}
+	if (countitem(6909) < 1) {
+		mes "[Premi]";
+		mes "I need 1 Nyangvine to open your Storage.";
+		goto L_End;
+	}
+	close2;
+	cutin "",255;
+	if (premiumopenstorage() == 1) {
+		delitem 6909,1;
+		end;
+	}
+	dispbottom "I couldn't open your Storage. No Nyangvine was charged.";
+	end;
 
 S_BlackMarket:
 	// Premi is duplicated onto the invoking player's current map. With no mode
