@@ -1260,6 +1260,8 @@ Body:
     Slots: 1
     Jobs:
       Archer: true
+      Hunter: true
+      BardDancer: true
     Locations:
       Head_Mid: true
     ArmorLevel: 1
