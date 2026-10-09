@@ -145,3 +145,4 @@ Footer:
     - Path: db/import/item_db_warpgate_20260928.yml
     - Path: db/import/item_db_treasure_boxes.yml
     - Path: db/import/item_db_fallback_ticket.yml
+    - Path: db/import/item_db_ranger_dp_iro.yml

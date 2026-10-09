@@ -1,0 +1,149 @@
+# Ranger build corrections against Divine Pride iRO / English, 2026-10-10.
+# Loaded last so upstream rows and existing combo AegisNames remain intact.
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 450251
+    Script: |
+      .@r = getrefine();
+      .@warg = getskilllv("RA_WUGRIDER");
+      bonus bMaxHPrate,10;
+      bonus bMaxSPrate,10;
+      bonus2 bAddRace,RC_All,7*getskilllv("RA_ARROWSTORM");
+      if (getskilllv("RA_UNLIMIT") == 5)
+         bonus bAspdRate,10;
+      bonus bDex,10*.@warg;
+      bonus bBaseAtk,50*.@warg;
+      if (.@r>=5)
+         bonus bPerfectHitAddRate,25;
+      if (.@r>=7)
+         bonus bPerfectHitAddRate,25;
+
+  - Id: 480094
+    Script: |
+      .@r = getrefine();
+      bonus bUnbreakableGarment;
+      bonus bDex,6;
+      bonus2 bSubRace,RC_Player_Human,5;
+      bonus2 bSubRace,RC_Player_Doram,5;
+      bonus bAspdRate,3;
+      if (.@r>=7) {
+         bonus bDex,12;
+         bonus bAspdRate,5;
+         bonus bLongAtkRate,10;
+      }
+      if (.@r>=9) {
+         bonus bDex,12;
+         bonus bAspdRate,7;
+         bonus bLongAtkRate,10;
+      }
+      if (getskilllv("RA_UNLIMIT")>=5)
+         bonus2 bSkillCooldown,"RA_ARROWSTORM",-300;
+      if (getskilllv("RA_WUGRIDER")>=3)
+         bonus bMaxHP,10000;
+      bonus2 bAddSize,Size_All,2*getskilllv("RA_AIMEDBOLT");
+      if (getskilllv("RA_ELECTRICSHOCKER")>=5)
+         bonus2 bSubEle,Ele_Fire,100;
+
+  - Id: 470417
+    Weight: 400
+    Defense: 25
+    ArmorLevel: 2
+    EquipLevelMin: 150
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHPrate,10;
+      bonus bMaxSPrate,10;
+      bonus bShortAtkRate,10;
+      bonus bLongAtkRate,10;
+      bonus2 bMagicAddEle,Ele_All,10;
+      bonus bDelayrate,-15;
+      bonus bFixedCast,-500;
+      bonus bSpeedRate,25;
+      bonus bVariableCastrate,-10*(.@r/2);
+      bonus bPatk,2*(.@r/3);
+      bonus bSmatk,2*(.@r/3);
+      if (.@r>=9) {
+         bonus2 bAddRace,RC_All,15;
+         bonus2 bMagicAddRace,RC_All,15;
+      }
+      if (.@r>=11) {
+         bonus bPatk,5;
+         bonus bSmatk,5;
+      }
+      if (.@r>=13) {
+         bonus2 bIgnoreDefClassRate,Class_All,50;
+         bonus2 bIgnoreMdefClassRate,Class_All,50;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPatk,2;
+         bonus bSmatk,2;
+         bonus bFixedCast,-300;
+      }
+      if (.@g>=ENCHANTGRADE_C) {
+         bonus2 bAddSize,Size_All,12;
+         bonus2 bMagicAddSize,Size_All,12;
+         bonus bFixedCast,-500;
+      }
+      if (.@g>=ENCHANTGRADE_B)
+         bonus2 bMagicAddClass,Class_All,20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bIgnoreResRaceRate,RC_All,12;
+         bonus2 bIgnoreResRaceRate,RC_Player_Human,-12;
+         bonus2 bIgnoreResRaceRate,RC_Player_Doram,-12;
+         bonus2 bIgnoreMResRaceRate,RC_All,12;
+         bonus2 bIgnoreMResRaceRate,RC_Player_Human,-12;
+         bonus2 bIgnoreMResRaceRate,RC_Player_Doram,-12;
+         autobonus "{ bonus bNoSizeFix; bonus bShortAtkRate,15; bonus bLongAtkRate,15; bonus2 bMagicAddEle,Ele_All,15; bonus2 bMagicAddSize,Size_All,15; }",100,3000,BF_WEAPON|BF_MAGIC;
+      }
+
+  - Id: 490889
+    Script: |
+      bonus bMdef,10;
+      bonus bBaseAtk,150;
+      bonus bAllTraitStats,10;
+      bonus bDelayrate,-15;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bSubRace,RC_DemiHuman,20;
+      bonus2 bSubRace,RC_Player_Human,20;
+      bonus2 bSubSize,Size_Medium,20;
+      bonus2 bSkillAtk,"SN_FALCONASSAULT",150;
+      if (BaseLevel <= 99) {
+         bonus bMaxHP,10000;
+         bonus bMaxSP,2000;
+      }
+      if (BaseLevel >= 100) {
+         bonus bPow,7;
+         bonus bCrt,7;
+         bonus bCon,7;
+         bonus2 bAddSize,Size_All,BaseLevel/5;
+         bonus2 bSkillAtk,"WH_GALESTORM",2*(BaseLevel/10);
+         bonus2 bSkillAtk,"WH_CRESCIVE_BOLT",2*(BaseLevel/10);
+      }
+
+  - Id: 490145
+    Weight: 10
+    Script: |
+      bonus bDex,7;
+      bonus2 bAddClass,Class_All,10;
+      bonus2 bSkillAtk,"RA_AIMEDBOLT",(BaseLevel/10);
+      bonus2 bSkillAtk,"RA_ARROWSTORM",(BaseLevel/10);
+      if (getskilllv("RA_WUGRIDER") == 3) {
+         bonus bSPDrainValue,3;
+         bonus bDelayrate,-20;
+      }
+      if (getskilllv("RA_AIMEDBOLT") == 10)
+         bonus2 bAddClass,Class_Boss,15;
+      if (getskilllv("RA_CAMOUFLAGE") == 5)
+         bonus2 bSkillCooldown,"RA_UNLIMIT",-45000;
+      if (getskilllv("RA_RANGERMAIN") == 10)
+         bonus bPerfectHitAddRate,15;
+
+  - Id: 410622
+    Weight: 200
+
+  - Id: 420863
+    Weight: 200
