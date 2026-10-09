@@ -1,0 +1,16 @@
+//===== Ragnarok Offline =====================================
+//= Prontera East Library Access
+//===== Description: =========================================
+//= Replace the legacy prt07 entrance with the modern library.
+//= Coordinates match the extracted client Navigation links.
+//============================================================
+
+prontera,192,267,0	warp	Libraryi	2,2,prt_elib,18,46
+prt_elib,14,46,0	warp	Libraryo	1,1,prontera,192,264
+
+-	script	EastLibrary#offline	-1,{
+OnInit:
+	// Keep the original declaration intact, but use Libraryi here.
+	disablenpc "prt07";
+	end;
+}
