@@ -63,6 +63,8 @@
 #include "quest.hpp"
 #include "storage.hpp"
 
+#include "../custom/stripe_fallback.hpp"
+
 using namespace rathena;
 
 const int64 SCRIPT_INT_MIN = INT64_MIN;
@@ -9926,6 +9928,10 @@ BUILDIN_FUNC(breakequip) {
 	if (equip_index_check(pos))
 		i = pc_checkequip(sd,equip_bitmask[pos]);
 	if (i >= 0) {
+		if (offline_stripe::protected_item(*sd, i)) {
+			script_pushint(st, 0);
+			return SCRIPT_CMD_SUCCESS;
+		}
 		sd->inventory.u.items_inventory[i].attribute = 1;
 		pc_unequipitem(sd,i,3);
 		clif_equiplist(sd);

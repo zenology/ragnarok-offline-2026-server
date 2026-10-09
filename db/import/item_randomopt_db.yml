@@ -1,0 +1,13 @@
+Header:
+  Type: RANDOM_OPTION_DB
+  Version: 1
+
+Body:
+  - Id: 185
+    Script: |
+      if (getrandomoptinfo(ROA_PARAM) != 127)
+        bonus bUnbreakableWeapon,1;
+  - Id: 186
+    Script: |
+      if (getrandomoptinfo(ROA_PARAM) != 127)
+        bonus bUnbreakableArmor,1;

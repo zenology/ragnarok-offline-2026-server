@@ -1,0 +1,42 @@
+// Temporary acceptance fixture. Never register in scripts_custom.conf.
+// Load/unload manually; remove this file after runtime acceptance.
+mal_in01,25,176,4	script	Stripe break test#temporary	4_EXJOB_CHUL_HO,{
+	disable_items;
+	mes "[Stripe break test]";
+	mes "This test calls breakequip on your selected worn item. An unprotected control will break and need repair.";
+	next;
+	.@choice = select("Top headgear:Right weapon:Left weapon or shield:Armor:Garment:Shoes:Cancel");
+	if (.@choice == 7) close;
+	setarray .@slots[0],EQI_HEAD_TOP,EQI_HAND_R,EQI_HAND_L,EQI_ARMOR,EQI_GARMENT,EQI_SHOES;
+	.@slot = .@slots[.@choice - 1];
+	.@item = getequipid(.@slot);
+	if (.@item < 0) {
+		mes "[Stripe break test]";
+		mes "No item is worn in that slot.";
+		close;
+	}
+	.@uid$ = getequipuniqueid(.@slot);
+	mes "[Stripe break test]";
+	mes "Test " + getitemname(.@item) + "? Item-local protection: " + stripeindestructible(.@slot) + ".";
+	if (select("Run break attempt:Cancel") == 2) close;
+	clear;
+	if (getequipid(.@slot) != .@item || getequipuniqueid(.@slot) != .@uid$) {
+		mes "[Stripe break test]";
+		mes "The selected item changed. No test was run.";
+		close;
+	}
+	setarray .@masks[0],EQP_HEAD_TOP,EQP_HAND_R,EQP_HAND_L,EQP_ARMOR,EQP_GARMENT,EQP_SHOES;
+	getinventorylist;
+	.@inventory_index = -1;
+	for (.@i = 0; .@i < @inventorylist_count; ++.@i)
+		if (@inventorylist_equip[.@i] & .@masks[.@choice - 1]) .@inventory_index = @inventorylist_idx[.@i];
+	if (.@inventory_index < 0) close;
+	.@result = breakequip(.@slot);
+	getinventorylist;
+	.@broken = -1;
+	for (.@i = 0; .@i < @inventorylist_count; ++.@i)
+		if (@inventorylist_idx[.@i] == .@inventory_index) .@broken = @inventorylist_attribute[.@i];
+	mes "[Stripe break test]";
+	mes "breakequip result: " + .@result + "; broken flag: " + .@broken + "; still worn: " + (getequipuniqueid(.@slot) == .@uid$) + ".";
+	close;
+}

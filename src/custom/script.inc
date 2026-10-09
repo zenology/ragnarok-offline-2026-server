@@ -22,6 +22,7 @@
 #include "black_market_catalog.hpp"
 #include "silvervine_enchant.hpp"
 #include "silvervine_enchant_upgrade.hpp"
+#include "stripe_fallback.hpp"
 #include "premium_service.hpp"
 #include "premium_autobuff.hpp"
 
@@ -260,8 +261,18 @@ BUILDIN_FUNC(vespercardtarget)
 	return SCRIPT_CMD_SUCCESS;
 }
 
+BUILDIN_FUNC(stripeindestructible)
+{
+	map_session_data* sd = nullptr;
+	const int32 slot = script_getnum(st, 2);
+	const int16 index = script_rid2sd(sd) && equip_index_check(slot) ? pc_checkequip(sd, equip_bitmask[slot]) : -1;
+	script_pushint(st, sd && offline_stripe::protected_item(*sd, index) ? 1 : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
+
 // 1=removed, 2=stale selection, 3=insufficient BP, 4=invalid state/arguments,
-// 5=missing protection materials, 6=failed/broken, 7=failed/protected, 8=rolled back.
+// 5=missing protection materials, 6=failed/broken, 7=failed/material-protected,
+// 8=rolled back, 9=failed/protected by this item's fallback option.
 BUILDIN_FUNC(vesperremovecard)
 {
 	map_session_data* sd = nullptr;
@@ -309,10 +320,12 @@ BUILDIN_FUNC(vesperremovecard)
 		return SCRIPT_CMD_SUCCESS;
 	}
 	const t_itemid material_id[2] = { 6635, 1000322 };
+	const bool innate_protection = offline_stripe::protected_item(*sd, index);
+	const bool material_protection = protect && !innate_protection;
 	int16 material_index[2] = { -1, -1 };
 	item materials[2]{};
 	item_data* material_data[2] = { nullptr, nullptr };
-	if (protect) {
+	if (material_protection) {
 		for (int32 i = 0; i < 2; ++i) {
 			material_index[i] = pc_search_inventory(sd, material_id[i]);
 			if (material_index[i] < 0 || !sd->inventory_data[material_index[i]] ||
@@ -385,7 +398,7 @@ BUILDIN_FUNC(vesperremovecard)
 			rollback();
 			return SCRIPT_CMD_SUCCESS;
 		}
-	} else if (!protect) {
+	} else if (!innate_protection && !material_protection) {
 		changed = true;
 		sd->inventory.u.items_inventory[index].attribute = 1;
 		if (!pc_unequipitem(sd, index, 3)) {
@@ -404,7 +417,7 @@ BUILDIN_FUNC(vesperremovecard)
 		return SCRIPT_CMD_SUCCESS;
 	}
 	paid = true;
-	if (protect) {
+	if (material_protection) {
 		for (int32 i = 0; i < 2; ++i) {
 			const item& stack = sd->inventory.u.items_inventory[material_index[i]];
 			if (stack.nameid != materials[i].nameid || stack.unique_id != materials[i].unique_id ||
@@ -420,7 +433,7 @@ BUILDIN_FUNC(vesperremovecard)
 		log_pick_pc(sd, LOG_TYPE_SCRIPT, -1, &original);
 		log_pick_pc(sd, LOG_TYPE_SCRIPT, 1, &sd->inventory.u.items_inventory[index]);
 	}
-	script_pushint(st, success ? 1 : protect ? 7 : 6);
+	script_pushint(st, success ? 1 : innate_protection ? 9 : material_protection ? 7 : 6);
 	return SCRIPT_CMD_SUCCESS;
 }
 

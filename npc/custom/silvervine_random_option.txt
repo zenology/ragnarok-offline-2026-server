@@ -1,5 +1,5 @@
-// Malangdo Stripe: dedicated RO pools plus ticketed per-slot generic fallback.
-// Dedicated: silvervine_enchant_item_pools.yml; shared: shared_random_option_db.txt.
+// Malangdo Stripe: dedicated RO pools plus basic fallback O1-O2.
+// Dedicated: silvervine_enchant_item_pools.yml; fallback: shared_random_option_db.txt.
 
 function	script	F_SVE_RoText	{
 	.@id = getarg(0);
@@ -19,7 +19,7 @@ function	script	F_SVE_RoText	{
 	if (.@id == RDMOPT_VAR_ATKPERCENT) return "ATK +" + .@val + "%";
 	if (.@id == RDMOPT_VAR_MAGICATKPERCENT) return "MATK +" + .@val + "%";
 	if (.@id == RDMOPT_VAR_PLUSASPD) return "ASPD +" + .@val;
-	if (.@id == RDMOPT_VAR_PLUSASPDPERCENT) return "ASPD -" + .@val + "%";
+	if (.@id == RDMOPT_VAR_PLUSASPDPERCENT) return "ASPD " + (.@val < 0 ? "" : "+") + .@val + "%";
 	if (.@id == RDMOPT_VAR_ATTPOWER) return "ATK +" + .@val;
 	if (.@id == RDMOPT_VAR_HITSUCCESSVALUE) return "HIT +" + .@val;
 	if (.@id == RDMOPT_VAR_ATTMPOWER) return "MATK +" + .@val;
@@ -273,73 +273,61 @@ function	script	F_SVE_StripeTierCosts	{
 	return;
 }
 
-// Caller keeps freeloop enabled while checking the complete shared registry.
-function	script	F_SVE_SharedRoReady	{
+function	script	F_SVE_FallbackEligible	{
+	.@item = getarg(0);
+	.@slot = getarg(1);
+	if (sve_ropoolcount(.@item) != 0) return 0;
+	.@type = getiteminfo(.@item, ITEMINFO_TYPE);
+	if (.@type == IT_WEAPON) return .@slot == EQI_HAND_R || .@slot == EQI_HAND_L;
+	if (.@type != IT_ARMOR) return 0;
+	return .@slot == EQI_HEAD_TOP || .@slot == EQI_HAND_L || .@slot == EQI_ARMOR || .@slot == EQI_GARMENT || .@slot == EQI_SHOES;
+}
+
+// Dedicated pools do not depend on the fallback registry.
+function	script	F_SVE_FallbackRoReady	{
 	if (!getnpcid(0, "shared_random_option_db")) return 0;
-	if (getarraysize(getvariableofnpc(.OptionId[0], "shared_random_option_db")) != 368 ||
-		getarraysize(getvariableofnpc(.OptionMin[0], "shared_random_option_db")) != 368 ||
-		getarraysize(getvariableofnpc(.OptionMax[0], "shared_random_option_db")) != 368 ||
-		getarraysize(getvariableofnpc(.PoolStart[0], "shared_random_option_db")) != 10 ||
-		getarraysize(getvariableofnpc(.PoolCount[0], "shared_random_option_db")) != 10 ||
-		getarraysize(getvariableofnpc(.CrimsonItemId[0], "shared_random_option_db")) != 17 ||
-		getarraysize(getvariableofnpc(.CrimsonOptionId[0], "shared_random_option_db")) != 10 ||
-		getarraysize(getvariableofnpc(.CrimsonOptionWeight[0], "shared_random_option_db")) != 10) return 0;
-	setarray .@starts[0],0,35,90,159,217,226,253,319,342,359;
-	setarray .@counts[0],35,55,69,58,9,27,66,23,17,9;
-	for (.@i = 0; .@i < 10; ++.@i) {
-		if (getelementofarray(getvariableofnpc(.PoolStart[0], "shared_random_option_db"), .@i) != .@starts[.@i] ||
-			getelementofarray(getvariableofnpc(.PoolCount[0], "shared_random_option_db"), .@i) != .@counts[.@i] ||
-			getelementofarray(getvariableofnpc(.CrimsonOptionId[0], "shared_random_option_db"), .@i) != 175 + .@i ||
-			getelementofarray(getvariableofnpc(.CrimsonOptionWeight[0], "shared_random_option_db"), .@i) != (.@i < 5 ? 15 : 5)) return 0;
+	// Numeric zero entries are sparse: getarraysize ends at the last nonzero.
+	if (getarraysize(getvariableofnpc(.PoolStart[0], "shared_random_option_db")) != 4 ||
+		getarraysize(getvariableofnpc(.PoolCount[0], "shared_random_option_db")) != 4 ||
+		getarraysize(getvariableofnpc(.OptionId[0], "shared_random_option_db")) != 49 ||
+		getarraysize(getvariableofnpc(.OptionMin[0], "shared_random_option_db")) != 43 ||
+		getarraysize(getvariableofnpc(.OptionMax[0], "shared_random_option_db")) != 43 ||
+		getarraysize(getvariableofnpc(.OptionParam[0], "shared_random_option_db")) != 42) return 0;
+	setarray .@start[0],0,9,25,33;
+	setarray .@count[0],9,16,8,16;
+	setarray .@id[0],1,2,3,4,5,6,7,8,168,16,17,18,19,22,24,11,12,185,163,176,177,178,179,181,182,1,2,3,4,5,6,7,8,16,17,18,19,22,24,11,12,186,172,77,78,79,80,82,83;
+	setarray .@min[0],50,5,1,1,1,1,1,1,3,1,5,4,5,1,2,1,1,0,0,0,0,0,0,0,0,50,5,1,1,1,1,1,1,1,5,4,5,1,2,1,1,0,1,0,0,0,0,0,0;
+	setarray .@max[0],100,20,6,6,6,5,6,6,24,5,15,20,15,12,9,10,10,0,0,0,0,0,0,0,0,100,20,6,6,6,5,6,6,5,15,20,15,12,9,10,10,0,2,0,0,0,0,0,0;
+	for (.@i = 0; .@i < 4; ++.@i) {
+		if (getelementofarray(getvariableofnpc(.PoolStart[0], "shared_random_option_db"), .@i) != .@start[.@i] ||
+			getelementofarray(getvariableofnpc(.PoolCount[0], "shared_random_option_db"), .@i) != .@count[.@i]) return 0;
 	}
-	setarray .@crimson[0],1443,1498,1680,1839,1939,1995,2025,13127,13327,13454,16040,18130,21015,28007,28106,28604,28705;
-	for (.@i = 0; .@i < 17; ++.@i)
-		if (getelementofarray(getvariableofnpc(.CrimsonItemId[0], "shared_random_option_db"), .@i) != .@crimson[.@i]) return 0;
-	for (.@i = 0; .@i < 368; ++.@i) {
-		.@id = getelementofarray(getvariableofnpc(.OptionId[0], "shared_random_option_db"), .@i);
-		.@min = getelementofarray(getvariableofnpc(.OptionMin[0], "shared_random_option_db"), .@i);
-		.@max = getelementofarray(getvariableofnpc(.OptionMax[0], "shared_random_option_db"), .@i);
-		if (.@id < 1 || .@id > 32767 || .@min < -32768 || .@max > 32767 || .@min > .@max) return 0;
+	for (.@i = 0; .@i < 49; ++.@i) {
+		if (getelementofarray(getvariableofnpc(.OptionId[0], "shared_random_option_db"), .@i) != .@id[.@i] ||
+			getelementofarray(getvariableofnpc(.OptionMin[0], "shared_random_option_db"), .@i) != .@min[.@i] ||
+			getelementofarray(getvariableofnpc(.OptionMax[0], "shared_random_option_db"), .@i) != .@max[.@i] ||
+			getelementofarray(getvariableofnpc(.OptionParam[0], "shared_random_option_db"), .@i) != (.@i == 17 || .@i == 41 ? 127 : 0)) return 0;
 	}
 	return 1;
 }
 
-// Shared generic slices, plus Crimson's categorical O1. Outputs are references.
-function	script	F_SVE_RollSharedRo	{
+// Uniform outcome selection; outputs are references.
+function	script	F_SVE_RollFallbackRo	{
 	set getarg(3), 0;
 	set getarg(4), 0;
 	set getarg(5), 0;
 	.@item = getarg(0);
 	.@index = getarg(1);
-	.@force_max = getarg(2);
-	if (!getnpcid(0, "shared_random_option_db") || .@index < 0 || .@index > 4) return 0;
+	if (.@index < 0 || .@index > 1 || sve_ropoolcount(.@item) != 0 || !callfunc("F_SVE_FallbackRoReady")) return 0;
 	.@type = getiteminfo(.@item, ITEMINFO_TYPE);
 	if (.@type != IT_WEAPON && .@type != IT_ARMOR) return 0;
-	if (.@index == 0 && inarray(getvariableofnpc(.CrimsonItemId[0], "shared_random_option_db"), .@item) != -1) {
-		.@roll = rand(100);
-		for (.@i = 0; .@i < 10; ++.@i) {
-			.@roll -= getelementofarray(getvariableofnpc(.CrimsonOptionWeight[0], "shared_random_option_db"), .@i);
-			if (.@roll < 0) {
-				set getarg(3), getelementofarray(getvariableofnpc(.CrimsonOptionId[0], "shared_random_option_db"), .@i);
-				return 1;
-			}
-		}
-		return 0;
-	}
-	.@pool = (.@type == IT_WEAPON ? 0 : 5) + .@index;
-	.@start = getelementofarray(getvariableofnpc(.PoolStart[0], "shared_random_option_db"), .@pool);
-	.@count = getelementofarray(getvariableofnpc(.PoolCount[0], "shared_random_option_db"), .@pool);
-	if (.@count < 1 || .@start < 0 || .@start + .@count > 368) return 0;
-	.@entry = .@start + rand(.@count);
-	.@id = getelementofarray(getvariableofnpc(.OptionId[0], "shared_random_option_db"), .@entry);
+	.@pool = (.@type == IT_WEAPON ? 0 : 2) + .@index;
+	.@entry = getelementofarray(getvariableofnpc(.PoolStart[0], "shared_random_option_db"), .@pool) + rand(getelementofarray(getvariableofnpc(.PoolCount[0], "shared_random_option_db"), .@pool));
 	.@min = getelementofarray(getvariableofnpc(.OptionMin[0], "shared_random_option_db"), .@entry);
 	.@max = getelementofarray(getvariableofnpc(.OptionMax[0], "shared_random_option_db"), .@entry);
-	if (.@id < 1 || .@id > 32767 || .@min < -32768 || .@max > 32767 || .@min > .@max) return 0;
-	set getarg(3), .@id;
-	if (.@force_max)
-		set getarg(4), .@max;
-	else
-		set getarg(4), .@min + rand(.@max - .@min + 1);
+	set getarg(3), getelementofarray(getvariableofnpc(.OptionId[0], "shared_random_option_db"), .@entry);
+	set getarg(4), (getarg(2) ? .@max : .@min + rand(.@max - .@min + 1));
+	set getarg(5), getelementofarray(getvariableofnpc(.OptionParam[0], "shared_random_option_db"), .@entry);
 	return 1;
 }
 
@@ -361,17 +349,6 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	mes "That's a server problem, not your gear. Check the map log for Silvervine YAML errors.";
 	close;
 	}
-	freeloop(1);
-	.@shared_ready = callfunc("F_SVE_SharedRoReady");
-	freeloop(0);
-	if (!.@shared_ready) {
-		mes "[Stripe]";
-		mes "My spare enchant book isn't ready. Try again later.";
-		next;
-		mes "[Stripe]";
-		mes "Your gear, materials, and tickets stay exactly as they are.";
-		close;
-	}
 	mes "[Stripe]";
 	mes "Hey! I'm the real one. Papa Bramble taught me everything.";
 	freeloop(1);
@@ -384,6 +361,7 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	if (.@type != IT_WEAPON && .@type != IT_ARMOR) 			continue;
 	if (.@type == IT_WEAPON && .@slot != EQI_HAND_R && .@slot != EQI_HAND_L) 			continue;
 	if (.@type == IT_ARMOR && .@slot == EQI_HAND_R) 			continue;
+	if (sve_ropoolcount(.@item) < 1 && !callfunc("F_SVE_FallbackEligible", .@item, .@slot)) continue;
 	.@uid$ = getequipuniqueid(.@slot);
 	if (.@uid$ == "") 			continue;
 	.@label$ = (.@slot == EQI_HEAD_TOP ? "Top" : .@slot == EQI_HEAD_MID ? "Middle" : .@slot == EQI_HEAD_LOW ? "Lower" : .@slot == EQI_HAND_R ? "Weapon Right" : .@slot == EQI_HAND_L && .@type == IT_WEAPON ? "Weapon Left" : .@slot == EQI_HAND_L ? "Shield" : .@slot == EQI_ARMOR ? "Armor" : .@slot == EQI_GARMENT ? "Garment" : .@slot == EQI_SHOES ? "Shoes" : .@slot == EQI_ACC_L ? "Accessory Left" : "Accessory Right");
@@ -403,20 +381,23 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	if (.@count < 1) {
 	next;
 	mes "[Stripe]";
-	mes "No ordinary gear on you for me to work on.";
+	mes "No supported gear on you for me to work on.";
 	next;
 	mes "[Stripe]";
-	mes "Wear an ordinary weapon or armor piece. Bags, costumes, Shadow gear, and ammunition are out.";
+	mes "Wear dedicated-pool gear, or basic gear for your head, hands, body, back or feet.";
 	close;
 	}  	next;
 	mes "[Stripe]";
-	mes "I know each piece's own pool. If a slot has none, my spare pool can handle it.";
+	mes "Gear with its own Random Option pool uses that pool only. Other eligible gear, including Crimson, uses basic fallback.";
 	next;
 	mes "[Stripe]";
 	mes "I only work on what you're wearing. Leave the bag out of it.";
 	next;
 	mes "[Stripe]";
-	mes "One option at a time. You fill slot one, then two, then the next. No jumping.";
+	mes "One option at a time. Basic fallback stops at slot two; dedicated pools use their own limit. No jumping.";
+	next;
+	mes "[Stripe]";
+	mes "Basic fallback accepts top headgear, weapons, shields, armor, garments and shoes without a dedicated pool. Each successful fill or reroll costs one Stripe Ticket.";
 	next;
 	mes "[Stripe]";
 	mes "Slot one costs five Silvervine Fruit. Slot two costs seven. Slot three costs ten.";
@@ -426,9 +407,6 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	next;
 	mes "[Stripe]";
 	mes "First fill and reroll cost the same. I rewrite only the slot you pick. Later options stay.";
-	next;
-	mes "[Stripe]";
-	mes "A generic slot also costs one Stripe Enchantment Ticket every time. Dedicated pools don't use tickets.";
 	next;
 	mes "[Stripe]";
 	mes "Want the max number? Pick Special later. Same fruit as Ordinary for that slot, plus Zelunium and a Blacksmith Blessing by slot.";
@@ -444,13 +422,22 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	.@item = .@chosen_item[.@choice];
 	.@uid$ = .@chosen_uid$[.@choice];
 	.@type = getiteminfo(.@item, ITEMINFO_TYPE);
-	.@is_crimson = inarray(getvariableofnpc(.CrimsonItemId[0], "shared_random_option_db"), .@item) != -1;
 	.@pool_count = sve_ropoolcount(.@item);
+	.@is_fallback = (.@pool_count == 0);
 	.@pool_index = -1;
-	.@dedicated_max = 0;
-	if (.@is_crimson) {
-		.@dedicated_max = 1;
-	} else if (.@pool_count > 0) {
+	if (.@is_fallback) {
+		.@max = 2;
+		if (!callfunc("F_SVE_FallbackEligible", .@item, .@slot) || !callfunc("F_SVE_FallbackRoReady")) {
+			mes "[Stripe]";
+			mes "Basic fallback isn't ready for that piece. Your gear and materials stay unchanged.";
+			close;
+		}
+	} else {
+	if (.@pool_count < 1) {
+	mes "[Stripe]";
+	mes "That piece has no Random Option pool. Your gear and materials stay unchanged.";
+	close;
+	}
 	.@pool_index = 0;
 	if (.@pool_count > 1) {
 	mes "[Stripe]";
@@ -461,14 +448,13 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	.@pool_index = select(.@pmenu$ + "Cancel") - 1;
 	if (.@pool_index == .@pool_count) 			close;
 	}
-	.@dedicated_max = sve_ropoolmaxslots(.@item, .@pool_index);
-	if (.@dedicated_max < 1 || .@dedicated_max > 5) {
+	.@max = sve_ropoolmaxslots(.@item, .@pool_index);
+	if (.@max < 1 || .@max > 5) {
 	mes "[Stripe]";
-	mes "That pool's slot count is wrong. Your gear, materials, and tickets stay unchanged.";
+	mes "That pool's slot count is wrong. Your gear and materials stay unchanged.";
 	close;
 	}
 	}
-	.@max = 5;
 	.@filled = 0;
 	for (.@i = 0; .@i < 5; ++.@i) {
 	if (getequiprandomoption(.@slot, .@i, ROA_ID) == 0) 			break;
@@ -478,14 +464,14 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	.@opt_count = 0;
 	for (.@k = 1; .@k <= .@filled && .@k <= .@max; ++.@k) {
 	.@opt_value[.@opt_count] = .@k;
-	.@route_label$ = (.@is_crimson && .@k == 1 ? "Crimson element" : !.@is_crimson && .@k <= .@dedicated_max ? "Dedicated pool" : "Generic pool (1 Stripe Ticket)");
+	.@route_label$ = (.@is_fallback ? "Basic fallback (1 Stripe Ticket)" : "Dedicated pool");
 	.@opt_menu$ += "Option " + .@k + " - reroll - " + .@route_label$ + ":";
 	++.@opt_count;
 	}
 	if (.@filled + 1 <= .@max) {
 	.@opt_value[.@opt_count] = .@filled + 1;
 	.@k = .@filled + 1;
-	.@route_label$ = (.@is_crimson && .@k == 1 ? "Crimson element" : !.@is_crimson && .@k <= .@dedicated_max ? "Dedicated pool" : "Generic pool (1 Stripe Ticket)");
+	.@route_label$ = (.@is_fallback ? "Basic fallback (1 Stripe Ticket)" : "Dedicated pool");
 	.@opt_menu$ += "Option " + .@k + " - new - " + .@route_label$ + ":";
 	++.@opt_count;
 	}
@@ -508,26 +494,18 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	}  	callfunc("F_SVE_StripeTierCosts", .@want_slot, .@ord_fruit, .@ord_zelu, .@sp_zelu, .@sp_bs);
 	.@sp_fruit = .@ord_fruit;
 	.@opt_index = .@want_slot - 1;
-	// Route 2 = Crimson O1, 1 = chosen dedicated pool, 0 = ticketed generic.
-	.@route = (.@is_crimson && .@want_slot == 1 ? 2 : !.@is_crimson && .@want_slot <= .@dedicated_max ? 1 : 0);
-	.@pay_ticket = (.@route == 0 ? 1 : 0);
 	mes "[Stripe]";
 	mes "Ordinary rolls the chosen pool and a value within its range. The number can be junk or perfect.";
 	next;
 	mes "[Stripe]";
 	mes "Special rolls the same pool, but uses that effect's maximum value.";
 	next;
-	if (.@route == 2) {
-		mes "[Stripe]";
-		mes "Crimson's first option rolls an element. Special costs its usual price and has the same element odds as Ordinary.";
-		next;
-	}
 	if (.@ord_zelu > 0) 		.@ord_lab$ = "Ordinary - " + .@ord_fruit + " Fruit, " + .@ord_zelu + " Zelunium";
 	else 		.@ord_lab$ = "Ordinary - " + .@ord_fruit + " Fruit";
 	.@sp_lab$ = "Special - " + .@sp_fruit + " Fruit, " + .@sp_zelu + " Zelunium, " + .@sp_bs + " Blacksmith Blessing";
-	if (.@pay_ticket) {
-		.@ord_lab$ += ", 1 Stripe Enchantment Ticket";
-		.@sp_lab$ += ", 1 Stripe Enchantment Ticket";
+	if (.@is_fallback) {
+		.@ord_lab$ += ", 1 Stripe Ticket";
+		.@sp_lab$ += ", 1 Stripe Ticket";
 	}
 	.@svc = select(.@ord_lab$ + ":" + .@sp_lab$ + ":Cancel");
 	if (.@svc != 1 && .@svc != 2) 		close;
@@ -541,13 +519,10 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	.@pay_fruit = (.@use_special ? .@sp_fruit : .@ord_fruit);
 	.@pay_zelu = (.@use_special ? .@sp_zelu : .@ord_zelu);
 	.@pay_bs = (.@use_special ? .@sp_bs : 0);
-	if (.@pay_ticket && countitem(9000022) < .@pay_ticket) {
+	if (.@is_fallback && countitem(9000022) < 1) {
 	freeloop(0);
 	mes "[Stripe]";
-	mes "This slot needs one Stripe Enchantment Ticket, even for a reroll.";
-	next;
-	mes "[Stripe]";
-	mes "Nothing changed this round. Your gear, materials, and tickets stay as they are.";
+	mes "Basic fallback needs one Stripe Ticket. Your gear and materials stay unchanged.";
 	close;
 	}
 	if (.@pay_bs > 0 && countitem(6635) < .@pay_bs) {
@@ -556,7 +531,7 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	mes "Short on Blacksmith Blessing. Special needs " + .@pay_bs + ".";
 	next;
 	mes "[Stripe]";
-	mes "Nothing changed this round. Your gear, materials, and tickets stay as they are.";
+	mes "Nothing changed this round. Your gear and materials stay as they are.";
 	close;
 	}
 	if (countitem(6417) < .@pay_fruit) {
@@ -565,7 +540,7 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	mes "Short on fruit. You need " + .@pay_fruit + " Silvervine, not wishes.";
 	next;
 	mes "[Stripe]";
-	mes "Nothing changed this round. Your gear, materials, and tickets stay as they are.";
+	mes "Nothing changed this round. Your gear and materials stay as they are.";
 	close;
 	}
 	if (.@pay_zelu > 0 && countitem(25731) < .@pay_zelu) {
@@ -574,27 +549,36 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	mes "Short on Zelunium. You need " + .@pay_zelu + ".";
 	next;
 	mes "[Stripe]";
-	mes "Nothing changed this round. Your gear, materials, and tickets stay as they are.";
+	mes "Nothing changed this round. Your gear and materials stay as they are.";
 	close;
 	}
-	if (!callfunc("F_SVE_SharedRoReady")) {
+	if (.@is_fallback && (.@pool_index != -1 || .@opt_index < 0 || .@opt_index > 1 || !callfunc("F_SVE_FallbackEligible", .@item, .@slot) || !callfunc("F_SVE_FallbackRoReady"))) {
 	freeloop(0);
 	mes "[Stripe]";
-	mes "My spare enchant book isn't ready. Your gear, materials, and tickets stay unchanged.";
+	mes "Basic fallback isn't ready for that piece. Your gear and materials stay unchanged.";
 	close;
+	}
+	if (!.@is_fallback) {
+	.@current_max = sve_ropoolmaxslots(.@item, .@pool_index);
+	if (.@pool_index < 0 || .@pool_index >= sve_ropoolcount(.@item) || .@current_max < 1 || .@current_max > 5 || .@opt_index < 0 || .@opt_index >= .@current_max) {
+	freeloop(0);
+	mes "[Stripe]";
+	mes "That pool changed. Your gear and materials stay unchanged.";
+	close;
+	}
 	}
 	.@eq_id = getequipid(.@slot);
 	if (.@eq_id != .@item || getequipuniqueid(.@slot) != .@uid$) {
 	freeloop(0);
 	mes "[Stripe]";
-	mes "That isn't the piece you picked. Your gear, materials, and tickets stay unchanged.";
+	mes "That isn't the piece you picked. Your gear and materials stay unchanged.";
 	close;
 	}
 	for (.@prev = 0; .@prev < .@opt_index; ++.@prev) {
 		if (getequiprandomoption(.@slot, .@prev, ROA_ID) == 0) {
 			freeloop(0);
 			mes "[Stripe]";
-			mes "Fill the earlier slots first. Your gear, materials, and tickets stay unchanged.";
+			mes "Fill the earlier slots first. Your gear and materials stay unchanged.";
 			close;
 		}
 	}
@@ -611,14 +595,14 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	if (callfunc("F_IsEquipIDHack", .@slot, .@eq_id) || callfunc("F_IsEquipCardHack", .@slot, .@card[0], .@card[1], .@card[2], .@card[3]) || callfunc("F_IsEquipRefineHack", .@slot, .@refine)) {
 	freeloop(0);
 	mes "[Stripe]";
-	mes "That piece changed. Your gear, materials, and tickets stay unchanged.";
+	mes "That piece changed. Your gear and materials stay unchanged.";
 	close;
 	}  		.@picked = 0;
 	for (.@attempt = 0; .@attempt < 12; ++.@attempt) {
-	if (.@route == 1) {
+	if (!.@is_fallback) {
 		if (!sve_rollro(.@item, .@pool_index, .@opt_index, .@use_special)) break;
 	} else {
-		if (!callfunc("F_SVE_RollSharedRo", .@item, .@opt_index, .@use_special, .@sve_opt_id[0], .@sve_opt_value[0], .@sve_opt_param[0])) break;
+		if (!callfunc("F_SVE_RollFallbackRo", .@item, .@opt_index, .@use_special, .@sve_opt_id[0], .@sve_opt_value[0], .@sve_opt_param[0])) break;
 	}
 	.@dup = 0;
 	for (.@i = 0; .@i < 5; ++.@i) {
@@ -636,7 +620,7 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	mes "The roll went sideways.";
 	next;
 	mes "[Stripe]";
-	mes "Nothing changed this round. Your gear, materials, and tickets stay as they are.";
+	mes "Nothing changed this round. Your gear and materials stay as they are.";
 	close;
 	}  		set getelementofarray(.@OptID, .@opt_index), .@sve_opt_id[0];
 	set getelementofarray(.@OptVal, .@opt_index), .@sve_opt_value[0];
@@ -648,13 +632,15 @@ mal_in01,23,176,4	script	Stripe#sve_ro	4_EXJOB_CHUL_HO,{
 	mes "That piece changed before I could work.";
 	next;
 	mes "[Stripe]";
-	mes "Nothing changed this round. Your gear, materials, and tickets stay as they are.";
+	mes "Nothing changed this round. Your gear and materials stay as they are.";
 	close;
 	} 		delitem 6417, .@pay_fruit;
 	if (.@pay_zelu > 0) 			delitem 25731, .@pay_zelu;
 	if (.@pay_bs > 0) 			delitem 6635, .@pay_bs;
-	if (.@pay_ticket > 0) 			delitem 9000022, .@pay_ticket;
+	if (.@is_fallback) delitem 9000022, 1;
 	.@got$ = callfunc("F_SVE_RoText", .@sve_opt_id[0], .@sve_opt_value[0]);
+	if ((.@sve_opt_id[0] == 185 || .@sve_opt_id[0] == 186) && .@sve_opt_param[0] == 127)
+		.@got$ = "Indestructible (battle and Vesper)";
 	clear;
 	mes "[Stripe]";
 	mes "Got it. Option " + .@want_slot + ": ^0055FF" + .@got$ + "^000000.";

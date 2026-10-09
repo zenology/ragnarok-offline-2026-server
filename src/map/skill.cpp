@@ -46,6 +46,8 @@
 #include "status.hpp"
 #include "unit.hpp"
 
+#include "../custom/stripe_fallback.hpp"
+
 // Skill factory is compiled as separate translation units per job category
 // to reduce peak memory usage during compilation
 #include "skills/skill_factory.hpp"
@@ -2071,6 +2073,8 @@ int32 skill_break_equip(block_list *src, block_list *bl, uint16 where, int32 rat
 					continue;
 			}
 			if (flag) {
+				if (offline_stripe::protected_item(*sd, j))
+					continue;
 				sd->inventory.u.items_inventory[j].attribute = 1;
 				pc_unequipitem(sd, j, 3);
 			}
