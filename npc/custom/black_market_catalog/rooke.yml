@@ -55,6 +55,8 @@ Body:
   - {Id: 1100005, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 10, Level201Plus: 20}}
   - {Id: 9000100, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 20, Level201Plus: 40}}
   - {Id: 1100004, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 20, Level201Plus: 40}}
+  - {Id: 608, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 75, Level201Plus: 150}}
+  - {Id: 607, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 150, Level201Plus: 300}}
   - {Id: 14534, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 120, Level201Plus: 200}}
   - {Id: 14535, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 150, Level201Plus: 250}}
   - {Id: 14537, Category: 4, TierPrices: {Normal1_50: 0, Normal51_99: 0, Rebirth1_50: 0, Rebirth51_99: 0, Level100_200: 75, Level201Plus: 100}}
