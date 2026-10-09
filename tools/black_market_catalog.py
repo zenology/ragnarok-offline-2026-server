@@ -112,6 +112,8 @@ def validate_document(key: str, document: Any, item_ids: set[int] | None = None)
             integer(row, "SourceMob", 0 if key == "card-special" else 1)
             if key == "card-special" and row["SourceMob"] != 0:
                 raise CatalogError(f"Id {item_id}: Special SourceMob must be 0")
+            # Match the runtime card policy; preserve the raw YAML legacy Price.
+            row["Price"] = row["CollectorOffer"]
         if key == "rooke":
             tiers = row["TierPrices"]
             if not isinstance(tiers, dict) or set(tiers) != set(TIERS):

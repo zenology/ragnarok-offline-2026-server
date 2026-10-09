@@ -5,8 +5,8 @@
 //= Stock and Collector data are loaded from black_market_catalog/card-*.yml.
 //= Cards are grouped alphabetically. A 0-9 drawer appears before A
 //= when a display name starts with a digit. Normal, Miniboss, and MVP cards
-//= cost the Card Collector offer plus 30%, rounded to the nearest point.
-//= Curated special cards use the midpoint MVP Collector offer plus 30%.
+//= use their catalog CollectorOffer as the assessed base price without markup.
+//= Daily Rate and character level/rebirth adjustments still apply.
 //=
 //= Uses a reviewed card-to-canonical-source mapping.
 //===== Changelogs: ==========================================
@@ -23,6 +23,7 @@
 //= 3.5 Veynar browse gates use Collector prices, not shop prices
 //= 3.6 Opening dialogue no longer recites shop rates
 //= 3.7 Digit-leading names use a 0-9 drawer before A
+//= 3.8 Remove the 30% markup; all four catalogs use their assessed values
 //============================================================
 
 function	script	F_OfflineCardLerp	{
@@ -65,7 +66,7 @@ function	script	F_OfflineCardShopPrice	{
 	.@offer = callfunc("F_OfflineCardCollectorOffer", getarg(0), getarg(1));
 	if (.@offer < 1)
 		return 0;
-	return (.@offer * 13 + 5) / 10;
+	return .@offer;
 }
 
 function	script	F_OfflineMvpMidCollectorOffer	{
@@ -78,7 +79,7 @@ function	script	F_OfflineSpecialCardShopPrice	{
 	.@mid = callfunc("F_OfflineMvpMidCollectorOffer");
 	if (.@mid < 1)
 		return 0;
-	return (.@mid * 13 + 5) / 10;
+	return .@mid;
 }
 
 function	script	F_OfflineLetterShop	{

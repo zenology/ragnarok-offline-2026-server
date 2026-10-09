@@ -176,6 +176,8 @@ public:
 				expected.insert("CollectorOffer"); expected.insert("SourceMob");
 				if (!number(node, "CollectorOffer", row->offer) || !number(node, "SourceMob", row->source_mob, profile.tier == 4)) return 0;
 				if (profile.tier == 4 && row->source_mob != 0) { fail(node["SourceMob"], "Special SourceMob must be zero"); return 0; }
+				// Cards use the assessed value directly; Price retains the legacy catalog value.
+				row->price = row->offer;
 			}
 		}
 		if (fields != expected) { fail(node, "missing or unexpected record field"); return 0; }
