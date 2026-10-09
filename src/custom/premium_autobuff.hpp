@@ -13,6 +13,7 @@
 #include <map/status.hpp>
 #include "premium_autobuff_state.hpp"
 #include "premium_autobuff_transaction.hpp"
+#include "premium_autobuff_persistence.hpp"
 
 namespace offline_premi_autobuff {
 static_assert(SC_AUTOBUFF == 1046 && SC_MAX == 1047, "Auto Buff status baseline changed");
@@ -143,9 +144,11 @@ inline bool prepare_status_save(sc_type type, const status_change_entry& sce, t_
 	data.val1 = s.tier; data.val2 = s.phase; data.val3 = s.slice; data.val4 = s.tail; data.tick = s.slice;
 	return true;
 }
-inline void log_status_end(block_list* bl, sc_type type, const status_change_entry& sce) {
-	if (type == SC_AUTOBUFF && bl->type == BL_PC)
-		log_event("end", *static_cast<map_session_data*>(bl), sce.val1, 0);
+inline void finish_status(block_list* bl, sc_type type, const status_change_entry& sce) {
+	if (type != SC_AUTOBUFF || bl->type != BL_PC) return;
+	auto& sd = *static_cast<map_session_data*>(bl);
+	clear_saved_status(mmysql_handle, sd.status.account_id, sd.status.char_id, SC_AUTOBUFF, sd.state.active);
+	log_event("end", sd, sce.val1, 0);
 }
 inline bool run_status_timer(map_session_data* sd, status_change_entry& sce) {
 	if (sd == nullptr) return false;
