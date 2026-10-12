@@ -188,7 +188,7 @@ inline bool private_airship_ordinary_destination_allowed( const map_session_data
 	if( strcmp( map_name, "ice_d03_i" ) == 0 )
 		return private_airship_base_level_at_least( sd, 130 );
 	if( strcmp( map_name, "tur_d03_i" ) == 0 || strcmp( map_name, "tur_d04_i" ) == 0 )
-		return private_airship_base_level_at_least( sd, 150 );
+		return private_airship_reg_at_least( sd, "ill_turtle", 1 ) && private_airship_base_level_at_least( sd, 150 );
 	if( strcmp( map_name, "com_d02_i" ) == 0 )
 		return private_airship_base_level_at_least( sd, 160 );
 	if( strcmp( map_name, "abyss_04" ) == 0 )
