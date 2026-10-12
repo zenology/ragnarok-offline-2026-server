@@ -11,15 +11,23 @@ Body:
     Weight: 20
     EquipLevelMin: 200
     Script: |
+      specialeffect2 EF_POTION4;
       itemheal 4500,0;
   - Id: 1100003
     Weight: 20
     Script: |
+      specialeffect2 EF_POTION1;
       itemheal 1800,0;
   - Id: 1100004
     Weight: 20
+    Script: |
+      specialeffect2 EF_POTION5;
+      itemheal 0,rand(340,360);
   - Id: 1100005
     Weight: 20
+    Script: |
+      specialeffect2 EF_POTION3;
+      itemheal rand(2730,2750),0;
   - Id: 35000
     AegisName: Offline_MVP_Card_Album
     Name: MVP Card Album
