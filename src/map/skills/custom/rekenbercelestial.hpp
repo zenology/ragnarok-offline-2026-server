@@ -7,9 +7,9 @@
 
 #include "../../battle.hpp"
 
-// Project-owned hidden item skill. Explicit ID stays above official e_skill values.
+// Project-owned hidden item skill. ID 11000 is outside the native Guild skill range.
 // Do not add this enumerator to skill.hpp.
-constexpr e_skill OFFLINE_REKENBER_CELESTIAL = static_cast<e_skill>(10000);
+constexpr e_skill OFFLINE_REKENBER_CELESTIAL = static_cast<e_skill>(11000);
 
 class SkillRekenberCelestial : public SkillImpl
 {
