@@ -209,6 +209,16 @@ inline bool ready(const std::string& key) {
 	auto it = catalogs.find(key);
 	return it != catalogs.end() && it->second.ready;
 }
+inline void refresh_gear_price_policy() {
+	black_market_gear_shop_names.clear();
+	for (const auto& entry : shop_owner) {
+		auto profile = profile_for(entry.second);
+		if (profile && ready(profile->key) &&
+			(profile->kind == Kind::Hat || profile->kind == Kind::Equipment || profile->kind == Kind::Specialty))
+			black_market_gear_shop_names.insert(entry.first);
+	}
+	if (search_ready) black_market_gear_shop_names.insert("Riven_SearchShop");
+}
 inline npc_data* shop(const std::string& name) {
 	auto nd = npc_name2id(name.c_str());
 	return nd && nd->subtype == NPCTYPE_POINTSHOP && strcmp(nd->u.shop.pointshop_str, BLACK_MARKET_POINT_VAR) == 0 ? nd : nullptr;
@@ -378,6 +388,7 @@ inline int load() {
 			return aname == bname ? a.first->id < b.first->id : aname < bname;
 		});
 	}
+	refresh_gear_price_policy();
 	return count;
 }
 inline const std::vector<Drawer>* drawers(const std::string& key, int64 category) {
