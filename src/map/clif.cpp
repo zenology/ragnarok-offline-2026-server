@@ -17430,7 +17430,7 @@ void clif_cashshop_show( map_session_data& sd, const npc_data& nd ){
 		else if (black_market_is_card_shop(nd.exname))
 			black_market_ratio = black_market_card_price_ratio(sd.status.base_level, (sd.class_ & JOBL_UPPER) != 0);
 		else
-			black_market_ratio = black_market_normal_price_ratio(sd.status.base_level, (sd.class_ & JOBL_UPPER) != 0);
+			black_market_ratio = black_market_shop_price_ratio(nd.exname, sd.status.base_level, (sd.class_ & JOBL_UPPER) != 0);
 		for (int32 i = 0; i < nd.u.shop.count; ++i) {
 			int32 player_price = 0;
 			if (!black_market_player_price(nd.u.shop.shop_item[i].value, black_market_ratio, player_price)) {
