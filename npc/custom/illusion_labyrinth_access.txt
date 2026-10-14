@@ -64,6 +64,8 @@ function	script	F_IllusionLabyrinthWeeklyWeek$	{
 }
 
 prt_maze01,97,26,5	script(CLOAKED)	Irene#ill_laby	4_F_ERENE,{
+	if (ill_laby >= 5)
+		end;
 	if (BaseLevel < 170) {
 		mes "[Irene]";
 		mes "You need to be at least Base Level 170 before I can ask for your help.";
@@ -96,14 +98,6 @@ prt_maze01,97,26,5	script(CLOAKED)	Irene#ill_laby	4_F_ERENE,{
 		next;
 		mes "[Irene]";
 		mes "Talk to her. I'll stay right here.";
-		close;
-	}
-	if (ill_laby >= 5) {
-		mes "[Irene]";
-		mes "You figured something out, didn't you?";
-		next;
-		mes "[Irene]";
-		mes "The guild leader left in such a hurry. She wouldn't even look at me.";
 		close;
 	}
 	if (ill_laby != 0)
@@ -152,10 +146,15 @@ OnPCLoadMapEvent:
 		removespecialeffect EF_ICEWALL, SELF, .@npc_name$;
 		specialeffect EF_GROUNDSAMPLE, SELF, .@npc_name$;
 		specialeffect EF_ICEWALL, SELF, .@npc_name$;
-		cloakoffnpcself( "Irene#ill_laby" );
-		cloakoffnpcself( .@npc_name$ );
 		if (ill_laby >= 5) {
 			cloakonnpcself( "Irene#ill_laby" );
+			cloakoffnpcself( "Irene#ill_laby_rest" );
+		} else {
+			cloakoffnpcself( "Irene#ill_laby" );
+			cloakonnpcself( "Irene#ill_laby_rest" );
+		}
+		cloakoffnpcself( .@npc_name$ );
+		if (ill_laby >= 5) {
 			cloakoffnpcself( "Andrea#ill_laby" );
 			cloakoffnpcself( "Anes#ill_laby" );
 			cloakoffnpcself( "Silvano#ill_laby" );
@@ -184,7 +183,6 @@ OnPCLoadMapEvent:
 	}
 	if (.@map$ == "prt_maze01" && ill_laby >= 5) {
 		cloakonnpcself( "Esmeralda#ill_laby_maze" );
-		cloakonnpcself( "Irene#ill_laby" );
 	}
 	if (.@map$ == "prt_fild01") {
 		if (ill_laby >= 6)
@@ -192,6 +190,26 @@ OnPCLoadMapEvent:
 		else
 			cloakonnpcself( "Esmeralda#ill_laby_fild" );
 	}
+	end;
+}
+
+prt_maze01,97,29,5	script(CLOAKED)	Irene#ill_laby_rest	4_F_ERENE,{
+	if (BaseLevel < 170 || ill_laby < 5)
+		end;
+	if (ill_laby == 6) {
+		callfunc "F_IllusionLabyrinthWeeklyRequest";
+		end;
+	}
+	mes "[Irene]";
+	mes "You figured something out, didn't you?";
+	next;
+	mes "[Irene]";
+	mes "The guild leader left in such a hurry. She wouldn't even look at me.";
+	close;
+
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Member>";
+	questinfo QTYPE_DAILYQUEST, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12478,HUNTING) == -1 && checkquest(12479,HUNTING) == -1 && checkquest(12480,HUNTING) == -1 && checkquest(12481,HUNTING) == -1 && (checkquest(12491,PLAYTIME) == -1 || checkquest(12491,PLAYTIME) == 2)";
 	end;
 }
 
@@ -455,10 +473,26 @@ L_IllusionDailyMenu:
 			.@status$[.@i] = "Available";
 		.@menu$ += (.@i == 0 ? "" : ":") + .@quest_titles$[.@i] + " [" + .@status$[.@i] + "]";
 	}
-	.@menu$ += ":Leave";
+	.@menu$ += ":Accept all daily quests:Leave";
 	.@choice = select(.@menu$);
-	if (.@choice == 9)
+	if (.@choice == 10)
 		close;
+	if (.@choice == 9) {
+		.@accepted_count = 0;
+		for (.@i = 0; .@i < 8; ++.@i) {
+			if (checkquest(.@quest_ids[.@i],HUNTING) != -1 || (ill_laby_dq_done & .@quest_bits[.@i]) != 0)
+				continue;
+			setquest .@quest_ids[.@i];
+			++.@accepted_count;
+		}
+		mes "[Andrea]";
+		if (.@accepted_count > 0) {
+			questinfo_refresh();
+			mes "Thank you, guildmate. You've accepted all " + .@accepted_count + " available daily request(s). Report to Silvano when the hunts are done.";
+		} else
+			mes "There are no daily requests available to accept right now. Speak with Silvano if you have any completed hunts.";
+		close;
+	}
 	.@index = .@choice - 1;
 	if (.@status$[.@index] == "Available") {
 		mes "[" + .@speakers$[.@index] + "]";
@@ -504,13 +538,18 @@ OnInit:
 prt_maze01,97,25,5	script(CLOAKED)	Anes#ill_laby	4_F_ANES,{
 	if (ill_laby < 5)
 		end;
-	if (ill_laby < 6) {
-		mes "[Anes]";
-		mes "Thank you for your help, " + strcharinfo(0) + ". Guild leader left a message through ^0000ffAndrea^000000.";
-		close;
-	}
+	mes "[Anes]";
+	mes "Thank you for your help, " + strcharinfo(0) + ". Guild leader left a message through ^0000ffAndrea^000000.";
+	close;
+
+OnInit:
+	setunittitle getnpcid(0), "<Priest Guild Recruit>";
+	end;
+}
+
+function	script	F_IllusionLabyrinthWeeklyRequest	{
 	if (BaseLevel < 170) {
-		mes "[Anes]";
+		mes "[Irene]";
 		mes "I'd like to ask for your help again, but the guild asked me to wait until you're Base Level 170. The shadows in that labyrinth are dangerous.";
 		close;
 	}
@@ -518,7 +557,7 @@ prt_maze01,97,25,5	script(CLOAKED)	Anes#ill_laby	4_F_ANES,{
 	.@week$ = callfunc("F_IllusionLabyrinthWeeklyWeek$");
 	setarray .@quest_ids[0],12478,12479,12480,12481;
 	setarray .@targets$[0],"Chaotic Andrea","Chaotic Anes","Chaotic Silvano","Chaotic Cecilia";
-	setarray .@assignment_lines$[0],"Andrea's shadow is still trying to protect us, even now. The labyrinth has twisted that care into something fierce.","It's... mine. I thought I had let that anger go, but something wearing my face is still wandering in there.","Silvano always watched over the rest of us. I hate seeing the labyrinth use his face this way.","Cecilia rarely speaks about what happened to her. I hope quieting her shadow will give her a little peace.";
+	setarray .@assignment_lines$[0],"Andrea's shadow is still trying to protect us, even now. The labyrinth has twisted that care into something fierce.","Anes's shadow is still wandering in there. I hope quieting it will help her let that anger go.","Silvano always watched over the rest of us. I hate seeing the labyrinth use his face this way.","Cecilia rarely speaks about what happened to her. I hope quieting her shadow will give her a little peace.";
 	.@active_count = 0;
 	.@active_index = -1;
 	for (.@i = 0; .@i < 4; ++.@i) {
@@ -529,25 +568,25 @@ prt_maze01,97,25,5	script(CLOAKED)	Anes#ill_laby	4_F_ANES,{
 		}
 	}
 	if (.@active_count > 1) {
-		mes "[Anes]";
+		mes "[Irene]";
 		mes "I see more than one weekly request under your name. Please wait until we can sort out which one is yours.";
 		close;
 	}
 	if (.@active_count == 1) {
 		if (ill_laby_wq_week$ != .@week$) {
-			mes "[Anes]";
+			mes "[Irene]";
 			mes "Saturday has passed, but the task I gave you is still waiting. You can finish hunting " + .@targets$[.@active_index] + ", or I can listen for another shadow.";
 			next;
 			.@choice = select("Keep this hunt.:Ask for another soul.:Not now.");
 			if (.@choice == 1) {
 				ill_laby_wq_week$ = .@week$;
 				questinfo_refresh();
-				mes "[Anes]";
+				mes "[Irene]";
 				mes "All right. We'll stay with this one. Everything you've done toward it still counts.";
 				close;
 			}
 			if (.@choice == 2) {
-				mes "[Anes]";
+				mes "[Irene]";
 				mes "If I let this task go, the progress you've made toward it will go too. Are you sure?";
 				next;
 				if (select("Yes, find another soul.:No, keep this one.") == 1) {
@@ -556,19 +595,19 @@ prt_maze01,97,25,5	script(CLOAKED)	Anes#ill_laby	4_F_ANES,{
 					setquest .@quest_ids[.@new_index];
 					ill_laby_wq_week$ = .@week$;
 					questinfo_refresh();
-					mes "[Anes]";
+					mes "[Irene]";
 					mes .@assignment_lines$[.@new_index];
 					next;
-					mes "[Anes]";
+					mes "[Irene]";
 					mes "Please find " + .@targets$[.@new_index] + " in the twisted labyrinth. When it's quiet, tell Silvano. He's keeping our thanks safe for you.";
 					close;
 				}
 			}
-			mes "[Anes]";
+			mes "[Irene]";
 			mes "Take your time. I won't change the task without you.";
 			close;
 		}
-		mes "[Anes]";
+		mes "[Irene]";
 		if (.@state[.@active_index] == 2)
 			mes "You found " + .@targets$[.@active_index] + ". I can feel that shadow finally quiet. Silvano has what we promised you.";
 		else
@@ -576,18 +615,18 @@ prt_maze01,97,25,5	script(CLOAKED)	Anes#ill_laby	4_F_ANES,{
 		close;
 	}
 	if (checkquest(12491,PLAYTIME) != -1 || ill_laby_wq_week$ == .@week$) {
-		mes "[Anes]";
+		mes "[Irene]";
 		mes "You've done your part for us this week. I can ask you again after Saturday at 4:00 AM server time.";
 		close;
 	}
-	mes "[Anes]";
-	mes "When our souls were pulled clear of the labyrinth, some of our fear and anger stayed behind. It took our shapes and still wanders those halls.";
+	mes "[Irene]";
+	mes "When the others were pulled clear of the labyrinth, some of their fear and anger stayed behind. It took their shapes and still wanders those halls.";
 	next;
-	mes "[Anes]";
+	mes "[Irene]";
 	mes "I can feel one of those shadows strongly this week. If you help us quiet it, Silvano will thank you for all of us. Will you?";
 	next;
 	if (select("I'll help.:Maybe later.") == 2) {
-		mes "[Anes]";
+		mes "[Irene]";
 		mes "I understand. Those shadows can wait until you're ready.";
 		close;
 	}
@@ -595,17 +634,12 @@ prt_maze01,97,25,5	script(CLOAKED)	Anes#ill_laby	4_F_ANES,{
 	setquest .@quest_ids[.@new_index];
 	ill_laby_wq_week$ = .@week$;
 	questinfo_refresh();
-	mes "[Anes]";
+	mes "[Irene]";
 	mes .@assignment_lines$[.@new_index];
 	next;
-	mes "[Anes]";
+	mes "[Irene]";
 	mes "Please find " + .@targets$[.@new_index] + " in the twisted labyrinth. When it's quiet, tell Silvano. He's keeping our thanks safe for you.";
 	close;
-
-OnInit:
-	setunittitle getnpcid(0), "<Priest Guild Recruit>";
-	questinfo QTYPE_DAILYQUEST, QMARK_YELLOW, "ill_laby == 6 && BaseLevel >= 170 && checkquest(12478,HUNTING) == -1 && checkquest(12479,HUNTING) == -1 && checkquest(12480,HUNTING) == -1 && checkquest(12481,HUNTING) == -1 && (checkquest(12491,PLAYTIME) == -1 || checkquest(12491,PLAYTIME) == 2)";
-	end;
 }
 
 prt_maze01,101,25,3	script(CLOAKED)	Silvano#ill_laby	4_M_SILVANO,{
@@ -644,7 +678,7 @@ prt_maze01,101,25,3	script(CLOAKED)	Silvano#ill_laby	4_M_SILVANO,{
 	}
 	if (.@weekly_active_count == 1 && .@weekly_ready_index >= 0) {
 		mes "[Silvano]";
-		mes "You made it back. " + .@weekly_targets$[.@weekly_ready_index] + " is finally quiet. Anes was right to trust you.";
+		mes "You made it back. " + .@weekly_targets$[.@weekly_ready_index] + " is finally quiet. Irene was right to trust you.";
 		next;
 		mes "[Silvano]";
 		mes "I have 2,500,000 Base EXP, 1,625,000 Job EXP, and 3 " + getitemname(.@weekly_rewards[.@weekly_ready_index]) + " set aside for you. Shall I hand them over?";
@@ -667,12 +701,12 @@ prt_maze01,101,25,3	script(CLOAKED)	Silvano#ill_laby	4_M_SILVANO,{
 		erasequest .@weekly_ids[.@weekly_ready_index];
 		questinfo_refresh();
 		mes "[Silvano]";
-		mes "Thank you for easing that pain. Anes can ask you for another hunt after Saturday at 4:00 AM server time.";
+		mes "Thank you for easing that pain. Irene can ask you for another hunt after Saturday at 4:00 AM server time.";
 		close;
 	}
 	if (.@weekly_active_count == 1) {
 		mes "[Silvano]";
-		mes .@weekly_targets$[.@weekly_active_index] + " is still roaming the labyrinth. Take care of yourself in there. Anes wants you back safely.";
+		mes .@weekly_targets$[.@weekly_active_index] + " is still roaming the labyrinth. Take care of yourself in there. Irene wants you back safely.";
 		next;
 	}
 	callfunc "F_IllusionLabyrinthDailyReset";
