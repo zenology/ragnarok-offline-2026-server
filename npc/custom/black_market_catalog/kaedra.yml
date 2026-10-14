@@ -1,77 +1,77 @@
 Header:
   Type: BLACK_MARKET_CATALOG
-  Version: 1
+  Version: 2
 Body:
-  - {Id: 2199, Price: 94732, DisplayName: "Ahura Mazdah", Category: 0}
-  - {Id: 28982, Price: 44022, DisplayName: "Angel's Shield", Category: 0}
-  - {Id: 2116, Price: 10727, DisplayName: "Angelic Guard", Category: 0}
-  - {Id: 460118, Price: 108925, DisplayName: "Archangel Aegis", Category: 0}
-  - {Id: 460119, Price: 126073, DisplayName: "Archangel's Aegis-LT", Category: 0}
-  - {Id: 460016, Price: 46057, DisplayName: "Automatic Shield II", Category: 0}
-  - {Id: 460146, Price: 114172, DisplayName: "Biolab Shield", Category: 0}
-  - {Id: 28945, Price: 62669, DisplayName: "Bloody Knight's Shield", Category: 0}
-  - {Id: 2138, Price: 16652, DisplayName: "Bradium Shield", Category: 0}
-  - {Id: 2130, Price: 20310, DisplayName: "Cross Shield", Category: 0}
-  - {Id: 28942, Price: 62669, DisplayName: "Cursed Knight's Shield", Category: 0}
-  - {Id: 460111, Price: 197912, DisplayName: "Dark Apostate Shield", Category: 0}
-  - {Id: 460117, Price: 114794, DisplayName: "Dragonic Shield", Category: 0}
-  - {Id: 460153, Price: 40155, DisplayName: "Enhanced Archangel's Shield", Category: 0}
-  - {Id: 460167, Price: 57905, DisplayName: "Enhanced God-Devouring Demonic Shield", Category: 0}
-  - {Id: 2129, Price: 8519, DisplayName: "Exorcism Bible", Category: 0}
-  - {Id: 460066, Price: 256143, DisplayName: "Fake Alloy Pot-LT", Category: 0}
-  - {Id: 460166, Price: 31449, DisplayName: "Falling Star Shield", Category: 0}
-  - {Id: 460003, Price: 17772, DisplayName: "Feather Shield", Category: 0}
-  - {Id: 460177, Price: 150941, DisplayName: "Focused Kitten Shield", Category: 0}
-  - {Id: 28984, Price: 69095, DisplayName: "Forbidden Grimoire", Category: 0}
-  - {Id: 28955, Price: 33147, DisplayName: "Fotia Shield", Category: 0}
-  - {Id: 2171, Price: 6184, DisplayName: "Fox Armguard", Category: 0}
-  - {Id: 460107, Price: 22818, DisplayName: "Giant Shield", Category: 0}
-  - {Id: 460081, Price: 41523, DisplayName: "Guardian's Shield", Category: 0}
-  - {Id: 460114, Price: 28561, DisplayName: "Hard Shell Shield", Category: 0}
-  - {Id: 460115, Price: 33551, DisplayName: "Hard Shell Shield-LT", Category: 0}
-  - {Id: 460100, Price: 24280, DisplayName: "Heavenly Oath", Category: 0}
-  - {Id: 2111, Price: 7441, DisplayName: "Herald of God", Category: 0}
-  - {Id: 460036, Price: 6379, DisplayName: "Herosria Brutal Guard", Category: 0}
-  - {Id: 460034, Price: 8118, DisplayName: "Herosria Brutal Shield", Category: 0}
-  - {Id: 460037, Price: 6379, DisplayName: "Herosria Cranial Guard", Category: 0}
-  - {Id: 460035, Price: 8118, DisplayName: "Herosria Cranial Shield", Category: 0}
-  - {Id: 2182, Price: 19987, DisplayName: "Hervor Alvitr", Category: 0}
-  - {Id: 2110, Price: 3536, DisplayName: "Holy Guard", Category: 0}
-  - {Id: 460178, Price: 54352, DisplayName: "Ignis Flame Guard", Category: 0}
-  - {Id: 2153, Price: 124191, DisplayName: "Imperial Guard", Category: 0}
-  - {Id: 2197, Price: 10879, DisplayName: "Iron Shield", Category: 0}
-  - {Id: 28959, Price: 3605, DisplayName: "Jericho Wall", Category: 0}
-  - {Id: 2169, Price: 173585, DisplayName: "Kalasag", Category: 0}
-  - {Id: 460106, Price: 49008, DisplayName: "Kitten Shield", Category: 0}
-  - {Id: 460130, Price: 114425, DisplayName: "Legendary Stone Shield", Category: 0}
-  - {Id: 2127, Price: 6716, DisplayName: "Lion's Slipper", Category: 0}
-  - {Id: 460020, Price: 115213, DisplayName: "Mad Bunny-LT", Category: 0}
-  - {Id: 2131, Price: 6946, DisplayName: "Magic Bible Vol.1", Category: 0}
-  - {Id: 460121, Price: 47287, DisplayName: "Melody Rose Shield", Category: 0}
-  - {Id: 2121, Price: 12337, DisplayName: "Memory Book", Category: 0}
-  - {Id: 460112, Price: 20825, DisplayName: "Odin Grace Shield", Category: 0}
-  - {Id: 460113, Price: 20788, DisplayName: "Odin Grace Shield-LT", Category: 0}
-  - {Id: 2126, Price: 3267, DisplayName: "Old Shield", Category: 0}
-  - {Id: 2122, Price: 21024, DisplayName: "Platinum Shield", Category: 0}
-  - {Id: 460142, Price: 30345, DisplayName: "Punishment Chain Shield", Category: 0}
-  - {Id: 28946, Price: 86129, DisplayName: "Purified Knight's Shield", Category: 0}
-  - {Id: 460175, Price: 46205, DisplayName: "Robot Spark Shield", Category: 0}
-  - {Id: 2177, Price: 22347, DisplayName: "Shield of Death", Category: 0}
-  - {Id: 2193, Price: 18804, DisplayName: "Shield of Fallen Angel", Category: 0}
-  - {Id: 460023, Price: 65988, DisplayName: "Shield of Phoenix", Category: 0}
-  - {Id: 460171, Price: 40783, DisplayName: "Soul Demon Shield", Category: 0}
-  - {Id: 460052, Price: 51036, DisplayName: "Striking Armguard", Category: 0}
-  - {Id: 460122, Price: 47842, DisplayName: "Super Novice Shield", Category: 0}
-  - {Id: 2188, Price: 18188, DisplayName: "Svalinn", Category: 0}
-  - {Id: 460150, Price: 21104, DisplayName: "Sylvan Thorn Guard", Category: 0}
-  - {Id: 460050, Price: 39922, DisplayName: "Symbol of Eden", Category: 0}
-  - {Id: 460116, Price: 30048, DisplayName: "Themis Libra-LT", Category: 0}
-  - {Id: 2124, Price: 20592, DisplayName: "Thorny Buckler", Category: 0}
-  - {Id: 460136, Price: 163512, DisplayName: "Thundershell Ward", Category: 0}
-  - {Id: 2133, Price: 8884, DisplayName: "Tournament Shield", Category: 0}
-  - {Id: 460138, Price: 97816, DisplayName: "Trap Follower Shield", Category: 0}
-  - {Id: 28913, Price: 43905, DisplayName: "Ultralight Magic Shield", Category: 0}
-  - {Id: 28905, Price: 11900, DisplayName: "Union Buckler", Category: 0}
-  - {Id: 28904, Price: 12291, DisplayName: "Union Guard", Category: 0}
-  - {Id: 460143, Price: 37055, DisplayName: "Valkyrie Angel Guard", Category: 0}
-  - {Id: 2115, Price: 37161, DisplayName: "Valkyrie Shield", Category: 0}
+  - {Id: 2199, RawBP: 94622, DisplayName: "Ahura Mazdah", Category: 0}
+  - {Id: 28982, RawBP: 48802, DisplayName: "Angel's Shield", Category: 0}
+  - {Id: 2116, RawBP: 12992, DisplayName: "Angelic Guard", Category: 0}
+  - {Id: 460118, RawBP: 106499, DisplayName: "Archangel Aegis", Category: 0}
+  - {Id: 460119, RawBP: 143165, DisplayName: "Archangel's Aegis-LT", Category: 0}
+  - {Id: 460016, RawBP: 50807, DisplayName: "Automatic Shield II", Category: 0}
+  - {Id: 460146, RawBP: 216386, DisplayName: "Biolab Shield", Category: 0}
+  - {Id: 28945, RawBP: 33401, DisplayName: "Bloody Knight's Shield", Category: 0}
+  - {Id: 2138, RawBP: 19832, DisplayName: "Bradium Shield", Category: 0}
+  - {Id: 2130, RawBP: 23945, DisplayName: "Cross Shield", Category: 0}
+  - {Id: 28942, RawBP: 33401, DisplayName: "Cursed Knight's Shield", Category: 0}
+  - {Id: 460111, RawBP: 270556, DisplayName: "Dark Apostate Shield", Category: 0}
+  - {Id: 460117, RawBP: 290223, DisplayName: "Dragonic Shield", Category: 0}
+  - {Id: 460153, RawBP: 137692, DisplayName: "Enhanced Archangel's Shield", Category: 0}
+  - {Id: 460167, RawBP: 104732, DisplayName: "Enhanced God-Devouring Demonic Shield", Category: 0}
+  - {Id: 2129, RawBP: 10384, DisplayName: "Exorcism Bible", Category: 0}
+  - {Id: 460066, RawBP: 217271, DisplayName: "Fake Alloy Pot-LT", Category: 0}
+  - {Id: 460166, RawBP: 102851, DisplayName: "Falling Star Shield", Category: 0}
+  - {Id: 460003, RawBP: 21100, DisplayName: "Feather Shield", Category: 0}
+  - {Id: 460177, RawBP: 172338, DisplayName: "Focused Kitten Shield", Category: 0}
+  - {Id: 28984, RawBP: 72384, DisplayName: "Forbidden Grimoire", Category: 0}
+  - {Id: 28955, RawBP: 37763, DisplayName: "Fotia Shield", Category: 0}
+  - {Id: 2171, RawBP: 7103, DisplayName: "Fox Armguard", Category: 0}
+  - {Id: 460107, RawBP: 26717, DisplayName: "Giant Shield", Category: 0}
+  - {Id: 460081, RawBP: 46315, DisplayName: "Guardian's Shield", Category: 0}
+  - {Id: 460114, RawBP: 115515, DisplayName: "Hard Shell Shield", Category: 0}
+  - {Id: 460115, RawBP: 139628, DisplayName: "Hard Shell Shield-LT", Category: 0}
+  - {Id: 460100, RawBP: 28317, DisplayName: "Heavenly Oath", Category: 0}
+  - {Id: 2111, RawBP: 9099, DisplayName: "Herald of God", Category: 0}
+  - {Id: 460036, RawBP: 7824, DisplayName: "Herosria Brutal Guard", Category: 0}
+  - {Id: 460034, RawBP: 9907, DisplayName: "Herosria Brutal Shield", Category: 0}
+  - {Id: 460037, RawBP: 7824, DisplayName: "Herosria Cranial Guard", Category: 0}
+  - {Id: 460035, RawBP: 9907, DisplayName: "Herosria Cranial Shield", Category: 0}
+  - {Id: 2182, RawBP: 23585, DisplayName: "Hervor Alvitr", Category: 0}
+  - {Id: 2110, RawBP: 4374, DisplayName: "Holy Guard", Category: 0}
+  - {Id: 460178, RawBP: 58800, DisplayName: "Ignis Flame Guard", Category: 0}
+  - {Id: 2153, RawBP: 34230, DisplayName: "Imperial Guard", Category: 0}
+  - {Id: 2197, RawBP: 13170, DisplayName: "Iron Shield", Category: 0}
+  - {Id: 28959, RawBP: 4458, DisplayName: "Jericho Wall", Category: 0}
+  - {Id: 2169, RawBP: 163492, DisplayName: "Kalasag", Category: 0}
+  - {Id: 460106, RawBP: 116044, DisplayName: "Kitten Shield", Category: 0}
+  - {Id: 460130, RawBP: 320029, DisplayName: "Legendary Stone Shield", Category: 0}
+  - {Id: 2127, RawBP: 8229, DisplayName: "Lion's Slipper", Category: 0}
+  - {Id: 460020, RawBP: 53719, DisplayName: "Mad Bunny-LT", Category: 0}
+  - {Id: 2131, RawBP: 8505, DisplayName: "Magic Bible Vol.1", Category: 0}
+  - {Id: 460121, RawBP: 52010, DisplayName: "Melody Rose Shield", Category: 0}
+  - {Id: 2121, RawBP: 6471, DisplayName: "Memory Book", Category: 0}
+  - {Id: 460112, RawBP: 24517, DisplayName: "Odin Grace Shield", Category: 0}
+  - {Id: 460113, RawBP: 143360, DisplayName: "Odin Grace Shield-LT", Category: 0}
+  - {Id: 2126, RawBP: 4044, DisplayName: "Old Shield", Category: 0}
+  - {Id: 2122, RawBP: 24738, DisplayName: "Platinum Shield", Category: 0}
+  - {Id: 460142, RawBP: 34824, DisplayName: "Punishment Chain Shield", Category: 0}
+  - {Id: 28946, RawBP: 42131, DisplayName: "Purified Knight's Shield", Category: 0}
+  - {Id: 460175, RawBP: 70433, DisplayName: "Robot Spark Shield", Category: 0}
+  - {Id: 2177, RawBP: 26200, DisplayName: "Shield of Death", Category: 0}
+  - {Id: 2193, RawBP: 22261, DisplayName: "Shield of Fallen Angel", Category: 0}
+  - {Id: 460023, RawBP: 69580, DisplayName: "Shield of Phoenix", Category: 0}
+  - {Id: 460171, RawBP: 45573, DisplayName: "Soul Demon Shield", Category: 0}
+  - {Id: 460052, RawBP: 55078, DisplayName: "Striking Armguard", Category: 0}
+  - {Id: 460122, RawBP: 52551, DisplayName: "Super Novice Shield", Category: 0}
+  - {Id: 2188, RawBP: 21569, DisplayName: "Svalinn", Category: 0}
+  - {Id: 460150, RawBP: 24827, DisplayName: "Sylvan Thorn Guard", Category: 0}
+  - {Id: 460050, RawBP: 42062, DisplayName: "Symbol of Eden", Category: 0}
+  - {Id: 460116, RawBP: 84401, DisplayName: "Themis Libra-LT", Category: 0}
+  - {Id: 2124, RawBP: 14114, DisplayName: "Thorny Buckler", Category: 0}
+  - {Id: 460136, RawBP: 229417, DisplayName: "Thundershell Ward", Category: 0}
+  - {Id: 2133, RawBP: 8807, DisplayName: "Tournament Shield", Category: 0}
+  - {Id: 460138, RawBP: 375777, DisplayName: "Trap Follower Shield", Category: 0}
+  - {Id: 28913, RawBP: 22585, DisplayName: "Ultralight Magic Shield", Category: 0}
+  - {Id: 28905, RawBP: 14364, DisplayName: "Union Buckler", Category: 0}
+  - {Id: 28904, RawBP: 14820, DisplayName: "Union Guard", Category: 0}
+  - {Id: 460143, RawBP: 41795, DisplayName: "Valkyrie Angel Guard", Category: 0}
+  - {Id: 2115, RawBP: 38704, DisplayName: "Valkyrie Shield", Category: 0}

@@ -14,6 +14,7 @@
 #include <string>
 #include <vector>
 #include <common/database.hpp>
+#include "black_market_pricing.hpp"
 
 namespace bmc {
 enum class Kind { Equipment, Hat, Specialty, Card, Rooke };
@@ -49,6 +50,7 @@ inline const std::array<const char*, 6> tier_keys = {"Normal1_50", "Normal51_99"
 inline const std::vector<std::string> suffixes = {"ALL", "AH", "IP", "QZ9", "0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 struct Record {
 	t_itemid id = 0;
+	uint32 raw_bp = 0; // Gear price is assessed BP before Daily Rate and markup.
 	uint32 price = 0, offer = 0, source_mob = 0, category = 0;
 	std::string name;
 	std::array<uint32, 6> tiers{};
@@ -71,8 +73,84 @@ inline void yaml_error(const char* message, size_t length, ryml::Location locati
 		std::to_string(location.line + 1) + ", column " + std::to_string(location.col + 1));
 }
 
+inline bool is_gear(const Profile& p) {
+	return p.kind == Kind::Hat || p.kind == Kind::Equipment || p.kind == Kind::Specialty;
+}
+inline constexpr char pricing_path[] = "npc/custom/black_market_pricing.yml";
+inline PricingSettings pricing_settings;
+
+// Strict preflight also rejects duplicate keys/tags before normalization.
+inline bool strict_yaml_tree(const ryml::NodeRef& node, std::string& reason) {
+	if (node.has_key_tag() || node.has_val_tag()) { reason = "explicit YAML tags are unsupported"; return false; }
+	std::set<std::string> keys;
+	for (const auto& child : node) {
+		if (node.is_map()) {
+			if (!child.has_key()) { reason = "mapping requires scalar keys"; return false; }
+			std::string key(child.key().str, child.key().len);
+			if (!keys.insert(key).second) { reason = "duplicate field " + key; return false; }
+		}
+		if (!strict_yaml_tree(child, reason)) return false;
+	}
+	return true;
+}
+inline bool load_pricing_settings(PricingSettings& settings) {
+	settings = PricingSettings{};
+	std::ifstream input(pricing_path);
+	if (!input) { ShowError("Black Market pricing %s: cannot open file.\n", pricing_path); return false; }
+	std::string text((std::istreambuf_iterator<char>(input)), std::istreambuf_iterator<char>());
+	try {
+		auto callbacks = ryml::get_callbacks(); callbacks.m_error = yaml_error;
+		ryml::Parser parser(callbacks);
+		auto tree = parser.parse_in_arena(c4::to_csubstr(pricing_path), c4::to_csubstr(text));
+		auto root = tree.rootref();
+		std::string reason;
+		if (!strict_yaml_tree(root, reason)) throw std::runtime_error(reason);
+		if (!root.is_map() || root.num_children() != 2 || !root.has_child("Header") || !root.has_child("Body"))
+			throw std::runtime_error("requires Header and Body only; imports are unsupported");
+		auto header = root["Header"];
+		if (!header.is_map() || header.num_children() != 2 || !header.has_child("Type") || !header.has_child("Version") ||
+			!header["Type"].has_val() || header["Type"].val() != "BLACK_MARKET_PRICING" ||
+			!header["Version"].has_val() || header["Version"].is_val_quoted() || header["Version"].val() != "1")
+			throw std::runtime_error("expected BLACK_MARKET_PRICING Version 1 Header");
+		auto body = root["Body"];
+		if (!body.is_map() || body.num_children() != 8) throw std::runtime_error("Body requires exactly eight pricing fields");
+		auto number = [&](const char* field, int64_t& out, bool zero = false) {
+			if (!body.has_child(c4::to_csubstr(field))) throw std::runtime_error(std::string("missing field ") + field);
+			auto node = body[c4::to_csubstr(field)];
+			if (!node.has_val() || node.is_val_quoted() || node.val().empty() || (node.val().len > 1 && node.val().str[0] == '0'))
+				throw std::runtime_error(std::string(field) + " requires an unquoted decimal integer");
+			int64_t value = 0;
+			for (char c : node.val()) {
+				if (c < '0' || c > '9') throw std::runtime_error(std::string(field) + " requires a nonnegative decimal integer");
+				value = value * 10 + c - '0';
+				if (value > INT32_MAX) throw std::runtime_error(std::string(field) + " exceeds INT32_MAX");
+			}
+			if (!zero && value == 0) throw std::runtime_error(std::string(field) + " must be positive");
+			out = value;
+		};
+		number("P1X", settings.p1x); number("P1Y", settings.p1y); number("P2X", settings.p2x); number("P3X", settings.p3x);
+		number("AnchorRawBP", settings.anchor_raw_bp); number("AnchorAssessedBP", settings.anchor_assessed_bp);
+		number("TailAngleDegrees", settings.tail_angle_degrees, true); number("CelestineMarkupPercent", settings.celestine_markup_percent, true);
+		if (!derive_pricing_settings(settings, reason)) throw std::runtime_error(reason);
+		return true;
+	} catch (const std::runtime_error& error) {
+		settings.valid = false;
+		ShowError("Black Market pricing %s: %s.\n", pricing_path, error.what()); return false;
+	}
+}
+
+inline bool sale_price(const Profile& owner, int64_t assessed_bp, int32_t daily_rate, int32_t& out_final) {
+	if (!is_gear(owner) || !pricing_settings.valid || assessed_bp <= 0 || assessed_bp > INT32_MAX) return false;
+	int32_t daily = 0;
+	if (!black_market_adjusted_price(assessed_bp, daily_rate, daily)) return false;
+	if (owner.key == "madame-celestine") return apply_markup(daily, pricing_settings.celestine_markup_percent, out_final);
+	out_final = daily;
+	return true;
+}
+
 class Database : public TypesafeYamlDatabase<t_itemid, Record> {
 	const Profile& profile;
+	const PricingSettings settings;
 	std::string record_context;
 	bool fail(const ryml::NodeRef& node, const char* reason) {
 		valid = false;
@@ -97,7 +175,8 @@ class Database : public TypesafeYamlDatabase<t_itemid, Record> {
 public:
 	bool valid = true;
 	std::vector<std::shared_ptr<Record>> ordered;
-	explicit Database(const Profile& p) : TypesafeYamlDatabase("BLACK_MARKET_CATALOG", 1), profile(p) {}
+	explicit Database(const Profile& p, const PricingSettings& snapshot) :
+		TypesafeYamlDatabase("BLACK_MARKET_CATALOG", is_gear(p) ? 2 : 1), profile(p), settings(snapshot) {}
 	const std::string getDefaultLocation() override { return profile.path(); }
 	void clear() override { TypesafeYamlDatabase::clear(); ordered.clear(); valid = true; }
 	// Validate the envelope before the common loader can process Footer.Imports.
@@ -116,6 +195,8 @@ public:
 				ShowError("Black Market catalog %s: %s at line %zu, column %zu.\n", profile.path().c_str(), reason, location.line + 1, location.col + 1);
 				return false;
 			};
+			std::string reason;
+			if (!strict_yaml_tree(root, reason)) return envelope_error(root, reason.c_str());
 			if (!root.is_map() || root.num_children() != 2 || !root.has_child("Header") || !root.has_child("Body") || !root["Body"].is_seq()) {
 				return envelope_error(root, "requires Header and sequence Body only; imports are unsupported");
 			}
@@ -123,9 +204,9 @@ public:
 			if (!header.is_map() || header.num_children() != 2 || !header.has_child("Type") || !header.has_child("Version")) {
 				return envelope_error(header, "invalid Header");
 			}
-			if (!header["Version"].has_val() || header["Version"].is_val_quoted() || header["Version"].has_val_tag() || header["Version"].val() != "1" ||
+			if (!header["Version"].has_val() || header["Version"].is_val_quoted() || header["Version"].has_val_tag() || header["Version"].val() != (is_gear(profile) ? "2" : "1") ||
 				!header["Type"].has_val() || header["Type"].val() != "BLACK_MARKET_CATALOG") {
-				return envelope_error(header, "expected BLACK_MARKET_CATALOG Version 1");
+				return envelope_error(header, is_gear(profile) ? "expected BLACK_MARKET_CATALOG Version 2 with RawBP; gear Version 1/Price is unsupported" : "expected BLACK_MARKET_CATALOG Version 1");
 			}
 		} catch (const std::runtime_error& error) {
 			ShowError("Black Market catalog %s: malformed YAML: %s\n", profile.path().c_str(), error.what()); return false;
@@ -162,8 +243,13 @@ public:
 			if (!node.has_child("TierPrices") || !node["TierPrices"].is_map() || node["TierPrices"].num_children() != 6) { fail(node, "TierPrices requires all six tiers"); return 0; }
 			for (size_t i = 0; i < tier_keys.size(); ++i) if (!number(node["TierPrices"], tier_keys[i], row->tiers[i], true)) return 0;
 		} else {
-			expected.insert("Price"); expected.insert("DisplayName");
-			if (!number(node, "Price", row->price)) return 0;
+			expected.insert(is_gear(profile) ? "RawBP" : "Price"); expected.insert("DisplayName");
+			if (is_gear(profile)) {
+				if (!number(node, "RawBP", row->raw_bp)) return 0;
+				int32_t assessed = 0;
+				if (!assess_raw_bp(settings, row->raw_bp, assessed)) { fail(node["RawBP"], "RawBP curve result is not a positive INT32 price"); return 0; }
+				row->price = static_cast<uint32>(assessed);
+			} else if (!number(node, "Price", row->price)) return 0;
 			if (!node.has_child("DisplayName") || !node["DisplayName"].has_val() || node["DisplayName"].has_val_tag() || !this->asString(node, "DisplayName", row->name) || row->name.empty()) { fail(node, "DisplayName requires a nonempty string without an explicit tag"); return 0; }
 			if (!node["DisplayName"].is_val_quoted()) {
 				auto plain = lower(row->name);
@@ -348,10 +434,12 @@ inline bool install(const Inventories& stock) {
 }
 inline int load() {
 	search_ready = false; search_rows.clear(); clear_shop("Riven_SearchShop");
+	PricingSettings snapshot;
+	const bool pricing_ready = load_pricing_settings(snapshot);
 	std::map<std::string, Catalog> staged;
 	for (const auto& p : profiles) {
-		auto& cat = staged[p.key]; cat.db = std::make_shared<Database>(p);
-		cat.ready = cat.db->load_catalog();
+		auto& cat = staged[p.key]; cat.db = std::make_shared<Database>(p, snapshot);
+		cat.ready = (!is_gear(p) || pricing_ready) && cat.db->load_catalog();
 	}
 	std::map<t_itemid, std::string> owners;
 	for (size_t i = 0; i < 8; ++i) {
@@ -375,6 +463,7 @@ inline int load() {
 		} else ++count;
 	}
 	catalogs = std::move(staged);
+	pricing_settings = snapshot;
 	search_ready = shop("Riven_SearchShop") != nullptr;
 	for (size_t i = 0; i < 8; ++i) search_ready = search_ready && ready(profiles[i].key);
 	if (search_ready) {
@@ -444,7 +533,7 @@ inline bool search_prepare(const std::vector<t_itemid>& ids) {
 		if (row == search_rows.end()) return false;
 		int64 rate = mapreg_readreg(add_str(row->second->rate));
 		int32 price = 0;
-		if (rate < -10 || rate > 30 || !black_market_adjusted_price(row->first->price, static_cast<int32>(rate), price)) return false;
+		if (rate < -10 || rate > 30 || !sale_price(*row->second, row->first->price, static_cast<int32>(rate), price)) return false;
 		stock.emplace_back(id, price);
 	}
 	return install({{"Riven_SearchShop", std::move(stock)}});
