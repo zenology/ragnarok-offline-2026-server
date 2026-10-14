@@ -20,7 +20,7 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 	mes "I can remove one ordinary card at a time from your equipped items.";
 	next;
 	mes "[Vesper]";
-	mes "The removed card is destroyed. Enchantments and Random Options are outside this experiment.";
+	mes "The removed card is destroyed. Enchantments and Random Options stay; a new Indestructible option protects its own specimen from breakage.";
 	next;
 	mes "[Vesper]";
 	mes "I always work on the highest occupied card socket first. A failed attempt can break your equipment.";
@@ -69,6 +69,7 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 	.@index = .@chosen_index[.@choice];
 	.@card = .@chosen_card[.@choice];
 	.@price = callsub(S_GetPrice);
+	.@innate = stripeindestructible(.@slot);
 	mes "[Vesper]";
 	mes "Ah, ^0055FF" + getitemname(.@chosen_item[.@choice]) + "^000000 (" + .@chosen_label$[.@choice] + "). A splendid specimen.";
 	next;
@@ -79,13 +80,21 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 	mes "Each attempt costs ^0055FF" + .@price + " Black Market Points^000000, whether it succeeds or fails.";
 	next;
 	mes "[Vesper]";
-	mes "Protection costs one Blacksmith Blessing and one Etel Dust per attempt. It prevents breakage, but does not improve the chance.";
-	.@mode = select("Standard removal:Protect with 1 Blessing + 1 Etel Dust:Cancel");
-	if (.@mode == 3) close;
+	if (.@innate) {
+		mes "This specimen's Indestructible option prevents breakage. The attempt still costs BP and can fail.";
+		if (select("Standard removal:Cancel") == 2) close;
+		.@protect = 0;
+	} else {
+		mes "Protection costs one Blacksmith Blessing and one Etel Dust per attempt. It prevents breakage, but does not improve the chance.";
+		.@mode = select("Standard removal:Protect with 1 Blessing + 1 Etel Dust:Cancel");
+		if (.@mode == 3) close;
+		.@protect = .@mode == 2;
+	}
 	clear;
-	.@protect = .@mode == 2;
 	mes "[Vesper]";
-	if (.@protect)
+	if (.@innate)
+		mes "Cost: " + .@price + " BP, even on failure. Indestructible keeps the card and worn equipment intact on failure. No protection materials are charged.";
+	else if (.@protect)
 		mes "Cost: " + .@price + " BP, 1 Blacksmith Blessing and 1 Etel Dust, even on failure. Failure leaves the card and worn equipment intact.";
 	else
 		mes "Cost: " + .@price + " BP, even on failure. Failure keeps the card, but breaks and unequips the specimen. Repair and wear it again before returning.";
@@ -99,6 +108,11 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 		mes "Your pricing tier changed. Speak to me again for a fresh quote. No points or materials were charged.";
 		close;
 	}
+	if (stripeindestructible(.@slot) != .@innate) {
+		mes "[Vesper]";
+		mes "The specimen's protection changed. Select it again. No points or materials were charged.";
+		close;
+	}
 	.@result = vesperremovecard(.@slot, .@uid$, .@index, .@card, .@protect);
 	mes "[Vesper]";
 	if (.@result == 1) {
@@ -110,6 +124,9 @@ paramk,43,181,4	script	Vesper#bm_enhance	4_F_BERRYTEA,{
 	} else if (.@result == 7) {
 		specialeffect2 EF_REFINEFAIL;
 		mes "The card resisted, but the protection held. Your equipment remains intact and worn. This attempt consumed its points and materials.";
+	} else if (.@result == 9) {
+		specialeffect2 EF_REFINEFAIL;
+		mes "The card resisted, but this specimen's Indestructible option held. The card and equipment remain intact and worn. Only BP was charged.";
 	} else if (.@result == 2)
 		mes "The specimen or its card changed before I could begin. No points or materials were charged.";
 	else if (.@result == 3)

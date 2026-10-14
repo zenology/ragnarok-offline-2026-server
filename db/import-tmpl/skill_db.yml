@@ -144,8 +144,8 @@ Header:
 
 Body:
   # Hidden AutoSpell for Rekenber's Celestial Hat (400718) Grade B.
-  # ID 10000 stays above official ranges. Do not add this enumerator to skill.hpp.
-  - Id: 10000
+  # ID 11000 is outside the native Guild skill range. Keep the C++ constant in sync.
+  - Id: 11000
     Name: OFFLINE_REKENBER_CELESTIAL
     Description: Rekenber Celestial Splash
     MaxLevel: 1

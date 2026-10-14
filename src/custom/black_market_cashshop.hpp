@@ -9,6 +9,7 @@
 #include <limits>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 #include <utility>
 #include <vector>
 
@@ -19,6 +20,8 @@ struct black_market_catalog_cache {
 };
 
 inline std::unordered_map<std::string, black_market_catalog_cache> black_market_catalog_cache_by_shop;
+// Ready Equipment/Specialty drawers and Riven use catalog BP plus Daily Rate only.
+inline std::unordered_set<std::string> black_market_gear_shop_names;
 
 // Permanent character registry used by every Black Market pointshop and
 // service. Do not change this name without migrating the player-facing
@@ -75,6 +78,12 @@ constexpr black_market_price_ratio black_market_normal_price_ratio(int32_t base_
 	return { black_market_level_multiplier(base_level, reborn), 1 };
 }
 
+inline black_market_price_ratio black_market_shop_price_ratio(const char* shop_name, int32_t base_level, bool reborn) {
+	if (base_level > 0 && black_market_gear_shop_names.count(shop_name))
+		return { 1, 1 };
+	return black_market_normal_price_ratio(base_level, reborn);
+}
+
 inline bool black_market_is_card_shop(const char* shop_name) {
 	return std::strncmp(shop_name, "card_mob#", 9) == 0 ||
 		std::strncmp(shop_name, "card_miniboss#", 14) == 0 ||
@@ -82,15 +91,10 @@ inline bool black_market_is_card_shop(const char* shop_name) {
 		std::strncmp(shop_name, "card_special#", 13) == 0;
 }
 
-constexpr black_market_price_ratio black_market_card_price_ratio(int32_t base_level, bool reborn) {
-	const int32_t normal_multiplier = black_market_level_multiplier(base_level, reborn);
-	if (normal_multiplier <= 0)
+constexpr black_market_price_ratio black_market_card_price_ratio(int32_t base_level, bool) {
+	if (base_level <= 0)
 		return { 0, 1 };
-	if (normal_multiplier <= 2)
-		return { 1, 1 };
-	if (normal_multiplier == 3)
-		return { 3, 2 };
-	return { normal_multiplier / 2, 1 };
+	return { 1, 1 };
 }
 
 constexpr int64_t black_market_player_price_unchecked(int64_t daily_adjusted_price, black_market_price_ratio ratio) {
@@ -133,10 +137,10 @@ static_assert(black_market_adjusted_price_unchecked(5, 10) == 6);
 static_assert(black_market_adjusted_price_unchecked(1, -10) == 1);
 static_assert(black_market_card_price_ratio(1, false).numerator == 1 && black_market_card_price_ratio(1, false).denominator == 1);
 static_assert(black_market_card_price_ratio(99, false).numerator == 1 && black_market_card_price_ratio(99, false).denominator == 1);
-static_assert(black_market_card_price_ratio(50, true).numerator == 3 && black_market_card_price_ratio(50, true).denominator == 2);
-static_assert(black_market_card_price_ratio(99, true).numerator == 2 && black_market_card_price_ratio(99, true).denominator == 1);
-static_assert(black_market_card_price_ratio(100, false).numerator == 3 && black_market_card_price_ratio(100, false).denominator == 1);
-static_assert(black_market_card_price_ratio(201, false).numerator == 5 && black_market_card_price_ratio(201, false).denominator == 1);
+static_assert(black_market_card_price_ratio(50, true).numerator == 1 && black_market_card_price_ratio(50, true).denominator == 1);
+static_assert(black_market_card_price_ratio(99, true).numerator == 1 && black_market_card_price_ratio(99, true).denominator == 1);
+static_assert(black_market_card_price_ratio(100, false).numerator == 1 && black_market_card_price_ratio(100, false).denominator == 1);
+static_assert(black_market_card_price_ratio(201, false).numerator == 1 && black_market_card_price_ratio(201, false).denominator == 1);
 static_assert(black_market_player_price_unchecked(325, { 3, 2 }) == 488);
 static_assert(black_market_player_price_is_valid(214748364, { 10, 1 }));
 static_assert(!black_market_player_price_is_valid(214748365, { 10, 1 }));

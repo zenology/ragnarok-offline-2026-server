@@ -1,0 +1,12 @@
+Header:
+  Type: BLACK_MARKET_PRICING
+  Version: 1
+Body:
+  P1X: 150000
+  P1Y: 120000
+  P2X: 150000
+  P3X: 399238
+  AnchorRawBP: 555107
+  AnchorAssessedBP: 370000
+  TailAngleDegrees: 15
+  CelestineMarkupPercent: 20

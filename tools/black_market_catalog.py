@@ -4,6 +4,7 @@ This module never writes NPCs, YAML, indexes, or client assets.
 """
 from __future__ import annotations
 
+import math
 import re
 from pathlib import Path
 from typing import Any
@@ -63,6 +64,91 @@ def _decimal(loader: UniqueKeyLoader, node: yaml.ScalarNode) -> int:
 UniqueKeyLoader.add_constructor("tag:yaml.org,2002:int", _decimal)
 
 
+def load_yaml(text: str) -> Any:
+    for event in yaml.parse(text):
+        if getattr(event, "tag", None) is not None:
+            raise CatalogError("explicit YAML tags are unsupported")
+    return yaml.load(text, Loader=UniqueKeyLoader)
+
+
+PRICING_FIELDS = {"P1X", "P1Y", "P2X", "P3X", "AnchorRawBP",
+                  "AnchorAssessedBP", "TailAngleDegrees", "CelestineMarkupPercent"}
+
+
+def validate_pricing(document: Any) -> dict:
+    if not isinstance(document, dict) or set(document) != {"Header", "Body"}:
+        raise CatalogError("pricing requires Header and Body only; imports are unsupported")
+    header = document["Header"]
+    if (not isinstance(header, dict) or set(header) != {"Type", "Version"}
+            or header["Type"] != "BLACK_MARKET_PRICING"
+            or type(header["Version"]) is not int or header["Version"] != 1):
+        raise CatalogError("expected BLACK_MARKET_PRICING version 1 header")
+    source = document["Body"]
+    if not isinstance(source, dict) or set(source) != PRICING_FIELDS:
+        raise CatalogError("pricing Body requires exactly eight pricing fields")
+    settings = dict(source)
+    for field in PRICING_FIELDS:
+        integer(settings, field, 0 if field in ("TailAngleDegrees", "CelestineMarkupPercent") else 1,
+                89 if field == "TailAngleDegrees" else 2147483647)
+    if not 0 < settings["P1X"] <= settings["P2X"] < settings["P3X"] <= settings["AnchorRawBP"]:
+        raise CatalogError("requires 0 < P1X <= P2X < P3X <= AnchorRawBP")
+    settings["slope"] = math.tan(settings["TailAngleDegrees"] * math.pi / 180)
+    settings["P3Y"] = settings["AnchorAssessedBP"] - (settings["AnchorRawBP"] - settings["P3X"]) * settings["slope"]
+    settings["P2Y"] = settings["P3Y"] - (settings["P3X"] - settings["P2X"]) * settings["slope"]
+    if (not all(math.isfinite(settings[key]) for key in ("slope", "P2Y", "P3Y"))
+            or not 0 < settings["P1Y"] <= settings["P2Y"] <= settings["P3Y"]):
+        raise CatalogError("derived controls require finite 0 < P1Y <= P2Y <= P3Y")
+    return settings
+
+
+def read_pricing(path: Path = CATALOG_DIR.parent / "black_market_pricing.yml") -> dict:
+    try:
+        return validate_pricing(load_yaml(path.read_text(encoding="utf-8-sig")))
+    except (OSError, yaml.YAMLError, CatalogError) as error:
+        raise CatalogError(f"{path}: {error}") from error
+
+
+def bezier(t: float, p1: float, p2: float, p3: float) -> float:
+    u = 1 - t
+    return 3 * u * u * t * p1 + 3 * u * t * t * p2 + t * t * t * p3
+
+
+def curve_value(settings: dict, raw_bp: int) -> float:
+    integer({"RawBP": raw_bp}, "RawBP", 1)
+    if raw_bp >= settings["P3X"]:
+        return settings["AnchorAssessedBP"] + (raw_bp - settings["AnchorRawBP"]) * settings["slope"]
+    lo, hi = 0.0, 1.0
+    for _ in range(64):
+        mid = (lo + hi) / 2
+        if bezier(mid, settings["P1X"], settings["P2X"], settings["P3X"]) < raw_bp:
+            lo = mid
+        else:
+            hi = mid
+    return bezier((lo + hi) / 2, settings["P1Y"], settings["P2Y"], settings["P3Y"])
+
+
+def assess_raw_bp(settings: dict, raw_bp: int) -> int:
+    value = curve_value(settings, raw_bp)
+    if not math.isfinite(value):
+        raise CatalogError("RawBP curve result is not finite")
+    result = math.floor(value + 0.5)
+    return integer({"Price": result}, "Price", 1)
+
+
+def apply_markup(daily_bp: int, markup_percent: int) -> int:
+    integer({"DailyBP": daily_bp}, "DailyBP", 1)
+    integer({"CelestineMarkupPercent": markup_percent}, "CelestineMarkupPercent", 0)
+    result = (daily_bp * (100 + markup_percent) + 50) // 100
+    return integer({"FinalBP": result}, "FinalBP", 1)
+
+
+def sale_price(owner: str, assessed_bp: int, rate: int, settings: dict) -> int:
+    if owner not in EQUIPMENT:
+        raise CatalogError(f"unknown gear owner {owner}")
+    daily = adjusted_price(assessed_bp, rate)
+    return apply_markup(daily, settings["CelestineMarkupPercent"]) if owner == "madame-celestine" else daily
+
+
 def integer(row: dict, field: str, minimum: int, maximum: int = 2147483647) -> int:
     value = row.get(field)
     if type(value) is not int or not minimum <= value <= maximum:
@@ -70,18 +156,22 @@ def integer(row: dict, field: str, minimum: int, maximum: int = 2147483647) -> i
     return value
 
 
-def validate_document(key: str, document: Any, item_ids: set[int] | None = None) -> list[dict]:
+def validate_document(key: str, document: Any, item_ids: set[int] | None = None,
+                      settings: dict | None = None) -> list[dict]:
     if key not in KEYS:
         raise CatalogError(f"unknown catalog {key}")
+    version = 2 if key in EQUIPMENT else 1
     if not isinstance(document, dict) or not isinstance(document.get("Header"), dict):
-        raise CatalogError("expected BLACK_MARKET_CATALOG version 1 header")
+        raise CatalogError(f"expected BLACK_MARKET_CATALOG version {version} header")
     header = document["Header"]
-    if set(header) != {"Type", "Version"} or header["Type"] != "BLACK_MARKET_CATALOG" or type(header["Version"]) is not int or header["Version"] != 1:
-        raise CatalogError("expected BLACK_MARKET_CATALOG version 1 header")
+    if set(header) != {"Type", "Version"} or header["Type"] != "BLACK_MARKET_CATALOG" or type(header["Version"]) is not int or header["Version"] != version:
+        raise CatalogError(f"expected BLACK_MARKET_CATALOG version {version} header" + (" with RawBP; gear Version 1/Price is unsupported" if version == 2 else ""))
     if set(document) != {"Header", "Body"}:
         raise CatalogError("only Header and Body are allowed; imports are unsupported")
     if not isinstance(document["Body"], list):
         raise CatalogError("Body must be a sequence")
+    if key in EQUIPMENT and settings is None:
+        raise CatalogError("gear requires validated pricing settings")
     seen = set()
     rows = []
     for source in document["Body"]:
@@ -94,7 +184,7 @@ def validate_document(key: str, document: Any, item_ids: set[int] | None = None)
         seen.add(item_id)
         if item_ids is not None and item_id not in item_ids:
             raise CatalogError(f"Id {item_id}: item DB record does not exist")
-        required = {"Id", "TierPrices", "Category"} if key == "rooke" else {"Id", "Price", "DisplayName"}
+        required = {"Id", "TierPrices", "Category"} if key == "rooke" else {"Id", "RawBP" if key in EQUIPMENT else "Price", "DisplayName"}
         if key in CARDS:
             required |= {"CollectorOffer", "SourceMob"}
         elif key not in ("harlan", "rooke"):
@@ -102,7 +192,11 @@ def validate_document(key: str, document: Any, item_ids: set[int] | None = None)
         if set(row) != required:
             raise CatalogError(f"Id {item_id}: missing or unexpected fields: {set(row) ^ required}")
         if key != "rooke":
-            integer(row, "Price", 1)
+            if key in EQUIPMENT:
+                integer(row, "RawBP", 1)
+                row["Price"] = assess_raw_bp(settings, row["RawBP"])
+            else:
+                integer(row, "Price", 1)
             if type(row["DisplayName"]) is not str or not row["DisplayName"]:
                 raise CatalogError(f"Id {item_id}: DisplayName must be a nonempty string")
         if "Category" in row:
@@ -112,6 +206,8 @@ def validate_document(key: str, document: Any, item_ids: set[int] | None = None)
             integer(row, "SourceMob", 0 if key == "card-special" else 1)
             if key == "card-special" and row["SourceMob"] != 0:
                 raise CatalogError(f"Id {item_id}: Special SourceMob must be 0")
+            # Match the runtime card policy; preserve the raw YAML legacy Price.
+            row["Price"] = row["CollectorOffer"]
         if key == "rooke":
             tiers = row["TierPrices"]
             if not isinstance(tiers, dict) or set(tiers) != set(TIERS):
@@ -125,7 +221,8 @@ def validate_document(key: str, document: Any, item_ids: set[int] | None = None)
 def read_catalog(key: str, directory: Path = CATALOG_DIR, item_ids: set[int] | None = None) -> list[dict]:
     path = directory / f"{key}.yml"
     try:
-        return validate_document(key, yaml.load(path.read_text(encoding="utf-8-sig"), Loader=UniqueKeyLoader), item_ids)
+        settings = read_pricing(directory.parent / "black_market_pricing.yml") if key in EQUIPMENT else None
+        return validate_document(key, load_yaml(path.read_text(encoding="utf-8-sig")), item_ids, settings)
     except (OSError, yaml.YAMLError, CatalogError) as error:
         raise CatalogError(f"{path}: {error}") from error
 
@@ -241,7 +338,7 @@ def drawers(rows: list[dict], *, cards: bool = False, specialty: bool = False,
 
 
 def adjusted_price(price: int, rate: int) -> int:
-    if not -10 <= rate <= 30 or price <= 0:
+    if type(rate) is not int or not -10 <= rate <= 30 or type(price) is not int or not 0 < price <= 2147483647:
         raise CatalogError("invalid Daily Rate or price")
     result = (price * (100 + rate) + 50) // 100
     if not 0 < result <= 2147483647:

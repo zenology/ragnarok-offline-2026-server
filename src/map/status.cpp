@@ -13456,7 +13456,7 @@ int32 status_change_end( block_list* bl, enum sc_type type, int32 tid ){
 	if( status_change_entry* sce = sc->getSCE( type ); sce != nullptr ){
 		if (sce->timer != tid && tid != INVALID_TIMER)
 			return 0;
-		offline_premi_autobuff::log_status_end(bl, type, *sce);
+		offline_premi_autobuff::finish_status(bl, type, *sce);
 
 		if (tid == INVALID_TIMER) {
 			if (type == SC_ENDURE && sce->val4)
