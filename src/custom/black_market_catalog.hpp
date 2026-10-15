@@ -15,9 +15,11 @@
 #include <vector>
 #include <common/database.hpp>
 #include "black_market_pricing.hpp"
+#include "black_market_item_search_names.hpp"
 
 namespace bmc {
 enum class Kind { Equipment, Hat, Specialty, Card, Rooke };
+enum class SearchKind { Item = 1, Equipment = 2, Card = 3 };
 struct Profile {
 	std::string key;
 	Kind kind;
@@ -283,6 +285,7 @@ inline std::map<std::string, Catalog> catalogs;
 inline std::map<std::string, std::string> shop_owner;
 inline std::vector<std::pair<std::shared_ptr<Record>, const Profile*>> search_rows;
 inline bool search_ready = false;
+inline bool item_search_ready = false;
 using Inventory = std::vector<std::pair<t_itemid, uint32>>;
 using Inventories = std::map<std::string, Inventory>;
 
@@ -292,6 +295,11 @@ inline const Profile* profile_for(const std::string& key) {
 }
 inline bool ready(const std::string& key) {
 	if (key == "riven") return search_ready;
+	if (key == "riven-item") return item_search_ready && ready("rooke");
+	if (key == "riven-card") {
+		for (const auto& p : profiles) if (p.kind == Kind::Card && !ready(p.key)) return false;
+		return true;
+	}
 	auto it = catalogs.find(key);
 	return it != catalogs.end() && it->second.ready;
 }
@@ -303,7 +311,8 @@ inline void refresh_gear_price_policy() {
 			(profile->kind == Kind::Hat || profile->kind == Kind::Equipment || profile->kind == Kind::Specialty))
 			black_market_gear_shop_names.insert(entry.first);
 	}
-	if (search_ready) black_market_gear_shop_names.insert("Riven_SearchShop");
+	// Every search result is already priced for its owner, including Item tiers.
+	if (search_ready || ready("riven-item") || ready("riven-card")) black_market_gear_shop_names.insert("Riven_SearchShop");
 }
 inline npc_data* shop(const std::string& name) {
 	auto nd = npc_name2id(name.c_str());
@@ -434,6 +443,7 @@ inline bool install(const Inventories& stock) {
 }
 inline int load() {
 	search_ready = false; search_rows.clear(); clear_shop("Riven_SearchShop");
+	item_search_ready = false;
 	PricingSettings snapshot;
 	const bool pricing_ready = load_pricing_settings(snapshot);
 	std::map<std::string, Catalog> staged;
@@ -466,17 +476,27 @@ inline int load() {
 	pricing_settings = snapshot;
 	search_ready = shop("Riven_SearchShop") != nullptr;
 	for (size_t i = 0; i < 8; ++i) search_ready = search_ready && ready(profiles[i].key);
-	if (search_ready) {
-		for (size_t i = 0; i < 8; ++i) for (const auto& row : catalogs[profiles[i].key].db->ordered) {
-			if (!admitted(profiles[i], *row)) continue;
-			if (profiles[i].kind == Kind::Hat && !(item_db.find(row->id)->equip & (EQP_HEAD_TOP | EQP_HEAD_MID | EQP_HEAD_LOW))) continue;
-			search_rows.emplace_back(row, &profiles[i]);
+	item_search_ready = ready("rooke");
+	for (const auto& p : profiles) if (ready(p.key)) {
+		for (const auto& row : catalogs[p.key].db->ordered) {
+			if (!admitted(p, *row)) continue;
+			if (p.kind == Kind::Hat && !(item_db.find(row->id)->equip & (EQP_HEAD_TOP | EQP_HEAD_MID | EQP_HEAD_LOW))) continue;
+			if (p.kind == Kind::Rooke) {
+				auto name = item_search_names.find(row->id);
+				if (name == item_search_names.end()) {
+					item_search_ready = false;
+					ShowError("Black Market Item search: missing client display name for Id %u.\n", row->id);
+					continue;
+				}
+				row->name = name->second;
+			}
+			search_rows.emplace_back(row, &p);
 		}
-		std::sort(search_rows.begin(), search_rows.end(), [](const auto& a, const auto& b) {
-			auto aname = lower(a.first->name), bname = lower(b.first->name);
-			return aname == bname ? a.first->id < b.first->id : aname < bname;
-		});
 	}
+	std::sort(search_rows.begin(), search_rows.end(), [](const auto& a, const auto& b) {
+		auto aname = lower(a.first->name), bname = lower(b.first->name);
+		return aname == bname ? a.first->id < b.first->id : aname < bname;
+	});
 	refresh_gear_price_policy();
 	return count;
 }
@@ -486,7 +506,7 @@ inline const std::vector<Drawer>* drawers(const std::string& key, int64 category
 	return it == all.end() ? nullptr : &it->second;
 }
 inline bool managed_ready(const std::string& name) {
-	if (name == "Riven_SearchShop") return search_ready;
+	if (name == "Riven_SearchShop") return search_ready || ready("riven-item") || ready("riven-card");
 	auto it = shop_owner.find(name);
 	if (it != shop_owner.end()) return ready(it->second);
 	// Guard managed shells even before the first loader OnInit executes.
@@ -500,8 +520,36 @@ inline std::shared_ptr<Record> card(t_itemid id, int* tier = nullptr) {
 	}
 	return nullptr;
 }
-inline int search(std::string query, std::vector<t_itemid>& out) {
-	if (!search_ready) return -1;
+inline bool search_available(SearchKind kind) {
+	if (!shop("Riven_SearchShop")) return false;
+	if (kind == SearchKind::Item) return ready("riven-item");
+	if (kind == SearchKind::Card) return ready("riven-card");
+	return kind == SearchKind::Equipment && search_ready;
+}
+inline bool search_kind(const Profile& owner, SearchKind kind) {
+	if (kind == SearchKind::Item) return owner.kind == Kind::Rooke;
+	if (kind == SearchKind::Card) return owner.kind == Kind::Card;
+	return kind == SearchKind::Equipment && is_gear(owner);
+}
+inline int search_item_tier(const map_session_data& sd) {
+	if (sd.status.base_level >= 201) return 5;
+	if (sd.status.base_level >= 100) return 4;
+	const bool reborn = (sd.class_ & JOBL_UPPER) != 0;
+	return sd.status.base_level <= 50 ? (reborn ? 2 : 0) : (reborn ? 3 : 1);
+}
+inline bool search_allowed(const Profile& owner, const Record& row, const map_session_data* sd) {
+	if (!ready(owner.key)) return false;
+	if (is_gear(owner)) return search_ready;
+	if (!sd || sd->status.base_level == 0) return false;
+	if (owner.kind == Kind::Rooke) return ready("riven-item") && row.tiers[search_item_tier(*sd)] > 0;
+	if (owner.kind != Kind::Card || !ready("riven-card")) return false;
+	if (owner.tier == 1) return true;
+	if (owner.tier == 2) return (sd->class_ & MAPID_FIRSTMASK) == MAPID_SUMMONER || (sd->class_ & (JOBL_2 | JOBL_UPPER));
+	return ((sd->class_ & JOBL_THIRD) || sd->status.class_ == JOB_SPIRIT_HANDLER) &&
+		pc_readreg(sd, add_str(BLACK_MARKET_POINT_VAR)) >= 60000;
+}
+inline int search(std::string query, std::vector<t_itemid>& out, SearchKind kind = SearchKind::Equipment, const map_session_data* sd = nullptr) {
+	if (!search_available(kind)) return -1;
 	auto begin = query.find_first_not_of(' '), end = query.find_last_not_of(' ');
 	query = begin == std::string::npos ? "" : query.substr(begin, end - begin + 1);
 	if (query.empty()) return -2;
@@ -509,7 +557,7 @@ inline int search(std::string query, std::vector<t_itemid>& out) {
 	if (numeric) {
 		uint32 id = 0;
 		for (char c : query) { uint32 digit = c - '0'; if (id > (INT32_MAX - digit) / 10) return 0; id = id * 10 + digit; }
-		for (const auto& row : search_rows) if (row.first->id == id) out.push_back(id);
+		for (const auto& row : search_rows) if (search_kind(*row.second, kind) && search_allowed(*row.second, *row.first, sd) && row.first->id == id) out.push_back(id);
 	} else {
 		if (query.size() < 4) return -2;
 		query = lower(query); std::vector<std::string> tokens; std::string token;
@@ -517,23 +565,31 @@ inline int search(std::string query, std::vector<t_itemid>& out) {
 		// Only ASCII spaces split tokens, matching the NPC's explode(..., " ").
 		while (std::getline(input, token, ' ')) if (!token.empty()) tokens.push_back(token);
 		for (const auto& row : search_rows) {
+			if (!search_kind(*row.second, kind) || !search_allowed(*row.second, *row.first, sd)) continue;
 			auto name = lower(row.first->name);
 			if (std::all_of(tokens.begin(), tokens.end(), [&](const auto& part) { return name.find(part) != std::string::npos; })) out.push_back(row.first->id);
 		}
 	}
 	return static_cast<int>(out.size());
 }
-inline bool search_prepare(const std::vector<t_itemid>& ids) {
+inline bool search_prepare(const std::vector<t_itemid>& ids, const map_session_data* sd = nullptr) {
 	clear_shop("Riven_SearchShop");
-	if (!search_ready || ids.empty()) return false;
+	if (ids.empty()) return false;
 	Inventory stock; std::set<t_itemid> seen;
 	for (auto id : ids) {
 		if (!seen.insert(id).second) return false;
 		auto row = std::find_if(search_rows.begin(), search_rows.end(), [&](const auto& entry) { return entry.first->id == id; });
-		if (row == search_rows.end()) return false;
-		int64 rate = mapreg_readreg(add_str(row->second->rate));
+		if (row == search_rows.end() || !search_allowed(*row->second, *row->first, sd)) return false;
 		int32 price = 0;
-		if (rate < -10 || rate > 30 || !sale_price(*row->second, row->first->price, static_cast<int32>(rate), price)) return false;
+		if (row->second->kind == Kind::Rooke) {
+			price = row->first->tiers[search_item_tier(*sd)];
+		} else {
+			int64 rate = mapreg_readreg(add_str(row->second->rate));
+			if (rate < -10 || rate > 30) return false;
+			if (is_gear(*row->second)) {
+				if (!sale_price(*row->second, row->first->price, static_cast<int32>(rate), price)) return false;
+			} else if (!black_market_adjusted_price(row->first->price, static_cast<int32>(rate), price)) return false;
+		}
 		stock.emplace_back(id, price);
 	}
 	return install({{"Riven_SearchShop", std::move(stock)}});

@@ -129,7 +129,9 @@ BUILDIN_FUNC(bmc_search) {
 	uint32 end = script_array_highest_key(st, sd, name, reference_getref(data));
 	for (uint32 i = start; i < end; ++i) clear_reg(st, sd, reference_uid(id, i), name, reference_getref(data));
 	std::vector<t_itemid> result;
-	int count = bmc::search(script_getstr(st, 2), result);
+	const int64 kind = script_hasdata(st, 4) ? script_getnum64(st, 4) : 2;
+	if (kind < 1 || kind > 3 || !script_rid2sd(sd)) { script_pushint(st, -1); return SCRIPT_CMD_FAILURE; }
+	int count = bmc::search(script_getstr(st, 2), result, static_cast<bmc::SearchKind>(kind), sd);
 	if (count >= 0 && result.size() > SCRIPT_MAX_ARRAYSIZE - start) { script_pushint(st, -1); return SCRIPT_CMD_FAILURE; }
 	for (size_t i = 0; i < result.size(); ++i) set_reg_num(st, sd, reference_uid(id, start + i), name, result[i], reference_getref(data));
 	script_pushint(st, count);
@@ -137,7 +139,7 @@ BUILDIN_FUNC(bmc_search) {
 }
 BUILDIN_FUNC(bmc_searchprepare) {
 	script_data* data = nullptr; TBL_PC* sd = nullptr;
-	if (!bmc_array_ref(st, 2, data, sd)) { bmc::clear_shop("Riven_SearchShop"); script_pushint(st, 0); return SCRIPT_CMD_FAILURE; }
+	if (!bmc_array_ref(st, 2, data, sd) || !script_rid2sd(sd)) { bmc::clear_shop("Riven_SearchShop"); script_pushint(st, 0); return SCRIPT_CMD_FAILURE; }
 	const char* name = reference_getname(data);
 	uint32 end = script_array_highest_key(st, sd, name, reference_getref(data));
 	std::vector<t_itemid> ids;
@@ -146,7 +148,7 @@ BUILDIN_FUNC(bmc_searchprepare) {
 		if (value <= 0 || value > INT32_MAX) { bmc::clear_shop("Riven_SearchShop"); script_pushint(st, 0); return SCRIPT_CMD_SUCCESS; }
 		ids.push_back(static_cast<t_itemid>(value));
 	}
-	script_pushint(st, bmc::search_prepare(ids));
+	script_pushint(st, bmc::search_prepare(ids, sd));
 	return SCRIPT_CMD_SUCCESS;
 }
 BUILDIN_FUNC(bmc_cardoffer) {
