@@ -1,16 +1,52 @@
 //===== Ragnarok Offline =====================================
-//= Prontera East Library Access
+//= Prontera Indoor Compatibility
 //===== Description: =========================================
 //= Replace the legacy prt07 entrance with the modern library.
-//= Coordinates match the extracted client Navigation links.
+//= Library coordinates match the extracted client Navigation links.
+//= Keep existing library services through native duplicates.
 //============================================================
 
 prontera,192,267,0	warp	Libraryi	2,2,prt_elib,18,46
 prt_elib,14,46,0	warp	Libraryo	1,1,prontera,192,264
 
+// Player-aligned doorway; radius 1 keeps the return at 204,188 outside.
+prontera,204,190,0	warp	InnEast#offline	1,1,prt_in,68,134
+
+// Reuse the original dialogue; the book markers match iRO sprite 10432.
+prt_elib,63,67,0	duplicate(Library Girl#pront)	Library Girl#elib	71
+prt_elib,78,70,4	duplicate(Monster Encyclopedia#prt)	Monster Encyclopedia#e1	4_POINT_WHITE
+prt_elib,83,70,4	duplicate(Monster Encyclopedia#2pr)	Monster Encyclopedia#e2	4_POINT_WHITE
+prt_elib,91,70,4	duplicate(Monster Encyclopedia#3pr)	Monster Encyclopedia#e3	4_POINT_WHITE
+prt_elib,75,80,4	duplicate(Vending Guide#pront)	Vending Guide#elib	4_POINT_WHITE
+prt_elib,82,80,4	duplicate(Blacksmith Guide#pront)	Blacksmith Guide#elib	4_POINT_WHITE
+
 -	script	EastLibrary#offline	-1,{
 OnInit:
+	// Player-selected counter clearance on the iRO interior.
+	movenpc "Inn Employee#Ahlma",62,141;
+	// Keep the Point Merchant clear of the iRO interior crates.
+	movenpc "Point Merchant#Prontera",129,66,DIR_WEST;
+	// Align Alora with the player's selected counter position.
+	movenpc "Alora",252,168;
+	// Align the clothes dyer with the player's selected counter position.
+	movenpc "Dyer Ginedin Rephere",285,168;
+	// Keep the Recruiter clear of the chair on the iRO interior.
+	movenpc "Recruiter",86,105;
+	// Align the Chivalry Captain with the player's selected floor position.
+	movenpc "Chivalry Captain#knt",86,103;
+	// Keep Sir Andrew clear of the interior decoration.
+	movenpc "Sir Andrew#knt",74,107;
+	// Keep Sir Edmond clear of the table on the iRO interior.
+	movenpc "Sir Edmond#knt",71,102;
 	// Keep the original declaration intact, but use Libraryi here.
 	disablenpc "prt07";
+	disablenpc "prt08";
+	// Disable the old-room copies without unloading their shared scripts.
+	disablenpc "Library Girl#pront";
+	disablenpc "Monster Encyclopedia#prt";
+	disablenpc "Monster Encyclopedia#2pr";
+	disablenpc "Monster Encyclopedia#3pr";
+	disablenpc "Vending Guide#pront";
+	disablenpc "Blacksmith Guide#pront";
 	end;
 }

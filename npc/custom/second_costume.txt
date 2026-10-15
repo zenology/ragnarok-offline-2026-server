@@ -7,7 +7,7 @@
 //= Clothes dye is Ginedin at prt_in,284,168.
 //============================================================
 
-prt_in,243,168,4	script	Stylist#prontera	4_F_02,{
+prt_in,244,168,4	script	Stylist#prontera	4_F_02,{
 	.@outfit = callsub(S_GetOutfit);
 	.@body = getlook(LOOK_BODY2);
 	.@second = (.@outfit && .@body == .@outfit);
