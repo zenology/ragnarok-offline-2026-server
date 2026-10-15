@@ -143,6 +143,11 @@ Header:
   Version: 4
 
 Body:
+  # Fear Breeze accepts equipment cast-time reductions; keep its native FCT.
+  - Id: 2234
+    CastTimeFlags:
+      IgnoreItemBonus: false
+
   # Hidden AutoSpell for Rekenber's Celestial Hat (400718) Grade B.
   # ID 11000 is outside the native Guild skill range. Keep the C++ constant in sync.
   - Id: 11000
