@@ -2,6 +2,8 @@
 //= Treasure Collector
 //===== Description: =========================================
 //= Buys the 21 project Treasure Boxes for fixed Black Market Points.
+//= Also buys shop-stocked cards for half their current final shop price (rounded down).
+//= Card sales are separate and never change treasure loyalty or award rewards.
 //= Normal and boss treasures use separate 30-box loyalty counters.
 //= Each pool rewards its highest family actually sold; remainders carry forward.
 //= Platinum-led boss milestones have an 81% Platinum III reward and 19% backstab.
@@ -9,8 +11,8 @@
 
 paramk,41,159,4	script	Black Market Boss#offline	4_M_MANAGER,{
 	mes "[Black Market Boss]";
-	mes "Treasure for ^0055FFBlack Market Points^000000. Let's do business.";
-	switch (select("Sell one treasure type.:Sell every accepted treasure.:Check points and loyalty.:Leave.")) {
+	mes "Treasure and spare cards for ^0055FFBlack Market Points^000000. Let's do business.";
+	switch (select("Sell one treasure type.:Sell every accepted treasure.:Sell one card type.:Sell every accepted card.:Check points and loyalty.:Leave.")) {
 	case 1:
 		clear;
 		goto L_Single;
@@ -18,6 +20,15 @@ paramk,41,159,4	script	Black Market Boss#offline	4_M_MANAGER,{
 		clear;
 		goto L_Bulk;
 	case 3:
+		clear;
+		.@card_mode = 1;
+		goto L_Cards;
+	case 4:
+		clear;
+		.@card_mode = 1;
+		.@card_bulk = 1;
+		goto L_Cards;
+	case 5:
 		clear;
 		mes "[Black Market Boss]";
 		mes "You have ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
@@ -58,6 +69,7 @@ L_Single:
 		mes "You are not carrying any treasure I accept.";
 		close;
 	}
+L_Choose:
 	.@page = 0;
 	while (true) {
 		.@start = .@page * .PageSize;
@@ -76,7 +88,10 @@ L_Single:
 			.@previous_option = .@end - .@start + 2 + (.@end < .@sale_count);
 		}
 		mes "[Black Market Boss]";
-		mes "Choose a treasure type. Each option shows your quantity and my offer.";
+		if (.@card_mode)
+			mes "Choose a card type. I pay half the current shop price, rounded down. Cards earn no treasure loyalty.";
+		else
+			mes "Choose a treasure type. Each option shows your quantity and my offer.";
 		.@action = select(.@menu$);
 		if (.@action == 1)
 			close;
@@ -107,6 +122,8 @@ L_Single:
 	.@sale_offers[0] = .@selected_offer;
 	.@sale_families[0] = .@selected_family;
 	.@sale_count = 1;
+	if (.@card_mode)
+		goto L_CardReview;
 	L_Review:
 	.@sale_total = 0;
 	.@sale_normal = 0;
@@ -238,6 +255,71 @@ L_Single:
 		unitkill getcharid(3);
 		end;
 	}
+	close;
+
+L_Cards:
+	.@sale_count = 0;
+	getinventorylist;
+	for (.@i = 0; .@i < @inventorylist_count; ++.@i) {
+		.@item_id = @inventorylist_id[.@i];
+		if (getiteminfo(.@item_id, ITEMINFO_TYPE) != IT_CARD || inarray(.@sale_ids, .@item_id) >= 0)
+			continue;
+		.@offer = bmc_cardprice(.@item_id) / 2;
+		.@amount = countitem(.@item_id);
+		if (.@offer <= 0 || .@amount <= 0)
+			continue;
+		.@sale_ids[.@sale_count] = .@item_id;
+		.@sale_amounts[.@sale_count] = .@amount;
+		.@sale_offers[.@sale_count++] = .@offer;
+	}
+	if (!.@sale_count) {
+		mes "[Black Market Boss]";
+		mes "You have no cards I can price from the market's available stock.";
+		close;
+	}
+	if (!.@card_bulk)
+		goto L_Choose;
+	goto L_CardReview;
+
+L_CardReview:
+	.@sale_total = 0;
+	for (.@i = 0; .@i < .@sale_count; ++.@i)
+		.@sale_total += .@sale_amounts[.@i] * .@sale_offers[.@i];
+	clear;
+	mes "[Black Market Boss]";
+	for (.@i = 0; .@i < .@sale_count; ++.@i)
+		mes getitemname(.@sale_ids[.@i]) + " x" + .@sale_amounts[.@i] + " (" + .@sale_offers[.@i] + " BP each).";
+	mes "Half the current shop price, rounded down per card. No treasure loyalty.";
+	mes "Total: ^0055FF" + .@sale_total + " Black Market Points^000000.";
+	mes "All sales are final.";
+	if (select("Sell the cards.:Keep them.") != 1)
+		close;
+	clear;
+	// Requote every row after confirmation, before deleting anything.
+	for (.@i = 0; .@i < .@sale_count; ++.@i) {
+		if (getiteminfo(.@sale_ids[.@i], ITEMINFO_TYPE) != IT_CARD ||
+			bmc_cardprice(.@sale_ids[.@i]) / 2 != .@sale_offers[.@i] ||
+			countitem(.@sale_ids[.@i]) < .@sale_amounts[.@i]) {
+			mes "[Black Market Boss]";
+			mes "The cards or market prices changed. Bring me a fresh offer.";
+			close;
+		}
+	}
+	if (BlackMarketPoints > 9223372036854775807 - .@sale_total) {
+		mes "[Black Market Boss]";
+		mes "That payment would exceed your point balance limit. Spend some points first.";
+		close;
+	}
+	for (.@i = 0; .@i < .@sale_count; ++.@i)
+		delitem .@sale_ids[.@i], .@sale_amounts[.@i];
+	BlackMarketPoints += .@sale_total;
+	.@log$ = "Treasure Collector: sold cards";
+	for (.@i = 0; .@i < .@sale_count; ++.@i)
+		.@log$ += " " + .@sale_ids[.@i] + "x" + .@sale_amounts[.@i] + "@" + .@sale_offers[.@i];
+	logmes .@log$ + " for " + .@sale_total + " Black Market Points; balance " + BlackMarketPoints;
+	mes "[Black Market Boss]";
+	mes "You received ^0055FF" + .@sale_total + " Black Market Points^000000.";
+	mes "Current balance: ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
 	close;
 
 L_Bulk:

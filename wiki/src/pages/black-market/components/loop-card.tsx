@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { loop } from '../styles/recipes'
 
 const steps = [
-  ['01', 'Farm', 'Find monster cards'],
-  ['02', 'Sell', 'Visit the Card Collector'],
+  ['01', 'Farm', 'เก็บกล่องสมบัติและการ์ด'],
+  ['02', 'Sell', 'ไปหา Treasure Collector'],
   ['03', 'Spend', 'Choose a market service']
 ] as const
 

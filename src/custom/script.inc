@@ -157,6 +157,11 @@ BUILDIN_FUNC(bmc_cardoffer) {
 	script_pushint(st, row ? row->offer : 0);
 	return SCRIPT_CMD_SUCCESS;
 }
+BUILDIN_FUNC(bmc_cardprice) {
+	int64 id = script_getnum64(st, 2);
+	script_pushint(st, id > 0 && id <= INT32_MAX ? bmc::card_sale_price(static_cast<t_itemid>(id)) : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
 BUILDIN_FUNC(bmc_cardtier) {
 	int64 id = script_getnum64(st, 2); int tier = 0;
 	if (id > 0 && id <= INT32_MAX) bmc::card(static_cast<t_itemid>(id), &tier);

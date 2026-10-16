@@ -583,6 +583,19 @@ inline std::shared_ptr<Record> card(t_itemid id, int* tier = nullptr) {
 	}
 	return nullptr;
 }
+// Collector quotes the same admitted stock and final unit price as the owner.
+// Purchase access gates do not restrict selling an already-owned card.
+inline int32_t card_sale_price(t_itemid id) {
+	for (const auto& p : profiles) if (p.kind == Kind::Card && ready(p.key)) {
+		auto row = catalogs[p.key].db->find(id);
+		if (!row || !admitted(p, *row)) continue;
+		int64 rate = mapreg_readreg(add_str(p.rate));
+		int32_t price = 0;
+		if (rate < -10 || rate > 30 || !sale_price(p, row->price, static_cast<int32_t>(rate), price)) return 0;
+		return price;
+	}
+	return 0;
+}
 inline bool search_available(SearchKind kind) {
 	if (!shop("Riven_SearchShop")) return false;
 	if (kind == SearchKind::Item) return ready("riven-item");
