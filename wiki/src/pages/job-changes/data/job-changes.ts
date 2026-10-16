@@ -138,5 +138,5 @@ export const fourthJobTrials = [
   { job: 'Shinkiro', boss: 'Spider Chariot' },
   { job: 'Shiranui', boss: 'T_W_O' },
   { job: 'Night Watch', boss: 'Kraken' },
-  { job: 'Hyper Novice', boss: 'Gold Queen Scaraba' }
+  { job: 'Hyper Novice', boss: 'Bakonawa' }
 ]

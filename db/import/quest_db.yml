@@ -7,7 +7,7 @@ Header:
 # assigned boss first (1), any MVP second (10), exclusive credit per death.
 Body:
   - Id: 65000
-    Title: Awakening - Dragon Knight
+    Title: Gathering Souls - Dragon Knight
     Targets:
       - Mob: ILL_BAPHOMET
         Count: 1
@@ -15,7 +15,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65001
-    Title: Awakening - Imperial Guard
+    Title: Gathering Souls - Imperial Guard
     Targets:
       - Mob: BUWAYA
         Count: 1
@@ -23,7 +23,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65002
-    Title: Awakening - Arch Mage
+    Title: Gathering Souls - Arch Mage
     Targets:
       - Mob: TIMEHOLDER
         Count: 1
@@ -31,7 +31,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65003
-    Title: Awakening - Elemental Master
+    Title: Gathering Souls - Elemental Master
     Targets:
       - Mob: JUNGOLIANT
         Count: 1
@@ -39,7 +39,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65004
-    Title: Awakening - Windhawk
+    Title: Gathering Souls - Windhawk
     Targets:
       - Mob: REGINLEIF
         Count: 1
@@ -47,7 +47,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65005
-    Title: Awakening - Troubadour
+    Title: Gathering Souls - Troubadour
     Targets:
       - Mob: KIEL_
         Count: 1
@@ -55,7 +55,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65006
-    Title: Awakening - Trouvere
+    Title: Gathering Souls - Trouvere
     Targets:
       - Mob: GOPINICH
         Count: 1
@@ -63,7 +63,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65007
-    Title: Awakening - Cardinal
+    Title: Gathering Souls - Cardinal
     Targets:
       - Mob: MG_AMDARAIS
         Count: 1
@@ -71,7 +71,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65008
-    Title: Awakening - Inquisitor
+    Title: Gathering Souls - Inquisitor
     Targets:
       - Mob: MOROCC_
         Count: 1
@@ -79,7 +79,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65009
-    Title: Awakening - Meister
+    Title: Gathering Souls - Meister
     Targets:
       - Mob: EP17_1_R4885_BESTIA
         Count: 1
@@ -87,7 +87,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65010
-    Title: Awakening - Biolo
+    Title: Gathering Souls - Biolo
     Targets:
       - Mob: XM_CELINE_KIMI
         Count: 1
@@ -95,7 +95,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65011
-    Title: Awakening - Shadow Cross
+    Title: Gathering Souls - Shadow Cross
     Targets:
       - Mob: INGRID
         Count: 1
@@ -103,7 +103,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65012
-    Title: Awakening - Abyss Chaser
+    Title: Gathering Souls - Abyss Chaser
     Targets:
       - Mob: GLOOMUNDERNIGHT
         Count: 1
@@ -111,7 +111,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65013
-    Title: Awakening - Sky Emperor
+    Title: Gathering Souls - Sky Emperor
     Targets:
       - Mob: BEELZEBUB_
         Count: 1
@@ -119,7 +119,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65014
-    Title: Awakening - Soul Ascetic
+    Title: Gathering Souls - Soul Ascetic
     Targets:
       - Mob: FALLINGBISHOP
         Count: 1
@@ -127,7 +127,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65015
-    Title: Awakening - Shinkiro
+    Title: Gathering Souls - Shinkiro
     Targets:
       - Mob: MECHASPIDER
         Count: 1
@@ -135,7 +135,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65016
-    Title: Awakening - Shiranui
+    Title: Gathering Souls - Shiranui
     Targets:
       - Mob: T_W_O
         Count: 1
@@ -143,7 +143,7 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65017
-    Title: Awakening - Night Watch
+    Title: Gathering Souls - Night Watch
     Targets:
       - Mob: KRAKEN
         Count: 1
@@ -151,9 +151,9 @@ Body:
         Count: 10
         MapName: Any MVP
   - Id: 65018
-    Title: Awakening - Hyper Novice
+    Title: Gathering Souls - Hyper Novice
     Targets:
-      - Mob: I_QUEEN_SCARABA
+      - Mob: BAKONAWA_3
         Count: 1
       - Id: 1
         Count: 10

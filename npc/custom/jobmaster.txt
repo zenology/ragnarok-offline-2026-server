@@ -595,9 +595,7 @@ function	Confirm_Change	{
 		FourthTrialStage = 2;
 		if (checkquest(65019) >= 0 && checkquest(65019) != 2) completequest 65019;
 		mes "Your task is recorded. Return here with the gathered souls and the ritual materials payment. I will prepare the soul and entrust it to you; delivering it to Doppelganger costs nothing further.";
-		close2;
-		warp "dali",65,111;
-		end;
+		close;
 	}
 	if (FourthTrialStage != 2) close;
 	if (Soul_Is_Prepared(.@quest)) {
@@ -847,7 +845,7 @@ S_Init:
 		JOB_BIOLO,JOB_SHADOW_CROSS,JOB_ABYSS_CHASER,JOB_SKY_EMPEROR,JOB_SOUL_ASCETIC,
 		JOB_SHINKIRO,JOB_SHIRANUI,JOB_NIGHT_WATCH,JOB_HYPER_NOVICE;
 	setarray .TrialBosses[0],20520,2319,3074,20601,20610,1734,1885,2476,1917,20381,
-		2996,20611,1768,1874,1871,3741,3254,2202,2165;
+		2996,20611,1768,1874,1871,3741,3254,2202,2322;
 	for (.@i = 0; .@i < getarraysize(.TrialJobs); ++.@i) {
 		.TrialQuest[.TrialJobs[.@i]] = 65000 + .@i;
 		.TrialMob[.TrialJobs[.@i]] = .TrialBosses[.@i];
