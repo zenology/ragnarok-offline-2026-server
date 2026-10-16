@@ -1,0 +1,170 @@
+Header:
+  Type: QUEST_DB
+  Version: 3
+
+# Project-owned awakening trials and their story journal stages.
+# Objective order for 65000-65018 is part of the custom contract:
+# assigned boss first (1), any MVP second (10), exclusive credit per death.
+Body:
+  - Id: 65000
+    Title: Awakening - Dragon Knight
+    Targets:
+      - Mob: ILL_BAPHOMET
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65001
+    Title: Awakening - Imperial Guard
+    Targets:
+      - Mob: BUWAYA
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65002
+    Title: Awakening - Arch Mage
+    Targets:
+      - Mob: TIMEHOLDER
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65003
+    Title: Awakening - Elemental Master
+    Targets:
+      - Mob: JUNGOLIANT
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65004
+    Title: Awakening - Windhawk
+    Targets:
+      - Mob: REGINLEIF
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65005
+    Title: Awakening - Troubadour
+    Targets:
+      - Mob: KIEL_
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65006
+    Title: Awakening - Trouvere
+    Targets:
+      - Mob: GOPINICH
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65007
+    Title: Awakening - Cardinal
+    Targets:
+      - Mob: MG_AMDARAIS
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65008
+    Title: Awakening - Inquisitor
+    Targets:
+      - Mob: MOROCC_
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65009
+    Title: Awakening - Meister
+    Targets:
+      - Mob: EP17_1_R4885_BESTIA
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65010
+    Title: Awakening - Biolo
+    Targets:
+      - Mob: XM_CELINE_KIMI
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65011
+    Title: Awakening - Shadow Cross
+    Targets:
+      - Mob: INGRID
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65012
+    Title: Awakening - Abyss Chaser
+    Targets:
+      - Mob: GLOOMUNDERNIGHT
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65013
+    Title: Awakening - Sky Emperor
+    Targets:
+      - Mob: BEELZEBUB_
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65014
+    Title: Awakening - Soul Ascetic
+    Targets:
+      - Mob: FALLINGBISHOP
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65015
+    Title: Awakening - Shinkiro
+    Targets:
+      - Mob: MECHASPIDER
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65016
+    Title: Awakening - Shiranui
+    Targets:
+      - Mob: T_W_O
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65017
+    Title: Awakening - Night Watch
+    Targets:
+      - Mob: KRAKEN
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65018
+    Title: Awakening - Hyper Novice
+    Targets:
+      - Mob: I_QUEEN_SCARABA
+        Count: 1
+      - Id: 1
+        Count: 10
+        MapName: Any MVP
+  - Id: 65019
+    Title: A Soul Between Worlds - Seek Valkyrie
+  - Id: 65020
+    Title: A Soul Between Worlds - Valkyrie's Blessing
+  - Id: 65021
+    Title: A Soul Between Worlds - A Holy Soul
+  - Id: 65022
+    Title: A Soul Between Worlds - Ask Eden
+  - Id: 65023
+    Title: A Soul Between Worlds - A Woven Soul

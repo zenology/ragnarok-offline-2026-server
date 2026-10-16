@@ -25,6 +25,12 @@
 #include "stripe_fallback.hpp"
 #include "premium_service.hpp"
 #include "premium_autobuff.hpp"
+#include "fourth_job_trial.hpp"
+
+BUILDIN_FUNC(fourthtrial_ready) {
+	script_pushint(st, offline_fourth_job_trial::ready(script_getnum(st, 2)));
+	return SCRIPT_CMD_SUCCESS;
+}
 
 BUILDIN_FUNC(premibuffbuy) {
 	map_session_data* sd = nullptr;

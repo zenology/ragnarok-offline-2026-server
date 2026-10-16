@@ -104,18 +104,39 @@ export const jobChangeGroups: readonly JobChangeGroup[] = [
   {
     title: 'Class 4',
     description:
-      'The implemented offline fallback is one location for the missing standard and expanded Fourth Job paths.',
+      'Begin by helping Doppelganger, then receive your Fourth Job awakening from Valkyrie after freeing him.',
     entries: [
       {
         job: 'Dragon Knight, Imperial Guard, Arch Mage, Elemental Master, Windhawk, Troubadour, Trouvere, Cardinal, Inquisitor, Meister, Biolo, Shadow Cross, Abyss Chaser',
         location: 'dali · 65, 113',
-        npc: 'Doppelganger (Job Master)'
+        npc: 'Doppelganger → Valkyrie (valkyrie · 48, 86)'
       },
       {
         job: 'Sky Emperor, Soul Ascetic, Shinkiro, Shiranui, Night Watch, Hyper Novice',
         location: 'dali · 65, 113',
-        npc: 'Doppelganger (Job Master)'
+        npc: 'Doppelganger → Valkyrie (valkyrie · 48, 86)'
       }
     ]
   }
+]
+export const fourthJobTrials = [
+  { job: 'Dragon Knight', boss: 'Chaotic Baphomet (Chaos Baphomet)' },
+  { job: 'Imperial Guard', boss: 'Buwaya' },
+  { job: 'Arch Mage', boss: 'Time Holder' },
+  { job: 'Elemental Master', boss: 'Jewgoliant (Jewel Ungoliant)' },
+  { job: 'Windhawk', boss: 'Valkyrie Reginleif' },
+  { job: 'Troubadour', boss: 'Kiel D-01' },
+  { job: 'Trouvere', boss: 'Gopinich' },
+  { job: 'Cardinal', boss: 'Amadarais (Amdarais)' },
+  { job: 'Inquisitor', boss: 'Wounded Morroc' },
+  { job: 'Meister', boss: 'R48-85-Bestia' },
+  { job: 'Biolo', boss: 'Celine Kimi' },
+  { job: 'Shadow Cross', boss: 'Valkyrie Ingrid' },
+  { job: 'Abyss Chaser', boss: 'Gloom Under Night' },
+  { job: 'Sky Emperor', boss: 'Beelzebub' },
+  { job: 'Soul Ascetic', boss: 'Fallen Bishop Hibram' },
+  { job: 'Shinkiro', boss: 'Spider Chariot' },
+  { job: 'Shiranui', boss: 'T_W_O' },
+  { job: 'Night Watch', boss: 'Kraken' },
+  { job: 'Hyper Novice', boss: 'Gold Queen Scaraba' }
 ]
