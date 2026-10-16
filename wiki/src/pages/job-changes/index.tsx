@@ -69,8 +69,7 @@ export default function JobChangesPage(): ReactNode {
             หลังจบพิธี Valkyrie จะกล่าวส่งท้ายและส่งกลับเมืองที่เริ่มเส้นทางอาชีพ: สาย Swordman ไป
             Izlude, Mage ไป Geffen, Archer และ Taekwon ไป Payon, Acolyte ไป Prontera, Merchant ไป
             Alberta, Thief ไป Morroc, Ninja ไป Amatsu, Gunslinger ไป Einbroch และ Super Novice ไป Al
-            De Baran หากหลุดก่อนวาร์ป ให้คุยกับ Valkyrie แล้วเลือก Return to where my journey began
-            เพื่อเดินทางต่อ โดยไม่ต้องทำพิธีหรือจ่ายซ้ำ
+            De Baran ระหว่างทำเควสต์ให้เดินทางไปหาแต่ละคนด้วยตัวเอง
           </Text>
           <Callout variant="notice">
             สำหรับ Cardinal สาย support ที่ต้องการข้ามการล่า ให้คุยกับ Valkyrie
