@@ -1427,6 +1427,12 @@ Body:
   - {"Id": 15353, "RawBP": 77400, "DisplayName": "Brilliant Rapid Armor", "Category": 79}
   - {"Id": 15354, "RawBP": 70675, "DisplayName": "Excellent Dexterity Armor", "Category": 79}
   - {"Id": 15347, "RawBP": 71060, "DisplayName": "Hardened Vitality Armor", "Category": 79}
+  - {"Id": 22109, "RawBP": 23135, "DisplayName": "Modified AGI Boots", "Category": 79}
+  - {"Id": 22111, "RawBP": 21535, "DisplayName": "Modified DEX Boots", "Category": 79}
+  - {"Id": 22108, "RawBP": 16223, "DisplayName": "Modified INT Boots", "Category": 79}
+  - {"Id": 22112, "RawBP": 22423, "DisplayName": "Modified LUK Boots", "Category": 79}
+  - {"Id": 22107, "RawBP": 14666, "DisplayName": "Modified STR Boots", "Category": 79}
+  - {"Id": 22110, "RawBP": 13583, "DisplayName": "Modified VIT Boots", "Category": 79}
   - {"Id": 15278, "RawBP": 71060, "DisplayName": "Soaring Power Armor", "Category": 79}
   - {"Id": 15279, "RawBP": 70167, "DisplayName": "Strong Magic Armor", "Category": 79}
   - {"Id": 22002, "RawBP": 27321, "DisplayName": "Temporal AGI Boots", "Category": 79}

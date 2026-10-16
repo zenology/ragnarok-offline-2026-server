@@ -1,16 +1,26 @@
 //===== Ragnarok Offline =====================================
-//= Black Market Equipment Search
-//= Shared Equipment YAML catalogs own all listings and base prices.
+//= Black Market Item, Equipment and Card Search
+//= Shared YAML catalogs own all listings, prices and availability.
 //============================================================
 
 paramk,24,172,2	script	Riven#offline	4_M_ROGUE,{
-	if (!bmc_ready("riven")) goto L_Unavailable;
 	mes "[Riven]";
 	mes "Ah, a customer. Good! I am Riven, the sort of person who cannot walk past a stall without talking to its owner.";
+	next;
+	mes "[Riven]";
 	mes "A word here, a rumor there, a shared drink after closing... before long, every merchant in this market knows my face.";
-	mes "You need equipment, I know who has it. Give me a name or an exact Item ID, and I will contact the right people for you.";
+	next;
+	mes "[Riven]";
+	mes "What are you looking for?";
+	.@kind = select("Item:Equipment:Card");
+	clear;
+	if ((.@kind == 1 && !bmc_ready("riven-item")) ||
+		(.@kind == 2 && !bmc_ready("riven")) ||
+		(.@kind == 3 && !bmc_ready("riven-card"))) goto L_Unavailable;
+	mes "[Riven]";
+	mes "Give me a name or an exact Item ID, and I will contact the right people for you.";
 	input .@raw$;
-	.@count = bmc_search(.@raw$, .@match);
+	.@count = bmc_search(.@raw$, .@match, .@kind);
 	if (.@count == -1) goto L_Unavailable;
 	if (.@count == -2) goto L_TooShort;
 	if (.@count == 0) goto L_NoResults;
@@ -49,25 +59,8 @@ L_Unavailable:
 	mes "This stall's catalog is unavailable. Please try again later.";
 	close;
 
-L_Restart:
-	cleararray .@match[0], 0, getarraysize(.@match);
-	goto L_RestartEntry;
-
-L_RestartEntry:
-	mes "[Riven]";
-	mes "Tell me the equipment name, or an exact Item ID.";
-	input .@raw$;
-	goto L_AfterInput;
-
-L_AfterInput:
-	.@count = bmc_search(.@raw$, .@match);
-	if (.@count == -1) goto L_Unavailable;
-	if (.@count == -2) goto L_TooShort;
-	if (.@count == 0) goto L_NoResults;
-	goto L_OpenResults;
-
 OnInit:
-	setunittitle(getnpcid(0), "<Equipment Search>");
+	setunittitle(getnpcid(0), "<Item Search>");
 	end;
 }
 

@@ -108,6 +108,68 @@ def read_pricing(path: Path = CATALOG_DIR.parent / "black_market_pricing.yml") -
         raise CatalogError(f"{path}: {error}") from error
 
 
+CARD_CURVE_GROUPS = {"card-normal": "Normal", "card-miniboss": "Miniboss",
+                     "card-mvp": "MVP", "card-special": "MVP"}
+CARD_CURVE_FIELDS = {"RawLow", "RawHigh", "PriceLow", "PriceHigh"}
+
+
+def validate_card_pricing(document: Any) -> dict:
+    if not isinstance(document, dict) or set(document) != {"Header", "Body"}:
+        raise CatalogError("card pricing requires Header and Body only; imports are unsupported")
+    header = document["Header"]
+    if (not isinstance(header, dict) or set(header) != {"Type", "Version"}
+            or header["Type"] != "BLACK_MARKET_CARD_PRICING"
+            or type(header["Version"]) is not int or header["Version"] != 1):
+        raise CatalogError("expected BLACK_MARKET_CARD_PRICING version 1 header")
+    body = document["Body"]
+    if not isinstance(body, dict) or set(body) != {"Normal", "Miniboss", "MVP"}:
+        raise CatalogError("card pricing requires exactly Normal, Miniboss and MVP")
+    result = {}
+    for group, source in body.items():
+        if not isinstance(source, dict) or set(source) != CARD_CURVE_FIELDS:
+            raise CatalogError(f"{group} requires exactly four calibration fields")
+        curve = dict(source)
+        for field in CARD_CURVE_FIELDS:
+            integer(curve, field, 0 if field == "RawLow" else 1)
+        if not curve["RawLow"] < curve["RawHigh"] or not curve["PriceLow"] < curve["PriceHigh"]:
+            raise CatalogError(f"{group} requires ordered Raw and Price references")
+        result[group] = curve
+    return result
+
+
+def read_card_pricing(path: Path = CATALOG_DIR.parent / "black_market_card_pricing.yml") -> dict:
+    try:
+        return validate_card_pricing(load_yaml(path.read_text(encoding="utf-8-sig")))
+    except (OSError, yaml.YAMLError, CatalogError) as error:
+        raise CatalogError(f"{path}: {error}") from error
+
+
+def assess_card_raw_bp(settings: dict, cards: dict, owner: str, raw_bp: int) -> int:
+    integer({"RawBP": raw_bp}, "RawBP", 1)
+    if owner not in CARD_CURVE_GROUPS:
+        raise CatalogError(f"unknown card owner {owner}")
+    curve = cards[CARD_CURVE_GROUPS[owner]]
+    fraction = (raw_bp - curve["RawLow"]) / (curve["RawHigh"] - curve["RawLow"])
+    x = fraction * settings["P3X"]
+    if fraction < 0:
+        y = x * settings["P1Y"] / settings["P1X"]
+    elif fraction >= 1:
+        y = settings["P3Y"] + (x - settings["P3X"]) * settings["slope"]
+    else:
+        lo, hi = 0.0, 1.0
+        for _ in range(64):
+            t = (lo + hi) / 2
+            if bezier(t, settings["P1X"], settings["P2X"], settings["P3X"]) < x:
+                lo = t
+            else:
+                hi = t
+        y = bezier((lo + hi) / 2, settings["P1Y"], settings["P2Y"], settings["P3Y"])
+    value = curve["PriceLow"] + (curve["PriceHigh"] - curve["PriceLow"]) * (y / settings["P3Y"])
+    if not math.isfinite(value):
+        raise CatalogError("card curve result is not finite")
+    return integer({"Price": math.floor(value + 0.5)}, "Price", 1)
+
+
 def bezier(t: float, p1: float, p2: float, p3: float) -> float:
     u = 1 - t
     return 3 * u * u * t * p1 + 3 * u * t * t * p2 + t * t * t * p3
@@ -143,8 +205,8 @@ def apply_markup(daily_bp: int, markup_percent: int) -> int:
 
 
 def sale_price(owner: str, assessed_bp: int, rate: int, settings: dict) -> int:
-    if owner not in EQUIPMENT:
-        raise CatalogError(f"unknown gear owner {owner}")
+    if owner not in EQUIPMENT + CARDS:
+        raise CatalogError(f"unknown priced owner {owner}")
     daily = adjusted_price(assessed_bp, rate)
     return apply_markup(daily, settings["CelestineMarkupPercent"]) if owner == "madame-celestine" else daily
 
@@ -157,21 +219,23 @@ def integer(row: dict, field: str, minimum: int, maximum: int = 2147483647) -> i
 
 
 def validate_document(key: str, document: Any, item_ids: set[int] | None = None,
-                      settings: dict | None = None) -> list[dict]:
+                      settings: dict | None = None, card_settings: dict | None = None) -> list[dict]:
     if key not in KEYS:
         raise CatalogError(f"unknown catalog {key}")
-    version = 2 if key in EQUIPMENT else 1
+    version = 2 if key in EQUIPMENT + CARDS else 1
     if not isinstance(document, dict) or not isinstance(document.get("Header"), dict):
         raise CatalogError(f"expected BLACK_MARKET_CATALOG version {version} header")
     header = document["Header"]
     if set(header) != {"Type", "Version"} or header["Type"] != "BLACK_MARKET_CATALOG" or type(header["Version"]) is not int or header["Version"] != version:
-        raise CatalogError(f"expected BLACK_MARKET_CATALOG version {version} header" + (" with RawBP; gear Version 1/Price is unsupported" if version == 2 else ""))
+        raise CatalogError(f"expected BLACK_MARKET_CATALOG version {version} header" + (" with RawBP; Version 1/Price is unsupported" if version == 2 else ""))
     if set(document) != {"Header", "Body"}:
         raise CatalogError("only Header and Body are allowed; imports are unsupported")
     if not isinstance(document["Body"], list):
         raise CatalogError("Body must be a sequence")
-    if key in EQUIPMENT and settings is None:
-        raise CatalogError("gear requires validated pricing settings")
+    if key in EQUIPMENT + CARDS and settings is None:
+        raise CatalogError("RawBP catalog requires validated pricing settings")
+    if key in CARDS and card_settings is None:
+        raise CatalogError("card catalog requires validated card pricing settings")
     seen = set()
     rows = []
     for source in document["Body"]:
@@ -184,7 +248,7 @@ def validate_document(key: str, document: Any, item_ids: set[int] | None = None,
         seen.add(item_id)
         if item_ids is not None and item_id not in item_ids:
             raise CatalogError(f"Id {item_id}: item DB record does not exist")
-        required = {"Id", "TierPrices", "Category"} if key == "rooke" else {"Id", "RawBP" if key in EQUIPMENT else "Price", "DisplayName"}
+        required = {"Id", "TierPrices", "Category"} if key == "rooke" else {"Id", "RawBP", "DisplayName"}
         if key in CARDS:
             required |= {"CollectorOffer", "SourceMob"}
         elif key not in ("harlan", "rooke"):
@@ -192,11 +256,9 @@ def validate_document(key: str, document: Any, item_ids: set[int] | None = None,
         if set(row) != required:
             raise CatalogError(f"Id {item_id}: missing or unexpected fields: {set(row) ^ required}")
         if key != "rooke":
-            if key in EQUIPMENT:
-                integer(row, "RawBP", 1)
-                row["Price"] = assess_raw_bp(settings, row["RawBP"])
-            else:
-                integer(row, "Price", 1)
+            integer(row, "RawBP", 1)
+            row["Price"] = (assess_card_raw_bp(settings, card_settings, key, row["RawBP"])
+                            if key in CARDS else assess_raw_bp(settings, row["RawBP"]))
             if type(row["DisplayName"]) is not str or not row["DisplayName"]:
                 raise CatalogError(f"Id {item_id}: DisplayName must be a nonempty string")
         if "Category" in row:
@@ -206,8 +268,7 @@ def validate_document(key: str, document: Any, item_ids: set[int] | None = None,
             integer(row, "SourceMob", 0 if key == "card-special" else 1)
             if key == "card-special" and row["SourceMob"] != 0:
                 raise CatalogError(f"Id {item_id}: Special SourceMob must be 0")
-            # Match the runtime card policy; preserve the raw YAML legacy Price.
-            row["Price"] = row["CollectorOffer"]
+            # CollectorOffer is preserved metadata, never the selling-price base.
         if key == "rooke":
             tiers = row["TierPrices"]
             if not isinstance(tiers, dict) or set(tiers) != set(TIERS):
@@ -221,8 +282,9 @@ def validate_document(key: str, document: Any, item_ids: set[int] | None = None,
 def read_catalog(key: str, directory: Path = CATALOG_DIR, item_ids: set[int] | None = None) -> list[dict]:
     path = directory / f"{key}.yml"
     try:
-        settings = read_pricing(directory.parent / "black_market_pricing.yml") if key in EQUIPMENT else None
-        return validate_document(key, load_yaml(path.read_text(encoding="utf-8-sig")), item_ids, settings)
+        settings = read_pricing(directory.parent / "black_market_pricing.yml") if key in EQUIPMENT + CARDS else None
+        cards = read_card_pricing(directory.parent / "black_market_card_pricing.yml") if key in CARDS else None
+        return validate_document(key, load_yaml(path.read_text(encoding="utf-8-sig")), item_ids, settings, cards)
     except (OSError, yaml.YAMLError, CatalogError) as error:
         raise CatalogError(f"{path}: {error}") from error
 

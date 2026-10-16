@@ -15,9 +15,12 @@
 #include <vector>
 #include <common/database.hpp>
 #include "black_market_pricing.hpp"
+#include "black_market_card_pricing.hpp"
+#include "black_market_item_search_names.hpp"
 
 namespace bmc {
 enum class Kind { Equipment, Hat, Specialty, Card, Rooke };
+enum class SearchKind { Item = 1, Equipment = 2, Card = 3 };
 struct Profile {
 	std::string key;
 	Kind kind;
@@ -50,7 +53,7 @@ inline const std::array<const char*, 6> tier_keys = {"Normal1_50", "Normal51_99"
 inline const std::vector<std::string> suffixes = {"ALL", "AH", "IP", "QZ9", "0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 struct Record {
 	t_itemid id = 0;
-	uint32 raw_bp = 0; // Gear price is assessed BP before Daily Rate and markup.
+	uint32 raw_bp = 0; // Gear/Card price is assessed BP before Daily Rate and markup.
 	uint32 price = 0, offer = 0, source_mob = 0, category = 0;
 	std::string name;
 	std::array<uint32, 6> tiers{};
@@ -76,8 +79,11 @@ inline void yaml_error(const char* message, size_t length, ryml::Location locati
 inline bool is_gear(const Profile& p) {
 	return p.kind == Kind::Hat || p.kind == Kind::Equipment || p.kind == Kind::Specialty;
 }
+inline bool uses_raw_bp(const Profile& p) { return is_gear(p) || p.kind == Kind::Card; }
 inline constexpr char pricing_path[] = "npc/custom/black_market_pricing.yml";
 inline PricingSettings pricing_settings;
+inline constexpr char card_pricing_path[] = "npc/custom/black_market_card_pricing.yml";
+inline CardPricingSettings card_pricing_settings;
 
 // Strict preflight also rejects duplicate keys/tags before normalization.
 inline bool strict_yaml_tree(const ryml::NodeRef& node, std::string& reason) {
@@ -139,8 +145,60 @@ inline bool load_pricing_settings(PricingSettings& settings) {
 	}
 }
 
+inline bool load_card_pricing_settings(CardPricingSettings& settings) {
+	settings = CardPricingSettings{};
+	std::ifstream input(card_pricing_path);
+	if (!input) { ShowError("Black Market pricing %s: cannot open file.\n", card_pricing_path); return false; }
+	std::string text((std::istreambuf_iterator<char>(input)), std::istreambuf_iterator<char>());
+	try {
+		auto callbacks = ryml::get_callbacks(); callbacks.m_error = yaml_error;
+		ryml::Parser parser(callbacks);
+		auto tree = parser.parse_in_arena(c4::to_csubstr(card_pricing_path), c4::to_csubstr(text));
+		auto root = tree.rootref();
+		std::string reason;
+		if (!strict_yaml_tree(root, reason)) throw std::runtime_error(reason);
+		if (!root.is_map() || root.num_children() != 2 || !root.has_child("Header") || !root.has_child("Body"))
+			throw std::runtime_error("requires Header and Body only; imports are unsupported");
+		auto header = root["Header"];
+		if (!header.is_map() || header.num_children() != 2 || !header.has_child("Type") || !header.has_child("Version") ||
+			!header["Type"].has_val() || header["Type"].val() != "BLACK_MARKET_CARD_PRICING" ||
+			!header["Version"].has_val() || header["Version"].is_val_quoted() || header["Version"].val() != "1")
+			throw std::runtime_error("expected BLACK_MARKET_CARD_PRICING Version 1 Header");
+		auto body = root["Body"];
+		if (!body.is_map() || body.num_children() != 3) throw std::runtime_error("Body requires exactly Normal, Miniboss and MVP");
+		const std::array<const char*, 3> groups = {"Normal", "Miniboss", "MVP"};
+		for (size_t i = 0; i < groups.size(); ++i) {
+			if (!body.has_child(c4::to_csubstr(groups[i]))) throw std::runtime_error(std::string("missing group ") + groups[i]);
+			auto group = body[c4::to_csubstr(groups[i])];
+			if (!group.is_map() || group.num_children() != 4) throw std::runtime_error(std::string(groups[i]) + " requires four calibration fields");
+			auto number = [&](const char* field, int64_t& out) {
+				if (!group.has_child(c4::to_csubstr(field))) throw std::runtime_error(std::string("missing field ") + field);
+				auto node = group[c4::to_csubstr(field)];
+				if (!node.has_val() || node.is_val_quoted() || node.val().empty() || (node.val().len > 1 && node.val().str[0] == '0'))
+					throw std::runtime_error(std::string(field) + " requires an unquoted decimal integer");
+				int64_t value = 0;
+				for (char c : node.val()) {
+					if (c < '0' || c > '9') throw std::runtime_error(std::string(field) + " requires a nonnegative decimal integer");
+					value = value * 10 + c - '0';
+					if (value > INT32_MAX) throw std::runtime_error(std::string(field) + " exceeds INT32_MAX");
+				}
+				out = value;
+			};
+			auto& c = settings.curves[i];
+			number("RawLow", c.raw_low); number("RawHigh", c.raw_high);
+			number("PriceLow", c.price_low); number("PriceHigh", c.price_high);
+		}
+		if (!derive_card_pricing_settings(settings, reason)) throw std::runtime_error(reason);
+		return true;
+	} catch (const std::runtime_error& error) {
+		settings.valid = false;
+		ShowError("Black Market pricing %s: %s.\n", card_pricing_path, error.what()); return false;
+	}
+}
+
 inline bool sale_price(const Profile& owner, int64_t assessed_bp, int32_t daily_rate, int32_t& out_final) {
-	if (!is_gear(owner) || !pricing_settings.valid || assessed_bp <= 0 || assessed_bp > INT32_MAX) return false;
+	if (!uses_raw_bp(owner) || !pricing_settings.valid || assessed_bp <= 0 || assessed_bp > INT32_MAX) return false;
+	if (owner.kind == Kind::Card && !card_pricing_settings.valid) return false;
 	int32_t daily = 0;
 	if (!black_market_adjusted_price(assessed_bp, daily_rate, daily)) return false;
 	if (owner.key == "madame-celestine") return apply_markup(daily, pricing_settings.celestine_markup_percent, out_final);
@@ -151,6 +209,7 @@ inline bool sale_price(const Profile& owner, int64_t assessed_bp, int32_t daily_
 class Database : public TypesafeYamlDatabase<t_itemid, Record> {
 	const Profile& profile;
 	const PricingSettings settings;
+	const CardPricingSettings card_settings;
 	std::string record_context;
 	bool fail(const ryml::NodeRef& node, const char* reason) {
 		valid = false;
@@ -175,8 +234,8 @@ class Database : public TypesafeYamlDatabase<t_itemid, Record> {
 public:
 	bool valid = true;
 	std::vector<std::shared_ptr<Record>> ordered;
-	explicit Database(const Profile& p, const PricingSettings& snapshot) :
-		TypesafeYamlDatabase("BLACK_MARKET_CATALOG", is_gear(p) ? 2 : 1), profile(p), settings(snapshot) {}
+	explicit Database(const Profile& p, const PricingSettings& snapshot, const CardPricingSettings& cards) :
+		TypesafeYamlDatabase("BLACK_MARKET_CATALOG", uses_raw_bp(p) ? 2 : 1), profile(p), settings(snapshot), card_settings(cards) {}
 	const std::string getDefaultLocation() override { return profile.path(); }
 	void clear() override { TypesafeYamlDatabase::clear(); ordered.clear(); valid = true; }
 	// Validate the envelope before the common loader can process Footer.Imports.
@@ -204,9 +263,9 @@ public:
 			if (!header.is_map() || header.num_children() != 2 || !header.has_child("Type") || !header.has_child("Version")) {
 				return envelope_error(header, "invalid Header");
 			}
-			if (!header["Version"].has_val() || header["Version"].is_val_quoted() || header["Version"].has_val_tag() || header["Version"].val() != (is_gear(profile) ? "2" : "1") ||
+			if (!header["Version"].has_val() || header["Version"].is_val_quoted() || header["Version"].has_val_tag() || header["Version"].val() != (uses_raw_bp(profile) ? "2" : "1") ||
 				!header["Type"].has_val() || header["Type"].val() != "BLACK_MARKET_CATALOG") {
-				return envelope_error(header, is_gear(profile) ? "expected BLACK_MARKET_CATALOG Version 2 with RawBP; gear Version 1/Price is unsupported" : "expected BLACK_MARKET_CATALOG Version 1");
+				return envelope_error(header, uses_raw_bp(profile) ? "expected BLACK_MARKET_CATALOG Version 2 with RawBP; Version 1/Price is unsupported" : "expected BLACK_MARKET_CATALOG Version 1");
 			}
 		} catch (const std::runtime_error& error) {
 			ShowError("Black Market catalog %s: malformed YAML: %s\n", profile.path().c_str(), error.what()); return false;
@@ -243,11 +302,14 @@ public:
 			if (!node.has_child("TierPrices") || !node["TierPrices"].is_map() || node["TierPrices"].num_children() != 6) { fail(node, "TierPrices requires all six tiers"); return 0; }
 			for (size_t i = 0; i < tier_keys.size(); ++i) if (!number(node["TierPrices"], tier_keys[i], row->tiers[i], true)) return 0;
 		} else {
-			expected.insert(is_gear(profile) ? "RawBP" : "Price"); expected.insert("DisplayName");
-			if (is_gear(profile)) {
+			expected.insert("RawBP"); expected.insert("DisplayName");
+			if (uses_raw_bp(profile)) {
 				if (!number(node, "RawBP", row->raw_bp)) return 0;
 				int32_t assessed = 0;
-				if (!assess_raw_bp(settings, row->raw_bp, assessed)) { fail(node["RawBP"], "RawBP curve result is not a positive INT32 price"); return 0; }
+				const bool ok = profile.kind == Kind::Card ?
+					assess_card_raw_bp(settings, card_settings, profile.tier <= 2 ? profile.tier - 1 : 2, row->raw_bp, assessed) :
+					assess_raw_bp(settings, row->raw_bp, assessed);
+				if (!ok) { fail(node["RawBP"], "RawBP curve result is not a positive INT32 price"); return 0; }
 				row->price = static_cast<uint32>(assessed);
 			} else if (!number(node, "Price", row->price)) return 0;
 			if (!node.has_child("DisplayName") || !node["DisplayName"].has_val() || node["DisplayName"].has_val_tag() || !this->asString(node, "DisplayName", row->name) || row->name.empty()) { fail(node, "DisplayName requires a nonempty string without an explicit tag"); return 0; }
@@ -262,8 +324,7 @@ public:
 				expected.insert("CollectorOffer"); expected.insert("SourceMob");
 				if (!number(node, "CollectorOffer", row->offer) || !number(node, "SourceMob", row->source_mob, profile.tier == 4)) return 0;
 				if (profile.tier == 4 && row->source_mob != 0) { fail(node["SourceMob"], "Special SourceMob must be zero"); return 0; }
-				// Cards use the assessed value directly; Price retains the legacy catalog value.
-				row->price = row->offer;
+				// CollectorOffer remains historical metadata; sale price comes only from RawBP.
 			}
 		}
 		if (fields != expected) { fail(node, "missing or unexpected record field"); return 0; }
@@ -283,6 +344,7 @@ inline std::map<std::string, Catalog> catalogs;
 inline std::map<std::string, std::string> shop_owner;
 inline std::vector<std::pair<std::shared_ptr<Record>, const Profile*>> search_rows;
 inline bool search_ready = false;
+inline bool item_search_ready = false;
 using Inventory = std::vector<std::pair<t_itemid, uint32>>;
 using Inventories = std::map<std::string, Inventory>;
 
@@ -292,6 +354,11 @@ inline const Profile* profile_for(const std::string& key) {
 }
 inline bool ready(const std::string& key) {
 	if (key == "riven") return search_ready;
+	if (key == "riven-item") return item_search_ready && ready("rooke");
+	if (key == "riven-card") {
+		for (const auto& p : profiles) if (p.kind == Kind::Card && !ready(p.key)) return false;
+		return true;
+	}
 	auto it = catalogs.find(key);
 	return it != catalogs.end() && it->second.ready;
 }
@@ -303,7 +370,8 @@ inline void refresh_gear_price_policy() {
 			(profile->kind == Kind::Hat || profile->kind == Kind::Equipment || profile->kind == Kind::Specialty))
 			black_market_gear_shop_names.insert(entry.first);
 	}
-	if (search_ready) black_market_gear_shop_names.insert("Riven_SearchShop");
+	// Every search result is already priced for its owner, including Item tiers.
+	if (search_ready || ready("riven-item") || ready("riven-card")) black_market_gear_shop_names.insert("Riven_SearchShop");
 }
 inline npc_data* shop(const std::string& name) {
 	auto nd = npc_name2id(name.c_str());
@@ -434,12 +502,16 @@ inline bool install(const Inventories& stock) {
 }
 inline int load() {
 	search_ready = false; search_rows.clear(); clear_shop("Riven_SearchShop");
+	item_search_ready = false;
 	PricingSettings snapshot;
 	const bool pricing_ready = load_pricing_settings(snapshot);
+	CardPricingSettings card_snapshot;
+	const bool card_pricing_ready = pricing_ready && load_card_pricing_settings(card_snapshot);
 	std::map<std::string, Catalog> staged;
 	for (const auto& p : profiles) {
-		auto& cat = staged[p.key]; cat.db = std::make_shared<Database>(p, snapshot);
-		cat.ready = (!is_gear(p) || pricing_ready) && cat.db->load_catalog();
+		auto& cat = staged[p.key]; cat.db = std::make_shared<Database>(p, snapshot, card_snapshot);
+		const bool config_ready = p.kind == Kind::Card ? card_pricing_ready : (!is_gear(p) || pricing_ready);
+		cat.ready = config_ready && cat.db->load_catalog();
 	}
 	std::map<t_itemid, std::string> owners;
 	for (size_t i = 0; i < 8; ++i) {
@@ -464,19 +536,30 @@ inline int load() {
 	}
 	catalogs = std::move(staged);
 	pricing_settings = snapshot;
+	card_pricing_settings = card_snapshot;
 	search_ready = shop("Riven_SearchShop") != nullptr;
 	for (size_t i = 0; i < 8; ++i) search_ready = search_ready && ready(profiles[i].key);
-	if (search_ready) {
-		for (size_t i = 0; i < 8; ++i) for (const auto& row : catalogs[profiles[i].key].db->ordered) {
-			if (!admitted(profiles[i], *row)) continue;
-			if (profiles[i].kind == Kind::Hat && !(item_db.find(row->id)->equip & (EQP_HEAD_TOP | EQP_HEAD_MID | EQP_HEAD_LOW))) continue;
-			search_rows.emplace_back(row, &profiles[i]);
+	item_search_ready = ready("rooke");
+	for (const auto& p : profiles) if (ready(p.key)) {
+		for (const auto& row : catalogs[p.key].db->ordered) {
+			if (!admitted(p, *row)) continue;
+			if (p.kind == Kind::Hat && !(item_db.find(row->id)->equip & (EQP_HEAD_TOP | EQP_HEAD_MID | EQP_HEAD_LOW))) continue;
+			if (p.kind == Kind::Rooke) {
+				auto name = item_search_names.find(row->id);
+				if (name == item_search_names.end()) {
+					item_search_ready = false;
+					ShowError("Black Market Item search: missing client display name for Id %u.\n", row->id);
+					continue;
+				}
+				row->name = name->second;
+			}
+			search_rows.emplace_back(row, &p);
 		}
-		std::sort(search_rows.begin(), search_rows.end(), [](const auto& a, const auto& b) {
-			auto aname = lower(a.first->name), bname = lower(b.first->name);
-			return aname == bname ? a.first->id < b.first->id : aname < bname;
-		});
 	}
+	std::sort(search_rows.begin(), search_rows.end(), [](const auto& a, const auto& b) {
+		auto aname = lower(a.first->name), bname = lower(b.first->name);
+		return aname == bname ? a.first->id < b.first->id : aname < bname;
+	});
 	refresh_gear_price_policy();
 	return count;
 }
@@ -486,7 +569,7 @@ inline const std::vector<Drawer>* drawers(const std::string& key, int64 category
 	return it == all.end() ? nullptr : &it->second;
 }
 inline bool managed_ready(const std::string& name) {
-	if (name == "Riven_SearchShop") return search_ready;
+	if (name == "Riven_SearchShop") return search_ready || ready("riven-item") || ready("riven-card");
 	auto it = shop_owner.find(name);
 	if (it != shop_owner.end()) return ready(it->second);
 	// Guard managed shells even before the first loader OnInit executes.
@@ -500,8 +583,49 @@ inline std::shared_ptr<Record> card(t_itemid id, int* tier = nullptr) {
 	}
 	return nullptr;
 }
-inline int search(std::string query, std::vector<t_itemid>& out) {
-	if (!search_ready) return -1;
+// Collector quotes the same admitted stock and final unit price as the owner.
+// Purchase access gates do not restrict selling an already-owned card.
+inline int32_t card_sale_price(t_itemid id) {
+	for (const auto& p : profiles) if (p.kind == Kind::Card && ready(p.key)) {
+		auto row = catalogs[p.key].db->find(id);
+		if (!row || !admitted(p, *row)) continue;
+		int64 rate = mapreg_readreg(add_str(p.rate));
+		int32_t price = 0;
+		if (rate < -10 || rate > 30 || !sale_price(p, row->price, static_cast<int32_t>(rate), price)) return 0;
+		return price;
+	}
+	return 0;
+}
+inline bool search_available(SearchKind kind) {
+	if (!shop("Riven_SearchShop")) return false;
+	if (kind == SearchKind::Item) return ready("riven-item");
+	if (kind == SearchKind::Card) return ready("riven-card");
+	return kind == SearchKind::Equipment && search_ready;
+}
+inline bool search_kind(const Profile& owner, SearchKind kind) {
+	if (kind == SearchKind::Item) return owner.kind == Kind::Rooke;
+	if (kind == SearchKind::Card) return owner.kind == Kind::Card;
+	return kind == SearchKind::Equipment && is_gear(owner);
+}
+inline int search_item_tier(const map_session_data& sd) {
+	if (sd.status.base_level >= 201) return 5;
+	if (sd.status.base_level >= 100) return 4;
+	const bool reborn = (sd.class_ & JOBL_UPPER) != 0;
+	return sd.status.base_level <= 50 ? (reborn ? 2 : 0) : (reborn ? 3 : 1);
+}
+inline bool search_allowed(const Profile& owner, const Record& row, const map_session_data* sd) {
+	if (!ready(owner.key)) return false;
+	if (is_gear(owner)) return search_ready;
+	if (!sd || sd->status.base_level == 0) return false;
+	if (owner.kind == Kind::Rooke) return ready("riven-item") && row.tiers[search_item_tier(*sd)] > 0;
+	if (owner.kind != Kind::Card || !ready("riven-card")) return false;
+	if (owner.tier == 1) return true;
+	if (owner.tier == 2) return (sd->class_ & MAPID_FIRSTMASK) == MAPID_SUMMONER || (sd->class_ & (JOBL_2 | JOBL_UPPER));
+	return ((sd->class_ & JOBL_THIRD) || sd->status.class_ == JOB_SPIRIT_HANDLER) &&
+		pc_readreg(sd, add_str(BLACK_MARKET_POINT_VAR)) >= 60000;
+}
+inline int search(std::string query, std::vector<t_itemid>& out, SearchKind kind = SearchKind::Equipment, const map_session_data* sd = nullptr) {
+	if (!search_available(kind)) return -1;
 	auto begin = query.find_first_not_of(' '), end = query.find_last_not_of(' ');
 	query = begin == std::string::npos ? "" : query.substr(begin, end - begin + 1);
 	if (query.empty()) return -2;
@@ -509,7 +633,7 @@ inline int search(std::string query, std::vector<t_itemid>& out) {
 	if (numeric) {
 		uint32 id = 0;
 		for (char c : query) { uint32 digit = c - '0'; if (id > (INT32_MAX - digit) / 10) return 0; id = id * 10 + digit; }
-		for (const auto& row : search_rows) if (row.first->id == id) out.push_back(id);
+		for (const auto& row : search_rows) if (search_kind(*row.second, kind) && search_allowed(*row.second, *row.first, sd) && row.first->id == id) out.push_back(id);
 	} else {
 		if (query.size() < 4) return -2;
 		query = lower(query); std::vector<std::string> tokens; std::string token;
@@ -517,23 +641,29 @@ inline int search(std::string query, std::vector<t_itemid>& out) {
 		// Only ASCII spaces split tokens, matching the NPC's explode(..., " ").
 		while (std::getline(input, token, ' ')) if (!token.empty()) tokens.push_back(token);
 		for (const auto& row : search_rows) {
+			if (!search_kind(*row.second, kind) || !search_allowed(*row.second, *row.first, sd)) continue;
 			auto name = lower(row.first->name);
 			if (std::all_of(tokens.begin(), tokens.end(), [&](const auto& part) { return name.find(part) != std::string::npos; })) out.push_back(row.first->id);
 		}
 	}
 	return static_cast<int>(out.size());
 }
-inline bool search_prepare(const std::vector<t_itemid>& ids) {
+inline bool search_prepare(const std::vector<t_itemid>& ids, const map_session_data* sd = nullptr) {
 	clear_shop("Riven_SearchShop");
-	if (!search_ready || ids.empty()) return false;
+	if (ids.empty()) return false;
 	Inventory stock; std::set<t_itemid> seen;
 	for (auto id : ids) {
 		if (!seen.insert(id).second) return false;
 		auto row = std::find_if(search_rows.begin(), search_rows.end(), [&](const auto& entry) { return entry.first->id == id; });
-		if (row == search_rows.end()) return false;
-		int64 rate = mapreg_readreg(add_str(row->second->rate));
+		if (row == search_rows.end() || !search_allowed(*row->second, *row->first, sd)) return false;
 		int32 price = 0;
-		if (rate < -10 || rate > 30 || !sale_price(*row->second, row->first->price, static_cast<int32>(rate), price)) return false;
+		if (row->second->kind == Kind::Rooke) {
+			price = row->first->tiers[search_item_tier(*sd)];
+		} else {
+			int64 rate = mapreg_readreg(add_str(row->second->rate));
+			if (rate < -10 || rate > 30) return false;
+			if (!sale_price(*row->second, row->first->price, static_cast<int32>(rate), price)) return false;
+		}
 		stock.emplace_back(id, price);
 	}
 	return install({{"Riven_SearchShop", std::move(stock)}});

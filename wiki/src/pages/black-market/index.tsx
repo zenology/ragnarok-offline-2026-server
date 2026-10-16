@@ -25,11 +25,9 @@ import { ExchangeCard } from './components/exchange-card'
 import { ItemCard } from './components/item-card'
 import { JumpNavigation } from './components/jump-navigation'
 import { LoopCard } from './components/loop-card'
-import { PriceCard } from './components/price-card'
 import { ServiceCard } from './components/service-card'
 import {
   blackMarketContacts,
-  cardPriceBands,
   cashPointRules,
   featuredItems,
   harlanCatalogs,
@@ -84,21 +82,22 @@ export default function BlackMarketPage(): ReactNode {
         >
           <LoopCard />
           <Callout>
-            The Card Collector buys standalone cards from your inventory. Cards already placed into
-            equipment are not part of the sale.
+            <strong>Treasure Collector (Black Market Boss)</strong> ที่ paramk 41, 159
+            รับกล่องสมบัติ และการ์ดที่ร้าน Black Market มีขาย
+            โดยรับการ์ดในกระเป๋าที่ไม่ได้ใส่ในอุปกรณ์ ทั้ง Normal, Miniboss, MVP และ Special
+            การ์ดที่ไม่มีขายในร้านจะไม่อยู่ในรายการรับซื้อ
           </Callout>
           <Callout variant="notice">
-            <strong>Catalog prices are base prices.</strong> Ordinary Black Market shops apply a
-            Base Level multiplier to the listed BP: ×1 at Base 1–50, ×2 at 51–99, ×6 at 100–200, and
-            ×10 at 201+. Reborn characters use ×3 at 1–50 and ×4 at 51–99. The daily market
-            adjustment then shifts each seller by −10% to +30%, so the shop price can differ from
-            the catalog price.
+            <strong>รับซื้อการ์ดที่ 50% ของราคาขายในร้านขณะนั้น</strong> คิดหลัง Daily Rate
+            และปัดเศษ BP ลงต่อใบ เช่น ร้านขาย 19,129 BP จะรับซื้อ 9,564 BP ต่อใบ
+            ราคาการ์ดไม่คูณตามเลเวลหรือการเกิดใหม่ ส่วนราคากล่องสมบัติยังเป็นราคาเดิม
           </Callout>
-          <div className={gridStyles.price}>
-            {cardPriceBands.map((band) => (
-              <PriceCard band={band} key={`${band.catalog}-${band.source}`} />
-            ))}
-          </div>
+          <Callout>
+            เลือก Sell one card type. เพื่อระบุชนิดและจำนวน หรือ Sell every accepted card.
+            เพื่อขายการ์ดที่รับซื้อทั้งหมด ตรวจรายการและยอด BP ก่อนกด Sell the cards.
+            หากเปลี่ยนใจเลือก Keep them. การขายการ์ดไม่เพิ่มแต้มสะสมกล่องและไม่มีรางวัลสะสม
+            เมนูขายกล่องแยกจากการ์ด หากราคาหรือจำนวนเปลี่ยนระหว่างยืนยัน ระบบจะยกเลิกดีลให้เริ่มใหม่
+          </Callout>
           <ExchangeCard rules={cashPointRules} />
         </GuideSection>
 
@@ -114,8 +113,8 @@ export default function BlackMarketPage(): ReactNode {
               icon={faStore}
               location="Market hall · 41, 159"
               title="Black Market Boss"
-              description="Sell accepted monster cards and check your Black Market Point balance and loyalty progress."
-              tag="Card exchange"
+              description="รับกล่องสมบัติราคาเดิม และรับการ์ดที่ร้านมีขายในราคา 50% หลัง Daily Rate ปัดเศษลงต่อใบ การ์ดไม่เพิ่มแต้มสะสมกล่อง"
+              tag="Treasure Collector"
             />
             <ServiceCard
               icon={faCoins}
@@ -198,7 +197,7 @@ export default function BlackMarketPage(): ReactNode {
               icon={faUserSecret}
               location="Market hall · 47–51, 186"
               title="Card Sellers"
-              description="Use the card-seller drawers to exchange monster cards for Black Market Points and browse the available card catalog."
+              description="ซื้อการ์ดด้วย Black Market Points ที่ร้านการ์ด หากต้องการขายการ์ดคืน 50% ให้ไปหา Treasure Collector"
               tag="Cards · BP"
             />
             <ServiceCard
