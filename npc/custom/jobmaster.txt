@@ -255,19 +255,21 @@ function	Job_Menu	{
 function	Job_Change	{
 	.@previous_class = Class;
 	.@to_cls = getarg(0);
-	if (eaclass(.@to_cls)&EAJL_FOURTH) {
-		if (countitem(6417) < 100 || countitem(7000) < 200) {
-			mes "I can guide you beyond your current limits and into a new level, but you must give me " +
+	next;
+	if ((eaclass(.@to_cls)&EAJL_FOURTH) || eaclass(.@to_cls) == EAJ_NIGHT_WATCH || eaclass(.@to_cls) == EAJ_SHINKIROSHIRANUI) {
+		if (Zeny < .FourthZenyCost || countitem(6417) < 100 || countitem(7000) < 200) {
+			mes .NPCName$;
+			mes "The awakening requires " + callfunc("F_InsertComma", .FourthZenyCost) + " Zeny, " +
 				mesitemlink(6417, false) + " x100 and " + mesitemlink(7000, false) + " x200.";
 			next;
 			mes .NPCName$;
-			mes "You can check for them in Malangdo.";
+			mes "Bring the full payment. You can check for the items in Malangdo.";
 			close;
 		}
+		Zeny -= .FourthZenyCost;
 		delitem 6417,100; // Silvervine Fruit
 		delitem 7000,200; // Event Stone Coin
 	}
-	next;
 	mes .NPCName$;
 	mes "You are now " + callfunc("F_InsertArticle", jobname(.@to_cls)) + "!";
 	if (.@to_cls == Job_Novice_High && .LastJob)
@@ -299,8 +301,8 @@ function	Confirm_Change	{
 		mes "Unknown Class Error.";
 		close;
 	}
-	if (eaclass(.@class)&EAJL_FOURTH) {
-		mes "I can guide you beyond your current limits and into a new level, but you must give me " +
+	if ((eaclass(.@class)&EAJL_FOURTH) || eaclass(.@class) == EAJ_NIGHT_WATCH || eaclass(.@class) == EAJ_SHINKIROSHIRANUI) {
+		mes "The awakening requires " + callfunc("F_InsertComma", .FourthZenyCost) + " Zeny, " +
 			mesitemlink(6417, false) + " x100 and " + mesitemlink(7000, false) + " x200.";
 		next;
 		mes .NPCName$;
@@ -434,6 +436,7 @@ OnInit:
 	
 	// Settings
 	.FourthClass = true;				// Enable fourth classes?
+	.FourthZenyCost = 100000000;			// Zeny fee in addition to the required items.
 	.FourthExpanded = true;				// Enable new expanded fourth classes: Ex. Hyper Novice, Rebellion, Shinkiro/Shiranui?
 	.ThirdClass = true;					// Enable third classes?
 	.RebirthClass = true;				// Enable rebirth classes?
