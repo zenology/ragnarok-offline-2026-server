@@ -1,0 +1,11 @@
+# Uses the normalized Equipment shape from black_market_pricing.yml.
+# PriceLow/PriceHigh are calibration guides, not a floor/cap.
+# Both ends continue with the Equipment curve's endpoint tangents.
+# Raw references are fixed inputs, never population MIN/MAX values.
+Header:
+  Type: BLACK_MARKET_CARD_PRICING
+  Version: 1
+Body:
+  Normal: {RawLow: 500, RawHigh: 100000, PriceLow: 20000, PriceHigh: 200000}
+  Miniboss: {RawLow: 500, RawHigh: 35000, PriceLow: 150000, PriceHigh: 700000}
+  MVP: {RawLow: 500, RawHigh: 60000, PriceLow: 300000, PriceHigh: 1500000}

@@ -5,8 +5,8 @@
 //= Stock and Collector data are loaded from black_market_catalog/card-*.yml.
 //= Cards are grouped alphabetically. A 0-9 drawer appears before A
 //= when a display name starts with a digit. Normal, Miniboss, and MVP cards
-//= use their catalog CollectorOffer as the assessed base price without markup.
-//= Daily Rate and character level/rebirth adjustments still apply.
+//= use catalog RawBP through their calibrated Equipment-shape curve; Special shares MVP.
+//= Cards Daily Rate applies after assessment, without markup or level/rebirth adjustment.
 //=
 //= Uses a reviewed card-to-canonical-source mapping.
 //===== Changelogs: ==========================================

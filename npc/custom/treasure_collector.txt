@@ -9,14 +9,7 @@
 
 paramk,41,159,4	script	Black Market Boss#offline	4_M_MANAGER,{
 	mes "[Black Market Boss]";
-	mes "So, you brought me treasure.";
-	next;
-	mes "[Black Market Boss]";
-	mes "Cards stay with their dealers. Treasure comes to my table.";
-	next;
-	mes "[Black Market Boss]";
-	mes "I pay in ^0055FFBlack Market Points^000000.";
-	next;
+	mes "Treasure for ^0055FFBlack Market Points^000000. Let's do business.";
 	switch (select("Sell one treasure type.:Sell every accepted treasure.:Check points and loyalty.:Leave.")) {
 	case 1:
 		clear;
@@ -165,20 +158,12 @@ L_Single:
 	if (.@highest_boss_family == 4 && .@boss_milestones)
 		.@reward_ids[18] = .@boss_milestones;
 	clear;
-	for (.@i = 0; .@i < .@sale_count; ++.@i) {
-		mes "[Black Market Boss]";
-		mes "Offering: " + getitemname(.@sale_ids[.@i]) + " x" + .@sale_amounts[.@i] + " (" + .@sale_offers[.@i] + " BP each).";
-		next;
-	}
 	mes "[Black Market Boss]";
+	for (.@i = 0; .@i < .@sale_count; ++.@i)
+		mes getitemname(.@sale_ids[.@i]) + " x" + .@sale_amounts[.@i] + " (" + .@sale_offers[.@i] + " BP each).";
 	mes "Normal treasures: " + .@sale_normal + "; boss treasures: " + .@sale_boss + ".";
-	next;
-	mes "[Black Market Boss]";
-	mes "My total offer is ^0055FF" + .@sale_total + " Black Market Points^000000.";
-	next;
-	mes "[Black Market Boss]";
-	mes "Once they enter my collection, the deal is final.";
-	next;
+	mes "Total: ^0055FF" + .@sale_total + " Black Market Points^000000.";
+	mes "All sales are final.";
 	if (select("Sell the treasure.:Keep it.") != 1)
 		close;
 	clear;
@@ -239,20 +224,12 @@ L_Single:
 	logmes .@log$;
 
 	mes "[Black Market Boss]";
-	mes "A clean transaction. I expect nothing less.";
-	next;
-	mes "[Black Market Boss]";
 	mes "You received ^0055FF" + .@sale_total + " Black Market Points^000000.";
-	next;
-	mes "[Black Market Boss]";
 	mes "Current balance: ^0055FF" + BlackMarketPoints + " Black Market Points^000000.";
-	next;
-	for (.@i = 0; .@i < .@reward_count; ++.@i) {
-		mes "[Black Market Boss]";
+	for (.@i = 0; .@i < .@reward_count; ++.@i)
 		mes "Loyalty reward: " + mesitemlink(.@reward_list_ids[.@i], false) + " x" + .@reward_list_amounts[.@i] + ".";
-		next;
-	}
 	if (.@backstabs) {
+		next;
 		mes "[Black Market Boss]";
 		mes "You should have known when not to sell.";
 		next;
@@ -278,42 +255,6 @@ L_Bulk:
 	if (!.@sale_count) {
 		mes "[Black Market Boss]";
 		mes "You are not carrying any treasure I accept.";
-		close;
-	}
-	.@page = 0;
-	while (true) {
-		.@start = .@page * .PageSize;
-		.@end = min(.@start + .PageSize, .@sale_count);
-		clear;
-		for (.@i = .@start; .@i < .@end; ++.@i) {
-			mes "[Black Market Boss]";
-			mes getitemname(.@sale_ids[.@i]) + " x" + .@sale_amounts[.@i] + " (" + .@sale_offers[.@i] + " BP each).";
-			next;
-		}
-		.@menu$ = "Review total.";
-		.@review_option = 1;
-		.@next_option = 0;
-		.@previous_option = 0;
-		if (.@end < .@sale_count) {
-			.@menu$ += ":Next page.";
-			.@next_option = 2;
-		}
-		if (.@page > 0) {
-			.@menu$ += ":Previous page.";
-			.@previous_option = .@next_option ? 3 : 2;
-		}
-		.@menu$ += ":Cancel.";
-		.@cancel_option = select(.@menu$);
-		if (.@cancel_option == .@review_option)
-			break;
-		if (.@cancel_option == .@next_option) {
-			++.@page;
-			continue;
-		}
-		if (.@cancel_option == .@previous_option) {
-			--.@page;
-			continue;
-		}
 		close;
 	}
 	goto L_Review;

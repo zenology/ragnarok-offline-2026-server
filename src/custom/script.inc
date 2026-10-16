@@ -724,7 +724,7 @@ BUILDIN_FUNC(callblackmarketshop)
 	const auto owner = owner_entry == bmc::shop_owner.end() ? nullptr : bmc::profile_for(owner_entry->second);
 	for (uint32 base_price : cache.base_prices) {
 		int32 adjusted_price = 0;
-		if (!(owner && bmc::is_gear(*owner) ? bmc::sale_price(*owner, base_price, rate, adjusted_price) :
+		if (!(owner && bmc::uses_raw_bp(*owner) ? bmc::sale_price(*owner, base_price, rate, adjusted_price) :
 			black_market_adjusted_price(base_price, rate, adjusted_price))) {
 			ShowError("buildin_callblackmarketshop: Shop [%s] cannot adjust base price %u at rate %d.\n", shopname, base_price, rate);
 			script_pushint(st, 0);
