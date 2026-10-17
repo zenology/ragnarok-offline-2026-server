@@ -41,6 +41,7 @@
 //============================================================ 
 
 valkyrie,48,86,4	script	Valkyrie#	811,{
+	callfunc "F_FourthTrial",1;
 	if (ADVJOB != 0 || Upper == 1) {
 		mes "[Valkyrie]";
 		mes "Welcome";
@@ -213,6 +214,7 @@ valkyrie,48,86,4	script	Valkyrie#	811,{
 }
 
 yuno_in02,88,164,5	script	Metheus Sylphe#Library	742,{
+	callfunc "F_FourthYmirAccess",0;
 	if (BaseLevel > 98 && JobLevel > 49 && Class >= Job_Knight && Class <= Job_Crusader2) {
 		if (valkyrie_Q == 0) {
 			mes "[Metheus Sylphe]";
@@ -260,6 +262,7 @@ yuno_in02,88,164,5	script	Metheus Sylphe#Library	742,{
 }
 
 yuno_in02,93,207,1	script	Book of Ymir	111,{
+	callfunc "F_FourthYmirAccess",1;
 	if (ADVJOB != 0 || Upper == 1) {
 		mes "[The Book of Ymir]";
 		mes "...The entrance to the Hall of Honor is open to anyone who has moved forward into their next life. It is there to help heroes decide what they want to do, and can lead them to anywhere in this world.";

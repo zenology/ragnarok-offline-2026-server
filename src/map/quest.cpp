@@ -26,6 +26,8 @@
 #include "party.hpp"
 #include "pc.hpp"
 
+#include <custom/fourth_job_trial.hpp>
+
 using namespace rathena;
 
 static int32 split_exact_quest_time(char* modif_p, int32* week, int32* day, int32* hour, int32* minute, int32 *second);
@@ -764,6 +766,9 @@ void quest_update_objective(map_session_data *sd, mob_data* md)
 
 		std::shared_ptr<s_quest_db> qi = quest_search(sd->quest_log[i].quest_id);
 		if (!qi)
+			continue;
+
+		if (offline_fourth_job_trial::update_objective(*sd, *md, sd->quest_log[i], *qi))
 			continue;
 
 		// Process quest objectives
