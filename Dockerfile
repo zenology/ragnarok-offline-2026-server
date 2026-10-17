@@ -29,11 +29,14 @@ RUN apk add --no-cache \
         mariadb-connector-c \
         netcat-openbsd \
         tini \
+        tzdata \
         zlib \
     && addgroup -S rathena \
     && adduser -S -D -H -G rathena rathena \
     && mkdir -p /rathena/log \
     && chown -R rathena:rathena /rathena
+
+ENV TZ=Asia/Bangkok
 
 WORKDIR /rathena
 
