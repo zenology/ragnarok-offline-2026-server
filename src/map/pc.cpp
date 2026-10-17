@@ -63,6 +63,7 @@
 #include "storage.hpp"
 #include "unit.hpp" // unit_stop_attack(), unit_stop_walking()
 #include "vending.hpp" // struct s_vending
+#include <custom/premium_drop_penalty.hpp>
 
 using namespace rathena;
 
@@ -13343,6 +13344,8 @@ uint16 pc_level_penalty_mod( map_session_data* sd, e_penalty_type type, std::sha
 	if( sd == nullptr ){
 		return 100;
 	}
+	if (offline_premi_drop_penalty::bypass(*sd, type))
+		return 100;
 
 	if ((type == PENALTY_DROP && map_getmapflag(sd->m, MF_NORENEWALDROPPENALTY)) || (type == PENALTY_EXP && map_getmapflag(sd->m, MF_NORENEWALEXPPENALTY))) {
 		return 100;

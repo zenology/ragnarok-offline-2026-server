@@ -25,6 +25,7 @@
 #include "stripe_fallback.hpp"
 #include "premium_service.hpp"
 #include "premium_autobuff.hpp"
+#include "premium_drop_penalty.hpp"
 #include "fourth_job_trial.hpp"
 
 BUILDIN_FUNC(fourthtrial_ready) {
@@ -39,6 +40,13 @@ BUILDIN_FUNC(premibuffbuy) {
 		return SCRIPT_CMD_FAILURE;
 	}
 	script_pushint(st, offline_premi_autobuff::buy(*sd, script_getnum64(st, 2), script_getnum64(st, 3)));
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(premiumdroppenaltyicon) {
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) return SCRIPT_CMD_FAILURE;
+	offline_premi_drop_penalty::sync_icon(*sd);
 	return SCRIPT_CMD_SUCCESS;
 }
 

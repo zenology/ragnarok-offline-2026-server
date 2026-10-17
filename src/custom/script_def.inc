@@ -10,6 +10,7 @@
 
 //BUILDIN_DEF(example,""),
 BUILDIN_DEF(premiumtreasureloot,"ii"),
+BUILDIN_DEF(premiumdroppenaltyicon,""),
 BUILDIN_DEF(premisummon,""),
 BUILDIN_DEF(premiumopenstorage,""),
 BUILDIN_DEF(premibuffbuy,"ii"),
