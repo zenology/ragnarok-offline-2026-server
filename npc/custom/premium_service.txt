@@ -127,26 +127,6 @@ function	script	F_PremiumServiceStaff	{
 	return;
 }
 
-function	script	F_PremiumExtraRunning	{
-	.@kind = getarg(0);
-	.@now = gettimetick(2);
-	.@exp = (#PREMIUM_EXPUP > .@now || getstatus(SC_PERIOD_PLUSEXP_2ND));
-	.@item = (#PREMIUM_ITEMUP > .@now || getstatus(SC_PERIOD_RECEIVEITEM_2ND));
-	.@death = (#PREMIUM_DEATHDOWN > .@now || getstatus(SC_LIFEINSURANCE));
-	.@treasure = (#PREMIUM_CARDLOOT > .@now);
-	if (.@kind == 1)
-		return .@exp;
-	if (.@kind == 2)
-		return .@item;
-	if (.@kind == 3)
-		return .@death;
-	if (.@kind == 4)
-		return .@treasure;
-	if (.@kind == 5)
-		return (.@exp || .@item || .@death || .@treasure);
-	return 0;
-}
-
 // Keep Treasure Magnet account-wide without creating a new SC_* enum.
 // Retain #PREMIUM_CARDLOOT as its expiry key so previously purchased time is preserved.
 // This service never changes the player's independent autoloot settings.
@@ -167,39 +147,49 @@ function	script	F_PremiumSyncTreasureLoot	{
 	return 1;
 }
 
-function	script	F_PremiumApplyExtra	{
-	.@kind = getarg(0);
-	if (.@kind != 5 && callfunc("F_PremiumExtraRunning", .@kind))
-		return 0;
+function	script	F_PremiumSyncDropPenalty	{
+	deltimer "PremiumLogin#offline::OnDropPenaltyExpire";
+	.@now = gettimetick(2);
+	if (#PREMIUM_NODROPPENALTY <= .@now) {
+		#PREMIUM_NODROPPENALTY = 0;
+		premiumdroppenaltyicon;
+		return;
+	}
+	premiumdroppenaltyicon;
+	addtimer (#PREMIUM_NODROPPENALTY - .@now) * 1000, "PremiumLogin#offline::OnDropPenaltyExpire";
+	return;
+}
+
+// The caller validates payment before entering this non-yielding delivery block.
+// Only selected extras get fresh time; unselected account deadlines/statuses stay intact.
+function	script	F_PremiumApplyExtras	{
+	.@mask = getarg(0);
 	.@now = gettimetick(2);
 	.@until = .@now + 86400;
-	if (.@kind == 4 || .@kind == 5) {
-		if (premiumtreasureloot(1, 86400000) == 0)
-			return 0;
-		#PREMIUM_CARDLOOT = .@until;
-	}
-	// A full-price Advanced Package replaces all four extras with fresh time.
-	// Clear shared statuses so even a stronger existing effect is replaced.
-	if (.@kind == 5) {
+	if (.@mask & 1) {
 		sc_end SC_PERIOD_PLUSEXP_2ND;
-		sc_end SC_PERIOD_RECEIVEITEM_2ND;
-		sc_end SC_LIFEINSURANCE;
-	}
-	if (.@kind == 1 || .@kind == 5) {
 		#PREMIUM_EXPUP = .@until;
 		sc_start SC_PERIOD_PLUSEXP_2ND, 86400000, 30;
 	}
-	if (.@kind == 2 || .@kind == 5) {
+	if (.@mask & 2) {
+		sc_end SC_PERIOD_RECEIVEITEM_2ND;
 		#PREMIUM_ITEMUP = .@until;
 		sc_start SC_PERIOD_RECEIVEITEM_2ND, 86400000, 30;
 	}
-	if (.@kind == 3 || .@kind == 5) {
+	if (.@mask & 4) {
+		sc_end SC_LIFEINSURANCE;
 		#PREMIUM_DEATHDOWN = .@until;
 		sc_start SC_LIFEINSURANCE, 86400000, 0;
 	}
-	if (.@kind == 4 || .@kind == 5)
+	if (.@mask & 8) {
+		#PREMIUM_CARDLOOT = .@until;
 		callfunc("F_PremiumSyncTreasureLoot");
-	return 1;
+	}
+	if (.@mask & 16) {
+		#PREMIUM_NODROPPENALTY = .@until;
+		callfunc("F_PremiumSyncDropPenalty");
+	}
+	return;
 }
 
 function	script	F_PremiumSyncExtras	{
@@ -211,6 +201,7 @@ function	script	F_PremiumSyncExtras	{
 	if (#PREMIUM_DEATHDOWN > .@now)
 		sc_start SC_LIFEINSURANCE, (#PREMIUM_DEATHDOWN - .@now) * 1000, 0;
 	callfunc("F_PremiumSyncTreasureLoot");
+	callfunc("F_PremiumSyncDropPenalty");
 	return;
 }
 
@@ -237,6 +228,17 @@ OnTreasureLootExpire:
 
 OnGmVipSync:
 	callfunc("F_PremiumResyncStaff");
+	end;
+
+OnDropPenaltyExpire:
+	if (#PREMIUM_NODROPPENALTY > gettimetick(2)) {
+		callfunc("F_PremiumSyncDropPenalty");
+		end;
+	}
+	if (#PREMIUM_NODROPPENALTY > 0)
+		dispbottom "Ignore Item Drop Penalty expired.";
+	#PREMIUM_NODROPPENALTY = 0;
+	premiumdroppenaltyicon;
 	end;
 }
 
@@ -460,36 +462,59 @@ S_ExtrasMenu:
 	mes "Extra options last 24 hours for every character on this account!";
 	next;
 	mes "[Premi]";
-	mes "I won't sell an individual extra that's already running.";
+	mes "Toggle the extras you want to Enable, then choose Apply selected.";
 	next;
 	mes "[Premi]";
-	mes "Advanced Package costs 8 Nyangvine and resets all four extras to a fresh 24 hours!";
+	mes "Enabled extras restart at 24 hours. Disabled extras keep their current effects and time.";
 	next;
-	.@menu$ = "EXP UP (4 Nyangvine):ITEM UP (2 Nyangvine):DEATH DOWN (1 Nyangvine):TREASURE MAGNET (1 Nyangvine):Advanced Package (8 Nyangvine):Just checking:";
-	switch (select(.@menu$)) {
-	case 1:
-		callsub S_RefuseIfRunning, 1;
-		callsub S_Buy, 4, 1, "EXP UP";
-		end;
-	case 2:
-		callsub S_RefuseIfRunning, 2;
-		callsub S_Buy, 2, 2, "ITEM UP";
-		end;
-	case 3:
-		callsub S_RefuseIfRunning, 3;
-		callsub S_Buy, 1, 3, "DEATH DOWN";
-		end;
-	case 4:
-		callsub S_RefuseIfRunning, 4;
-		callsub S_Buy, 1, 4, "Treasure Magnet";
-		end;
-	case 5:
-		callsub S_Buy, 8, 5, "Advanced Package";
-		end;
-	default:
+	setarray .@extra_names$[0], "EXP UP", "ITEM UP", "DEATH DOWN", "TREASURE MAGNET", "IGNORE ITEM DROP PENALTY";
+	setarray .@extra_costs[0], 2, 3, 1, 5, 5;
+	.@extra_mask = 0;
+	while (1) {
+		.@menu$ = "";
+		.@total = 0;
+		for (.@i = 0; .@i < 5; ++.@i) {
+			.@enabled = (.@extra_mask & (1 << .@i));
+			.@menu$ += .@extra_names$[.@i] + " [" + (.@enabled ? "Enabled" : "Disabled") + "] (" + .@extra_costs[.@i] + " Nyangvine):";
+			if (.@enabled)
+				.@total += .@extra_costs[.@i];
+		}
+		.@menu$ += "Apply selected (" + .@total + " Nyangvine):Never mind";
+		.@choice = select(.@menu$);
+		if (.@choice <= 5) {
+			.@extra_mask = .@extra_mask ^ (1 << (.@choice - 1));
+			continue;
+		}
+		if (.@choice == 7)
+			goto L_End;
+		if (.@extra_mask == 0) {
+			mes "[Premi]";
+			mes "Enable at least one extra first!";
+			next;
+			continue;
+		}
+		// No dialog yield between this recheck, the single debit and delivery.
+		if (callfunc("F_PremiumRemainingSeconds") <= 0) {
+			mes "[Premi]";
+			mes "Your Premium Buff expired. No Nyangvine was charged.";
+			goto L_End;
+		}
+		if (Hp <= 0) {
+			mes "[Premi]";
+			mes "You need to be alive to buy extras. No Nyangvine was charged.";
+			goto L_End;
+		}
+		if (countitem(6909) < .@total) {
+			mes "[Premi]";
+			mes "You need " + .@total + " Nyangvine for the selected extras.";
+			next;
+			continue;
+		}
+		delitem 6909, .@total;
+		callfunc("F_PremiumApplyExtras", .@extra_mask);
 		cutin "prm_3",2;
 		mes "[Premi]";
-		mes "Okay! Call me again if you need anything!";
+		mes "Yay! Your selected extras are running for a fresh 24 hours!";
 		goto L_End;
 	}
 
@@ -574,82 +599,6 @@ S_BuyBuff:
 		mes "You paid for Package 5 without checking first. That's on you!";
 	}
 	return;
-
-S_RefuseIfRunning:
-	.@kind = getarg(0);
-	if (!callfunc("F_PremiumExtraRunning", .@kind))
-		return;
-	cutin "prm_4",2;
-	mes "[Premi]";
-	if (.@kind == 5) {
-		mes "I can't sell extra options while one is already running...";
-	} else {
-		if (.@kind == 1)
-			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_EXPUP);
-		else if (.@kind == 2)
-			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_ITEMUP);
-		else if (.@kind == 3)
-			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_DEATHDOWN);
-		else
-			.@left$ = callfunc("F_PremiumRemain", #PREMIUM_CARDLOOT);
-		if (.@left$ == "inactive")
-			mes "That extra is already running...";
-		else
-			mes "That extra is already running (" + .@left$ + ")...";
-	}
-	mes "I can't stack it. Sorry...";
-	goto L_End;
-
-S_Buy:
-	.@cost = getarg(0);
-	.@kind = getarg(1);
-	.@label$ = getarg(2);
-	if (.@kind != 5 && callfunc("F_PremiumExtraRunning", .@kind)) {
-		callsub S_RefuseIfRunning, .@kind;
-		end;
-	}
-	if (countitem(6909) < .@cost) {
-		cutin "prm_4",2;
-		mes "[Premi]";
-		mes "That's " + .@cost + " Nyangvine for " + .@label$ + "...";
-		mes "You don't have enough. Dang it...";
-		goto L_End;
-	}
-	cutin "prm_2",2;
-	mes "[Premi]";
-	mes .@label$ + " for 24 hours! " + .@cost + " Nyangvine, okay?";
-	next;
-	if (.@kind == 5) {
-		mes "[Premi]";
-		mes "I'll replace all four extras. Their remaining time won't be added.";
-		next;
-	}
-	if (select("Pay:Never mind") == 2) {
-		cutin "prm_5",2;
-		mes "[Premi]";
-		mes "Ah... o-okay. Never mind then.";
-		goto L_End;
-	}
-	if (.@kind != 5 && callfunc("F_PremiumExtraRunning", .@kind)) {
-		callsub S_RefuseIfRunning, .@kind;
-		end;
-	}
-	if (countitem(6909) < .@cost) {
-		cutin "prm_4",2;
-		mes "[Premi]";
-		mes "The Nyangvine is gone...";
-		goto L_End;
-	}
-	delitem 6909, .@cost;
-	if (callfunc("F_PremiumApplyExtra", .@kind) == 0) {
-		getitem 6909, .@cost;
-		callsub S_RefuseIfRunning, .@kind;
-		end;
-	}
-	cutin "prm_3",2;
-	mes "[Premi]";
-	mes "Yay! " + .@label$ + " is running!";
-	goto L_End;
 
 L_End:
 	close2;

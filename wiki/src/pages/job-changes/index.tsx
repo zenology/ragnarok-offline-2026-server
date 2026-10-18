@@ -66,6 +66,16 @@ export default function JobChangesPage(): ReactNode {
             Doppelganger มีผลเฉพาะตัวละครที่ช่วยเขาสำเร็จ
           </Text>
           <Text as="p" tone="muted">
+            เมื่อเปลี่ยนอาชีพสำเร็จ ทั้ง 19 อาชีพรวม Expanded Class จะได้รับ Hourglass Necklace 1
+            ชิ้น ส่วน Windhawk จะได้รับ Hawk Flute เพิ่มอีก 1 ชิ้นสำหรับเรียกเหยี่ยวด้วย Hawk
+            Mastery ต้องมีพื้นที่ในกระเป๋าพอรับของรางวัลก่อนเริ่มพิธี
+          </Text>
+          <Text as="p" tone="muted">
+            หลังเปลี่ยนเป็น Biolo ซื้อ Beaker จาก Gregor ได้ที่ห้องแล็บใน Verus เข้าทางประตูที่
+            verus04 · 53, 263 แล้วพบเขาที่ job4_bio · 31, 30 ราคาเริ่มต้น 1,000 Zeny ต่อชิ้น ใช้
+            Discount ได้ตามร้านค้าปกติ
+          </Text>
+          <Text as="p" tone="muted">
             หลังจบพิธี Valkyrie จะกล่าวส่งท้ายและส่งกลับเมืองที่เริ่มเส้นทางอาชีพ: สาย Swordman ไป
             Izlude, Mage ไป Geffen, Archer และ Taekwon ไป Payon, Acolyte ไป Prontera, Merchant ไป
             Alberta, Thief ไป Morroc, Ninja ไป Amatsu, Gunslinger ไป Einbroch และ Super Novice ไป Al

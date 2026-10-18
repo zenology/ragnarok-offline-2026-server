@@ -1,0 +1,46 @@
+//===== Ragnarok Offline =====================================
+//= Biolo Laboratory - Gregor's Beaker Shop
+//===== Description: =========================================
+//= Post-job-change service for Biolo, including Valkyrie graduates.
+//= Gregor's position/sprite and exit match extracted iRO Navigation.
+//= Entrance: official Biolo guide, verus04 53/263.
+//= Beaker: 1000275, normal Zeny shop with a base price of 1,000.
+//============================================================
+
+verus04,53,263,0	script	Laboratory Door#4bio	HIDDEN_NPC,{
+	mes "[Laboratory Door]";
+	if (Class != JOB_BIOLO) {
+		mes "A notice on the door reads: Laboratory supplies are available to qualified Biolos.";
+		close;
+	}
+	mes "You hear glassware clinking on the other side of the door.";
+	if (select("Knock on the door:Leave") != 1)
+		close;
+	if (Class != JOB_BIOLO)
+		close;
+	close2;
+	// Arrive outside the exit's trigger area.
+	warp "job4_bio",49,30;
+	end;
+}
+
+job4_bio,31,30,4	script	Gregor#4bio	4_F_01,{
+	mes "[Gregor]";
+	if (Class != JOB_BIOLO) {
+		mes "These beakers are for trained Biolos. Come back when you are ready for that work.";
+		close;
+	}
+	mes "A good experiment begins with clean glassware. Do you need beakers for your research?";
+	if (select("Buy Beaker:Leave") != 1)
+		close;
+	if (Class != JOB_BIOLO)
+		close;
+	close2;
+	callshop "Beaker#4bio",1;
+	end;
+}
+
+-	shop	Beaker#4bio	-1,1000275:1000
+
+// Keep the return route available regardless of class.
+job4_bio,52,30,0	warp	frombiotover4	1,1,verus04,52,263

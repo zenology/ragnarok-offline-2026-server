@@ -17,7 +17,7 @@
 
 namespace offline_premi_autobuff {
 static_assert(SC_AUTOBUFF == 1046 && SC_MAX == 1047, "Auto Buff status baseline changed");
-static_assert(EFST_AUTOBUFF == 1723 && EFST_MAX == 1724, "Auto Buff icon baseline changed");
+static_assert(EFST_AUTOBUFF == 1723 && EFST_MAX == 1725, "Auto Buff icon baseline changed");
 
 inline bool premium(const map_session_data& sd) {
 	if (!sd.vars_ok) return false;

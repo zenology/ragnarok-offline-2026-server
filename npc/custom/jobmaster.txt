@@ -475,6 +475,16 @@ function	Job_Change	{
 	Check_Riding();
 	Check_SkillPoints();
 	Require_Level(.Req_Fourth[0], .Req_Fourth[1]);
+	// Check the complete reward bundle before changing class or completion state.
+	if (.@to_cls == JOB_WINDHAWK)
+		.@can_receive = checkweight(490087,1,1000311,1);
+	else
+		.@can_receive = checkweight(490087,1);
+	if (!.@can_receive) {
+		mes .NPCName$;
+		mes "Please make room in your inventory for my gifts. Your awakening will be ready when you return.";
+		close;
+	}
 	if (.@to_cls == Job_Novice_High && .LastJob)
 		lastJob = Class; // Saves the lastJob for rebirth
 	jobchange .@to_cls;
@@ -502,8 +512,10 @@ function	Job_Change	{
 	if (.@previous_class != Class) {
 		if (.Platinum)
 			callfunc "F_GetPlatinumSkills";
-		if (.GetJobEquip)
-			Get_Job_Equip();
+		// Required graduation gifts for all nineteen trials, including Expanded classes.
+		getitem 490087,1; // Hourglass Necklace
+		if (.@to_cls == JOB_WINDHAWK)
+			getitem 1000311,1; // Hawk Flute
 	}
 	announce "[Ascension] " + strcharinfo(0) + " has ascended to " + jobname(.@to_cls) + "!",bc_all|bc_yellow;
 	Awakening_Effects(.@holy_soul);
