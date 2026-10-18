@@ -148,6 +148,14 @@ Body:
     CastTimeFlags:
       IgnoreItemBonus: false
 
+  # Gale Storm and Crescive Bolt gain range from Vulture's Eye.
+  - Id: 5330
+    Flags:
+      AlterRangeVulture: true
+  - Id: 5334
+    Flags:
+      AlterRangeVulture: true
+
   # Hidden AutoSpell for Rekenber's Celestial Hat (400718) Grade B.
   # ID 11000 is outside the native Guild skill range. Keep the C++ constant in sync.
   - Id: 11000
