@@ -78,3 +78,18 @@ COPY --from=builder --chown=rathena:rathena /rathena/npc ./npc
 EXPOSE 5121
 
 CMD ["./map-server"]
+
+
+FROM builder AS web-builder
+
+RUN make -j1 web
+
+
+FROM runtime AS web
+
+COPY --from=web-builder --chown=rathena:rathena /rathena/web-server ./web-server
+COPY --from=web-builder --chown=rathena:rathena /rathena/conf ./conf
+
+EXPOSE 8888
+
+CMD ["./web-server"]

@@ -16,6 +16,7 @@ services:
       - ./sql-files/main.sql:/docker-entrypoint-initdb.d/01-main.sql:ro
       - ./sql-files/logs.sql:/docker-entrypoint-initdb.d/02-logs.sql:ro
       - ./sql-files/roulette_default_data.sql:/docker-entrypoint-initdb.d/03-roulette.sql:ro
+      - ./sql-files/web.sql:/docker-entrypoint-initdb.d/04-web.sql:ro
     healthcheck:
       test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
       interval: 5s
@@ -105,6 +106,31 @@ services:
       start_period: 10s
     stop_grace_period: 30s
 
+  web:
+    image: ragnarok-offline-web:local
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    ports:
+      - "127.0.0.1:8888:8888"
+    volumes:
+      - ./docker/inter_conf.txt:/rathena/conf/import/inter_conf.txt:ro
+      - ./docker/web_conf.txt:/rathena/conf/import/web_conf.txt:ro
+      - web-logs:/rathena/log
+    healthcheck:
+      test: ["CMD", "nc", "-z", "127.0.0.1", "8888"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    stop_grace_period: 30s
+
   wiki:
     image: oven/bun:1.4.0-alpine
     working_dir: /app
@@ -133,4 +159,5 @@ volumes:
   login-logs:
   char-logs:
   map-logs:
+  web-logs:
   wiki-node-modules:
