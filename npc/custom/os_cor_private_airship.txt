@@ -1,0 +1,6 @@
+// Private Airship coverage for the permanent OS and Cor World View destinations.
+// Ordinary-character entry gates are in src/custom/private_airship_gate.hpp.
+sp_os	mapflag	privateairship_source
+sp_os	mapflag	privateairship_destination
+sp_cor	mapflag	privateairship_source
+sp_cor	mapflag	privateairship_destination
