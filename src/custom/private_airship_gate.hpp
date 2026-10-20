@@ -291,7 +291,7 @@ inline bool private_airship_ordinary_destination_allowed( const map_session_data
 		return private_airship_biosphere_episode_gate( sd ) && private_airship_base_level_at_least( sd, 240 );
 
 	if( strcmp( map_name, "oz_dun01" ) == 0 || strcmp( map_name, "oz_dun02" ) == 0 )
-		return private_airship_biosphere_episode_gate( sd ) && private_airship_reg_at_least( sd, "ep18_main", 57 );
+		return private_airship_reg_at_least( sd, "ep18_main", 31 );
 
 	if( strcmp( map_name, "prt_mz03_i" ) == 0 )
 		return private_airship_prt_mz03_i_allowed( sd );
