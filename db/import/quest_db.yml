@@ -6,6 +6,43 @@ Header:
 # Objective order for 65000-65018 is part of the custom contract:
 # assigned boss first (1), any MVP second (10), exclusive credit per death.
 Body:
+  # Episode 17.1 Lazy/Kaya stages; replace stale iRO Nameless Island titles.
+  - Id: 17000
+    Title: Hear Lazy's Findings
+  - Id: 17001
+    Title: Discuss the Investigation with Kaya
+  - Id: 17002
+    Title: Arrange a Joint Investigation
+  - Id: 17003
+    Title: Meet at Einbroch Airport
+  - Id: 17004
+    Title: Follow Patrick to Lighthalzen
+  - Id: 17005
+    Title: Patrick's Life in the Slums
+  - Id: 17006
+    Title: Visit Rekenber Headquarters
+  - Id: 17007
+    Title: Ask About Rekenber's New Employees
+  - Id: 17008
+    Title: Investigate Employee Orientation
+  - Id: 17009
+    Title: Visit Regenschirm Laboratory
+  - Id: 17010
+    Title: Ask Sammy About Patrick
+  - Id: 17011
+    Title: Consult Kaya's Secretary
+  - Id: 17012
+    Title: Check the Employee Records
+  - Id: 17013
+    Title: Investigate McDonald Laboratory
+  - Id: 17014
+    Title: Report the Joint Investigation
+  - Id: 17015
+    Title: Persuade the Workers at Cor
+  - Id: 17016
+    Title: Discuss the Workers with Tes
+  - Id: 17017
+    Title: Regroup at a Safe Place
   - Id: 65000
     Title: Gathering Souls - Dragon Knight
     Targets:

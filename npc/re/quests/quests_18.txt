@@ -5051,7 +5051,7 @@ rachel,116,200,5	script	Niren#sms01	4_F_MADAME,{
 		next;
 		cutin "ep18_miriam_01.png",1;
 		mes "[Miriam]";
-		mes "Let's go, adventurer. Before heading to the villa, there's someone who will accompany us. Let's meet at <NAVI>[오즈의 미로]<INFO>oz_dun01,223,116,0,101,0</INFO></NAVI>";
+		mes "Let's go, adventurer. Before heading to the villa, there's someone who will accompany us. Let's meet at <NAVI>[OZ Labyrinth]<INFO>oz_dun01,223,116,0,101,0</INFO></NAVI>";
 		erasequest 17521;
 		setquest 17525;
 		ep18_main = 53;

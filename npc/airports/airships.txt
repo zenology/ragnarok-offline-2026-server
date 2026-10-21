@@ -36,7 +36,7 @@ OnTouch_:
 	switch ($@airplanelocation) {
 	case 0: warp "y_airport",142,57; end;
 	case 1: warp "airport",142,57; end;
-	case 2: warp "lighthalzen",302,75; end;
+	case 2: callfunc "F_LhzAirshipArrival"; end;
 	case 3: warp "hugel",181,146; end;
 	}
 }

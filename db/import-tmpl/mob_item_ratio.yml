@@ -31,3 +31,11 @@
 Header:
   Type: MOB_ITEM_RATIO_DB
   Version: 1
+
+Body:
+  # This card is an MVP reward, so it bypasses item_drop_card_min/max.
+  # PORING_V's native Rate: 100 times 1% gives Rate: 1 (0.01%).
+  - Item: Poring__Card
+    Ratio: 1
+    List:
+      PORING_V: true

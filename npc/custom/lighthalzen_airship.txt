@@ -1,0 +1,19 @@
+//===== Ragnarok Offline =====================================
+//= Lighthalzen Airport Direct Boarding and Terminal Arrival
+//============================================================
+
+// Preserve the native gate position and touch area; board immediately.
+lhz_airport,142,60,0	warp	LhzBoard#offline	1,1,airplane,244,58
+
+-	script	LhzAirship#offline	-1,{
+OnInit:
+	// Keep the original declaration intact, but replace its city detour.
+	disablenpc "lairp4";
+	end;
+}
+
+function	script	F_LhzAirshipArrival	{
+	// Three cells before the gate, outside its 1-cell trigger area.
+	warp "lhz_airport",142,57;
+	return;
+}
