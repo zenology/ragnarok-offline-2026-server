@@ -1,0 +1,72 @@
+//===== Ragnarok Offline =====================================
+//= Episode 21 access: Shufapa and Nyar
+//= Frozen Tail <-> Scale Island <-> Southern Rising Land
+//= Custom access: Base Level 230+ outbound, unrestricted return.
+//= No episode quest completion or quest-state changes.
+//============================================================
+
+jor_tail,233,41,3	script	Shufapa#ep21_tail	4_EP19_IWIN_DIVER,{
+	cutin "ep19_iwin_diver01.png",2;
+	if (BaseLevel < 230) {
+		mes "[Shufapa]";
+		mes "Krr! Not yet, fledgling. The waters around Scale Island are no place to test your wings. Come back at Base Level 230 or higher.";
+		close3;
+	}
+
+	mes "[Shufapa]";
+	mes "Krr! Heading for Scale Island? I'm Shufapa, an Iwin diver. These feathers are used to Isgard's icy waters.";
+	next;
+	mes "[Shufapa]";
+	mes "Strange mana has been stirring around the island. Enough to ruffle my feathers, and that takes some doing.";
+	next;
+	mes "[Shufapa]";
+	mes "Ready for the crossing? Secure your gear and stay close to this seabird.";
+	if (prompt("Take me to Scale Island.:Not yet.") != 1)
+		close3;
+
+	close2;
+	cutin "",255;
+	warp "jor_crk",137,137;
+	end;
+}
+
+jor_crk,139,141,3	script	Shufapa#ep21_island	4_EP19_IWIN_DIVER,{
+	cutin "ep19_iwin_diver01.png",2;
+	mes "[Shufapa]";
+	mes "Krr! Ready to head back to Frozen Tail? Shake off that salt spray and I'll guide you across.";
+	if (prompt("Return to Frozen Tail.:Stay on Scale Island.") != 1)
+		close3;
+
+	close2;
+	cutin "",255;
+	warp "jor_tail",232,43;
+	end;
+}
+
+// Nyar provides the player-approved shortcut to the past.
+jor_crk,105,108,3	script	Nyar#ep21_island	4_EP20_NYAR,{
+	cutin "ep20_nyar01.png",2;
+	if (BaseLevel < 230) {
+		mes "[Nyar]";
+		mes "Meow. Curiosity brought you this far, but the other side is dangerous. Come back at Base Level 230 or higher.";
+		close3;
+	}
+
+	mes "[Nyar]";
+	mes "Meow. You can feel it too, can't you? That strange mana comes from a rift in time.";
+	next;
+	mes "[Nyar]";
+	mes "I can open a path straight to the Southern Rising Land in Isgard's past. Keep your claws ready; the creatures there won't welcome you gently.";
+	next;
+	mes "[Nyar]";
+	mes "Ready to step through? Walk into the portal near your arrival point when you want to return to Scale Island.";
+	if (prompt("Enter Southern Rising Land.:Stay on Scale Island.") != 1)
+		close3;
+
+	close2;
+	cutin "",255;
+	warp "jor_raise2",103,30;
+	end;
+}
+
+jor_raise2,100,26,0	warp	ep21_raise2_out	1,1,jor_crk,108,105
