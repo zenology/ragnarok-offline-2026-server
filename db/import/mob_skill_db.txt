@@ -1,0 +1,68 @@
+// Project-owned monster skills, loaded after db/re/mob_skill_db.txt.
+// Episode 21 jor_raise1: KB research/jor-raise1-monster-master.md, 2026-10-21.
+// 54 distinct source records. Preserve source states; do not add hidden variants.
+// Heart (3) for Velelling, anger (7) for the other existing Emotion rows.
+// Emotion val2..val5 are zero: no AI mode changes. Cooker has no Emotion skill.
+// MobID,Dummy,State,SkillID,SkillLv,Rate,CastTime,Delay,Cancelable,Target,Condition,ConditionValue,val1,val2,val3,val4,val5,Emotion,Chat
+
+22313,EP21_SEAWIND@NPC_EMOTION,idle,197,1,2000,0,5000,no,self,always,0,7,0,0,0,0,,
+22313,EP21_SEAWIND@NPC_EMOTION,chase,197,1,500,0,5000,no,self,always,0,7,0,0,0,0,,
+22313,EP21_SEAWIND@MG_LIGHTNINGBOLT,attack,20,5,2000,700,10000,no,target,always,0,,,,,,,
+22313,EP21_SEAWIND@MG_LIGHTNINGBOLT,chase,20,7,2000,700,10000,no,target,always,0,,,,,,,
+22313,EP21_SEAWIND@MG_THUNDERSTORM,attack,21,5,2000,1000,10000,no,target,always,0,,,,,,,
+22313,EP21_SEAWIND@NPC_DARKTHUNDER,attack,341,5,2000,500,10000,no,target,always,0,,,,,,,
+22313,EP21_SEAWIND@NPC_DARKTHUNDER,chase,341,5,2000,500,10000,no,target,always,0,,,,,,,
+
+22314,EP21_SCALLEG@NPC_EMOTION,idle,197,1,2000,0,5000,no,self,always,0,7,0,0,0,0,,
+22314,EP21_SCALLEG@NPC_EMOTION,chase,197,1,500,0,5000,no,self,always,0,7,0,0,0,0,,
+22314,EP21_SCALLEG@AL_TELEPORT,idle,26,1,10000,0,0,no,self,rudeattacked,,,,,,,,
+22314,EP21_SCALLEG@MG_COLDBOLT,attack,14,7,2000,700,10000,no,target,always,0,,,,,,,
+22314,EP21_SCALLEG@MG_COLDBOLT,chase,14,7,2000,700,10000,no,target,always,0,,,,,,,
+22314,EP21_SCALLEG@MG_FROSTDIVER,chase,15,5,2000,700,10000,no,target,always,0,,,,,,,
+22314,EP21_SCALLEG@NPC_MENTALBREAKER,attack,159,1,2000,0,5000,no,target,always,0,,,,,,,
+22314,EP21_SCALLEG@NPC_SILENCEATTACK,attack,178,5,2000,0,10000,no,target,always,0,,,,,,,
+
+22315,EP21_VELELLING@NPC_EMOTION,idle,197,1,2000,0,5000,no,self,always,0,3,0,0,0,0,,
+22315,EP21_VELELLING@NPC_EMOTION,chase,197,1,500,0,5000,no,self,always,0,3,0,0,0,0,,
+22315,EP21_VELELLING@AL_TELEPORT,idle,26,1,10000,0,0,no,self,rudeattacked,,,,,,,,
+22315,EP21_VELELLING@HW_GANBANTEIN,attack,483,1,2000,0,10000,no,self,groundattacked,0,,,,,,,
+22315,EP21_VELELLING@NPC_POISONATTACK,attack,188,5,2000,0,10000,no,target,always,0,,,,,,,
+
+22316,EP21_LETTERSTER@NPC_EMOTION,idle,197,1,2000,0,5000,no,self,always,0,7,0,0,0,0,,
+22316,EP21_LETTERSTER@NPC_EMOTION,chase,197,1,500,0,5000,no,self,always,0,7,0,0,0,0,,
+22316,EP21_LETTERSTER@MG_COLDBOLT,attack,14,7,2000,700,10000,no,target,always,0,,,,,,,
+22316,EP21_LETTERSTER@MG_COLDBOLT,chase,14,7,2000,700,10000,no,target,always,0,,,,,,,
+22316,EP21_LETTERSTER@MG_COLDBOLT,angry,14,7,2000,700,10000,no,target,always,0,,,,,,,
+22316,EP21_LETTERSTER@MG_FROSTDIVER,attack,15,5,2000,700,10000,no,target,always,0,,,,,,,
+22316,EP21_LETTERSTER@NPC_STUNATTACK,attack,179,5,2000,0,10000,no,target,always,0,,,,,,,
+
+22317,EP21_ROCKSTRIKER@NPC_EMOTION,idle,197,1,2000,0,5000,no,self,always,0,7,0,0,0,0,,
+22317,EP21_ROCKSTRIKER@NPC_EMOTION,chase,197,1,500,0,5000,no,self,always,0,7,0,0,0,0,,
+22317,EP21_ROCKSTRIKER@NPC_COMBOATTACK,attack,171,5,2000,0,10000,no,target,always,0,,,,,,,
+22317,EP21_ROCKSTRIKER@NPC_CRITICALSLASH,attack,170,5,2000,0,10000,no,target,always,0,,,,,,,
+22317,EP21_ROCKSTRIKER@NPC_GROUNDATTACK,attack,185,5,2000,0,10000,no,target,always,0,,,,,,,
+22317,EP21_ROCKSTRIKER@WZ_EARTHSPIKE,attack,90,3,2000,700,10000,no,target,always,0,,,,,,,
+
+22323,EP21_YOSTER_A@NPC_EMOTION,idle,197,1,2000,0,5000,no,self,always,0,7,0,0,0,0,,
+22323,EP21_YOSTER_A@NPC_EMOTION,chase,197,1,500,0,5000,no,self,always,0,7,0,0,0,0,,
+22323,EP21_YOSTER_A@AL_TELEPORT,idle,26,1,10000,0,0,no,self,rudeattacked,,,,,,,,
+22323,EP21_YOSTER_A@AS_SONICBLOW,attack,136,5,2000,0,10000,no,target,always,0,,,,,,,
+22323,EP21_YOSTER_A@MG_FIREBALL,chase,17,5,2000,300,10000,no,target,always,0,,,,,,,
+22323,EP21_YOSTER_A@MG_FIREBOLT,attack,19,7,2000,500,10000,no,target,always,0,,,,,,,
+22323,EP21_YOSTER_A@MG_FIREBOLT,angry,19,7,2000,500,10000,no,target,always,0,,,,,,,
+22323,EP21_YOSTER_A@NPC_BLEEDING2,attack,764,5,2000,0,10000,no,target,always,0,,,,,,,
+22323,EP21_YOSTER_A@NPC_CRITICALSLASH,attack,170,5,2000,0,10000,no,target,always,0,,,,,,,
+
+22325,EP21_YOSTER_C@NPC_EMOTION,idle,197,1,2000,0,5000,no,self,always,0,7,0,0,0,0,,
+22325,EP21_YOSTER_C@NPC_EMOTION,chase,197,1,500,0,5000,no,self,always,0,7,0,0,0,0,,
+22325,EP21_YOSTER_C@NPC_COMBOATTACK,attack,171,5,2000,0,10000,no,target,always,0,,,,,,,
+22325,EP21_YOSTER_C@NPC_CRITICALSLASH,attack,170,5,2000,0,10000,no,target,always,0,,,,,,,
+22325,EP21_YOSTER_C@NPC_GROUNDATTACK,attack,185,5,2000,0,10000,no,target,always,0,,,,,,,
+22325,EP21_YOSTER_C@WZ_EARTHSPIKE,attack,90,3,2000,700,10000,no,target,always,0,,,,,,,
+
+22327,EP21_YOSTER_E@AC_DOUBLE,attack,46,5,2000,0,10000,no,target,always,0,,,,,,,
+22327,EP21_YOSTER_E@NPC_DARKSTRIKE,attack,340,5,2000,0,10000,no,target,always,0,,,,,,,
+22327,EP21_YOSTER_E@NPC_MOVE_COORDINATE,angry,755,1,2000,0,10000,no,target,always,0,,,,,,,
+22327,EP21_YOSTER_E@NPC_MOVE_COORDINATE,attack,755,1,2000,0,10000,no,target,always,0,,,,,,,
+22327,EP21_YOSTER_E@NPC_WIDESOULDRAIN,attack,680,6,2000,500,10000,no,self,always,0,,,,,,,
+22327,EP21_YOSTER_E@NPC_WIDESOULDRAIN,angry,680,6,2000,500,10000,no,self,always,0,,,,,,,
