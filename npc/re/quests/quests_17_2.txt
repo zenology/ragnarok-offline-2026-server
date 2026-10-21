@@ -4311,9 +4311,9 @@ ba_in01,26,266,3	script	Smart Elly#ep172_ely01	4_EP17_TABLET,{
 		mes "[Elly]";
 		mes "The nearly exact coordinates of the signal's origin are...";
 		mes "around <NAVI>[here]<INFO>rachel,182,176,0,101,0</INFO></NAVI> or so.";
+		callfunc "F_EpClearMiniElly";	// Custom ticket handoff: ensure one required hat before advancing.
 		ep18_main = 1;
 		setquest 8681;
-		getitem 400127,1;	// Ep18_Mini_Elly
 		close3;
 	}
 	if (ep18_main == 1) {

@@ -3,16 +3,31 @@
 //===== Description: =========================================
 //= Consumes official EpisodClear13-18 tickets at prt_cas 373,77.
 //= Sets main-story character variables only. No quest log changes.
+//= Keeps the required Mini Elly available until Episode 18 ends.
 //============================================================
+
+// Shared by Bright and the native Episode 18 introduction.
+// Abort before progress/ticket changes if the required item cannot fit.
+function	script	F_EpClearMiniElly	{
+	if (countitem(400127) > 0)
+		return;
+	if (!checkweight(400127,1)) {
+		mes "[Mini Elly]";
+		mes "Please make room in your inventory for Mini Elly, then try again.";
+		close3;
+	}
+	getitem 400127,1;	// Ep18_Mini_Elly, not the costume reward
+	return;
+}
 
 prt_cas,373,77,4	script	Bright#epclear	4_F_VALKYRIE,{
 	mes "[Bright]";
-	mes "These tickets close a finished episode. They do not pay the rewards.";
+	mes "These tickets close an episode without its rewards. Episode 17 includes Mini Elly for the next story.";
 	next;
 	mes "[Bright]";
 	mes "Bring the matching ticket. I will take one.";
 	next;
-	switch (select("Episode 13:Episode 14:Episode 15:Episode 16:Episode 17:Episode 18:Cancel.")) {
+	switch (select("Episode 13:Episode 14:Episode 15:Episode 16:Episode 17:Episode 18:Recover Mini Elly:Cancel.")) {
 	case 1:
 		callsub S_Clear, 1000284, "Episode 13";
 		end;
@@ -32,6 +47,21 @@ prt_cas,373,77,4	script	Bright#epclear	4_F_VALKYRIE,{
 		callsub S_Clear, 1000288, "Episode 18";
 		end;
 	case 7:
+		if (ep17_2_main < 33 || ep18_main >= 57) {
+			mes "[Bright]";
+			mes "Mini Elly is needed after the Episode 17.2 story and before Episode 18 is closed.";
+			close;
+		}
+		if (countitem(400127) > 0) {
+			mes "[Bright]";
+			mes "You already have Mini Elly. Equip it as your upper headgear when the story asks.";
+			close;
+		}
+		callfunc "F_EpClearMiniElly";
+		mes "[Bright]";
+		mes "Here is Mini Elly. Equip it as your upper headgear for Episode 18. No ticket is needed for this replacement.";
+		close;
+	case 8:
 		mes "[Bright]";
 		mes "Come back with a ticket.";
 		close;
@@ -58,6 +88,8 @@ S_Clear:
 		.@raised = callsub(S_Raise16);
 		break;
 	case 1000287:
+		if (ep18_main < 57 && (terra_gloria_main < 26 || ep17_2_main < 36))
+			callfunc "F_EpClearMiniElly";
 		.@raised = callsub(S_Raise17);
 		break;
 	case 1000288:
