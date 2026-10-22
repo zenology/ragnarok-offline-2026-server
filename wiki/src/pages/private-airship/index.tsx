@@ -72,6 +72,10 @@ export default function PrivateAirshipPage(): ReactNode {
             <strong>Clock Tower Unknown Basement:</strong> Base Level 240.
           </Callout>
           <Callout>
+            <strong>Power Twisted Plains:</strong> Base Level 250. MOVE lands directly in the
+            plains.
+          </Callout>
+          <Callout>
             <strong>Einbech Mine, floor 3:</strong> Base Level 180.
           </Callout>
           <Callout>

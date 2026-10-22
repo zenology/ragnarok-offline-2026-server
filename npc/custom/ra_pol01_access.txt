@@ -1,0 +1,143 @@
+// Power Twisted Plains: entrance and mutually exclusive daily cleansing hunts.
+// Gnjoy 2026-05-27: Lv250, 100/500 kills, next 04:00 reset, published rewards.
+// Entrance/exit coordinates and Priest Pano sprite follow extracted Navigation.
+
+ra_fild10,352,341,4	script	Priest Pano#lv250_pano	4_F_TRAINEE,{
+	if (BaseLevel < 250) {
+		mes "[Priest Pano]";
+		mes "The corruption beyond this canyon is too strong. Come back at Base Level 250, when you can face the creatures of the Power Twisted Plains.";
+		close;
+	}
+
+	if (isbegin_quest(18206) == 0) {
+		mes "[Priest Pano]";
+		mes "I am Pano, a priest from Rachel. I've been investigating the area around this cliff.";
+		next;
+		setquest 18206;
+		completequest 18206;
+	}
+	callsub L_ClearCooldown;
+	mes "[Priest Pano]";
+	mes "We've discovered a new place beneath this cliff. It looks extremely dangerous.";
+	next;
+	mes "[Priest Pano]";
+	mes "I can guide you into the plains, or arrange a daily cleansing assignment. If you have finished a hunt, report it to me here.";
+	next;
+	switch (select("Enter the Power Twisted Plains:Daily cleansing:About the cleansing work:Leave")) {
+	case 1:
+		close2;
+		warp "ra_pol01",294,106;
+		end;
+	case 2:
+		callsub L_Daily;
+		close;
+	case 3:
+		mes "[Priest Pano]";
+		mes "Choose a patrol of 100 monsters, or a longer hunt of 500. Burning Night, Deadsera, Hardrock Titan, Deadween and Gaia Pol all count, but only inside the plains.";
+		next;
+		mes "[Priest Pano]";
+		mes "I can reward one assignment each day. The next daily cycle begins at 04:00. An unfinished hunt stays with you until you report it; its reward counts toward the day you turn it in.";
+		next;
+		mes "[Priest Pano]";
+		mes "Dead Branches cannot be used inside the plains. We are clearing the corruption already there, not bringing more creatures into it.";
+		close;
+	default:
+		close;
+	}
+
+L_ClearCooldown:
+	if (checkquest(18209,PLAYTIME) == 2) {
+		erasequest 18209;
+		questinfo_refresh();
+	}
+	return;
+
+L_Daily:
+	callsub L_ClearCooldown;
+	if (checkquest(18209,PLAYTIME) != -1) {
+		mes "[Priest Pano]";
+		mes "You have already helped with today's cleansing. Rest a while; another assignment will be available after 04:00.";
+		return;
+	}
+	.@quest = 0;
+	if (checkquest(18207) != -1)
+		.@quest = 18207;
+	else if (checkquest(18208) != -1)
+		.@quest = 18208;
+
+	if (.@quest != 0) {
+		if (checkquest(.@quest,HUNTING) != 2) {
+			mes "[Priest Pano]";
+			mes "Your cleansing assignment is still underway. The Quest List shows your progress. Finish the hunt in the Power Twisted Plains, then come back safely.";
+			return;
+		}
+		if (.@quest == 18207) {
+			.@relics = 1;
+			.@base = 243000000;
+			.@job = 204000000;
+		} else {
+			.@relics = 3;
+			.@base = 1218000000;
+			.@job = 1032000000;
+		}
+		mes "[Priest Pano]";
+		mes "The plains are a little safer because of your work. I have " + .@relics + " Bishop's Relic for you, along with the experience reward. Shall I record your report?";
+		next;
+		if (select("Report the completed hunt:Keep the report for later") == 2)
+			return;
+		if (!checkweight(Mocadas_Gold,.@relics)) {
+			mes "[Priest Pano]";
+			mes "Please make room for the relics first. I will keep your completed assignment ready.";
+			return;
+		}
+		// No dialogue suspension between the final checks, lock and rewards.
+		callsub L_ClearCooldown;
+		if (checkquest(18209,PLAYTIME) != -1 || checkquest(.@quest,HUNTING) != 2)
+			return;
+		setquest 18209;
+		erasequest .@quest;
+		getitem Mocadas_Gold,.@relics;
+		getexp .@base,.@job;
+		questinfo_refresh();
+		mes "[Priest Pano]";
+		mes "Thank you. Your report is recorded, and the relics are yours. May your next journey be a safe one.";
+		return;
+	}
+
+	mes "[Priest Pano]";
+	mes "How much can you take on today? Choose one assignment. Each hunt counts the creatures you defeat inside the Power Twisted Plains.";
+	next;
+	.@choice = select("Daily Light Cleansing - 100 monsters:Daily Solid Cleansing - 500 monsters:Not today");
+	if (.@choice == 3)
+		return;
+	if (.@choice == 1) {
+		.@quest = 18207;
+		mes "[Priest Pano]";
+		mes "Defeat 100 monsters. Your reward is 243,000,000 Base EXP, 204,000,000 Job EXP and 1 Bishop's Relic. Experience bonuses apply as usual.";
+	} else {
+		.@quest = 18208;
+		mes "[Priest Pano]";
+		mes "Defeat 500 monsters. Your reward is 1,218,000,000 Base EXP, 1,032,000,000 Job EXP and 3 Bishop's Relics. Experience bonuses apply as usual.";
+	}
+	next;
+	if (select("Accept this assignment:Not now") == 2)
+		return;
+	callsub L_ClearCooldown;
+	if (checkquest(18209,PLAYTIME) != -1 || checkquest(18207) != -1 || checkquest(18208) != -1)
+		return;
+	setquest .@quest;
+	questinfo_refresh();
+	mes "[Priest Pano]";
+	mes "I will be waiting here for your report. Speak to me again when you are ready to enter the plains.";
+	return;
+
+OnInit:
+	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 250 && (checkquest(18207,HUNTING) == 2 || checkquest(18208,HUNTING) == 2)");
+	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 250 && checkquest(18207) == -1 && checkquest(18208) == -1 && (checkquest(18209,PLAYTIME) == -1 || checkquest(18209,PLAYTIME) == 2)");
+	end;
+}
+
+ra_pol01,297,103,0	warp	out_ra_pol01	1,1,ra_fild10,348,336
+ra_pol01	mapflag	nobranch
+ra_pol01	mapflag	privateairship_source
+ra_pol01	mapflag	privateairship_destination

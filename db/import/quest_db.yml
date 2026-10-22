@@ -43,6 +43,38 @@ Body:
     Title: Discuss the Workers with Tes
   - Id: 17017
     Title: Regroup at a Safe Place
+  # Power Twisted Plains: one shared total across the area's five species.
+  - Id: 18206
+    Title: Information on the Power Twisted Plains
+  - Id: 18207
+    Title: Daily Light Cleansing
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: ra_pol01
+        MapName: Power Twisted Plains
+        MapMobTargets:
+          BURNING_KNIGHT: true
+          DEDSERA: true
+          HARDROCK_TITAN: true
+          DEADWEEN: true
+          GAIA_POL: true
+  - Id: 18208
+    Title: Daily Solid Cleansing
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: ra_pol01
+        MapName: Power Twisted Plains
+        MapMobTargets:
+          BURNING_KNIGHT: true
+          DEDSERA: true
+          HARDROCK_TITAN: true
+          DEADWEEN: true
+          GAIA_POL: true
+  - Id: 18209
+    Title: "[Standby] Daily Cleansing"
+    TimeLimit: 4h
   - Id: 65000
     Title: Gathering Souls - Dragon Knight
     Targets:
