@@ -2,17 +2,39 @@
 //= Varmundt Biosphere Access
 //============================================================
 
+// Extend the existing four Biosphere Private Airship maps in the custom layer.
+bl_temple	mapflag	privateairship_source
+bl_temple	mapflag	privateairship_destination
+bl_venom	mapflag	privateairship_source
+bl_venom	mapflag	privateairship_destination
+bl_soul	mapflag	privateairship_source
+bl_soul	mapflag	privateairship_destination
+bl_depth1	mapflag	privateairship_source
+bl_depth1	mapflag	privateairship_destination
+bl_depth2	mapflag	privateairship_source
+bl_depth2	mapflag	privateairship_destination
+
+// Native main-story completion is stage 33; later stages and EP17 tickets pass.
+function	script	F_BioRequireEp172	{
+	if (ep17_2_main >= 33)
+		return;
+	mes "[Biosphere Access]";
+	mes "Complete the Episode 17.2 main story before entering Varmundt's Biosphere.";
+	close;
+}
+
 ba_in01,252,353,3	script	Admin Beta#biosphere_intro	4_EP17_BASIC_B,{
+	callfunc "F_BioRequireEp172";
 	if (biosphere_beta_intro) {
 		mes "[Admin Beta]";
-		mes "You may use the four Biosphere doors beyond the hallway. Stay prepared.";
+		mes "The seven Biosphere doors are open to you. Speak with the Research Manager before exploring Depth 1 or the Abyss.";
 		close;
 	}
 	mes "[Admin Beta]";
 	mes "Welcome to Varmundt's Ecological Environment Research Facility, also known as Varmundt's Biosphere.";
 	next;
 	mes "[Admin Beta]";
-	mes "Beyond the hallway are four specimen environments: Ice, Fire, Grass, and Death.";
+	mes "The hallway leads to Ice, Fire, Grass, and Death. The west wing has the Soul, Venom, and Temple doors.";
 	next;
 	mes "[Admin Beta]";
 	mes "Each environment is dangerous. Prepare before entering, and use its exit to return here.";
@@ -20,7 +42,34 @@ ba_in01,252,353,3	script	Admin Beta#biosphere_intro	4_EP17_BASIC_B,{
 	close;
 }
 
+// The west-wing guide shares the existing character-local introduction.
+ba_in01,237,301,3	duplicate(Admin Beta#biosphere_intro)	Admin Beta#biosphere_west	4_EP17_BASIC_B
+
+// One character-local introduction unlocks both depths; no reputation gate.
+ba_in01,292,104,3	script	Research Manager#bio	4_EP17_MASTER_A,{
+	callfunc "F_BioRequireEp172";
+	if (biosphere_depth_intro) {
+		mes "[Research Manager]";
+		mes "You may enter Depth 1 through the blue gates in the seven Biospheres, or reach the Abyss through the Chess Garden.";
+		close;
+	}
+	mes "[Research Manager]";
+	mes "I oversee research into the deeper layers of Varmundt's Biosphere. Let me explain how to reach them.";
+	next;
+	mes "[Research Manager]";
+	mes "The blue gates inside the seven Biospheres lead to Depth 1. Its central exit brings you back to the mansion.";
+	next;
+	mes "[Research Manager]";
+	mes "To reach the Abyss, use the chessboard entrance in the mansion garden, then choose an entrance direction at the blue gate in the Chess Garden.";
+	next;
+	biosphere_depth_intro = 1;
+	mes "[Research Manager]";
+	mes "You are cleared to enter both Depth 1 and the Abyss. Prepare carefully, and use the exits when you need to return.";
+	close;
+}
+
 ba_in01,310,38,0	script	Biosphere Door#bl_ice	111,{
+ callfunc "F_BioRequireEp172";
  if (!biosphere_beta_intro) {
   mes "[Biosphere Door]";
   mes "Speak with Admin Beta in the lobby before entering the Biosphere.";
@@ -37,6 +86,7 @@ ba_in01,310,38,0	script	Biosphere Door#bl_ice	111,{
 }
 
 ba_in01,311,56,0	script	Biosphere Door#bl_lava	111,{
+ callfunc "F_BioRequireEp172";
  if (!biosphere_beta_intro) {
   mes "[Biosphere Door]";
   mes "Speak with Admin Beta in the lobby before entering the Biosphere.";
@@ -53,6 +103,7 @@ ba_in01,311,56,0	script	Biosphere Door#bl_lava	111,{
 }
 
 ba_in01,325,56,0	script	Biosphere Door#bl_grass	111,{
+ callfunc "F_BioRequireEp172";
  if (!biosphere_beta_intro) {
   mes "[Biosphere Door]";
   mes "Speak with Admin Beta in the lobby before entering the Biosphere.";
@@ -69,6 +120,7 @@ ba_in01,325,56,0	script	Biosphere Door#bl_grass	111,{
 }
 
 ba_in01,339,56,0	script	Biosphere Door#bl_death	111,{
+ callfunc "F_BioRequireEp172";
  if (!biosphere_beta_intro) {
   mes "[Biosphere Door]";
   mes "Speak with Admin Beta in the lobby before entering the Biosphere.";
@@ -88,3 +140,182 @@ bl_ice,36,81,0	warp	Biosphere Ice Exit	1,1,ba_in01,307,38
 bl_lava,163,14,0	warp	Biosphere Fire Exit	1,1,ba_in01,311,53
 bl_grass,157,16,0	warp	Biosphere Grass Exit	1,1,ba_in01,325,53
 bl_death,315,59,0	warp	Biosphere Death Exit	1,1,ba_in01,339,53
+
+// Original route coordinates: extracted navi_link_krpri.lub, links 28208-28213.
+// Keep the established local introduction gate and no level/cost requirement.
+ba_in01,201,302,0	script	Biosphere Door#bl_soul	111,{
+	callfunc "F_BioRequireEp172";
+	if (!biosphere_beta_intro) {
+		mes "[Biosphere Door]";
+		mes "Speak with Admin Beta before entering the Biosphere.";
+		close;
+	}
+	mes "[Biosphere Door]";
+	mes "The Soul Biosphere is extremely dangerous. Are you sure you want to enter?";
+	next;
+	if (select("Enter:Not yet.") == 2)
+		close;
+	close2;
+	warp "bl_soul",155,16;
+	end;
+}
+
+ba_in01,215,302,0	script	Biosphere Door#bl_venom	111,{
+	callfunc "F_BioRequireEp172";
+	if (!biosphere_beta_intro) {
+		mes "[Biosphere Door]";
+		mes "Speak with Admin Beta before entering the Biosphere.";
+		close;
+	}
+	mes "[Biosphere Door]";
+	mes "The Venom Biosphere is extremely dangerous. Are you sure you want to enter?";
+	next;
+	if (select("Enter:Not yet.") == 2)
+		close;
+	close2;
+	warp "bl_venom",146,23;
+	end;
+}
+
+ba_in01,229,302,0	script	Biosphere Door#bl_temple	111,{
+	callfunc "F_BioRequireEp172";
+	if (!biosphere_beta_intro) {
+		mes "[Biosphere Door]";
+		mes "Speak with Admin Beta before entering the Biosphere.";
+		close;
+	}
+	mes "[Biosphere Door]";
+	mes "The Temple Biosphere is extremely dangerous. Are you sure you want to enter?";
+	next;
+	if (select("Enter:Not yet.") == 2)
+		close;
+	close2;
+	warp "bl_temple",53,86;
+	end;
+}
+
+bl_soul,155,12,0	warp	Biosphere Soul Exit	1,1,ba_in01,201,300
+bl_venom,146,19,0	warp	Biosphere Venom Exit	1,1,ba_in01,215,300
+bl_temple,53,82,0	warp	Biosphere Temple Exit	1,1,ba_in01,229,300
+
+// Each original blue gate has its own Depth 1 landing point (28274-28286).
+function	script	F_BioDepthEntry	{
+	callfunc "F_BioRequireEp172";
+	if (!biosphere_depth_intro) {
+		mes "[Depth Entrance]";
+		mes "Speak with the Research Manager inside the mansion before entering the Biosphere depths.";
+		close;
+	}
+	mes "[Depth Entrance]";
+	mes "This gate leads to Biosphere Depth 1. Are you sure you want to enter?";
+	next;
+	if (select("Enter:Not yet.") == 2)
+		close;
+	close2;
+	warp "bl_depth1",getarg(0),getarg(1);
+	return;
+}
+
+bl_lava,151,263,0	script	Depth Entrance#lava	GATE_SKYBLUE,{
+	callfunc "F_BioDepthEntry",177,289;
+	end;
+}
+bl_ice,198,268,0	script	Depth Entrance#ice	GATE_SKYBLUE,{
+	callfunc "F_BioDepthEntry",283,180;
+	end;
+}
+bl_grass,131,365,0	script	Depth Entrance#grass	GATE_SKYBLUE,{
+	callfunc "F_BioDepthEntry",251,251;
+	end;
+}
+bl_death,65,121,0	script	Depth Entrance#death	GATE_SKYBLUE,{
+	callfunc "F_BioDepthEntry",251,107;
+	end;
+}
+bl_venom,182,250,0	script	Depth Entrance#venom	GATE_SKYBLUE,{
+	callfunc "F_BioDepthEntry",73,178;
+	end;
+}
+bl_soul,300,292,0	script	Depth Entrance#soul	GATE_SKYBLUE,{
+	callfunc "F_BioDepthEntry",107,253;
+	end;
+}
+bl_temple,272,331,0	script	Depth Entrance#temple	GATE_SKYBLUE,{
+	callfunc "F_BioDepthEntry",108,109;
+	end;
+}
+
+bl_depth1,179,179,0	script	Depth Exit#biosphere	PORTAL,{
+	mes "[Exit]";
+	mes "Return to Varmundt's Mansion?";
+	next;
+	if (select("Return:Not yet.") == 2)
+		close;
+	close2;
+	warp "ba_in01",296,104;
+	end;
+}
+
+// Original Abyss route goes through Chess Garden, not directly from Depth 1.
+ba_maison,242,128,0	script	Chess Garden#biosphere	1_SHADOW_ORANGE,{
+	callfunc "F_BioRequireEp172";
+	if (!biosphere_depth_intro) {
+		mes "[Chess Garden]";
+		mes "Speak with the Research Manager inside the mansion before entering the Biosphere depths.";
+		close;
+	}
+	mes "[Chess Garden]";
+	mes "A warm light flows from the chessboard. Travel to the Chess Garden?";
+	next;
+	if (select("Enter:Not yet.") == 2)
+		close;
+	close2;
+	warp "ba_chess",16,16;
+	end;
+}
+
+ba_chess,13,16,0	script	Garden Exit#biosphere	1_SHADOW_ORANGE,{
+	mes "[Exit]";
+	mes "Return to Varmundt's Mansion Garden?";
+	next;
+	if (select("Return:Not yet.") == 2)
+		close;
+	close2;
+	warp "ba_maison",242,122;
+	end;
+}
+
+// Four selectable landings confirmed by the original Abyss update and NAVI.
+ba_chess,13,36,0	script	Abyss Entrance#biosphere	GATE_SKYBLUE,{
+	callfunc "F_BioRequireEp172";
+	if (!biosphere_depth_intro) {
+		mes "[Abyss Entrance]";
+		mes "Speak with the Research Manager inside the mansion before entering the Biosphere depths.";
+		close;
+	}
+	mes "[Abyss Entrance]";
+	mes "Enter the Biosphere Abyss? Choose an entrance direction.";
+	next;
+	.@entrance = select("2 o'clock:4 o'clock:8 o'clock:10 o'clock:Not yet.");
+	if (.@entrance == 5)
+		close;
+	close2;
+	switch (.@entrance) {
+	case 1: warp "bl_depth2",194,188; break;
+	case 2: warp "bl_depth2",190,64; break;
+	case 3: warp "bl_depth2",57,87; break;
+	case 4: warp "bl_depth2",90,202; break;
+	}
+	end;
+}
+
+bl_depth2,141,137,0	script	Abyss Exit#biosphere	GATE_SKYBLUE,{
+	mes "[Exit]";
+	mes "Return to the Chess Garden?";
+	next;
+	if (select("Return:Not yet.") == 2)
+		close;
+	close2;
+	warp "ba_chess",13,31;
+	end;
+}

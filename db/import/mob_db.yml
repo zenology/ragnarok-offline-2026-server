@@ -7,3 +7,5 @@ Footer:
   Imports:
     - Path: db/import/mob_db_ep21.yml
       Mode: Renewal
+    - Path: db/import/mob_db_biosphere.yml
+      Mode: Renewal

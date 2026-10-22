@@ -5,12 +5,13 @@
 
 #include "map/clif.hpp"
 #include "map/status.hpp"
+#include "custom/property_immune.hpp"
 
 SkillPropertyImmune::SkillPropertyImmune() : SkillImpl(NPC_IMMUNE_PROPERTY) {
 }
 
 void SkillPropertyImmune::castendNoDamageId(block_list *src, block_list *target, uint16 skill_lv, t_tick tick, int32& flag) const {
-	sc_type type = skill_get_sc(getSkillId());
+	sc_type type = offline_property_immune::initial_status(src, skill_lv, skill_get_sc(getSkillId()));
 
 	switch (skill_lv) {
 		case 1: type = SC_IMMUNE_PROPERTY_NOTHING; break;

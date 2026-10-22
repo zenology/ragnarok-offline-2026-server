@@ -1,0 +1,110 @@
+//===== Ragnarok Offline =====================================
+//= Varmundt Biosphere permanent monster spawns: all nine maps
+//============================================================
+// Earlier four-map rows and remaining five-map rows consolidated 2026-10-22.
+// Evidence: KB research/varmundt-biosphere-monsters.md and
+// research/varmundt-biosphere-remaining-spawns.md.
+// All 82 spawn declarations preserved exactly, including names and timers.
+// AI, skills, mitigation and drops remain in their existing monster databases.
+// Summoned slaves are additional to these field populations.
+// Apply using @reloadscript; file-only reload does not remove direct spawns.
+
+// Grass
+bl_grass,0,0,0,0	monster	Cornus of Prairie	21548,40,5000,0
+bl_grass,0,0,0,0	monster	Pinguicula of Prairie	21549,45,5000,0
+bl_grass,0,0,0,0	monster	Hunter Fly of Prairie	21550,25,5000,0
+bl_grass,0,0,0,0	monster	Rocker of Prairie	21551,40,5000,0
+bl_grass,0,0,0,0	monster	Savage of Prairie	21552,40,5000,0
+bl_grass,0,0,0,0	monster	Flora of Prairie	21553,25,5000,0
+bl_grass,0,0,0,0	monster	Hill Wind of Prairie	21554,45,5000,0
+bl_grass,0,0,0,0	boss_monster	Mistress of Prairie	21555,1,21600000,0
+
+// Fire
+bl_lava,0,0,0,0	monster	Explosion of Fire	21556,40,5000,0
+bl_lava,0,0,0,0	monster	Deleter of Fire(Sky)	21557,40,5000,0
+bl_lava,0,0,0,0	monster	Jakk of Fire	21558,30,5000,0
+bl_lava,0,0,0,0	monster	Lava Golem of Fire	21559,35,5000,0
+bl_lava,0,0,0,0	monster	Majoruros of Fire	21560,30,5000,0
+bl_lava,0,0,0,0	monster	Hydrolancer of Fire	21561,15,5000,0
+bl_lava,0,0,0,0	monster	Acidus of Fire	21562,35,5000,0
+bl_lava,0,0,0,0	boss_monster	Ditardeurs of Fire	21563,1,21600000,0
+
+// Ice
+bl_ice,0,0,0,0	monster	Ice Titan of Iceberg	21564,35,5000,0
+bl_ice,0,0,0,0	monster	Siroma of Iceberg	21565,35,5000,0
+bl_ice,0,0,0,0	monster	Snowier of Iceberg	21566,35,5000,0
+bl_ice,0,0,0,0	monster	Centipede of Iceberg	21567,35,5000,0
+bl_ice,0,0,0,0	monster	Aqua Elemental of Iceberg	21568,45,5000,0
+bl_ice,0,0,0,0	monster	Angelgolt of Iceberg	21569,25,5000,0
+bl_ice,0,0,0,0	monster	Rhyncho of Prairie	21570,15,5000,0
+bl_ice,0,0,0,0	boss_monster	Ktullanux of Iceberg	21571,1,21600000,0
+
+// Death
+bl_death,0,0,0,0	monster	Ancient Mummy of Death	21572,30,5000,0
+bl_death,0,0,0,0	monster	Lude of Death	21573,35,5000,0
+bl_death,0,0,0,0	monster	Ragged Zombie of Death	21574,30,5000,0
+bl_death,0,0,0,0	monster	Wraith of Death	21575,35,5000,0
+bl_death,0,0,0,0	monster	Flame Skull of Fire	21576,35,5000,0
+bl_death,0,0,0,0	monster	Banshee of Death	21577,45,5000,0
+bl_death,0,0,0,0	monster	Knight of Abyss in Death	21578,15,5000,0
+bl_death,0,0,0,0	boss_monster	Lord of Death	21579,1,21600000,0
+
+// Temple: 210 non-MVP monsters + Randgris; MVP respawn 6 hours.
+bl_temple,0,0,0,0	monster	--ja--	21920,35,5000,0
+bl_temple,0,0,0,0	monster	--ja--	21921,40,5000,0
+bl_temple,0,0,0,0	monster	--ja--	21922,40,5000,0
+bl_temple,0,0,0,0	monster	--ja--	21923,25,5000,0
+bl_temple,0,0,0,0	monster	--ja--	21924,40,5000,0
+bl_temple,0,0,0,0	monster	--ja--	21925,10,5000,0
+bl_temple,0,0,0,0	monster	--ja--	21926,20,5000,0
+bl_temple,0,0,0,0	boss_monster	--ja--	21927,1,21600000,0
+
+// Venom: 210 non-MVP monsters + Chimera; MVP respawn 6 hours.
+bl_venom,0,0,0,0	monster	--ja--	21928,30,5000,0
+bl_venom,0,0,0,0	monster	--ja--	21929,30,5000,0
+bl_venom,0,0,0,0	monster	--ja--	21930,20,5000,0
+bl_venom,0,0,0,0	monster	--ja--	21931,30,5000,0
+bl_venom,0,0,0,0	monster	--ja--	21932,30,5000,0
+bl_venom,0,0,0,0	monster	--ja--	21933,40,5000,0
+bl_venom,0,0,0,0	monster	--ja--	21934,30,5000,0
+bl_venom,0,0,0,0	boss_monster	--ja--	21935,1,21600000,0
+
+// Soul: 210 non-MVP monsters + Gloom; MVP respawn 6 hours.
+bl_soul,0,0,0,0	monster	--ja--	21936,35,5000,0
+bl_soul,0,0,0,0	monster	--ja--	21937,35,5000,0
+bl_soul,0,0,0,0	monster	--ja--	21938,35,5000,0
+bl_soul,0,0,0,0	monster	--ja--	21939,10,5000,0
+bl_soul,0,0,0,0	monster	--ja--	21940,25,5000,0
+bl_soul,0,0,0,0	monster	--ja--	21941,35,5000,0
+bl_soul,0,0,0,0	monster	--ja--	21942,35,5000,0
+bl_soul,0,0,0,0	boss_monster	--ja--	21943,1,21600000,0
+
+// Depth 1: 16 Boss-class non-MVP types, 25 each; respawn 5 seconds.
+bl_depth1,0,0,0,0	monster	--ja--	22140,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22141,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22142,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22143,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22144,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22145,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22146,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22147,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22148,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22149,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22150,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22151,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22152,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22153,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22154,25,5000,0
+bl_depth1,0,0,0,0	monster	--ja--	22155,25,5000,0
+
+// Depth 2: 10 Boss-class non-MVP types, 30 each; respawn 5 seconds.
+bl_depth2,0,0,0,0	monster	--ja--	22252,30,5000,0
+bl_depth2,0,0,0,0	monster	--ja--	22253,30,5000,0
+bl_depth2,0,0,0,0	monster	--ja--	22254,30,5000,0
+bl_depth2,0,0,0,0	monster	--ja--	22255,30,5000,0
+bl_depth2,0,0,0,0	monster	--ja--	22256,30,5000,0
+bl_depth2,0,0,0,0	monster	--ja--	22257,30,5000,0
+bl_depth2,0,0,0,0	monster	--ja--	22258,30,5000,0
+bl_depth2,0,0,0,0	monster	--ja--	22259,30,5000,0
+bl_depth2,0,0,0,0	monster	--ja--	22260,30,5000,0
+bl_depth2,0,0,0,0	monster	--ja--	22261,30,5000,0

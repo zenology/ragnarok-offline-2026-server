@@ -34,6 +34,7 @@
 #include "pc_groups.hpp"
 #include "pet.hpp"
 #include "./skills/skill_impl.hpp"
+#include "custom/property_immune.hpp"
 
 using namespace rathena;
 
@@ -1314,6 +1315,9 @@ bool battle_status_block_damage(block_list *src, block_list *target, status_chan
 	else
 		element = battle_get_misc_element(*d, *src, *target, skill_id, skill_lv);
 	
+	if (offline_property_immune::block_all_elements(sc, damage))
+		return false;
+
 	switch( element ){
 		case ELE_NEUTRAL:
 			if( sc->getSCE( SC_IMMUNE_PROPERTY_NOTHING ) ){

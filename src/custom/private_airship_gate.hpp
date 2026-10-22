@@ -37,10 +37,8 @@ inline bool private_airship_episode_17_1_complete( const map_session_data* sd ) 
 }
 
 inline bool private_airship_biosphere_episode_gate( const map_session_data* sd ) {
-	return private_airship_reg_at_least( sd, "ep16_royal", 24 )
-		&& private_airship_reg_at_least( sd, "terra_gloria_main", 25 )
-		&& private_airship_episode_17_1_complete( sd )
-		&& private_airship_reg_at_least( sd, "ep17_2_main", 36 );
+	// Main-story finale; subsequent coronation stages are optional for access.
+	return private_airship_reg_at_least( sd, "ep17_2_main", 33 );
 }
 
 inline bool private_airship_prt_mz03_i_allowed( const map_session_data* sd ) {
@@ -295,8 +293,15 @@ inline bool private_airship_ordinary_destination_allowed( const map_session_data
 			&& private_airship_base_level_at_least( sd, 130 );
 
 	if( strcmp( map_name, "bl_death" ) == 0 || strcmp( map_name, "bl_grass" ) == 0
-		|| strcmp( map_name, "bl_ice" ) == 0 || strcmp( map_name, "bl_lava" ) == 0 )
-		return private_airship_biosphere_episode_gate( sd ) && private_airship_base_level_at_least( sd, 240 );
+		|| strcmp( map_name, "bl_ice" ) == 0 || strcmp( map_name, "bl_lava" ) == 0
+		|| strcmp( map_name, "bl_temple" ) == 0 || strcmp( map_name, "bl_venom" ) == 0
+		|| strcmp( map_name, "bl_soul" ) == 0 )
+		return private_airship_biosphere_episode_gate( sd )
+			&& private_airship_reg_at_least( sd, "biosphere_beta_intro", 1 );
+
+	if( strcmp( map_name, "bl_depth1" ) == 0 || strcmp( map_name, "bl_depth2" ) == 0 )
+		return private_airship_biosphere_episode_gate( sd )
+			&& private_airship_reg_at_least( sd, "biosphere_depth_intro", 1 );
 
 	if( strcmp( map_name, "oz_dun01" ) == 0 || strcmp( map_name, "oz_dun02" ) == 0 )
 		return private_airship_reg_at_least( sd, "ep18_main", 31 );
