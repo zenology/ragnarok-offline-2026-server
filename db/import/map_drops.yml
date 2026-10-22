@@ -1,0 +1,415 @@
+# Thanatos Tower Revamp: Divine Pride dpRO / English default, 2026-10-22.
+# Source: https://www.divine-pride.net/database/monster/<Monster ID>
+# Map-specific table only. Rates use n/100000, not the mob DB's n/10000.
+# Existing enable_bonus_map_drops behavior applies; no global rate changes.
+# Each of the 13 identities has DP entries on all four maps, including maps
+# where it has no permanent spawn. Other monsters receive none of these drops.
+Header:
+  Type: MAP_DROP_DB
+  Version: 2
+
+Body:
+  - Map: tha_t09
+    SpecificDrops:
+      - Monster: EMPATHIZER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: HAPPY_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: THA_ANGER
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_HORROR
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_RESENT
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_REGRET
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: VOID_MIMIC
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: BOOK_OF_DEATH
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: ELDEST
+        Drops:
+          - { Index: 0, Item: Fate_Shard_D, Rate: 2500 }
+          - { Index: 1, Item: Fate_Shard_A, Rate: 2500 }
+          - { Index: 2, Item: Fate_Shard_B, Rate: 2500 }
+          - { Index: 3, Item: Fate_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Fate_Shard_E, Rate: 2500 }
+      - Monster: CROW_DUKE
+        Drops:
+          - { Index: 0, Item: Fate_Shard_D, Rate: 2500 }
+          - { Index: 1, Item: Fate_Shard_A, Rate: 2500 }
+          - { Index: 2, Item: Fate_Shard_B, Rate: 2500 }
+          - { Index: 3, Item: Fate_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Fate_Shard_E, Rate: 2500 }
+      - Monster: CROW_BARON
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: PRAY_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: SMILE_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+  - Map: tha_t10
+    SpecificDrops:
+      - Monster: EMPATHIZER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: HAPPY_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: THA_ANGER
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_HORROR
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_RESENT
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_REGRET
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: VOID_MIMIC
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: BOOK_OF_DEATH
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: ELDEST
+        Drops:
+          - { Index: 0, Item: Fate_Shard_D, Rate: 2500 }
+          - { Index: 1, Item: Fate_Shard_A, Rate: 2500 }
+          - { Index: 2, Item: Fate_Shard_B, Rate: 2500 }
+          - { Index: 3, Item: Fate_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Fate_Shard_E, Rate: 2500 }
+      - Monster: CROW_DUKE
+        Drops:
+          - { Index: 0, Item: Fate_Shard_D, Rate: 2500 }
+          - { Index: 1, Item: Fate_Shard_A, Rate: 2500 }
+          - { Index: 2, Item: Fate_Shard_B, Rate: 2500 }
+          - { Index: 3, Item: Fate_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Fate_Shard_E, Rate: 2500 }
+      - Monster: CROW_BARON
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: PRAY_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: SMILE_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+  - Map: tha_t11
+    SpecificDrops:
+      - Monster: EMPATHIZER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: HAPPY_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: THA_ANGER
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_HORROR
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_RESENT
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_REGRET
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: VOID_MIMIC
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: BOOK_OF_DEATH
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: ELDEST
+        Drops:
+          - { Index: 0, Item: Fate_Shard_D, Rate: 2500 }
+          - { Index: 1, Item: Fate_Shard_A, Rate: 2500 }
+          - { Index: 2, Item: Fate_Shard_B, Rate: 2500 }
+          - { Index: 3, Item: Fate_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Fate_Shard_E, Rate: 2500 }
+      - Monster: CROW_DUKE
+        Drops:
+          - { Index: 0, Item: Fate_Shard_D, Rate: 2500 }
+          - { Index: 1, Item: Fate_Shard_A, Rate: 2500 }
+          - { Index: 2, Item: Fate_Shard_B, Rate: 2500 }
+          - { Index: 3, Item: Fate_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Fate_Shard_E, Rate: 2500 }
+      - Monster: CROW_BARON
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: PRAY_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: SMILE_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+  - Map: tha_t12
+    SpecificDrops:
+      - Monster: EMPATHIZER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: HAPPY_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: THA_ANGER
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_HORROR
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_RESENT
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: THA_REGRET
+        Drops:
+          - { Index: 0, Item: Sin_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Sin_Shard_A, Rate: 5000 }
+          - { Index: 2, Item: Sin_Shard_B, Rate: 5000 }
+          - { Index: 3, Item: Sin_Shard_D, Rate: 5000 }
+          - { Index: 4, Item: Sin_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Sin_Shard_E, Rate: 5000 }
+      - Monster: VOID_MIMIC
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: BOOK_OF_DEATH
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: ELDEST
+        Drops:
+          - { Index: 0, Item: Fate_Shard_D, Rate: 2500 }
+          - { Index: 1, Item: Fate_Shard_A, Rate: 2500 }
+          - { Index: 2, Item: Fate_Shard_B, Rate: 2500 }
+          - { Index: 3, Item: Fate_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Fate_Shard_E, Rate: 2500 }
+      - Monster: CROW_DUKE
+        Drops:
+          - { Index: 0, Item: Fate_Shard_D, Rate: 2500 }
+          - { Index: 1, Item: Fate_Shard_A, Rate: 2500 }
+          - { Index: 2, Item: Fate_Shard_B, Rate: 2500 }
+          - { Index: 3, Item: Fate_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Fate_Shard_E, Rate: 2500 }
+      - Monster: CROW_BARON
+        Drops:
+          - { Index: 0, Item: Sin_Shard_A, Rate: 2500 }
+          - { Index: 1, Item: Sin_Shard_B, Rate: 2500 }
+          - { Index: 2, Item: Sin_Shard_D, Rate: 2500 }
+          - { Index: 3, Item: Sin_Shard_C, Rate: 2500 }
+          - { Index: 4, Item: Sin_Shard_E, Rate: 2500 }
+      - Monster: PRAY_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }
+      - Monster: SMILE_GIVER
+        Drops:
+          - { Index: 0, Item: Fate_Fragment, Rate: 1000 }
+          - { Index: 1, Item: Fate_Shard_D, Rate: 5000 }
+          - { Index: 2, Item: Fate_Shard_A, Rate: 5000 }
+          - { Index: 3, Item: Fate_Shard_B, Rate: 5000 }
+          - { Index: 4, Item: Fate_Shard_C, Rate: 5000 }
+          - { Index: 5, Item: Fate_Shard_E, Rate: 5000 }

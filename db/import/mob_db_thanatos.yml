@@ -1,0 +1,602 @@
+# Thanatos 9F-12F revamp, 2026-10-22. DP default stats and ordinary drops.
+# Engine timings/reach: ID-matched rAthena community release, checked against DP.
+# AttackMotion/ClientAttackMotion: extracted ACT duration / atk frame (max direction).
+# Provenance and exceptions: KB research/thanatos-revamp-monsters.md.
+Header:
+  Type: MOB_DB
+  Version: 5
+
+Body:
+  - Id: 20773
+    AegisName: EMPATHIZER
+    Name: Empathizer
+    Level: 200
+    Hp: 3788426
+    Sp: 0
+    BaseExp: 252562
+    JobExp: 176793
+    MvpExp: 0
+    Attack: 5800
+    Attack2: 1907
+    Defense: 296
+    MagicDefense: 118
+    Resistance: 0
+    MagicResistance: 0
+    Str: 232
+    Agi: 134
+    Vit: 32
+    Int: 143
+    Dex: 148
+    Luk: 41
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Angel
+    Element: Ghost
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 1185
+    AttackMotion: 1152
+    ClientAttackMotion: 672
+    DamageMotion: 987
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Red_Feather, Rate: 100 }
+      - { Item: Cursed_Seal, Rate: 50 }
+      - { Item: Stone_Of_Intelligence_, Rate: 5 }
+      - { Item: Scarlet_Jewel, Rate: 100 }
+      - { Item: Skull, Rate: 500 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Empathizer_Card, Rate: 1, StealProtected: true }
+  - Id: 20774
+    AegisName: HAPPY_GIVER
+    Name: Happiness Giver
+    Level: 202
+    Hp: 3827826
+    Sp: 0
+    BaseExp: 255188
+    JobExp: 178632
+    MvpExp: 0
+    Attack: 5353
+    Attack2: 2114
+    Defense: 328
+    MagicDefense: 121
+    Resistance: 0
+    MagicResistance: 0
+    Str: 212
+    Agi: 141
+    Vit: 42
+    Int: 157
+    Dex: 187
+    Luk: 77
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Angel
+    Element: Wind
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 1037
+    AttackMotion: 960
+    ClientAttackMotion: 600
+    DamageMotion: 864
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Blue_Feather, Rate: 250 }
+      - { Item: Cursed_Seal, Rate: 50 }
+      - { Item: Golden_Jewel, Rate: 500 }
+      - { Item: Stone_Of_Intelligence_, Rate: 5 }
+      - { Item: Golden_Bracelet, Rate: 50 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Happy_Giver_Card, Rate: 1, StealProtected: true }
+  - Id: 20775
+    AegisName: THA_ANGER
+    Name: Anger of Thanatos
+    Level: 203
+    Hp: 3845405
+    Sp: 0
+    BaseExp: 256360
+    JobExp: 179452
+    MvpExp: 0
+    Attack: 6420
+    Attack2: 1313
+    Defense: 302
+    MagicDefense: 114
+    Resistance: 0
+    MagicResistance: 0
+    Str: 253
+    Agi: 111
+    Vit: 33
+    Int: 97
+    Dex: 178
+    Luk: 63
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demon
+    RaceGroups:
+      Thanatos: true
+    Element: Fire
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 2880
+    AttackMotion: 1320
+    ClientAttackMotion: 660
+    DamageMotion: 2800
+    DamageTaken: 100
+    Ai: 21
+    Class: Boss
+    Drops:
+      - { Item: Brigan, Rate: 500 }
+      - { Item: Crystal_Jewel_, Rate: 250 }
+      - { Item: Crystal_Jewel__, Rate: 50 }
+      - { Item: Piece_Of_Memory_Blue, Rate: 3000 }
+      - { Item: Shadowdecon_Ore, Rate: 150 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Tha_Anger_Card, Rate: 1, StealProtected: true }
+  - Id: 20776
+    AegisName: THA_HORROR
+    Name: Horror of Thanatos
+    Level: 201
+    Hp: 3807368
+    Sp: 0
+    BaseExp: 253825
+    JobExp: 177677
+    MvpExp: 0
+    Attack: 5904
+    Attack2: 1300
+    Defense: 297
+    MagicDefense: 113
+    Resistance: 0
+    MagicResistance: 0
+    Str: 235
+    Agi: 176
+    Vit: 32
+    Int: 97
+    Dex: 170
+    Luk: 68
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Demon
+    RaceGroups:
+      Thanatos: true
+    Element: Poison
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 792
+    AttackMotion: 792
+    ClientAttackMotion: 504
+    DamageMotion: 344
+    DamageTaken: 100
+    Ai: 21
+    Class: Boss
+    Drops:
+      - { Item: Brigan, Rate: 500 }
+      - { Item: Crystal_Jewel_, Rate: 50 }
+      - { Item: Crystal_Jewel__, Rate: 10 }
+      - { Item: Piece_Of_Memory_Green, Rate: 2000 }
+      - { Item: Zelunium_Ore, Rate: 150 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Tha_Horror_Card, Rate: 1, StealProtected: true }
+  - Id: 20777
+    AegisName: THA_RESENT
+    Name: Resentment of Thanatos
+    Level: 205
+    Hp: 3883906
+    Sp: 0
+    BaseExp: 258927
+    JobExp: 181249
+    MvpExp: 0
+    Attack: 3511
+    Attack2: 1353
+    Defense: 316
+    MagicDefense: 115
+    Resistance: 0
+    MagicResistance: 0
+    Str: 137
+    Agi: 71
+    Vit: 37
+    Int: 99
+    Dex: 156
+    Luk: 61
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Undead
+    RaceGroups:
+      Thanatos: true
+    Element: Ghost
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 1404
+    AttackMotion: 1404
+    ClientAttackMotion: 864
+    DamageMotion: 1413
+    DamageTaken: 100
+    Ai: 21
+    Class: Boss
+    Drops:
+      - { Item: Brigan, Rate: 500 }
+      - { Item: Crystal_Jewel_, Rate: 250 }
+      - { Item: Crystal_Jewel__, Rate: 50 }
+      - { Item: Piece_Of_Memory_Purple, Rate: 2000 }
+      - { Item: Shadowdecon_Ore, Rate: 150 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Tha_Resent_Card, Rate: 1, StealProtected: true }
+  - Id: 20778
+    AegisName: THA_REGRET
+    Name: Regret of Thanatos
+    Level: 202
+    Hp: 3831613
+    Sp: 0
+    BaseExp: 255441
+    JobExp: 178809
+    MvpExp: 0
+    Attack: 2853
+    Attack2: 2249
+    Defense: 403
+    MagicDefense: 122
+    Resistance: 0
+    MagicResistance: 0
+    Str: 113
+    Agi: 103
+    Vit: 67
+    Int: 167
+    Dex: 146
+    Luk: 57
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Demon
+    RaceGroups:
+      Thanatos: true
+    Element: Ghost
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 1152
+    AttackMotion: 1152
+    ClientAttackMotion: 768
+    DamageMotion: 1284
+    DamageTaken: 100
+    Ai: 21
+    Class: Boss
+    Drops:
+      - { Item: Brigan, Rate: 500 }
+      - { Item: Crystal_Jewel_, Rate: 250 }
+      - { Item: Crystal_Jewel__, Rate: 50 }
+      - { Item: Piece_Of_Memory_Red, Rate: 2000 }
+      - { Item: Zelunium_Ore, Rate: 150 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Tha_Regret_Card, Rate: 1, StealProtected: true }
+  - Id: 20779
+    AegisName: VOID_MIMIC
+    Name: Void Mimic
+    Level: 203
+    Hp: 3842817
+    Sp: 0
+    BaseExp: 256188
+    JobExp: 179331
+    MvpExp: 0
+    Attack: 3020
+    Attack2: 2531
+    Defense: 251
+    MagicDefense: 125
+    Resistance: 0
+    MagicResistance: 0
+    Str: 119
+    Agi: 99
+    Vit: 16
+    Int: 187
+    Dex: 149
+    Luk: 61
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Formless
+    Element: Neutral
+    ElementLevel: 4
+    WalkSpeed: 110
+    AttackDelay: 840
+    AttackMotion: 840
+    ClientAttackMotion: 504
+    DamageMotion: 1085
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Light_Granule, Rate: 1500 }
+      - { Item: Old_Violet_Box, Rate: 1 }
+      - { Item: Gift_Box, Rate: 25 }
+      - { Item: Treasure_Box, Rate: 1 }
+      - { Item: Special_Alloy_Trap, Rate: 500 }
+      - { Item: Old_Blue_Box, Rate: 10 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Void_Mimic_Card, Rate: 1, StealProtected: true }
+  - Id: 20780
+    AegisName: BOOK_OF_DEATH
+    Name: Book of Death
+    Level: 204
+    Hp: 3864501
+    Sp: 0
+    BaseExp: 257633
+    JobExp: 180343
+    MvpExp: 0
+    Attack: 4488
+    Attack2: 911
+    Defense: 306
+    MagicDefense: 110
+    Resistance: 0
+    MagicResistance: 0
+    Str: 176
+    Agi: 121
+    Vit: 34
+    Int: 67
+    Dex: 139
+    Luk: 77
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Formless
+    Element: Undead
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 1140
+    AttackMotion: 1140
+    ClientAttackMotion: 600
+    DamageMotion: 600
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Worn_Out_Page, Rate: 2000 }
+      - { Item: Bookclip_In_Memory, Rate: 300 }
+      - { Item: Bloody_Page, Rate: 750 }
+      - { Item: Shadowdecon_Ore, Rate: 150 }
+      - { Item: Zelunium_Ore, Rate: 150 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Book_Of_Death_Card, Rate: 1, StealProtected: true }
+  - Id: 20781
+    AegisName: ELDEST
+    Name: Eldest
+    Level: 205
+    Hp: 3882829
+    Sp: 0
+    BaseExp: 258855
+    JobExp: 181199
+    MvpExp: 0
+    Attack: 6381
+    Attack2: 2747
+    Defense: 295
+    MagicDefense: 128
+    Resistance: 0
+    MagicResistance: 0
+    Str: 249
+    Agi: 176
+    Vit: 30
+    Int: 201
+    Dex: 191
+    Luk: 70
+    AttackRange: 3
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Dark
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 3104
+    AttackMotion: 1440
+    ClientAttackMotion: 720
+    DamageMotion: 672
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Old_Magic_Circle, Rate: 2000 }
+      - { Item: Rent_Spell_Book, Rate: 750 }
+      - { Item: Elder_Branch, Rate: 500 }
+      - { Item: Old_Magic_Book, Rate: 50 }
+      - { Item: Shadowdecon_Ore, Rate: 150 }
+      - { Item: Zelunium_Ore, Rate: 150 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Eldest_Card, Rate: 1, StealProtected: true }
+  - Id: 20782
+    AegisName: CROW_DUKE
+    Name: Crow Duke
+    Level: 205
+    Hp: 3894053
+    Sp: 0
+    BaseExp: 259604
+    JobExp: 181722
+    MvpExp: 0
+    Attack: 7073
+    Attack2: 2884
+    Defense: 514
+    MagicDefense: 129
+    Resistance: 0
+    MagicResistance: 0
+    Str: 249
+    Agi: 176
+    Vit: 30
+    Int: 201
+    Dex: 191
+    Luk: 70
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Wind
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 4035
+    AttackMotion: 1248
+    ClientAttackMotion: 768
+    DamageMotion: 1320
+    DamageTaken: 100
+    Ai: 21
+    Class: Boss
+    Drops:
+      - { Item: Tatters_Clothes, Rate: 2500 }
+      - { Item: Soft_Feather, Rate: 500 }
+      - { Item: Crystal_Mirror, Rate: 1 }
+      - { Item: Magician_Hat, Rate: 1 }
+      - { Item: Shadowdecon_Ore, Rate: 150 }
+      - { Item: Zelunium_Ore, Rate: 150 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Crow_Duke_Card, Rate: 1, StealProtected: true }
+  - Id: 20783
+    AegisName: CROW_BARON
+    Name: Crow Baron
+    Level: 205
+    Hp: 3893746
+    Sp: 0
+    BaseExp: 259583
+    JobExp: 181708
+    MvpExp: 0
+    Attack: 7380
+    Attack2: 2843
+    Defense: 508
+    MagicDefense: 129
+    Resistance: 0
+    MagicResistance: 0
+    Str: 288
+    Agi: 187
+    Vit: 101
+    Int: 208
+    Dex: 180
+    Luk: 66
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Neutral
+    ElementLevel: 4
+    WalkSpeed: 120
+    AttackDelay: 3130
+    AttackMotion: 960
+    ClientAttackMotion: 432
+    DamageMotion: 1024
+    DamageTaken: 100
+    Ai: 21
+    Class: Boss
+    Drops:
+      - { Item: Tatters_Clothes, Rate: 2500 }
+      - { Item: Soft_Feather, Rate: 500 }
+      - { Item: Crystal_Mirror, Rate: 1 }
+      - { Item: Magician_Hat, Rate: 1 }
+      - { Item: Shadowdecon_Ore, Rate: 150 }
+      - { Item: Zelunium_Ore, Rate: 150 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Crow_Baron_Card, Rate: 1, StealProtected: true }
+  - Id: 20844
+    AegisName: PRAY_GIVER
+    Name: Pray Giver
+    Level: 203
+    Hp: 3845709
+    Sp: 0
+    BaseExp: 256381
+    JobExp: 179466
+    MvpExp: 0
+    Attack: 5659
+    Attack2: 1827
+    Defense: 308
+    MagicDefense: 118
+    Resistance: 0
+    MagicResistance: 0
+    Str: 223
+    Agi: 155
+    Vit: 35
+    Int: 135
+    Dex: 130
+    Luk: 61
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Angel
+    Element: Ghost
+    ElementLevel: 3
+    WalkSpeed: 120
+    AttackDelay: 768
+    AttackMotion: 768
+    ClientAttackMotion: 384
+    DamageMotion: 576
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Blue_Feather, Rate: 100 }
+      - { Item: Cursed_Seal, Rate: 50 }
+      - { Item: Light_Granule, Rate: 250 }
+      - { Item: Soft_Feather, Rate: 300 }
+      - { Item: Stone_Of_Intelligence_, Rate: 5 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Pray_Giver_Card, Rate: 1, StealProtected: true }
+  - Id: 20845
+    AegisName: SMILE_GIVER
+    Name: Smile Giver
+    Level: 201
+    Hp: 3808424
+    Sp: 0
+    BaseExp: 253895
+    JobExp: 177726
+    MvpExp: 0
+    Attack: 5301
+    Attack2: 1889
+    Defense: 318
+    MagicDefense: 118
+    Resistance: 0
+    MagicResistance: 0
+    Str: 211
+    Agi: 167
+    Vit: 39
+    Int: 141
+    Dex: 199
+    Luk: 35
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Angel
+    Element: Holy
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 1632
+    AttackMotion: 1188
+    ClientAttackMotion: 756
+    DamageMotion: 1020
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Blue_Feather, Rate: 250 }
+      - { Item: Cursed_Seal, Rate: 50 }
+      - { Item: Stone_Of_Intelligence_, Rate: 5 }
+      - { Item: Light_Granule, Rate: 250 }
+      - { Item: Soft_Feather, Rate: 300 }
+      - { Item: Shadowdecon, Rate: 6 }
+      - { Item: Zelunium, Rate: 6 }
+      - { Item: Smile_Giver_Card, Rate: 1, StealProtected: true }

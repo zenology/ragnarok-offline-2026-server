@@ -9,3 +9,5 @@ Footer:
       Mode: Renewal
     - Path: db/import/mob_db_biosphere.yml
       Mode: Renewal
+    - Path: db/import/mob_db_thanatos.yml
+      Mode: Renewal
