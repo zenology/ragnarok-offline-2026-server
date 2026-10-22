@@ -47,6 +47,7 @@
 #include "unit.hpp"
 
 #include "../custom/stripe_fallback.hpp"
+#include "../custom/random_break.hpp"
 
 // Skill factory is compiled as separate translation units per job category
 // to reduce peak memory usage during compilation
@@ -1958,7 +1959,7 @@ int32 skill_counter_additional_effect (block_list* src, block_list *bl, uint16 s
  - flag is a BCT_ flag to indicate which type of adjustment should be used
    (BCT_ENEMY/BCT_PARTY/BCT_SELF) are the valid values.
 --------------------------------------------------------------------------*/
-int32 skill_break_equip(block_list *src, block_list *bl, uint16 where, int32 rate, int32 flag)
+int32 skill_break_equip(block_list *src, block_list *bl, uint16 where, int32 rate, int32 flag, int16 selected_index)
 {
 	status_change *src_sc = status_get_sc(src);
 
@@ -2023,6 +2024,8 @@ int32 skill_break_equip(block_list *src, block_list *bl, uint16 where, int32 rat
 	if (sd) {
 		for (i = 0; i < EQI_MAX; i++) {
 			int16 j = sd->equip_index[i];
+			if (!offline_random_break::selected_item(j, selected_index))
+				continue;
 			if (j < 0 || sd->inventory.u.items_inventory[j].attribute == 1 || !sd->inventory_data[j])
 				continue;
 

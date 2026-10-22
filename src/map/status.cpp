@@ -36,6 +36,7 @@
 #include "pet.hpp"
 #include "script.hpp"
 #include <custom/premium_autobuff.hpp>
+#include <custom/monster_servant_weapon.hpp>
 
 using namespace rathena;
 
@@ -12800,6 +12801,7 @@ static bool status_change_start_post_delay(block_list* src, block_list* bl, sc_t
 				// Generate 5 servants on start
 				pc_addservantball( *sd, MAX_SERVANTBALL );
 			}
+			offline_monster_servant_weapon::replenish(bl, val3);
 			tick_time = skill_get_time2(DK_SERVANTWEAPON,val1); // Servant Regen Interval
 			if (tick_time < 500)
 				tick_time = 500; // Avoid being brought down to 0.
@@ -15164,6 +15166,7 @@ TIMER_FUNC(status_change_timer){
 			if( sd && sd->servantball < MAX_SERVANTBALL ){
 				pc_addservantball( *sd, MAX_SERVANTBALL );
 			}
+			offline_monster_servant_weapon::replenish(bl, sce->val3);
 			interval = max(500, skill_get_time2(DK_SERVANTWEAPON, sce->val1));
 			freeLock.lock();
 		}
