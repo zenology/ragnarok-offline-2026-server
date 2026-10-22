@@ -296,10 +296,10 @@ tha_t07,0,0	monster	Swift Baroness of Retribution	2686,2,180000
 //tha_t07,0,0	monster	Swift Baroness of Retribution	2686,1,180000	//--Applied after Thanatos Revamped Patch.
 tha_t08,0,0	monster	Elusive Baroness of Retribution	2685,2,180000
 //tha_t08,0,0	monster	Elusive Baroness of Retribution	2685,1,180000	//--Applied after Thanatos Revamped Patch.
-tha_t09,0,0	monster	Elusive Lady Solace	2650,2,180000	//--Remove after Thanatos Ravamped Patch
-tha_t10,0,0	monster	Furious Baroness of Retribution	2684,2,180000	//--Remove after Thanatos Ravamped Patch
-tha_t11,0,0	monster	Elusive Mistress of Shelter	2665,2,180000	//--Remove after Thanatos Ravamped Patch
-tha_t12,0,0	monster	Dame of Sentinel Ringleader	2726,2,180000	//--Remove after Thanatos Ravamped Patch
+//tha_t09,0,0	monster	Elusive Lady Solace	2650,2,180000	// Offline: Thanatos revamp enabled.
+//tha_t10,0,0	monster	Furious Baroness of Retribution	2684,2,180000	// Offline: Thanatos revamp enabled.
+//tha_t11,0,0	monster	Elusive Mistress of Shelter	2665,2,180000	// Offline: Thanatos revamp enabled.
+//tha_t12,0,0	monster	Dame of Sentinel Ringleader	2726,2,180000	// Offline: Thanatos revamp enabled.
 thor_v01,0,0	monster	Elusive Kasa	2788,2,180000
 thor_v02,0,0	monster	Knocker Ringleader	2786,1,180000
 thor_v03,0,0	monster	Elusive Salamander	2675,2,180000

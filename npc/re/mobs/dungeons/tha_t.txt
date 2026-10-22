@@ -112,6 +112,7 @@ tha_t08,0,0	monster	Odium of Thanatos	1704,2,5000
 //==================================================
 // tha_t09 - Thanatos Tower - Upper Level
 //==================================================
+/* Offline: 9F-12F old populations replaced by npc/custom/thanatos_monsters.txt.
 tha_t09,0,0	monster	Lady Solace	1703,20,5000
 tha_t09,0,0	monster	Dame of Sentinel	1700,5,5000
 tha_t09,0,0	monster	Baroness of Retribution	1702,5,5000
@@ -151,6 +152,7 @@ tha_t12,0,0	monster	Mistress of Shelter	1701,5,5000
 tha_t12,0,0	monster	Lady Solace	1703,5,5000
 tha_t12,0,0	monster	Plasma	1693,5,5000
 tha_t12,0,0	monster	Odium of Thanatos	1709,4,5000
+*/
 
 
 //============================================================
