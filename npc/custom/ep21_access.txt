@@ -1,0 +1,227 @@
+//===== Ragnarok Offline =====================================
+//= Episode 21 access: Shufapa and Nyar
+//= Frozen Tail, Scale Island, Lunaforma and the Rising Lands.
+//= Custom access: Base Level 230+ outbound, unrestricted return.
+//= No episode quest completion or quest-state changes.
+//= Client menu Cancel (255) must end without waiting for another close click.
+//============================================================
+
+jor_tail,233,41,3	script	Shufapa#ep21_tail	4_EP19_IWIN_DIVER,{
+	cutin "ep19_iwin_diver01.png",2;
+	if (BaseLevel < 230) {
+		mes "[Shufapa]";
+		mes "Krr! Not yet, fledgling. The waters around Scale Island are no place to test your wings. Come back at Base Level 230 or higher.";
+		close3;
+	}
+
+	mes "[Shufapa]";
+	mes "Krr! Heading for Scale Island? I'm Shufapa, an Iwin diver. These feathers are used to Isgard's icy waters.";
+	next;
+	mes "[Shufapa]";
+	mes "Strange mana has been stirring around the island. Enough to ruffle my feathers, and that takes some doing.";
+	next;
+	mes "[Shufapa]";
+	mes "Ready for the crossing? Secure your gear and stay close to this seabird.";
+	.@choice = prompt("Take me to Scale Island.:Not yet.");
+	if (.@choice == 255) {
+		cutin "",255;
+		end;
+	}
+	if (.@choice != 1)
+		close3;
+
+	close2;
+	cutin "",255;
+	warp "jor_crk",137,137;
+	end;
+}
+
+jor_crk,139,141,3	script	Shufapa#ep21_island	4_EP19_IWIN_DIVER,{
+	cutin "ep19_iwin_diver01.png",2;
+	mes "[Shufapa]";
+	mes "Krr! Ready to head back to Frozen Tail? Shake off that salt spray and I'll guide you across.";
+	.@choice = prompt("Return to Frozen Tail.:Stay on Scale Island.");
+	if (.@choice == 255) {
+		cutin "",255;
+		end;
+	}
+	if (.@choice != 1)
+		close3;
+
+	close2;
+	cutin "",255;
+	warp "jor_tail",232,43;
+	end;
+}
+
+// Nyar crosses from present-day Scale Island to the same island in the past.
+jor_crk,105,108,3	script	Nyar#ep21_island	4_EP20_NYAR,{
+	cutin "ep20_nyar01.png",2;
+	if (BaseLevel < 230) {
+		mes "[Nyar]";
+		mes "Meow. Curiosity brought you this far, but the other side is dangerous. Come back at Base Level 230 or higher.";
+		close3;
+	}
+
+	mes "[Nyar]";
+	mes "Meow. You can feel it too, can't you? That strange mana comes from a rift in time.";
+	next;
+	mes "[Nyar]";
+	mes "I can open a path to this island in Isgard's past. Same island, different time. Keep your whiskers sharp.";
+	next;
+	mes "[Nyar]";
+	mes "From there, take the portal at the southern shore to Lunaforma. Its northern harbor leads to the Southern Rising Land.";
+	next;
+	mes "[Nyar]";
+	mes "Meow. Ready to cross? Find me on the island in the past whenever you want to return to your own time.";
+	.@choice = prompt("Travel to the past.:Stay in the present.");
+	if (.@choice == 255) {
+		cutin "",255;
+		end;
+	}
+	if (.@choice != 1)
+		close3;
+
+	close2;
+	cutin "",255;
+	warp "jor_crk_p",108,106;
+	end;
+}
+
+// Nyar returns travelers from the past to present-day Scale Island.
+jor_crk_p,105,108,3	script	Nyar#ep21_past	4_EP20_NYAR,{
+	cutin "ep20_nyar01.png",2;
+	mes "[Nyar]";
+	mes "Meow. Ready to return to your own time? I'll open the way back to Scale Island as you remember it.";
+	.@choice = prompt("Return to the present.:Stay in the past.");
+	if (.@choice == 255) {
+		cutin "",255;
+		end;
+	}
+	if (.@choice != 1)
+		close3;
+
+	close2;
+	cutin "",255;
+	warp "jor_crk",108,105;
+	end;
+}
+
+// Southern Rising Land <-> Lunaforma.
+jor_raise2,100,26,0	warp	ep21_raise2_to_mbase	1,1,jor_mbase,161,338
+jor_mbase,161,343,0	warp	ep21_mbase_to_raise2	1,1,jor_raise2,103,30
+
+// Lunaforma <-> Scale Island in the past.
+jor_mbase,122,27,0	warp	ep21_mbase_to_crkp	1,1,jor_crk_p,77,66
+jor_crk_p,79,64,0	warp	ep21_crkp_to_mbase	1,1,jor_mbase,124,28
+
+// Southern Rising Land <-> Northern Rising Land.
+jor_raise2,118,414,0	warp	ep21_raise2_to_raise1	1,1,jor_raise1,301,10
+jor_raise1,301,6,0	warp	ep21_raise1_to_raise2	1,1,jor_raise2,118,410
+
+// Northern Rising Land <-> northern base.
+jor_raise1,276,394,0	warp	ep21_raise1_to_jorbase	1,1,jor_base,240,46
+jor_base,240,42,0	warp	ep21_jorbase_to_raise1	1,1,jor_raise1,276,386
+
+// Northern Rising Land <-> Gimle 1F and Yorscalp 1F.
+jor_raise1,152,323,0	warp	ep21_raise1_to_tmple1	1,1,jor_tmple1,170,62
+jor_tmple1,170,55,0	warp	ep21_tmple1_to_raise1	1,1,jor_raise1,152,319
+jor_raise1,113,334,0	warp	ep21_raise1_to_sklf1	1,1,jor_sklf1,298,170
+jor_sklf1,303,170,0	warp	ep21_sklf1_to_raise1	1,1,jor_raise1,117,334
+
+// Gimle 1F <-> 2F: all four stairways, using client navigation coordinates.
+jor_tmple1,40,205,0	warp	ep21_tmple1_to_tmple2_wu	1,1,jor_tmple2,24,173
+jor_tmple2,20,173,0	warp	ep21_tmple2_to_tmple1_wu	1,1,jor_tmple1,44,205
+jor_tmple1,40,134,0	warp	ep21_tmple1_to_tmple2_wd	1,1,jor_tmple2,25,128
+jor_tmple2,20,128,0	warp	ep21_tmple2_to_tmple1_wd	1,1,jor_tmple1,44,134
+jor_tmple1,299,205,0	warp	ep21_tmple1_to_tmple2_eu	1,1,jor_tmple2,276,173
+jor_tmple2,280,173,0	warp	ep21_tmple2_to_tmple1_eu	1,1,jor_tmple1,294,205
+jor_tmple1,299,134,0	warp	ep21_tmple1_to_tmple2_ed	1,1,jor_tmple2,276,128
+jor_tmple2,280,128,0	warp	ep21_tmple2_to_tmple1_ed	1,1,jor_tmple1,294,134
+
+// Yorscalp 1F <-> 2F: all four stairways; separate from the Gimle branch.
+jor_sklf1,40,205,0	warp	ep21_sklf1_to_sklf2_wu	1,1,jor_sklf2,24,173
+jor_sklf2,20,173,0	warp	ep21_sklf2_to_sklf1_wu	1,1,jor_sklf1,44,205
+jor_sklf1,40,134,0	warp	ep21_sklf1_to_sklf2_wd	1,1,jor_sklf2,25,128
+jor_sklf2,20,128,0	warp	ep21_sklf2_to_sklf1_wd	1,1,jor_sklf1,44,134
+jor_sklf1,299,205,0	warp	ep21_sklf1_to_sklf2_eu	1,1,jor_sklf2,276,173
+jor_sklf2,280,173,0	warp	ep21_sklf2_to_sklf1_eu	1,1,jor_sklf1,294,205
+jor_sklf1,299,134,0	warp	ep21_sklf1_to_sklf2_ed	1,1,jor_sklf2,276,128
+jor_sklf2,280,128,0	warp	ep21_sklf2_to_sklf1_ed	1,1,jor_sklf1,294,134
+
+// Lunaforma service buildings: coordinates from client navigation.
+jor_mbase,222,264,0	warp	ep21_store_in	1,1,mbase_in,221,112
+mbase_in,221,109,0	warp	ep21_store_out	1,1,jor_mbase,222,260
+jor_mbase,170,248,0	warp	ep21_inn_in	1,1,mbase_in,375,134
+mbase_in,375,137,0	warp	ep21_inn_out	1,1,jor_mbase,170,253
+
+// Outdoor storage follows jor_mbase's over_kafra SignBoardList marker.
+// The indoor blanket and dealer retain their client SignBoardList positions.
+// Fees and supplies follow local town-service conventions, not EP21 quest logic.
+jor_mbase,220,165,3	script	Storage Box#ep21	4_WOODBOX,{
+	mes "[Storage Box]";
+	mes "This box provides access to your personal storage. Access costs 40 Zeny, or one Free Ticket for Kafra Storage.";
+	.@choice = prompt("Open Storage.:Cancel.");
+	if (.@choice == 255)
+		end;
+	if (.@choice != 1)
+		close;
+
+	if (!callfunc("F_CanOpenStorage")) {
+		next;
+		mes "[Storage Box]";
+		mes "You need Basic Skill Level 6 or the Doram Basic Skill to use storage.";
+		close;
+	}
+	if (!countitem(7059) && Zeny < 40) {
+		next;
+		mes "[Storage Box]";
+		mes "You need 40 Zeny or a Free Ticket for Kafra Storage.";
+		close;
+	}
+	if (#kafra_code) {
+		next;
+		callfunc "F_CheckKafCode";
+	}
+	if (countitem(7059))
+		delitem 7059,1;
+	else {
+		Zeny -= 40;
+		RESRVPTS += 8;
+	}
+	close2;
+	openstorage;
+	end;
+}
+
+mbase_in,380,128,0	script	Blanket#ep21	HIDDEN_NPC,{
+	mes "[Blanket]";
+	mes "A clean blanket is laid out for weary travelers. You can make this your return point, or rest here to recover your strength.";
+	switch (prompt("Save Point.:Rest - 5,000 Zeny.:Cancel.")) {
+	case 255:
+		end;
+	case 1:
+		savepoint "mbase_in",375,134;
+		next;
+		mes "[Blanket]";
+		mes "Your return point is now the Lunaforma lodging.";
+		close;
+	case 2:
+		if (Zeny < 5000) {
+			next;
+			mes "[Blanket]";
+			mes "The lodging fee is 5,000 Zeny. You do not have enough.";
+			close;
+		}
+		Zeny -= 5000;
+		close2;
+		warp "mbase_in",378,128;
+		percentheal 100,100;
+		end;
+	default:
+		close;
+	}
+}
+
+// Navigation sprite 83 / 4_M_01; supplies match Tool Dealer#alde.
+mbase_in,217,126,5	shop	Tool Dealer#ep21	4_M_01,501:-1,502:-1,503:-1,504:-1,506:-1,645:-1,656:-1,601:-1,602:-1,611:-1,610:-1

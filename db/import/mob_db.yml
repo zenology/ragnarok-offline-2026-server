@@ -1,0 +1,9 @@
+# Project-owned monster definitions; loaded by db/mob_db.yml.
+Header:
+  Type: MOB_DB
+  Version: 5
+
+Footer:
+  Imports:
+    - Path: db/import/mob_db_ep21.yml
+      Mode: Renewal

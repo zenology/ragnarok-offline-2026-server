@@ -1,0 +1,22 @@
+// Episode 21 World View destinations, enabled in both Private Airship directions.
+// Base Level 230 gate: src/custom/private_airship_gate.hpp.
+jor_crk	mapflag	privateairship_source
+jor_crk	mapflag	privateairship_destination
+jor_crk_p	mapflag	privateairship_source
+jor_crk_p	mapflag	privateairship_destination
+jor_mbase	mapflag	privateairship_source
+jor_mbase	mapflag	privateairship_destination
+jor_raise2	mapflag	privateairship_source
+jor_raise2	mapflag	privateairship_destination
+jor_raise1	mapflag	privateairship_source
+jor_raise1	mapflag	privateairship_destination
+jor_base	mapflag	privateairship_source
+jor_base	mapflag	privateairship_destination
+jor_tmple1	mapflag	privateairship_source
+jor_tmple1	mapflag	privateairship_destination
+jor_tmple2	mapflag	privateairship_source
+jor_tmple2	mapflag	privateairship_destination
+jor_sklf1	mapflag	privateairship_source
+jor_sklf1	mapflag	privateairship_destination
+jor_sklf2	mapflag	privateairship_source
+jor_sklf2	mapflag	privateairship_destination

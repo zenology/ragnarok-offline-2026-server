@@ -1,0 +1,1695 @@
+# Episode 21: shared monster definitions for all EP21 maps, 2026-10-21.
+# Current roster: jor_raise1/2, jor_tmple1/2, jor_sklf1/2 (one row per ID).
+# Expansion evidence and exceptions: KB research/episode-21-monster-expansion.md.
+# Source and player decisions: KB research/jor-raise1-monster-master.md.
+# DP supplies identities/HP/elements/cards; Rock Edda fills missing stats/drops.
+# Attack/Attack2 use Renewal physical/magic base semantics, not min/max ATK.
+# Motion comes from the exact extracted client ACTs. AI/emotes are player choices.
+# No permanent spawn or map-access changes are part of this database.
+Header:
+  Type: MOB_DB
+  Version: 5
+
+Body:
+  - Id: 22313
+    AegisName: EP21_SEAWIND
+    Name: Seawind
+    Level: 236
+    Hp: 28803605
+    Sp: 0
+    BaseExp: 860000
+    JobExp: 600000
+    MvpExp: 0
+    Attack: 35500
+    Attack2: 43250
+    Defense: 387
+    MagicDefense: 149
+    Resistance: 0
+    MagicResistance: 0
+    Str: 205
+    Agi: 190
+    Vit: 160
+    Int: 180
+    Dex: 210
+    Luk: 175
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Brute
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1138
+    AttackMotion: 1080
+    ClientAttackMotion: 720
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - Item: aegis_1001642
+        Rate: 2000
+      - Item: Ep20_Huge_Feather_W
+        Rate: 2000
+      - Item: Shadowdecon_Ore
+        Rate: 193
+      - Item: Zelunium_Ore
+        Rate: 167
+      - Item: Etel_Dust
+        Rate: 112
+      - Item: Sea_Wind_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 22314
+    AegisName: EP21_SCALLEG
+    Name: Scalleg
+    Level: 237
+    Hp: 34273200
+    Sp: 0
+    BaseExp: 905000
+    JobExp: 635000
+    MvpExp: 0
+    Attack: 37000
+    Attack2: 45500
+    Defense: 358
+    MagicDefense: 195
+    Resistance: 0
+    MagicResistance: 0
+    Str: 210
+    Agi: 175
+    Vit: 165
+    Int: 200
+    Dex: 225
+    Luk: 180
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Fish
+    Element: Water
+    ElementLevel: 1
+    WalkSpeed: 175
+    AttackDelay: 954
+    AttackMotion: 864
+    ClientAttackMotion: 576
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - Item: aegis_1001641
+        Rate: 2200
+      - Item: aegis_1001640
+        Rate: 1900
+      - Item: Zelunium_Ore
+        Rate: 272
+      - Item: Etel_Dust
+        Rate: 166
+      - Item: Shadowdecon_Ore
+        Rate: 138
+      - Item: Scalleg_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 22315
+    AegisName: EP21_VELELLING
+    Name: Velelling
+    Level: 235
+    Hp: 25262330
+    Sp: 0
+    BaseExp: 795000
+    JobExp: 560000
+    MvpExp: 0
+    Attack: 36000
+    Attack2: 44000
+    Defense: 365
+    MagicDefense: 205
+    Resistance: 0
+    MagicResistance: 0
+    Str: 220
+    Agi: 180
+    Vit: 170
+    Int: 190
+    Dex: 230
+    Luk: 185
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Plant
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1013
+    AttackMotion: 960
+    ClientAttackMotion: 384
+    DamageMotion: 480
+    DamageTaken: 100
+    # Player choice: passive looter; retaliates but does not initiate combat.
+    Ai: 02
+    Class: Normal
+    Drops:
+      - Item: EP19_CaCalapy
+        Rate: 2400
+      - Item: aegis_1001643
+        Rate: 2200
+      - Item: aegis_1001641
+        Rate: 310
+      - Item: Zelunium_Ore
+        Rate: 229
+      - Item: Etel_Dust
+        Rate: 143
+      - Item: aegis_1001640
+        Rate: 85
+      - Item: Shadowdecon_Ore
+        Rate: 71
+      - Item: Velelling_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 22316
+    AegisName: EP21_LETTERSTER
+    Name: Letterster
+    Level: 236
+    Hp: 30620560
+    Sp: 0
+    BaseExp: 860000
+    JobExp: 600000
+    MvpExp: 0
+    Attack: 34500
+    Attack2: 41750
+    Defense: 380
+    MagicDefense: 150
+    Resistance: 0
+    MagicResistance: 0
+    Str: 195
+    Agi: 185
+    Vit: 155
+    Int: 185
+    Dex: 205
+    Luk: 170
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Brute
+    Element: Water
+    ElementLevel: 2
+    WalkSpeed: 100
+    AttackDelay: 781
+    AttackMotion: 768
+    ClientAttackMotion: 480
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - Item: aegis_1001645
+        Rate: 2100
+      - Item: aegis_1001641
+        Rate: 1700
+      - Item: Shadowdecon_Ore
+        Rate: 178
+      - Item: Etel_Dust
+        Rate: 150
+      - Item: Zelunium_Ore
+        Rate: 84
+      - Item: Letterster_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 22317
+    AegisName: EP21_ROCKSTRIKER
+    Name: Rockstriker
+    Level: 237
+    Hp: 28974600
+    Sp: 0
+    BaseExp: 900000
+    JobExp: 625000
+    MvpExp: 0
+    Attack: 37500
+    Attack2: 46250
+    Defense: 265
+    MagicDefense: 145
+    Resistance: 0
+    MagicResistance: 0
+    Str: 225
+    Agi: 160
+    Vit: 180
+    Int: 210
+    Dex: 240
+    Luk: 200
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Insect
+    Element: Earth
+    ElementLevel: 3
+    WalkSpeed: 125
+    AttackDelay: 817
+    AttackMotion: 768
+    ClientAttackMotion: 384
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - Item: aegis_1001647
+        Rate: 2100
+      - Item: Cool_Liquid
+        Rate: 1900
+      - Item: Zelunium_Ore
+        Rate: 277
+      - Item: Shadowdecon_Ore
+        Rate: 226
+      - Item: Etel_Dust
+        Rate: 122
+      - Item: Rock_Striker_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 22323
+    AegisName: EP21_YOSTER_A
+    Name: Yoster Cleaner
+    Level: 241
+    Hp: 32900300
+    Sp: 0
+    BaseExp: 1200000
+    JobExp: 810000
+    MvpExp: 0
+    Attack: 37000
+    Attack2: 45500
+    Defense: 390
+    MagicDefense: 155
+    Resistance: 0
+    MagicResistance: 0
+    Str: 230
+    Agi: 215
+    Vit: 195
+    Int: 205
+    Dex: 240
+    Luk: 230
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Fire
+    ElementLevel: 2
+    WalkSpeed: 175
+    AttackDelay: 900
+    AttackMotion: 864
+    ClientAttackMotion: 576
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - Item: aegis_1001633
+        Rate: 2200
+      - Item: aegis_1001634
+        Rate: 1700
+      - Item: Shadowdecon_Ore
+        Rate: 305
+      - Item: Zelunium_Ore
+        Rate: 210
+      - Item: Shadowdecon
+        Rate: 83
+      - Item: Etel_Dust
+        Rate: 55
+      - Item: Resist_Fire
+        Rate: 27
+      - Item: Ep21_Wigner_Ticket
+        Rate: 180
+      - Item: Yoster_Cleaner_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 22325
+    AegisName: EP21_YOSTER_C
+    Name: Yoster Collector
+    Level: 242
+    Hp: 33905550
+    Sp: 0
+    BaseExp: 615000
+    JobExp: 430000
+    MvpExp: 0
+    Attack: 38000
+    Attack2: 47000
+    Defense: 255
+    MagicDefense: 135
+    Resistance: 0
+    MagicResistance: 0
+    Str: 225
+    Agi: 210
+    Vit: 180
+    Int: 215
+    Dex: 230
+    Luk: 225
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    # DP takes priority over Rock's Dark element.
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 160
+    AttackDelay: 1100
+    AttackMotion: 864
+    ClientAttackMotion: 576
+    DamageMotion: 476
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - Item: aegis_1001635
+        Rate: 2100
+      - Item: aegis_1001636
+        Rate: 1950
+      - Item: Shadowdecon_Ore
+        Rate: 223
+      - Item: Zelunium_Ore
+        Rate: 223
+      - Item: Etel_Dust
+        Rate: 78
+      - Item: Ep21_Wigner_Ticket
+        Rate: 180
+      - Item: Yoster_Collect_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 22327
+    AegisName: EP21_YOSTER_E
+    Name: Yoster Cooker
+    Level: 241
+    Hp: 30105830
+    Sp: 0
+    BaseExp: 1180000
+    JobExp: 820000
+    MvpExp: 0
+    Attack: 37000
+    Attack2: 45500
+    Defense: 365
+    MagicDefense: 150
+    Resistance: 0
+    MagicResistance: 0
+    Str: 230
+    Agi: 220
+    Vit: 210
+    Int: 215
+    Dex: 250
+    Luk: 230
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1220
+    AttackMotion: 864
+    ClientAttackMotion: 480
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - Item: aegis_1001633
+        Rate: 2000
+      - Item: aegis_1001634
+        Rate: 2000
+      - Item: Shadowdecon_Ore
+        Rate: 442
+      - Item: Zelunium_Ore
+        Rate: 354
+      - Item: Shadowdecon
+        Rate: 85
+      - Item: Etel_Dust
+        Rate: 33
+      - Item: Ep21_Wigner_Ticket
+        Rate: 180
+      - Item: Yoster_Cooker_Card
+        Rate: 1
+        StealProtected: true
+  - Id: 22318
+    AegisName: EP21_ICESEAHORSE
+    Name: Ice Seahorse
+    Level: 240
+    Hp: 34156500
+    Sp: 0
+    BaseExp: 1095000
+    JobExp: 765000
+    MvpExp: 0
+    Attack: 35500
+    Attack2: 43250
+    Defense: 242
+    MagicDefense: 245
+    Resistance: 0
+    MagicResistance: 0
+    Str: 215
+    Agi: 200
+    Vit: 190
+    Int: 215
+    Dex: 250
+    Luk: 220
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Brute
+    Element: Water
+    ElementLevel: 3
+    WalkSpeed: 130
+    AttackDelay: 1146
+    AttackMotion: 1020
+    ClientAttackMotion: 660
+    DamageMotion: 672
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Ep20_Fluor_Cell_Sour, Rate: 2100 }
+      - { Item: Black_Dia, Rate: 1 }
+      - { Item: aegis_1001648, Rate: 2000 }
+      - { Item: Shadowdecon_Ore, Rate: 127 }
+      - { Item: Zelunium_Ore, Rate: 97 }
+      - { Item: Etel_Dust, Rate: 34 }
+      - { Item: Ice_Seahorse_Card, Rate: 1, StealProtected: true }
+  - Id: 22319
+    AegisName: EP21_SKIPSKIPPER
+    Name: Skipskipper
+    Level: 238
+    Hp: 31425500
+    Sp: 0
+    BaseExp: 950000
+    JobExp: 670000
+    MvpExp: 0
+    Attack: 36000
+    Attack2: 44000
+    Defense: 345
+    MagicDefense: 189
+    Resistance: 0
+    MagicResistance: 0
+    Str: 215
+    Agi: 200
+    Vit: 180
+    Int: 190
+    Dex: 220
+    Luk: 210
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Fish
+    Element: Poison
+    ElementLevel: 2
+    WalkSpeed: 125
+    AttackDelay: 1700
+    AttackMotion: 936
+    ClientAttackMotion: 648
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001641, Rate: 2000 }
+      - { Item: Black_Dia, Rate: 1 }
+      - { Item: aegis_1001644, Rate: 1900 }
+      - { Item: Shadowdecon_Ore, Rate: 234 }
+      - { Item: Zelunium_Ore, Rate: 110 }
+      - { Item: Etel_Dust, Rate: 92 }
+      - { Item: Skipskipper_Card, Rate: 1, StealProtected: true }
+  - Id: 22320
+    AegisName: EP21_CLIOLIMA
+    Name: Cliolima
+    Level: 238
+    Hp: 32321990
+    Sp: 0
+    BaseExp: 970000
+    JobExp: 680000
+    MvpExp: 0
+    Attack: 36500
+    Attack2: 44750
+    Defense: 233
+    MagicDefense: 121
+    Resistance: 0
+    MagicResistance: 0
+    Str: 225
+    Agi: 215
+    Vit: 190
+    Int: 210
+    Dex: 235
+    Luk: 220
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Small
+    Race: Fish
+    Element: Water
+    ElementLevel: 2
+    WalkSpeed: 200
+    AttackDelay: 1050
+    AttackMotion: 960
+    ClientAttackMotion: 576
+    DamageMotion: 500
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: EP19_Unknown_Cell, Rate: 2500 }
+      - { Item: Black_Dia, Rate: 1 }
+      - { Item: aegis_1001646, Rate: 1800 }
+      - { Item: Shadowdecon_Ore, Rate: 201 }
+      - { Item: Zelunium_Ore, Rate: 194 }
+      - { Item: Etel_Dust, Rate: 100 }
+      - { Item: Cliolima_Card, Rate: 1, StealProtected: true }
+  - Id: 22324
+    AegisName: EP21_YOSTER_B
+    Name: Yoster Fixer
+    Level: 242
+    Hp: 32500000
+    Sp: 0
+    BaseExp: 620000
+    JobExp: 430000
+    MvpExp: 0
+    Attack: 37500
+    Attack2: 46250
+    Defense: 410
+    MagicDefense: 160
+    Resistance: 0
+    MagicResistance: 0
+    Str: 240
+    Agi: 220
+    Vit: 205
+    Int: 215
+    Dex: 250
+    Luk: 240
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 960
+    AttackMotion: 864
+    ClientAttackMotion: 576
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001634, Rate: 2000 }
+      - { Item: aegis_1001633, Rate: 1900 }
+      - { Item: Shadowdecon_Ore, Rate: 282 }
+      - { Item: Zelunium_Ore, Rate: 282 }
+      - { Item: Etel_Dust, Rate: 201 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yoster_Fixer_Card, Rate: 1, StealProtected: true }
+  - Id: 22326
+    AegisName: EP21_YOSTER_D
+    Name: Yoster Negotiator
+    Level: 241
+    Hp: 32000000
+    Sp: 0
+    BaseExp: 1200000
+    JobExp: 810000
+    MvpExp: 0
+    Attack: 36000
+    Attack2: 44000
+    Defense: 240
+    MagicDefense: 130
+    Resistance: 0
+    MagicResistance: 0
+    Str: 225
+    Agi: 215
+    Vit: 200
+    Int: 210
+    Dex: 240
+    Luk: 225
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Water
+    ElementLevel: 2
+    WalkSpeed: 125
+    AttackDelay: 1115
+    AttackMotion: 864
+    ClientAttackMotion: 576
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001633, Rate: 1800 }
+      - { Item: aegis_1001634, Rate: 1800 }
+      - { Item: Zelunium_Ore, Rate: 241 }
+      - { Item: Shadowdecon_Ore, Rate: 193 }
+      - { Item: Etel_Dust, Rate: 96 }
+      - { Item: Zelunium, Rate: 78 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yoster_Nego_Card, Rate: 1, StealProtected: true }
+  - Id: 22353
+    AegisName: EP21_YORMI_A
+    Name: Yormi
+    Level: 241
+    Hp: 31128830
+    Sp: 0
+    BaseExp: 1190000
+    JobExp: 825000
+    MvpExp: 0
+    Attack: 36500
+    Attack2: 44750
+    Defense: 385
+    MagicDefense: 148
+    Resistance: 0
+    MagicResistance: 0
+    Str: 240
+    Agi: 225
+    Vit: 215
+    Int: 220
+    Dex: 240
+    Luk: 235
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 120
+    AttackDelay: 598
+    AttackMotion: 576
+    ClientAttackMotion: 288
+    DamageMotion: 432
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001628, Rate: 1300 }
+      - { Item: aegis_1001634, Rate: 1000 }
+      - { Item: aegis_1001633, Rate: 919 }
+      - { Item: Zelunium_Ore, Rate: 213 }
+      - { Item: Etel_Dust, Rate: 213 }
+      - { Item: Shadowdecon_Ore, Rate: 85 }
+      - { Item: Candy_Striper, Rate: 42 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yormi_Card, Rate: 1, StealProtected: true }
+  - Id: 22354
+    AegisName: EP21_YORMI_B
+    Name: Yormi Missionary
+    Level: 242
+    Hp: 31885750
+    Sp: 0
+    BaseExp: 620000
+    JobExp: 430000
+    MvpExp: 0
+    Attack: 36000
+    Attack2: 44000
+    Defense: 240
+    MagicDefense: 130
+    Resistance: 0
+    MagicResistance: 0
+    Str: 230
+    Agi: 220
+    Vit: 200
+    Int: 215
+    Dex: 245
+    Luk: 230
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 791
+    AttackMotion: 576
+    ClientAttackMotion: 288
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001629, Rate: 1900 }
+      - { Item: aegis_1001634, Rate: 1100 }
+      - { Item: aegis_1001633, Rate: 887 }
+      - { Item: Zelunium_Ore, Rate: 280 }
+      - { Item: Shadowdecon_Ore, Rate: 263 }
+      - { Item: Etel_Dust, Rate: 120 }
+      - { Item: Shadowdecon, Rate: 80 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yormi_M_Card, Rate: 1, StealProtected: true }
+  - Id: 22355
+    AegisName: EP21_YORDOS_A
+    Name: Yordos Investigator
+    Level: 243
+    Hp: 31485880
+    Sp: 0
+    BaseExp: 660000
+    JobExp: 460000
+    MvpExp: 0
+    Attack: 37500
+    Attack2: 46250
+    Defense: 375
+    MagicDefense: 150
+    Resistance: 0
+    MagicResistance: 0
+    Str: 245
+    Agi: 230
+    Vit: 225
+    Int: 225
+    Dex: 255
+    Luk: 245
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 130
+    AttackDelay: 1449
+    AttackMotion: 1152
+    ClientAttackMotion: 672
+    DamageMotion: 432
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Evil_Minded_Ruby, Rate: 2100 }
+      - { Item: aegis_1001635, Rate: 1700 }
+      - { Item: Zelunium_Ore, Rate: 246 }
+      - { Item: Etel_Dust, Rate: 211 }
+      - { Item: Shadowdecon_Ore, Rate: 166 }
+      - { Item: Shadowdecon, Rate: 27 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yordos_Inve_Card, Rate: 5 }
+  - Id: 22356
+    AegisName: EP21_YORDOS_B
+    Name: Yordos Judge
+    Level: 243
+    Hp: 33485880
+    Sp: 0
+    BaseExp: 670000
+    JobExp: 470000
+    MvpExp: 0
+    Attack: 38000
+    Attack2: 47000
+    Defense: 485
+    MagicDefense: 210
+    Resistance: 0
+    MagicResistance: 0
+    Str: 250
+    Agi: 240
+    Vit: 230
+    Int: 235
+    Dex: 265
+    Luk: 250
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1313
+    AttackMotion: 1152
+    ClientAttackMotion: 672
+    DamageMotion: 432
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Whittling, Rate: 2100 }
+      - { Item: aegis_1001629, Rate: 1700 }
+      - { Item: Shadowdecon_Ore, Rate: 128 }
+      - { Item: Etel_Dust, Rate: 110 }
+      - { Item: Zelunium_Ore, Rate: 110 }
+      - { Item: Zelunium, Rate: 17 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yordos_Judge_Card, Rate: 5 }
+  - Id: 22357
+    AegisName: EP21_YORDOS_C
+    Name: Yordos Executor
+    Level: 243
+    Hp: 32458910
+    Sp: 0
+    BaseExp: 655000
+    JobExp: 460000
+    MvpExp: 0
+    Attack: 38500
+    Attack2: 47750
+    Defense: 260
+    MagicDefense: 135
+    Resistance: 0
+    MagicResistance: 0
+    Str: 245
+    Agi: 235
+    Vit: 225
+    Int: 230
+    Dex: 250
+    Luk: 245
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 125
+    AttackDelay: 1596
+    AttackMotion: 1152
+    ClientAttackMotion: 672
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001637, Rate: 2100 }
+      - { Item: Evil_Black_Bid, Rate: 1700 }
+      - { Item: Shadowdecon_Ore, Rate: 162 }
+      - { Item: Etel_Dust, Rate: 155 }
+      - { Item: Zelunium_Ore, Rate: 152 }
+      - { Item: Shadowdecon, Rate: 25 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yordos_Execute_Card, Rate: 1, StealProtected: true }
+  - Id: 22358
+    AegisName: EP21_YOSCOPUS_A
+    Name: Guardian
+    Level: 244
+    Hp: 34628630
+    Sp: 0
+    BaseExp: 695000
+    JobExp: 485000
+    MvpExp: 0
+    Attack: 39000
+    Attack2: 48500
+    Defense: 420
+    MagicDefense: 160
+    Resistance: 0
+    MagicResistance: 0
+    Str: 250
+    Agi: 240
+    Vit: 230
+    Int: 240
+    Dex: 265
+    Luk: 250
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1537
+    AttackMotion: 1080
+    ClientAttackMotion: 660
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001636, Rate: 2100 }
+      - { Item: Congealed_Poison, Rate: 2100 }
+      - { Item: Etel_Dust, Rate: 425 }
+      - { Item: Shadowdecon_Ore, Rate: 311 }
+      - { Item: Zelunium_Ore, Rate: 292 }
+      - { Item: Shadowdecon, Rate: 37 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yoscopus_G_Cards, Rate: 1, StealProtected: true }
+  - Id: 22359
+    AegisName: EP21_YOSCOPUS_B
+    Name: Yoscopus Warlock
+    Level: 244
+    Hp: 32897250
+    Sp: 0
+    BaseExp: 690655
+    JobExp: 482250
+    MvpExp: 0
+    Attack: 36250
+    Attack2: 44375
+    Defense: 246
+    MagicDefense: 130
+    Resistance: 0
+    MagicResistance: 0
+    Str: 240
+    Agi: 220
+    Vit: 215
+    Int: 250
+    Dex: 260
+    Luk: 240
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Ghost
+    ElementLevel: 1
+    WalkSpeed: 125
+    AttackDelay: 1297
+    AttackMotion: 864
+    ClientAttackMotion: 648
+    DamageMotion: 432
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001636, Rate: 2800 }
+      - { Item: Congealed_Poison, Rate: 2100 }
+      - { Item: Shadowdecon_Ore, Rate: 317 }
+      - { Item: Zelunium_Ore, Rate: 186 }
+      - { Item: Etel_Dust, Rate: 112 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yoscopus_S_Card, Rate: 1, StealProtected: true }
+  - Id: 22360
+    AegisName: EP21_YORTUS_A
+    Name: Yortus Bishop
+    Level: 245
+    Hp: 148923419
+    Sp: 0
+    BaseExp: 1368383
+    JobExp: 953078
+    MvpExp: 0
+    Attack: 37500
+    Attack2: 46250
+    Defense: 402
+    MagicDefense: 155
+    Resistance: 0
+    MagicResistance: 0
+    Str: 255
+    Agi: 240
+    Vit: 235
+    Int: 245
+    Dex: 265
+    Luk: 255
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1322
+    AttackMotion: 1056
+    ClientAttackMotion: 480
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001638, Rate: 2000 }
+      - { Item: Shining_Crystal, Rate: 1900 }
+      - { Item: Zelunium_Ore, Rate: 552 }
+      - { Item: Shadowdecon_Ore, Rate: 325 }
+      - { Item: Etel_Dust, Rate: 227 }
+      - { Item: Shadowdecon, Rate: 28 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yortus_Bishop_Card, Rate: 5 }
+  - Id: 22361
+    AegisName: EP21_YORTUS_B
+    Name: Yortus Warlock
+    Level: 245
+    Hp: 30990980
+    Sp: 0
+    BaseExp: 1354361
+    JobExp: 947579
+    MvpExp: 0
+    Attack: 38000
+    Attack2: 47000
+    Defense: 246
+    MagicDefense: 257
+    Resistance: 0
+    MagicResistance: 0
+    Str: 255
+    Agi: 245
+    Vit: 225
+    Int: 255
+    Dex: 270
+    Luk: 260
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Ghost
+    ElementLevel: 1
+    WalkSpeed: 175
+    AttackDelay: 1020
+    AttackMotion: 768
+    ClientAttackMotion: 384
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Shining_Crystal, Rate: 2300 }
+      - { Item: aegis_1001639, Rate: 1900 }
+      - { Item: Shadowdecon_Ore, Rate: 402 }
+      - { Item: Zelunium_Ore, Rate: 201 }
+      - { Item: Zelunium, Rate: 44 }
+      - { Item: Etel_Dust, Rate: 44 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 180 }
+      - { Item: Yortus_Conjur_Card, Rate: 5 }
+  - Id: 22362
+    AegisName: EP21_ICEHORN
+    Name: Ice Horn
+    Level: 265
+    Hp: 554854544
+    Sp: 0
+    BaseExp: 13054361
+    JobExp: 9047579
+    MvpExp: 0
+    Attack: 45000
+    Attack2: 65535
+    Defense: 527
+    MagicDefense: 204
+    Resistance: 0
+    MagicResistance: 0
+    Str: 300
+    Agi: 275
+    Vit: 265
+    Int: 280
+    Dex: 300
+    Luk: 280
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Large
+    Race: Brute
+    Element: Water
+    ElementLevel: 3
+    WalkSpeed: 150
+    AttackDelay: 1395
+    AttackMotion: 1380
+    ClientAttackMotion: 780
+    DamageMotion: 576
+    DamageTaken: 100
+    Ai: 04
+    Class: Boss
+    Modes:
+      Mvp: true
+    # Player-approved deduplication of Rock's two repeated material pairs.
+    Drops:
+      - { Item: Brown_Dia, Rate: 4000 }
+      - { Item: Ep21_Armor_E_Stone3, Rate: 4000 }
+      - { Item: Ep21_Robe_E_Stone2, Rate: 4000 }
+      - { Item: Ep21_Shoes_E_Stone2, Rate: 4000 }
+      - { Item: Snow_F_Stone3, Rate: 4000 }
+      - { Item: Ep21_Shoes_E_Stone3, Rate: 4000 }
+      - { Item: Yor_Card_P_Box, Rate: 9000 }
+      - { Item: EP21_Costume_Box1, Rate: 10 }
+      - { Item: Ice_Horn_Card, Rate: 1, StealProtected: true }
+  - Id: 22363
+    AegisName: EP21_B_YORTUS_A
+    Name: Judge Yortus
+    Level: 265
+    Hp: 1000000000
+    Sp: 0
+    BaseExp: 12454361
+    JobExp: 9147579
+    MvpExp: 0
+    Attack: 35000
+    Attack2: 57500
+    Defense: 527
+    MagicDefense: 204
+    Resistance: 0
+    MagicResistance: 0
+    Str: 360
+    Agi: 275
+    Vit: 265
+    Int: 380
+    Dex: 800
+    Luk: 280
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1395
+    AttackMotion: 768
+    ClientAttackMotion: 480
+    DamageMotion: 576
+    DamageTaken: 100
+    Ai: 04
+    Class: Boss
+    Modes:
+      Mvp: true
+    Drops:
+      - { Item: Yor_Card_P_Box, Rate: 9000 }
+      - { Item: Yortus_Arbiter_Card, Rate: 1 }
+  - Id: 22364
+    AegisName: EP21_B_YORTUS_B
+    Name: Yortus Executor
+    Level: 265
+    Hp: 1000000000
+    Sp: 0
+    BaseExp: 12454361
+    JobExp: 9147579
+    MvpExp: 0
+    Attack: 35000
+    Attack2: 47500
+    Defense: 527
+    MagicDefense: 204
+    Resistance: 0
+    MagicResistance: 0
+    Str: 360
+    Agi: 275
+    Vit: 265
+    Int: 380
+    Dex: 800
+    Luk: 280
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Ghost
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1395
+    AttackMotion: 1056
+    ClientAttackMotion: 480
+    DamageMotion: 576
+    DamageTaken: 100
+    Ai: 04
+    Class: Boss
+    Modes:
+      Mvp: true
+    Drops:
+      - { Item: EP21_Costume_Box1, Rate: 10 }
+      - { Item: Yor_Card_P_Box, Rate: 9000 }
+      - { Item: Yortus_Bailiff_Card, Rate: 1 }
+  # Awake ACTs contain no attack event; ClientAttackMotion uses native fallback.
+  - Id: 22412
+    AegisName: EP21_YORTUS_A_H
+    Name: Awake Yortus Bishop
+    Level: 265
+    Hp: 26428044
+    Sp: 0
+    BaseExp: 20210298
+    JobExp: 17718468
+    MvpExp: 0
+    Attack: 57500
+    Attack2: 65535
+    Defense: 194
+    MagicDefense: 432
+    Resistance: 0
+    MagicResistance: 0
+    Str: 355
+    Agi: 340
+    Vit: 335
+    Int: 345
+    Dex: 565
+    Luk: 255
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1528
+    AttackMotion: 1056
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Shining_Crystal, Rate: 8000 }
+      - { Item: aegis_1001638, Rate: 7400 }
+      - { Item: Shadowdecon_Ore, Rate: 1400 }
+      - { Item: Etel_Dust, Rate: 520 }
+      - { Item: Shadowdecon, Rate: 320 }
+      - { Item: Zelunium_Ore, Rate: 240 }
+      - { Item: Yorscalp_Spirit, Rate: 60 }
+      - { Item: Yorscalp_Symbol, Rate: 15 }
+      - { Item: Yorscalp_Serpent, Rate: 30 }
+      - { Item: Ep21_Wigner_Ticket, Rate: 10, StealProtected: true }
+  - Id: 22413
+    AegisName: EP21_YORTUS_B_H
+    Name: Awake Yortus Warlock
+    Level: 265
+    Hp: 32222557
+    Sp: 0
+    BaseExp: 20126166
+    JobExp: 17685474
+    MvpExp: 0
+    Attack: 58000
+    Attack2: 65535
+    Defense: 306
+    MagicDefense: 371
+    Resistance: 0
+    MagicResistance: 0
+    Str: 355
+    Agi: 345
+    Vit: 325
+    Int: 355
+    Dex: 370
+    Luk: 260
+    AttackRange: 9
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Ghost
+    ElementLevel: 1
+    WalkSpeed: 175
+    AttackDelay: 1104
+    AttackMotion: 768
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001639, Rate: 7900 }
+      - { Item: Shining_Crystal, Rate: 6700 }
+      - { Item: Shadowdecon_Ore, Rate: 1900 }
+      - { Item: Etel_Dust, Rate: 1100 }
+      - { Item: Zelunium_Ore, Rate: 525 }
+      - { Item: Yorscalp_Spirit, Rate: 60 }
+      - { Item: Yorscalp_Symbol, Rate: 15 }
+      - { Item: Yorscalp_Serpent, Rate: 30 }
+      - { Item: Etel_Stone, Rate: 4 }
+      - { Item: Zelunium, Rate: 175 }
+  - Id: 22414
+    AegisName: EP21_YORDOS_C_H
+    Name: Awake Yordos Executor
+    Level: 253
+    Hp: 21424383
+    Sp: 0
+    BaseExp: 21930000
+    JobExp: 14760000
+    MvpExp: 0
+    Attack: 58500
+    Attack2: 65535
+    Defense: 284
+    MagicDefense: 266
+    Resistance: 0
+    MagicResistance: 0
+    Str: 345
+    Agi: 335
+    Vit: 325
+    Int: 330
+    Dex: 350
+    Luk: 245
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Earth
+    ElementLevel: 2
+    WalkSpeed: 125
+    AttackDelay: 2291
+    AttackMotion: 1152
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001637, Rate: 6100 }
+      - { Item: Evil_Black_Bid, Rate: 4000 }
+      - { Item: Shadowdecon_Ore, Rate: 581 }
+      - { Item: Zelunium_Ore, Rate: 360 }
+      - { Item: Etel_Dust, Rate: 311 }
+      - { Item: Yorscalp_Spirit, Rate: 50 }
+      - { Item: Yorscalp_Symbol, Rate: 12 }
+      - { Item: Yorscalp_Serpent, Rate: 25 }
+      - { Item: Shadowdecon, Rate: 81 }
+      - { Item: Yordos_Execute_Card, Rate: 1 }
+  - Id: 22415
+    AegisName: EP21_YORDOS_B_H
+    Name: Awake Yordos Judge
+    Level: 253
+    Hp: 17854432
+    Sp: 0
+    BaseExp: 22020000
+    JobExp: 14820000
+    MvpExp: 0
+    Attack: 58000
+    Attack2: 65535
+    Defense: 170
+    MagicDefense: 192
+    Resistance: 0
+    MagicResistance: 0
+    Str: 350
+    Agi: 340
+    Vit: 330
+    Int: 335
+    Dex: 365
+    Luk: 250
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 95
+    AttackDelay: 1404
+    AttackMotion: 1152
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001629, Rate: 6400 }
+      - { Item: Whittling, Rate: 4900 }
+      - { Item: Zelunium_Ore, Rate: 443 }
+      - { Item: Etel_Dust, Rate: 443 }
+      - { Item: Shadowdecon_Ore, Rate: 364 }
+      - { Item: Yorscalp_Spirit, Rate: 50 }
+      - { Item: Yorscalp_Symbol, Rate: 12 }
+      - { Item: Yorscalp_Serpent, Rate: 25 }
+      - { Item: Zelunium, Rate: 71 }
+      - { Item: Etel_Stone, Rate: 4 }
+  - Id: 22416
+    AegisName: EP21_YORDOS_A_H
+    Name: Awake Yordos Investig
+    Level: 253
+    Hp: 18679789
+    Sp: 0
+    BaseExp: 18824484
+    JobExp: 15373326
+    MvpExp: 0
+    Attack: 62300
+    Attack2: 51200
+    Defense: 258
+    MagicDefense: 306
+    Resistance: 0
+    MagicResistance: 0
+    Str: 320
+    Agi: 350
+    Vit: 332
+    Int: 331
+    Dex: 375
+    Luk: 252
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 130
+    AttackDelay: 1222
+    AttackMotion: 1152
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: Evil_Minded_Ruby, Rate: 5500 }
+      - { Item: aegis_1001635, Rate: 5200 }
+      - { Item: Zelunium_Ore, Rate: 685 }
+      - { Item: Shadowdecon_Ore, Rate: 656 }
+      - { Item: Etel_Dust, Rate: 323 }
+      - { Item: Etel_Stone, Rate: 4 }
+      - { Item: Yorscalp_Spirit, Rate: 50 }
+      - { Item: Yorscalp_Symbol, Rate: 12 }
+      - { Item: Yorscalp_Serpent, Rate: 25 }
+      - { Item: aegis_1001628, Rate: 66 }
+  - Id: 22417
+    AegisName: EP21_YORMI_A_H
+    Name: Awake Yormi
+    Level: 245
+    Hp: 16060874
+    Sp: 0
+    BaseExp: 18285492
+    JobExp: 16008108
+    MvpExp: 0
+    Attack: 65322
+    Attack2: 54216
+    Defense: 158
+    MagicDefense: 175
+    Resistance: 0
+    MagicResistance: 0
+    Str: 340
+    Agi: 325
+    Vit: 315
+    Int: 320
+    Dex: 340
+    Luk: 235
+    AttackRange: 1
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 90
+    AttackDelay: 993
+    AttackMotion: 576
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001628, Rate: 4200 }
+      - { Item: aegis_1001633, Rate: 3400 }
+      - { Item: aegis_1001634, Rate: 1500 }
+      - { Item: Shadowdecon_Ore, Rate: 551 }
+      - { Item: Zelunium_Ore, Rate: 498 }
+      - { Item: Etel_Dust, Rate: 350 }
+      - { Item: Yorscalp_Spirit, Rate: 50 }
+      - { Item: Yorscalp_Symbol, Rate: 12 }
+      - { Item: Yorscalp_Serpent, Rate: 25 }
+      - { Item: Yormi_Card, Rate: 1 }
+  - Id: 22418
+    AegisName: EP21_YORMI_B_H
+    Name: Awake Yormi Missionary
+    Level: 246
+    Hp: 15574933
+    Sp: 0
+    BaseExp: 21720000
+    JobExp: 14580000
+    MvpExp: 0
+    Attack: 56000
+    Attack2: 64000
+    Defense: 237
+    MagicDefense: 278
+    Resistance: 0
+    MagicResistance: 0
+    Str: 330
+    Agi: 320
+    Vit: 300
+    Int: 315
+    Dex: 345
+    Luk: 230
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Neutral
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 755
+    AttackMotion: 576
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001629, Rate: 4600 }
+      - { Item: aegis_1001634, Rate: 2300 }
+      - { Item: aegis_1001633, Rate: 2200 }
+      - { Item: Zelunium_Ore, Rate: 745 }
+      - { Item: Shadowdecon_Ore, Rate: 550 }
+      - { Item: Etel_Dust, Rate: 435 }
+      - { Item: Yorscalp_Spirit, Rate: 50 }
+      - { Item: Yorscalp_Symbol, Rate: 12 }
+      - { Item: Yorscalp_Serpent, Rate: 25 }
+      - { Item: Shadowdecon, Rate: 160 }
+  - Id: 22419
+    AegisName: EP21_YOSCOPUS_A_H
+    Name: Awake Yoscopus Guardian
+    Level: 264
+    Hp: 42369774
+    Sp: 0
+    BaseExp: 22170000
+    JobExp: 14910000
+    MvpExp: 0
+    Attack: 65535
+    Attack2: 58500
+    Defense: 403
+    MagicDefense: 391
+    Resistance: 0
+    MagicResistance: 0
+    Str: 350
+    Agi: 340
+    Vit: 330
+    Int: 340
+    Dex: 365
+    Luk: 250
+    AttackRange: 2
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Wind
+    ElementLevel: 2
+    WalkSpeed: 150
+    # Native loader raises this source delay to the exact ACT motion (1728).
+    AttackDelay: 1382
+    AttackMotion: 1728
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001636, Rate: 7300 }
+      - { Item: Congealed_Poison, Rate: 5700 }
+      - { Item: Zelunium_Ore, Rate: 1200 }
+      - { Item: Etel_Dust, Rate: 910 }
+      - { Item: Shadowdecon_Ore, Rate: 809 }
+      - { Item: aegis_103523, Rate: 100 }
+      - { Item: Yorscalp_Spirit, Rate: 60 }
+      - { Item: Yorscalp_Symbol, Rate: 15 }
+      - { Item: Yorscalp_Serpent, Rate: 30 }
+      - { Item: Yoscopus_G_Cards, Rate: 1 }
+  - Id: 22420
+    AegisName: EP21_YOSCOPUS_B_H
+    Name: Awake Yoscopus Warlock
+    Level: 264
+    Hp: 36578292
+    Sp: 0
+    BaseExp: 22143930
+    JobExp: 14893500
+    MvpExp: 0
+    Attack: 65535
+    Attack2: 54375
+    Defense: 295
+    MagicDefense: 356
+    Resistance: 0
+    MagicResistance: 0
+    Str: 340
+    Agi: 320
+    Vit: 315
+    Int: 350
+    Dex: 360
+    Luk: 240
+    AttackRange: 7
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demihuman
+    Element: Ghost
+    ElementLevel: 1
+    WalkSpeed: 125
+    AttackDelay: 1224
+    AttackMotion: 1152
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Normal
+    Drops:
+      - { Item: aegis_1001636, Rate: 8300 }
+      - { Item: Congealed_Poison, Rate: 7700 }
+      - { Item: Etel_Dust, Rate: 724 }
+      - { Item: Zelunium_Ore, Rate: 531 }
+      - { Item: Shadowdecon_Ore, Rate: 144 }
+      - { Item: Yorscalp_Spirit, Rate: 60 }
+      - { Item: Yorscalp_Symbol, Rate: 15 }
+      - { Item: Yorscalp_Serpent, Rate: 30 }
+      - { Item: Yoscopus_S_Card, Rate: 1 }
+  - Id: 22421
+    AegisName: EP21_B_YORTUS_A_H
+    Name: Awake Judge Yortus
+    Level: 275
+    Hp: 2000000000
+    Sp: 0
+    BaseExp: 134726166
+    JobExp: 114885474
+    MvpExp: 33352472
+    Attack: 55000
+    Attack2: 65535
+    Defense: 841
+    MagicDefense: 1012
+    Resistance: 0
+    MagicResistance: 0
+    Str: 460
+    Agi: 375
+    Vit: 365
+    Int: 480
+    Dex: 1000
+    Luk: 380
+    AttackRange: 6
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Dark
+    ElementLevel: 2
+    WalkSpeed: 150
+    AttackDelay: 1528
+    AttackMotion: 768
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Boss
+    Modes:
+      Mvp: true
+    Drops:
+      - { Item: Yorscalp_Spirit, Rate: 2000 }
+      - { Item: Yorscalp_Symbol, Rate: 1000 }
+      - { Item: Yorscalp_Serpent, Rate: 1000 }
+      - { Item: aegis_103523, Rate: 700 }
+      - { Item: Yor_Card_P_Box, Rate: 9000 }
+      - { Item: EP21_Costume_Box1, Rate: 10 }
+      - { Item: Yortus_Arbiter_Card, Rate: 1 }
+  - Id: 22422
+    AegisName: EP21_B_YORTUS_B_H
+    Name: Awake Yortus Executor
+    Level: 275
+    Hp: 2000000000
+    Sp: 0
+    BaseExp: 134726166
+    JobExp: 114885474
+    MvpExp: 0
+    Attack: 65000
+    Attack2: 65535
+    Defense: 800
+    MagicDefense: 1000
+    Resistance: 0
+    MagicResistance: 0
+    Str: 462
+    Agi: 365
+    Vit: 325
+    Int: 490
+    Dex: 1000
+    Luk: 380
+    AttackRange: 6
+    SkillRange: 10
+    ChaseRange: 12
+    Size: Medium
+    Race: Demon
+    Element: Ghost
+    ElementLevel: 2
+    WalkSpeed: 175
+    AttackDelay: 1104
+    AttackMotion: 1056
+    DamageMotion: 480
+    DamageTaken: 100
+    Ai: 04
+    Class: Boss
+    Modes:
+      Mvp: true
+    Drops:
+      - { Item: Yorscalp_Spirit, Rate: 2000 }
+      - { Item: Yorscalp_Symbol, Rate: 1000 }
+      - { Item: Yorscalp_Serpent, Rate: 1000 }
+      - { Item: aegis_103523, Rate: 700 }
+      - { Item: Yor_Card_P_Box, Rate: 9000 }
+      - { Item: EP21_Costume_Box1, Rate: 10 }
+      - { Item: Yortus_Bailiff_Card, Rate: 1 }

@@ -162,6 +162,14 @@ inline bool private_airship_ordinary_destination_allowed( const map_session_data
 	if( private_airship_is_new_world_destination( map_name ) )
 		return private_airship_new_world_destination_allowed( sd, map_name );
 
+	// Match the local Shufapa/Nyar level-only entry policy for Episode 21.
+	if( strcmp( map_name, "jor_crk" ) == 0 || strcmp( map_name, "jor_crk_p" ) == 0
+		|| strcmp( map_name, "jor_mbase" ) == 0 || strcmp( map_name, "jor_base" ) == 0
+		|| strcmp( map_name, "jor_raise1" ) == 0 || strcmp( map_name, "jor_raise2" ) == 0
+		|| strcmp( map_name, "jor_tmple1" ) == 0 || strcmp( map_name, "jor_tmple2" ) == 0
+		|| strcmp( map_name, "jor_sklf1" ) == 0 || strcmp( map_name, "jor_sklf2" ) == 0 )
+		return private_airship_base_level_at_least( sd, 230 );
+
 	// Gray Wolf Forest opens from the Oz rope. Field 2 is a plain walk from field 1.
 	if( strcmp( map_name, "gw_fild01" ) == 0 || strcmp( map_name, "gw_fild02" ) == 0 )
 		return private_airship_reg_at_least( sd, "ep18_main", 31 );
