@@ -100,6 +100,16 @@ export default function PrivateAirshipPage(): ReactNode {
             time. Each cooldown starts on claim, and unfinished patrols carry over.
           </Callout>
           <Callout>
+            <strong>Unknown Blue Hole:</strong> Base Level 250. Speak to Cesar at Comodo (185, 86)
+            or MOVE directly into the Blue Hole. Patrols are optional and follow the Pumpkin Farm
+            rules: one daily of 100 kills for 0.9% or 500 kills for 4.5% Base and Job EXP, plus a
+            weekly 5,000 kills for 45%. Tassi, Guerrero, Hanom, Sirena, Diosa and their Mighty
+            variants inside the Blue Hole count for both active patrols; Pesca does not count.
+            Rewards use your current level requirements at claim, without EXP bonuses. Daily reset
+            is 04:00; weekly reset is Saturday at 04:00 server time. Each cooldown starts on claim,
+            and unfinished patrols carry over. Use the northern exit to return to Comodo.
+          </Callout>
+          <Callout>
             <strong>Einbech Mine, floor 3:</strong> Base Level 180.
           </Callout>
           <Callout>

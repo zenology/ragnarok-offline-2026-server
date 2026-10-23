@@ -243,6 +243,69 @@ Body:
   - Id: 65045
     Title: "[Standby] Pumpkin Farm Weekly Patrol"
     TimeLimit: Saturday 4h
+  # Unknown Blue Hole: optional patrols with Pumpkin Farm's reward/reset policy.
+  - Id: 65050
+    Title: Unknown Blue Hole - Patrol Briefing
+  - Id: 65051
+    Title: Blue Hole Daily Patrol - 100 Monsters
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: cmd_bhole
+        MapName: Unknown Blue Hole
+        MapMobTargets:
+          TATSI: true
+          CP_TATSI: true
+          GUERRERO: true
+          CP_GUERRERO: true
+          HANOM: true
+          CP_HANOM: true
+          SIRENA: true
+          CP_SIRENA: true
+          DIOSA: true
+          CP_DIOSA: true
+  - Id: 65052
+    Title: Blue Hole Daily Patrol - 500 Monsters
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: cmd_bhole
+        MapName: Unknown Blue Hole
+        MapMobTargets:
+          TATSI: true
+          CP_TATSI: true
+          GUERRERO: true
+          CP_GUERRERO: true
+          HANOM: true
+          CP_HANOM: true
+          SIRENA: true
+          CP_SIRENA: true
+          DIOSA: true
+          CP_DIOSA: true
+  - Id: 65053
+    Title: "[Standby] Blue Hole Daily Patrol"
+    TimeLimit: 4h
+  - Id: 65054
+    Title: Blue Hole Weekly Patrol - 5000 Monsters
+    Targets:
+      - Id: 1
+        Count: 5000
+        Location: cmd_bhole
+        MapName: Unknown Blue Hole
+        MapMobTargets:
+          TATSI: true
+          CP_TATSI: true
+          GUERRERO: true
+          CP_GUERRERO: true
+          HANOM: true
+          CP_HANOM: true
+          SIRENA: true
+          CP_SIRENA: true
+          DIOSA: true
+          CP_DIOSA: true
+  - Id: 65055
+    Title: "[Standby] Blue Hole Weekly Patrol"
+    TimeLimit: Saturday 4h
   - Id: 65000
     Title: Gathering Souls - Dragon Knight
     Targets:

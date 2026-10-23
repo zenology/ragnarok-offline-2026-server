@@ -1207,7 +1207,6 @@
 22435,HL@AL_HOLYLIGHT,attack,156,1,2000,0,10000,no,target,always,0,,,,,,,
 22435,HL@NPC_COMBOATTACK,attack,171,5,2000,0,10000,no,target,always,0,,,,,,,
 22435,HL@NPC_HOLYATTACK,attack,189,5,2000,0,10000,no,target,always,0,,,,,,,
-22435,HL@PF_SPIDERWEB,attack,405,1,2000,0,10000,no,target,always,0,,,,,,,
 22435,HL@PR_LEXAETERNA,attack,78,1,2000,0,10000,no,target,always,0,,,,,,,
 // Sirena keeps distinct source preemptive/retaliatory Soul Drain rates (AI 04).
 22436,HL@AL_TELEPORT,attack,26,1,10000,0,10000,no,self,rudeattacked,0,,,,,,,
