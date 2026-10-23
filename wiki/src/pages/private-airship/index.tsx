@@ -76,6 +76,10 @@ export default function PrivateAirshipPage(): ReactNode {
             plains.
           </Callout>
           <Callout>
+            <strong>Mjolnir Underground Caverns:</strong> Base Level 250. MOVE lands directly in the
+            caverns.
+          </Callout>
+          <Callout>
             <strong>Einbech Mine, floor 3:</strong> Base Level 180.
           </Callout>
           <Callout>

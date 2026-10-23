@@ -75,6 +75,54 @@ Body:
   - Id: 18209
     Title: "[Standby] Daily Cleansing"
     TimeLimit: 4h
+  # Mjolnir Underground Caverns: shared area counter for daily and weekly hunts.
+  - Id: 18212
+    Title: Information on the Mjolnir Underground Cave
+  - Id: 18213
+    Title: Daily 100 Monster Subjugation!
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: mjo_wst01
+        MapName: Mjolnir Underground Caverns
+        MapMobTargets:
+          PUNCH_BUG: true
+          AFERDE: true
+          DISPOL: true
+          TIMBERS: true
+          RENIRE: true
+  - Id: 18214
+    Title: Daily 500 Monster Subjugation!
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: mjo_wst01
+        MapName: Mjolnir Underground Caverns
+        MapMobTargets:
+          PUNCH_BUG: true
+          AFERDE: true
+          DISPOL: true
+          TIMBERS: true
+          RENIRE: true
+  - Id: 18215
+    Title: "[Standby] Daily Monster Subjugation"
+    TimeLimit: 4h
+  - Id: 18216
+    Title: Large-scale Monster Subjugation
+    Targets:
+      - Id: 1
+        Count: 5000
+        Location: mjo_wst01
+        MapName: Mjolnir Underground Caverns
+        MapMobTargets:
+          PUNCH_BUG: true
+          AFERDE: true
+          DISPOL: true
+          TIMBERS: true
+          RENIRE: true
+  - Id: 18217
+    Title: "[Standby] Large-scale Monster Subjugation"
+    TimeLimit: Saturday 4h
   - Id: 65000
     Title: Gathering Souls - Dragon Knight
     Targets:
