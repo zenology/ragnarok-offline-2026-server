@@ -1,0 +1,178 @@
+// Ancient Temple Akhet: level-gated soldier and independent daily/weekly patrols.
+moc_fild11,192,211,4	script	Morroc Soldier#akhet	4_M_MOC_SOLDIER,{
+	if (BaseLevel < 250) {
+		mes "[Morroc Soldier]";
+		mes "You must be Base Level 250 or higher to enter Ancient Temple Akhet.";
+		close;
+	}
+	mes "[Morroc Soldier]";
+	mes "Ancient Temple Akhet is open to experienced adventurers. The creatures inside need careful patrols.";
+	next;
+	mes "[Morroc Soldier]";
+	mes "I can take your daily and weekly reports here. Neither assignment is required to enter the temple.";
+	next;
+	if (isbegin_quest(65030) == 0) {
+		setquest 65030;
+		completequest 65030;
+	}
+	callsub L_ClearCooldowns;
+	switch (select("Enter the temple:Daily patrol:Weekly patrol:Leave")) {
+	case 1:
+		if (BaseLevel >= 250)
+			warp "moc_akhet",190,56;
+		close;
+	case 2:
+		callsub L_Daily;
+		close;
+	case 3:
+		callsub L_Weekly;
+		close;
+	default:
+		close;
+	}
+
+L_ClearCooldowns:
+	if (checkquest(65033,PLAYTIME) == 2)
+		erasequest 65033;
+	if (checkquest(65035,PLAYTIME) == 2)
+		erasequest 65035;
+	questinfo_refresh();
+	return;
+
+L_Reward:
+	.@rate = getarg(0);
+	.@base = BaseLevel >= 275 ? 0 : NextBaseExp * .@rate / 1000;
+	.@job = JobLevel >= 60 ? 0 : NextJobExp * .@rate / 1000;
+	return;
+
+L_Daily:
+	.@light = checkquest(65031);
+	.@solid = checkquest(65032);
+	if (.@light != -1 && .@solid != -1) {
+		mes "[Morroc Soldier]";
+		mes "Your daily patrol records conflict. I cannot change or reward them until they are checked.";
+		return;
+	}
+	if (checkquest(65033,PLAYTIME) != -1) {
+		mes "[Morroc Soldier]";
+		mes "Your daily report is already recorded. Come back after 04:00 server time.";
+		return;
+	}
+	if (BaseLevel >= 275 && JobLevel >= 60) {
+		mes "[Morroc Soldier]";
+		mes "Both of your levels are at their maximum. Your existing patrol remains recorded, but there is no EXP reward to claim.";
+		return;
+	}
+	.@quest = .@light != -1 ? 65031 : (.@solid != -1 ? 65032 : 0);
+	if (.@quest) {
+		if (checkquest(.@quest,HUNTING) != 2) {
+			mes "[Morroc Soldier]";
+			mes "Your daily patrol is still underway. Check your Quest List and return when it is complete.";
+			return;
+		}
+		.@rate = .@quest == 65031 ? 9 : 45;
+		callsub L_Reward,.@rate;
+		mes "[Morroc Soldier]";
+		mes "Report this patrol for " + (.@rate / 10) + "." + (.@rate % 10) + "% Base and Job EXP? Right now that is " + .@base + " Base EXP and " + .@job + " Job EXP. The amount is recalculated when you report.";
+		next;
+		if (select("Report the completed patrol:Keep it for later") == 2)
+			return;
+		callsub L_ClearCooldowns;
+		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65033,PLAYTIME) != -1 || (checkquest(65031) != -1 && checkquest(65032) != -1) || checkquest(.@quest,HUNTING) != 2)
+			return;
+		callsub L_Reward,.@rate;
+		if (.@base == 0 && .@job == 0)
+			return;
+		setquest 65033;
+		erasequest .@quest;
+		getexp2 .@base,.@job;
+		questinfo_refresh();
+		mes "[Morroc Soldier]";
+		mes "Your daily report is recorded. Thank you.";
+		return;
+	}
+	mes "[Morroc Soldier]";
+	mes "Choose one daily patrol. Each eligible creature you defeat inside Ancient Temple Akhet counts toward the total.";
+	next;
+	.@choice = select("100 monsters - 0.9% Base and Job EXP:500 monsters - 4.5% Base and Job EXP:Not today");
+	if (.@choice == 3)
+		return;
+	.@quest = .@choice == 1 ? 65031 : 65032;
+	mes "[Morroc Soldier]";
+	mes "The EXP is based on your levels when you report, without EXP bonuses. Your daily wait begins when you claim the reward and ends at 04:00 server time.";
+	next;
+	if (select("Accept this patrol:Not now") == 2)
+		return;
+	callsub L_ClearCooldowns;
+	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65033,PLAYTIME) != -1 || checkquest(65031) != -1 || checkquest(65032) != -1)
+		return;
+	setquest .@quest;
+	questinfo_refresh();
+	mes "[Morroc Soldier]";
+	mes "The patrol is yours. Come back when it is complete.";
+	return;
+
+L_Weekly:
+	if (checkquest(65035,PLAYTIME) != -1) {
+		mes "[Morroc Soldier]";
+		mes "Your weekly report is already recorded. Come back after Saturday at 04:00 server time.";
+		return;
+	}
+	if (BaseLevel >= 275 && JobLevel >= 60) {
+		mes "[Morroc Soldier]";
+		mes "Both of your levels are at their maximum. Your existing patrol remains recorded, but there is no EXP reward to claim.";
+		return;
+	}
+	if (checkquest(65034) != -1) {
+		if (checkquest(65034,HUNTING) != 2) {
+			mes "[Morroc Soldier]";
+			mes "Your weekly patrol is still underway. Check your Quest List and return when it is complete.";
+			return;
+		}
+		callsub L_Reward,450;
+		mes "[Morroc Soldier]";
+		mes "Report this patrol for 45% Base and Job EXP? Right now that is " + .@base + " Base EXP and " + .@job + " Job EXP. The amount is recalculated when you report.";
+		next;
+		if (select("Report the completed patrol:Keep it for later") == 2)
+			return;
+		callsub L_ClearCooldowns;
+		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65035,PLAYTIME) != -1 || checkquest(65034,HUNTING) != 2)
+			return;
+		callsub L_Reward,450;
+		if (.@base == 0 && .@job == 0)
+			return;
+		setquest 65035;
+		erasequest 65034;
+		getexp2 .@base,.@job;
+		questinfo_refresh();
+		mes "[Morroc Soldier]";
+		mes "Your weekly report is recorded. Thank you.";
+		return;
+	}
+	mes "[Morroc Soldier]";
+	mes "The weekly patrol asks you to defeat 5,000 eligible creatures inside the temple. The same kills can advance an active daily patrol.";
+	next;
+	mes "[Morroc Soldier]";
+	mes "Reporting awards 45% of your current Base and Job EXP requirements without EXP bonuses. Your weekly wait then lasts until Saturday at 04:00 server time.";
+	next;
+	if (select("Accept the weekly patrol:Not now") == 2)
+		return;
+	callsub L_ClearCooldowns;
+	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65035,PLAYTIME) != -1 || checkquest(65034) != -1)
+		return;
+	setquest 65034;
+	questinfo_refresh();
+	mes "[Morroc Soldier]";
+	mes "The weekly patrol is yours. Come back when it is complete.";
+	return;
+
+OnInit:
+	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65031,HUNTING) == 2 && checkquest(65032) == -1 && (checkquest(65033,PLAYTIME) == -1 || checkquest(65033,PLAYTIME) == 2)) || (checkquest(65032,HUNTING) == 2 && checkquest(65031) == -1 && (checkquest(65033,PLAYTIME) == -1 || checkquest(65033,PLAYTIME) == 2)) || (checkquest(65034,HUNTING) == 2 && (checkquest(65035,PLAYTIME) == -1 || checkquest(65035,PLAYTIME) == 2)))");
+	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65031) == -1 && checkquest(65032) == -1 && (checkquest(65033,PLAYTIME) == -1 || checkquest(65033,PLAYTIME) == 2)) || (checkquest(65034) == -1 && (checkquest(65035,PLAYTIME) == -1 || checkquest(65035,PLAYTIME) == 2)))");
+	end;
+}
+
+moc_akhet,190,53,0	warp	akhet_to_mocfild11	1,1,moc_fild11,188,212
+moc_akhet	mapflag	nobranch
+moc_akhet	mapflag	privateairship_source
+moc_akhet	mapflag	privateairship_destination

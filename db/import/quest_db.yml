@@ -123,6 +123,63 @@ Body:
   - Id: 18217
     Title: "[Standby] Large-scale Monster Subjugation"
     TimeLimit: Saturday 4h
+  # Ancient Temple Akhet: one shared kill counter per daily or weekly patrol.
+  - Id: 65030
+    Title: Ancient Temple Akhet - Patrol Briefing
+  - Id: 65031
+    Title: Akhet Daily Patrol - 100 Monsters
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: moc_akhet
+        MapName: Ancient Temple Akhet
+        MapMobTargets:
+          MEDJED: true
+          CP_MEDJED: true
+          MEDJAY: true
+          CP_MEDJAY: true
+          OPHOIS: true
+          CP_OPHOIS: true
+          HEKA: true
+          CP_HEKA: true
+  - Id: 65032
+    Title: Akhet Daily Patrol - 500 Monsters
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: moc_akhet
+        MapName: Ancient Temple Akhet
+        MapMobTargets:
+          MEDJED: true
+          CP_MEDJED: true
+          MEDJAY: true
+          CP_MEDJAY: true
+          OPHOIS: true
+          CP_OPHOIS: true
+          HEKA: true
+          CP_HEKA: true
+  - Id: 65033
+    Title: "[Standby] Akhet Daily Patrol"
+    TimeLimit: 4h
+  - Id: 65034
+    Title: Akhet Weekly Patrol - 5000 Monsters
+    Targets:
+      - Id: 1
+        Count: 5000
+        Location: moc_akhet
+        MapName: Ancient Temple Akhet
+        MapMobTargets:
+          MEDJED: true
+          CP_MEDJED: true
+          MEDJAY: true
+          CP_MEDJAY: true
+          OPHOIS: true
+          CP_OPHOIS: true
+          HEKA: true
+          CP_HEKA: true
+  - Id: 65035
+    Title: "[Standby] Akhet Weekly Patrol"
+    TimeLimit: Saturday 4h
   - Id: 65000
     Title: Gathering Souls - Dragon Knight
     Targets:

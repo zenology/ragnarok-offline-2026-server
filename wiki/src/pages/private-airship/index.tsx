@@ -80,6 +80,16 @@ export default function PrivateAirshipPage(): ReactNode {
             caverns.
           </Callout>
           <Callout>
+            <strong>Ancient Temple Akhet:</strong> Base Level 250. You can enter through the Morroc
+            Soldier at moc_fild11 (192, 211) or MOVE directly into the temple without taking a
+            patrol. MOVE refuses an ineligible character before consuming a ticket. The soldier
+            offers one daily patrol of 100 kills for 0.9% or 500 kills for 4.5% Base and Job EXP,
+            alongside a weekly 5,000-kill patrol for 45%. Eligible kills inside the temple advance
+            both active patrols. Daily rewards reset at 04:00 server time; weekly rewards reset
+            Saturday at 04:00. Each cooldown starts when you claim the reward. The EXP percentage
+            uses your levels when you report and is not multiplied by EXP bonuses.
+          </Callout>
+          <Callout>
             <strong>Einbech Mine, floor 3:</strong> Base Level 180.
           </Callout>
           <Callout>
