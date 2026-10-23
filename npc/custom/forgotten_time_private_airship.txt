@@ -1,0 +1,9 @@
+// Garden of Time World View destinations, enabled in both MOVE directions.
+// Base Level 250 and native quest gates: src/custom/private_airship_gate.hpp.
+// The original Lutie Field entrance remains available before the introduction.
+t_garden	mapflag	privateairship_source
+t_garden	mapflag	privateairship_destination
+for_dun01	mapflag	privateairship_source
+for_dun01	mapflag	privateairship_destination
+for_dun02	mapflag	privateairship_source
+for_dun02	mapflag	privateairship_destination

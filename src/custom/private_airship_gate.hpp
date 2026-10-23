@@ -160,6 +160,15 @@ inline bool private_airship_ordinary_destination_allowed( const map_session_data
 	if( private_airship_is_new_world_destination( map_name ) )
 		return private_airship_new_world_destination_allowed( sd, map_name );
 
+	// Keep the native Garden of Time introduction and both passage unlocks.
+	if( strcmp( map_name, "t_garden" ) == 0 )
+		return private_airship_base_level_at_least( sd, 250 )
+			&& private_airship_isbegin_quest( sd, 12592 ) == 2;
+	if( strcmp( map_name, "for_dun01" ) == 0 || strcmp( map_name, "for_dun02" ) == 0 )
+		return private_airship_base_level_at_least( sd, 250 )
+			&& private_airship_isbegin_quest( sd, 12595 ) == 2
+			&& private_airship_isbegin_quest( sd, 12596 ) == 2;
+
 	// Match the local Shufapa/Nyar level-only entry policy for Episode 21.
 	if( strcmp( map_name, "jor_crk" ) == 0 || strcmp( map_name, "jor_crk_p" ) == 0
 		|| strcmp( map_name, "jor_mbase" ) == 0 || strcmp( map_name, "jor_base" ) == 0
