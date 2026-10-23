@@ -37,6 +37,7 @@
 #include "script.hpp"
 #include <custom/premium_autobuff.hpp>
 #include <custom/monster_servant_weapon.hpp>
+#include <custom/forgotten_time_restrictions.hpp>
 
 using namespace rathena;
 
@@ -10178,6 +10179,9 @@ bool status_change_start(block_list* src, block_list* bl, sc_type type, int32 ra
 	if (status_change_isDisabledOnMap(type, map_getmapdata(bl->m)))
 		return false;
 
+	if (offline_forgotten_time::status_blocked(bl, type))
+		return false;
+
 	if (sc->getSCE(SC_GRAVITYCONTROL))
 		return false; // !TODO: Confirm what statuses/conditions (if not all) are blocked.
 
@@ -15738,6 +15742,8 @@ static bool status_change_isDisabledOnMap_(sc_type type, bool mapIsVS, bool mapI
 void status_change_clear_onChangeMap(block_list *bl, status_change *sc)
 {
 	nullpo_retv(bl);
+
+	offline_forgotten_time::clear_on_entry(bl, sc);
 
 	if (sc != nullptr && !sc->empty()) {
 		struct map_data *mapdata = map_getmapdata(bl->m);
