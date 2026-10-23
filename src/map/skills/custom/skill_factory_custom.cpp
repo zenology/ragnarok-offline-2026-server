@@ -4,12 +4,21 @@
 #include "skill_factory_custom.hpp"
 
 #include "../skill_impl.hpp"
+#include "../../../custom/random_break.hpp"
+#include "../../../custom/high_level_killing_aura.hpp"
+#include "../../../custom/monster_coluceo_heal.hpp"
 
 // Include .cpp files into the TU to optimize compile time
 // For reference see unity builds or amalgamated builds
 #include "rekenbercelestial.cpp"
 
 std::unique_ptr<const SkillImpl> SkillFactoryCustom::create(const e_skill skill_id) const {
+	if (skill_id == AB_CHEAL)
+		return std::make_unique<offline_monster_coluceo_heal::SkillMonsterColuceoHeal>();
+	if (skill_id == NPC_RANDOMBREAK)
+		return std::make_unique<offline_random_break::SkillRandomBreak>();
+	if (skill_id == NPC_KILLING_AURA)
+		return std::make_unique<offline_high_level_killing_aura::SkillKillingAura>();
 	if (skill_id == OFFLINE_REKENBER_CELESTIAL)
 		return std::make_unique<SkillRekenberCelestial>();
 

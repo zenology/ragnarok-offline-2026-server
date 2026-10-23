@@ -14,12 +14,13 @@ inline sc_type initial_status(const block_list* caster, uint16 skill_level, sc_t
 	if (skill_level != 11 || caster == nullptr || caster->type != BL_MOB)
 		return native_status;
 	const auto* monster = static_cast<const mob_data*>(caster);
-	// Scope this content addition to the three audited Biosphere MVPs.
+	// Scope this content addition to the audited Biosphere MVPs and Renire.
 	// Existing EP20 level-11 rows keep their native behavior.
 	switch (monster->mob_id) {
 		case 21927:
 		case 21935:
 		case 21943:
+		case 21955:
 			return SC_IMMUNE_PROPERTY_NOTHING;
 		default:
 			return native_status;

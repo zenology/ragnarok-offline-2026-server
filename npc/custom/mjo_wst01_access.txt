@@ -1,0 +1,195 @@
+// Mjolnir Underground Caverns: level-gated entrance and shared daily/weekly hunts.
+// Gnjoy 2026-05-27: Base Level 250, 100/500 daily, 5000 weekly, 04:00 resets.
+
+ein_fild08,196,49,4	script	Rebellion Crew#lv250	4_F_REBELLION2,{
+	if (BaseLevel < 250) {
+		mes "[Rebellion Crew]";
+		mes "You must be Base Level 250 or higher to enter the Mjolnir Underground Caverns.";
+		close;
+	}
+	mes "[Rebellion Crew]";
+	mes "Our patrol near Einbroch found a cavern deep beneath Mount Mjolnir. It was once an ancient ant nest, but no ants remain there now.";
+	next;
+	mes "[Rebellion Crew]";
+	mes "Huge roots hold the cavern together. After the nest was abandoned, creatures from across the mountain moved in and filled it.";
+	next;
+	mes "[Rebellion Crew]";
+	mes "The cavern is close to collapsing. If the monsters keep multiplying, they could spill out and threaten nearby towns. We need adventurers to help keep their numbers down.";
+	next;
+	if (isbegin_quest(18212) == 0) {
+		setquest 18212;
+		completequest 18212;
+	}
+	callsub L_ClearCooldowns;
+	mes "[Rebellion Crew]";
+	mes "The entrance is beside me. I can assign a daily patrol or a larger weekly operation, and record your report when you return.";
+	next;
+	switch (select("Daily subjugation:Weekly subjugation:Leave")) {
+	case 1:
+		callsub L_Daily;
+		close;
+	case 2:
+		callsub L_Weekly;
+		close;
+	default:
+		close;
+	}
+
+L_ClearCooldowns:
+	if (checkquest(18215,PLAYTIME) == 2)
+		erasequest 18215;
+	if (checkquest(18217,PLAYTIME) == 2)
+		erasequest 18217;
+	questinfo_refresh();
+	return;
+
+L_Daily:
+	.@light = checkquest(18213);
+	.@solid = checkquest(18214);
+	if (.@light != -1 && .@solid != -1) {
+		mes "[Rebellion Crew]";
+		mes "Your daily assignment records conflict. I cannot change or reward them until they are checked.";
+		return;
+	}
+	if (checkquest(18215,PLAYTIME) != -1) {
+		mes "[Rebellion Crew]";
+		mes "Today's patrol has already been recorded. Another daily assignment is available after 04:00.";
+		return;
+	}
+	.@quest = 0;
+	if (.@light != -1)
+		.@quest = 18213;
+	else if (.@solid != -1)
+		.@quest = 18214;
+	if (.@quest) {
+		if (checkquest(.@quest,HUNTING) != 2) {
+			mes "[Rebellion Crew]";
+			mes "Your daily patrol is still underway. Check your Quest List and return when it is complete.";
+			return;
+		}
+		if (.@quest == 18213) {
+			.@energy = 1;
+			.@base = 242000000;
+			.@job = 206000000;
+		} else {
+			.@energy = 3;
+			.@base = 1214000000;
+			.@job = 1033000000;
+		}
+		mes "[Rebellion Crew]";
+		mes "Your patrol is complete. Report it for " + .@energy + " Mjolnir's Energy, Base EXP and Job EXP?";
+		next;
+		if (select("Report the completed patrol:Keep it for later") == 2)
+			return;
+		if (!checkweight(Mjo_Energy,.@energy)) {
+			mes "[Rebellion Crew]";
+			mes "Please make room for the reward first. Your report remains ready.";
+			return;
+		}
+		// No suspension between final checks, lock, and rewards.
+		callsub L_ClearCooldowns;
+		if (BaseLevel < 250 || checkquest(18215,PLAYTIME) != -1 || checkquest(18213) != -1 && checkquest(18214) != -1 || checkquest(.@quest,HUNTING) != 2)
+			return;
+		setquest 18215;
+		erasequest .@quest;
+		getitem Mjo_Energy,.@energy;
+		getexp .@base,.@job;
+		questinfo_refresh();
+		mes "[Rebellion Crew]";
+		mes "Your daily report is recorded. Thank you.";
+		return;
+	}
+	mes "[Rebellion Crew]";
+	mes "Choose one daily patrol. Each eligible creature you defeat inside the caverns counts toward its total.";
+	next;
+	.@choice = select("100 monsters - 242,000,000 Base EXP, 206,000,000 Job EXP, 1 Energy:500 monsters - 1,214,000,000 Base EXP, 1,033,000,000 Job EXP, 3 Energy:Not today");
+	if (.@choice == 3)
+		return;
+	.@quest = .@choice == 1 ? 18213 : 18214;
+	mes "[Rebellion Crew]";
+	mes "You may report this patrol when its total is complete. The reward begins your daily wait until 04:00.";
+	next;
+	if (select("Accept this patrol:Not now") == 2)
+		return;
+	callsub L_ClearCooldowns;
+	if (BaseLevel < 250 || checkquest(18215,PLAYTIME) != -1 || checkquest(18213) != -1 || checkquest(18214) != -1)
+		return;
+	setquest .@quest;
+	questinfo_refresh();
+	mes "[Rebellion Crew]";
+	mes "The patrol is yours. Come back when it is complete.";
+	return;
+
+L_Weekly:
+	if (checkquest(18217,PLAYTIME) != -1) {
+		mes "[Rebellion Crew]";
+		mes "Your large-scale report has been recorded. Another is available Saturday after 04:00.";
+		return;
+	}
+	if (checkquest(18216) != -1) {
+		if (checkquest(18216,HUNTING) != 2) {
+			mes "[Rebellion Crew]";
+			mes "Your large-scale operation is still underway. Check your Quest List and return when it is complete.";
+			return;
+		}
+		mes "[Rebellion Crew]";
+		mes "Report this operation for 12,140,000,000 Base EXP, 10,330,000,000 Job EXP, 10 Mjolnir's Energy and 3 Mjolnir's Treasure?";
+		next;
+		if (select("Report the completed operation:Keep it for later") == 2)
+			return;
+		if (!checkweight(Mjo_Energy,10,Mjo_Treasure,3)) {
+			mes "[Rebellion Crew]";
+			mes "Please make room for the entire reward first. Your report remains ready.";
+			return;
+		}
+		callsub L_ClearCooldowns;
+		if (BaseLevel < 250 || checkquest(18217,PLAYTIME) != -1 || checkquest(18216,HUNTING) != 2)
+			return;
+		setquest 18217;
+		erasequest 18216;
+		getitem Mjo_Energy,10;
+		getitem Mjo_Treasure,3;
+		getexp 12140000000,10330000000;
+		questinfo_refresh();
+		mes "[Rebellion Crew]";
+		mes "The large-scale report is recorded. Thank you.";
+		return;
+	}
+	mes "[Rebellion Crew]";
+	mes "The weekly operation asks you to defeat 5,000 eligible creatures inside the caverns. It can run beside your daily patrol.";
+	next;
+	mes "[Rebellion Crew]";
+	mes "The reward is 12,140,000,000 Base EXP, 10,330,000,000 Job EXP, 10 Mjolnir's Energy and 3 Mjolnir's Treasure. Reporting begins the wait until Saturday at 04:00.";
+	next;
+	if (select("Accept the weekly operation:Not now") == 2)
+		return;
+	callsub L_ClearCooldowns;
+	if (BaseLevel < 250 || checkquest(18217,PLAYTIME) != -1 || checkquest(18216) != -1)
+		return;
+	setquest 18216;
+	questinfo_refresh();
+	mes "[Rebellion Crew]";
+	mes "The operation is yours. Stay safe down there.";
+	return;
+
+OnInit:
+	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 250 && ((checkquest(18213,HUNTING) == 2 && checkquest(18214) == -1 && (checkquest(18215,PLAYTIME) == -1 || checkquest(18215,PLAYTIME) == 2)) || (checkquest(18214,HUNTING) == 2 && checkquest(18213) == -1 && (checkquest(18215,PLAYTIME) == -1 || checkquest(18215,PLAYTIME) == 2)) || (checkquest(18216,HUNTING) == 2 && (checkquest(18217,PLAYTIME) == -1 || checkquest(18217,PLAYTIME) == 2)))");
+	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 250 && ((checkquest(18213) == -1 && checkquest(18214) == -1 && (checkquest(18215,PLAYTIME) == -1 || checkquest(18215,PLAYTIME) == 2)) || (checkquest(18216) == -1 && (checkquest(18217,PLAYTIME) == -1 || checkquest(18217,PLAYTIME) == 2)))");
+	end;
+}
+
+ein_fild08,192,49,0	script	enter_mjowst01	WARPNPC,1,1,{
+	end;
+OnTouch:
+	if (BaseLevel < 250) {
+		mes "You must be Base Level 250 or higher to enter the Mjolnir Underground Caverns.";
+		close;
+	}
+	warp "mjo_wst01",204,382;
+	end;
+}
+
+mjo_wst01,204,387,0	warp	out_mjowst01	1,1,ein_fild08,192,53
+mjo_wst01	mapflag	nobranch
+mjo_wst01	mapflag	privateairship_source
+mjo_wst01	mapflag	privateairship_destination

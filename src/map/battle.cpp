@@ -35,6 +35,7 @@
 #include "pet.hpp"
 #include "./skills/skill_impl.hpp"
 #include "custom/property_immune.hpp"
+#include "custom/monster_servant_weapon.hpp"
 
 using namespace rathena;
 
@@ -7769,6 +7770,7 @@ enum damage_lv battle_weapon_attack(block_list* src, block_list* target, t_tick 
 	if (sd && tsc && wd.flag&BF_LONG && tsc->getSCE(SC_WINDSIGN) && rand()%100 < tsc->getSCE(SC_WINDSIGN)->val2)
 		status_heal(src, 0, 0, 1, 0);
 
+	offline_monster_servant_weapon::on_normal_attack(src, target, tick, damage);
 	return wd.dmg_lv;
 }
 

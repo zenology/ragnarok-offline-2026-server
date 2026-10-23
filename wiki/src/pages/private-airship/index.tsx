@@ -72,6 +72,44 @@ export default function PrivateAirshipPage(): ReactNode {
             <strong>Clock Tower Unknown Basement:</strong> Base Level 240.
           </Callout>
           <Callout>
+            <strong>Power Twisted Plains:</strong> Base Level 250. MOVE lands directly in the
+            plains.
+          </Callout>
+          <Callout>
+            <strong>Mjolnir Underground Caverns:</strong> Base Level 250. MOVE lands directly in the
+            caverns.
+          </Callout>
+          <Callout>
+            <strong>Ancient Temple Akhet:</strong> Base Level 250. You can enter through the Morroc
+            Soldier at moc_fild11 (192, 211) or MOVE directly into the temple without taking a
+            patrol. MOVE refuses an ineligible character before consuming a ticket. The soldier
+            offers one daily patrol of 100 kills for 0.9% or 500 kills for 4.5% Base and Job EXP,
+            alongside a weekly 5,000-kill patrol for 45%. Eligible kills inside the temple advance
+            both active patrols. Daily rewards reset at 04:00 server time; weekly rewards reset
+            Saturday at 04:00. Each cooldown starts when you claim the reward. The EXP percentage
+            uses your levels when you report and is not multiplied by EXP bonuses.
+          </Callout>
+          <Callout>
+            <strong>Niflheim Pumpkin Farm:</strong> Base Level 250. Enter through the portal at
+            Niflheim (349, 274) or MOVE directly into the farm. Pumpkin Warden at (345, 272) offers
+            optional patrols with the same EXP rewards and resets as Akhet: one daily of 100 kills
+            for 0.9% or 500 kills for 4.5%, plus a weekly 5,000 kills for 45%. The five regular
+            species and their Strong variants inside the farm count for both active patrols;
+            Nightmare Piamette does not count. Rewards use your current level requirements at claim,
+            without EXP bonuses. Daily reset is 04:00; weekly reset is Saturday at 04:00 server
+            time. Each cooldown starts on claim, and unfinished patrols carry over.
+          </Callout>
+          <Callout>
+            <strong>Unknown Blue Hole:</strong> Base Level 250. Speak to Cesar at Comodo (185, 86)
+            or MOVE directly into the Blue Hole. Patrols are optional and follow the Pumpkin Farm
+            rules: one daily of 100 kills for 0.9% or 500 kills for 4.5% Base and Job EXP, plus a
+            weekly 5,000 kills for 45%. Tassi, Guerrero, Hanom, Sirena, Diosa and their Mighty
+            variants inside the Blue Hole count for both active patrols; Pesca does not count.
+            Rewards use your current level requirements at claim, without EXP bonuses. Daily reset
+            is 04:00; weekly reset is Saturday at 04:00 server time. Each cooldown starts on claim,
+            and unfinished patrols carry over. Use the northern exit to return to Comodo.
+          </Callout>
+          <Callout>
             <strong>Einbech Mine, floor 3:</strong> Base Level 180.
           </Callout>
           <Callout>

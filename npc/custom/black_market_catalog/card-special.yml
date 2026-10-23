@@ -164,9 +164,5 @@ Body:
   - {Id: 27365, RawBP: 33665, DisplayName: "Wheel of Fortune Card", CollectorOffer: 44000, SourceMob: 0}
   - {Id: 300128, RawBP: 17967, DisplayName: "Wolf Roegenburgs Card", CollectorOffer: 28000, SourceMob: 0}
   - {Id: 27367, RawBP: 15095, DisplayName: "World Card", CollectorOffer: 44000, SourceMob: 0}
-  - {Id: 300521, RawBP: 48523, DisplayName: "Yordos Investigator Card", CollectorOffer: 42000, SourceMob: 0}
-  - {Id: 300522, RawBP: 48523, DisplayName: "Yordos Judge Card", CollectorOffer: 42000, SourceMob: 0}
   - {Id: 300527, RawBP: 19894, DisplayName: "Yorker Religious Worker Card", CollectorOffer: 34000, SourceMob: 0}
   - {Id: 300526, RawBP: 5402, DisplayName: "Yorker Worker Card", CollectorOffer: 34000, SourceMob: 0}
-  - {Id: 300528, RawBP: 2275, DisplayName: "Yortus Bishop Card", CollectorOffer: 32000, SourceMob: 0}
-  - {Id: 300529, RawBP: 12896, DisplayName: "Yortus Conjurator Card", CollectorOffer: 36000, SourceMob: 0}

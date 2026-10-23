@@ -181,6 +181,16 @@ inline bool private_airship_ordinary_destination_allowed( const map_session_data
 		return private_airship_base_level_at_least( sd, 230 );
 	if( strcmp( map_name, "clock_01" ) == 0 )
 		return private_airship_base_level_at_least( sd, 240 );
+	if( strcmp( map_name, "ra_pol01" ) == 0 )
+		return private_airship_base_level_at_least( sd, 250 );
+	if( strcmp( map_name, "mjo_wst01" ) == 0 )
+		return private_airship_base_level_at_least( sd, 250 );
+	if( strcmp( map_name, "moc_akhet" ) == 0 )
+		return private_airship_base_level_at_least( sd, 250 );
+	if( strcmp( map_name, "nif_fild03" ) == 0 )
+		return private_airship_base_level_at_least( sd, 250 );
+	if( strcmp( map_name, "cmd_bhole" ) == 0 )
+		return private_airship_base_level_at_least( sd, 250 );
 	if( strcmp( map_name, "ein_dun03" ) == 0 )
 		return private_airship_base_level_at_least( sd, 180 );
 	if( strcmp( map_name, "mag_dun03" ) == 0 )

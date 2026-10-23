@@ -143,6 +143,17 @@ Header:
   Version: 4
 
 Body:
+  # Local formula approved 2026-10-22: one equipped item, 1.5% per level.
+  - Id: 777
+    Name: NPC_RANDOMBREAK
+    Description: Random Break
+    MaxLevel: 5
+    TargetType: Attack
+    Range: 9
+    DamageFlags:
+      NoDamage: true
+    Flags:
+      IsNpc: true
   # Fear Breeze accepts equipment cast-time reductions; keep its native FCT.
   - Id: 2234
     CastTimeFlags:

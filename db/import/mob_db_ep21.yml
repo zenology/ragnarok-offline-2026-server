@@ -786,7 +786,7 @@ Body:
       - { Item: Shadowdecon_Ore, Rate: 166 }
       - { Item: Shadowdecon, Rate: 27 }
       - { Item: Ep21_Wigner_Ticket, Rate: 180 }
-      - { Item: Yordos_Inve_Card, Rate: 5 }
+      - { Item: Yordos_Inve_Card, Rate: 1 }
   - Id: 22356
     AegisName: EP21_YORDOS_B
     Name: Yordos Judge
@@ -831,7 +831,7 @@ Body:
       - { Item: Zelunium_Ore, Rate: 110 }
       - { Item: Zelunium, Rate: 17 }
       - { Item: Ep21_Wigner_Ticket, Rate: 180 }
-      - { Item: Yordos_Judge_Card, Rate: 5 }
+      - { Item: Yordos_Judge_Card, Rate: 1 }
   - Id: 22357
     AegisName: EP21_YORDOS_C
     Name: Yordos Executor
@@ -1010,7 +1010,7 @@ Body:
       - { Item: Etel_Dust, Rate: 227 }
       - { Item: Shadowdecon, Rate: 28 }
       - { Item: Ep21_Wigner_Ticket, Rate: 180 }
-      - { Item: Yortus_Bishop_Card, Rate: 5 }
+      - { Item: Yortus_Bishop_Card, Rate: 1 }
   - Id: 22361
     AegisName: EP21_YORTUS_B
     Name: Yortus Warlock
@@ -1055,7 +1055,7 @@ Body:
       - { Item: Zelunium, Rate: 44 }
       - { Item: Etel_Dust, Rate: 44 }
       - { Item: Ep21_Wigner_Ticket, Rate: 180 }
-      - { Item: Yortus_Conjur_Card, Rate: 5 }
+      - { Item: Yortus_Conjur_Card, Rate: 1 }
   - Id: 22362
     AegisName: EP21_ICEHORN
     Name: Ice Horn
@@ -1089,7 +1089,7 @@ Body:
     AttackMotion: 1380
     ClientAttackMotion: 780
     DamageMotion: 576
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:
@@ -1138,7 +1138,7 @@ Body:
     AttackMotion: 768
     ClientAttackMotion: 480
     DamageMotion: 576
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:
@@ -1179,7 +1179,7 @@ Body:
     AttackMotion: 1056
     ClientAttackMotion: 480
     DamageMotion: 576
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:
@@ -1235,6 +1235,7 @@ Body:
       - { Item: Yorscalp_Symbol, Rate: 15 }
       - { Item: Yorscalp_Serpent, Rate: 30 }
       - { Item: Ep21_Wigner_Ticket, Rate: 10, StealProtected: true }
+      - { Item: Yortus_Bishop_Card, Rate: 1 }
   - Id: 22413
     AegisName: EP21_YORTUS_B_H
     Name: Awake Yortus Warlock
@@ -1281,6 +1282,7 @@ Body:
       - { Item: Yorscalp_Serpent, Rate: 30 }
       - { Item: Etel_Stone, Rate: 4 }
       - { Item: Zelunium, Rate: 175 }
+      - { Item: Yortus_Conjur_Card, Rate: 1 }
   - Id: 22414
     AegisName: EP21_YORDOS_C_H
     Name: Awake Yordos Executor
@@ -1373,6 +1375,7 @@ Body:
       - { Item: Yorscalp_Serpent, Rate: 25 }
       - { Item: Zelunium, Rate: 71 }
       - { Item: Etel_Stone, Rate: 4 }
+      - { Item: Yordos_Judge_Card, Rate: 1 }
   - Id: 22416
     AegisName: EP21_YORDOS_A_H
     Name: Awake Yordos Investig
@@ -1419,6 +1422,7 @@ Body:
       - { Item: Yorscalp_Symbol, Rate: 12 }
       - { Item: Yorscalp_Serpent, Rate: 25 }
       - { Item: aegis_1001628, Rate: 66 }
+      - { Item: Yordos_Inve_Card, Rate: 1 }
   - Id: 22417
     AegisName: EP21_YORMI_A_H
     Name: Awake Yormi
@@ -1511,6 +1515,7 @@ Body:
       - { Item: Yorscalp_Symbol, Rate: 12 }
       - { Item: Yorscalp_Serpent, Rate: 25 }
       - { Item: Shadowdecon, Rate: 160 }
+      - { Item: Yormi_M_Card, Rate: 1 }
   - Id: 22419
     AegisName: EP21_YOSCOPUS_A_H
     Name: Awake Yoscopus Guardian
@@ -1635,7 +1640,7 @@ Body:
     AttackDelay: 1528
     AttackMotion: 768
     DamageMotion: 480
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:
@@ -1680,7 +1685,7 @@ Body:
     AttackDelay: 1104
     AttackMotion: 1056
     DamageMotion: 480
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:

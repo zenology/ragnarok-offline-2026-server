@@ -12,6 +12,9 @@
 #define PACKETVER 20250716
 #define ENABLE_OLD_CASHSHOP_PREVIEW_PATCH
 
+/// EP21 Awake monsters retain ten material drops plus their family card.
+#define MAX_MOB_DROP 11
+
 /// Timed Premium Buff / iRO Premium Subscription. VIP_SCRIPT stays 0 in core.hpp.
 #define VIP_ENABLE
 /// Offline already uses MAX_STORAGE (600). Do not drop inactive accounts to 300.

@@ -55,6 +55,7 @@ Body:
   - {Id: 4556, RawBP: 17170, DisplayName: "Fenrir Card", CollectorOffer: 80000, SourceMob: 2564}
   - {Id: 27104, RawBP: 9970, DisplayName: "Furious Dracula Card", CollectorOffer: 40000, SourceMob: 3757}
   - {Id: 27081, RawBP: 17540, DisplayName: "Furious Moonlight Flower Card", CollectorOffer: 40000, SourceMob: 3758}
+  - {Id: 300445, RawBP: 18575, DisplayName: "Gaia Pol Card", CollectorOffer: 100000, SourceMob: 21950}
   - {Id: 4681, RawBP: 21324, DisplayName: "Genetic Flamel Card", CollectorOffer: 64000, SourceMob: 3241}
   - {Id: 4534, RawBP: 6275, DisplayName: "Giant Octopus Card", CollectorOffer: 36000, SourceMob: 2194}
   - {Id: 4576, RawBP: 13838, DisplayName: "Gioia Card", CollectorOffer: 60000, SourceMob: 2251}
@@ -66,12 +67,14 @@ Body:
   - {Id: 300080, RawBP: 20680, DisplayName: "Greater Red Pepper Card", CollectorOffer: 80000, SourceMob: 20621}
   - {Id: 27327, RawBP: 9629, DisplayName: "Grim Reaper Ankou Card", CollectorOffer: 110000, SourceMob: 3029}
   - {Id: 4580, RawBP: 62039, DisplayName: "Guardian Kades Card", CollectorOffer: 136000, SourceMob: 2255}
+  - {Id: 300565, RawBP: 10000, DisplayName: "Guide of Dead Card", CollectorOffer: 100000, SourceMob: 22404}
   - {Id: 4674, RawBP: 25663, DisplayName: "Guillotine Cross Eremes Card", CollectorOffer: 69000, SourceMob: 3220}
   - {Id: 4566, RawBP: 7170, DisplayName: "Gypsy Card", CollectorOffer: 55000, SourceMob: 2241}
   - {Id: 4324, RawBP: 10000, DisplayName: "Hatii Card", CollectorOffer: 42000, SourceMob: 1252}
   - {Id: 4363, RawBP: 4000, DisplayName: "High Priest Card", CollectorOffer: 90000, SourceMob: 1649}
   - {Id: 4365, RawBP: 27675, DisplayName: "High Wizard Card", CollectorOffer: 120000, SourceMob: 1651}
   - {Id: 27381, RawBP: 13838, DisplayName: "Himelmez's Phantom Card", CollectorOffer: 75000, SourceMob: 20572}
+  - {Id: 300513, RawBP: 6644, DisplayName: "Ice Horn Card", CollectorOffer: 100000, SourceMob: 22362}
   - {Id: 4430, RawBP: 6248, DisplayName: "Ifrit Card", CollectorOffer: 88000, SourceMob: 1832}
   - {Id: 4263, RawBP: 27675, DisplayName: "Incantation Samurai Card", CollectorOffer: 48000, SourceMob: 1492}
   - {Id: 4648, RawBP: 2000, DisplayName: "Infinite Eddga Card", CollectorOffer: 72000, SourceMob: 3426}
@@ -103,11 +106,13 @@ Body:
   - {Id: 4457, RawBP: 4000, DisplayName: "Naght Seiger Card", CollectorOffer: 33000, SourceMob: 1956}
   - {Id: 4456, RawBP: 10925, DisplayName: "Nidhoggur Shadow Card", CollectorOffer: 60000, SourceMob: 2022}
   - {Id: 4652, RawBP: 20680, DisplayName: "Nightmare Amon Ra Card", CollectorOffer: 64000, SourceMob: 2362}
+  - {Id: 300560, RawBP: 12517, DisplayName: "Nightmare Piamette Card", CollectorOffer: 100000, SourceMob: 22394}
   - {Id: 27119, RawBP: 24036, DisplayName: "Ominous Turtle General Card", CollectorOffer: 90000, SourceMob: 3804}
   - {Id: 4143, RawBP: 14216, DisplayName: "Orc Hero Card", CollectorOffer: 40000, SourceMob: 1087}
   - {Id: 4135, RawBP: 8000, DisplayName: "Orc Lord Card", CollectorOffer: 48000, SourceMob: 1190}
   - {Id: 4144, RawBP: 35139, DisplayName: "Osiris Card", CollectorOffer: 36000, SourceMob: 1038}
   - {Id: 4565, RawBP: 7170, DisplayName: "Paladin Card", CollectorOffer: 100000, SourceMob: 2235}
+  - {Id: 300613, RawBP: 14459, DisplayName: "Peska Card", CollectorOffer: 100000, SourceMob: 22438}
   - {Id: 4148, RawBP: 8000, DisplayName: "Pharaoh Card", CollectorOffer: 30000, SourceMob: 1157}
   - {Id: 4121, RawBP: 5170, DisplayName: "Phreeoni Card", CollectorOffer: 33000, SourceMob: 1159}
   - {Id: 4561, RawBP: 6526, DisplayName: "Professor Card", CollectorOffer: 100000, SourceMob: 2237}
@@ -121,6 +126,7 @@ Body:
   - {Id: 4604, RawBP: 6156, DisplayName: "Realized Corruption Root Card", CollectorOffer: 175000, SourceMob: 3151}
   - {Id: 300079, RawBP: 16000, DisplayName: "Red Pepper Card", CollectorOffer: 64000, SourceMob: 20620}
   - {Id: 300013, RawBP: 17814, DisplayName: "Reginleif Card", CollectorOffer: 112000, SourceMob: 20610}
+  - {Id: 300450, RawBP: 6644, DisplayName: "Renire Card", CollectorOffer: 100000, SourceMob: 21955}
   - {Id: 27346, RawBP: 32000, DisplayName: "Rigid Muspellskoll Card", CollectorOffer: 170000, SourceMob: 20419}
   - {Id: 4680, RawBP: 24680, DisplayName: "Royal Guard Randel Card", CollectorOffer: 64000, SourceMob: 3240}
   - {Id: 4342, RawBP: 6379, DisplayName: "RSX-0806 Card", CollectorOffer: 36000, SourceMob: 1623}
@@ -158,3 +164,5 @@ Body:
   - {Id: 300297, RawBP: 6340, DisplayName: "Goblin King Card", CollectorOffer: 182000, SourceMob: 20118}
   - {Id: 300473, RawBP: 15170, DisplayName: "Snowstorm Angel Card", CollectorOffer: 140000, SourceMob: 21996}
   - {Id: 300474, RawBP: 15170, DisplayName: "Sanctuary Cleaning Chief Card", CollectorOffer: 140000, SourceMob: 21980}
+  - {Id: 300530, RawBP: 25359, DisplayName: "Yortus Arbiter Card", CollectorOffer: 100000, SourceMob: 22363}
+  - {Id: 300531, RawBP: 6644, DisplayName: "Yortus Bailiff Card", CollectorOffer: 100000, SourceMob: 22364}

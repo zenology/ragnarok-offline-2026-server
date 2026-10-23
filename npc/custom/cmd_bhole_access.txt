@@ -1,0 +1,181 @@
+// Unknown Blue Hole: Lv250 entry and optional Pumpkin Farm-style patrols.
+// Entrance reference: https://wiki.muhro.eu/Unknown_Blue_Hole
+comodo,185,86,4	script	Cesar#bluehole	4_TOWER_09,{
+	if (BaseLevel < 250) {
+		mes "[Cesar]";
+		mes "You must be Base Level 250 or higher to enter Unknown Blue Hole.";
+		close;
+	}
+	mes "[Cesar]";
+	mes "I can take you into Unknown Blue Hole. Its depths are home to dangerous creatures.";
+	next;
+	mes "[Cesar]";
+	mes "I also collect daily and weekly patrol reports. Neither assignment is required to enter.";
+	next;
+	if (isbegin_quest(65050) == 0) {
+		setquest 65050;
+		completequest 65050;
+	}
+	callsub L_ClearCooldowns;
+	switch (select("Enter Unknown Blue Hole:Daily patrol:Weekly patrol:Leave")) {
+	case 1:
+		if (BaseLevel < 250 || Hp <= 0)
+			close;
+		close2;
+		warp "cmd_bhole",246,356;
+		end;
+	case 2:
+		callsub L_Daily;
+		close;
+	case 3:
+		callsub L_Weekly;
+		close;
+	default:
+		close;
+	}
+
+L_ClearCooldowns:
+	if (checkquest(65053,PLAYTIME) == 2)
+		erasequest 65053;
+	if (checkquest(65055,PLAYTIME) == 2)
+		erasequest 65055;
+	questinfo_refresh();
+	return;
+
+L_Reward:
+	.@rate = getarg(0);
+	.@base = BaseLevel >= 275 ? 0 : NextBaseExp * .@rate / 1000;
+	.@job = JobLevel >= 60 ? 0 : NextJobExp * .@rate / 1000;
+	return;
+
+L_Daily:
+	.@light = checkquest(65051);
+	.@solid = checkquest(65052);
+	if (.@light != -1 && .@solid != -1) {
+		mes "[Cesar]";
+		mes "Your daily patrol records conflict. I cannot change or reward them until they are checked.";
+		return;
+	}
+	if (checkquest(65053,PLAYTIME) != -1) {
+		mes "[Cesar]";
+		mes "Your daily report is already recorded. Come back after 04:00 server time.";
+		return;
+	}
+	if (BaseLevel >= 275 && JobLevel >= 60) {
+		mes "[Cesar]";
+		mes "Both of your levels are at their maximum. Your existing patrol remains recorded, but there is no EXP reward to claim.";
+		return;
+	}
+	.@quest = .@light != -1 ? 65051 : (.@solid != -1 ? 65052 : 0);
+	if (.@quest) {
+		if (checkquest(.@quest,HUNTING) != 2) {
+			mes "[Cesar]";
+			mes "Your daily patrol is still underway. Check your Quest List and return when it is complete.";
+			return;
+		}
+		.@rate = .@quest == 65051 ? 9 : 45;
+		callsub L_Reward,.@rate;
+		mes "[Cesar]";
+		mes "Report this patrol for " + (.@rate / 10) + "." + (.@rate % 10) + "% Base and Job EXP? Right now that is " + .@base + " Base EXP and " + .@job + " Job EXP. The amount is recalculated when you report.";
+		next;
+		if (select("Report the completed patrol:Keep it for later") == 2)
+			return;
+		callsub L_ClearCooldowns;
+		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65053,PLAYTIME) != -1 || (checkquest(65051) != -1 && checkquest(65052) != -1) || checkquest(.@quest,HUNTING) != 2)
+			return;
+		callsub L_Reward,.@rate;
+		if (.@base == 0 && .@job == 0)
+			return;
+		setquest 65053;
+		erasequest .@quest;
+		getexp2 .@base,.@job;
+		questinfo_refresh();
+		mes "[Cesar]";
+		mes "Your daily report is recorded. Thank you.";
+		return;
+	}
+	mes "[Cesar]";
+	mes "Choose one daily patrol. Each eligible creature you defeat inside Unknown Blue Hole counts toward the total.";
+	next;
+	.@choice = select("100 monsters - 0.9% Base and Job EXP:500 monsters - 4.5% Base and Job EXP:Not today");
+	if (.@choice == 3)
+		return;
+	.@quest = .@choice == 1 ? 65051 : 65052;
+	mes "[Cesar]";
+	mes "The EXP is based on your levels when you report, without EXP bonuses. Your daily wait begins when you claim the reward and ends at 04:00 server time.";
+	next;
+	if (select("Accept this patrol:Not now") == 2)
+		return;
+	callsub L_ClearCooldowns;
+	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65053,PLAYTIME) != -1 || checkquest(65051) != -1 || checkquest(65052) != -1)
+		return;
+	setquest .@quest;
+	questinfo_refresh();
+	mes "[Cesar]";
+	mes "The patrol is yours. Come back when it is complete.";
+	return;
+
+L_Weekly:
+	if (checkquest(65055,PLAYTIME) != -1) {
+		mes "[Cesar]";
+		mes "Your weekly report is already recorded. Come back after Saturday at 04:00 server time.";
+		return;
+	}
+	if (BaseLevel >= 275 && JobLevel >= 60) {
+		mes "[Cesar]";
+		mes "Both of your levels are at their maximum. Your existing patrol remains recorded, but there is no EXP reward to claim.";
+		return;
+	}
+	if (checkquest(65054) != -1) {
+		if (checkquest(65054,HUNTING) != 2) {
+			mes "[Cesar]";
+			mes "Your weekly patrol is still underway. Check your Quest List and return when it is complete.";
+			return;
+		}
+		callsub L_Reward,450;
+		mes "[Cesar]";
+		mes "Report this patrol for 45% Base and Job EXP? Right now that is " + .@base + " Base EXP and " + .@job + " Job EXP. The amount is recalculated when you report.";
+		next;
+		if (select("Report the completed patrol:Keep it for later") == 2)
+			return;
+		callsub L_ClearCooldowns;
+		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65055,PLAYTIME) != -1 || checkquest(65054,HUNTING) != 2)
+			return;
+		callsub L_Reward,450;
+		if (.@base == 0 && .@job == 0)
+			return;
+		setquest 65055;
+		erasequest 65054;
+		getexp2 .@base,.@job;
+		questinfo_refresh();
+		mes "[Cesar]";
+		mes "Your weekly report is recorded. Thank you.";
+		return;
+	}
+	mes "[Cesar]";
+	mes "The weekly patrol asks you to defeat 5,000 eligible creatures inside Unknown Blue Hole. The same kills can advance an active daily patrol.";
+	next;
+	mes "[Cesar]";
+	mes "Reporting awards 45% of your current Base and Job EXP requirements without EXP bonuses. Your weekly wait then lasts until Saturday at 04:00 server time.";
+	next;
+	if (select("Accept the weekly patrol:Not now") == 2)
+		return;
+	callsub L_ClearCooldowns;
+	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65055,PLAYTIME) != -1 || checkquest(65054) != -1)
+		return;
+	setquest 65054;
+	questinfo_refresh();
+	mes "[Cesar]";
+	mes "The weekly patrol is yours. Come back when it is complete.";
+	return;
+
+OnInit:
+	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65051,HUNTING) == 2 && checkquest(65052) == -1 && (checkquest(65053,PLAYTIME) == -1 || checkquest(65053,PLAYTIME) == 2)) || (checkquest(65052,HUNTING) == 2 && checkquest(65051) == -1 && (checkquest(65053,PLAYTIME) == -1 || checkquest(65053,PLAYTIME) == 2)) || (checkquest(65054,HUNTING) == 2 && (checkquest(65055,PLAYTIME) == -1 || checkquest(65055,PLAYTIME) == 2)))");
+	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65051) == -1 && checkquest(65052) == -1 && (checkquest(65053,PLAYTIME) == -1 || checkquest(65053,PLAYTIME) == 2)) || (checkquest(65054) == -1 && (checkquest(65055,PLAYTIME) == -1 || checkquest(65055,PLAYTIME) == 2)))");
+	end;
+}
+
+cmd_bhole,254,354,0	warp	bluehole_to_comodo	1,1,comodo,175,81
+cmd_bhole	mapflag	nobranch
+cmd_bhole	mapflag	privateairship_source
+cmd_bhole	mapflag	privateairship_destination

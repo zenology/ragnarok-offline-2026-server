@@ -43,6 +43,269 @@ Body:
     Title: Discuss the Workers with Tes
   - Id: 17017
     Title: Regroup at a Safe Place
+  # Power Twisted Plains: one shared total across the area's five species.
+  - Id: 18206
+    Title: Information on the Power Twisted Plains
+  - Id: 18207
+    Title: Daily Light Cleansing
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: ra_pol01
+        MapName: Power Twisted Plains
+        MapMobTargets:
+          BURNING_KNIGHT: true
+          DEDSERA: true
+          HARDROCK_TITAN: true
+          DEADWEEN: true
+          GAIA_POL: true
+  - Id: 18208
+    Title: Daily Solid Cleansing
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: ra_pol01
+        MapName: Power Twisted Plains
+        MapMobTargets:
+          BURNING_KNIGHT: true
+          DEDSERA: true
+          HARDROCK_TITAN: true
+          DEADWEEN: true
+          GAIA_POL: true
+  - Id: 18209
+    Title: "[Standby] Daily Cleansing"
+    TimeLimit: 4h
+  # Mjolnir Underground Caverns: shared area counter for daily and weekly hunts.
+  - Id: 18212
+    Title: Information on the Mjolnir Underground Cave
+  - Id: 18213
+    Title: Daily 100 Monster Subjugation!
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: mjo_wst01
+        MapName: Mjolnir Underground Caverns
+        MapMobTargets:
+          PUNCH_BUG: true
+          AFERDE: true
+          DISPOL: true
+          TIMBERS: true
+          RENIRE: true
+  - Id: 18214
+    Title: Daily 500 Monster Subjugation!
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: mjo_wst01
+        MapName: Mjolnir Underground Caverns
+        MapMobTargets:
+          PUNCH_BUG: true
+          AFERDE: true
+          DISPOL: true
+          TIMBERS: true
+          RENIRE: true
+  - Id: 18215
+    Title: "[Standby] Daily Monster Subjugation"
+    TimeLimit: 4h
+  - Id: 18216
+    Title: Large-scale Monster Subjugation
+    Targets:
+      - Id: 1
+        Count: 5000
+        Location: mjo_wst01
+        MapName: Mjolnir Underground Caverns
+        MapMobTargets:
+          PUNCH_BUG: true
+          AFERDE: true
+          DISPOL: true
+          TIMBERS: true
+          RENIRE: true
+  - Id: 18217
+    Title: "[Standby] Large-scale Monster Subjugation"
+    TimeLimit: Saturday 4h
+  # Ancient Temple Akhet: one shared kill counter per daily or weekly patrol.
+  - Id: 65030
+    Title: Ancient Temple Akhet - Patrol Briefing
+  - Id: 65031
+    Title: Akhet Daily Patrol - 100 Monsters
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: moc_akhet
+        MapName: Ancient Temple Akhet
+        MapMobTargets:
+          MEDJED: true
+          CP_MEDJED: true
+          MEDJAY: true
+          CP_MEDJAY: true
+          OPHOIS: true
+          CP_OPHOIS: true
+          HEKA: true
+          CP_HEKA: true
+  - Id: 65032
+    Title: Akhet Daily Patrol - 500 Monsters
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: moc_akhet
+        MapName: Ancient Temple Akhet
+        MapMobTargets:
+          MEDJED: true
+          CP_MEDJED: true
+          MEDJAY: true
+          CP_MEDJAY: true
+          OPHOIS: true
+          CP_OPHOIS: true
+          HEKA: true
+          CP_HEKA: true
+  - Id: 65033
+    Title: "[Standby] Akhet Daily Patrol"
+    TimeLimit: 4h
+  - Id: 65034
+    Title: Akhet Weekly Patrol - 5000 Monsters
+    Targets:
+      - Id: 1
+        Count: 5000
+        Location: moc_akhet
+        MapName: Ancient Temple Akhet
+        MapMobTargets:
+          MEDJED: true
+          CP_MEDJED: true
+          MEDJAY: true
+          CP_MEDJAY: true
+          OPHOIS: true
+          CP_OPHOIS: true
+          HEKA: true
+          CP_HEKA: true
+  - Id: 65035
+    Title: "[Standby] Akhet Weekly Patrol"
+    TimeLimit: Saturday 4h
+  # Niflheim Pumpkin Farm: optional patrols with Akhet's reward/reset policy.
+  - Id: 65040
+    Title: Niflheim Pumpkin Farm - Patrol Briefing
+  - Id: 65041
+    Title: Pumpkin Farm Daily Patrol - 100 Monsters
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: nif_fild03
+        MapName: Niflheim Pumpkin Farm
+        MapMobTargets:
+          VIOLEN: true
+          CP_VIOLEN: true
+          SPIDING: true
+          CP_SPIDING: true
+          GARLING: true
+          CP_GARLING: true
+          JACKONETTE: true
+          CP_JACKONETTE: true
+          LIAMETTE: true
+          CP_LIAMETTE: true
+  - Id: 65042
+    Title: Pumpkin Farm Daily Patrol - 500 Monsters
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: nif_fild03
+        MapName: Niflheim Pumpkin Farm
+        MapMobTargets:
+          VIOLEN: true
+          CP_VIOLEN: true
+          SPIDING: true
+          CP_SPIDING: true
+          GARLING: true
+          CP_GARLING: true
+          JACKONETTE: true
+          CP_JACKONETTE: true
+          LIAMETTE: true
+          CP_LIAMETTE: true
+  - Id: 65043
+    Title: "[Standby] Pumpkin Farm Daily Patrol"
+    TimeLimit: 4h
+  - Id: 65044
+    Title: Pumpkin Farm Weekly Patrol - 5000 Monsters
+    Targets:
+      - Id: 1
+        Count: 5000
+        Location: nif_fild03
+        MapName: Niflheim Pumpkin Farm
+        MapMobTargets:
+          VIOLEN: true
+          CP_VIOLEN: true
+          SPIDING: true
+          CP_SPIDING: true
+          GARLING: true
+          CP_GARLING: true
+          JACKONETTE: true
+          CP_JACKONETTE: true
+          LIAMETTE: true
+          CP_LIAMETTE: true
+  - Id: 65045
+    Title: "[Standby] Pumpkin Farm Weekly Patrol"
+    TimeLimit: Saturday 4h
+  # Unknown Blue Hole: optional patrols with Pumpkin Farm's reward/reset policy.
+  - Id: 65050
+    Title: Unknown Blue Hole - Patrol Briefing
+  - Id: 65051
+    Title: Blue Hole Daily Patrol - 100 Monsters
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: cmd_bhole
+        MapName: Unknown Blue Hole
+        MapMobTargets:
+          TATSI: true
+          CP_TATSI: true
+          GUERRERO: true
+          CP_GUERRERO: true
+          HANOM: true
+          CP_HANOM: true
+          SIRENA: true
+          CP_SIRENA: true
+          DIOSA: true
+          CP_DIOSA: true
+  - Id: 65052
+    Title: Blue Hole Daily Patrol - 500 Monsters
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: cmd_bhole
+        MapName: Unknown Blue Hole
+        MapMobTargets:
+          TATSI: true
+          CP_TATSI: true
+          GUERRERO: true
+          CP_GUERRERO: true
+          HANOM: true
+          CP_HANOM: true
+          SIRENA: true
+          CP_SIRENA: true
+          DIOSA: true
+          CP_DIOSA: true
+  - Id: 65053
+    Title: "[Standby] Blue Hole Daily Patrol"
+    TimeLimit: 4h
+  - Id: 65054
+    Title: Blue Hole Weekly Patrol - 5000 Monsters
+    Targets:
+      - Id: 1
+        Count: 5000
+        Location: cmd_bhole
+        MapName: Unknown Blue Hole
+        MapMobTargets:
+          TATSI: true
+          CP_TATSI: true
+          GUERRERO: true
+          CP_GUERRERO: true
+          HANOM: true
+          CP_HANOM: true
+          SIRENA: true
+          CP_SIRENA: true
+          DIOSA: true
+          CP_DIOSA: true
+  - Id: 65055
+    Title: "[Standby] Blue Hole Weekly Patrol"
+    TimeLimit: Saturday 4h
   - Id: 65000
     Title: Gathering Souls - Dragon Knight
     Targets:
