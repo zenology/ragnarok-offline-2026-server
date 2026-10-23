@@ -48,6 +48,7 @@
 
 #include "../custom/stripe_fallback.hpp"
 #include "../custom/random_break.hpp"
+#include <custom/forgotten_time_restrictions.hpp>
 
 // Skill factory is compiled as separate translation units per job category
 // to reduce peak memory usage during compilation
@@ -827,6 +828,9 @@ bool skill_isNotOk( uint16 skill_id, map_session_data& sd ){
 		return false; // Teleport lv 3 bypasses this check.[Inkfish]
 
 	struct map_data *mapdata = map_getmapdata(sd.m);
+
+	if (offline_forgotten_time::skill_blocked(sd, skill_id))
+		return true;
 
 	if (mapdata->getMapFlag(MF_NOSKILL) && skill_id != ALL_EQSWITCH && !sd.skillitem) //Item skills bypass noskill
 		return true;
