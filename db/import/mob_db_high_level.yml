@@ -49,7 +49,7 @@ Body:
       Str: 179, Agi: 148, Vit: 171, Int: 179, Dex: 174, Luk: 171,
       AttackRange: 2, SkillRange: 10, ChaseRange: 12, Size: Medium, Race: Brute, Element: Poison, ElementLevel: 3,
       WalkSpeed: 200, AttackDelay: 1500, AttackMotion: 1344, ClientAttackMotion: 672, DamageMotion: 1000,
-      DamageTaken: 100, Ai: '21', Class: Normal,
+      DamageTaken: 100, Ai: '21', Class: Normal, Modes: {Aggressive: true, Looter: true},
       Drops: [{Item: Congealed_Poison, Rate: 2350}, {Item: Rotten_Meat, Rate: 1750},
               {Item: "Animal's_Skin", Rate: 1500}, {Item: Shadowdecon_Ore, Rate: 150},
               {Item: Zelunium_Ore, Rate: 150}, {Item: Zelunium, Rate: 25}, {Item: Shadowdecon, Rate: 25},
