@@ -6,6 +6,7 @@ Body:
   - {"Id": 31022, "RawBP": 3170, "DisplayName": "Abandoned Teddy Bear Card", "CollectorOffer": 1600, "SourceMob": 2995}
   - {"Id": 4140, "RawBP": 14459, "DisplayName": "Abysmal Knight Card", "CollectorOffer": 1600, "SourceMob": 1219}
   - {"Id": 300005, "RawBP": 24680, "DisplayName": "Abyssman Card", "CollectorOffer": 2700, "SourceMob": 20603}
+  - {"Id": 300447, "RawBP": 4526, "DisplayName": "Aferde Card", "CollectorOffer": 15000, "SourceMob": 21952}
   - {"Id": 4409, "RawBP": 3170, "DisplayName": "Agav Card", "CollectorOffer": 1500, "SourceMob": 1769}
   - {"Id": 27181, "RawBP": 7809, "DisplayName": "Airship Raid Card", "CollectorOffer": 1400, "SourceMob": 3175}
   - {"Id": 4244, "RawBP": 5820, "DisplayName": "Alarm Card", "CollectorOffer": 1000, "SourceMob": 1193}
@@ -101,6 +102,7 @@ Body:
   - {"Id": 300241, "RawBP": 8757, "DisplayName": "Brutal Murderer Card", "CollectorOffer": 4470, "SourceMob": 20937}
   - {"Id": 27256, "RawBP": 1927, "DisplayName": "Brute Haase Card", "CollectorOffer": 1400, "SourceMob": 2556}
   - {"Id": 4582, "RawBP": 2526, "DisplayName": "Bungisngis Card", "CollectorOffer": 1200, "SourceMob": 2309}
+  - {"Id": 300441, "RawBP": 7170, "DisplayName": "Burning Night Card", "CollectorOffer": 15000, "SourceMob": 21946}
   - {"Id": 300221, "RawBP": 7062, "DisplayName": "Bushring Card", "CollectorOffer": 1800, "SourceMob": 21305}
   - {"Id": 4519, "RawBP": 3170, "DisplayName": "Butoijo Card", "CollectorOffer": 600, "SourceMob": 2155}
   - {"Id": 300364, "RawBP": 4340, "DisplayName": "Calmaring Card", "CollectorOffer": 3300, "SourceMob": 21522}
@@ -161,6 +163,8 @@ Body:
   - {"Id": 4171, "RawBP": 3052, "DisplayName": "Dark Priest Card", "CollectorOffer": 650, "SourceMob": 1198}
   - {"Id": 4449, "RawBP": 7510, "DisplayName": "Dark Shadow Card", "CollectorOffer": 1400, "SourceMob": 2023}
   - {"Id": 300252, "RawBP": 2288, "DisplayName": "Deadre Card", "CollectorOffer": 3600, "SourceMob": 20932}
+  - {"Id": 300442, "RawBP": 7170, "DisplayName": "Deadsera Card", "CollectorOffer": 15000, "SourceMob": 21947}
+  - {"Id": 300444, "RawBP": 2000, "DisplayName": "Deadween Card", "CollectorOffer": 15000, "SourceMob": 21949}
   - {"Id": 4388, "RawBP": 4680, "DisplayName": "Death Word Card", "CollectorOffer": 2800, "SourceMob": 1698}
   - {"Id": 31016, "RawBP": 4644, "DisplayName": "Decorated Evil Tree Card", "CollectorOffer": 1500, "SourceMob": 2987}
   - {"Id": 300142, "RawBP": 4000, "DisplayName": "Deep Sea Deviace Card", "CollectorOffer": 1600, "SourceMob": 20803}
@@ -186,8 +190,10 @@ Body:
   - {"Id": 300238, "RawBP": 3000, "DisplayName": "Diligent Vitata Card", "CollectorOffer": 1800, "SourceMob": 21394}
   - {"Id": 4370, "RawBP": 1585, "DisplayName": "Dimik Card", "CollectorOffer": 500, "SourceMob": 1669}
   - {"Id": 27250, "RawBP": 3097, "DisplayName": "Dio Anemos Card", "CollectorOffer": 700, "SourceMob": 2550}
+  - {"Id": 300614, "RawBP": 5449, "DisplayName": "Diosa Card", "CollectorOffer": 15000, "SourceMob": 22437}
   - {"Id": 4181, "RawBP": 2160, "DisplayName": "Disguise Card", "CollectorOffer": 1400, "SourceMob": 1506}
   - {"Id": 300244, "RawBP": 7097, "DisplayName": "Disguiser Card", "CollectorOffer": 5700, "SourceMob": 20936}
+  - {"Id": 300448, "RawBP": 4340, "DisplayName": "Dispol Card", "CollectorOffer": 15000, "SourceMob": 21953}
   - {"Id": 4098, "RawBP": 4057, "DisplayName": "Dokkaebi Card", "CollectorOffer": 700, "SourceMob": 1110}
   - {"Id": 4506, "RawBP": 1138, "DisplayName": "Dolomedes Card", "CollectorOffer": 1000, "SourceMob": 2092}
   - {"Id": 27312, "RawBP": 1170, "DisplayName": "Dolor Card", "CollectorOffer": 1200, "SourceMob": 20349}
@@ -279,6 +285,7 @@ Body:
   - {"Id": 300261, "RawBP": 15824, "DisplayName": "Galensis Card", "CollectorOffer": 4800, "SourceMob": 20923}
   - {"Id": 300240, "RawBP": 8757, "DisplayName": "Gan Ceann Card", "CollectorOffer": 4470, "SourceMob": 20935}
   - {"Id": 4149, "RawBP": 50, "DisplayName": "Gargoyle Card", "CollectorOffer": 600, "SourceMob": 1253}
+  - {"Id": 300557, "RawBP": 19930, "DisplayName": "Garling Card", "CollectorOffer": 15000, "SourceMob": 22387}
   - {"Id": 27178, "RawBP": 7229, "DisplayName": "Gaster Card", "CollectorOffer": 2200, "SourceMob": 3740}
   - {"Id": 4418, "RawBP": 400, "DisplayName": "Gazeti Card", "CollectorOffer": 1800, "SourceMob": 1778}
   - {"Id": 27018, "RawBP": 1514, "DisplayName": "GC109 Card", "CollectorOffer": 1180, "SourceMob": 3251}
@@ -329,12 +336,15 @@ Body:
   - {"Id": 4162, "RawBP": 3800, "DisplayName": "Grizzly Card", "CollectorOffer": 700, "SourceMob": 1381}
   - {"Id": 300246, "RawBP": 9550, "DisplayName": "Grote Card", "CollectorOffer": 8400, "SourceMob": 20941}
   - {"Id": 4377, "RawBP": 25, "DisplayName": "Grove Card", "CollectorOffer": 600, "SourceMob": 1687}
+  - {"Id": 300610, "RawBP": 15534, "DisplayName": "Guerrero Card", "CollectorOffer": 15000, "SourceMob": 22434}
   - {"Id": 4164, "RawBP": 4000, "DisplayName": "Gullinbursti Card", "CollectorOffer": 1800, "SourceMob": 1311}
   - {"Id": 300237, "RawBP": 16575, "DisplayName": "Gutsy Familiar Card", "CollectorOffer": 2700, "SourceMob": 21393}
   - {"Id": 300236, "RawBP": 33120, "DisplayName": "Gutsy Giearth Card", "CollectorOffer": 4800, "SourceMob": 21392}
   - {"Id": 300373, "RawBP": 17377, "DisplayName": "Hallucigenia Baby Card", "CollectorOffer": 8700, "SourceMob": 21543}
   - {"Id": 300374, "RawBP": 17216, "DisplayName": "Hallucigenia Card", "CollectorOffer": 6000, "SourceMob": 21542}
+  - {"Id": 300612, "RawBP": 8222, "DisplayName": "Hanom Card", "CollectorOffer": 15000, "SourceMob": 22435}
   - {"Id": 300271, "RawBP": 9775, "DisplayName": "Happiness Giver Card", "CollectorOffer": 4200, "SourceMob": 20774}
+  - {"Id": 300443, "RawBP": 4036, "DisplayName": "Hardrock Titan Card", "CollectorOffer": 15000, "SourceMob": 21948}
   - {"Id": 4325, "RawBP": 42988, "DisplayName": "Harpy Card", "CollectorOffer": 950, "SourceMob": 1376}
   - {"Id": 4323, "RawBP": 8600, "DisplayName": "Hatii Bebe Card", "CollectorOffer": 900, "SourceMob": 1515}
   - {"Id": 27125, "RawBP": 6340, "DisplayName": "Headless Mule Card", "CollectorOffer": 600, "SourceMob": 2071}
@@ -342,6 +352,7 @@ Body:
   - {"Id": 27149, "RawBP": 5170, "DisplayName": "Heart Hunter Card", "CollectorOffer": 1200, "SourceMob": 3626}
   - {"Id": 4331, "RawBP": 37463, "DisplayName": "Heater Card", "CollectorOffer": 700, "SourceMob": 1318}
   - {"Id": 4467, "RawBP": 10603, "DisplayName": "Heavy Metalring Card", "CollectorOffer": 1600, "SourceMob": 1977}
+  - {"Id": 300564, "RawBP": 8222, "DisplayName": "Heka Card", "CollectorOffer": 15000, "SourceMob": 22401}
   - {"Id": 4477, "RawBP": 2000, "DisplayName": "Hell Apocalypse Card", "CollectorOffer": 1200, "SourceMob": 1978}
   - {"Id": 4437, "RawBP": 7160, "DisplayName": "Hell Poodle Card", "CollectorOffer": 1800, "SourceMob": 1866}
   - {"Id": 4232, "RawBP": 5470, "DisplayName": "Hermit Plant Card", "CollectorOffer": 750, "SourceMob": 1413}
@@ -384,6 +395,7 @@ Body:
   - {"Id": 4239, "RawBP": 4000, "DisplayName": "Iron Fist Card", "CollectorOffer": 540, "SourceMob": 1212}
   - {"Id": 4412, "RawBP": 13247, "DisplayName": "Isilla Card", "CollectorOffer": 2400, "SourceMob": 1772}
   - {"Id": 4116, "RawBP": 8644, "DisplayName": "Isis Card", "CollectorOffer": 700, "SourceMob": 1029}
+  - {"Id": 300558, "RawBP": 6644, "DisplayName": "Jackonette Card", "CollectorOffer": 15000, "SourceMob": 22389}
   - {"Id": 27124, "RawBP": 5288, "DisplayName": "Jaguar Card", "CollectorOffer": 700, "SourceMob": 2072}
   - {"Id": 4109, "RawBP": 8644, "DisplayName": "Jakk Card", "CollectorOffer": 700, "SourceMob": 1130}
   - {"Id": 4589, "RawBP": 3912, "DisplayName": "Jejeling Card", "CollectorOffer": 600, "SourceMob": 2316}
@@ -425,6 +437,7 @@ Body:
   - {"Id": 27158, "RawBP": 8000, "DisplayName": "Les Card", "CollectorOffer": 650, "SourceMob": 1881}
   - {"Id": 300367, "RawBP": 7088, "DisplayName": "Lesser Rgan Card", "CollectorOffer": 3600, "SourceMob": 21528}
   - {"Id": 300509, "RawBP": 4866, "DisplayName": "Letterster Card", "CollectorOffer": 4800, "SourceMob": 22316}
+  - {"Id": 300559, "RawBP": 4866, "DisplayName": "Liamette Card", "CollectorOffer": 15000, "SourceMob": 22391}
   - {"Id": 27259, "RawBP": 3097, "DisplayName": "Licheniyes Card", "CollectorOffer": 1600, "SourceMob": 2559}
   - {"Id": 4597, "RawBP": 2526, "DisplayName": "Lichtern Blue Card", "CollectorOffer": 1200, "SourceMob": 2367}
   - {"Id": 4600, "RawBP": 2526, "DisplayName": "Lichtern Green Card", "CollectorOffer": 1800, "SourceMob": 2370}
@@ -467,6 +480,8 @@ Body:
   - {"Id": 27102, "RawBP": 13838, "DisplayName": "Matt Drainliar Card", "CollectorOffer": 2000, "SourceMob": 3750}
   - {"Id": 4097, "RawBP": 2138, "DisplayName": "Matyr Card", "CollectorOffer": 600, "SourceMob": 1146}
   - {"Id": 27161, "RawBP": 6340, "DisplayName": "Mavka Card", "CollectorOffer": 600, "SourceMob": 1884}
+  - {"Id": 300562, "RawBP": 8222, "DisplayName": "Medjay Card", "CollectorOffer": 15000, "SourceMob": 22397}
+  - {"Id": 300561, "RawBP": 4866, "DisplayName": "Medjed Card", "CollectorOffer": 15000, "SourceMob": 22395}
   - {"Id": 4124, "RawBP": 19125, "DisplayName": "Medusa Card", "CollectorOffer": 2600, "SourceMob": 1148}
   - {"Id": 4200, "RawBP": 1531, "DisplayName": "Megalith Card", "CollectorOffer": 550, "SourceMob": 1274}
   - {"Id": 4067, "RawBP": 6397, "DisplayName": "Megalodon Card", "CollectorOffer": 630, "SourceMob": 1064}
@@ -522,6 +537,7 @@ Body:
   - {"Id": 27115, "RawBP": 9959, "DisplayName": "Ominous Permeter Card", "CollectorOffer": 2250, "SourceMob": 3800}
   - {"Id": 27114, "RawBP": 7548, "DisplayName": "Ominous Solider Card", "CollectorOffer": 1920, "SourceMob": 3802}
   - {"Id": 300375, "RawBP": 23175, "DisplayName": "One Eye Dollocaris Card", "CollectorOffer": 5100, "SourceMob": 21544}
+  - {"Id": 300563, "RawBP": 6644, "DisplayName": "Ophois Card", "CollectorOffer": 15000, "SourceMob": 22399}
   - {"Id": 4256, "RawBP": 50, "DisplayName": "Orc Archer Card", "CollectorOffer": 600, "SourceMob": 1189}
   - {"Id": 4375, "RawBP": 6902, "DisplayName": "Orc Baby Card", "CollectorOffer": 420, "SourceMob": 1686}
   - {"Id": 4255, "RawBP": 4000, "DisplayName": "Orc Lady Card", "CollectorOffer": 360, "SourceMob": 1273}
@@ -574,6 +590,7 @@ Body:
   - {"Id": 300272, "RawBP": 9775, "DisplayName": "Pray Giver Card", "CollectorOffer": 3900, "SourceMob": 20844}
   - {"Id": 300365, "RawBP": 1696, "DisplayName": "Primitive Rgan Card", "CollectorOffer": 3600, "SourceMob": 21526}
   - {"Id": 27358, "RawBP": 40000, "DisplayName": "Prison Breaker Card", "CollectorOffer": 5100, "SourceMob": 20371}
+  - {"Id": 300446, "RawBP": 7170, "DisplayName": "Punch Bug Card", "CollectorOffer": 15000, "SourceMob": 21951}
   - {"Id": 4313, "RawBP": 8125, "DisplayName": "Punk Card", "CollectorOffer": 900, "SourceMob": 1199}
   - {"Id": 4003, "RawBP": 1531, "DisplayName": "Pupa Card", "CollectorOffer": 360, "SourceMob": 1008}
   - {"Id": 300015, "RawBP": 10914, "DisplayName": "Purple Ferus Card", "CollectorOffer": 5400, "SourceMob": 20612}
@@ -648,6 +665,7 @@ Body:
   - {"Id": 300018, "RawBP": 6644, "DisplayName": "Silver Acidus Card", "CollectorOffer": 3300, "SourceMob": 20615}
   - {"Id": 27108, "RawBP": 46529, "DisplayName": "Singing Pere Card", "CollectorOffer": 1100, "SourceMob": 3070}
   - {"Id": 4530, "RawBP": 1138, "DisplayName": "Siorava Card", "CollectorOffer": 500, "SourceMob": 2199}
+  - {"Id": 300609, "RawBP": 4036, "DisplayName": "Sirena Card", "CollectorOffer": 15000, "SourceMob": 22436}
   - {"Id": 4416, "RawBP": 10844, "DisplayName": "Siroma Card", "CollectorOffer": 1050, "SourceMob": 1776}
   - {"Id": 4222, "RawBP": 3800, "DisplayName": "Skel Prisoner Card", "CollectorOffer": 700, "SourceMob": 1196}
   - {"Id": 4092, "RawBP": 2919, "DisplayName": "Skel Worker Card", "CollectorOffer": 390, "SourceMob": 1169}
@@ -669,6 +687,7 @@ Body:
   - {"Id": 27289, "RawBP": 2919, "DisplayName": "Soul Fragment Card", "CollectorOffer": 1950, "SourceMob": 20262}
   - {"Id": 300085, "RawBP": 7254, "DisplayName": "Special Alnoldi Card", "CollectorOffer": 1500, "SourceMob": 20626}
   - {"Id": 300009, "RawBP": 4000, "DisplayName": "Spectrum Plasma Card", "CollectorOffer": 1950, "SourceMob": 20609}
+  - {"Id": 300556, "RawBP": 4036, "DisplayName": "Spiding Card", "CollectorOffer": 15000, "SourceMob": 22385}
   - {"Id": 4022, "RawBP": 263, "DisplayName": "Spore Card", "CollectorOffer": 300, "SourceMob": 1014}
   - {"Id": 4227, "RawBP": 5370, "DisplayName": "Spring Rabbit Card", "CollectorOffer": 750, "SourceMob": 1322}
   - {"Id": 4522, "RawBP": 1000, "DisplayName": "Sropho Card", "CollectorOffer": 1400, "SourceMob": 2201}
@@ -692,6 +711,7 @@ Body:
   - {"Id": 4304, "RawBP": 8113, "DisplayName": "Tamruan Card", "CollectorOffer": 1150, "SourceMob": 1584}
   - {"Id": 4028, "RawBP": 263, "DisplayName": "Tarou Card", "CollectorOffer": 300, "SourceMob": 1175}
   - {"Id": 4442, "RawBP": 7510, "DisplayName": "Tatacho Card", "CollectorOffer": 1400, "SourceMob": 1986}
+  - {"Id": 300611, "RawBP": 6644, "DisplayName": "Tatsi Card", "CollectorOffer": 15000, "SourceMob": 22431}
   - {"Id": 4340, "RawBP": 8000, "DisplayName": "Teddy Bear Card", "CollectorOffer": 800, "SourceMob": 1622}
   - {"Id": 4282, "RawBP": 5000, "DisplayName": "Tengu Card", "CollectorOffer": 600, "SourceMob": 1405}
   - {"Id": 4058, "RawBP": 16000, "DisplayName": "Thara Frog Card", "CollectorOffer": 660, "SourceMob": 1034}
@@ -699,6 +719,7 @@ Body:
   - {"Id": 4016, "RawBP": 138, "DisplayName": "Thief Bug Card", "CollectorOffer": 300, "SourceMob": 1051}
   - {"Id": 4012, "RawBP": 971, "DisplayName": "Thiefbug Egg Card", "CollectorOffer": 360, "SourceMob": 1048}
   - {"Id": 4586, "RawBP": 2526, "DisplayName": "Tikbalang Card", "CollectorOffer": 1200, "SourceMob": 2313}
+  - {"Id": 300449, "RawBP": 1356, "DisplayName": "Timbers Card", "CollectorOffer": 15000, "SourceMob": 21954}
   - {"Id": 4630, "RawBP": 3600, "DisplayName": "Time Keeper Card", "CollectorOffer": 2700, "SourceMob": 2918}
   - {"Id": 4587, "RawBP": 22750, "DisplayName": "Tiyanak Card", "CollectorOffer": 3000, "SourceMob": 2314}
   - {"Id": 27123, "RawBP": 2644, "DisplayName": "Toucan Card", "CollectorOffer": 600, "SourceMob": 2073}
@@ -732,6 +753,7 @@ Body:
   - {"Id": 300090, "RawBP": 3170, "DisplayName": "Verporte Card", "CollectorOffer": 1800, "SourceMob": 20666}
   - {"Id": 31017, "RawBP": 5514, "DisplayName": "Vicious Cookie Card", "CollectorOffer": 1600, "SourceMob": 2989}
   - {"Id": 27290, "RawBP": 12467, "DisplayName": "Vicious Enchanted Obsidian Card", "CollectorOffer": 2250, "SourceMob": 20263}
+  - {"Id": 300555, "RawBP": 4036, "DisplayName": "Violen Card", "CollectorOffer": 15000, "SourceMob": 22383}
   - {"Id": 4209, "RawBP": 5200, "DisplayName": "Violy Card", "CollectorOffer": 1800, "SourceMob": 1390}
   - {"Id": 4053, "RawBP": 200, "DisplayName": "Vitata Card", "CollectorOffer": 300, "SourceMob": 1176}
   - {"Id": 4211, "RawBP": 4609, "DisplayName": "Vocal Card", "CollectorOffer": 330, "SourceMob": 1088}
@@ -763,8 +785,12 @@ Body:
   - {"Id": 4382, "RawBP": 24514, "DisplayName": "Yellow Novus Card", "CollectorOffer": 750, "SourceMob": 1718}
   - {"Id": 300122, "RawBP": 14984, "DisplayName": "Yellow Pitaya Card", "CollectorOffer": 2100, "SourceMob": 20650}
   - {"Id": 300523, "RawBP": 10064, "DisplayName": "Yordos Executor Card", "CollectorOffer": 6000, "SourceMob": 22357}
+  - {Id: 300521, RawBP: 48523, DisplayName: "Yordos Investigator Card", CollectorOffer: 42000, SourceMob: 22355}
+  - {Id: 300522, RawBP: 48523, DisplayName: "Yordos Judge Card", CollectorOffer: 42000, SourceMob: 22356}
   - {"Id": 300519, "RawBP": 16984, "DisplayName": "Yormi Card", "CollectorOffer": 5400, "SourceMob": 22353}
   - {"Id": 300520, "RawBP": 16984, "DisplayName": "Yormi Missionary Card", "CollectorOffer": 5400, "SourceMob": 22354}
+  - {Id: 300528, RawBP: 2275, DisplayName: "Yortus Bishop Card", CollectorOffer: 32000, SourceMob: 22360}
+  - {Id: 300529, RawBP: 12896, DisplayName: "Yortus Conjurator Card", CollectorOffer: 36000, SourceMob: 22361}
   - {"Id": 300524, "RawBP": 12896, "DisplayName": "Yoscopus Guardian Card", "CollectorOffer": 6000, "SourceMob": 22358}
   - {"Id": 300525, "RawBP": 12896, "DisplayName": "Yoscopus Sorcerer Card", "CollectorOffer": 6000, "SourceMob": 22359}
   - {"Id": 300514, "RawBP": 4866, "DisplayName": "Yoster Cleaner Card", "CollectorOffer": 4800, "SourceMob": 22323}

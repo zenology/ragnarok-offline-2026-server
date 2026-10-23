@@ -138,7 +138,7 @@ Body:
       AttackRange: 9, SkillRange: 10, ChaseRange: 12, Size: Medium, Race: Demihuman, Element: Neutral, ElementLevel: 3,
       WalkSpeed: 200, AttackDelay: 841, AttackMotion: 840, ClientAttackMotion: 420, DamageMotion: 540,
       DamageTaken: 100, Ai: '21', Class: Normal,
-      Drops: [{Item: Shining_Crystal, Rate: 2200}, {Item: Small_Sewing_Box, Rate: 2100}, {Item: Etel_Stone, Rate: 4}] }
+      Drops: [{Item: Shining_Crystal, Rate: 2200}, {Item: Small_Sewing_Box, Rate: 2100}, {Item: Etel_Stone, Rate: 4}, {Item: aegis_300555, Rate: 1}] }
   - { Id: 22385, AegisName: SPIDING, Name: Spiding,
       Level: 273, Hp: 23018500, Sp: 0, BaseExp: 3385982, JobExp: 2364272, MvpExp: 0,
       Attack: 34000, Attack2: 25000, Defense: 305, MagicDefense: 203, Resistance: 0, MagicResistance: 0,
@@ -155,7 +155,7 @@ Body:
       AttackRange: 2, SkillRange: 10, ChaseRange: 12, Size: Medium, Race: Insect, Element: Dark, ElementLevel: 2,
       WalkSpeed: 120, AttackDelay: 1344, AttackMotion: 1344, ClientAttackMotion: 624, DamageMotion: 768,
       DamageTaken: 100, Ai: '21', Class: Normal,
-      Drops: [{Item: Congealed_Poison, Rate: 2350}, {Item: Firm_Land_Crystal, Rate: 2250}, {Item: Shadowdecon, Rate: 1000}] }
+      Drops: [{Item: Congealed_Poison, Rate: 2350}, {Item: Firm_Land_Crystal, Rate: 2250}, {Item: Shadowdecon, Rate: 1000}, {Item: aegis_300556, Rate: 1}] }
   # No complete local-item source loot was published for Garling.
   - { Id: 22387, AegisName: GARLING, Name: Garling,
       Level: 274, Hp: 24468900, Sp: 0, BaseExp: 3426154, JobExp: 2386316, MvpExp: 0,
@@ -173,7 +173,7 @@ Body:
       DamageTaken: 100, Ai: '02', Class: Normal,
       Drops: [{Item: Slicky_Fluid, Rate: 7000}, {Item: Reptile_Stone, Rate: 2600},
               {Item: Zelunium, Rate: 2500}, {Item: Green_Land_Crystal, Rate: 2500}, {Item: Scarlet_Jewel, Rate: 1700},
-              {Item: Shadowdecon, Rate: 897}, {Item: Skyblue_Jewel, Rate: 897}, {Item: Amber, Rate: 897}, {Item: Etel_Dust, Rate: 897}] }
+              {Item: Shadowdecon, Rate: 897}, {Item: Skyblue_Jewel, Rate: 897}, {Item: Amber, Rate: 897}, {Item: Etel_Dust, Rate: 897}, {Item: aegis_300557, Rate: 1}] }
   - { Id: 22389, AegisName: JACKONETTE, Name: Jackonette,
       Level: 274, Hp: 22990300, Sp: 0, BaseExp: 3463024, JobExp: 2422910, MvpExp: 0,
       Attack: 41000, Attack2: 35000, Defense: 317, MagicDefense: 410, Resistance: 0, MagicResistance: 0,
@@ -190,7 +190,7 @@ Body:
       AttackRange: 3, SkillRange: 10, ChaseRange: 12, Size: Small, Race: Demon, Element: Ghost, ElementLevel: 2,
       WalkSpeed: 180, AttackDelay: 520, AttackMotion: 480, ClientAttackMotion: 288, DamageMotion: 648,
       DamageTaken: 100, Ai: '21', Class: Normal,
-      Drops: [{Item: Evil_Minded_Ruby, Rate: 2350}, {Item: Small_Sewing_Box, Rate: 2100}, {Item: Ice_Water_Drop_Gem, Rate: 2250}] }
+      Drops: [{Item: Evil_Minded_Ruby, Rate: 2350}, {Item: Small_Sewing_Box, Rate: 2100}, {Item: Ice_Water_Drop_Gem, Rate: 2250}, {Item: aegis_300558, Rate: 1}] }
   - { Id: 22391, AegisName: LIAMETTE, Name: Liamette,
       Level: 275, Hp: 29946400, Sp: 0, BaseExp: 3521528, JobExp: 2452744, MvpExp: 0,
       Attack: 43000, Attack2: 35000, Defense: 469, MagicDefense: 218, Resistance: 0, MagicResistance: 0,
@@ -208,7 +208,7 @@ Body:
       WalkSpeed: 150, AttackDelay: 581, AttackMotion: 432, ClientAttackMotion: 288, DamageMotion: 576,
       DamageTaken: 100, Ai: '21', Class: Normal,
       Drops: [{Item: Violet_Jewel, Rate: 1000}, {Item: Zelunium, Rate: 300}, {Item: Etel_Dust, Rate: 200},
-              {Item: Evil_Minded_Ruby, Rate: 2350}, {Item: Heavy_Chain, Rate: 2300}, {Item: Blue_Flame_Heart_Gem, Rate: 2200}] }
+              {Item: Evil_Minded_Ruby, Rate: 2350}, {Item: Heavy_Chain, Rate: 2300}, {Item: Blue_Flame_Heart_Gem, Rate: 2200}, {Item: aegis_300559, Rate: 1}] }
   - { Id: 22394, AegisName: NIGHTMARE_PIAMETTE, Name: Nightmare Piamette,
       Level: 275, Hp: 754280400, Sp: 0, BaseExp: 105014318, JobExp: 71352472, MvpExp: 41323490,
       Attack: 65535, Attack2: 65535, Defense: 1308, MagicDefense: 658, Resistance: 0, MagicResistance: 0,
@@ -232,7 +232,7 @@ Body:
       AttackRange: 3, SkillRange: 10, ChaseRange: 12, Size: Small, Race: Angel, Element: Ghost, ElementLevel: 2,
       WalkSpeed: 120, AttackDelay: 568, AttackMotion: 432, ClientAttackMotion: 144, DamageMotion: 480,
       DamageTaken: 100, Ai: '21', Class: Normal,
-      Drops: [{Item: Whittling, Rate: 2250}, {Item: Turn_Yellow_Leaf, Rate: 2250}, {Item: Blue_Flame_Heart_Gem, Rate: 1800}] }
+      Drops: [{Item: Whittling, Rate: 2250}, {Item: Turn_Yellow_Leaf, Rate: 2250}, {Item: Blue_Flame_Heart_Gem, Rate: 1800}, {Item: aegis_300561, Rate: 1}] }
   - { Id: 22397, AegisName: MEDJAY, Name: Medjay,
       Level: 274, Hp: 26708750, Sp: 0, BaseExp: 3484274, JobExp: 2426796, MvpExp: 0,
       Attack: 34500, Attack2: 45000, Defense: 474, MagicDefense: 221, Resistance: 0, MagicResistance: 0,
@@ -249,7 +249,7 @@ Body:
       AttackRange: 2, SkillRange: 10, ChaseRange: 12, Size: Medium, Race: Demihuman, Element: Fire, ElementLevel: 3,
       WalkSpeed: 150, AttackDelay: 583, AttackMotion: 576, ClientAttackMotion: 336, DamageMotion: 400,
       DamageTaken: 100, Ai: '21', Class: Normal,
-      Drops: [{Item: Etel_Dust, Rate: 200}, {Item: Evil_Minded_Ruby, Rate: 2350}, {Item: Blaze_Stone, Rate: 2350}] }
+      Drops: [{Item: Etel_Dust, Rate: 200}, {Item: Evil_Minded_Ruby, Rate: 2350}, {Item: Blaze_Stone, Rate: 2350}, {Item: aegis_300562, Rate: 1}] }
   - { Id: 22399, AegisName: OPHOIS, Name: Ophois,
       Level: 275, Hp: 27228250, Sp: 0, BaseExp: 3521528, JobExp: 2452744, MvpExp: 0,
       Attack: 34500, Attack2: 55700, Defense: 478, MagicDefense: 223, Resistance: 0, MagicResistance: 0,
@@ -265,7 +265,7 @@ Body:
       Str: 279, Agi: 202, Vit: 222, Int: 186, Dex: 294, Luk: 375,
       AttackRange: 2, SkillRange: 10, ChaseRange: 12, Size: Large, Race: Undead, Element: Dark, ElementLevel: 2,
       WalkSpeed: 170, AttackDelay: 582, AttackMotion: 576, ClientAttackMotion: 384, DamageMotion: 400,
-      DamageTaken: 100, Ai: '21', Class: Normal, Drops: [{Item: Congealed_Poison, Rate: 2350}] }
+      DamageTaken: 100, Ai: '21', Class: Normal, Drops: [{Item: Congealed_Poison, Rate: 2350}, {Item: aegis_300563, Rate: 1}] }
   - { Id: 22401, AegisName: HEKA, Name: Heka,
       Level: 273, Hp: 23207890, Sp: 0, BaseExp: 3411768, JobExp: 2387048, MvpExp: 0,
       Attack: 43000, Attack2: 32000, Defense: 282, MagicDefense: 364, Resistance: 0, MagicResistance: 0,
@@ -280,7 +280,7 @@ Body:
       Str: 189, Agi: 205, Vit: 207, Int: 300, Dex: 332, Luk: 438,
       AttackRange: 9, SkillRange: 10, ChaseRange: 12, Size: Large, Race: Demon, Element: Wind, ElementLevel: 3,
       WalkSpeed: 200, AttackDelay: 518, AttackMotion: 504, ClientAttackMotion: 432, DamageMotion: 400,
-      DamageTaken: 100, Ai: '21', Class: Normal, Drops: [{Item: Shining_Crystal, Rate: 2200}, {Item: Slicky_Fluid, Rate: 2250}] }
+      DamageTaken: 100, Ai: '21', Class: Normal, Drops: [{Item: Shining_Crystal, Rate: 2200}, {Item: Slicky_Fluid, Rate: 2250}, {Item: aegis_300564, Rate: 1}] }
   - { Id: 22404, AegisName: GUIDE_OF_DEAD, Name: Guide Of Dead,
       Level: 275, Hp: 776870690, Sp: 0, BaseExp: 102501318, JobExp: 73352472, MvpExp: 23352472,
       Attack: 65535, Attack2: 65535, Defense: 1312, MagicDefense: 660, Resistance: 0, MagicResistance: 0,
@@ -305,7 +305,7 @@ Body:
       WalkSpeed: 120, AttackDelay: 1521, AttackMotion: 1344, ClientAttackMotion: 864, DamageMotion: 480,
       DamageTaken: 100, Ai: '21', Class: Normal,
       Drops: [{Item: Etel_Dust, Rate: 200}, {Item: Slicky_Fluid, Rate: 2250}, {Item: Ice_Water_Drop_Gem, Rate: 2250},
-              {Item: Hard_Ice, Rate: 2000}, {Item: Skyblue_Jewel, Rate: 2500}, {Item: Zelunium, Rate: 300}] }
+              {Item: Hard_Ice, Rate: 2000}, {Item: Skyblue_Jewel, Rate: 2500}, {Item: Zelunium, Rate: 300}, {Item: aegis_300611, Rate: 1}] }
   - { Id: 22434, AegisName: GUERRERO, Name: Guerrero,
       Level: 275, Hp: 27228000, Sp: 0, BaseExp: 15432220, JobExp: 11114550, MvpExp: 0,
       Attack: 37000, Attack2: 45000, Defense: 477, MagicDefense: 222, Resistance: 0, MagicResistance: 0,
@@ -358,7 +358,7 @@ Body:
       WalkSpeed: 150, AttackDelay: 1668, AttackMotion: 768, ClientAttackMotion: 384, DamageMotion: 540,
       DamageTaken: 100, Ai: '21', Class: Normal,
       Drops: [{Item: Skyblue_Jewel, Rate: 2500}, {Item: Shadowdecon, Rate: 300}, {Item: Blue_Flame_Heart_Gem, Rate: 2300},
-              {Item: Cool_Liquid, Rate: 2400}, {Item: Green_Crystal_Fragment, Rate: 2300}] }
+              {Item: Cool_Liquid, Rate: 2400}, {Item: Green_Crystal_Fragment, Rate: 2300}, {Item: aegis_300610, Rate: 1}] }
   - { Id: 22440, AegisName: CP_HANOM, Name: Mighty Hanom,
       Level: 272, Hp: 53921600, Sp: 0, BaseExp: 17315120, JobExp: 13114550, MvpExp: 0,
       Attack: 41000, Attack2: 51000, Defense: 534, MagicDefense: 398, Resistance: 0, MagicResistance: 0,
@@ -367,7 +367,7 @@ Body:
       WalkSpeed: 170, AttackDelay: 1289, AttackMotion: 1056, ClientAttackMotion: 384, DamageMotion: 540,
       DamageTaken: 100, Ai: '21', Class: Normal,
       Drops: [{Item: Cool_Liquid, Rate: 2400}, {Item: Weird_Tentacle, Rate: 1840}, {Item: Green_Land_Crystal, Rate: 2250},
-              {Item: Etel_Dust, Rate: 200}, {Item: Etel_Stone, Rate: 4}, {Item: Zelunium, Rate: 300}, {Item: Violet_Jewel, Rate: 1000}] }
+              {Item: Etel_Dust, Rate: 200}, {Item: Etel_Stone, Rate: 4}, {Item: Zelunium, Rate: 300}, {Item: Violet_Jewel, Rate: 1000}, {Item: aegis_300612, Rate: 1}] }
   - { Id: 22441, AegisName: CP_SIRENA, Name: Mighty Sirena,
       Level: 273, Hp: 60017700, Sp: 0, BaseExp: 22650000, JobExp: 16230000, MvpExp: 0,
       Attack: 54500, Attack2: 62100, Defense: 493, MagicDefense: 375, Resistance: 0, MagicResistance: 0,
@@ -376,7 +376,7 @@ Body:
       WalkSpeed: 150, AttackDelay: 1408, AttackMotion: 960, ClientAttackMotion: 480, DamageMotion: 540,
       DamageTaken: 100, Ai: '04', Class: Normal,
       Drops: [{Item: Etel_Dust, Rate: 200}, {Item: Hot_Water_Drop_Gem, Rate: 2250},
-              {Item: Blaze_Stone, Rate: 2350}, {Item: Aromatic_Flower, Rate: 2350}] }
+              {Item: Blaze_Stone, Rate: 2350}, {Item: Aromatic_Flower, Rate: 2350}, {Item: aegis_300609, Rate: 1}] }
   - { Id: 22442, AegisName: CP_DIOSA, Name: Mighty Diosa,
       Level: 274, Hp: 55229000, Sp: 0, BaseExp: 17315120, JobExp: 12114550, MvpExp: 0,
       Attack: 41000, Attack2: 35000, Defense: 353, MagicDefense: 495, Resistance: 0, MagicResistance: 0,
@@ -384,4 +384,4 @@ Body:
       AttackRange: 3, SkillRange: 10, ChaseRange: 12, Size: Large, Race: Demihuman, Element: Wind, ElementLevel: 2,
       WalkSpeed: 150, AttackDelay: 1248, AttackMotion: 1248, ClientAttackMotion: 576, DamageMotion: 480,
       DamageTaken: 100, Ai: '21', Class: Normal,
-      Drops: [{Item: Shining_Crystal, Rate: 2200}, {Item: Cool_Liquid, Rate: 2400}, {Item: Storm_Wind_Leaf_Gem, Rate: 2250}] }
+      Drops: [{Item: Shining_Crystal, Rate: 2200}, {Item: Cool_Liquid, Rate: 2400}, {Item: Storm_Wind_Leaf_Gem, Rate: 2250}, {Item: aegis_300614, Rate: 1}] }
