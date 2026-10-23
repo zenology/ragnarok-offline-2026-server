@@ -13,3 +13,5 @@ Footer:
       Mode: Renewal
     - Path: db/import/mob_db_high_level.yml
       Mode: Renewal
+    - Path: db/import/mob_db_forgotten_time.yml
+      Mode: Renewal

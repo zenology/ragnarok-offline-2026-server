@@ -1,0 +1,104 @@
+# Forgotten Time Zone: exact ACT attack-event timestamps, audited 2026-10-23.
+# Native IDs 22192-22239 already match DP stats and all 304 ordinary drops.
+# Keep native AI 21, Normal/Boss classes and DamageTaken 10; none is an MVP.
+# Partial overrides intentionally inherit the native definitions.
+# 22224 has no ACT atk event: retain its native AttackMotion-based fallback.
+Header:
+  Type: MOB_DB
+  Version: 5
+
+Body:
+  - Id: 22192
+    ClientAttackMotion: 384
+  - Id: 22193
+    ClientAttackMotion: 480
+  - Id: 22194
+    ClientAttackMotion: 384
+  - Id: 22195
+    ClientAttackMotion: 384
+  - Id: 22196
+    ClientAttackMotion: 480
+  - Id: 22197
+    ClientAttackMotion: 480
+  - Id: 22198
+    ClientAttackMotion: 384
+  - Id: 22199
+    ClientAttackMotion: 384
+  - Id: 22200
+    ClientAttackMotion: 576
+  - Id: 22201
+    ClientAttackMotion: 576
+  - Id: 22202
+    ClientAttackMotion: 480
+  - Id: 22203
+    ClientAttackMotion: 480
+  - Id: 22204
+    ClientAttackMotion: 672
+  - Id: 22205
+    ClientAttackMotion: 768
+  - Id: 22206
+    ClientAttackMotion: 768
+  - Id: 22207
+    ClientAttackMotion: 768
+  - Id: 22208
+    ClientAttackMotion: 384
+  - Id: 22209
+    ClientAttackMotion: 480
+  - Id: 22210
+    ClientAttackMotion: 384
+  - Id: 22211
+    ClientAttackMotion: 384
+  - Id: 22212
+    ClientAttackMotion: 480
+  - Id: 22213
+    ClientAttackMotion: 480
+  - Id: 22214
+    ClientAttackMotion: 384
+  - Id: 22215
+    ClientAttackMotion: 384
+  - Id: 22216
+    ClientAttackMotion: 672
+  - Id: 22217
+    ClientAttackMotion: 768
+  - Id: 22218
+    ClientAttackMotion: 768
+  - Id: 22219
+    ClientAttackMotion: 768
+  - Id: 22220
+    ClientAttackMotion: 576
+  - Id: 22221
+    ClientAttackMotion: 576
+  - Id: 22222
+    ClientAttackMotion: 480
+  - Id: 22223
+    ClientAttackMotion: 480
+  - Id: 22225
+    ClientAttackMotion: 480
+  - Id: 22226
+    ClientAttackMotion: 384
+  - Id: 22227
+    ClientAttackMotion: 384
+  - Id: 22228
+    ClientAttackMotion: 384
+  - Id: 22229
+    ClientAttackMotion: 480
+  - Id: 22230
+    ClientAttackMotion: 384
+  - Id: 22231
+    ClientAttackMotion: 384
+  - Id: 22232
+    ClientAttackMotion: 672
+  - Id: 22233
+    ClientAttackMotion: 768
+  - Id: 22234
+    ClientAttackMotion: 768
+  - Id: 22235
+    ClientAttackMotion: 768
+  - Id: 22236
+    ClientAttackMotion: 576
+  - Id: 22237
+    ClientAttackMotion: 576
+  - Id: 22238
+    ClientAttackMotion: 480
+  - Id: 22239
+    ClientAttackMotion: 480
