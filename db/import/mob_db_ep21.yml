@@ -1089,7 +1089,7 @@ Body:
     AttackMotion: 1380
     ClientAttackMotion: 780
     DamageMotion: 576
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:
@@ -1138,7 +1138,7 @@ Body:
     AttackMotion: 768
     ClientAttackMotion: 480
     DamageMotion: 576
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:
@@ -1179,7 +1179,7 @@ Body:
     AttackMotion: 1056
     ClientAttackMotion: 480
     DamageMotion: 576
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:
@@ -1640,7 +1640,7 @@ Body:
     AttackDelay: 1528
     AttackMotion: 768
     DamageMotion: 480
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:
@@ -1685,7 +1685,7 @@ Body:
     AttackDelay: 1104
     AttackMotion: 1056
     DamageMotion: 480
-    DamageTaken: 100
+    DamageTaken: 10
     Ai: 04
     Class: Boss
     Modes:

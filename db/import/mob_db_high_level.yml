@@ -215,7 +215,7 @@ Body:
       Str: 416, Agi: 301, Vit: 330, Int: 278, Dex: 421, Luk: 521,
       AttackRange: 2, SkillRange: 10, ChaseRange: 12, Size: Large, Race: Demihuman, Element: Neutral, ElementLevel: 3,
       WalkSpeed: 150, AttackDelay: 581, AttackMotion: 420, ClientAttackMotion: 240, DamageMotion: 576,
-      DamageTaken: 100, Ai: '21', Class: Boss, Modes: {Mvp: true}, Drops: [{Item: aegis_300560, Rate: 1}] }
+      DamageTaken: 10, Ai: '21', Class: Boss, Modes: {Mvp: true}, Drops: [{Item: aegis_300560, Rate: 1}] }
   - { Id: 22395, AegisName: MEDJED, Name: Medjed,
       Level: 272, Hp: 23535500, Sp: 0, BaseExp: 3367462, JobExp: 2345438, MvpExp: 0,
       Attack: 34000, Attack2: 55000, Defense: 502, MagicDefense: 233, Resistance: 0, MagicResistance: 0,
@@ -287,7 +287,7 @@ Body:
       Str: 419, Agi: 303, Vit: 332, Int: 280, Dex: 243, Luk: 524,
       AttackRange: 3, SkillRange: 10, ChaseRange: 12, Size: Large, Race: Undead, Element: Dark, ElementLevel: 3,
       WalkSpeed: 120, AttackDelay: 1190, AttackMotion: 1152, ClientAttackMotion: 384, DamageMotion: 576,
-      DamageTaken: 100, Ai: '21', Class: Boss, Modes: {Mvp: true}, Drops: [{Item: aegis_300565, Rate: 1}] }
+      DamageTaken: 10, Ai: '21', Class: Boss, Modes: {Mvp: true}, Drops: [{Item: aegis_300565, Rate: 1}] }
   - { Id: 22431, AegisName: TATSI, Name: Tassi,
       Level: 274, Hp: 29462600, Sp: 0, BaseExp: 17315120, JobExp: 12114550, MvpExp: 0,
       Attack: 47000, Attack2: 35000, Defense: 295, MagicDefense: 193, Resistance: 0, MagicResistance: 0,
@@ -349,7 +349,7 @@ Body:
       Str: 416, Agi: 301, Vit: 330, Int: 278, Dex: 721, Luk: 521,
       AttackRange: 2, SkillRange: 10, ChaseRange: 12, Size: Large, Race: Fish, Element: Water, ElementLevel: 3,
       WalkSpeed: 150, AttackDelay: 1056, AttackMotion: 1056, ClientAttackMotion: 768, DamageMotion: 576,
-      DamageTaken: 100, Ai: '21', Class: Boss, Modes: {Mvp: true}, Drops: [{Item: aegis_300613, Rate: 1}] }
+      DamageTaken: 10, Ai: '21', Class: Boss, Modes: {Mvp: true}, Drops: [{Item: aegis_300613, Rate: 1}] }
   - { Id: 22439, AegisName: CP_GUERRERO, Name: Mighty Guerrero,
       Level: 275, Hp: 54890000, Sp: 0, BaseExp: 21432220, JobExp: 17114550, MvpExp: 0,
       Attack: 65535, Attack2: 55000, Defense: 612, MagicDefense: 307, Resistance: 0, MagicResistance: 0,

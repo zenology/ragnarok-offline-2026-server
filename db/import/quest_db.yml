@@ -180,6 +180,69 @@ Body:
   - Id: 65035
     Title: "[Standby] Akhet Weekly Patrol"
     TimeLimit: Saturday 4h
+  # Niflheim Pumpkin Farm: optional patrols with Akhet's reward/reset policy.
+  - Id: 65040
+    Title: Niflheim Pumpkin Farm - Patrol Briefing
+  - Id: 65041
+    Title: Pumpkin Farm Daily Patrol - 100 Monsters
+    Targets:
+      - Id: 1
+        Count: 100
+        Location: nif_fild03
+        MapName: Niflheim Pumpkin Farm
+        MapMobTargets:
+          VIOLEN: true
+          CP_VIOLEN: true
+          SPIDING: true
+          CP_SPIDING: true
+          GARLING: true
+          CP_GARLING: true
+          JACKONETTE: true
+          CP_JACKONETTE: true
+          LIAMETTE: true
+          CP_LIAMETTE: true
+  - Id: 65042
+    Title: Pumpkin Farm Daily Patrol - 500 Monsters
+    Targets:
+      - Id: 1
+        Count: 500
+        Location: nif_fild03
+        MapName: Niflheim Pumpkin Farm
+        MapMobTargets:
+          VIOLEN: true
+          CP_VIOLEN: true
+          SPIDING: true
+          CP_SPIDING: true
+          GARLING: true
+          CP_GARLING: true
+          JACKONETTE: true
+          CP_JACKONETTE: true
+          LIAMETTE: true
+          CP_LIAMETTE: true
+  - Id: 65043
+    Title: "[Standby] Pumpkin Farm Daily Patrol"
+    TimeLimit: 4h
+  - Id: 65044
+    Title: Pumpkin Farm Weekly Patrol - 5000 Monsters
+    Targets:
+      - Id: 1
+        Count: 5000
+        Location: nif_fild03
+        MapName: Niflheim Pumpkin Farm
+        MapMobTargets:
+          VIOLEN: true
+          CP_VIOLEN: true
+          SPIDING: true
+          CP_SPIDING: true
+          GARLING: true
+          CP_GARLING: true
+          JACKONETTE: true
+          CP_JACKONETTE: true
+          LIAMETTE: true
+          CP_LIAMETTE: true
+  - Id: 65045
+    Title: "[Standby] Pumpkin Farm Weekly Patrol"
+    TimeLimit: Saturday 4h
   - Id: 65000
     Title: Gathering Souls - Dragon Knight
     Targets:

@@ -1,0 +1,186 @@
+// Niflheim Pumpkin Farm: Lv250 portal and optional Akhet-style patrols.
+// Portal source: https://wiki.muhro.eu/Niflheim_Pumpkin_Farm
+niflheim,345,272,4	script	Pumpkin Warden#farm	4_M_NFDEADSWDMAN,{
+	if (BaseLevel < 250) {
+		mes "[Pumpkin Warden]";
+		mes "You must be Base Level 250 or higher to enter Niflheim Pumpkin Farm.";
+		close;
+	}
+	mes "[Pumpkin Warden]";
+	mes "The portal beside me leads to Niflheim Pumpkin Farm. The creatures there need careful patrols.";
+	next;
+	mes "[Pumpkin Warden]";
+	mes "I can take your daily and weekly reports here. Neither assignment is required to enter the farm.";
+	next;
+	if (isbegin_quest(65040) == 0) {
+		setquest 65040;
+		completequest 65040;
+	}
+	callsub L_ClearCooldowns;
+	switch (select("Daily patrol:Weekly patrol:Leave")) {
+	case 1:
+		callsub L_Daily;
+		close;
+	case 2:
+		callsub L_Weekly;
+		close;
+	default:
+		close;
+	}
+
+L_ClearCooldowns:
+	if (checkquest(65043,PLAYTIME) == 2)
+		erasequest 65043;
+	if (checkquest(65045,PLAYTIME) == 2)
+		erasequest 65045;
+	questinfo_refresh();
+	return;
+
+L_Reward:
+	.@rate = getarg(0);
+	.@base = BaseLevel >= 275 ? 0 : NextBaseExp * .@rate / 1000;
+	.@job = JobLevel >= 60 ? 0 : NextJobExp * .@rate / 1000;
+	return;
+
+L_Daily:
+	.@light = checkquest(65041);
+	.@solid = checkquest(65042);
+	if (.@light != -1 && .@solid != -1) {
+		mes "[Pumpkin Warden]";
+		mes "Your daily patrol records conflict. I cannot change or reward them until they are checked.";
+		return;
+	}
+	if (checkquest(65043,PLAYTIME) != -1) {
+		mes "[Pumpkin Warden]";
+		mes "Your daily report is already recorded. Come back after 04:00 server time.";
+		return;
+	}
+	if (BaseLevel >= 275 && JobLevel >= 60) {
+		mes "[Pumpkin Warden]";
+		mes "Both of your levels are at their maximum. Your existing patrol remains recorded, but there is no EXP reward to claim.";
+		return;
+	}
+	.@quest = .@light != -1 ? 65041 : (.@solid != -1 ? 65042 : 0);
+	if (.@quest) {
+		if (checkquest(.@quest,HUNTING) != 2) {
+			mes "[Pumpkin Warden]";
+			mes "Your daily patrol is still underway. Check your Quest List and return when it is complete.";
+			return;
+		}
+		.@rate = .@quest == 65041 ? 9 : 45;
+		callsub L_Reward,.@rate;
+		mes "[Pumpkin Warden]";
+		mes "Report this patrol for " + (.@rate / 10) + "." + (.@rate % 10) + "% Base and Job EXP? Right now that is " + .@base + " Base EXP and " + .@job + " Job EXP. The amount is recalculated when you report.";
+		next;
+		if (select("Report the completed patrol:Keep it for later") == 2)
+			return;
+		callsub L_ClearCooldowns;
+		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65043,PLAYTIME) != -1 || (checkquest(65041) != -1 && checkquest(65042) != -1) || checkquest(.@quest,HUNTING) != 2)
+			return;
+		callsub L_Reward,.@rate;
+		if (.@base == 0 && .@job == 0)
+			return;
+		setquest 65043;
+		erasequest .@quest;
+		getexp2 .@base,.@job;
+		questinfo_refresh();
+		mes "[Pumpkin Warden]";
+		mes "Your daily report is recorded. Thank you.";
+		return;
+	}
+	mes "[Pumpkin Warden]";
+	mes "Choose one daily patrol. Each eligible creature you defeat inside Niflheim Pumpkin Farm counts toward the total.";
+	next;
+	.@choice = select("100 monsters - 0.9% Base and Job EXP:500 monsters - 4.5% Base and Job EXP:Not today");
+	if (.@choice == 3)
+		return;
+	.@quest = .@choice == 1 ? 65041 : 65042;
+	mes "[Pumpkin Warden]";
+	mes "The EXP is based on your levels when you report, without EXP bonuses. Your daily wait begins when you claim the reward and ends at 04:00 server time.";
+	next;
+	if (select("Accept this patrol:Not now") == 2)
+		return;
+	callsub L_ClearCooldowns;
+	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65043,PLAYTIME) != -1 || checkquest(65041) != -1 || checkquest(65042) != -1)
+		return;
+	setquest .@quest;
+	questinfo_refresh();
+	mes "[Pumpkin Warden]";
+	mes "The patrol is yours. Come back when it is complete.";
+	return;
+
+L_Weekly:
+	if (checkquest(65045,PLAYTIME) != -1) {
+		mes "[Pumpkin Warden]";
+		mes "Your weekly report is already recorded. Come back after Saturday at 04:00 server time.";
+		return;
+	}
+	if (BaseLevel >= 275 && JobLevel >= 60) {
+		mes "[Pumpkin Warden]";
+		mes "Both of your levels are at their maximum. Your existing patrol remains recorded, but there is no EXP reward to claim.";
+		return;
+	}
+	if (checkquest(65044) != -1) {
+		if (checkquest(65044,HUNTING) != 2) {
+			mes "[Pumpkin Warden]";
+			mes "Your weekly patrol is still underway. Check your Quest List and return when it is complete.";
+			return;
+		}
+		callsub L_Reward,450;
+		mes "[Pumpkin Warden]";
+		mes "Report this patrol for 45% Base and Job EXP? Right now that is " + .@base + " Base EXP and " + .@job + " Job EXP. The amount is recalculated when you report.";
+		next;
+		if (select("Report the completed patrol:Keep it for later") == 2)
+			return;
+		callsub L_ClearCooldowns;
+		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65045,PLAYTIME) != -1 || checkquest(65044,HUNTING) != 2)
+			return;
+		callsub L_Reward,450;
+		if (.@base == 0 && .@job == 0)
+			return;
+		setquest 65045;
+		erasequest 65044;
+		getexp2 .@base,.@job;
+		questinfo_refresh();
+		mes "[Pumpkin Warden]";
+		mes "Your weekly report is recorded. Thank you.";
+		return;
+	}
+	mes "[Pumpkin Warden]";
+	mes "The weekly patrol asks you to defeat 5,000 eligible creatures inside the farm. The same kills can advance an active daily patrol.";
+	next;
+	mes "[Pumpkin Warden]";
+	mes "Reporting awards 45% of your current Base and Job EXP requirements without EXP bonuses. Your weekly wait then lasts until Saturday at 04:00 server time.";
+	next;
+	if (select("Accept the weekly patrol:Not now") == 2)
+		return;
+	callsub L_ClearCooldowns;
+	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65045,PLAYTIME) != -1 || checkquest(65044) != -1)
+		return;
+	setquest 65044;
+	questinfo_refresh();
+	mes "[Pumpkin Warden]";
+	mes "The weekly patrol is yours. Come back when it is complete.";
+	return;
+
+OnInit:
+	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65041,HUNTING) == 2 && checkquest(65042) == -1 && (checkquest(65043,PLAYTIME) == -1 || checkquest(65043,PLAYTIME) == 2)) || (checkquest(65042,HUNTING) == 2 && checkquest(65041) == -1 && (checkquest(65043,PLAYTIME) == -1 || checkquest(65043,PLAYTIME) == 2)) || (checkquest(65044,HUNTING) == 2 && (checkquest(65045,PLAYTIME) == -1 || checkquest(65045,PLAYTIME) == 2)))");
+	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65041) == -1 && checkquest(65042) == -1 && (checkquest(65043,PLAYTIME) == -1 || checkquest(65043,PLAYTIME) == 2)) || (checkquest(65044) == -1 && (checkquest(65045,PLAYTIME) == -1 || checkquest(65045,PLAYTIME) == 2)))");
+	end;
+}
+
+niflheim,349,274,0	script	enter_niffild03	WARPNPC,1,1,{
+	end;
+OnTouch:
+	if (BaseLevel < 250) {
+		mes "You must be Base Level 250 or higher to enter Niflheim Pumpkin Farm.";
+		close;
+	}
+	warp "nif_fild03",253,47;
+	end;
+}
+
+nif_fild03,246,43,0	warp	out_niffild03	1,1,niflheim,348,272
+nif_fild03	mapflag	nobranch
+nif_fild03	mapflag	privateairship_source
+nif_fild03	mapflag	privateairship_destination

@@ -90,6 +90,16 @@ export default function PrivateAirshipPage(): ReactNode {
             uses your levels when you report and is not multiplied by EXP bonuses.
           </Callout>
           <Callout>
+            <strong>Niflheim Pumpkin Farm:</strong> Base Level 250. Enter through the portal at
+            Niflheim (349, 274) or MOVE directly into the farm. Pumpkin Warden at (345, 272) offers
+            optional patrols with the same EXP rewards and resets as Akhet: one daily of 100 kills
+            for 0.9% or 500 kills for 4.5%, plus a weekly 5,000 kills for 45%. The five regular
+            species and their Strong variants inside the farm count for both active patrols;
+            Nightmare Piamette does not count. Rewards use your current level requirements at claim,
+            without EXP bonuses. Daily reset is 04:00; weekly reset is Saturday at 04:00 server
+            time. Each cooldown starts on claim, and unfinished patrols carry over.
+          </Callout>
+          <Callout>
             <strong>Einbech Mine, floor 3:</strong> Base Level 180.
           </Callout>
           <Callout>
