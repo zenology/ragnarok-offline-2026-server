@@ -1,0 +1,70 @@
+//===== Ragnarok Offline Script ==============================
+//= Hypnotist: first-class free resets beside Rino Reset.
+//= Replaces the Izlude service without editing its native file.
+//= All eligible first jobs: Base Level below 50, per GGT FAQ.
+//= https://ro.gnjoy.in.th/faq/
+//= Exact Class IDs exclude reborn, baby, novice and higher jobs.
+//============================================================
+// Custom view 19998 maps to the exact 4_energy asset in the client jobname wrapper.
+prontera,159,283,4	script	Hypnotist#offline	19998,{
+	mes "[Hypnotist]";
+	mes "Easy now. Take a breath. A few tangled lessons needn't decide your whole adventure. My hypnosis is free for beginners, however often you need it.";
+	next;
+	callsub L_CheckReady;
+	mes "[Hypnotist]";
+	mes "Shall we work on your stats, or the skills you've practiced? One at a time, dear. I'll leave the other just as it is.";
+	.@choice = select("I'm not ready yet.:I'd like to reset my stats.:I'd like to reset my skills.");
+	if (.@choice == 1)
+		close;
+	next;
+	mes "[Hypnotist]";
+	if (.@choice == 2)
+		mes "We'll let those old habits go. Your STR, AGI, VIT, INT, DEX and LUK will each return to 1, with the stat points yours to spend again. Shall we begin?";
+	else
+		mes "I'll help you unlearn the skills you spent points on, so you can choose them afresh. Your basic training and skills learned through quests will stay with you. Ready?";
+	if (select("Wait, I've changed my mind.:I'm ready. Begin the free reset.") == 1)
+		close;
+	clear;
+	// Recheck after the last player input, before changing the build.
+	callsub L_CheckReady;
+	if (.@choice == 2)
+		resetstatus;
+	else
+		resetskill;
+	mes "[Hypnotist]";
+	mes "And... open your eyes. There you are. Your points are yours to choose with again. Take your time; the next step belongs to you.";
+	close;
+
+L_CheckReady:
+	// Keep native class eligibility; apply the player's GGT level cap to all.
+	if (!((Class >= Job_Swordman && Class <= Job_Thief) || Class == Job_Taekwon || Class == Job_Gunslinger || Class == Job_Ninja)) {
+		mes "[Hypnotist]";
+		mes "I'm afraid my gentle hypnosis isn't suited to your path. I help adventurers in their first job, below Base Level 50 and before rebirth. Even hypnosis has its limits, dear.";
+		close;
+	}
+	if (BaseLevel >= 50) {
+		mes "[Hypnotist]";
+		mes "You've grown beyond my beginner lessons. I can only help below Base Level 50. If it's your stats you wish to change, speak to Rino beside me. Bring Reset Stones for her work.";
+		close;
+	}
+	if (checkcart()) {
+		mes "[Hypnotist]";
+		mes "That cart can wait a moment, can't it? Please put your Pushcart away, then come back and we'll find a little quiet.";
+		close;
+	}
+	if (Weight != 0) {
+		mes "[Hypnotist]";
+		mes "Your shoulders are still carrying the day's worries. Leave your belongings with the Kafra until your carried weight is exactly 0, then come back to me.";
+		close;
+	}
+	return;
+
+OnInit:
+	// All five objects belong to the same native Izlude service.
+	disablenpc "Hypnotist#novice";
+	disablenpc "Hypnotist#novice_a";
+	disablenpc "Hypnotist#novice_b";
+	disablenpc "Hypnotist#novice_c";
+	disablenpc "Hypnotist#novice_d";
+	end;
+}
