@@ -1,0 +1,88 @@
+# Exact Chapter 2 card combinations; existing Engkanto Card is reused.
+Header:
+  Type: COMBO_DB
+  Version: 1
+
+Body:
+  - Combos:
+      - Combo: [Engkanto_Card, aegis_300761]
+    Script: |
+      bonus2 bMagicAddEle,Ele_Poison,18;
+  - Combos:
+      - Combo: [Engkanto_Card, aegis_300764]
+    Script: |
+      bonus2 bAddEle,Ele_Poison,15;
+  - Combos:
+      - Combo: [aegis_300765, aegis_300776]
+    Script: |
+      bonus bSMatk,3;
+      bonus bVariableCastrate,-10;
+      bonus bDelayrate,-4;
+  - Combos:
+      - Combo: [aegis_300766, aegis_300767]
+      - Combo: [aegis_300778, aegis_300779]
+    Script: |
+      bonus bNonCritAtkRate,10;
+  - Combos:
+      - Combo: [aegis_300768, aegis_300770]
+    Script: |
+      bonus2 bAddEle,Ele_Fire,10;
+      bonus2 bAddRace,RC_Formless,10;
+      bonus2 bAddSize,Size_Medium,10;
+      bonus2 bAddSize,Size_Large,10;
+      if (getiteminfo(getequipid(EQI_HAND_R),ITEMINFO_WEAPONLEVEL)==5) {
+         .@i = getiteminfo(getequipid(EQI_HAND_R),ITEMINFO_VIEW);
+         if (.@i == W_2HSWORD || .@i == W_2HSPEAR || .@i == W_2HSTAFF || .@i == W_2HAXE || .@i == W_KATAR || .@i == W_BOW || .@i == W_HUUMA || .@i == W_REVOLVER || .@i == W_RIFLE || .@i == W_GATLING || .@i == W_SHOTGUN || .@i == W_GRENADE) {
+            bonus2 bAddEle,Ele_Fire,25;
+            bonus2 bAddRace,RC_Formless,25;
+            bonus2 bAddSize,Size_Medium,25;
+            bonus2 bAddSize,Size_Large,25;
+            bonus bPAtk,7;
+         }
+      }
+  - Combos:
+      - Combo: [aegis_300769, aegis_300771]
+    Script: |
+      bonus2 bMagicAddEle,Ele_Fire,10;
+      bonus2 bMagicAddRace,RC_Formless,10;
+      bonus2 bMagicAddSize,Size_Medium,10;
+      bonus2 bMagicAddSize,Size_Large,10;
+      if (getiteminfo(getequipid(EQI_HAND_R),ITEMINFO_WEAPONLEVEL)==5) {
+         .@i = getiteminfo(getequipid(EQI_HAND_R),ITEMINFO_VIEW);
+         if (.@i == W_2HSWORD || .@i == W_2HSPEAR || .@i == W_2HSTAFF || .@i == W_2HAXE || .@i == W_KATAR || .@i == W_BOW || .@i == W_HUUMA || .@i == W_REVOLVER || .@i == W_RIFLE || .@i == W_GATLING || .@i == W_SHOTGUN || .@i == W_GRENADE) {
+            bonus2 bMagicAddEle,Ele_Fire,25;
+            bonus2 bMagicAddRace,RC_Formless,25;
+            bonus2 bMagicAddSize,Size_Medium,25;
+            bonus2 bMagicAddSize,Size_Large,25;
+            bonus bSMatk,7;
+         }
+      }
+  - Combos:
+      - Combo: [aegis_300768, aegis_300772]
+    Script: |
+      bonus bMaxHPrate,3;
+      bonus2 bAddEle,Ele_Fire,5;
+      bonus2 bAddRace,RC_Formless,5;
+  - Combos:
+      - Combo: [aegis_300769, aegis_300772]
+    Script: |
+      bonus bMaxHPrate,3;
+      bonus2 bMagicAddEle,Ele_Fire,5;
+      bonus2 bMagicAddRace,RC_Formless,5;
+  - Combos:
+      - Combo: [aegis_300770, aegis_300772]
+    Script: |
+      bonus bMaxHPrate,3;
+      bonus2 bAddSize,Size_Medium,5;
+      bonus2 bAddSize,Size_Large,5;
+  - Combos:
+      - Combo: [aegis_300771, aegis_300772]
+    Script: |
+      bonus bMaxHPrate,3;
+      bonus2 bMagicAddSize,Size_Medium,5;
+      bonus2 bMagicAddSize,Size_Large,5;
+  - Combos:
+      - Combo: [aegis_300773, aegis_300762]
+      - Combo: [aegis_300773, aegis_300780]
+    Script: |
+      bonus bNonCritAtkRate,8;

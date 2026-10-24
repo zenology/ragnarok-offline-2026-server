@@ -1,0 +1,296 @@
+# Chapter 2 cards: Divine Pride exact item IDs/descriptions, audited 2026-10-24.
+# Shop recovery only; this does not implement Chapter monsters or their drops.
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 300761
+    AegisName: aegis_300761
+    Name: Dragon Clam Card
+    Type: Card
+    Weight: 10
+    Locations: {Head_Low: true, Head_Mid: true, Head_Top: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bSMatk,5;
+      bonus2 bMagicAddEle,Ele_Poison,7;
+      if (getrefine()>=10)
+         bonus2 bMagicAddEle,Ele_Poison,8;
+  - Id: 300762
+    AegisName: aegis_300762
+    Name: Flame Bull Card
+    Type: Card
+    Weight: 10
+    Locations: {Garment: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus2 bSubEle,Ele_Neutral,20;
+      bonus bShortAtkRate,20;
+      bonus bNonCritAtkRate,5*(getrefine()/3);
+  - Id: 300763
+    AegisName: aegis_300763
+    Name: Urochs Card
+    Type: Card
+    Weight: 10
+    Locations: {Garment: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bHit,45;
+      bonus bNonCritAtkRate,25;
+      if (readparam(bDex)>=120)
+         bonus bPerfectHitAddRate,20;
+      if (readparam(bCon)>=100)
+         bonus bNonCritAtkRate,30;
+  - Id: 300764
+    AegisName: aegis_300764
+    Name: Logidogi Card
+    Type: Card
+    Weight: 10
+    Locations: {Head_Low: true, Head_Mid: true, Head_Top: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bPAtk,7;
+      bonus2 bAddEle,Ele_Poison,12;
+      if (getrefine()>=10)
+         bonus2 bAddEle,Ele_Poison,8;
+  - Id: 300765
+    AegisName: aegis_300765
+    Name: Fire Cotton Card
+    Type: Card
+    Weight: 10
+    Locations: {Left_Accessory: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bMatkRate,5;
+      bonus bVariableCastrate,-5;
+  - Id: 300766
+    AegisName: aegis_300766
+    Name: Namunse Card
+    Type: Card
+    Weight: 10
+    Locations: {Left_Accessory: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bHit,15;
+      bonus bLongAtkRate,7;
+  - Id: 300767
+    AegisName: aegis_300767
+    Name: Namuni Card
+    Type: Card
+    Weight: 10
+    Locations: {Right_Accessory: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bHit,15;
+      bonus bLongAtkRate,8;
+  - Id: 300768
+    AegisName: aegis_300768
+    Name: Dudulson Card
+    Type: Card
+    Weight: 10
+    Locations: {Right_Hand: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus2 bAddEle,Ele_Fire,10;
+      bonus2 bAddRace,RC_Formless,10;
+      if (getequipweaponlv()==5) {
+         bonus2 bAddEle,Ele_Fire,10;
+         bonus2 bAddRace,RC_Formless,10;
+      }
+  - Id: 300769
+    AegisName: aegis_300769
+    Name: Garakson Card
+    Type: Card
+    Weight: 10
+    Locations: {Right_Hand: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus2 bMagicAddEle,Ele_Fire,10;
+      bonus2 bMagicAddRace,RC_Formless,10;
+      if (getequipweaponlv()==5) {
+         bonus2 bMagicAddEle,Ele_Fire,10;
+         bonus2 bMagicAddRace,RC_Formless,10;
+      }
+  - Id: 300770
+    AegisName: aegis_300770
+    Name: Tuktakson Card
+    Type: Card
+    Weight: 10
+    Locations: {Right_Hand: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus2 bAddSize,Size_Medium,10;
+      bonus2 bAddSize,Size_Large,10;
+      if (getequipweaponlv()==5) {
+         bonus2 bAddSize,Size_Medium,10;
+         bonus2 bAddSize,Size_Large,10;
+      }
+  - Id: 300771
+    AegisName: aegis_300771
+    Name: Paruson Card
+    Type: Card
+    Weight: 10
+    Locations: {Right_Hand: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus2 bMagicAddSize,Size_Medium,10;
+      bonus2 bMagicAddSize,Size_Large,10;
+      if (getequipweaponlv()==5) {
+         bonus2 bMagicAddSize,Size_Medium,10;
+         bonus2 bMagicAddSize,Size_Large,10;
+      }
+  - Id: 300772
+    AegisName: aegis_300772
+    Name: Morbang Card
+    Type: Card
+    Weight: 10
+    Locations: {Left_Hand: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bMaxHPrate,-4;
+      bonus2 bSubDefEle,Ele_Fire,15;
+      bonus2 bMagicSubDefEle,Ele_Fire,15;
+      bonus2 bSubRace,RC_Formless,15;
+      bonus2 bSubSize,Size_Medium,15;
+      bonus2 bSubSize,Size_Large,15;
+  - Id: 300773
+    AegisName: aegis_300773
+    Name: Fire Claw Card
+    Type: Card
+    Weight: 10
+    Locations: {Armor: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bMaxHPrate,3;
+      bonus bMaxSPrate,3;
+      bonus bShortAtkRate,3*(getrefine()/2);
+      bonus bLongAtkRate,3*(getrefine()/2);
+      if (getrefine()>=12) {
+         bonus bShortAtkRate,10;
+         bonus bLongAtkRate,10;
+      }
+  - Id: 300774
+    AegisName: aegis_300774
+    Name: Flame Anima Card
+    Type: Card
+    Weight: 10
+    Locations: {Right_Accessory: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bSMatk,15;
+      bonus bAspd,3;
+      bonus5 bAutoSpell,"AG_CRIMSON_ARROW",5,120,BF_SHORT|BF_NORMAL,1;
+      bonus5 bAutoSpell,"EM_CONFLAGRATION",5,40,BF_SHORT|BF_NORMAL,1;
+  - Id: 300775
+    AegisName: aegis_300775
+    Name: Frost Morbang Card
+    Type: Card
+    Weight: 10
+    Locations: {Right_Accessory: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bLongAtkRate,25;
+      bonus bMaxHPrate,-20;
+      if (readparam(bDex)>=70)
+         bonus bNoSizeFix;
+      if (BaseLevel>=230) {
+         bonus bLongAtkRate,45;
+         bonus bVit,-20;
+      }
+  - Id: 300776
+    AegisName: aegis_300776
+    Name: Alpuring Card
+    Type: Card
+    Weight: 10
+    Locations: {Right_Accessory: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bMatkRate,5;
+      bonus bDelayrate,-4;
+      bonus bVariableCastrate,-5;
+  - Id: 300777
+    AegisName: aegis_300777
+    Name: Icy Blast Card
+    Type: Card
+    Weight: 10
+    Locations: {Head_Low: true, Head_Mid: true, Head_Top: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bPAtk,7;
+      bonus2 bAddEle,Ele_Undead,12;
+      if (getrefine()>=10)
+         bonus2 bAddEle,Ele_Undead,8;
+  - Id: 300778
+    AegisName: aegis_300778
+    Name: Ice Needle Card
+    Type: Card
+    Weight: 10
+    Locations: {Left_Accessory: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bHit,15;
+      bonus bShortAtkRate,7;
+  - Id: 300779
+    AegisName: aegis_300779
+    Name: Folnir Nilf Card
+    Type: Card
+    Weight: 10
+    Locations: {Right_Accessory: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bHit,15;
+      bonus bShortAtkRate,8;
+  - Id: 300780
+    AegisName: aegis_300780
+    Name: Folnir Myrk Card
+    Type: Card
+    Weight: 10
+    Locations: {Garment: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus2 bSubEle,Ele_Neutral,20;
+      bonus bLongAtkRate,20;
+      bonus bNonCritAtkRate,5*(getrefine()/3);
+  - Id: 300781
+    AegisName: aegis_300781
+    Name: Folnir Hre Card
+    Type: Card
+    Weight: 10
+    Locations: {Head_Low: true, Head_Mid: true, Head_Top: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bSMatk,5;
+      bonus2 bMagicAddEle,Ele_Undead,7;
+      if (getrefine()>=10)
+         bonus2 bMagicAddEle,Ele_Undead,8;
+  - Id: 300782
+    AegisName: aegis_300782
+    Name: Feeos Card
+    Type: Card
+    Weight: 10
+    Locations: {Shoes: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus bShortAtkRate,20;
+      bonus bLongAtkRate,20;
+      bonus bMaxSPrate,-5;
+      bonus bCritAtkRate,-25;
+  - Id: 300783
+    AegisName: aegis_300783
+    Name: Phantom of Antirrhinum Card
+    Type: Card
+    Weight: 10
+    Locations: {Armor: true}
+    Flags: {BuyingStore: true, DropEffect: CLIENT}
+    Script: |
+      bonus2 bAddClass,Class_Boss,40;
+      bonus bMaxSPrate,-35;
+      if (getrefine()>=12)
+         bonus bPAtk,15;
+      if (BaseLevel>=200) {
+         bonus bPow,10;
+         bonus bCon,10;
+      }
+      if (readparam(bPow)>=90)
+         bonus bAtkRate,15;

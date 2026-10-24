@@ -811,3 +811,55 @@ Body:
   - {"Id": 4275, "RawBP": 4000, "DisplayName": "Zombie Prisoner Card", "CollectorOffer": 900, "SourceMob": 1197}
   - {"Id": 4435, "RawBP": 4103, "DisplayName": "Zombie Slaughter Card", "CollectorOffer": 2100, "SourceMob": 1864}
   - {"Id": 300458, "RawBP": 17682, "DisplayName": "Icewind Card", "CollectorOffer": 7800, "SourceMob": 21967}
+  # Chapter 1/2 source-monster classification and whole-card appraisal: 2026-10-24.
+  - {Id: 300633, RawBP: 5052, DisplayName: "Yggring Card", CollectorOffer: 12403, SourceMob: 22443}
+  - {Id: 300634, RawBP: 2712, DisplayName: "Leafeing Card", CollectorOffer: 12403, SourceMob: 22444}
+  - {Id: 300635, RawBP: 13978, DisplayName: "Charcoaring Card", CollectorOffer: 12610, SourceMob: 22445}
+  - {Id: 300636, RawBP: 8222, DisplayName: "Vulring Card", CollectorOffer: 12662, SourceMob: 22446}
+  - {Id: 300637, RawBP: 11628, DisplayName: "Fireloop Card", CollectorOffer: 12714, SourceMob: 22447}
+  - {Id: 300638, RawBP: 4866, DisplayName: "Firafflesia Card", CollectorOffer: 12662, SourceMob: 22448}
+  - {Id: 300639, RawBP: 6644, DisplayName: "Volimpet Card", CollectorOffer: 12610, SourceMob: 22449}
+  - {Id: 300640, RawBP: 4866, DisplayName: "Fire Flower Card", CollectorOffer: 12766, SourceMob: 22450}
+  - {Id: 300641, RawBP: 41643, DisplayName: "Peeping Card", CollectorOffer: 12818, SourceMob: 22451}
+  - {Id: 300642, RawBP: 8222, DisplayName: "Polluted Silk Frog Card", CollectorOffer: 12766, SourceMob: 22452}
+  - {Id: 300643, RawBP: 41643, DisplayName: "Polluted Silk Snail Card", CollectorOffer: 12818, SourceMob: 22453}
+  - {Id: 300644, RawBP: 12680, DisplayName: "Encroached Exploration Robot Card", CollectorOffer: 12922, SourceMob: 22454}
+  - {Id: 300645, RawBP: 32301, DisplayName: "Encroached Repair Robot Card", CollectorOffer: 12870, SourceMob: 22455}
+  - {Id: 300646, RawBP: 20046, DisplayName: "Encroached Dimik Card", CollectorOffer: 12818, SourceMob: 22456}
+  - {Id: 300647, RawBP: 6644, DisplayName: "Nyaise Card", CollectorOffer: 13286, SourceMob: 22463}
+  - {Id: 300648, RawBP: 8222, DisplayName: "Shadow Jailer Card", CollectorOffer: 13390, SourceMob: 22464}
+  - {Id: 300649, RawBP: 9628, DisplayName: "Tulip Card", CollectorOffer: 13338, SourceMob: 22465}
+  - {Id: 300650, RawBP: 10525, DisplayName: "Calendula Card", CollectorOffer: 13234, SourceMob: 22466}
+  - {Id: 300651, RawBP: 11813, DisplayName: "Scabiosa Card", CollectorOffer: 13182, SourceMob: 22467}
+  - {Id: 300652, RawBP: 1514, DisplayName: "Lobelia Card", CollectorOffer: 14429, SourceMob: 22468}
+  - {Id: 300653, RawBP: 4562, DisplayName: "Myosotis Card", CollectorOffer: 14481, SourceMob: 22469}
+  - {Id: 300654, RawBP: 5385, DisplayName: "Anemone Card", CollectorOffer: 14325, SourceMob: 22470}
+  - {Id: 300655, RawBP: 4036, DisplayName: "Uncanny Skogul Card", CollectorOffer: 14481, SourceMob: 22471}
+  - {Id: 300656, RawBP: 8222, DisplayName: "Uncanny Frus Card", CollectorOffer: 14481, SourceMob: 22472}
+  - {Id: 300657, RawBP: 6644, DisplayName: "Listener Card", CollectorOffer: 14481, SourceMob: 22473}
+  - {Id: 300658, RawBP: 6644, DisplayName: "Immortal Corps Officer Card", CollectorOffer: 14377, SourceMob: 22474}
+  - {Id: 300659, RawBP: 24152, DisplayName: "Toxit Card", CollectorOffer: 15000, SourceMob: 22476}
+  - {Id: 300660, RawBP: 15337, DisplayName: "Lunarina Card", CollectorOffer: 15000, SourceMob: 22478}
+  - {Id: 300661, RawBP: 16877, DisplayName: "Bloody Slasher Card", CollectorOffer: 15000, SourceMob: 22480}
+  - {Id: 300662, RawBP: 22124, DisplayName: "Shadist Card", CollectorOffer: 15000, SourceMob: 22482}
+  - {Id: 300663, RawBP: 6644, DisplayName: "High Succubus Card", CollectorOffer: 15000, SourceMob: 22484}
+  - {Id: 300664, RawBP: 8222, DisplayName: "High Incubus Card", CollectorOffer: 15000, SourceMob: 22486}
+  - {Id: 300665, RawBP: 48693, DisplayName: "Abyss Knight Commander Card", CollectorOffer: 15000, SourceMob: 22488}
+  - {Id: 300761, RawBP: 10209, DisplayName: "Dragon Clam Card", CollectorOffer: 13701, SourceMob: 22674}
+  - {Id: 300762, RawBP: 14680, DisplayName: "Flame Bull Card", CollectorOffer: 13753, SourceMob: 22685}
+  - {Id: 300764, RawBP: 11392, DisplayName: "Logidogi Card", CollectorOffer: 13805, SourceMob: 22687}
+  - {Id: 300765, RawBP: 13112, DisplayName: "Fire Cotton Card", CollectorOffer: 13753, SourceMob: 22688}
+  - {Id: 300766, RawBP: 7146, DisplayName: "Namunse Card", CollectorOffer: 13805, SourceMob: 22689}
+  - {Id: 300767, RawBP: 3311, DisplayName: "Namuni Card", CollectorOffer: 13909, SourceMob: 22690}
+  - {Id: 300768, RawBP: 29718, DisplayName: "Dudulson Card", CollectorOffer: 13857, SourceMob: 22691}
+  - {Id: 300769, RawBP: 29718, DisplayName: "Garakson Card", CollectorOffer: 13961, SourceMob: 22692}
+  - {Id: 300770, RawBP: 9986, DisplayName: "Tuktakson Card", CollectorOffer: 13961, SourceMob: 22693}
+  - {Id: 300771, RawBP: 9986, DisplayName: "Paruson Card", CollectorOffer: 14065, SourceMob: 22694}
+  - {Id: 300772, RawBP: 21151, DisplayName: "Morbang Card", CollectorOffer: 14169, SourceMob: 22695}
+  - {Id: 300773, RawBP: 18800, DisplayName: "Fire Claw Card", CollectorOffer: 14169, SourceMob: 22696}
+  - {Id: 300776, RawBP: 5451, DisplayName: "Alpuring Card", CollectorOffer: 13649, SourceMob: 22699}
+  - {Id: 300777, RawBP: 8222, DisplayName: "Icy Blast Card", CollectorOffer: 13753, SourceMob: 22700}
+  - {Id: 300778, RawBP: 7146, DisplayName: "Ice Needle Card", CollectorOffer: 13805, SourceMob: 22701}
+  - {Id: 300779, RawBP: 3311, DisplayName: "Folnir Nilf Card", CollectorOffer: 14221, SourceMob: 22702}
+  - {Id: 300780, RawBP: 14680, DisplayName: "Folnir Myrk Card", CollectorOffer: 14221, SourceMob: 22703}
+  - {Id: 300781, RawBP: 6644, DisplayName: "Folnir Hre Card", CollectorOffer: 14221, SourceMob: 22704}

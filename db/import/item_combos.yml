@@ -4109,3 +4109,7 @@ Body:
       bonus bInt,5;
       bonus bMatkRate,15;
       bonus2 bSubRace,RC_Angel,10;
+
+Footer:
+  Imports:
+    - Path: db/import/item_combos_chapter_cards.yml
