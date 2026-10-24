@@ -166,3 +166,11 @@ Body:
   - {Id: 300474, RawBP: 15170, DisplayName: "Sanctuary Cleaning Chief Card", CollectorOffer: 140000, SourceMob: 21980}
   - {Id: 300530, RawBP: 25359, DisplayName: "Yortus Arbiter Card", CollectorOffer: 100000, SourceMob: 22363}
   - {Id: 300531, RawBP: 6644, DisplayName: "Yortus Bailiff Card", CollectorOffer: 100000, SourceMob: 22364}
+  # Chapter 1/2: source-monster MVP status verified independently of local spawns.
+  - {Id: 300666, RawBP: 36000, DisplayName: "Bulgasari Card", CollectorOffer: 98261, SourceMob: 22494}
+  - {Id: 300667, RawBP: 11615, DisplayName: "Glutto Card", CollectorOffer: 100000, SourceMob: 22495}
+  - {Id: 300763, RawBP: 16802, DisplayName: "Urochs Card", CollectorOffer: 100000, SourceMob: 22686}
+  - {Id: 300774, RawBP: 36000, DisplayName: "Flame Anima Card", CollectorOffer: 100000, SourceMob: 22697}
+  - {Id: 300775, RawBP: 10000, DisplayName: "Frost Morbang Card", CollectorOffer: 100000, SourceMob: 22698}
+  - {Id: 300782, RawBP: 6340, DisplayName: "Feeos Card", CollectorOffer: 100000, SourceMob: 22705}
+  - {Id: 300783, RawBP: 41899, DisplayName: "Phantom of Antirrhinum Card", CollectorOffer: 89565, SourceMob: 22711}

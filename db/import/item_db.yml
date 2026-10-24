@@ -154,3 +154,4 @@ Footer:
     - Path: db/import/item_db_treasure_boxes.yml
     - Path: db/import/item_db_fallback_ticket.yml
     - Path: db/import/item_db_ranger_dp_iro.yml
+    - Path: db/import/item_db_chapter_cards.yml
