@@ -1,8 +1,9 @@
 // Ancient Temple Akhet: level-gated soldier and independent daily/weekly patrols.
+// Entry level: kRO 2024-08-07 (notice 7942); MuhRO's reduced Lv250 is not used.
 moc_fild11,192,211,4	script	Morroc Soldier#akhet	4_M_MOC_SOLDIER,{
-	if (BaseLevel < 250) {
+	if (BaseLevel < 260) {
 		mes "[Morroc Soldier]";
-		mes "You must be Base Level 250 or higher to enter Ancient Temple Akhet.";
+		mes "You must be Base Level 260 or higher to enter Ancient Temple Akhet.";
 		close;
 	}
 	mes "[Morroc Soldier]";
@@ -18,7 +19,7 @@ moc_fild11,192,211,4	script	Morroc Soldier#akhet	4_M_MOC_SOLDIER,{
 	callsub L_ClearCooldowns;
 	switch (select("Enter the temple:Daily patrol:Weekly patrol:Leave")) {
 	case 1:
-		if (BaseLevel >= 250)
+		if (BaseLevel >= 260)
 			warp "moc_akhet",190,56;
 		close;
 	case 2:
@@ -78,7 +79,7 @@ L_Daily:
 		if (select("Report the completed patrol:Keep it for later") == 2)
 			return;
 		callsub L_ClearCooldowns;
-		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65033,PLAYTIME) != -1 || (checkquest(65031) != -1 && checkquest(65032) != -1) || checkquest(.@quest,HUNTING) != 2)
+		if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65033,PLAYTIME) != -1 || (checkquest(65031) != -1 && checkquest(65032) != -1) || checkquest(.@quest,HUNTING) != 2)
 			return;
 		callsub L_Reward,.@rate;
 		if (.@base == 0 && .@job == 0)
@@ -104,7 +105,7 @@ L_Daily:
 	if (select("Accept this patrol:Not now") == 2)
 		return;
 	callsub L_ClearCooldowns;
-	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65033,PLAYTIME) != -1 || checkquest(65031) != -1 || checkquest(65032) != -1)
+	if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65033,PLAYTIME) != -1 || checkquest(65031) != -1 || checkquest(65032) != -1)
 		return;
 	setquest .@quest;
 	questinfo_refresh();
@@ -136,7 +137,7 @@ L_Weekly:
 		if (select("Report the completed patrol:Keep it for later") == 2)
 			return;
 		callsub L_ClearCooldowns;
-		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65035,PLAYTIME) != -1 || checkquest(65034,HUNTING) != 2)
+		if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65035,PLAYTIME) != -1 || checkquest(65034,HUNTING) != 2)
 			return;
 		callsub L_Reward,450;
 		if (.@base == 0 && .@job == 0)
@@ -158,7 +159,7 @@ L_Weekly:
 	if (select("Accept the weekly patrol:Not now") == 2)
 		return;
 	callsub L_ClearCooldowns;
-	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65035,PLAYTIME) != -1 || checkquest(65034) != -1)
+	if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65035,PLAYTIME) != -1 || checkquest(65034) != -1)
 		return;
 	setquest 65034;
 	questinfo_refresh();
@@ -167,8 +168,8 @@ L_Weekly:
 	return;
 
 OnInit:
-	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65031,HUNTING) == 2 && checkquest(65032) == -1 && (checkquest(65033,PLAYTIME) == -1 || checkquest(65033,PLAYTIME) == 2)) || (checkquest(65032,HUNTING) == 2 && checkquest(65031) == -1 && (checkquest(65033,PLAYTIME) == -1 || checkquest(65033,PLAYTIME) == 2)) || (checkquest(65034,HUNTING) == 2 && (checkquest(65035,PLAYTIME) == -1 || checkquest(65035,PLAYTIME) == 2)))");
-	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65031) == -1 && checkquest(65032) == -1 && (checkquest(65033,PLAYTIME) == -1 || checkquest(65033,PLAYTIME) == 2)) || (checkquest(65034) == -1 && (checkquest(65035,PLAYTIME) == -1 || checkquest(65035,PLAYTIME) == 2)))");
+	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 260 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65031,HUNTING) == 2 && checkquest(65032) == -1 && (checkquest(65033,PLAYTIME) == -1 || checkquest(65033,PLAYTIME) == 2)) || (checkquest(65032,HUNTING) == 2 && checkquest(65031) == -1 && (checkquest(65033,PLAYTIME) == -1 || checkquest(65033,PLAYTIME) == 2)) || (checkquest(65034,HUNTING) == 2 && (checkquest(65035,PLAYTIME) == -1 || checkquest(65035,PLAYTIME) == 2)))");
+	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 260 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65031) == -1 && checkquest(65032) == -1 && (checkquest(65033,PLAYTIME) == -1 || checkquest(65033,PLAYTIME) == 2)) || (checkquest(65034) == -1 && (checkquest(65035,PLAYTIME) == -1 || checkquest(65035,PLAYTIME) == 2)))");
 	end;
 }
 

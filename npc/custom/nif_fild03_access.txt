@@ -1,9 +1,10 @@
-// Niflheim Pumpkin Farm: Lv250 portal and optional Akhet-style patrols.
+// Niflheim Pumpkin Farm: Lv260 portal and optional Akhet-style patrols.
+// Entry level: kRO 2024-08-07 (notice 7942); MuhRO's reduced Lv250 is not used.
 // Portal source: https://wiki.muhro.eu/Niflheim_Pumpkin_Farm
 niflheim,345,272,4	script	Pumpkin Warden#farm	4_M_NFDEADSWDMAN,{
-	if (BaseLevel < 250) {
+	if (BaseLevel < 260) {
 		mes "[Pumpkin Warden]";
-		mes "You must be Base Level 250 or higher to enter Niflheim Pumpkin Farm.";
+		mes "You must be Base Level 260 or higher to enter Niflheim Pumpkin Farm.";
 		close;
 	}
 	mes "[Pumpkin Warden]";
@@ -75,7 +76,7 @@ L_Daily:
 		if (select("Report the completed patrol:Keep it for later") == 2)
 			return;
 		callsub L_ClearCooldowns;
-		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65043,PLAYTIME) != -1 || (checkquest(65041) != -1 && checkquest(65042) != -1) || checkquest(.@quest,HUNTING) != 2)
+		if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65043,PLAYTIME) != -1 || (checkquest(65041) != -1 && checkquest(65042) != -1) || checkquest(.@quest,HUNTING) != 2)
 			return;
 		callsub L_Reward,.@rate;
 		if (.@base == 0 && .@job == 0)
@@ -101,7 +102,7 @@ L_Daily:
 	if (select("Accept this patrol:Not now") == 2)
 		return;
 	callsub L_ClearCooldowns;
-	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65043,PLAYTIME) != -1 || checkquest(65041) != -1 || checkquest(65042) != -1)
+	if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65043,PLAYTIME) != -1 || checkquest(65041) != -1 || checkquest(65042) != -1)
 		return;
 	setquest .@quest;
 	questinfo_refresh();
@@ -133,7 +134,7 @@ L_Weekly:
 		if (select("Report the completed patrol:Keep it for later") == 2)
 			return;
 		callsub L_ClearCooldowns;
-		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65045,PLAYTIME) != -1 || checkquest(65044,HUNTING) != 2)
+		if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65045,PLAYTIME) != -1 || checkquest(65044,HUNTING) != 2)
 			return;
 		callsub L_Reward,450;
 		if (.@base == 0 && .@job == 0)
@@ -155,7 +156,7 @@ L_Weekly:
 	if (select("Accept the weekly patrol:Not now") == 2)
 		return;
 	callsub L_ClearCooldowns;
-	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65045,PLAYTIME) != -1 || checkquest(65044) != -1)
+	if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65045,PLAYTIME) != -1 || checkquest(65044) != -1)
 		return;
 	setquest 65044;
 	questinfo_refresh();
@@ -164,16 +165,16 @@ L_Weekly:
 	return;
 
 OnInit:
-	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65041,HUNTING) == 2 && checkquest(65042) == -1 && (checkquest(65043,PLAYTIME) == -1 || checkquest(65043,PLAYTIME) == 2)) || (checkquest(65042,HUNTING) == 2 && checkquest(65041) == -1 && (checkquest(65043,PLAYTIME) == -1 || checkquest(65043,PLAYTIME) == 2)) || (checkquest(65044,HUNTING) == 2 && (checkquest(65045,PLAYTIME) == -1 || checkquest(65045,PLAYTIME) == 2)))");
-	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65041) == -1 && checkquest(65042) == -1 && (checkquest(65043,PLAYTIME) == -1 || checkquest(65043,PLAYTIME) == 2)) || (checkquest(65044) == -1 && (checkquest(65045,PLAYTIME) == -1 || checkquest(65045,PLAYTIME) == 2)))");
+	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 260 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65041,HUNTING) == 2 && checkquest(65042) == -1 && (checkquest(65043,PLAYTIME) == -1 || checkquest(65043,PLAYTIME) == 2)) || (checkquest(65042,HUNTING) == 2 && checkquest(65041) == -1 && (checkquest(65043,PLAYTIME) == -1 || checkquest(65043,PLAYTIME) == 2)) || (checkquest(65044,HUNTING) == 2 && (checkquest(65045,PLAYTIME) == -1 || checkquest(65045,PLAYTIME) == 2)))");
+	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 260 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65041) == -1 && checkquest(65042) == -1 && (checkquest(65043,PLAYTIME) == -1 || checkquest(65043,PLAYTIME) == 2)) || (checkquest(65044) == -1 && (checkquest(65045,PLAYTIME) == -1 || checkquest(65045,PLAYTIME) == 2)))");
 	end;
 }
 
 niflheim,349,274,0	script	enter_niffild03	WARPNPC,1,1,{
 	end;
 OnTouch:
-	if (BaseLevel < 250) {
-		mes "You must be Base Level 250 or higher to enter Niflheim Pumpkin Farm.";
+	if (BaseLevel < 260) {
+		mes "You must be Base Level 260 or higher to enter Niflheim Pumpkin Farm.";
 		close;
 	}
 	warp "nif_fild03",253,47;

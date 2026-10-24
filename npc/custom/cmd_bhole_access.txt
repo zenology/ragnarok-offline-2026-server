@@ -1,9 +1,10 @@
-// Unknown Blue Hole: Lv250 entry and optional Pumpkin Farm-style patrols.
+// Unknown Blue Hole: Lv260 entry and optional Pumpkin Farm-style patrols.
+// Entry level: kRO 2024-12-04 (notice 7995); MuhRO's reduced Lv250 is not used.
 // Entrance reference: https://wiki.muhro.eu/Unknown_Blue_Hole
 comodo,185,86,4	script	Cesar#bluehole	4_TOWER_09,{
-	if (BaseLevel < 250) {
+	if (BaseLevel < 260) {
 		mes "[Cesar]";
-		mes "You must be Base Level 250 or higher to enter Unknown Blue Hole.";
+		mes "You must be Base Level 260 or higher to enter Unknown Blue Hole.";
 		close;
 	}
 	mes "[Cesar]";
@@ -19,7 +20,7 @@ comodo,185,86,4	script	Cesar#bluehole	4_TOWER_09,{
 	callsub L_ClearCooldowns;
 	switch (select("Enter Unknown Blue Hole:Daily patrol:Weekly patrol:Leave")) {
 	case 1:
-		if (BaseLevel < 250 || Hp <= 0)
+		if (BaseLevel < 260 || Hp <= 0)
 			close;
 		close2;
 		warp "cmd_bhole",246,356;
@@ -81,7 +82,7 @@ L_Daily:
 		if (select("Report the completed patrol:Keep it for later") == 2)
 			return;
 		callsub L_ClearCooldowns;
-		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65053,PLAYTIME) != -1 || (checkquest(65051) != -1 && checkquest(65052) != -1) || checkquest(.@quest,HUNTING) != 2)
+		if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65053,PLAYTIME) != -1 || (checkquest(65051) != -1 && checkquest(65052) != -1) || checkquest(.@quest,HUNTING) != 2)
 			return;
 		callsub L_Reward,.@rate;
 		if (.@base == 0 && .@job == 0)
@@ -107,7 +108,7 @@ L_Daily:
 	if (select("Accept this patrol:Not now") == 2)
 		return;
 	callsub L_ClearCooldowns;
-	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65053,PLAYTIME) != -1 || checkquest(65051) != -1 || checkquest(65052) != -1)
+	if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65053,PLAYTIME) != -1 || checkquest(65051) != -1 || checkquest(65052) != -1)
 		return;
 	setquest .@quest;
 	questinfo_refresh();
@@ -139,7 +140,7 @@ L_Weekly:
 		if (select("Report the completed patrol:Keep it for later") == 2)
 			return;
 		callsub L_ClearCooldowns;
-		if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65055,PLAYTIME) != -1 || checkquest(65054,HUNTING) != 2)
+		if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65055,PLAYTIME) != -1 || checkquest(65054,HUNTING) != 2)
 			return;
 		callsub L_Reward,450;
 		if (.@base == 0 && .@job == 0)
@@ -161,7 +162,7 @@ L_Weekly:
 	if (select("Accept the weekly patrol:Not now") == 2)
 		return;
 	callsub L_ClearCooldowns;
-	if (BaseLevel < 250 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65055,PLAYTIME) != -1 || checkquest(65054) != -1)
+	if (BaseLevel < 260 || Hp <= 0 || (BaseLevel >= 275 && JobLevel >= 60) || checkquest(65055,PLAYTIME) != -1 || checkquest(65054) != -1)
 		return;
 	setquest 65054;
 	questinfo_refresh();
@@ -170,8 +171,8 @@ L_Weekly:
 	return;
 
 OnInit:
-	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65051,HUNTING) == 2 && checkquest(65052) == -1 && (checkquest(65053,PLAYTIME) == -1 || checkquest(65053,PLAYTIME) == 2)) || (checkquest(65052,HUNTING) == 2 && checkquest(65051) == -1 && (checkquest(65053,PLAYTIME) == -1 || checkquest(65053,PLAYTIME) == 2)) || (checkquest(65054,HUNTING) == 2 && (checkquest(65055,PLAYTIME) == -1 || checkquest(65055,PLAYTIME) == 2)))");
-	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 250 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65051) == -1 && checkquest(65052) == -1 && (checkquest(65053,PLAYTIME) == -1 || checkquest(65053,PLAYTIME) == 2)) || (checkquest(65054) == -1 && (checkquest(65055,PLAYTIME) == -1 || checkquest(65055,PLAYTIME) == 2)))");
+	questinfo(QTYPE_QUEST2,QMARK_YELLOW,"BaseLevel >= 260 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65051,HUNTING) == 2 && checkquest(65052) == -1 && (checkquest(65053,PLAYTIME) == -1 || checkquest(65053,PLAYTIME) == 2)) || (checkquest(65052,HUNTING) == 2 && checkquest(65051) == -1 && (checkquest(65053,PLAYTIME) == -1 || checkquest(65053,PLAYTIME) == 2)) || (checkquest(65054,HUNTING) == 2 && (checkquest(65055,PLAYTIME) == -1 || checkquest(65055,PLAYTIME) == 2)))");
+	questinfo(QTYPE_DAILYQUEST,QMARK_YELLOW,"BaseLevel >= 260 && (BaseLevel < 275 || JobLevel < 60) && ((checkquest(65051) == -1 && checkquest(65052) == -1 && (checkquest(65053,PLAYTIME) == -1 || checkquest(65053,PLAYTIME) == 2)) || (checkquest(65054) == -1 && (checkquest(65055,PLAYTIME) == -1 || checkquest(65055,PLAYTIME) == 2)))");
 	end;
 }
 
