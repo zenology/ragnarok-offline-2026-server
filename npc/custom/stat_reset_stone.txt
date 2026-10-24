@@ -1,0 +1,67 @@
+//===== Ragnarok Offline Script ==============================
+//= Rino Reset: repeatable stat reset using Premium Reset Stone.
+//= Name: https://ro.gnjoy.in.th/status-reset-discount-event/
+//= iRO level costs: https://irowiki.org/wiki/Stats#Stat_Points_Reset
+//= Local extension: levels above 260 keep the 12-stone top tier.
+//============================================================
+prontera,152,283,4	script	Rino Reset#offline	124,{
+	mes "[Rino Reset]";
+	mes "I can reset your stats so you can try a different build. Your skills will stay as they are.";
+	next;
+	mes "[Rino Reset]";
+	mes "STR, AGI, VIT, INT, DEX and LUK return to 1. Fourth-job Trait Stats return to 0, and their points are returned too.";
+	next;
+	callsub L_CheckReady;
+	.@level = BaseLevel;
+	// Each crossed upper bound adds one stone, up to 12.
+	setarray .@upper[0],40,70,90,110,125,140,150,160,170,180,190;
+	.@cost = 1;
+	for (.@i = 0; .@i < getarraysize(.@upper); ++.@i) {
+		if (.@level > .@upper[.@i])
+			++.@cost;
+	}
+	mes "[Rino Reset]";
+	mes "At Base Level " + .@level + ", the cost is " + .@cost + " Premium Reset Stone(s). There is no Zeny fee.";
+	next;
+	if (countitem(6320) < .@cost) {
+		mes "[Rino Reset]";
+		mes "You do not have enough Premium Reset Stones. Bring " + .@cost + " and I can help you.";
+		close;
+	}
+	mes "[Rino Reset]";
+	mes "Spend " + .@cost + " Premium Reset Stone(s) and reset your stats now? This cannot be undone.";
+	if (select("Keep my current build:Reset my stats") == 1)
+		close;
+	clear;
+	// Recheck after the last player input; never charge a stale quote.
+	if (BaseLevel != .@level) {
+		mes "[Rino Reset]";
+		mes "Your level changed. Talk to me again for a new price.";
+		close;
+	}
+	callsub L_CheckReady;
+	if (countitem(6320) < .@cost) {
+		mes "[Rino Reset]";
+		mes "You no longer have enough Premium Reset Stones. Nothing has been spent.";
+		close;
+	}
+	// No input or delay between payment and the native reset.
+	delitem 6320,.@cost;
+	resetstatus;
+	mes "[Rino Reset]";
+	mes "All done. Your stat points are ready to redistribute, and your skills are unchanged.";
+	close;
+
+L_CheckReady:
+	if (Weight != 0) {
+		mes "[Rino Reset]";
+		mes "Store your belongings until your carried weight is exactly 0, then come back. Keep the weightless Reset Stones with you.";
+		close;
+	}
+	if (checkcart() || checkfalcon() || checkriding() || checkdragon() || checkmadogear() || checkwug() || ismounting()) {
+		mes "[Rino Reset]";
+		mes "Remove your Pushcart, Falcon, Warg, Madogear and any mount before resetting your stats.";
+		close;
+	}
+	return;
+}
