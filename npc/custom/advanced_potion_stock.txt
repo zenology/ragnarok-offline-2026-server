@@ -1,0 +1,45 @@
+// Concentrated Syrups on existing Advanced Potion Merchant Zeny shops.
+// Reload after npc/re/merchants/shops.txt if that file is reloaded separately.
+-	script	advanced_potion_stock	-1,{
+OnInit:
+	setarray .@shops$[0],
+		"Advanced Potion Merchant#alb",
+		"Advanced Potion Merchant#alde",
+		"Advanced Potion Merchant#gef",
+		"Advanced Potion Merchant#iz",
+		"Advanced Potion Merchant#moc1",
+		"Advanced Potion Merchant#moc2",
+		"Advanced Potion Merchant#pay",
+		"Advanced Potion Merchant#pay2",
+		"Advanced Potion Merchant#pay3",
+		"Advanced Potion Merchant#prt";
+	setarray .@items[0], 1100003, 1100005, 9000100, 1100004;
+
+	// Validate every dependency before changing any shop.
+	for (.@i = 0; .@i < getarraysize(.@shops$); ++.@i) {
+		if (!getnpcid(0, .@shops$[.@i])) {
+			debugmes "Advanced potion stock: missing shop " + .@shops$[.@i] + ".";
+			end;
+		}
+	}
+	for (.@i = 0; .@i < getarraysize(.@items); ++.@i) {
+		if (getiteminfo(.@items[.@i], ITEMINFO_TYPE) == -1) {
+			debugmes "Advanced potion stock: missing item " + .@items[.@i] + ".";
+			end;
+		}
+	}
+
+	for (.@i = 0; .@i < getarraysize(.@shops$); ++.@i) {
+		// Remove our previous stock before appending, so reloads do not duplicate it.
+		if (!npcshopdelitem(.@shops$[.@i], 1100003, 1100005, 9000100, 1100004)) {
+			debugmes "Advanced potion stock: remove failed for " + .@shops$[.@i] + ".";
+			end;
+		}
+		if (!npcshopadditem(.@shops$[.@i], 1100003, 10000, 1100005, 12000, 9000100, 20000, 1100004, 17000)) {
+			debugmes "Advanced potion stock: add failed for " + .@shops$[.@i] + ".";
+			end;
+		}
+	}
+	debugmes "Advanced potion stock: 10/10 ready.";
+	end;
+}
