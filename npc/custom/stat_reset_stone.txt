@@ -6,10 +6,10 @@
 //============================================================
 prontera,152,283,4	script	Rino Reset#offline	124,{
 	mes "[Rino Reset]";
-	mes "I can reset your stats so you can try a different build. Your skills will stay as they are.";
+	mes "I'm Rino. Has your training led you down a path that no longer feels right? I can help you start afresh. The skills you've learned will still be yours.";
 	next;
 	mes "[Rino Reset]";
-	mes "STR, AGI, VIT, INT, DEX and LUK return to 1. Fourth-job Trait Stats return to 0, and their points are returned too.";
+	mes "I'll undo the way you've honed your body and mind, even the strengths you've awakened along the way. That potential will be yours to shape anew.";
 	next;
 	callsub L_CheckReady;
 	.@level = BaseLevel;
@@ -21,46 +21,46 @@ prontera,152,283,4	script	Rino Reset#offline	124,{
 			++.@cost;
 	}
 	mes "[Rino Reset]";
-	mes "At Base Level " + .@level + ", the cost is " + .@cost + " Premium Reset Stone(s). There is no Zeny fee.";
+	mes "The work will take " + .@cost + " of your Premium Reset Stones. Keep your Zeny; the stones are all I ask.";
 	next;
 	if (countitem(6320) < .@cost) {
 		mes "[Rino Reset]";
-		mes "You do not have enough Premium Reset Stones. Bring " + .@cost + " and I can help you.";
+		mes "A few stones short, I'm afraid. I'll need " + .@cost + " of those Premium Reset Stones before we can begin. I'll be right here when you have them.";
 		close;
 	}
 	mes "[Rino Reset]";
-	mes "Spend " + .@cost + " Premium Reset Stone(s) and reset your stats now? This cannot be undone.";
-	if (select("Keep my current build:Reset my stats") == 1)
+	mes "Are you ready to begin? I'll use " + .@cost + " of your Premium Reset Stones. Be certain. Once they're spent, I can't put you back the way you were.";
+	if (select("I'll keep things as they are.:I'm ready for a fresh start.") == 1)
 		close;
 	clear;
 	// Recheck after the last player input; never charge a stale quote.
 	if (BaseLevel != .@level) {
 		mes "[Rino Reset]";
-		mes "Your level changed. Talk to me again for a new price.";
+		mes "Hold on. You've gained experience since I counted the stones. Speak to me again so I can work out what you need now.";
 		close;
 	}
 	callsub L_CheckReady;
 	if (countitem(6320) < .@cost) {
 		mes "[Rino Reset]";
-		mes "You no longer have enough Premium Reset Stones. Nothing has been spent.";
+		mes "Wait, there aren't enough stones here anymore. I haven't used any. Gather what you need, then come back.";
 		close;
 	}
 	// No input or delay between payment and the native reset.
 	delitem 6320,.@cost;
 	resetstatus;
 	mes "[Rino Reset]";
-	mes "All done. Your stat points are ready to redistribute, and your skills are unchanged.";
+	mes "Steady now. Give yourself a moment. Your potential is yours to shape again, and your hard-earned skills are still with you. Where you go from here is up to you.";
 	close;
 
 L_CheckReady:
 	if (Weight != 0) {
 		mes "[Rino Reset]";
-		mes "Store your belongings until your carried weight is exactly 0, then come back. Keep the weightless Reset Stones with you.";
+		mes "Leave your burdens with the Kafra first. Nothing weighing you down, not even a feather. Keep the Reset Stones with you; they weigh nothing.";
 		close;
 	}
 	if (checkcart() || checkfalcon() || checkriding() || checkdragon() || checkmadogear() || checkwug() || ismounting()) {
 		mes "[Rino Reset]";
-		mes "Remove your Pushcart, Falcon, Warg, Madogear and any mount before resetting your stats.";
+		mes "Just you and me for this part. Put away your Pushcart, send your Falcon or Warg to rest, and step down from any mount or Madogear before we start.";
 		close;
 	}
 	return;
