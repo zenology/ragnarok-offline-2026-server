@@ -80,7 +80,7 @@ export default function PrivateAirshipPage(): ReactNode {
             caverns.
           </Callout>
           <Callout>
-            <strong>Ancient Temple Akhet:</strong> Base Level 250. You can enter through the Morroc
+            <strong>Ancient Temple Akhet:</strong> Base Level 260. You can enter through the Morroc
             Soldier at moc_fild11 (192, 211) or MOVE directly into the temple without taking a
             patrol. MOVE refuses an ineligible character before consuming a ticket. The soldier
             offers one daily patrol of 100 kills for 0.9% or 500 kills for 4.5% Base and Job EXP,
@@ -90,7 +90,7 @@ export default function PrivateAirshipPage(): ReactNode {
             uses your levels when you report and is not multiplied by EXP bonuses.
           </Callout>
           <Callout>
-            <strong>Niflheim Pumpkin Farm:</strong> Base Level 250. Enter through the portal at
+            <strong>Niflheim Pumpkin Farm:</strong> Base Level 260. Enter through the portal at
             Niflheim (349, 274) or MOVE directly into the farm. Pumpkin Warden at (345, 272) offers
             optional patrols with the same EXP rewards and resets as Akhet: one daily of 100 kills
             for 0.9% or 500 kills for 4.5%, plus a weekly 5,000 kills for 45%. The five regular
@@ -100,7 +100,7 @@ export default function PrivateAirshipPage(): ReactNode {
             time. Each cooldown starts on claim, and unfinished patrols carry over.
           </Callout>
           <Callout>
-            <strong>Unknown Blue Hole:</strong> Base Level 250. Speak to Cesar at Comodo (185, 86)
+            <strong>Unknown Blue Hole:</strong> Base Level 260. Speak to Cesar at Comodo (185, 86)
             or MOVE directly into the Blue Hole. Patrols are optional and follow the Pumpkin Farm
             rules: one daily of 100 kills for 0.9% or 500 kills for 4.5% Base and Job EXP, plus a
             weekly 5,000 kills for 45%. Tassi, Guerrero, Hanom, Sirena, Diosa and their Mighty
