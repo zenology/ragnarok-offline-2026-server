@@ -1,0 +1,34 @@
+# Local 75% costume-enchantment policy: remove foreign guaranteed-rate names.
+# Name-only overrides; IDs, AegisNames, bonuses and restrictions stay native.
+Header:
+  Type: ITEM_DB
+  Version: 3
+Body:
+  - Id: 1002777
+    Name: Purified Stone Garment(STR)
+  - Id: 1002778
+    Name: Purified Stone Garment(AGI)
+  - Id: 1002779
+    Name: Purified Stone Garment(LUK)
+  - Id: 1002780
+    Name: Purified Stone Garment(DEX)
+  - Id: 1002781
+    Name: Purified Stone Garment(INT)
+  - Id: 1002782
+    Name: Purified Stone Garment(VIT)
+  - Id: 1002783
+    Name: Purified Stone Garment(Ultimate)
+  - Id: 1002784
+    Name: Ragnarok Festa Stone POW (Upper)
+  - Id: 1002785
+    Name: Ragnarok Festa Stone WIS (Upper)
+  - Id: 1002786
+    Name: Ragnarok Festa Stone STA (Upper)
+  - Id: 1002787
+    Name: Ragnarok Festa Stone SPL (Upper)
+  - Id: 1002788
+    Name: Ragnarok Festa Stone CON (Upper)
+  - Id: 1002789
+    Name: Ragnarok Festa Stone CRT (Upper)
+  - Id: 1002790
+    Name: Ragnarok Festa Stone Supreme (Upper)

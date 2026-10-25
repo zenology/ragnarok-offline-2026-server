@@ -4113,3 +4113,4 @@ Body:
 Footer:
   Imports:
     - Path: db/import/item_combos_chapter_cards.yml
+    - Path: db/import/item_combos_iro_shadow_gear.yml

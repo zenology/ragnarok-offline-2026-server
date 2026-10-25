@@ -1,0 +1,216 @@
+# Reviewed iRO Shadow combinations, 2026-10-25: 93 distinct sets.
+# Shared scripts group only combinations with the same occupied Shadow slots.
+Header:
+  Type: COMBO_DB
+  Version: 1
+Body:
+  # 28 weapon + classic shield pairs; 30 + DOUBLE the two-piece refine sum.
+  - Combos:
+      - Combo: [21Anni_W_Shadow_TW, S_Runeknight_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Royalguard_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Mechanic_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Genetic_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Archbishop_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Sura_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Guillotine_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Shadowchaser_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Warlock_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Sorcerer_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Ranger_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Minstrel_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_Wanderer_Shield]
+      - Combo: [21Anni_W_Shadow_TW, S_SuperNovice_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Runeknight_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Royalguard_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Mechanic_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Genetic_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Archbishop_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Sura_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Guillotine_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Shadowchaser_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Warlock_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Sorcerer_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Ranger_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Minstrel_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_Wanderer_Shield]
+      - Combo: [21Anni2_W_Shadow_TW, S_SuperNovice_Shield]
+    Script: |
+      .@p = 30+2*(getequiprefinerycnt(EQI_SHADOW_WEAPON)+getequiprefinerycnt(EQI_SHADOW_SHIELD));
+      bonus2 bIgnoreDefRaceRate,RC_All,.@p;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Human,-.@p;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_All,.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-.@p;
+  # 14 weapon + expanded-class shoes pairs.
+  - Combos:
+      - Combo: [21Anni_W_Shadow_TW, S_Rebellion_Shoes]
+      - Combo: [21Anni_W_Shadow_TW, S_Kagerou_Shoes]
+      - Combo: [21Anni_W_Shadow_TW, S_Oboro_Shoes]
+      - Combo: [21Anni_W_Shadow_TW, S_DoramPhysical_Shoes]
+      - Combo: [21Anni_W_Shadow_TW, S_DoramMagical_Shoes]
+      - Combo: [21Anni_W_Shadow_TW, S_Star_Emperor_Shoes]
+      - Combo: [21Anni_W_Shadow_TW, S_Soul_Reaper_Shoes]
+      - Combo: [21Anni2_W_Shadow_TW, S_Rebellion_Shoes]
+      - Combo: [21Anni2_W_Shadow_TW, S_Kagerou_Shoes]
+      - Combo: [21Anni2_W_Shadow_TW, S_Oboro_Shoes]
+      - Combo: [21Anni2_W_Shadow_TW, S_DoramPhysical_Shoes]
+      - Combo: [21Anni2_W_Shadow_TW, S_DoramMagical_Shoes]
+      - Combo: [21Anni2_W_Shadow_TW, S_Star_Emperor_Shoes]
+      - Combo: [21Anni2_W_Shadow_TW, S_Soul_Reaper_Shoes]
+    Script: |
+      .@p = 30+2*(getequiprefinerycnt(EQI_SHADOW_WEAPON)+getequiprefinerycnt(EQI_SHADOW_SHOES));
+      bonus2 bIgnoreDefRaceRate,RC_All,.@p;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Human,-.@p;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_All,.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-.@p;
+  # 28 shield + classic weapon pairs.
+  - Combos:
+      - Combo: [Clear_Shield_Shadow1_TW, S_SuperNovice_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Runeknight_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Royalguard_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Mechanic_weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Genetic_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Archbishop_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Sura_weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Guillotine_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Shadowchaser_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Warlock_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Sorcerer_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Ranger_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Minstrel_Weapon]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Wanderer_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_SuperNovice_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Runeknight_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Royalguard_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Mechanic_weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Genetic_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Archbishop_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Sura_weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Guillotine_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Shadowchaser_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Warlock_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Sorcerer_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Ranger_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Minstrel_Weapon]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Wanderer_Weapon]
+    Script: |
+      .@p = 30+2*(getequiprefinerycnt(EQI_SHADOW_SHIELD)+getequiprefinerycnt(EQI_SHADOW_WEAPON));
+      bonus2 bIgnoreDefRaceRate,RC_All,.@p;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Human,-.@p;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_All,.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-.@p;
+  # 14 shield + expanded-class armor pairs.
+  - Combos:
+      - Combo: [Clear_Shield_Shadow1_TW, S_Rebellion_Armor]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Kagerou_Armor]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Oboro_Armor]
+      - Combo: [Clear_Shield_Shadow1_TW, S_DoramPhysical_Armor]
+      - Combo: [Clear_Shield_Shadow1_TW, S_DoramMagical_Armor]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Star_Emperor_Armor]
+      - Combo: [Clear_Shield_Shadow1_TW, S_Soul_Reaper_Armor]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Rebellion_Armor]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Kagerou_Armor]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Oboro_Armor]
+      - Combo: [Clear_Shield_Shadow2_TW, S_DoramPhysical_Armor]
+      - Combo: [Clear_Shield_Shadow2_TW, S_DoramMagical_Armor]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Star_Emperor_Armor]
+      - Combo: [Clear_Shield_Shadow2_TW, S_Soul_Reaper_Armor]
+    Script: |
+      .@p = 30+2*(getequiprefinerycnt(EQI_SHADOW_SHIELD)+getequiprefinerycnt(EQI_SHADOW_ARMOR));
+      bonus2 bIgnoreDefRaceRate,RC_All,.@p;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Human,-.@p;
+      bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_All,.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-.@p;
+      bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-.@p;
+  # These two special DEF/MDEF bonuses include players; RES/MRES do not.
+  - Combos:
+      - Combo: [21Anni2_W_Shadow_TW, Clear_Shield_Shadow1_TW]
+      - Combo: [21Anni2_W_Shadow_TW, Clear_Shield_Shadow2_TW]
+    Script: |
+      bonus bPAtk,3;
+      bonus bSMatk,3;
+      bonus2 bIgnoreDefRaceRate,RC_All,50;
+      bonus2 bIgnoreMdefRaceRate,RC_All,50;
+      bonus2 bIgnoreResRaceRate,RC_All,12;
+      bonus2 bIgnoreResRaceRate,RC_Player_Human,-12;
+      bonus2 bIgnoreResRaceRate,RC_Player_Doram,-12;
+      bonus2 bIgnoreMResRaceRate,RC_All,12;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Human,-12;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Doram,-12;
+  - Combos:
+      - Combo: [21Anni2_W_Shadow_TW, Clear_Shield_Shadow3_TW]
+    Script: |
+      bonus bPAtk,5;
+      bonus bSMatk,5;
+      bonus2 bIgnoreResRaceRate,RC_All,30;
+      bonus2 bIgnoreResRaceRate,RC_Player_Human,-30;
+      bonus2 bIgnoreResRaceRate,RC_Player_Doram,-30;
+      bonus2 bIgnoreMResRaceRate,RC_All,30;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Human,-30;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Doram,-30;
+  - Combos:
+      - Combo: [21Anni3_W_Shadow_TW, Clear_Shield_Shadow3_TW]
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus2 bIgnoreResRaceRate,RC_All,50;
+      bonus2 bIgnoreResRaceRate,RC_Player_Human,-50;
+      bonus2 bIgnoreResRaceRate,RC_Player_Doram,-50;
+      bonus2 bIgnoreMResRaceRate,RC_All,50;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Human,-50;
+      bonus2 bIgnoreMResRaceRate,RC_Player_Doram,-50;
+  - Combos:
+      - Combo: [Limit_Break_SH_E, Limit_Break_SH_P]
+    Script: |
+      bonus bAllStats,12;
+      bonus2 bAddRace,RC_All,8;
+      bonus2 bMagicAddRace,RC_All,8;
+  - Combos:
+      - Combo: [S_Double_Weapon_P_TW, S_Double_Shield_P_TW]
+    Script: |
+      bonus bPow,5;
+      bonus bSta,5;
+      if (getequiprefinerycnt(EQI_SHADOW_WEAPON)+getequiprefinerycnt(EQI_SHADOW_SHIELD)>=20) {
+         bonus2 bAddEle,Ele_All,8;
+         bonus2 bDropAddRace,RC_All,3;
+      }
+  - Combos:
+      - Combo: [S_Double_Weapon_M_TW, S_Double_Shield_M_TW]
+    Script: |
+      bonus bSpl,5;
+      bonus bWis,5;
+      if (getequiprefinerycnt(EQI_SHADOW_WEAPON)+getequiprefinerycnt(EQI_SHADOW_SHIELD)>=20) {
+         bonus2 bMagicAddEle,Ele_All,8;
+         bonus2 bDropAddRace,RC_All,3;
+      }
+  - Combos:
+      - Combo: [S_Spell_M_Earring_US, S_Spell_M_Pendant]
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_SHADOW_ACC_R)+getequiprefinerycnt(EQI_SHADOW_ACC_L);
+      bonus bSMatk,2;
+      if (.@sum>=15) {
+         bonus bMaxSPrate,3;
+         bonus2 bMagicAddEle,Ele_All,5;
+      }
+      if (.@sum>=18) {
+         bonus2 bIgnoreMdefRaceRate,RC_All,50;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-50;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-50;
+      }
+  - Combos:
+      - Combo: [S_Spell_M_Earring_US, S_Spell_M_Pendant, S_Master_Weapon]
+    Script: |
+      .@sum = getequiprefinerycnt(EQI_SHADOW_ACC_R)+getequiprefinerycnt(EQI_SHADOW_ACC_L)+getequiprefinerycnt(EQI_SHADOW_WEAPON);
+      bonus2 bMagicAddSize,Size_All,5;
+      bonus bSMatk,2;
+      if (.@sum>=27) {
+         bonus2 bIgnoreMResRaceRate,RC_All,10;
+         bonus2 bIgnoreMResRaceRate,RC_Player_Human,-10;
+         bonus2 bIgnoreMResRaceRate,RC_Player_Doram,-10;
+      }

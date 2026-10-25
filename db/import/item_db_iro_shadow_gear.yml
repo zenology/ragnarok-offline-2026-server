@@ -1,7 +1,401 @@
-# Shadow Gear Broker import placeholder.
-# DP-only candidates remain blocked until a source-backed server row exists.
+# Reviewed iRO Shadow imports, 2026-10-25. No shop admission in this pass.
+# Sources and acceptance: KB/reference/malangdo-item-import-2026-10-25.json.
 Header:
   Type: ITEM_DB
   Version: 3
 
-Body: []
+Body:
+  - Id: 24880
+    AegisName: 21Anni_W_Shadow_TW
+    Name: Purity Shadow Weapon
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoDrop: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,.@r+8*(.@r/2);
+      bonus bMatk,.@r+8*(.@r/2);
+      if (.@r>=7) {
+         bonus2 bAddRace,RC_All,5;
+         bonus2 bMagicAddRace,RC_All,5;
+      }
+      if (.@r>=9) {
+         bonus2 bAddClass,Class_Boss,5;
+         bonus2 bMagicAddClass,Class_Boss,5;
+      }
+      if (.@r>=10) bonus bFixedCast,-100;
+  - Id: 24881
+    AegisName: 21Anni2_W_Shadow_TW
+    Name: Corrupted Shadow Weapon
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoDrop: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,.@r+8*(.@r/2);
+      bonus bMatk,.@r+8*(.@r/2);
+      if (.@r>=7) {
+         bonus2 bAddRace,RC_All,5;
+         bonus2 bMagicAddRace,RC_All,5;
+      }
+      if (.@r>=9) {
+         bonus2 bAddClass,Class_Boss,5;
+         bonus2 bMagicAddClass,Class_Boss,5;
+      }
+      if (.@r>=10) bonus bFixedCast,-100;
+  - Id: 24882
+    AegisName: 21Anni3_W_Shadow_TW
+    Name: Sanctified Shadow Weapon
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoDrop: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,.@r+15*(.@r/2);
+      bonus bMatk,.@r+15*(.@r/2);
+      bonus bFixedCast,-100*(.@r/3);
+      if (.@r>=7) {
+         bonus2 bAddRace,RC_All,10;
+         bonus2 bMagicAddRace,RC_All,10;
+      }
+      if (.@r>=9) {
+         bonus2 bAddClass,Class_Boss,10;
+         bonus2 bMagicAddClass,Class_Boss,10;
+      }
+      if (.@r>=10) {
+         bonus2 bIgnoreDefRaceRate,RC_All,100;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
+         bonus2 bIgnoreMdefRaceRate,RC_All,100;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
+      }
+  - Id: 1270047
+    AegisName: Clear_Shield_Shadow1_TW
+    Name: Purity Shadow Shield
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Shield: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoDrop: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,10*.@r;
+      bonus bMaxHPrate,.@r/2;
+      bonus bMaxSPrate,.@r/2;
+      if (.@r>=7) bonus bAllTraitStats,2;
+      if (.@r>=9) {
+         bonus bShortAtkRate,5;
+         bonus bLongAtkRate,5;
+         bonus2 bMagicAtkEle,Ele_All,5;
+      }
+      if (.@r>=10) bonus bFixedCast,-100;
+  - Id: 1270048
+    AegisName: Clear_Shield_Shadow2_TW
+    Name: Corrupted Shadow Shield
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Shield: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoDrop: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,10*.@r;
+      bonus bMaxHPrate,.@r/2;
+      bonus bMaxSPrate,.@r/2;
+      if (.@r>=7) bonus bAllStats,2;
+      if (.@r>=9) {
+         bonus bShortAtkRate,5;
+         bonus bLongAtkRate,5;
+         bonus2 bMagicAtkEle,Ele_All,5;
+      }
+      if (.@r>=10) bonus bFixedCast,-100;
+  - Id: 1270049
+    AegisName: Clear_Shield_Shadow3_TW
+    Name: Sanctified Shadow Shield
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Shield: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoDrop: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,10*.@r;
+      bonus bMaxHPrate,2*(.@r/2);
+      bonus bMaxSPrate,2*(.@r/2);
+      bonus bFixedCast,-100*(.@r/3);
+      if (.@r>=7) bonus bAllTraitStats,8;
+      if (.@r>=9) {
+         bonus bShortAtkRate,10;
+         bonus bLongAtkRate,10;
+         bonus2 bMagicAtkEle,Ele_All,10;
+      }
+      if (.@r>=10) {
+         bonus2 bIgnoreDefRaceRate,RC_All,100;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Human,-100;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-100;
+         bonus2 bIgnoreMdefRaceRate,RC_All,100;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Human,-100;
+         bonus2 bIgnoreMdefRaceRate,RC_Player_Doram,-100;
+      }
+  - Id: 1270127
+    AegisName: Limit_Break_SH_E
+    Name: Limit Break Shadow Earring
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 10
+    Slots: 0
+    Locations:
+      Shadow_Right_Accessory: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoMail: true
+      NoAuction: true
+      NoGuildStorage: true
+    Script: |
+      .@r = getrefine();
+      .@n = max(0,(BaseLevel-150)/10);
+      bonus bMaxHP,10*.@r;
+      bonus2 bAddClass,Class_Normal,25-2*.@n;
+      bonus2 bMagicAddClass,Class_Normal,25-2*.@n;
+      bonus2 bExpAddRace,RC_All,10-.@n;
+      if (.@r>=9) bonus2 bExpAddRace,RC_All,5;
+  - Id: 1270128
+    AegisName: Limit_Break_SH_P
+    Name: Limit Break Shadow Pendant
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 10
+    Slots: 0
+    Locations:
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoMail: true
+      NoAuction: true
+      NoGuildStorage: true
+    Script: |
+      .@r = getrefine();
+      .@n = max(0,(BaseLevel-150)/10);
+      bonus bMaxHP,10*.@r;
+      bonus2 bAddClass,Class_Normal,25-2*.@n;
+      bonus2 bMagicAddClass,Class_Normal,25-2*.@n;
+      bonus2 bExpAddRace,RC_All,10-.@n;
+      if (.@r>=9) bonus2 bExpAddRace,RC_All,5;
+  - Id: 1270164
+    AegisName: S_Double_Weapon_P_TW
+    Name: Double Luck Shadow Weapon (Physical)
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,.@r;
+      bonus bMatk,.@r;
+      bonus bAtkRate,2;
+      bonus2 bDropAddRace,RC_All,.@r/3;
+      if (.@r>=7) {
+         bonus bShortAtkRate,3;
+         bonus bLongAtkRate,3;
+      }
+  - Id: 1270165
+    AegisName: S_Double_Shield_P_TW
+    Name: Double Luck Shadow Shield (Physical)
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Shield: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,10*.@r;
+      bonus bAtkRate,2;
+      bonus2 bDropAddRace,RC_All,.@r/3;
+      if (.@r>=7) {
+         bonus bShortAtkRate,3;
+         bonus bLongAtkRate,3;
+      }
+  - Id: 1270166
+    AegisName: S_Double_Weapon_M_TW
+    Name: Double Luck Shadow Weapon (Magical)
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Weapon: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,.@r;
+      bonus bMatk,.@r;
+      bonus bMatkRate,2;
+      bonus2 bDropAddRace,RC_All,.@r/3;
+      if (.@r>=7) bonus2 bMagicAtkEle,Ele_All,3;
+  - Id: 1270167
+    AegisName: S_Double_Shield_M_TW
+    Name: Double Luck Shadow Shield (Magical)
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Shield: true
+    EquipLevelMin: 100
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,10*.@r;
+      bonus bMatkRate,2;
+      bonus2 bDropAddRace,RC_All,.@r/3;
+      if (.@r>=7) bonus2 bMagicAtkEle,Ele_All,3;
+  - Id: 1270168
+    AegisName: S_Spell_M_Earring_US
+    Name: Spell Master Shadow Earring
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Right_Accessory: true
+    EquipLevelMin: 200
+    Refineable: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,10*.@r;
+      bonus bMatkRate,3;
+      bonus bFlee,10;
+      bonus2 bMagicAtkEle,Ele_Neutral,2*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_Holy,2*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_Dark,2*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_Ghost,2*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_Undead,2*(.@r/3);
+      if (.@r>=10) bonus bSMatk,3;
+  - Id: 1270258
+    AegisName: BP3_S_Pendant_US
+    Name: "[S3] Serpent Shadow Pendant"
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Left_Accessory: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,10*.@r;
+      bonus bPAtk,.@r;
+      if (.@r>=7) bonus bDelayrate,-10;
+      if (.@r>=8) {
+         bonus bStr,10;
+         bonus bDex,10;
+      }
+      if (.@r>=9) {
+         bonus bRes,30;
+         bonus bFixedCast,-300;
+      }
+      if (.@r>=10) bonus bAllTraitStats,4;
+  - Id: 1270259
+    AegisName: BP3_S_Earring_US
+    Name: "[S3] Serpent Shadow Earring"
+    Type: Shadowgear
+    Buy: 0
+    Sell: 0
+    Weight: 0
+    Slots: 0
+    Locations:
+      Shadow_Right_Accessory: true
+    EquipLevelMin: 1
+    Refineable: true
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,10*.@r;
+      bonus bSMatk,.@r;
+      if (.@r>=7) bonus bDelayrate,-10;
+      if (.@r>=8) {
+         bonus bInt,10;
+         bonus bDex,10;
+      }
+      if (.@r>=9) {
+         bonus bMRes,30;
+         bonus bFixedCast,-300;
+      }
+      if (.@r>=10) bonus bAllTraitStats,4;
