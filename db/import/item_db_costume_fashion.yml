@@ -1,0 +1,457 @@
+# Exact historical costume rows, local upstream/ill_laby be8d3e56f.
+# Approved 2026-10-26; no functional-gear identity replacements.
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 5914
+    AegisName: C_Flutter_Butterfly
+    Name: Costume Flutter Butterfly
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect HAT_EF_FLUTTER_BUTTERFLY,true;
+    UnEquipScript: |
+      hateffect HAT_EF_FLUTTER_BUTTERFLY,false;
+  - Id: 5979
+    AegisName: C_Angel_Fluttering
+    Name: Costume Fluttering Angel's Wing
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect HAT_EF_ANGEL_FLUTTERING,true;
+    UnEquipScript: |
+      hateffect HAT_EF_ANGEL_FLUTTERING,false;
+  - Id: 19602
+    AegisName: C_Invisible_Cap
+    Name: Costume Invisible Cap
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+  - Id: 19603
+    AegisName: C_Invisible_Sunglasses
+    Name: Costume Invisible Sunglasses
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+  - Id: 19604
+    AegisName: C_Invisible_Mask
+    Name: Costume Invisible Flu Mask
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+  - Id: 20240
+    AegisName: C_Gift_Of_Snow
+    Name: Costume Gift of Snow
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect HAT_EF_GIFT_OF_SNOW,true;
+    UnEquipScript: |
+      hateffect HAT_EF_GIFT_OF_SNOW,false;
+  - Id: 20439
+    AegisName: C_Glow_Of_New_Year
+    Name: Costume New Year Shine
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_GLOW_OF_NEW_YEAR,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_GLOW_OF_NEW_YEAR,false);
+  - Id: 20506
+    AegisName: C_Invisible_Manteau
+    Name: Invisible Manteau
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+  - Id: 20515
+    AegisName: C_Magic_Circle
+    Name: Costume Magic Circle
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_MAGICCIRCLE,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_MAGICCIRCLE,false);
+  - Id: 20519
+    AegisName: C_Full_BloomCherry_Tree
+    Name: Costume Full Bloom Cherry Tree
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_FULL_BLOOMCHERRY_TREE,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_FULL_BLOOMCHERRY_TREE,false);
+  - Id: 20522
+    AegisName: C_Blessings_Of_Soul
+    Name: Costume Blessings Of Soul
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_C_BLESSINGS_OF_SOUL,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_C_BLESSINGS_OF_SOUL,false);
+  - Id: 20535
+    AegisName: C_Digital_Space
+    Name: Costume Digital Space
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_DIGITAL_SPACE,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_DIGITAL_SPACE,false);
+  - Id: 20537
+    AegisName: C_Maple_Which_Falls_Rd
+    Name: Costume Falling Red Foliage
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_C_MAPLE_WHICH_FALLS_RD,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_C_MAPLE_WHICH_FALLS_RD,false);
+  - Id: 20538
+    AegisName: C_Magic_Circle_Rainbow
+    Name: Costume Magic Circle Rainbow
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_MAGICCIRCLERAINBOW,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_MAGICCIRCLERAINBOW,false);
+  - Id: 20548
+    AegisName: C_Popping_Poring_Aura
+    Name: Costume Popping Poring Aura
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_C_POPPING_PORING_AURA,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_C_POPPING_PORING_AURA,false);
+  - Id: 20990
+    AegisName: C_Rotating_Gears
+    Name: Costume Rotating Gears
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_GEARWHEEL,true;
+    UnEquipScript: |
+      hateffect HAT_EF_GEARWHEEL,false;
+  - Id: 31316
+    AegisName: C_FlutterButterfly_BL
+    Name: Costume Black Swallowtail Wings
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    Script: |
+      hateffect(HAT_EF_C_FLUTTERBUTTERFLY_BL,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_C_FLUTTERBUTTERFLY_BL,false);
+  - Id: 400073
+    AegisName: C_Romance_Rose_TW
+    Name: Costume Romantic Rose
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_C_ROMANCE_ROSE_TW,true;
+    UnEquipScript: |
+      hateffect HAT_EF_C_ROMANCE_ROSE_TW,false;
+  - Id: 400162
+    AegisName: C_Red_Navy_Hat
+    Name: Costume Red Navy Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 651
+  - Id: 400186
+    AegisName: C_Snake_Head
+    Name: Costume Snake Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    View: 393
+  - Id: 400224
+    AegisName: C_Navy_Beret
+    Name: Costume Navy Hat
+    Type: Armor
+    Locations:
+      Costume_Head_Top: true
+    ArmorLevel: 1
+    EquipLevelMin: 1
+    View: 652
+  - Id: 410127
+    AegisName: C_Spot_Light
+    Name: Costume Spotlight
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_C_SPOT_LIGHT,true;
+    UnEquipScript: |
+      hateffect HAT_EF_C_SPOT_LIGHT,false;
+  - Id: 410231
+    AegisName: C_Teaparty_Wonderland
+    Name: Costume Tea Party in Wonderland
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    Script: |
+      hateffect(HAT_EF_alice_tea,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_alice_tea,false);
+  - Id: 410279
+    AegisName: aegis_410279
+    Name: Costume Autumn Fullmoon
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_AUTUMN_FULL_MOON,true;
+    UnEquipScript: |
+      hateffect HAT_EF_AUTUMN_FULL_MOON,false;
+  - Id: 410287
+    AegisName: C_Cosmic_Connection_V
+    Name: Costume Cosmic Connection (Garment)
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_COSMIC_CONNECTION,true;
+    UnEquipScript: |
+      hateffect HAT_EF_COSMIC_CONNECTION,false;
+  - Id: 410295
+    AegisName: C_WinterNightBells
+    Name: Costume Winter Night Bells
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_WINTERNIGHTBELLS,true;
+    UnEquipScript: |
+      hateffect HAT_EF_WINTERNIGHTBELLS,false;
+  - Id: 410363
+    AegisName: C_Aura_Of_Ghost_S
+    Name: Costume Aura of Ghost Ship
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_AURA_OF_GHOST_S,true;
+    UnEquipScript: |
+      hateffect HAT_EF_AURA_OF_GHOST_S,false;
+  - Id: 420242
+    AegisName: C_Fluttering_Haze
+    Name: Costume Fluttering Haze
+    Type: Armor
+    Locations:
+      Costume_Head_Mid: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_C_FLUTTERING_HAZE,true;
+    UnEquipScript: |
+      hateffect HAT_EF_C_FLUTTERING_HAZE,false;
+  - Id: 420271
+    AegisName: aegis_420271
+    Name: Costume Cosmic Connection
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_COSMIC_CONNECTION,true;
+    UnEquipScript: |
+      hateffect HAT_EF_COSMIC_CONNECTION,false;
+  - Id: 420304
+    AegisName: C_NightSkyOfRutie
+    Name: Costume Night Sky of Lutie
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_NIGHTSKYOFRUTIE,true;
+    UnEquipScript: |
+      hateffect HAT_EF_NIGHTSKYOFRUTIE,false;
+  - Id: 420338
+    AegisName: C_CLB_SS_LL
+    Name: Costume Shiba Says Luke
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    Trade:
+      NoDrop: true
+      NoTrade: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      hateffect HAT_EF_C_CLB_SS_LL,true;
+    UnEquipScript: |
+      hateffect HAT_EF_C_CLB_SS_LL,false;
+  - Id: 420423
+    AegisName: C_InkPainting_Day
+    Name: Costume Ink Painting (Daytime)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_INKPAINTING_DAY,true;
+    UnEquipScript: |
+      hateffect HAT_EF_INKPAINTING_DAY,false;
+  - Id: 420424
+    AegisName: C_InkPainting_Night
+    Name: Costume Ink Painting (Night)
+    Type: Armor
+    Locations:
+      Costume_Head_Low: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_INKPAINTING_NIGHT,true;
+    UnEquipScript: |
+      hateffect HAT_EF_INKPAINTING_NIGHT,false;
+  - Id: 480097
+    AegisName: C_Snow_Powder
+    Name: Costume Snow Powder
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_SNOW_POWDER,true;
+    UnEquipScript: |
+      hateffect HAT_EF_SNOW_POWDER,false;
+  - Id: 480131
+    AegisName: C_Swirling_Flame
+    Name: Costume Swirling Flame
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect(HAT_EF_C_Swirling_Flame,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_C_Swirling_Flame,false);
+  - Id: 480203
+    AegisName: C_Magic_Circle_BL
+    Name: Costume Blue Magic Circle    # !todo check english name
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect(HAT_EF_Magiccircle_Blue_TW,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_Magiccircle_Blue_TW,false);
+  - Id: 480205
+    AegisName: C_Astra_Blessing
+    Name: Costume Astra Blessing
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect(HAT_EF_C_Astra_Blessing,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_C_Astra_Blessing,false);
+  - Id: 480286
+    AegisName: aegis_480286
+    Name: Costume Serpentine Vision
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_SERPENT_SHADOW,true;
+    UnEquipScript: |
+      hateffect HAT_EF_SERPENT_SHADOW,false;
+  - Id: 480296
+    AegisName: aegis_480296
+    Name: Costume Sakura Falling
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_C_SAKURA_FUBUKI,true;
+    UnEquipScript: |
+      hateffect HAT_EF_C_SAKURA_FUBUKI,false;
+  - Id: 480298
+    AegisName: C_MCircle_Wonderland
+    Name: Costume Magic Wonderland
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect(HAT_EF_rabbit_aura,true);
+    UnEquipScript: |
+      hateffect(HAT_EF_rabbit_aura,false);
+  - Id: 480470
+    AegisName: C_Summer_Beach
+    Name: Costume Summer Beach
+    Type: Armor
+    Locations:
+      Costume_Garment: true
+    ArmorLevel: 1
+    Script: |
+      hateffect HAT_EF_VACATION,true;
+    UnEquipScript: |
+      hateffect HAT_EF_VACATION,false;

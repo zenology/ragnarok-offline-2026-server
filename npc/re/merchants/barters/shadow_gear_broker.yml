@@ -1,3 +1,4 @@
+# Approved complete Shadow catalog, 2026-10-26. Existing prices retained.
 Header:
   Type: BARTER_DB
   Version: 2
@@ -5,3263 +6,1306 @@ Header:
 Body:
   - Name: sg_w_00
     Items:
-      - Index: 0
-        Item: S_Aimed_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 1
-        Item: S_Corrupt_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_2Para_AB_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Archbishop_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 145
-      - Index: 4
-        Item: S_Arms_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
+      - {Index: 0, Item: S_Absorb_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 60}]}
+      - {Index: 1, Item: S_Adoramus_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 2, Item: S_Aimed_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 3, Item: S_Corrupt_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_2Para_AB_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Archbishop_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 145}]}
+      - {Index: 6, Item: S_AB_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Arms_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 8, Item: S_Arrowvulcan_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_AutoSpell_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_w_01
     Items:
-      - Index: 0
-        Item: S_Bearers_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: Rebeginer_Weapon_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Blitz_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Boomerang_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
+      - {Index: 0, Item: S_Bearers_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: Rebeginer_Weapon_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Blitz_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Boomerang_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
   - Name: sg_w_02
     Items:
-      - Index: 0
-        Item: S_Caster_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Cloaking_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 2
-        Item: S_Cri_Hit_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
+      - {Index: 0, Item: S_Cannon_Cart_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Caster_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Catnip_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 3, Item: S_Chain_Press_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Chain_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 5, Item: S_Clever_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 70}]}
+      - {Index: 6, Item: S_Cloaking_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: S_Concentration_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: 21Anni2_W_Shadow_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 155}]}
+      - {Index: 9, Item: S_Crazy_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 10, Item: S_Creative_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_Cri_Hit_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 12, Item: S_CriticalHit_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 70}]}
   - Name: sg_w_03
     Items:
-      - Index: 0
-        Item: S_Executioner_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S_Dexterous_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_2Para_SU_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_DoramMagical_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 4
-        Item: S_DoramPhysical_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 5
-        Item: S_Dragon_Killer_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Executioner_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Dexterous_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_2Para_SU_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_DoramMagical_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 4, Item: S_DoramPhysical_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 5, Item: S_Double_Weapon_M_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 6, Item: S_Double_Weapon_P_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Dragon_Killer_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Durable_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 100}]}
   - Name: sg_w_04
     Items:
-      - Index: 0
-        Item: S_Elegant_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: Enchanting_Weapone_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Enhance_Force_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Enhance_Spirit_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 4
-        Item: S_Exceed_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 60
-      - Index: 5
-        Item: S_Exe_Ho_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 6
-        Item: S_Exo_Co_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 7
-        Item: S_Exorcist_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Elegant_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: Enchanting_Weapone_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Enhance_Force_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Enhance_Spirit_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 4, Item: S_S_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_Exceed_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 60}]}
+      - {Index: 6, Item: S_Exe_Ho_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 7, Item: S_Exo_Co_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 8, Item: S_Exorcist_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_EXP_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_w_05
     Items:
-      - Index: 0
-        Item: S_F_Breath_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 1
-        Item: S_Fis_In_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 2
-        Item: S_Fishing_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S2_Force_Ex_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 4
-        Item: S_Force_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: S_Vibration_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_F_Breath_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 1, Item: S_Kamaenraku_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 345}]}
+      - {Index: 2, Item: S_Fis_In_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 3, Item: S_Fishing_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S2_Force_Ex_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_Force_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Vibration_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_w_06
     Items:
-      - Index: 0
-        Item: S_Gemstone_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S2_Gemstone_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_2Para_GN_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Genetic_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 4
-        Item: S_Greed_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 5
-        Item: S_2Para_GC_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Guillotine_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 7
-        Item: S_Gunslinger_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
+      - {Index: 0, Item: S_Gemstone_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S2_Gemstone_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Genesis_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 3, Item: S_2Para_GN_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Genetic_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_GN_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_God_Hammer_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Grave_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 8, Item: S_Greed_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 9, Item: S_2Para_GC_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Guillotine_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_GC_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 12, Item: S_Gunslinger_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
   - Name: sg_w_07
     Items:
-      - Index: 0
-        Item: S_Hasty_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 70
-      - Index: 1
-        Item: S_Heal_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 2
-        Item: S_Healing_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Hiding_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 4
-        Item: S_Holy_Water_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 5
-        Item: S_Hunting_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_Hasty_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 70}]}
+      - {Index: 1, Item: S_Heal_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 2, Item: S_Healing_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Hiding_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 4, Item: S_Holy_Water_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_Hunting_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
   - Name: sg_w_08
     Items:
-      - Index: 0
-        Item: S_Ignition_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Infinity_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 100
-      - Index: 2
-        Item: S_Insect_Net_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Ignition_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Infinity_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 100}]}
+      - {Index: 2, Item: S_Insect_Net_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_w_09
     Items:
-      - Index: 0
-        Item: S_2Para_KO_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Kingbird_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
+      - {Index: 0, Item: S_2Para_KO_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_KO_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Katar_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 3, Item: S_KingbirdAnc_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 60}]}
+      - {Index: 4, Item: S_Kingbird_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 5, Item: S_Kunai_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_w_10
     Items:
-      - Index: 0
-        Item: S_Big_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 1
-        Item: S_Lucky_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Big_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 1, Item: S_Lucky_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_w_11
     Items:
-      - Index: 0
-        Item: S_Minstrel_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_M_Corrupt_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_M_Sci_Hu_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_M_Scissors_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_M_Executioner_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: S_M_Dragon_K_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_M_Exe_Ho_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 7
-        Item: S_M_Exo_Co_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 8
-        Item: S_M_Exorcist_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 9
-        Item: S_M_Fis_In_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 10
-        Item: S_M_Fishing_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 11
-        Item: S_M_Vibration_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 12
-        Item: S_M_Holy_Water_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 13
-        Item: S_M_Hunting_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 14
-        Item: S_M_Insect_Net_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 15
-        Item: S_M_Viv_Dr_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 16
-        Item: S_Magical_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 17
-        Item: S_2Para_NC_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 18
-        Item: S_Mechanic_weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 19
-        Item: S_Medium_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 20
-        Item: S_2Para_WM_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 21
-        Item: S_MortalBlow_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
+      - {Index: 0, Item: S_Minstrel_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_M_Corrupt_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_M_Sci_Hu_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_M_Scissors_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_M_Executioner_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_M_Dragon_K_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_M_Exe_Ho_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_M_Exo_Co_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_M_Exorcist_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_M_Fis_In_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_M_Fishing_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_M_Vibration_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 12, Item: S_M_Holy_Water_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 13, Item: S_M_Hunting_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 14, Item: S_M_Insect_Net_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 15, Item: S_M_Viv_Dr_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 16, Item: S_M_Spell_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 17, Item: S_Magical_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 18, Item: S_Magnus_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 19, Item: S_Mammoth_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 20, Item: S_Master_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 120}]}
+      - {Index: 21, Item: S_2Para_NC_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 22, Item: S_Mechanic_weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 23, Item: S_NC_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 24, Item: S_Medium_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 25, Item: S_Mega_Blitz_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 26, Item: S_2Para_WM_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 27, Item: S_WM_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 28, Item: S_MortalBlow_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
   - Name: sg_w_12
     Items:
-      - Index: 0
-        Item: S_Neutral_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S2_Neutral_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Ninja_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
+      - {Index: 0, Item: S_Neutral_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S2_Neutral_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Ninja_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
   - Name: sg_w_13
     Items:
-      - Index: 0
-        Item: S_1Para_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 100
-      - Index: 1
-        Item: S_Penetration_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_PerfectSize_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 3
-        Item: S_Physical_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Scissors_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Paint_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_1Para_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 100}]}
+      - {Index: 2, Item: S_Penetration_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_PerfectSize_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 4, Item: S_P_Power_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Physical_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Pickyrush_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Scissors_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: 21Anni_W_Shadow_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 155}]}
   - Name: sg_w_14
     Items:
-      - Index: 0
-        Item: S_2Para_RA_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Ranger_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_2Para_RL_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_2Para_LG_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Royalguard_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 5
-        Item: S_2Para_RK_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Runeknight_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_2Para_RA_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Ranger_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_RA_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_2Para_RL_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_RL_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Ripper_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_2Para_LG_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Royalguard_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_LG_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_2Para_RK_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Runeknight_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 11, Item: S_RK_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_w_15
     Items:
-      - Index: 0
-        Item: S_Sci_Hu_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 1
-        Item: Sentimental_Weapone_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_2Para_SC_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Shadowchaser_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 4
-        Item: T_Dex1_Weapon_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 5
-        Item: T_Dex2_Weapon_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 6
-        Item: S_Promotion_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 7
-        Item: S_Shooting_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 8
-        Item: S_Small_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 9
-        Item: S_Solid_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 10
-        Item: S_2Para_SO_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 11
-        Item: S_Sorcerer_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 12
-        Item: S_2Para_SP_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 13
-        Item: S_Spirit_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 14
-        Item: S2_Spirit_M_E_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 15
-        Item: S_Spiritual_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 16
-        Item: S2_Spiritual_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 17
-        Item: S_2Para_SJ_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 18
-        Item: S_Steal_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 19
-        Item: S_2Para_NV_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 20
-        Item: S_SuperNovice_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 21
-        Item: S_2Para_SR_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 22
-        Item: S_Sura_weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: 21Anni3_W_Shadow_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 245}]}
+      - {Index: 1, Item: S_Sci_Hu_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 2, Item: Sentimental_Weapone_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_2Para_SC_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Shadowchaser_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_SC_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: T_Dex1_Weapon_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: T_Dex2_Weapon_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 8, Item: S_Promotion_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_Shadowspell_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Shooting_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 11, Item: S_Skynetblow_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 12, Item: S_Small_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 13, Item: S_Solid_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 14, Item: S_2Para_SO_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 15, Item: S_Sorcerer_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 16, Item: S_SO_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 17, Item: S_2Para_SP_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 18, Item: S_SP_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 19, Item: S_Spirit_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 20, Item: S2_Spirit_M_E_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 21, Item: S_Spiritual_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 22, Item: S2_Spiritual_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 23, Item: S_Stamina_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 24, Item: S_2Para_SJ_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 25, Item: S_SJ_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 26, Item: S_Stardust_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 27, Item: S_Steal_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 28, Item: S_Strain_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 29, Item: S_SU_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 30, Item: S_Sunshine_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 31, Item: S_2Para_NV_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 32, Item: S_SNV_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 33, Item: S_NV_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 34, Item: S_SuperNovice_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 35, Item: S_Super_Power_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 115}]}
+      - {Index: 36, Item: S_2Para_SR_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 37, Item: S_Sura_weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 38, Item: S_SR_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_w_16
     Items:
-      - Index: 0
-        Item: S_Taekwon_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 1
-        Item: S_Teleport_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 2
-        Item: S_Tempest_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S_Timeoverload_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 4
-        Item: S_Tension_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Taekwon_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 1, Item: S_Tail_Dragon_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Teleport_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 3, Item: S_Tempest_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Timeoverload_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 5, Item: S_Tension_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_TigerCannon_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Trip_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
   - Name: sg_w_17
     Items:
-      - Index: 0
-        Item: Unfreez_Weapon_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: Unfreez_Weapon_S2
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: Unfreez_Weapon_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: Unfreez_Weapon_S2, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_w_18
     Items:
-      - Index: 0
-        Item: S_Viv_Dr_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_Varetyr_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 1, Item: S_Reverberation_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 2, Item: S_Viv_Dr_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
   - Name: sg_w_19
     Items:
-      - Index: 0
-        Item: S_Wanderer_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_2Para_WL_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Warlock_Weapon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Wanderer_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_2Para_WL_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Warlock_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_WL_B_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Wisdom_Weapon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+  - Name: sg_w_20
+    Items:
+      - {Index: 0, Item: 1LvWeaponS, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_0_00
     Items:
-      - Index: 0
-        Item: S_2Para_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Alchemist_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Ancient_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Adurate_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 4
-        Item: S_Arrow_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 5
-        Item: S_Assassin_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Attack_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_2Para_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_WH_AT_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 2, Item: S_Alchemist_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Ancient_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Adurate_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_Arrow_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Assassin_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Attack_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 8, Item: S_AutoSpell_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_0_01
     Items:
-      - Index: 0
-        Item: S_Bard_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Basis_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
-      - Index: 2
-        Item: S_Bearers_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S2_Bearers_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: Rebeginer_Armor_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: S_Blacksmith_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 6
-        Item: S_Blitz_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 7
-        Item: S_Breezy_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_Banish_Cannon_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 1, Item: S_Bard_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Basis_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 3, Item: S_Bearers_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S2_Bearers_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: Rebeginer_Armor_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Blacksmith_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 7, Item: S_IQ_BFB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Blitz_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_TR_RB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 10, Item: S_Booster_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 11, Item: S_Bow_M_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 12, Item: S_Brand_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 13, Item: S_Breezy_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_0_02
     Items:
-      - Index: 0
-        Item: S_Caster_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S2_Caster_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Cloaking_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 3
-        Item: S_Cluster_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 4
-        Item: S_ColdBolt_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 5
-        Item: S_W_Breath_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 6
-        Item: S_CriticalHit_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 70
-      - Index: 7
-        Item: S_Critical_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 8
-        Item: S_Crusader_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Caster_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S2_Caster_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Catnip_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 3, Item: S_Cloaking_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 4, Item: S_Cluster_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_ColdBolt_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 6, Item: S_W_Breath_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_WH_CB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Crimson_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_CriticalHit_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 70}]}
+      - {Index: 10, Item: S_Critical_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_Crusader_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_0_03
     Items:
-      - Index: 0
-        Item: S_Damned_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
-      - Index: 1
-        Item: S_Dancer_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Dexterous_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Divine_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
-      - Index: 4
-        Item: S_DoramMagical_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 5
-        Item: S_DoramPhysical_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_Damned_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 1, Item: S_Dancer_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_SKE_DB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Dexterous_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Divine_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 5, Item: S_CD_DF_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_DoramMagical_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 7, Item: S_DoramPhysical_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 8, Item: S_HN_DB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Duplelight_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 10, Item: S_Dust_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_0_04
     Items:
-      - Index: 0
-        Item: S_EarthSpike_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_Envenom_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
-      - Index: 2
-        Item: S_ExeHoly_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 3
-        Item: S_Geist_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
-      - Index: 4
-        Item: S_ExoCorrupt_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_EarthSpike_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 1, Item: S_CD_EP_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Envenom_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 3, Item: S_S_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 4, Item: S_ExeHoly_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 5, Item: S_SOA_MS_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Geist_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 7, Item: S_ExoCorrupt_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
   - Name: sg_0_05
     Items:
-      - Index: 0
-        Item: S_FireBolt_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_FishInsect_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 2
-        Item: S_Flam_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
+      - {Index: 0, Item: S_Fatal_M_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 1, Item: S_FireBolt_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 2, Item: S_Kamaenraku_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_FishInsect_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 4, Item: S_IQ_FB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_Flam_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 6, Item: S_SOA_TOFG_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_ABC_FR_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 8, Item: S_ABC_FA_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_FullPene_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 195}]}
+      - {Index: 10, Item: S_Full_Power_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 11, Item: S_Full_Rate_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 12, Item: S_Full_Spell_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 13, Item: S_FullTemp_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_0_06
     Items:
-      - Index: 0
-        Item: S_Gemstone_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Greed_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_Gemstone_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_God_Hammer_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 2, Item: S_SS_KR_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Greed_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_0_07
     Items:
-      - Index: 0
-        Item: S_Hallowed_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
-      - Index: 1
-        Item: S_Hard_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Plasterer's_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S_Hasty_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Heal_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 5
-        Item: S_Hiding_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 6
-        Item: S_Hunter_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_DK_HS_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Hallowed_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 2, Item: S_Hard_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Plasterer's_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Hasty_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Heal_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 6, Item: S_Hiding_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: S_SU_HB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Hunter_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 9, Item: S_SU_BSP_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_0_08
     Items:
-      - Index: 0
-        Item: S_Immune_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
-      - Index: 1
-        Item: S_Insomniac_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Immune_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 1, Item: S_Insomniac_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_0_09
     Items:
-      - Index: 0
-        Item: S_Kagerou_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S_KingbirdAncient_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 60
-      - Index: 2
-        Item: S_Knight_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Kagerou_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_KingbirdAncient_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 60}]}
+      - {Index: 2, Item: S_Knight_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Knucklearrow_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Kunai_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_SS_KF_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
   - Name: sg_0_10
     Items:
-      - Index: 0
-        Item: S_Big_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
-      - Index: 1
-        Item: S_LightingBolt_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 2
-        Item: S_Lucky_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Big_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 1, Item: S_LightingBolt_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 2, Item: S_EM_LS_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_R_Bearers_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 4, Item: S_Lucky_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_0_11
     Items:
-      - Index: 0
-        Item: S_MagicCompose_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_M_ExeHoly_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_M_ExoCorrupt_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_M_FishInsect_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_M_SciHunting_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: S_M_DragonVib_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Magical_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 7
-        Item: S2_Malicious_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 8
-        Item: S_Malicious_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 9
-        Item: S_Medium_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
-      - Index: 10
-        Item: S_Monk_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_ABC_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_AG_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_BO_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_CD_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_DK_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_EM_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_HN_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_IG_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_IQ_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_MT_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_NW_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_SHC_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 12, Item: S_SS_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 13, Item: S_SKE_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 14, Item: S_SOA_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 15, Item: S_SH_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 16, Item: S_TR_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 17, Item: S_WH_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 18, Item: S_DK_MB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 19, Item: S_MagicCompose_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 20, Item: S_M_ExeHoly_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 21, Item: S_M_ExoCorrupt_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 22, Item: S_M_FishInsect_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 23, Item: S_M_SciHunting_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 24, Item: S_M_DragonVib_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 25, Item: S_Magical_M_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 26, Item: S_Magical_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 27, Item: S_M_AutoSpell_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 28, Item: S2_Malicious_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 29, Item: S_Malicious_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 30, Item: S_Mammoth_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 31, Item: S_M_Mammoth_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 32, Item: S_Medium_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 33, Item: S_Menace_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 34, Item: S_TR_MF_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 35, Item: S_Metalic_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 36, Item: S_Monk_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 37, Item: S_BO_MD_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_0_12
     Items:
-      - Index: 0
-        Item: S_Oboro_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
+      - {Index: 0, Item: S_Oboro_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
   - Name: sg_0_13
     Items:
-      - Index: 0
-        Item: S_1Para_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Peerless_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S2_Peerless_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S_Penetration_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_PerfectSize_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
-      - Index: 5
-        Item: S_Physical_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 6
-        Item: S2_Plasterer's_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 7
-        Item: S_Priest_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_1Para_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Peerless_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S2_Peerless_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Penetration_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_PerfectSize_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 5, Item: S_Physical_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 6, Item: S_Pickyrush_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S2_Plasterer's_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_MT_PR_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Priest_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 10, Item: S_Psychic_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_0_14
     Items:
-      - Index: 0
-        Item: S_Rebellion_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Reload_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S2_Reload_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Rogue_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_IG_RF_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Rainstorm_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Rampage_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Rebellion_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Reload_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S2_Reload_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Rogue_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Rolling_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_0_15
     Items:
-      - Index: 0
-        Item: S_Sage_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_SciHunting_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 2
-        Item: S_Promotion_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: T_Str1_Armor_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 4
-        Item: T_Str2_Armor_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 5
-        Item: S_Sigrun_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 6
-        Item: S_Small_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
-      - Index: 7
-        Item: S_Immortal_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 8
-        Item: S_Sonic_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 9
-        Item: S_Soul_Reaper_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 10
-        Item: S_Spell_Flow_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 11
-        Item: S_Star_Emperor_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 12
-        Item: S_Steal_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_Sage_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_SHC_SI_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_SciHunting_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 3, Item: S_Promotion_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: T_Str1_Armor_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 5, Item: T_Str2_Armor_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 6, Item: S_IG_SS_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Sigrun_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 8, Item: S_Slash_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Small_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 10, Item: S_Immortal_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_Sonic_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 12, Item: S_Sorcery_M_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 13, Item: S_Soul_Reaper_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 14, Item: S_MT_SC_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 15, Item: S_SpellCaster_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 16, Item: S_Spell_M_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 17, Item: S_Spell_Flow_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 18, Item: S_Spore_Bomb_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 19, Item: S_SHC_ST_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 20, Item: S_Star_Emperor_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 21, Item: S_Stardust_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 22, Item: S_Steal_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 23, Item: S_AG_SH_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 24, Item: S_SKE_SB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 25, Item: S_Sunshine_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 26, Item: S_Super_Magic_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 27, Item: S_Sword_M_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
   - Name: sg_0_16
     Items:
-      - Index: 0
-        Item: S_Teleport_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_Tempest_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Timeoverload_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Tornado_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Tail_Dragon_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 1, Item: S_Teleport_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 2, Item: S_Tempest_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Timeoverload_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_EM_TP_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_BO_TH_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_HN_TB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Tornado_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Cart_Tornado_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Triangle_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 10, Item: S_Trip_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 11, Item: S_TrueGem_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
   - Name: sg_0_17
     Items:
-      - Index: 0
-        Item: S_Underneath_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
-      - Index: 1
-        Item: S_Saharic_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
+      - {Index: 0, Item: S_Underneath_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 1, Item: S_Saharic_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
   - Name: sg_0_18
     Items:
-      - Index: 0
-        Item: S_DragonVib_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 1
-        Item: S_Vulcan_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_DragonVib_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 1, Item: S_AG_VST_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Vulcan_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_0_19
     Items:
-      - Index: 0
-        Item: S_Windy_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 80
-      - Index: 1
-        Item: S_Wizard_Armor
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_NW_WB_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Windy_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 80}]}
+      - {Index: 2, Item: S_Wizard_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+  - Name: sg_0_20
+    Items:
+      - {Index: 0, Item: S_Jack_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Judex_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+  - Name: sg_0_21
+    Items:
+      - {Index: 0, Item: S_NW_NF_Armor, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+  - Name: sg_0_22
+    Items:
+      - {Index: 0, Item: 1LvArmorS, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_1_00
     Items:
-      - Index: 0
-        Item: S_2Para_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Advanced_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_AllRace_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S_Archbishop_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 4
-        Item: S_Arrow_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 5
-        Item: S_Athena_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Athletic_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Absorb_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 60}]}
+      - {Index: 1, Item: S_2Para_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Advanced_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_AllRace_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Archbishop_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_Arrow_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 6, Item: S_Athena_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Athletic_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_AutoSpell_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_1_01
     Items:
-      - Index: 0
-        Item: S_Basis_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
-      - Index: 1
-        Item: S_Bearers_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Beginner_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: Rebeginer_Shield_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Blitz_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: S_Brutal_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 255
+      - {Index: 0, Item: S_Banish_Cannon_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Basis_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 2, Item: S_Bearers_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Beginner_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: Rebeginer_Shield_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Blitz_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Booster_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 7, Item: S_Brand_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Brutal_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 255}]}
   - Name: sg_1_02
     Items:
-      - Index: 0
-        Item: S_Cadi_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
-      - Index: 1
-        Item: S_Caster_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Cloaking_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 3
-        Item: S_Cluster_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 4
-        Item: S_W_Breath_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 5
-        Item: S_Cranial_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 255
-      - Index: 6
-        Item: S_Critical_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 115
+      - {Index: 0, Item: S_Cadi_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 1, Item: S_Caster_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Catnip_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Clever_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 70}]}
+      - {Index: 4, Item: S_Cloaking_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 5, Item: S_Cluster_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_W_Breath_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 7, Item: S_Concentration_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: Clear_Shield_Shadow2_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 100}]}
+      - {Index: 9, Item: S_Cranial_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 255}]}
+      - {Index: 10, Item: S_Creative_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_Crimson_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 12, Item: S_Critical_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 115}]}
   - Name: sg_1_03
     Items:
-      - Index: 0
-        Item: S_Damned_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
-      - Index: 1
-        Item: S_Divine_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
-      - Index: 2
-        Item: S_DoramMagical_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 145
-      - Index: 3
-        Item: S_DoramPhysical_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 145
-      - Index: 4
-        Item: S_Dragoon_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
+      - {Index: 0, Item: S_Damned_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 1, Item: S_Divine_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 2, Item: S_DoramMagical_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 145}]}
+      - {Index: 3, Item: S_DoramPhysical_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 145}]}
+      - {Index: 4, Item: S_Double_Shield_M_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 5, Item: S_Double_Shield_P_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Dragoon_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 7, Item: S_Duplelight_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 120}]}
+      - {Index: 8, Item: S_Durable_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 100}]}
+      - {Index: 9, Item: S_Dust_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
   - Name: sg_1_04
     Items:
-      - Index: 0
-        Item: S_Envenom_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
-      - Index: 1
-        Item: S_Geist_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
-      - Index: 2
-        Item: S_Expert_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Envenom_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 1, Item: S_S_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 2, Item: S_Geist_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 3, Item: S_EXP_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 4, Item: S_Expert_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_1_05
     Items:
-      - Index: 0
-        Item: S_Flam_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
-      - Index: 1
-        Item: S_Flameguard_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
+      - {Index: 0, Item: S_Kamaenraku_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 1, Item: S_Flam_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 2, Item: S_Flameguard_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
   - Name: sg_1_06
     Items:
-      - Index: 0
-        Item: S_Gargantua_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
-      - Index: 1
-        Item: S_Gemstone_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S2_Gemstone_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Genetic_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Greed_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 5
-        Item: S_Guillotine_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Gunslinger_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_Gargantua_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 1, Item: S_Gemstone_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S2_Gemstone_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Genetic_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_God_Hammer_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_Greed_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 6, Item: S_Guillotine_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Gunslinger_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
   - Name: sg_1_07
     Items:
-      - Index: 0
-        Item: S_Hallowed_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
-      - Index: 1
-        Item: S_Heal_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 2
-        Item: S_Healing_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Hiding_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 4
-        Item: S_Homers_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
+      - {Index: 0, Item: S_Hallowed_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 1, Item: S_Hasty_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 70}]}
+      - {Index: 2, Item: S_Heal_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 3, Item: S_Healing_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Hiding_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 5, Item: S_Homers_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
   - Name: sg_1_08
     Items:
-      - Index: 0
-        Item: S_ImmunedAthena_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_ImmunedAthena_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Infinity_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 100}]}
   - Name: sg_1_09
     Items:
-      - Index: 0
-        Item: S_Magical_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Malicious_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Mechanic_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S_Minstrel_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Magical_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_M_Spell_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Malicious_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Mammoth_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Master_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 120}]}
+      - {Index: 5, Item: S_Mechanic_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Mega_Blitz_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 7, Item: S_Menace_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Metalic_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 9, Item: S_Minstrel_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_1_10
     Items:
-      - Index: 0
-        Item: S_Ninja_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Ninja_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_1_11
     Items:
-      - Index: 0
-        Item: S_1Para_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Penetration_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Physical_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_1Para_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Penetration_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_P_Power_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Physical_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Pickyrush_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 5, Item: S_Psychic_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 6, Item: Clear_Shield_Shadow1_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 100}]}
   - Name: sg_1_12
     Items:
-      - Index: 0
-        Item: S_Ranger_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Reload_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Requiem_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
-      - Index: 3
-        Item: S_Rookie_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Royalguard_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 5
-        Item: S_Runeknight_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Rainstorm_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Rampage_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Ranger_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Reload_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Requiem_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 5, Item: S_Rolling_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Rookie_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Royalguard_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Runeknight_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_1_13
     Items:
-      - Index: 0
-        Item: S_Safeguard_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
-      - Index: 1
-        Item: S_Saharic_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
-      - Index: 2
-        Item: S_Satanic_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 165
-      - Index: 3
-        Item: S_Shadowchaser_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Promotion_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: T_Luk1_Shield_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 6
-        Item: T_Luk2_Shield_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 7
-        Item: S_Sigrun_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 8
-        Item: S_Sonic_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 9
-        Item: S_Sorcerer_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 10
-        Item: S_Spell_Flow_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 11
-        Item: S2_Spell_Flow_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 12
-        Item: S_Stability_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 315
-      - Index: 13
-        Item: S_Steal_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 14
-        Item: S_SuperNovice_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 115
-      - Index: 15
-        Item: S_Sura_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Safeguard_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 1, Item: S_Saharic_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 2, Item: Clear_Shield_Shadow3_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 190}]}
+      - {Index: 3, Item: S_Satanic_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 4, Item: S_S_Reload_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 5, Item: S_Shadowchaser_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Promotion_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: T_Luk1_Shield_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 8, Item: T_Luk2_Shield_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 9, Item: S_Sigrun_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Slash_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 11, Item: S_Sonic_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 12, Item: S_Sorcerer_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 13, Item: S_Spell_Flow_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 14, Item: S2_Spell_Flow_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 15, Item: S_Spore_Bomb_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 16, Item: S_Stability_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 315}]}
+      - {Index: 17, Item: S_Stamina_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 18, Item: S_Stardust_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 19, Item: S_Steal_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 20, Item: S_Sunshine_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 21, Item: S_Super_Magic_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 100}]}
+      - {Index: 22, Item: S_SuperNovice_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 115}]}
+      - {Index: 23, Item: S_Sura_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_1_14
     Items:
-      - Index: 0
-        Item: S_Taekwon_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 125
-      - Index: 1
-        Item: S_Teleport_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 2
-        Item: S_Tempest_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S_Timeoverload_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Tornado_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
+      - {Index: 0, Item: S_Taekwon_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 125}]}
+      - {Index: 1, Item: S_Tail_Dragon_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Teleport_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 3, Item: S_Tempest_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Timeoverload_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Tornado_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 6, Item: S_Cart_Tornado_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Triangle_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Trip_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_1_15
     Items:
-      - Index: 0
-        Item: S_Underneath_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
+      - {Index: 0, Item: S_Underneath_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
   - Name: sg_1_16
     Items:
-      - Index: 0
-        Item: S_Vital_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Vulcan_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
+      - {Index: 0, Item: S_Vital_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Vulcan_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
   - Name: sg_1_17
     Items:
-      - Index: 0
-        Item: S_Wanderer_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Warlock_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Windy_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 90
+      - {Index: 0, Item: S_Wanderer_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Warlock_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Windy_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 3, Item: S_Wisdom_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+  - Name: sg_1_18
+    Items:
+      - {Index: 0, Item: S_Jack_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 1, Item: S_Judex_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+  - Name: sg_1_19
+    Items:
+      - {Index: 0, Item: S_Knucklearrow_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Kunai_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+  - Name: sg_1_20
+    Items:
+      - {Index: 0, Item: 1LvShieldS, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_2_00
     Items:
-      - Index: 0
-        Item: S2_Adurate_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S_2Para_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Advanced_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Alchemist_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_AllRace_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 5
-        Item: S_Adurate_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 6
-        Item: S_Arrow_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 7
-        Item: S_Assassin_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 8
-        Item: S_Athletic_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S2_Adurate_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_2Para_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Advanced_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_WH_AT_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 4, Item: S_Alchemist_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_AllRace_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 6, Item: S_Adurate_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Arrow_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_Assassin_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Athletic_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_AutoSpell_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_2_01
     Items:
-      - Index: 0
-        Item: S_Bard_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Bearers_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S2_Bearers_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Beginner_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: Rebeginer_Shoes_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: S_Beholder_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 6
-        Item: S_Blacksmith_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 7
-        Item: S_Blitz_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 8
-        Item: S_Bloody_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 195
+      - {Index: 0, Item: S_Banish_Cannon_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Bard_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Bearers_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S2_Bearers_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Beginner_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: Rebeginer_Shoes_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Beholder_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 7, Item: S_Blacksmith_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_IQ_BFB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Blitz_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Bloody_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 195}]}
+      - {Index: 11, Item: S_TR_RB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 12, Item: S_Booster_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 13, Item: S_Bow_M_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 14, Item: S_Brand_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_2_02
     Items:
-      - Index: 0
-        Item: S_Caster_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Champion_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Chemical_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 3
-        Item: S_Clamorous_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 195
-      - Index: 4
-        Item: S_Cloaking_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 5
-        Item: S_Cluster_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 6
-        Item: S_W_Breath_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 7
-        Item: S_Critical_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 8
-        Item: S_Crusader_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Caster_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Champion_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Chemical_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 3, Item: S_Clamorous_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 195}]}
+      - {Index: 4, Item: S_Cloaking_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 5, Item: S_Cluster_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_W_Breath_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_WH_CB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Crimson_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_Critical_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Syuriken_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 11, Item: S_Crusader_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_2_03
     Items:
-      - Index: 0
-        Item: S_Dancer_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Divine_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 2
-        Item: S_DoramMagical_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_DoramPhysical_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Dragoon_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_Dancer_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_SKE_DB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Divine_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 3, Item: S_CD_DF_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_DoramMagical_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_DoramPhysical_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_HN_DB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Dragoon_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 8, Item: S_Duplelight_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 9, Item: S_Dust_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_2_04
     Items:
-      - Index: 0
-        Item: S_Expert_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_CD_EP_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Evilcurse_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_SOA_MS_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Expert_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_2_05
     Items:
-      - Index: 0
-        Item: S_Fisher_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_Fatal_M_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 1, Item: S_Fisher_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 2, Item: S_IQ_FB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Flare_Dance_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 4, Item: S_SOA_TOFG_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_ABC_FR_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 6, Item: S_ABC_FA_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_FullPene_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 195}]}
+      - {Index: 8, Item: S_Full_Power_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Full_Rate_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 10, Item: S_Full_Spell_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 11, Item: S_FullTemp_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_2_06
     Items:
-      - Index: 0
-        Item: S_Gemstone_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Greed_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_Gemstone_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_SS_KR_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Greed_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_2_07
     Items:
-      - Index: 0
-        Item: S_HardChamption_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Plasterer's_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Hasty_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S2_Hasty_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 4
-        Item: S_Heal_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 5
-        Item: S_Healing_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Hiding_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 7
-        Item: S_Hunter_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
+      - {Index: 0, Item: S_DK_HS_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_HardChamption_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Plasterer's_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Hasty_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S2_Hasty_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 5, Item: S_Heal_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 6, Item: S_Healing_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Hiding_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 8, Item: S_SU_HB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Hunter_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 10, Item: S_SU_BSP_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_2_08
     Items:
-      - Index: 0
-        Item: S_Insecticide_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 1
-        Item: S_Insomniac_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S2_Insomniac_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Insecticide_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 1, Item: S_Insomniac_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S2_Insomniac_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_2_09
     Items:
-      - Index: 0
-        Item: S_Kagerou_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S_Knight_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Kagerou_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Knight_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Knucklearrow_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 3, Item: S_SS_KF_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
   - Name: sg_2_10
     Items:
-      - Index: 0
-        Item: S_Liberation_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 195
+      - {Index: 0, Item: S_Liberation_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 195}]}
+      - {Index: 1, Item: S_EM_LS_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_R_Bearers_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
   - Name: sg_2_11
     Items:
-      - Index: 0
-        Item: S_Magical_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Malicious_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Monk_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_ABC_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_AG_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_BO_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_CD_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_DK_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_EM_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_HN_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_IG_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_IQ_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_MT_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_NW_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_SHC_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 12, Item: S_SS_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 13, Item: S_SKE_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 14, Item: S_SOA_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 15, Item: S_SH_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 16, Item: S_TR_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 17, Item: S_WH_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 18, Item: S_DK_MB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 19, Item: S_Magical_M_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 20, Item: S_Magical_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 21, Item: S_M_AutoSpell_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 22, Item: S_Malicious_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 23, Item: S_Mammoth_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 24, Item: S_M_Mammoth_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 25, Item: S_Menace_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 26, Item: S_TR_MF_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 27, Item: S_Metalic_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 28, Item: S_Monk_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 29, Item: S_Moonlight_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 30, Item: S_BO_MD_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_2_12
     Items:
-      - Index: 0
-        Item: S_Oboro_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Oboro_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_2_13
     Items:
-      - Index: 0
-        Item: S_1Para_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Peerless_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Penetration_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Physical_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Priest_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_1Para_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Peerless_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Penetration_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Physical_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_MT_PR_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_Priest_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Psychic_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_2_14
     Items:
-      - Index: 0
-        Item: S_Rebellion_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S_Reload_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Rogue_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Rookie_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_IG_RF_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Rainstorm_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Rampage_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Rebellion_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Reload_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Rogue_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Rolling_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Rookie_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_2_15
     Items:
-      - Index: 0
-        Item: S_Sage_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S_Seraphim_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 2
-        Item: S_Promotion_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: T_Agi1_Shoes_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 4
-        Item: T_Agi2_Shoes_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 5
-        Item: S_Sonic_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Soul_Reaper_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 7
-        Item: S_Spell_Flow_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 8
-        Item: S_Star_Emperor_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 9
-        Item: S_Steal_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_Sage_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_SavageRabbit_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 2, Item: S_SHC_SI_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Seraphim_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 4, Item: S_Promotion_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: T_Agi1_Shoes_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 6, Item: T_Agi2_Shoes_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: S_Shatter_Buster_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_IG_SS_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Silvervine_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Slash_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_Sonic_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 12, Item: S_Sorcery_M_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 13, Item: S_Soul_Reaper_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 14, Item: S_MT_SC_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 15, Item: S_SpellCaster_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 16, Item: S_Spell_M_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 17, Item: S_Spell_Flow_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 18, Item: S_Spore_Bomb_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 19, Item: S_SHC_ST_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 20, Item: S_Star_Emperor_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 21, Item: S_Steal_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 22, Item: S_AG_SH_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 23, Item: S_SKE_SB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 24, Item: S_Super_Magic_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 195}]}
+      - {Index: 25, Item: S_Sword_M_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
   - Name: sg_2_16
     Items:
-      - Index: 0
-        Item: S_Teleport_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_Tempest_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Timeoverload_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Tornado_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Teleport_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 1, Item: S_Tempest_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Timeoverload_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_EM_TP_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_BO_TH_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_HN_TB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Tornado_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Cart_Tornado_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_Triangle_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_TrueGem_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
   - Name: sg_2_17
     Items:
-      - Index: 0
-        Item: S_Vital_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Vulcan_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_AG_VST_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 1, Item: S_Vital_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Vulcan_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_2_18
     Items:
-      - Index: 0
-        Item: S_Wizard_Shoes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_NW_WB_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Huusouka_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 2, Item: S_Wizard_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+  - Name: sg_2_19
+    Items:
+      - {Index: 0, Item: S_Jack_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Judex_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+  - Name: sg_2_20
+    Items:
+      - {Index: 0, Item: S_NW_NF_Shoes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+  - Name: sg_2_21
+    Items:
+      - {Index: 0, Item: 1LvShoesS, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_3_00
     Items:
-      - Index: 0
-        Item: S_Acolyte_earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_2Para_Earing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Aimed_Earing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 3
-        Item: S_AllMighty_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 4
-        Item: S_Archer_earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: S_Arms_Earing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Athena_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_ABC_AF_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 1, Item: S_BO_AC_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 2, Item: S_Acolyte_earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Adoramus_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_2Para_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Aimed_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 6, Item: S_AllMighty_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: S_CD_AR_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 8, Item: S_Archer_earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_Arms_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Arrowvulcan_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_Athena_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 12, Item: S_AutoSpell_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_3_01
     Items:
-      - Index: 0
-        Item: S_Bearers_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: Rebeginer_Earring_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Blitz_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Boned_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 4
-        Item: S_Boomerang_Earing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Bearers_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: Rebeginer_Earring_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Blitz_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Boned_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 4, Item: S_Boomerang_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Booster_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 6, Item: S_Bow_M_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
   - Name: sg_3_02
     Items:
-      - Index: 0
-        Item: S_Caster_earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Cloaking_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_Cannon_Cart_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 1, Item: S_Caster_earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Centering_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 3, Item: S_Chain_Press_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Chain_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_SU_CS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Cloaking_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: S_EM_CO_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_SHC_CR_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Crazy_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Syuriken_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 11, Item: S_AG_CI_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_3_03
     Items:
-      - Index: 0
-        Item: S_Elegant_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: Enchanting_Earring_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Elegant_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: Enchanting_Earring_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_SHC_EC_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Evilcurse_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
+      - {Index: 4, Item: S_IQ_EB_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_BO_EP_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_3_04
     Items:
-      - Index: 0
-        Item: S_F_Breath_Earing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Force_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Curse_Lift_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Fatal_M_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 1, Item: S_F_Breath_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_AG_FB_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Flare_Dance_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 4, Item: S_Focusing_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 5, Item: S_Force_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_CD_FP_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Curse_Lift_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_FullPene_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 195}]}
+      - {Index: 9, Item: S_FullTemp_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_3_05
     Items:
-      - Index: 0
-        Item: S_Gemstone_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S2_Gemstone_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Gigantic_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 3
-        Item: S_Greed_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_WH_GS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Gemstone_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S2_Gemstone_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Genesis_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Gigantic_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 5, Item: S_Grave_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Greed_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_3_06
     Items:
-      - Index: 0
-        Item: S_Hard_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_Heal_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 2
-        Item: S_Hiding_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_Hard_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 1, Item: S_Heal_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 2, Item: S_Hiding_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 3, Item: S_SU_HRC_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_3_07
     Items:
-      - Index: 0
-        Item: S_Ignition_Earing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Infinity_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 135
-      - Index: 2
-        Item: S_Int_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Ignition_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Infinity_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 2, Item: S_Int_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_3_08
     Items:
-      - Index: 0
-        Item: S_Magical_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Magician_earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Merchant_earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S_MortalBlow_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
+      - {Index: 0, Item: S_ABC_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_AG_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_BO_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_CD_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_DK_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_EM_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_HN_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_IG_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_IQ_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_MT_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_NW_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_SHC_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 12, Item: S_SS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 13, Item: S_SKE_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 14, Item: S_SOA_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 15, Item: S_SH_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 16, Item: S_TR_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 17, Item: S_WH_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 18, Item: S_Magical_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 19, Item: S_Magical_M_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 20, Item: S_Magician_earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 21, Item: S_Magnus_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 22, Item: S_M_AutoSpell_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 23, Item: S_Mammoth_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 115}]}
+      - {Index: 24, Item: S_HN_MC_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 25, Item: S_M_Mammoth_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 26, Item: S_Merchant_earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 27, Item: S_SKE_MS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 28, Item: S_NW_MS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 29, Item: S_MT_MS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 30, Item: S_Moonlight_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 31, Item: S_MortalBlow_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 32, Item: S_TR_MS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_3_09
     Items:
-      - Index: 0
-        Item: S_Neutral_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Neutral_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_SKE_NS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_3_10
     Items:
-      - Index: 0
-        Item: S_1Para_Earing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Penetration_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Physical_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Power_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Paint_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_1Para_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Penetration_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Physical_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Power_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_IQ_TP_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_3_11
     Items:
-      - Index: 0
-        Item: S_Restore_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_IG_RS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_SS_SR_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Restore_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_TR_RW_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Ripper_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
   - Name: sg_3_12
     Items:
-      - Index: 0
-        Item: Sentimental_Earring_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Promotion_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: T_Vit1_Acc_R_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 3
-        Item: T_Vit2_Acc_R_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 4
-        Item: S_Shooting_Earing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: S_Solid_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Spirit_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 7
-        Item: S_Spiritual_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 8
-        Item: S_Steal_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 9
-        Item: S_Swordman_earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: BP3_S_Earring_US, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 1, Item: S_SavageRabbit_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 2, Item: Sentimental_Earring_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_SS_KK_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Promotion_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: T_Vit1_Acc_R_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 6, Item: T_Vit2_Acc_R_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: S_Shadowspell_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 8, Item: S_Shatter_Buster_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 9, Item: S_Shooting_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_Silvervine_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 150}]}
+      - {Index: 11, Item: S_Skynetblow_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 12, Item: S_Solid_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 13, Item: S_Sorcery_M_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 14, Item: S_Spirit_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 15, Item: S_SpellCaster_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 16, Item: S_Spell_M_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 17, Item: S_Spell_M_Earring_US, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 18, Item: S_NW_SO_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 19, Item: S_Spiritual_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 20, Item: S_Steal_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 21, Item: S_DK_SS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 22, Item: S_Stout_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 23, Item: S_Strain_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 24, Item: S_Super_Power_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 25, Item: S_Sword_M_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 26, Item: S_Swordman_earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_3_13
     Items:
-      - Index: 0
-        Item: S_Teleport_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_Tempest_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Timeoverload_Earing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Tension_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Thief_earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 5
-        Item: S_Titan_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
+      - {Index: 0, Item: S_SOA_TS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_SOA_TOWB_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Teleport_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 3, Item: S_Tempest_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Timeoverload_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Tension_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Thief_earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_Tigercannon_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_Titan_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 9, Item: S_MT_TL_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 10, Item: S_TrueGem_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
   - Name: sg_3_14
     Items:
-      - Index: 0
-        Item: Unfreeze_Earing_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: Unfreeze_Earing_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_3_15
     Items:
-      - Index: 0
-        Item: Vitality_Earing_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: Vitality_Earing_S2
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Varetyr_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_Reverberation_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: Vitality_Earing_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: Vitality_Earing_S2, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_HN_VJ_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_3_16
     Items:
-      - Index: 0
-        Item: S_Wise_Earring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_WH_WH_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Huusouka_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 345}]}
+      - {Index: 2, Item: S_Wise_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 3, Item: S_Witty_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+  - Name: sg_3_17
+    Items:
+      - {Index: 0, Item: S_ABC_DB_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_EM_DS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_DK_DS_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+  - Name: sg_3_18
+    Items:
+      - {Index: 0, Item: S_Katar_Earing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+  - Name: sg_3_19
+    Items:
+      - {Index: 0, Item: Limit_Break_SH_E, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 115}]}
+      - {Index: 1, Item: S_R_Bearers_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+  - Name: sg_3_20
+    Items:
+      - {Index: 0, Item: S_IG_OC_Earring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+  - Name: sg_3_21
+    Items:
+      - {Index: 0, Item: 1LvEarringS, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_4_00
     Items:
-      - Index: 0
-        Item: S_Acolyte_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S_2Para_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Aimed_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S_AllMighty_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 4
-        Item: S_Archer_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 5
-        Item: S_Arms_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_ABC_AF_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 1, Item: S_BO_AC_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 2, Item: S_Acolyte_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Adoramus_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_2Para_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Aimed_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_AllMighty_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: S_CD_AR_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 8, Item: S_Archer_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Arms_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 10, Item: S_Arrowvulcan_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 11, Item: S_AutoSpell_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_4_01
     Items:
-      - Index: 0
-        Item: S_Bearers_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S2_Bearers_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: Rebeginer_Pendant_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Blitz_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Boned_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 5
-        Item: S_Boomerang_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Bearers_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S2_Bearers_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: Rebeginer_Pendant_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Blitz_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Boned_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 5, Item: S_Boomerang_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Booster_Pandent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 7, Item: S_Bow_M_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
   - Name: sg_4_02
     Items:
-      - Index: 0
-        Item: S_Caster_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Cloaking_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_Cannon_Cart_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Caster_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Centering_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 3, Item: S_Chain_Press_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Chain_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_SU_CS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Cloaking_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: S_EM_CO_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_SHC_CR_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Crazy_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 10, Item: S_Syuriken_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 11, Item: S_AG_CI_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
   - Name: sg_4_03
     Items:
-      - Index: 0
-        Item: S_Elegant_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: Enchanting_Pendant_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Elegant_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: Enchanting_Pendant_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_SHC_EC_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Evilcurse_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 4, Item: S_IQ_EB_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_BO_EP_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_4_04
     Items:
-      - Index: 0
-        Item: S_F_Breath_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S_Force_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Curse_Lift_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Fatal_M_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 1, Item: S_F_Breath_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_AG_FB_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 165}]}
+      - {Index: 3, Item: S_Flare_Dance_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Focusing_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 5, Item: S_Force_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_CD_FP_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Curse_Lift_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_FullPene_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 195}]}
+      - {Index: 9, Item: S_FullTemp_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_4_05
     Items:
-      - Index: 0
-        Item: S_Gemstone_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Gigantic_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
-      - Index: 2
-        Item: S_Greed_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_WH_GS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Gemstone_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Genesis_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Gigantic_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 4, Item: S_Grave_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 5, Item: S_Greed_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
   - Name: sg_4_06
     Items:
-      - Index: 0
-        Item: S_Heal_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_Hiding_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
+      - {Index: 0, Item: S_Heal_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 1, Item: S_Hiding_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 2, Item: S_SU_HRC_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_4_07
     Items:
-      - Index: 0
-        Item: S_Ignition_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: S_Infinity_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Int_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Ignition_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Infinity_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Int_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
   - Name: sg_4_08
     Items:
-      - Index: 0
-        Item: S_Magical_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Magician_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Merchant_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 3
-        Item: S_MortalBlow_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
+      - {Index: 0, Item: S_ABC_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 1, Item: S_AG_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_BO_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_CD_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_DK_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_EM_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_HN_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 7, Item: S_IG_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 8, Item: S_IQ_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 9, Item: S_MT_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 10, Item: S_NW_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_SHC_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 12, Item: S_SS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 13, Item: S_SKE_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 14, Item: S_SOA_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 15, Item: S_SH_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 16, Item: S_TR_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 17, Item: S_WH_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 18, Item: S_Magical_M_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 19, Item: S_Magical_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 20, Item: S_Magician_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 21, Item: S_Magnus_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 22, Item: S_M_AutoSpell_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 23, Item: S_Mammoth_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 24, Item: S_HN_MC_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 25, Item: S_M_Mammoth_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 26, Item: S_Merchant_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 27, Item: S_SKE_MS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 28, Item: S_NW_MS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 29, Item: S_MT_MS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 30, Item: S_Moonlight_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 31, Item: S_MortalBlow_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 32, Item: S_TR_MS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_4_09
     Items:
-      - Index: 0
-        Item: S_Neutral_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Neutral_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_SKE_NS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_4_10
     Items:
-      - Index: 0
-        Item: S_1Para_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Penetration_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Physical_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Power_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_Paint_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_1Para_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Penetration_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_Physical_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Power_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_IQ_TP_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_4_11
     Items:
-      - Index: 0
-        Item: S_Rapid_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_Resist_Spell_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: S_Restore_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
+      - {Index: 0, Item: S_IG_RS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Rapid_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 2, Item: S_SS_SR_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_Resist_Spell_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 4, Item: S_Restore_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_TR_RW_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 6, Item: S_Ripper_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_4_12
     Items:
-      - Index: 0
-        Item: Sentimental_Pendant_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 1
-        Item: S_Promotion_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 2
-        Item: T_Int1_Acc_L_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 3
-        Item: T_Int2_Acc_L_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 4
-        Item: S_Shooting_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 5
-        Item: S_Immortal_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 6
-        Item: S_Spirit_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 85
-      - Index: 7
-        Item: S_Spiritual_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 8
-        Item: S_Steal_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 9
-        Item: S_Swordman_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: BP3_S_Pendant_US, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 1, Item: S_SavageRabbit_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 2, Item: Sentimental_Pendant_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 3, Item: S_SS_KK_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Promotion_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: T_Int1_Acc_L_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 6, Item: T_Int2_Acc_L_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 7, Item: S_Shadowspell_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Shatter_B_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 9, Item: S_Shooting_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 10, Item: S_Silvervine_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 11, Item: S_Skynetblow_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 12, Item: S_Immortal_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 13, Item: S_Sorcery_M_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 14, Item: S_Spirit_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 85}]}
+      - {Index: 15, Item: S_SpellCaster_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 16, Item: S_Spell_M_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 110}]}
+      - {Index: 17, Item: S_NW_SO_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 18, Item: S_Spiritual_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 19, Item: S_Steal_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 20, Item: S_DK_SS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 21, Item: S_Stout_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 22, Item: S_Strain_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 23, Item: S_Super_Power_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 24, Item: S_Sword_M_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 25, Item: S_Swordman_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_4_13
     Items:
-      - Index: 0
-        Item: S_Teleport_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 50
-      - Index: 1
-        Item: S_Tempest_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 2
-        Item: S_Timeoverload_Pandent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 3
-        Item: S_Tension_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 75
-      - Index: 4
-        Item: S_Thief_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 5
-        Item: S_Titan_Pendant
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 95
+      - {Index: 0, Item: S_SOA_TS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_SOA_TOWB_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_Teleport_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}
+      - {Index: 3, Item: S_Tempest_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 4, Item: S_Timeoverload_Pandent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 5, Item: S_Tension_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 6, Item: S_Thief_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 7, Item: S_Tigercannon_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 8, Item: S_Titan_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+      - {Index: 9, Item: S_MT_TL_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 10, Item: S_TrueGem_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 90}]}
   - Name: sg_4_14
     Items:
-      - Index: 0
-        Item: S2_Curse_Lift_Pendent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
-      - Index: 1
-        Item: Unfreeze_Pendent_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S2_Curse_Lift_Pendent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: Unfreeze_Pendent_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
   - Name: sg_4_15
     Items:
-      - Index: 0
-        Item: Vitality_Pendant_S
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 105
+      - {Index: 0, Item: S_Varetyr_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 1, Item: S_Reverberation_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: Vitality_Pendant_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 3, Item: S_HN_VJ_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+  - Name: sg_4_16
+    Items:
+      - {Index: 0, Item: S_ABC_DB_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 1, Item: S_EM_DS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+      - {Index: 2, Item: S_DK_DS_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+  - Name: sg_4_17
+    Items:
+      - {Index: 0, Item: S_Katar_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+  - Name: sg_4_18
+    Items:
+      - {Index: 0, Item: Limit_Break_SH_P, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 115}]}
+      - {Index: 1, Item: S_R_Bearers_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 95}]}
+  - Name: sg_4_19
+    Items:
+      - {Index: 0, Item: S_IG_OC_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 105}]}
+  - Name: sg_4_20
+    Items:
+      - {Index: 0, Item: S_WH_WH_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 135}]}
+      - {Index: 1, Item: S_Huusouka_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+      - {Index: 2, Item: S_Witty_Pendant, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 75}]}
+  - Name: sg_4_21
+    Items:
+      - {Index: 0, Item: 1LvPendantS, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 50}]}

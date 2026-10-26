@@ -1,6 +1,6 @@
 //===== Ragnarok Offline =====================================
-//= Generated Shadow Gear Broker
-//= All rows come from the audited local + Divine Pride Shadowgear universe.
+//= Reviewed Shadow Gear Broker
+//= All active local Shadow items; exact prices and assets audited separately.
 //= Currency: Event Stone Coin (7000). Base price: 50, rounded up.
 //============================================================
 
@@ -12,8 +12,8 @@ malangdo,112,162,6	script	Remy#offline	4_EP17_BOY_B,{
 	.@type = select("Weapon:Armor:Cancel");
 	if (.@type == 3) close;
 	if (.@type == 1) {
-		.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:N:P:R:S:T:U:V:W:Cancel") - 1;
-		if (.@letter < 0 || .@letter >= 20) close;
+		.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:N:P:R:S:T:U:V:W:0-9:Cancel") - 1;
+		if (.@letter < 0 || .@letter >= 21) close;
 		switch (.@letter) {
 			case 0: .@shop$ = "sg_w_00"; break;
 			case 1: .@shop$ = "sg_w_01"; break;
@@ -35,6 +35,7 @@ malangdo,112,162,6	script	Remy#offline	4_EP17_BOY_B,{
 			case 17: .@shop$ = "sg_w_17"; break;
 			case 18: .@shop$ = "sg_w_18"; break;
 			case 19: .@shop$ = "sg_w_19"; break;
+			case 20: .@shop$ = "sg_w_20"; break;
 		}
 	} else {
 		.@part = select("Armor:Shield:Shoes:Right Accessory:Left Accessory:Cancel") - 1;
@@ -42,8 +43,8 @@ malangdo,112,162,6	script	Remy#offline	4_EP17_BOY_B,{
 		// The generator emits one explicit part branch per location below.
 		if (.@part >= 0) {
 			if (.@part == 0) {
-				.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:O:P:R:S:T:U:V:W:Cancel") - 1;
-				if (.@letter < 0 || .@letter >= 20) close;
+				.@letter = select("A:B:C:D:E:F:G:H:I:J:K:L:M:N:O:P:R:S:T:U:V:W:0-9:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 23) close;
 				switch (.@letter) {
 					case 0: .@shop$ = "sg_0_00"; break;
 					case 1: .@shop$ = "sg_0_01"; break;
@@ -54,22 +55,25 @@ malangdo,112,162,6	script	Remy#offline	4_EP17_BOY_B,{
 					case 6: .@shop$ = "sg_0_06"; break;
 					case 7: .@shop$ = "sg_0_07"; break;
 					case 8: .@shop$ = "sg_0_08"; break;
-					case 9: .@shop$ = "sg_0_09"; break;
-					case 10: .@shop$ = "sg_0_10"; break;
-					case 11: .@shop$ = "sg_0_11"; break;
-					case 12: .@shop$ = "sg_0_12"; break;
-					case 13: .@shop$ = "sg_0_13"; break;
-					case 14: .@shop$ = "sg_0_14"; break;
-					case 15: .@shop$ = "sg_0_15"; break;
-					case 16: .@shop$ = "sg_0_16"; break;
-					case 17: .@shop$ = "sg_0_17"; break;
-					case 18: .@shop$ = "sg_0_18"; break;
-					case 19: .@shop$ = "sg_0_19"; break;
+					case 9: .@shop$ = "sg_0_20"; break;
+					case 10: .@shop$ = "sg_0_09"; break;
+					case 11: .@shop$ = "sg_0_10"; break;
+					case 12: .@shop$ = "sg_0_11"; break;
+					case 13: .@shop$ = "sg_0_21"; break;
+					case 14: .@shop$ = "sg_0_12"; break;
+					case 15: .@shop$ = "sg_0_13"; break;
+					case 16: .@shop$ = "sg_0_14"; break;
+					case 17: .@shop$ = "sg_0_15"; break;
+					case 18: .@shop$ = "sg_0_16"; break;
+					case 19: .@shop$ = "sg_0_17"; break;
+					case 20: .@shop$ = "sg_0_18"; break;
+					case 21: .@shop$ = "sg_0_19"; break;
+					case 22: .@shop$ = "sg_0_22"; break;
 				}
 			}
 			if (.@part == 1) {
-				.@letter = select("A:B:C:D:E:F:G:H:I:M:N:P:R:S:T:U:V:W:Cancel") - 1;
-				if (.@letter < 0 || .@letter >= 18) close;
+				.@letter = select("A:B:C:D:E:F:G:H:I:J:K:M:N:P:R:S:T:U:V:W:0-9:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 21) close;
 				switch (.@letter) {
 					case 0: .@shop$ = "sg_1_00"; break;
 					case 1: .@shop$ = "sg_1_01"; break;
@@ -80,20 +84,23 @@ malangdo,112,162,6	script	Remy#offline	4_EP17_BOY_B,{
 					case 6: .@shop$ = "sg_1_06"; break;
 					case 7: .@shop$ = "sg_1_07"; break;
 					case 8: .@shop$ = "sg_1_08"; break;
-					case 9: .@shop$ = "sg_1_09"; break;
-					case 10: .@shop$ = "sg_1_10"; break;
-					case 11: .@shop$ = "sg_1_11"; break;
-					case 12: .@shop$ = "sg_1_12"; break;
-					case 13: .@shop$ = "sg_1_13"; break;
-					case 14: .@shop$ = "sg_1_14"; break;
-					case 15: .@shop$ = "sg_1_15"; break;
-					case 16: .@shop$ = "sg_1_16"; break;
-					case 17: .@shop$ = "sg_1_17"; break;
+					case 9: .@shop$ = "sg_1_18"; break;
+					case 10: .@shop$ = "sg_1_19"; break;
+					case 11: .@shop$ = "sg_1_09"; break;
+					case 12: .@shop$ = "sg_1_10"; break;
+					case 13: .@shop$ = "sg_1_11"; break;
+					case 14: .@shop$ = "sg_1_12"; break;
+					case 15: .@shop$ = "sg_1_13"; break;
+					case 16: .@shop$ = "sg_1_14"; break;
+					case 17: .@shop$ = "sg_1_15"; break;
+					case 18: .@shop$ = "sg_1_16"; break;
+					case 19: .@shop$ = "sg_1_17"; break;
+					case 20: .@shop$ = "sg_1_20"; break;
 				}
 			}
 			if (.@part == 2) {
-				.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:O:P:R:S:T:V:W:Cancel") - 1;
-				if (.@letter < 0 || .@letter >= 19) close;
+				.@letter = select("A:B:C:D:E:F:G:H:I:J:K:L:M:N:O:P:R:S:T:V:W:0-9:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 22) close;
 				switch (.@letter) {
 					case 0: .@shop$ = "sg_2_00"; break;
 					case 1: .@shop$ = "sg_2_01"; break;
@@ -104,61 +111,75 @@ malangdo,112,162,6	script	Remy#offline	4_EP17_BOY_B,{
 					case 6: .@shop$ = "sg_2_06"; break;
 					case 7: .@shop$ = "sg_2_07"; break;
 					case 8: .@shop$ = "sg_2_08"; break;
-					case 9: .@shop$ = "sg_2_09"; break;
-					case 10: .@shop$ = "sg_2_10"; break;
-					case 11: .@shop$ = "sg_2_11"; break;
-					case 12: .@shop$ = "sg_2_12"; break;
-					case 13: .@shop$ = "sg_2_13"; break;
-					case 14: .@shop$ = "sg_2_14"; break;
-					case 15: .@shop$ = "sg_2_15"; break;
-					case 16: .@shop$ = "sg_2_16"; break;
-					case 17: .@shop$ = "sg_2_17"; break;
-					case 18: .@shop$ = "sg_2_18"; break;
+					case 9: .@shop$ = "sg_2_19"; break;
+					case 10: .@shop$ = "sg_2_09"; break;
+					case 11: .@shop$ = "sg_2_10"; break;
+					case 12: .@shop$ = "sg_2_11"; break;
+					case 13: .@shop$ = "sg_2_20"; break;
+					case 14: .@shop$ = "sg_2_12"; break;
+					case 15: .@shop$ = "sg_2_13"; break;
+					case 16: .@shop$ = "sg_2_14"; break;
+					case 17: .@shop$ = "sg_2_15"; break;
+					case 18: .@shop$ = "sg_2_16"; break;
+					case 19: .@shop$ = "sg_2_17"; break;
+					case 20: .@shop$ = "sg_2_18"; break;
+					case 21: .@shop$ = "sg_2_21"; break;
 				}
 			}
 			if (.@part == 3) {
-				.@letter = select("A:B:C:E:F:G:H:I:M:N:P:R:S:T:U:V:W:Cancel") - 1;
-				if (.@letter < 0 || .@letter >= 17) close;
+				.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:N:O:P:R:S:T:U:V:W:0-9:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 22) close;
 				switch (.@letter) {
 					case 0: .@shop$ = "sg_3_00"; break;
 					case 1: .@shop$ = "sg_3_01"; break;
 					case 2: .@shop$ = "sg_3_02"; break;
-					case 3: .@shop$ = "sg_3_03"; break;
-					case 4: .@shop$ = "sg_3_04"; break;
-					case 5: .@shop$ = "sg_3_05"; break;
-					case 6: .@shop$ = "sg_3_06"; break;
-					case 7: .@shop$ = "sg_3_07"; break;
-					case 8: .@shop$ = "sg_3_08"; break;
-					case 9: .@shop$ = "sg_3_09"; break;
-					case 10: .@shop$ = "sg_3_10"; break;
-					case 11: .@shop$ = "sg_3_11"; break;
-					case 12: .@shop$ = "sg_3_12"; break;
-					case 13: .@shop$ = "sg_3_13"; break;
-					case 14: .@shop$ = "sg_3_14"; break;
-					case 15: .@shop$ = "sg_3_15"; break;
-					case 16: .@shop$ = "sg_3_16"; break;
+					case 3: .@shop$ = "sg_3_17"; break;
+					case 4: .@shop$ = "sg_3_03"; break;
+					case 5: .@shop$ = "sg_3_04"; break;
+					case 6: .@shop$ = "sg_3_05"; break;
+					case 7: .@shop$ = "sg_3_06"; break;
+					case 8: .@shop$ = "sg_3_07"; break;
+					case 9: .@shop$ = "sg_3_18"; break;
+					case 10: .@shop$ = "sg_3_19"; break;
+					case 11: .@shop$ = "sg_3_08"; break;
+					case 12: .@shop$ = "sg_3_09"; break;
+					case 13: .@shop$ = "sg_3_20"; break;
+					case 14: .@shop$ = "sg_3_10"; break;
+					case 15: .@shop$ = "sg_3_11"; break;
+					case 16: .@shop$ = "sg_3_12"; break;
+					case 17: .@shop$ = "sg_3_13"; break;
+					case 18: .@shop$ = "sg_3_14"; break;
+					case 19: .@shop$ = "sg_3_15"; break;
+					case 20: .@shop$ = "sg_3_16"; break;
+					case 21: .@shop$ = "sg_3_21"; break;
 				}
 			}
 			if (.@part == 4) {
-				.@letter = select("A:B:C:E:F:G:H:I:M:N:P:R:S:T:U:V:Cancel") - 1;
-				if (.@letter < 0 || .@letter >= 16) close;
+				.@letter = select("A:B:C:D:E:F:G:H:I:K:L:M:N:O:P:R:S:T:U:V:W:0-9:Cancel") - 1;
+				if (.@letter < 0 || .@letter >= 22) close;
 				switch (.@letter) {
 					case 0: .@shop$ = "sg_4_00"; break;
 					case 1: .@shop$ = "sg_4_01"; break;
 					case 2: .@shop$ = "sg_4_02"; break;
-					case 3: .@shop$ = "sg_4_03"; break;
-					case 4: .@shop$ = "sg_4_04"; break;
-					case 5: .@shop$ = "sg_4_05"; break;
-					case 6: .@shop$ = "sg_4_06"; break;
-					case 7: .@shop$ = "sg_4_07"; break;
-					case 8: .@shop$ = "sg_4_08"; break;
-					case 9: .@shop$ = "sg_4_09"; break;
-					case 10: .@shop$ = "sg_4_10"; break;
-					case 11: .@shop$ = "sg_4_11"; break;
-					case 12: .@shop$ = "sg_4_12"; break;
-					case 13: .@shop$ = "sg_4_13"; break;
-					case 14: .@shop$ = "sg_4_14"; break;
-					case 15: .@shop$ = "sg_4_15"; break;
+					case 3: .@shop$ = "sg_4_16"; break;
+					case 4: .@shop$ = "sg_4_03"; break;
+					case 5: .@shop$ = "sg_4_04"; break;
+					case 6: .@shop$ = "sg_4_05"; break;
+					case 7: .@shop$ = "sg_4_06"; break;
+					case 8: .@shop$ = "sg_4_07"; break;
+					case 9: .@shop$ = "sg_4_17"; break;
+					case 10: .@shop$ = "sg_4_18"; break;
+					case 11: .@shop$ = "sg_4_08"; break;
+					case 12: .@shop$ = "sg_4_09"; break;
+					case 13: .@shop$ = "sg_4_19"; break;
+					case 14: .@shop$ = "sg_4_10"; break;
+					case 15: .@shop$ = "sg_4_11"; break;
+					case 16: .@shop$ = "sg_4_12"; break;
+					case 17: .@shop$ = "sg_4_13"; break;
+					case 18: .@shop$ = "sg_4_14"; break;
+					case 19: .@shop$ = "sg_4_15"; break;
+					case 20: .@shop$ = "sg_4_20"; break;
+					case 21: .@shop$ = "sg_4_21"; break;
 				}
 			}
 		}
