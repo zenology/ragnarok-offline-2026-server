@@ -1,5 +1,5 @@
 # Local 75% costume-enchantment policy: remove foreign guaranteed-rate names.
-# Name-only overrides; IDs, AegisNames, bonuses and restrictions stay native.
+# Physical name overrides and source-backed TH enchant outputs.
 Header:
   Type: ITEM_DB
   Version: 3
@@ -32,3 +32,158 @@ Body:
     Name: Ragnarok Festa Stone CRT (Upper)
   - Id: 1002790
     Name: Ragnarok Festa Stone Supreme (Upper)
+  - Id: 313738
+    AegisName: Purified_C_EncSTR
+    Name: Purified Stone Garment(STR)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDelayrate,-10;
+      bonus2 bAddClass,Class_All,10;
+      bonus2 bMagicAddClass,Class_All,10;
+      bonus bBaseAtk,100;
+  - Id: 313739
+    AegisName: Purified_C_EncLUK
+    Name: Purified Stone Garment(LUK)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDelayrate,-10;
+      bonus2 bAddClass,Class_All,10;
+      bonus2 bMagicAddClass,Class_All,10;
+      bonus bCritAtkRate,20;
+  - Id: 313740
+    AegisName: Purified_C_EncDEX
+    Name: Purified Stone Garment(DEX)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDelayrate,-10;
+      bonus2 bAddClass,Class_All,10;
+      bonus2 bMagicAddClass,Class_All,10;
+      bonus bLongAtkRate,10;
+  - Id: 313741
+    AegisName: Purified_C_EncINT
+    Name: Purified Stone Garment(INT)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDelayrate,-10;
+      bonus2 bAddClass,Class_All,10;
+      bonus2 bMagicAddClass,Class_All,10;
+      bonus bMatk,100;
+  - Id: 313742
+    AegisName: Purified_C_EncVIT
+    Name: Purified Stone Garment(VIT)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDelayrate,-10;
+      bonus2 bAddClass,Class_All,10;
+      bonus2 bMagicAddClass,Class_All,10;
+      bonus bMaxHPrate,20;
+  - Id: 313743
+    AegisName: Purified_C_EncAGI
+    Name: Purified Stone Garment(AGI)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDelayrate,-10;
+      bonus2 bAddClass,Class_All,10;
+      bonus2 bMagicAddClass,Class_All,10;
+      bonus bHit,60;
+  - Id: 313744
+    AegisName: Purified_C_EncUltimate
+    Name: Purified Stone Garment(Ultimate)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bDelayrate,-20;
+      bonus2 bAddClass,Class_All,20;
+      bonus2 bMagicAddClass,Class_All,20;
+      bonus bBaseAtk,100;
+      bonus bMatk,100;
+      bonus bHit,60;
+      bonus bLongAtkRate,10;
+      bonus bMaxHPrate,20;
+      bonus bCritAtkRate,20;
+  - Id: 314795
+    AegisName: Festa_WIS_Upper
+    Name: Ragnarok Festa WIS (Upper)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bWis,5;
+      bonus bPAtk,5;
+      bonus bSMatk,5;
+      bonus bDelayrate,-5;
+      bonus bMRes,25;
+      bonus bMaxSPrate,5;
+  - Id: 314796
+    AegisName: Festa_Supreme_Upper
+    Name: Ragnarok Festa Supreme (Upper)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bAllTraitStats,10;
+      bonus bPAtk,10;
+      bonus bSMatk,10;
+      bonus bDelayrate,-10;
+      bonus bMaxHPrate,10;
+      bonus bMaxSPrate,10;
+      bonus bShortAtkRate,10;
+      bonus bLongAtkRate,10;
+      bonus bMatkRate,10;
+      skill "BS_GREED",1;
+  - Id: 314797
+    AegisName: Festa_POW_Upper
+    Name: Ragnarok Festa POW (Upper)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bPow,5;
+      bonus bPAtk,5;
+      bonus bDelayrate,-5;
+      bonus bShortAtkRate,10;
+  - Id: 314798
+    AegisName: Festa_STA_Upper
+    Name: Ragnarok Festa STA (Upper)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bSta,5;
+      bonus bPAtk,5;
+      bonus bSMatk,5;
+      bonus bDelayrate,-5;
+      bonus bRes,25;
+      bonus bMaxHPrate,5;
+  - Id: 314799
+    AegisName: Festa_SPL_Upper
+    Name: Ragnarok Festa SPL (Upper)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bSpl,5;
+      bonus bSMatk,5;
+      bonus bDelayrate,-5;
+      bonus bMatkRate,10;
+  - Id: 314800
+    AegisName: Festa_CON_Upper
+    Name: Ragnarok Festa CON (Upper)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bCon,5;
+      bonus bPAtk,5;
+      bonus bDelayrate,-5;
+      bonus bLongAtkRate,10;
+  - Id: 314801
+    AegisName: Festa_CRT_Upper
+    Name: Ragnarok Festa CRT (Upper)
+    Type: Card
+    SubType: Enchant
+    Script: |
+      bonus bCrt,5;
+      bonus bPAtk,5;
+      bonus bDelayrate,-5;
+      bonus bCritAtkRate,10;

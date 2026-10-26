@@ -1,0 +1,126 @@
+// Equipped Shadow enchantment through ordinary NPC dialogue, like Doberkin.
+// Active native tables supply targets/bonuses/costs; no special client windows.
+function	script	F_ShadowEnhancement	{
+	disable_items;
+	setarray .@slots[0],EQI_SHADOW_WEAPON,EQI_SHADOW_ARMOR,EQI_SHADOW_SHIELD,EQI_SHADOW_SHOES,EQI_SHADOW_ACC_R,EQI_SHADOW_ACC_L;
+	setarray .@labels$[0],"Weapon","Armor","Shield","Shoes","Right Accessory","Left Accessory";
+L_Equipment:
+	.@count = 0;
+	.@menu$ = "";
+	for (.@scan = 0; .@scan < 6; ++.@scan) {
+		.@slot = .@slots[.@scan];
+		if (shadowenchantinfo(.@slot, 0, 0) < 1) continue;
+		.@index = shadowenchantinfo(.@slot, 0, 7);
+		.@duplicate = 0;
+		for (.@i = 0; .@i < .@count; ++.@i)
+			if (.@chosen_index[.@i] == .@index) .@duplicate = 1;
+		if (.@duplicate) continue;
+		.@chosen_slot[.@count] = .@slot;
+		.@chosen_index[.@count] = .@index;
+		.@chosen_item[.@count] = getequipid(.@slot);
+		.@chosen_uid$[.@count] = getequipuniqueid(.@slot);
+		.@menu$ += .@labels$[.@scan] + " - +" + getequiprefinerycnt(.@slot) + " " + replacestr(getitemname(.@chosen_item[.@count]), ":", "") + ":";
+		++.@count;
+	}
+	mes "[Romy]";
+	if (.@count < 1) {
+		mes "N-none of the shadows you're wearing will take my work... finish your other business first, then bring a suitable piece.";
+		return 0;
+	}
+	mes "K-keep your shadows on... which one shall I stir with a little moonlight?";
+	.@choice = select(.@menu$ + "Cancel") - 1;
+	if (.@choice == .@count) return 0;
+	.@slot = .@chosen_slot[.@choice];
+	.@item = .@chosen_item[.@choice];
+	.@uid$ = .@chosen_uid$[.@choice];
+	next;
+	.@n = shadowenchantinfo(.@slot, 0, 0);
+	if (.@n < 1) return 0;
+	.@menu$ = "";
+	for (.@i = 0; .@i < .@n; ++.@i) {
+		.@keys[.@i] = shadowenchantinfo(.@slot, .@i, 1);
+		.@socket[.@i] = shadowenchantinfo(.@slot, .@i, 2);
+		.@materials[.@i] = shadowenchantinfo(.@slot, .@i, 3);
+		.@amounts[.@i] = shadowenchantinfo(.@slot, .@i, 4);
+		.@names$[.@i] = shadowenchantinfo(.@slot, .@i, 5);
+		.@menu$ += replacestr(.@names$[.@i], ":", "") + " - " + .@amounts[.@i] + (.@materials[.@i] == 1001253 ? " Essence:" : " book:");
+	}
+	.@pick = 0;
+	if (.@n > 1) {
+		mes "[Romy]";
+		mes "T-these are the ways its shadows will turn...";
+		.@pick = select(.@menu$ + "Cancel") - 1;
+		if (.@pick == .@n) return 0;
+		next;
+	}
+	.@key = .@keys[.@pick];
+	.@card_idx = .@socket[.@pick];
+	.@material = .@materials[.@pick];
+	.@amount = .@amounts[.@pick];
+L_Confirm:
+	if (getequipid(.@slot) != .@item || getequipuniqueid(.@slot) != .@uid$) return 0;
+	.@valid = 0;
+	.@n = shadowenchantinfo(.@slot, 0, 0);
+	for (.@i = 0; .@i < .@n; ++.@i)
+		if (shadowenchantinfo(.@slot, .@i, 1) == .@key && shadowenchantinfo(.@slot, .@i, 2) == .@card_idx && shadowenchantinfo(.@slot, .@i, 3) == .@material && shadowenchantinfo(.@slot, .@i, 4) == .@amount) .@valid = 1;
+	mes "[Romy]";
+	if (!.@valid) {
+		mes "T-that piece has changed... I won't spend anything on it.";
+		return 0;
+	}
+	if (countitem(.@material) < .@amount) {
+		mes "I-I need " + .@amount + " " + getitemname(.@material) + "... Lemy keeps them safe for us.";
+		return 0;
+	}
+	.@refine = getequiprefinerycnt(.@slot);
+	.@grade = getenchantgrade(.@slot);
+	for (.@i = 0; .@i < 4; ++.@i) .@card[.@i] = getequipcardid(.@slot, .@i);
+	for (.@i = 0; .@i < 5; ++.@i) {
+		.@opt_id[.@i] = getequiprandomoption(.@slot, .@i, ROA_ID);
+		.@opt_val[.@i] = getequiprandomoption(.@slot, .@i, ROA_VALUE);
+		.@opt_param[.@i] = getequiprandomoption(.@slot, .@i, ROA_PARAM);
+	}
+	mes "One turn costs " + .@amount + " " + getitemname(.@material) + ". " + (.@card_idx < 0 ? "Its old random options will be replaced." : .@card[.@card_idx] ? "The charm " + getitemname(.@card[.@card_idx]) + " will be replaced." : "A random charm will settle in the empty socket.");
+	if (select("Enchant:Cancel") == 2) return 0;
+	next;
+	.@changed = getequipid(.@slot) != .@item || getequipuniqueid(.@slot) != .@uid$;
+	if (!.@changed) {
+		.@changed = getequiprefinerycnt(.@slot) != .@refine || getenchantgrade(.@slot) != .@grade;
+		for (.@i = 0; .@i < 4; ++.@i)
+			if (getequipcardid(.@slot, .@i) != .@card[.@i]) .@changed = 1;
+		for (.@i = 0; .@i < 5; ++.@i)
+			if (getequiprandomoption(.@slot, .@i, ROA_ID) != .@opt_id[.@i] || getequiprandomoption(.@slot, .@i, ROA_VALUE) != .@opt_val[.@i] || getequiprandomoption(.@slot, .@i, ROA_PARAM) != .@opt_param[.@i]) .@changed = 1;
+	}
+	mes "[Romy]";
+	if (.@changed || countitem(.@material) < .@amount) {
+		mes "S-something changed before I could work... your materials stay with you.";
+		return 0;
+	}
+	if (!shadowenchantroll(.@slot, .@key)) {
+		mes "T-that shadow won't take this work... your materials stay with you.";
+		return 0;
+	}
+	.@result = replaceequipped(.@slot, .@uid$, .@sh_card[0], .@sh_card[1], .@sh_card[2], .@sh_card[3], .@sh_opt_id, .@sh_opt_value, .@sh_opt_param);
+	if (.@result != 1) {
+		mes "T-that shadow slipped away... your materials stay with you.";
+		return 0;
+	}
+	delitem .@material, .@amount;
+	specialeffect2 EF_REPAIRWEAPON;
+	mes (.@card_idx < 0 ? "D-done... its new shadows have settled. Rrr..." : "It took... " + getitemname(.@sh_card[.@card_idx]) + ". Rrr...");
+	.@again = select("Again:Another piece:Leave");
+	if (.@again == 1) {
+		next;
+		goto L_Confirm;
+	}
+	if (.@again == 2) {
+		next;
+		goto L_Equipment;
+	}
+	return 0;
+}
+
+mal_in01,71,114,2	script	Romy#offline	4_EP17_BOY_B,{
+	callfunc("F_ShadowEnhancement");
+	close;
+}

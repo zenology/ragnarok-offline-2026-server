@@ -3,6 +3,10 @@ Header:
   Version: 1
 
 Body:
+  - Id: 255
+    Option: DAMAGE_HIT_TARGET
+    Script: |
+      bonus bNonCritAtkRate,getrandomoptinfo(ROA_VALUE);
   - Id: 185
     Script: |
       if (getrandomoptinfo(ROA_PARAM) != 127)

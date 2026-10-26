@@ -1,0 +1,6 @@
+// Move the existing Cookie Shop NPC; keep its dialogue, appearance and barters.
+-	script	MiloPlacement#offline	-1,{
+OnInit:
+	movenpc "Milo Crumb#stone",112,162,DIR_EAST;
+	end;
+}
