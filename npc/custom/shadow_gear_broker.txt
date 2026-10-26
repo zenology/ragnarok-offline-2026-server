@@ -4,9 +4,14 @@
 //= Currency: Event Stone Coin (7000). Base price: 50, rounded up.
 //============================================================
 
-malangdo,112,162,6	script	Remy#offline	4_EP17_BOY_B,{
+mal_in01,62,123,4	script	Remy#offline	4_EP17_BOY_B,{
 	mes "[Remy]";
 	mes "E-every Shadow thing... weapon... armor... I-I put them in little name piles...";
+	next;
+	mes "[Remy]";
+	mes "M-my brothers? Lemy keeps the books and Essence... Romy works the moonlight into your gear... rrr...";
+	next;
+	mes "[Remy]";
 	mes "P-please bring Event Stone Coins... before the moon comes out... rrr...";
 	next;
 	.@type = select("Weapon:Armor:Cancel");
@@ -187,5 +192,18 @@ malangdo,112,162,6	script	Remy#offline	4_EP17_BOY_B,{
 	if (.@shop$ == "") close;
 	close2;
 	callshop(.@shop$);
+	end;
+}
+
+mal_in01,62,116,0	script	Lemy#offline	4_EP17_BOY_B,{
+	mes "[Lemy]";
+	mes "L-Lemy... yes, another brother. Remy minds the gear... Romy tends its shadows... I keep the books dry... rrr...";
+	next;
+	mes "[Lemy]";
+	mes "Spellbooks, Random Mix, Shadow Essence... ten Event Stone Coins apiece. P-please keep the pages out of the moonlit puddles...";
+	next;
+	if (select("Spellbooks and Essence:Cancel") == 2) close;
+	close2;
+	callshop("sg_enchant_materials");
 	end;
 }

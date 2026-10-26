@@ -26,6 +26,7 @@
 #include "mob.hpp"
 #include "pc.hpp"
 #include "status.hpp"
+#include "../custom/shadow_enchantment.hpp"
 
 using namespace rathena;
 
@@ -4650,6 +4651,8 @@ bool RandomOptionGroupDatabase::add_option(const ryml::NodeRef& node, std::share
 }
 
 void s_random_opt_group::apply( struct item& item ){
+	if (offline_shadow::apply(*this, item))
+		return;
 	auto apply_sub = []( s_item_randomoption& item_option, const std::shared_ptr<s_random_opt_group_entry>& option ){
 		item_option.id = option->id;
 		item_option.value = rnd_value( option->min_value, option->max_value );

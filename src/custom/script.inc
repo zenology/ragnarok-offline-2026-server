@@ -27,6 +27,82 @@
 #include "premium_autobuff.hpp"
 #include "premium_drop_penalty.hpp"
 #include "fourth_job_trial.hpp"
+#include "shadow_enchantment.hpp"
+#include "shadow_npc_enchantment.hpp"
+
+// info fields: 0=count, 1=stable action key, 2=card index (-1=RO),
+// 3=material ID, 4=amount, 5=label, 7=inventory index (for de-duplication).
+// Index is zero-based. Fields 0 and 7 do not depend on the action index.
+BUILDIN_FUNC(shadowenchantinfo) {
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) return SCRIPT_CMD_FAILURE;
+	const auto gear = offline_shadow_npc::equipped(*sd, script_getnum(st, 2));
+	const auto actions = gear ? offline_shadow_npc::actions(*gear) :
+		std::vector<offline_shadow_npc::action>{};
+	const int32 index = script_getnum(st, 3);
+	const int32 field = script_getnum(st, 4);
+	if (field == 0) {
+		script_pushint(st, actions.size());
+		return SCRIPT_CMD_SUCCESS;
+	}
+	if (field == 7) {
+		script_pushint(st, gear ? pc_checkequip(sd, equip_bitmask[script_getnum(st, 2)]) : -1);
+		return SCRIPT_CMD_SUCCESS;
+	}
+	if (index < 0 || static_cast<size_t>(index) >= actions.size()) {
+		if (field == 5) script_pushstrcopy(st, "");
+		else script_pushint(st, 0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+	const auto& entry = actions[index];
+	switch (field) {
+		case 1: script_pushint(st, entry.key); break;
+		case 2: script_pushint(st, entry.card_slot); break;
+		case 3: script_pushint(st, entry.material); break;
+		case 4: script_pushint(st, entry.amount); break;
+		case 5: script_pushstrcopy(st, entry.label.c_str()); break;
+		default: script_pushint(st, 0); break;
+	}
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(shadowenchantroll) {
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) return SCRIPT_CMD_FAILURE;
+	struct item output{};
+	if (!offline_shadow_npc::roll(*sd, script_getnum(st, 2), script_getnum(st, 3), output)) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+	for (int32 i = 0; i < MAX_SLOTS; ++i)
+		setd_sub_num(st, nullptr, ".@sh_card", i, output.card[i], nullptr);
+	for (int32 i = 0; i < MAX_ITEM_RDM_OPT; ++i) {
+		setd_sub_num(st, nullptr, ".@sh_opt_id", i, output.option[i].id, nullptr);
+		setd_sub_num(st, nullptr, ".@sh_opt_value", i, output.option[i].value, nullptr);
+		setd_sub_num(st, nullptr, ".@sh_opt_param", i, output.option[i].param, nullptr);
+	}
+	script_pushint(st, 1);
+	return SCRIPT_CMD_SUCCESS;
+}
+
+BUILDIN_FUNC(shadowupgradeopen) {
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) return SCRIPT_CMD_FAILURE;
+	const t_itemid id = script_getnum(st, 2);
+	const bool allowed = id == 23720 || (id >= 100205 && id <= 100208) ||
+		(id >= 101177 && id <= 101180) || (id >= 101260 && id <= 101262) || id == 101264 ||
+		(id >= 101308 && id <= 101311) || (id >= 101359 && id <= 101362) || id == 101564;
+	const auto upgrade = laphine_upgrade_db.find(id);
+	if (!allowed || sd->state.laphine_upgrade != 0 || pc_search_inventory(sd, id) < 0 ||
+		upgrade == nullptr || upgrade->randomOptionGroup == nullptr ||
+		!offline_shadow::valid_group(*upgrade->randomOptionGroup)) {
+		script_pushint(st, 0);
+		return SCRIPT_CMD_SUCCESS;
+	}
+	clif_laphine_upgrade_open(sd, upgrade);
+	script_pushint(st, 1);
+	return SCRIPT_CMD_SUCCESS;
+}
 
 BUILDIN_FUNC(fourthtrial_ready) {
 	script_pushint(st, offline_fourth_job_trial::ready(script_getnum(st, 2)));
@@ -584,9 +660,12 @@ BUILDIN_FUNC(replaceequipped)
 	}
 
 	const int32 slot = script_getnum(st, 2);
+	const bool shadow_slot = offline_shadow_npc::shadow_slot(slot);
 	if (slot != EQI_HEAD_TOP && slot != EQI_HEAD_MID && slot != EQI_HEAD_LOW &&
 		slot != EQI_ARMOR && slot != EQI_HAND_L && slot != EQI_HAND_R &&
-		slot != EQI_GARMENT && slot != EQI_SHOES && slot != EQI_ACC_L && slot != EQI_ACC_R) {
+		slot != EQI_GARMENT && slot != EQI_SHOES && slot != EQI_ACC_L && slot != EQI_ACC_R &&
+		slot != EQI_COSTUME_HEAD_TOP && slot != EQI_COSTUME_HEAD_MID &&
+		slot != EQI_COSTUME_HEAD_LOW && slot != EQI_COSTUME_GARMENT && !shadow_slot) {
 		script_pushint(st, 4);
 		return SCRIPT_CMD_SUCCESS;
 	}
@@ -638,7 +717,8 @@ BUILDIN_FUNC(replaceequipped)
 		return SCRIPT_CMD_SUCCESS;
 	}
 	const item_data* item_data = sd->inventory_data[inventory_index];
-	if (item_data->type != IT_WEAPON && item_data->type != IT_ARMOR) {
+	if (shadow_slot ? item_data->type != IT_SHADOWGEAR :
+		(item_data->type != IT_WEAPON && item_data->type != IT_ARMOR)) {
 		script_pushint(st, 4);
 		return SCRIPT_CMD_SUCCESS;
 	}
