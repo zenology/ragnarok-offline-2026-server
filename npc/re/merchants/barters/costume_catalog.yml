@@ -16018,12 +16018,6 @@ Body:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 40
-      - Index: 2
-        Item: C_EXE_Backpack
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
   - Name: costume_catalog_3_0_5
     Items:
       - {Index: 0, Item: C_Fairy_Of_Eden, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
@@ -16051,13 +16045,12 @@ Body:
       - {Index: 11, Item: C_Giant_Teddy_Bear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
       - {Index: 12, Item: C_Giant_White_Rabbit, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
       - {Index: 13, Item: C_Glass_Rose_Garden, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
-      - {Index: 14, Item: C_2018_RTC_Cape4_TW_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
-      - {Index: 15, Item: C_Golden_Angel_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
-      - {Index: 16, Item: C_GoldButterfly_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
-      - {Index: 17, Item: C_CLB_SS_LT, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
-      - {Index: 18, Item: C_GreatDevilWing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
-      - {Index: 19, Item: C_Guardian_Angelwing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
-      - {Index: 20, Item: C_Guardian_Butterwing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 14, Item: C_Golden_Angel_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_GoldButterfly_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_CLB_SS_LT, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_GreatDevilWing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 18, Item: C_Guardian_Angelwing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 19, Item: C_Guardian_Butterwing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_3_0_7
     Items:
       - {Index: 0, Item: aegis_480478, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
@@ -16441,3 +16434,7 @@ Body:
           - Index: 0
             Item: Evt_Cos_Coin
             Amount: 50
+  - Name: costume_catalog_limited
+    Items:
+      - {Index: 0, Item: C_EXE_Backpack, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_2018_RTC_Cape4_TW_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}

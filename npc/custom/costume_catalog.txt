@@ -1,8 +1,7 @@
 //===== Ragnarok Offline =====================================
-//= Generated Costume Curator catalog
+//= Costume Curator catalog, maintained with narrow hand-authored patches.
 //= Source: Costume Roulette pool, client itemInfo, server item scripts/combos,
 //= and the resumable Divine Pride Added-date cache.
-//= Regenerate with Knowledge Base/tools/generate_costume_catalog.py.
 //============================================================
 
 malangdo,116,169,6	script	Dewey#offline	4_CAT_MERMASTER,{
@@ -17,9 +16,22 @@ malangdo,116,169,6	script	Dewey#offline	4_CAT_MERMASTER,{
 	.@catmenu$ = "";
 	if (.@ordinary > 0) .@catmenu$ += "Ordinary Costumes:";
 	if (.@special > 0) .@catmenu$ += "Special Costumes:";
+	if (.@slot == 3) .@catmenu$ += "Limited Costume:";
 	.@catmenu$ += "Cancel";
 	.@catpick = select(.@catmenu$) - 1;
 	if (.@catpick < 0) close;
+	if (.@slot == 3) {
+		.@limited_pick = 0;
+		if (.@ordinary > 0) .@limited_pick++;
+		if (.@special > 0) .@limited_pick++;
+		if (.@catpick == .@limited_pick) {
+			mes "[Dewey]";
+			mes "These costumes cannot be equipped by Shinkiro, Night Watch, Hyper Novice or Spirit Handler.";
+			close2;
+			callshop("costume_catalog_limited");
+			end;
+		}
+	}
 	.@category = -1;
 	if (.@ordinary > 0) {
 		if (.@catpick == 0) .@category = 0;

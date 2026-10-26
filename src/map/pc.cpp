@@ -63,6 +63,7 @@
 #include "storage.hpp"
 #include "unit.hpp" // unit_stop_attack(), unit_stop_walking()
 #include "vending.hpp" // struct s_vending
+#include <custom/costume_equipment_limits.hpp>
 #include <custom/premium_drop_penalty.hpp>
 
 using namespace rathena;
@@ -1855,6 +1856,8 @@ uint8 pc_isequip( const map_session_data* sd, int32 n )
 	nullpo_retr(ITEM_EQUIP_ACK_FAIL, sd);
 
 	item = sd->inventory_data[n];
+	if (item != nullptr && offline_costume_limits::is_blocked(item->nameid, sd->status.class_))
+		return ITEM_EQUIP_ACK_FAIL;
 
 	if(pc_has_permission(sd, PC_PERM_USE_ALL_EQUIPMENT))
 		return ITEM_EQUIP_ACK_OK;
@@ -12634,7 +12637,7 @@ void pc_checkitem(map_session_data *sd) {
 			continue;
 		if( !it->equip )
 			continue;
-		if( it->equip&~pc_equippoint(sd,i) ) {
+		if( offline_costume_limits::is_blocked(it->nameid, sd->status.class_) || it->equip&~pc_equippoint(sd,i) ) {
 			pc_unequipitem(sd, i, 2);
 			calc_flag = 1;
 			continue;
@@ -12654,7 +12657,7 @@ void pc_checkitem(map_session_data *sd) {
 			continue;
 		if( !it->equipSwitch )
 			continue;
-		if( it->equipSwitch&~pc_equippoint(sd,i) ||
+		if( offline_costume_limits::is_blocked(it->nameid, sd->status.class_) || it->equipSwitch&~pc_equippoint(sd,i) ||
 			( !pc_has_permission(sd, PC_PERM_USE_ALL_EQUIPMENT) && !battle_config.allow_equip_restricted_item && itemdb_isNoEquip(sd->inventory_data[i], sd->m) ) ){
 			
 			for( int32 j = 0; j < EQI_MAX; j++ ){
@@ -15555,7 +15558,8 @@ void pc_set_costume_view(map_session_data *sd) {
 		}
 		if ((i = sd->equip_index[EQI_COSTUME_HEAD_TOP]) != -1 && (id = sd->inventory_data[i]))
 			sd->status.head_top = id->look;
-		if ((i = sd->equip_index[EQI_COSTUME_GARMENT]) != -1 && (id = sd->inventory_data[i]))
+		if ((i = sd->equip_index[EQI_COSTUME_GARMENT]) != -1 && (id = sd->inventory_data[i]) &&
+			!offline_costume_limits::is_blocked(id->nameid, sd->status.class_))
 			sd->status.robe = id->look;
 	}
 
