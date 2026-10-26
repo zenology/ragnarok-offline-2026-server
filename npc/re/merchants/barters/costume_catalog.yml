@@ -1,7 +1,7 @@
 #===== Ragnarok Offline =====================================
-#= Generated Costume Curator barter drawers
+#= Reviewed Costume Curator barter drawers
 #= Currency: Evt_Cos_Coin (ID 7000)
-#= Regenerate with Knowledge Base/tools/generate_costume_catalog.py.
+#= Validate with Knowledge Base/tools/validate_malangdo_fashion_restock.py.
 #============================================================
 
 Header:
@@ -1285,186 +1285,37 @@ Body:
             Amount: 10
   - Name: costume_catalog_0_0_25
     Items:
-      - Index: 0
-        Item: C_Cactus_Corsage
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 1
-        Item: C_Cactus_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 2
-        Item: C_Hat_Of_Cake
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Onihime_Camellia
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_Camouflage_RabbitHood
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 5
-        Item: C_Campfire_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 6
-        Item: C_Cancer_Diadem
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Candle
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Candy_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Cap
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Capricon_Crown
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Captain_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 12
-        Item: C_Solo_Play_Box2
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 13
-        Item: C_Carnation_Hairband
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 14
-        Item: C_Carnival_Circlet
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 15
-        Item: C_Carnival_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 16
-        Item: C_Cassandra
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_CatCoffeeCup_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 18
-        Item: C_B_EarWitchHat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 19
-        Item: C_Cat_Ear_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 20
-        Item: C_Cat_Ear_LongK
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 21
-        Item: C_Cat_Ear_ShortK
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 22
-        Item: C_HeartOfCat_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Cat_Lace_Hairband
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 24
-        Item: C_PGstone_Knit_Hat_GR
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 25
-        Item: C_Cat_Foot_Hairpin
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 26
-        Item: C_PGstone_Knit_Hat_PK
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 27
-        Item: C_PGstone_Knit_Hat_BW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 28
-        Item: C_Cat_Straw_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 29
-        Item: C_CatharinaPawnBrad60
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
+      - {Index: 0, Item: C_Cactus_Corsage, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 1, Item: C_Cactus_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 2, Item: C_Hat_Of_Cake, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Onihime_Camellia, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_Camouflage_RabbitHood, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 5, Item: C_Campfire_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 6, Item: C_Campus_Festival, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Cancer_Diadem, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Candle, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Candy_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Cap, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Capricon_Crown, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Captain_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 13, Item: C_Solo_Play_Box2, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 14, Item: C_Carnation_Hairband, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 15, Item: C_Carnival_Circlet, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 16, Item: C_Carnival_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 17, Item: C_Cassandra, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_CatCoffeeCup_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_B_EarWitchHat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 20, Item: C_Cat_Ear_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 21, Item: C_Cat_Ear_LongK, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 22, Item: C_Cat_Ear_ShortK, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 23, Item: C_HeartOfCat_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_Cat_Lace_Hairband, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 25, Item: C_PGstone_Knit_Hat_GR, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 26, Item: C_Cat_Foot_Hairpin, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 27, Item: C_PGstone_Knit_Hat_PK, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 28, Item: C_PGstone_Knit_Hat_BW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 29, Item: C_Cat_Straw_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 30, Item: C_CatharinaPawnBrad60, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
   - Name: costume_catalog_0_0_26
     Items:
       - Index: 0
@@ -3877,120 +3728,26 @@ Body:
             Amount: 40
   - Name: costume_catalog_0_0_64
     Items:
-      - Index: 0
-        Item: C_Love_China_CN
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Lovegame_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Icecream_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 3
-        Item: C_Idun_Wing_Ears
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Idun_Green_Apple
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Ignis_Cap
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 6
-        Item: aegis_401062
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Ignis_Cap_BU
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 8
-        Item: C_Inccubus_Horn
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Indi_Feather_Band
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 10
-        Item: aegis_400952
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Indian_Hair_Piece
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Indian_Headband
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 13
-        Item: C_Indomitable_Crown
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: aegis_401015
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Aviator_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 16
-        Item: C_Striking_hat_A
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_Isabella_Blue_Ear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 18
-        Item: C_Isabella_Red_Ear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
+      - {Index: 0, Item: C_Love_China_CN, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Lovegame_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Icecream_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 3, Item: C_Idun_Wing_Ears, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Idun_Green_Apple, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Ignis_Cap, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 6, Item: aegis_401062, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Ignis_Cap_BU, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 8, Item: C_Inccubus_Horn, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Indi_Feather_Band, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 10, Item: aegis_400952, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Indian_Hair_Piece, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Indian_Headband, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 13, Item: C_Indomitable_Crown, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: aegis_401015, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Aviator_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Striking_hat_A, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_Invisible_Cap, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 18, Item: C_Isabella_Blue_Ear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 19, Item: C_Isabella_Red_Ear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
   - Name: costume_catalog_0_0_65
     Items:
       - Index: 0
@@ -5057,180 +4814,36 @@ Body:
             Amount: 20
   - Name: costume_catalog_0_0_78
     Items:
-      - Index: 0
-        Item: C_Naval_Officer_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Necktie
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Necromencer_Hood_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_Necromencer_Hood
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 4
-        Item: C_Neko_Mimi_Kafra
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 5
-        Item: C_Cat_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_CatEars_Cyber_HeadP
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 7
-        Item: C_Nestea_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_New_Year_Hairpin
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: 2022_LunarNewYears_band
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Niflheim_Bunny_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 11
-        Item: C_Bulb_Wreath
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_2508_Salt_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 13
-        Item: C_Night_Sparrow_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 14
-        Item: C_Nine_Tail_Fox_Hair
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Forceps_Hairpin
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 16
-        Item: C_Noah_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 17
-        Item: C_Poringnoodle_Head
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 18
-        Item: C_Northern_Cross
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 19
-        Item: C_NostalgiaCherry
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 20
-        Item: C_Headset_OST
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 21
-        Item: C_Blue_Coif
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 22
-        Item: C_Nurse_Cap
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_DVAngelNurseCap
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 24
-        Item: C_Fruit_Shell
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 25
-        Item: C_Ear_Of_Nyar_GY
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 26
-        Item: C_Ear_Of_Nyar_WH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 27
-        Item: C_Nydhog_Wig
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 28
-        Item: C_Nydhog_Wig_WH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Navy_Beret, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 1, Item: C_Naval_Officer_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Necktie, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Necromencer_Hood_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_Necromencer_Hood, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 5, Item: C_Neko_Mimi_Kafra, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 6, Item: C_Cat_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_CatEars_Cyber_HeadP, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 8, Item: C_Nestea_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_New_Year_Hairpin, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: 2022_LunarNewYears_band, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Niflheim_Bunny_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 12, Item: C_Bulb_Wreath, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_2508_Salt_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Night_Sparrow_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 15, Item: C_Nine_Tail_Fox_Hair, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Forceps_Hairpin, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 17, Item: C_Noah_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 18, Item: C_Poringnoodle_Head, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_Northern_Cross, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 20, Item: C_NostalgiaCherry, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 21, Item: C_Headset_OST, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 22, Item: C_Blue_Coif, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 23, Item: C_Nurse_Cap, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_DVAngelNurseCap, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 25, Item: C_Fruit_Shell, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 26, Item: C_Ear_Of_Nyar_GY, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 27, Item: C_Ear_Of_Nyar_WH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 28, Item: C_Nydhog_Wig, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 29, Item: C_Nydhog_Wig_WH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_0_0_79
     Items:
       - Index: 0
@@ -6009,198 +5622,39 @@ Body:
             Amount: 40
   - Name: costume_catalog_0_0_89
     Items:
-      - Index: 0
-        Item: aegis_410255
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Afro_Wig_Red
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Red_White_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_RW_Mochiring_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Red_Baby_Dragon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 5
-        Item: aegis_410293
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Red_Bandana
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Red_Beret
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Red_Bonnet
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 9
-        Item: aegis_400348
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Hair_Brush
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 11
-        Item: C_Red_Deviruchi_Cap
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Red_Dress_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 13
-        Item: C_Fire_Giant_Red
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_Horse_King_Red
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Red_Paeonia
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 16
-        Item: C_Pink_Pajamas_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_Pirates_Pride
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 18
-        Item: C_Red_Ribbon_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 19
-        Item: C_Fillet_Red
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 20
-        Item: C_Red_Hood
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 21
-        Item: C_Red_Strong_Hair
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 22
-        Item: C_Summer_Baseball_Cap
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Red_Tailed_Ribbon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 24
-        Item: C_Red_Vane_Hairpin
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 25
-        Item: C_Priest_Hat_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 26
-        Item: C_Reliance_Crown
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 27
-        Item: C_Remover_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 28
-        Item: C_Nut_Cracker_JP
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 29
-        Item: C_Republic_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 30
-        Item: C_Bldy_Light_Dark_Crown
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 31
-        Item: C_Mira_Tower_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: aegis_410255, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Afro_Wig_Red, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Red_White_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_RW_Mochiring_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Red_Baby_Dragon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 5, Item: aegis_410293, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Red_Bandana, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Red_Beret, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Red_Bonnet, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 9, Item: aegis_400348, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Hair_Brush, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 11, Item: C_Red_Deviruchi_Cap, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Red_Dress_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_Fire_Giant_Red, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Horse_King_Red, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Red_Navy_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 16, Item: C_Red_Paeonia, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_Pink_Pajamas_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_Pirates_Pride, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_Red_Ribbon_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 20, Item: C_Fillet_Red, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 21, Item: C_Red_Hood, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 22, Item: C_Red_Strong_Hair, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 23, Item: C_Summer_Baseball_Cap, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_Red_Tailed_Ribbon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 25, Item: C_Red_Vane_Hairpin, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 26, Item: C_Priest_Hat_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 27, Item: C_Reliance_Crown, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 28, Item: C_Remover_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 29, Item: C_Nut_Cracker_JP, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 30, Item: C_Republic_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 31, Item: C_Bldy_Light_Dark_Crown, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 32, Item: C_Mira_Tower_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_0_0_90
     Items:
       - Index: 0
@@ -6291,102 +5745,23 @@ Body:
             Amount: 40
   - Name: costume_catalog_0_0_92
     Items:
-      - Index: 0
-        Item: C_RoCelebrationHat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Roast_Memory
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 2
-        Item: C_Egg_Minihat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_Rolf_Von_Gigue_666
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 4
-        Item: C_Oldman's_Romance
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Altair_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_2024ROS_Hat_1st
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_2024ROS_Hat_2nd
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_2024ROS_Hat_3rd
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_2024ROS_Hat_4th
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_RJC_Katusa
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 11
-        Item: C_Rose_Crispinette
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Rose_Gothic_Bonnet
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 13
-        Item: C_Earth_Goddess_Flower
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 14
-        Item: aegis_400366
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Royal_Rabbit_Crown
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
+      - {Index: 0, Item: C_RoCelebrationHat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Roast_Memory, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 2, Item: C_Egg_Minihat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 3, Item: C_Rolf_Von_Gigue_666, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 4, Item: C_Romance_Rose_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 5, Item: C_Oldman's_Romance, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Altair_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_2024ROS_Hat_1st, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_2024ROS_Hat_2nd, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_2024ROS_Hat_3rd, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_2024ROS_Hat_4th, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_RJC_Katusa, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 12, Item: C_Rose_Crispinette, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_Rose_Gothic_Bonnet, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 14, Item: C_Earth_Goddess_Flower, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 15, Item: aegis_400366, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Royal_Rabbit_Crown, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
   - Name: costume_catalog_0_0_93
     Items:
       - Index: 0
@@ -6927,66 +6302,17 @@ Body:
             Amount: 30
   - Name: costume_catalog_0_0_104
     Items:
-      - Index: 0
-        Item: C_Snake_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Sniper_Goggle
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 2
-        Item: C_Snow_Bear_Food
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 3
-        Item: C_Para_Team_Hat100
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_Rune_Helm_Ice
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_SnowFlake_Tiara
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 6
-        Item: C_Snow_Head
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Snowman_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 8
-        Item: C_SnowmanHat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Snownow_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
+      - {Index: 0, Item: C_Snake_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Snake_Head, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 2, Item: C_Sniper_Goggle, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 3, Item: C_Snow_Bear_Food, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 4, Item: C_Para_Team_Hat100, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 5, Item: C_Rune_Helm_Ice, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_SnowFlake_Tiara, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 7, Item: C_Snow_Head, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Snowman_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 9, Item: C_SnowmanHat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Snownow_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
   - Name: costume_catalog_0_0_105
     Items:
       - Index: 0
@@ -10315,332 +9641,64 @@ Body:
             Amount: 40
   - Name: costume_catalog_1_0_19
     Items:
-      - Index: 0
-        Item: C_Face_Crusher
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 1
-        Item: aegis_400403
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Fairy_Feathers
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 3
-        Item: C_False_Ears
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 4
-        Item: C_Falcon_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 5
-        Item: C_FallenAngelWingEar
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Fancy_Phantom_Mask_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 7
-        Item: C_Fin_Helm
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Firehorse_US
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_First_Love_Cheek
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 10
-        Item: C_Floating_Parasol
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 11
-        Item: C_Phalanx
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Floating_Ball_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 13
-        Item: Flower_Blossom
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 14
-        Item: C_Flowery_Vision_TH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Flowerpot_Mask_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 16
-        Item: C_Flowerpot_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 17
-        Item: C_Flowery_Vision_ROC
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 18
-        Item: C_Fluffy_Bakery
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 19
-        Item: C_Fluffy_Lovely_Fox_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 20
-        Item: C_Cinnamon2
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 21
-        Item: C_Flying_Drone
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 22
-        Item: C_Flying_Tilby
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Fortier_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 24
-        Item: C_Fox
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 25
-        Item: C_Fox_Hat_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 26
-        Item: C_Fox_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
+      - {Index: 0, Item: C_Face_Crusher, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 1, Item: aegis_400403, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Fairy_Feathers, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 3, Item: C_False_Ears, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 4, Item: C_Falcon_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 5, Item: C_FallenAngelWingEar, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Fancy_Phantom_Mask_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 7, Item: C_Fin_Helm, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Firehorse_US, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_First_Love_Cheek, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 10, Item: C_Floating_Parasol, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 11, Item: C_Phalanx, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Floating_Ball_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: Flower_Blossom, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 14, Item: C_Flowery_Vision_TH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Flowerpot_Mask_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 16, Item: C_Flowerpot_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 17, Item: C_Flowery_Vision_ROC, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_Fluffy_Bakery, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_Fluffy_Lovely_Fox_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 20, Item: C_Fluttering_Haze, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 21, Item: C_Cinnamon2, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 22, Item: C_Flying_Drone, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 23, Item: C_Flying_Tilby, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_Fortier_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 25, Item: C_Fox, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 26, Item: C_Fox_Hat_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 27, Item: C_Fox_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
   - Name: costume_catalog_1_0_20
     Items:
-      - Index: 0
-        Item: C_Gambler_Seal
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Gas_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Gear_Monocle
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Geisha_Make
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 4
-        Item: C_Gemini_RedEyes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 5
-        Item: C_Gemini_Eyes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Ghost_Bat_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Mask_Of_Cat_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Grisly_Soul
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Earth_Godess_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 10
-        Item: C_Jioia_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Glasses
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_White_Clay_Filler
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 13
-        Item: C_Hockey_Mask_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_Goblin_Mask_04
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Goblini_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 16
-        Item: C_Good_Wedding_Veil
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 17
-        Item: C_Goggle
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 18
-        Item: C_GorgonCoronet
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 19
-        Item: C_Gothic_Heart_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 20
-        Item: C_Gravekeeper_Blinker
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 21
-        Item: C_Great_Pyrenees
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 22
-        Item: C_Dragon_Green_Aura
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Guardian_Helm
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 24
-        Item: C_Guardian_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 25
-        Item: C_Gulaling_Mini
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 26
-        Item: C_spiding
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Gambler_Seal, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Gas_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Gear_Monocle, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Geisha_Make, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 4, Item: C_Gemini_RedEyes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 5, Item: C_Gemini_Eyes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Ghost_Bat_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Mask_Of_Cat_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Aura_Of_Ghost_S, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Grisly_Soul, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Earth_Godess_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 11, Item: C_Jioia_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Glasses, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_White_Clay_Filler, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 14, Item: C_Hockey_Mask_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Goblin_Mask_04, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Goblini_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_Good_Wedding_Veil, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 18, Item: C_Goggle, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_GorgonCoronet, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 20, Item: C_Gothic_Heart_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 21, Item: C_Gravekeeper_Blinker, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 22, Item: C_Great_Pyrenees, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 23, Item: C_Dragon_Green_Aura, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_Guardian_Helm, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 25, Item: C_Guardian_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 26, Item: C_Gulaling_Mini, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 27, Item: C_spiding, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_1_0_21
     Items:
       - Index: 0
@@ -10819,54 +9877,15 @@ Body:
             Amount: 10
   - Name: costume_catalog_1_0_22
     Items:
-      - Index: 0
-        Item: C_Ice_Wing_Ear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 1
-        Item: C_Spot_Mike
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Eyes_Of_Illusion
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_Imperial_Feather
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Injured_Eyepatch_JP
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Rainbow_Veil_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Ep19_Iwin
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_10_Type_Glasses
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: C_Ice_Wing_Ear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 1, Item: C_Spot_Mike, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Eyes_Of_Illusion, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 3, Item: C_Imperial_Feather, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Injured_Eyepatch_JP, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Invisible_Sunglasses, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 6, Item: C_Rainbow_Veil_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Ep19_Iwin, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_10_Type_Glasses, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_1_0_23
     Items:
       - Index: 0
@@ -11449,78 +10468,19 @@ Body:
             Amount: 20
   - Name: costume_catalog_1_0_31
     Items:
-      - Index: 0
-        Item: C_Necromencer_Hood
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 1
-        Item: C_Neev_Barrette
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Nero_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_New_Wave_Sunglass
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 4
-        Item: C_Nine_Tailed_Fox
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Noble_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 6
-        Item: C_N_Forest_Cat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Nose_Glasses_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Headset_OST
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Blue_Coif
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Nursing_Poring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Nut_Cracker
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: C_Necromencer_Hood, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 1, Item: C_Neev_Barrette, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Nero_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 3, Item: C_New_Wave_Sunglass, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 4, Item: C_Glow_Of_New_Year, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Nine_Tailed_Fox, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Noble_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 7, Item: C_N_Forest_Cat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Nose_Glasses_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Headset_OST, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Blue_Coif, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Nursing_Poring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Nut_Cracker, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_1_0_32
     Items:
       - Index: 0
@@ -11603,180 +10563,36 @@ Body:
             Amount: 40
   - Name: costume_catalog_1_0_33
     Items:
-      - Index: 0
-        Item: C_Pope_Ribbon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Panda_Rabbit
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 2
-        Item: C_Pecopeco_Wing_Ears
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Persika_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 4
-        Item: C_Pet_Popcorn_Box
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Phantom_Ear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Eyes_Phen
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Picnic_Basket
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Bell_Pigeon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 9
-        Item: C_PocketWatch_Hair_Orna
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 10
-        Item: C_Goblin_Mask_01
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: aegis_410167
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Pope_Ribbon_R
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 13
-        Item: C_Solo_Play_Box1
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_23Anniv_Poring1
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Poring_On_Shoulder
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 16
-        Item: C_23Anniv_Poring2
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_ROROGO
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 18
-        Item: C_Poring_Sunglasses_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 19
-        Item: C_Supplement_P_Income
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 20
-        Item: C_Pray_Cherry_Blossom
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 21
-        Item: C_Pretty_Rabbit_Hood
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 22
-        Item: C_Romance_Rose_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Professor_MiniGlass
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 24
-        Item: C_Protect_Feathers
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 25
-        Item: C_Tatenasi_Helmet
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 26
-        Item: C_37_Sculpt
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 27
-        Item: C_Belka_Strelka
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 28
-        Item: C_Luxury_Sunglasses
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
+      - {Index: 0, Item: C_Pope_Ribbon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Panda_Rabbit, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 2, Item: C_Pecopeco_Wing_Ears, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Perm_Frost_Oblivion, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Persika_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 5, Item: C_Pet_Popcorn_Box, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Phantom_Ear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Eyes_Phen, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Picnic_Basket, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Bell_Pigeon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 10, Item: C_PocketWatch_Hair_Orna, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 11, Item: C_Goblin_Mask_01, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: aegis_410167, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_Pope_Ribbon_R, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Solo_Play_Box1, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_23Anniv_Poring1, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Poring_On_Shoulder, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 17, Item: C_23Anniv_Poring2, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_ROROGO, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 19, Item: C_Poring_Sunglasses_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 20, Item: C_Supplement_P_Income, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 21, Item: C_Pray_Cherry_Blossom, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 22, Item: C_Pretty_Rabbit_Hood, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 23, Item: C_Romance_Rose_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_Professor_MiniGlass, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 25, Item: C_Protect_Feathers, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 26, Item: C_Tatenasi_Helmet, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 27, Item: C_37_Sculpt, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 28, Item: C_Belka_Strelka, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 29, Item: C_Luxury_Sunglasses, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
   - Name: costume_catalog_1_0_34
     Items:
       - Index: 0
@@ -12165,30 +10981,11 @@ Body:
             Amount: 30
   - Name: costume_catalog_1_0_44
     Items:
-      - Index: 0
-        Item: C_Spica_Mini
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Spinning_Eyes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 2
-        Item: C_Spinning_Skulls
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_P_blossom_Hairpin
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Spica_Mini, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Spinning_Eyes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 2, Item: C_Spinning_Skulls, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 3, Item: C_Spot_Light, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_P_blossom_Hairpin, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_1_0_45
     Items:
       - Index: 0
@@ -12665,186 +11462,38 @@ Body:
             Amount: 40
   - Name: costume_catalog_1_0_51
     Items:
-      - Index: 0
-        Item: C_CLB_SS_EA
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Wall
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Wanderer_Grim_Reaper
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Wanderer_Sakkat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Wondering_Wolf_Helm
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 5
-        Item: C_War_Princess_Ribbon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 6
-        Item: C_Teardrop
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 7
-        Item: C_Welding_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Whisper_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_White_Cat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 10
-        Item: C_White_Cat_Hood
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 11
-        Item: C_White_Cat_On_Shoulder
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 12
-        Item: C_WH_Cat_Eyes
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 13
-        Item: C_Kishu_Inu
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 14
-        Item: C_Fox_Hat_J_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 15
-        Item: C_White_Rabbit
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 16
-        Item: C_Gods_Rabbit_Pet
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_White_Tiger_Glass
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 18
-        Item: C_Drooping_Wild_Rose
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 19
-        Item: C_Wing_Form_Spectacle
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 20
-        Item: aegis_410283
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 21
-        Item: C_Wings_Of_Victory
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 22
-        Item: C_Wings_Of_Victory_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Wisdom_Core_Headphone
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 24
-        Item: C_Wish_Tree_Hat_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 25
-        Item: C_Wonder_Egg_Basket
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 26
-        Item: C_Wonderful_Beast_Ear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 27
-        Item: C_Stretched_Nose_M
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 28
-        Item: C_Injured_Eyepatch
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 29
-        Item: C_Wunderkammer
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: C_CLB_SS_EA, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Wall, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Wanderer_Grim_Reaper, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Wanderer_Sakkat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Wondering_Wolf_Helm, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 5, Item: C_War_Princess_Ribbon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 6, Item: C_Teardrop, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 7, Item: C_Welding_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Whisper_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_White_Cat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 10, Item: C_White_Cat_Hood, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 11, Item: C_White_Cat_On_Shoulder, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 12, Item: C_WH_Cat_Eyes, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_Kishu_Inu, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 14, Item: C_Fox_Hat_J_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 15, Item: C_White_Rabbit, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 16, Item: C_Gods_Rabbit_Pet, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_White_Tiger_Glass, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_Drooping_Wild_Rose, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_Wing_Form_Spectacle, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 20, Item: aegis_410283, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 21, Item: C_Wings_Of_Victory, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 22, Item: C_Wings_Of_Victory_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 23, Item: C_WinterNightBells, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_Wisdom_Core_Headphone, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 25, Item: C_Wish_Tree_Hat_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 26, Item: C_Wonder_Egg_Basket, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 27, Item: C_Wonderful_Beast_Ear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 28, Item: C_Teaparty_Wonderland, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 29, Item: C_Stretched_Nose_M, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 30, Item: C_Injured_Eyepatch, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 31, Item: C_Wunderkammer, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_1_0_52
     Items:
       - Index: 0
@@ -13145,162 +11794,34 @@ Body:
             Amount: 50
   - Name: costume_catalog_2_0_0
     Items:
-      - Index: 0
-        Item: C_Abacus_In_Mouth
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Deep_You_N
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Deep_You
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Adventurer_Map
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Airy_Two_Side_Up_WH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 5
-        Item: C_Airy_Two_Side_Up_BD
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 6
-        Item: C_Airy_Two_Side_Up_SV
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Alarm_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Alchemist_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 9
-        Item: C_Alchemist_Mask_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Alecsander
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Alpha_Long_Pony
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 12
-        Item: C_Analyze_Eye
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 13
-        Item: C_Angel_Berry_Wig
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_Angeling_Bubble
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Angry_Mouth
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 16
-        Item: C_Goblin_Mask_03
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_Antique_Pipe_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 18
-        Item: C_Anubis_Helm_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 19
-        Item: C_Assassin_Skull_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 20
-        Item: C_Ati_Atihan_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 21
-        Item: C_Atque_Poenitentia
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 22
-        Item: C_Aura_Of_Ra_TH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Aurelie_Hair
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 24
-        Item: C_Auspicloud
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 25
-        Item: C_Azure_Flame_Muffler
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Abacus_In_Mouth, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Deep_You_N, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Deep_You, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Adventurer_Map, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Airy_Two_Side_Up_WH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 5, Item: C_Airy_Two_Side_Up_BD, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 6, Item: C_Airy_Two_Side_Up_SV, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Alarm_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Alchemist_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 9, Item: C_Alchemist_Mask_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Alecsander, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Alpha_Long_Pony, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 12, Item: C_Analyze_Eye, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 13, Item: C_Angel_Fluttering, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Angel_Berry_Wig, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Angeling_Bubble, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Angry_Mouth, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 17, Item: C_Goblin_Mask_03, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_Antique_Pipe_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 19, Item: C_Anubis_Helm_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 20, Item: C_Assassin_Skull_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 21, Item: C_Ati_Atihan_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 22, Item: C_Atque_Poenitentia, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 23, Item: C_Aura_Of_Ra_TH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_Aurelie_Hair, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 25, Item: C_Auspicloud, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 26, Item: aegis_410279, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 27, Item: C_Azure_Flame_Muffler, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_2_0_1
     Items:
       - Index: 0
@@ -13429,96 +11950,22 @@ Body:
             Amount: 30
   - Name: costume_catalog_2_0_4
     Items:
-      - Index: 0
-        Item: C_Black_Cat_Hood_kr
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Black_Dragon_Style
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Black_Glasses_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Dark_Snake_Lord_Stall
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 4
-        Item: C_Blessing_Sky_Lantern
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Cap_Of_Blindness_V
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 6
-        Item: C_Blink_Eyes_D_Freyja
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Blood_Sucker
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 8
-        Item: C_Blossom_Fluttering
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 9
-        Item: C_Cat_Ears_Cape_Blue
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Bluedragon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Blue_Poring_Bubble
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Blue_Rear_Ribbon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 13
-        Item: C_Blue_Sunbed
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_VIP_Hair_Female
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Black_Cat_Hood_kr, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Black_Dragon_Style, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_FlutterButterfly_BL, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Black_Glasses_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Dark_Snake_Lord_Stall, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 5, Item: C_Blessing_Sky_Lantern, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Cap_Of_Blindness_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 7, Item: C_Blink_Eyes_D_Freyja, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Blood_Sucker, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 9, Item: C_Blossom_Fluttering, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 10, Item: C_Cat_Ears_Cape_Blue, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Bluedragon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Blue_Poring_Bubble, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_Blue_Rear_Ribbon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 14, Item: C_Blue_Sunbed, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_VIP_Hair_Female, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_2_0_5
     Items:
       - Index: 0
@@ -13899,36 +12346,12 @@ Body:
             Amount: 40
   - Name: costume_catalog_2_0_14
     Items:
-      - Index: 0
-        Item: C_Come_On_Melon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Con_of_Singapura_MSP
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Consecrate_F_Aureola
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Cookie_PinkRibbon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_bullhead_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Come_On_Melon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Con_of_Singapura_MSP, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Consecrate_F_Aureola, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Cookie_PinkRibbon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: aegis_420271, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_bullhead_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_2_0_15
     Items:
       - Index: 0
@@ -14347,126 +12770,27 @@ Body:
             Amount: 30
   - Name: costume_catalog_2_0_22
     Items:
-      - Index: 0
-        Item: C_Cons_Of_Fire
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 1
-        Item: C_FluffyWing_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Floating_Gioia_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Luwmin_Ice
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 4
-        Item: C_Flowerpot_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 5
-        Item: C_Flu_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 6
-        Item: C_Fluffy_Angel_Cape
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 7
-        Item: C_Snug_Nyar_Hair
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Fluffy_Semi_Long
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 9
-        Item: C_Fluffy_Semi_Long_SV
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Fluffy_Semi_Long_CB
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Fluffy_Semi_Long_JBL
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Fluffy_Semi_Long_LB
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 13
-        Item: C_Fluffy_Semi_Long_LPP
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_Fluffy_Semi_Long_OM
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Fluffy_Semi_Long_BG
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 16
-        Item: C_Fluffy_Semi_Long_WH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_Fluffy_Semi_Long_YL
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 18
-        Item: C_Feather_Fluttering
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 19
-        Item: C_FlyingGalapago
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
+      - {Index: 0, Item: C_Cons_Of_Fire, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 1, Item: C_FluffyWing_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Floating_Gioia_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Luwmin_Ice, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 4, Item: C_Flowerpot_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 5, Item: C_Flu_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 6, Item: C_Fluffy_Angel_Cape, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 7, Item: C_Snug_Nyar_Hair, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Fluffy_Semi_Long, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 9, Item: C_Fluffy_Semi_Long_SV, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Fluffy_Semi_Long_CB, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Fluffy_Semi_Long_JBL, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Fluffy_Semi_Long_LB, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_Fluffy_Semi_Long_LPP, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Fluffy_Semi_Long_OM, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Fluffy_Semi_Long_BG, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Fluffy_Semi_Long_WH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_Fluffy_Semi_Long_YL, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_Flutter_Butterfly, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_Feather_Fluttering, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 20, Item: C_FlyingGalapago, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
   - Name: costume_catalog_2_0_23
     Items:
       - Index: 0
@@ -14515,186 +12839,37 @@ Body:
             Amount: 40
   - Name: costume_catalog_2_0_25
     Items:
-      - Index: 0
-        Item: C_Gang_Scarf
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 1
-        Item: C_Gas_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Ghost_Bat_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_Glastheim_Onlooker
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 4
-        Item: C_Goblin_Mask_04
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Goblini_Mask
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Tone_Of_Gold
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 7
-        Item: C_Stall_Of_Dominions
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 8
-        Item: C_CLB_GAT_bye
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Angel_Berry_Wig_N
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_1Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_10Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_11Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 13
-        Item: C_12Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_2Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_3Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 16
-        Item: C_4Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_5Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 18
-        Item: C_6Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 19
-        Item: C_9Grade_Balloon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 20
-        Item: C_Granpa_Beard
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 21
-        Item: C_20th_Anniversary
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 22
-        Item: C_Green_Foxtail
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Leek_In_Mouth
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 24
-        Item: C_Green_Sunbed
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 25
-        Item: GrimReaper_Protection
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 26
-        Item: C_GC_Hair_OM
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 27
-        Item: C_GCM_Hair_BG
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 28
-        Item: C_GCM_Hair_YL
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 29
-        Item: C_spiding
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Gang_Scarf, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 1, Item: C_Gas_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Ghost_Bat_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 3, Item: C_Gift_Of_Snow, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 4, Item: C_Glastheim_Onlooker, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 5, Item: C_Goblin_Mask_04, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Goblini_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Tone_Of_Gold, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 8, Item: C_Stall_Of_Dominions, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 9, Item: C_CLB_GAT_bye, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Angel_Berry_Wig_N, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_1Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_10Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_11Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_12Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_2Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_3Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_4Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_5Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_6Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 20, Item: C_9Grade_Balloon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 21, Item: C_Granpa_Beard, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 22, Item: C_20th_Anniversary, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 23, Item: C_Green_Foxtail, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_Leek_In_Mouth, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 25, Item: C_Green_Sunbed, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 26, Item: GrimReaper_Protection, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 27, Item: C_GC_Hair_OM, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 28, Item: C_GCM_Hair_BG, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 29, Item: C_GCM_Hair_YL, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 30, Item: C_spiding, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_2_0_26
     Items:
       - Index: 0
@@ -14959,36 +13134,14 @@ Body:
             Amount: 40
   - Name: costume_catalog_2_0_31
     Items:
-      - Index: 0
-        Item: C_Holy_Rosario
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Ifrits_Breath
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 2
-        Item: C_Immortal_H_Power
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Imperial_Glory
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_Ep19_Iwin
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Holy_Rosario, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Ifrits_Breath, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 2, Item: C_Immortal_H_Power, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Imperial_Glory, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_InkPainting_Day, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_InkPainting_Night, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Invisible_Mask, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 7, Item: C_Ep19_Iwin, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_2_0_32
     Items:
       - Index: 0
@@ -15055,48 +13208,14 @@ Body:
             Amount: 20
   - Name: costume_catalog_2_0_34
     Items:
-      - Index: 0
-        Item: C_Lamb_Hat1
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 1
-        Item: C_Lamb_Hat2
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 2
-        Item: C_Large_Ribbon_Muffler
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 3
-        Item: C_L_Ribbon_M_WH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_L_RibbonMuff_Black
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 5
-        Item: C_L_Ribbon_M_BU
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_L_RibbonMuff_Red
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Lamb_Hat1, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 1, Item: C_Lamb_Hat2, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 2, Item: C_Large_Ribbon_Muffler, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 3, Item: C_L_Ribbon_M_WH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_L_RibbonMuff_Black, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 5, Item: C_L_Ribbon_M_BU, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_L_RibbonMuff_Red, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_CLB_SS_LL, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_2_0_35
     Items:
       - Index: 0
@@ -15453,30 +13572,11 @@ Body:
             Amount: 20
   - Name: costume_catalog_2_0_38
     Items:
-      - Index: 0
-        Item: C_Lucky_Clover
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 10
-      - Index: 1
-        Item: C_Luna_On_Shoulder
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 2
-        Item: C_LunaticMuffler_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 3
-        Item: C_LunaticMuffler
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Lucky_Clover, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 1, Item: C_Luna_On_Shoulder, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 2, Item: C_LunaticMuffler_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 3, Item: C_LunaticMuffler, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_NightSkyOfRutie, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_2_0_39
     Items:
       - Index: 0
@@ -17815,432 +15915,95 @@ Body:
             Amount: 50
   - Name: costume_catalog_3_0_0
     Items:
-      - Index: 0
-        Item: C_Adventure_Cat_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 1
-        Item: C_Alice_Broom
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_AngelRibbonWing_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_Angel_Gift
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Ru_Bear_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 5
-        Item: C_Popcorn_Bucket
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Aqua_Fin_Decoration
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 7
-        Item: C_Arcanum_Corvus_Corax
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Archmage_Wand
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Adventure_Cat_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 1, Item: C_Bravery_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 2, Item: C_Alice_Broom, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Amistr_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 4, Item: C_Angel_feather, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_AngelRibbonWing_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 6, Item: C_Angel_Gift, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Ru_Bear_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 8, Item: C_Popcorn_Bucket, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Aqua_Fin_Decoration, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 10, Item: C_Arcanum_Corvus_Corax, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Archmage_Wand, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: T_Archangel_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 13, Item: C_Archangel_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Astra_Blessing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_3_0_1
     Items:
-      - Index: 0
-        Item: C_School_Bag_RD
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 1
-        Item: C_Back_Ribbon_Bell_BU
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 2
-        Item: C_Backside_Ribbon_Bell
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Baldr_Wing_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_Balloon_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 5
-        Item: C_Baphomet_Scythe
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_T_Bear_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 7
-        Item: C_Beer_Server_TH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Beer_Server
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 9
-        Item: C_School_Bag_BL
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 10
-        Item: C_School_Bag_BU
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_School_Bag_PU
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_School_Bag_RD_E
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 13
-        Item: C_Big_B_Rabbit
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_Big_Lollipop
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Big_Magic_Book
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 16
-        Item: C_Big_Ribbon_Cloak_WH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_Ribbon_R_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 18
-        Item: C_BlackBearBackpack_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 19
-        Item: C_BlackBear_Back_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 20
-        Item: C_BlackCatBag_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 21
-        Item: C_BlackCatBag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 22
-        Item: C_Bloody_Murderer_Knife
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Sakura_Rod_PK
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 24
-        Item: C_Blue_Magpie
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 25
-        Item: C_Loli_Ruri_Moon_B
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 26
-        Item: C_Blue_Rose_Garden
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 27
-        Item: C_Blue_Rose_Parasol
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 28
-        Item: C_Bow_On_the_Back
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 29
-        Item: C_BlueAngeling_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_School_Bag_RD, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 1, Item: C_Back_Ribbon_Bell_BU, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 2, Item: C_Backside_Ribbon_Bell, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Baldr_Wing_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_Balloon_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 5, Item: C_Baphomet_Scythe, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_T_Bear_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 7, Item: C_Beer_Server_TH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Beer_Server, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 9, Item: C_School_Bag_BL, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 10, Item: C_School_Bag_BU, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_School_Bag_PU, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_School_Bag_RD_E, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 13, Item: C_Big_B_Rabbit, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Big_Lollipop, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Big_Magic_Book, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Big_Ribbon_Cloak_WH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_Ribbon_R_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_BlackBearBackpack_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_BlackBear_Back_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 20, Item: C_BlackCatBag_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 21, Item: C_BlackCatBag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 22, Item: C_Bloody_Murderer_Knife, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 23, Item: C_Sakura_Rod_PK, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 24, Item: C_Magic_Circle_BL, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 25, Item: C_Blue_Magpie, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 26, Item: C_Loli_Ruri_Moon_B, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 27, Item: C_Blue_Rose_Garden, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 28, Item: C_Blue_Rose_Parasol, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 29, Item: C_Blue_Fairy_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 30, Item: C_Bow_On_the_Back, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 31, Item: C_BlueAngeling_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 32, Item: Brilliant_Golden_Wings, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_3_0_2
     Items:
-      - Index: 0
-        Item: C_Katana_TenguMaster
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Call_Octo
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_CAPOO_Bag_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Cat_Donut_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Paw_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Seraphim_Wing_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 6
-        Item: C_Sakura_Rod
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Sakura_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 8
-        Item: C_Chrismas_Tree
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 9
-        Item: C_JP_EV16
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Clock_Rod
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Clutch_Bouquet
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 12
-        Item: C_Loli_Ruri_Moon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 13
-        Item: C_Bloody_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_JP_EV17
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Cursed_Serpent
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 16
-        Item: C_Cyber_Rifle
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_Cyber_Sword
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Katana_TenguMaster, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: Calabash, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Call_Octo, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Bag_Of_Antonio, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Cat_Donut_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Paw_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Seraphim_Wing_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 7, Item: C_Sakura_Rod, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Sakura_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 9, Item: C_Chrismas_Tree, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 10, Item: C_JP_EV16, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Clock_Rod, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Clutch_Bouquet, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 13, Item: C_Cosmic_Connection_V, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Loli_Ruri_Moon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 15, Item: C_Bloody_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_JP_EV17, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_Cupid_Wing_Skyblue, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_Cursed_Serpent, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: C_Cyber_Rifle, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 20, Item: C_Cyber_Sword, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_3_0_3
     Items:
-      - Index: 0
-        Item: C_Dark_Lord_Cloak
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 1
-        Item: C_Dark_Lord_Manteau
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Defense_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Demi_Freyja_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Detective_Mag_Glass
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Diabolic_Friend
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Diabolic_Rock_Guitar
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 7
-        Item: C_Dimensional_Sword
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Divine_Phoenix
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Doram_Paw_Hammer
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Guardian_Wingdeco
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 11
-        Item: C_CLB_KP_DMS
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_GreatDevilWing2
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Dark_Lord_Cloak, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 1, Item: C_Dark_Lord_Manteau, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Defense_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Demi_Freyja_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Detective_Mag_Glass, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Diabolic_Friend, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Diabolic_Rock_Guitar, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 7, Item: C_Digital_Space, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 8, Item: C_Dimensional_Sword, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Divine_Phoenix, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Doram_Paw_Hammer, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Guardian_Wingdeco, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 12, Item: C_CLB_KP_DMS, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_GreatDevilWing2, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_3_0_4
     Items:
       - Index: 0
@@ -18263,258 +16026,57 @@ Body:
             Amount: 40
   - Name: costume_catalog_3_0_5
     Items:
-      - Index: 0
-        Item: C_Fairy_Of_Eden
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_FB_EvilSprit
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_FH_Lostwing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Filir_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_Flower_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 5
-        Item: C_Forest_S_Vacation
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: C_Fairy_Of_Eden, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Fallen_Angel_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_FB_EvilSprit, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_FH_Lostwing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_Maple_Which_Falls_Rd, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 5, Item: C_Filir_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 6, Item: C_Flower_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 7, Item: C_Forest_S_Vacation, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 8, Item: C_Full_BloomCherry_Tree, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
   - Name: costume_catalog_3_0_6
     Items:
-      - Index: 0
-        Item: C_Galapago_Aquarium
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_G_DaeHyon_Sword_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Gerhard_Von_Devi_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Giant_Angeling
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_GiantCatBag_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_GiantCatBag_JP
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 6
-        Item: C_GiantCatBag_JP_BL
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Giant_Chained_Bear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Giant_Mad_Bunny
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Giant_Shark
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 10
-        Item: C_Big_Shuriken
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Giant_Teddy_Bear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Giant_White_Rabbit
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 13
-        Item: C_Glass_Rose_Garden
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_2018_RTC_Cape4_TW_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_GoldButterfly_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 16
-        Item: C_CLB_SS_LT
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_Gourd_bottle_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 18
-        Item: C_Guardian_Angelwing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 19
-        Item: C_Guardian_Butterwing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: C_Galapago_Aquarium, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_G_DaeHyon_Sword_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Gerhard_Von_Devi_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Giant_Angeling, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_GiantCatBag_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_GiantCatBag_JP, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 6, Item: C_GiantCatBag_JP_BL, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Giant_Chained_Bear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Giant_Mad_Bunny, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Giant_Shark, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 10, Item: C_Big_Shuriken, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Giant_Teddy_Bear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Giant_White_Rabbit, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 13, Item: C_Glass_Rose_Garden, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_2018_RTC_Cape4_TW_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Golden_Angel_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_GoldButterfly_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_CLB_SS_LT, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_GreatDevilWing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 19, Item: C_Guardian_Angelwing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 20, Item: C_Guardian_Butterwing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_3_0_7
     Items:
-      - Index: 0
-        Item: aegis_480478
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Hanwha_Pool_Ring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_HeartChocoBag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_Heart_Stick_Choco
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_Heart_Wing_Backpack
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Wing_Of_Angel_Move
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 6
-        Item: C_Wing_Of_Angel_Move_BK
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Vietnam_flag_hood_JP
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Tris_Sword
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Hemel_Sword
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Honey_Dipper
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Hooked_Straw_Hat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: aegis_480478, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Hanwha_Pool_Ring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_HeartChocoBag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 3, Item: C_Heart_Stick_Choco, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_Wing_Of_Angel_Move, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 5, Item: C_Wing_Of_Angel_Move_BK, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Vietnam_flag_hood_JP, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Tris_Sword, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Hemel_Sword, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Honey_Dipper, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Hooked_Straw_Hat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_3_0_8
     Items:
-      - Index: 0
-        Item: C_Ice_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 1
-        Item: C_Immortal_H_Spear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Immortal_H_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Ice_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 1, Item: C_Immortal_H_Spear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Immortal_H_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Invisible_Manteau, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_3_0_9
     Items:
       - Index: 0
@@ -18525,160 +16087,39 @@ Body:
             Amount: 30
   - Name: costume_catalog_3_0_10
     Items:
-      - Index: 0
-        Item: C_Key_To_Happiness
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Qualifier_3rd
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Knights_Sword_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_JP_EV19
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Key_To_Happiness, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Kirin_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Qualifier_3rd, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Knights_Sword_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_JP_EV19, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_3_0_11
     Items:
-      - Index: 0
-        Item: C_Labrys
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 1
-        Item: C_Lapine_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Big_Foxtail
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 3
-        Item: C_Big_Ribbon_Cloak
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_Big_Treasure_Chest
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Leaf_Umbrella
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 6
-        Item: C_Leticia_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Libra_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Lord_Of_Death_Shield
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 9
-        Item: C_Lop_Bunny_Cloak
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 10
-        Item: C_Wings_Of_Lucifer
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Lunatic_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: C_Labrys, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 1, Item: C_Lapine_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Big_Foxtail, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 3, Item: C_Big_Ribbon_Cloak, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_Big_Treasure_Chest, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Leaf_Umbrella, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 6, Item: C_Leticia_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Libra_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Devil_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Lord_Of_Death_Shield, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 10, Item: C_Lop_Bunny_Cloak, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 11, Item: C_Wings_Of_Lucifer, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Lunatic_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_3_0_12
     Items:
-      - Index: 0
-        Item: C_N_Mad_Bunny
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Mechanical_Butterfly
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 2
-        Item: C_Mechanical_Fairy_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Gimmick_One_Feather
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_Melody_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 5
-        Item: C_Melon_Cream_Soda
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Milky
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 7
-        Item: C_Moonlight_Bell
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 8
-        Item: C_Mystical_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: C_N_Mad_Bunny, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Magic_Circle, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 2, Item: C_Mechanic_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Mechanical_Butterfly, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: C_Mechanical_Fairy_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Gimmick_One_Feather, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 6, Item: C_Melody_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 7, Item: C_Melon_Cream_Soda, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Milky, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 9, Item: C_Moonlight_Bell, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 10, Item: C_Mystical_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_3_0_13
     Items:
       - Index: 0
@@ -18721,346 +16162,78 @@ Body:
             Amount: 30
   - Name: costume_catalog_3_0_15
     Items:
-      - Index: 0
-        Item: C_Elec_Guitar_Of_Phen
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Phaya_Ploeng_Suriyan
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 2
-        Item: C_Heart_Wing_Bag_J
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_PinkButterfly_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_PinkButterfly_Wing_T
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Pitaya_G_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 6
-        Item: C_Pitaya_GG_Parfait
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Plant_Outing_Set
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Pope_Doll
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Poring_Basket
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 10
-        Item: C_Surf_Board_Poring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Poring_Swim_Ring
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Poring_Syringe
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 13
-        Item: C_Poring_Cream_Soda
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_Power_Cable
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Halloween_Poring_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: C_Elec_Guitar_Of_Phen, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Phaya_Ploeng_Suriyan, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 2, Item: C_Heart_Wing_Bag_J, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_PinkButterfly_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_PinkButterfly_Wing_T, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Cupid_Wing_Pink, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_Pitaya_G_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 7, Item: C_Pitaya_GG_Parfait, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_Plant_Outing_Set, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Pope_Doll, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Popping_Poring_Aura, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Poring_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 12, Item: C_Poring_Basket, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 13, Item: C_Surf_Board_Poring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Poring_Swim_Ring, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Poring_Syringe, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Poring_Cream_Soda, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_Power_Cable, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_Halloween_Poring_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_3_0_16
     Items:
-      - Index: 0
-        Item: C_Ragdoll_Face_Bag
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Wings_Of_Raguel
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Rainbow_Shell
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_Wings_Of_Raphael
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Rata_Tail
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_CLB_HM_Noni
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Rifle
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_2023RTC_S_Robe4
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_Rose_Gothic_Ribbon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 9
-        Item: C_Qualifier_2nd
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Qualifier_1st
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_2023RTC_S_Robe2
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Ragdoll_Face_Bag, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Wings_Of_Raguel, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Rainbow_Shell, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Magic_Circle_Rainbow, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 4, Item: C_Wings_Of_Raphael, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Rata_Tail, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_CLB_HM_Noni, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Rifle, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_2023RTC_S_Robe4, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Rose_Gothic_Ribbon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Qualifier_2nd, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 11, Item: C_Qualifier_1st, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Rudra_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 10}]}
+      - {Index: 13, Item: C_2023RTC_S_Robe2, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_3_0_17
     Items:
-      - Index: 0
-        Item: C_Sakura_Branch
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_CherryFesRibbon_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Sakura_Fes_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_Samba_Carnival
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: C_I_Samurai_Sword
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Sandalphon_Wing_TW
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_SantaTeddyBear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Santa_Backpack
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 8
-        Item: C_Mainspring_Screw
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 9
-        Item: C_Scepter
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 10
-        Item: C_2023RTC_S_Robe3
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Shiba_Tail
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Shining_Angel_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 20
-      - Index: 13
-        Item: C_Scepter_SV
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_Skia_Doll
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 15
-        Item: C_Wing_Of_Angel_Move_GD
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 16
-        Item: C_Wing_Of_Angel_Move_RD
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 17
-        Item: C_Soldier_Backpack
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 18
-        Item: C_Songkran_Watergun
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 19
-        Item: C_Wing_Of_Spider
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 20
-        Item: C_Spoon_Fork_Set
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 21
-        Item: C_ROS2023_Cape_1
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 22
-        Item: C_Starrysky_Fountainpen
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 23
-        Item: C_Stellar_Gratia
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 24
-        Item: C_Striking_Mikoshi
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 25
-        Item: C_Surf_Board
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 26
-        Item: C_Sweet_Flower_Garden
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 27
-        Item: C_Sweet_Folk
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Soldier_Backpack, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 1, Item: C_Sakura_Branch, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_CherryFesRibbon_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 3, Item: C_Sakura_Fes_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 4, Item: aegis_480296, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Samba_Carnival, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 6, Item: C_I_Samurai_Sword, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Sandalphon_Wing_TW, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_SantaTeddyBear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 9, Item: C_Santa_Backpack, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 10, Item: C_Mainspring_Screw, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 11, Item: C_Scepter, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 12, Item: C_2023RTC_S_Robe3, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_Shiba_Tail, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_Shining_Angel_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 15, Item: C_Scepter_SV, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_Skia_Doll, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_Wing_Of_Angel_Move_GD, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 18, Item: C_Wing_Of_Angel_Move_RD, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 19, Item: aegis_480286, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 20, Item: C_Snow_Powder, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 21, Item: C_Songkran_Watergun, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 22, Item: C_Wing_Of_Spider, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 23, Item: C_Rotating_Gears, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 24, Item: C_Blessings_Of_Soul, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 25, Item: C_Spoon_Fork_Set, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 26, Item: C_ROS2023_Cape_1, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 27, Item: C_Starrysky_Fountainpen, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 28, Item: C_Stellar_Gratia, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 29, Item: C_Striking_Mikoshi, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 30, Item: C_Summer_Beach, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 31, Item: C_Surf_Board, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 32, Item: C_Sweet_Flower_Garden, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 33, Item: C_Sweet_Folk, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 34, Item: C_Swirling_Flame, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
   - Name: costume_catalog_3_0_18
     Items:
       - Index: 0
@@ -19151,146 +16324,35 @@ Body:
             Amount: 40
   - Name: costume_catalog_3_0_20
     Items:
-      - Index: 0
-        Item: C_Valkyrie_Curse_blight
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 1
-        Item: C_Comp_Valkyrie_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 2
-        Item: C_Valkyrie_Spear
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 3
-        Item: C_Blessed_Veil
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 4
-        Item: Calabash
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 5
-        Item: C_Violet_Halo
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_VioletHalo
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
+      - {Index: 0, Item: C_Valkyrie_Curse_blight, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 1, Item: C_Comp_Valkyrie_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 2, Item: C_Valkyrie_Spear, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 3, Item: C_Valkyrie_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 4, Item: C_Blessed_Veil, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 5, Item: C_Violet_Halo, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 6, Item: C_VioletHalo, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_3_0_21
     Items:
-      - Index: 0
-        Item: C_Wing_Of_Angel_Move_GR
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 1
-        Item: C_Wedding_Ribbon
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 2
-        Item: C_Cat_Doll_WH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 3
-        Item: C_White_Fox_Tail
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 4
-        Item: C_Ninetail_Tail_WH
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 5
-        Item: C_Rabbit_Tail
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 6
-        Item: C_Wing_Of_Eutaxy
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 7
-        Item: C_Harmony_Wing_ROC
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 8
-        Item: C_WingOfHeart
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 9
-        Item: C_Wings_of_Gabriel
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 10
-        Item: C_Light_Darkness_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 11
-        Item: C_Wings_of_Michael
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 12
-        Item: C_Juncea_Wing
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 13
-        Item: C_2023RTC_S_Robe1
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 40
-      - Index: 14
-        Item: C_Put_On_Coat
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
-      - Index: 15
-        Item: C_Nifl_Bloom
-        RequiredItems:
-          - Index: 0
-            Item: Evt_Cos_Coin
-            Amount: 30
+      - {Index: 0, Item: C_Wing_Of_Angel_Move_GR, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 1, Item: C_Wedding_Ribbon, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 2, Item: C_Ghost_Effect, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 3, Item: C_Cat_Doll_WH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 4, Item: C_White_Fox_Tail, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 5, Item: C_Ninetail_Tail_WH, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 6, Item: C_Rabbit_Tail, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 7, Item: C_Wing_Of_Eutaxy, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 8, Item: C_WingOfHeart, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 9, Item: C_Wings_of_Gabriel, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 10, Item: C_Wing_Of_Happiness, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 20}]}
+      - {Index: 11, Item: C_Light_Darkness_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 12, Item: C_Wings_of_Michael, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 13, Item: C_Juncea_Wing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 14, Item: C_SwordWing, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 15, Item: C_Wings_of_Uriel, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 16, Item: C_2023RTC_S_Robe1, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
+      - {Index: 17, Item: C_Put_On_Coat, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 18, Item: C_Nifl_Bloom, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 30}]}
+      - {Index: 19, Item: C_MCircle_Wonderland, RequiredItems: [{Index: 0, Item: Evt_Cos_Coin, Amount: 40}]}
   - Name: costume_catalog_3_0_22
     Items:
       - Index: 0

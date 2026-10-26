@@ -3,6 +3,9 @@
 
 function	script	F_CostumeEnhancePoolCheck	{
 	.@item_id = getarg(0);
+	// Existing player-held copies retain enhancement access after shop rejection.
+	if (.@item_id == 20580 || .@item_id == 20985 || .@item_id == 480086 || .@item_id == 480264)
+		return 1;
 	return inarray(getvariableofnpc(.Ids[0], "costume_roulette_db"), .@item_id) != -1;
 }
 
