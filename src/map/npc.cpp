@@ -35,6 +35,7 @@
 #include "pc.hpp"
 #include "pet.hpp"
 #include "script.hpp" // script_config
+#include "../custom/malangdo_shop_catalog.hpp"
 
 using namespace rathena;
 
@@ -745,6 +746,7 @@ uint64 BarterDatabase::parseBodyNode( const ryml::NodeRef& node ){
 }
 
 void BarterDatabase::loadingFinished(){
+	msc::LoadGuard catalog_load(*this);
 	for( const auto& pair : *this ){
 		if( !battle_config.feature_barter && !battle_config.feature_barter_extended ){
 #ifndef BUILDBOT

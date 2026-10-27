@@ -1,0 +1,129 @@
+// Per-merchant search uses the same loaded item records and native Barter prices.
+function	script	F_MalangdoShopAction	{
+	.@key$ = getarg(0);
+	if (!msc_ready(.@key$)) {
+		clear;
+		mes "You have caught me while I am sorting my stock. Please try again later.";
+		return 3;
+	}
+	return select("Browse your wares:Look for an item:Never mind");
+}
+
+function	script	F_MalangdoShopChoose	{
+	.@key$ = getarg(0);
+	.@action = callfunc("F_MalangdoShopAction", .@key$);
+	if (.@action == 1) return callfunc("F_MalangdoShopBrowse", .@key$);
+	if (.@action == 2) return callfunc("F_MalangdoShopSearch", .@key$);
+	return "";
+}
+
+function	script	F_MalangdoShopSearch	{
+	.@key$ = getarg(0);
+	while (1) {
+		clear;
+		if (.@key$ == "dewey") {
+			.@speaker$ = "[Dewey]";
+			mes "[Dewey]";
+			mes "Give me a name or a catalog number. I will check the wardrobe.";
+		} else if (.@key$ == "remy") {
+			.@speaker$ = "[Remy]";
+			mes "[Remy]";
+			mes "A-a name or a catalog number... I-I can check my piles...";
+		} else if (.@key$ == "lemy") {
+			.@speaker$ = "[Lemy]";
+			mes "[Lemy]";
+			mes "A name or a catalog number... l-let me turn the pages...";
+		} else if (.@key$ == "milo") {
+			.@speaker$ = "[Milo Crumb]";
+			mes "[Milo Crumb]";
+			mes "A name or a catalog number! I wrote those down before eating the pencil.";
+		} else {
+			return "";
+		}
+		// Record the input generation too: an input spanning a reload must restart.
+		.@input_revision = msc_revision(.@key$);
+		input .@query$;
+		.@revision = msc_revision(.@key$);
+		.@count = msc_search(.@key$, .@query$);
+		clear;
+		if (.@revision == 0 || .@count == -1) {
+			mes "You have caught me while I am sorting my stock. Please try again later.";
+			return "";
+		}
+		if (.@revision != .@input_revision) {
+			mes "I have a fresh list now. Please tell me what you were looking for again.";
+			if (select("Look for something else:Never mind") == 2) return "";
+			continue;
+		}
+		if (.@count <= 0) {
+			if (.@count == -2)
+				mes "Give me at least four letters of the name, or the whole catalog number.";
+			else
+				mes "I could not find that among my wares.";
+			if (select("Look for something else:Never mind") == 2) return "";
+			continue;
+		}
+		.@page = 0;
+		.@pages = (.@count + 49) / 50;
+		.@first_page = 0;
+		.@restart = 0;
+		while (.@pages > 1) {
+			clear;
+			mes "I found " + .@count + " items. Which part of the list shall I bring out?";
+			.@menu$ = "";
+			.@shown = min(10, .@pages - .@first_page);
+			for (.@i = 0; .@i < .@shown; ++.@i) {
+				if (.@menu$ != "") .@menu$ += ":";
+				.@start = (.@first_page + .@i) * 50 + 1;
+				.@last = min(.@count, .@start + 49);
+				.@menu$ += "Items " + .@start + "-" + .@last;
+			}
+			.@previous = 0;
+			.@next = 0;
+			.@options = .@shown;
+			if (.@first_page > 0) {
+				.@options += 1;
+				.@previous = .@options;
+				.@menu$ += ":Previous pages";
+			}
+			if (.@first_page + .@shown < .@pages) {
+				.@options += 1;
+				.@next = .@options;
+				.@menu$ += ":Next pages";
+			}
+			.@options += 1;
+			.@again = .@options;
+			.@menu$ += ":Look for something else:Never mind";
+			if (getstrlen(.@menu$) >= 2047) return "";
+			.@choice = select(.@menu$);
+			clear;
+			if (msc_revision(.@key$) != .@revision) {
+				mes "I have a fresh list now. Please tell me what you were looking for again.";
+				if (select("Look for something else:Never mind") == 2) return "";
+				.@restart = 1;
+				break;
+			}
+			if (.@choice <= .@shown) {
+				.@page = .@first_page + .@choice - 1;
+				break;
+			}
+			if (.@choice == .@previous) { .@first_page -= 10; continue; }
+			if (.@choice == .@next) { .@first_page += 10; continue; }
+			if (.@choice == .@again) { .@restart = 1; break; }
+			return "";
+		}
+		if (.@restart) continue;
+		// Leave a visible result beat for the caller's existing close2 button.
+		.@shop$ = msc_searchprepare(.@key$, .@query$, .@page, .@revision);
+		if (.@shop$ != "") {
+			// Limited pages already receive Dewey's unchanged warning in the caller.
+			if (!msc_shoplimited(.@key$, .@shop$)) {
+				mes .@speaker$;
+				mes "I found " + .@count + " item(s). Here are items " + (.@page * 50 + 1) + "-" + min(.@count, (.@page + 1) * 50) + " from my wares.";
+			}
+			return .@shop$;
+		}
+		mes "I cannot bring out those wares right now. Please try again.";
+		return "";
+	}
+}

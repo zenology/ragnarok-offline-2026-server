@@ -1,0 +1,30 @@
+# Item catalog: Price is Event Stone Coin (7000) per item.
+# Native Barter stock and navigation are built from these records together.
+Header:
+  Type: MALANGDO_SHOP_CATALOG
+  Version: 1
+
+Body:
+  - {Id: 1001253, DisplayName: "Shadow Essence", Categories: [materials], Price: 10}
+  - {Id: 23720, DisplayName: "Shadow Random Option Thump Box", Categories: [materials], Price: 45}
+  - {Id: 100205, DisplayName: "Class Shadow Spellbook (Physical)", Categories: [materials], Price: 60}
+  - {Id: 100206, DisplayName: "Class Shadow Spellbook (Magical)", Categories: [materials], Price: 60}
+  - {Id: 100207, DisplayName: "Skill Shadow Spellbook (Physical)", Categories: [materials], Price: 80}
+  - {Id: 100208, DisplayName: "Skill Shadow Spellbook (Magical)", Categories: [materials], Price: 80}
+  - {Id: 101177, DisplayName: "Full Temperament Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101178, DisplayName: "¸Reload Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101179, DisplayName: "Spell Caster Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101180, DisplayName: "Trait Status Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101260, DisplayName: "Lord Bearer's Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101261, DisplayName: "Mega Blitz Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101262, DisplayName: "Absorb Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101264, DisplayName: "Maximum Mammoth Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101308, DisplayName: "True Gemstone Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101309, DisplayName: "Experience Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101310, DisplayName: "Clever Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101311, DisplayName: "Infinity Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101359, DisplayName: "Major Auto Spell Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101360, DisplayName: "Hasty Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101361, DisplayName: "Durable Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101362, DisplayName: "Perfect Size Shadow Spellbook", Categories: [materials], Price: 70}
+  - {Id: 101564, DisplayName: "Almighty Shadow Spellbook", Categories: [materials], Price: 70}

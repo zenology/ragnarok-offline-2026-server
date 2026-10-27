@@ -11,34 +11,36 @@ malangdo,124,152,3	script	Milo Crumb#stone	4_COOKIEHOUSE,{
 	mes "It cost me three cookies, a signature, and one deeply suspicious stamp.";
 	mes "Bring me " + mesitemlink(7000) + " and I will trade you a stone. The coins are not cookies, but I am coping.";
 	next;
-	switch( select( "^4d4dffTop^000000 Stones", "^1C8008Middle^000000 Stones", "^ff0000Lower^000000 Stones", "^9905d8Garment^000000 Stones", "^8B4513Dual^000000 Stones", "^8B4513Effect^000000 Stones" ) ) {
+	if (!msc_ready("milo")) close;
+	if (callfunc("F_MiloShopEntry")) close;
+	switch( select( msc_menu("milo", "root") ) ) {
 	case 1:
 		mes "[Milo Crumb]";
 		mes "Top stones! Put them on the top. Unless your top is underneath. Then we have a problem.";
 		mes "Let us see what your mileage can become before I eat the receipt.";
 		close2;
-		callshop( "barter_stone_top" );
+		callshop( msc_shop("milo", "top") );
 		end;
 	case 2:
 		mes "[Milo Crumb]";
 		mes "Middle stones! The safest place for a stone is the middle. Probably.";
 		mes "Let us see what your mileage can become before I rename myself again.";
 		close2;
-		callshop( "barter_stone_mid" );
+		callshop( msc_shop("milo", "middle") );
 		end;
 	case 3:
 		mes "[Milo Crumb]";
 		mes "Lower stones! Down is a direction, and directions are just cookies with maps.";
 		mes "Let us see what your mileage can become. No nibbling the stone.";
 		close2;
-		callshop( "barter_stone_low" );
+		callshop( msc_shop("milo", "lower") );
 		end;
 	case 4:
 		mes "[Milo Crumb]";
 		mes "Garment stones! Very elegant. Very cloak. Very crumb-resistant, I hope.";
 		mes "Let us see what your mileage can become.";
 		close2;
-		callshop( "barter_stone_garment" );
+		callshop( msc_shop("milo", "garment") );
 		end;
 	case 5:
 		callfunc "F_MiloDualStoneShop";

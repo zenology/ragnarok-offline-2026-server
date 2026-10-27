@@ -1,0 +1,1050 @@
+# Item catalog: Price is Event Stone Coin (7000) per item.
+# Native Barter stock and navigation are built from these records together.
+Header:
+  Type: MALANGDO_SHOP_CATALOG
+  Version: 1
+
+Body:
+  - {Id: 24686, DisplayName: "Absorb Shadow Weapon", Categories: [weapon], Price: 60}
+  - {Id: 24491, DisplayName: "Adora Shadow Weapon", Categories: [weapon], Price: 90}
+  - {Id: 24455, DisplayName: "Aimed Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24162, DisplayName: "Corrupted Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24706, DisplayName: "Archbishop Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24292, DisplayName: "Archbishop Shadow Weapon", Categories: [weapon], Price: 145}
+  - {Id: 24597, DisplayName: "Archbishop's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24473, DisplayName: "Arm Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24503, DisplayName: "Arrow Vulcan Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24725, DisplayName: "Auto Spell Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24183, DisplayName: "Bearer's Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24390, DisplayName: "Beginner's Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24343, DisplayName: "Blitz Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24467, DisplayName: "Boomerang Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24563, DisplayName: "Cart Cannon Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24110, DisplayName: "Caster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24640, DisplayName: "Catnip Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24575, DisplayName: "Chain Press Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24521, DisplayName: "Chain Shadow Weapon", Categories: [weapon], Price: 90}
+  - {Id: 24736, DisplayName: "Clever Shadow Weapon", Categories: [weapon], Price: 70}
+  - {Id: 24135, DisplayName: "Cloaking Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24755, DisplayName: "Concentration Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24881, DisplayName: "Corrupted Shadow Weapon", Categories: [weapon], Price: 155}
+  - {Id: 24569, DisplayName: "Crazy Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24761, DisplayName: "Creative Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24032, DisplayName: "Critical Hit Shadow Weapon", Categories: [weapon], Price: 95}
+  - {Id: 24738, DisplayName: "Critical Hit Shadow Weapon", Categories: [weapon], Price: 70}
+  - {Id: 24156, DisplayName: "Executioner Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24043, DisplayName: "Dexterous Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24714, DisplayName: "Doram Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24286, DisplayName: "Doram Magical Shadow Weapon", Categories: [weapon], Price: 95}
+  - {Id: 24287, DisplayName: "Doram Physical Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 1270166, DisplayName: "Double Luck Shadow Weapon (Magical)", Categories: [weapon], Price: 90}
+  - {Id: 1270164, DisplayName: "Double Luck Shadow Weapon (Physical)", Categories: [weapon], Price: 105}
+  - {Id: 24161, DisplayName: "Dragon Killer Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24734, DisplayName: "Durable Shadow Weapon", Categories: [weapon], Price: 100}
+  - {Id: 24363, DisplayName: "Elegant Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24383, DisplayName: "Enchanting Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24223, DisplayName: "Enhanced Force Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24227, DisplayName: "Enhanced Soul Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24655, DisplayName: "Es Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24233, DisplayName: "Exceeding Shadow Weapon", Categories: [weapon], Price: 60}
+  - {Id: 24434, DisplayName: "Executioner Holy Water Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24438, DisplayName: "Corrupted Exorcist Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24157, DisplayName: "Exorcist Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24770, DisplayName: "Experience Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24449, DisplayName: "Fire Breath Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24628, DisplayName: "First Exploding Draft Shadow Weapon", Categories: [weapon], Price: 345}
+  - {Id: 24435, DisplayName: "Fishing Insect Net Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24160, DisplayName: "Fishing Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24328, DisplayName: "Force Executioner Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24224, DisplayName: "Force Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24163, DisplayName: "Vibration Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24087, DisplayName: "Gemstone Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24335, DisplayName: "Gemstone Shadow Weapon II", Categories: [weapon], Price: 75}
+  - {Id: 24581, DisplayName: "Genesis Shadow Weapon", Categories: [weapon], Price: 90}
+  - {Id: 24701, DisplayName: "Genetic Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24291, DisplayName: "Genetic Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24592, DisplayName: "Genetic's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24607, DisplayName: "God Hammer Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24551, DisplayName: "Grave Shadow Weapon", Categories: [weapon], Price: 90}
+  - {Id: 24117, DisplayName: "Greed Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24702, DisplayName: "Guillotine Cross Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24294, DisplayName: "Guillotine Cross Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24593, DisplayName: "Guillotine Cross' Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24283, DisplayName: "Gunslinger Shadow Weapon", Categories: [weapon], Price: 95}
+  - {Id: 24439, DisplayName: "Hasty Shadow Weapon", Categories: [weapon], Price: 70}
+  - {Id: 24123, DisplayName: "Heal Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24033, DisplayName: "Healing Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24129, DisplayName: "Hiding Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24164, DisplayName: "Holy Water Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24158, DisplayName: "Hunting Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24443, DisplayName: "Ignition Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24386, DisplayName: "Infinity Shadow Weapon", Categories: [weapon], Price: 100}
+  - {Id: 24159, DisplayName: "Insect Net Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24710, DisplayName: "Kagerou&Oboro Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24741, DisplayName: "Kagerou & Oboro Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24539, DisplayName: "Katar Shadow Weapon", Categories: [weapon], Price: 165}
+  - {Id: 24745, DisplayName: "Kingbird Ancient Shadow Weapon", Categories: [weapon], Price: 60}
+  - {Id: 24031, DisplayName: "Kingbird Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24622, DisplayName: "Kunai Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24075, DisplayName: "Large Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24034, DisplayName: "Lucky Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24299, DisplayName: "Minstrel Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24176, DisplayName: "Magic Corrupted Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24429, DisplayName: "Magic Scissior Hunting Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24179, DisplayName: "Magic Scissor Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24170, DisplayName: "Magic Executioner Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24175, DisplayName: "Magic Dragon Killer Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24431, DisplayName: "Magic Executioner Holy Water Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24427, DisplayName: "Magic Exorcist Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24171, DisplayName: "Magic Exorcist Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24430, DisplayName: "Magic Fishing Insect Net Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24174, DisplayName: "Magic Fishing Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24177, DisplayName: "Magic Vibration Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24178, DisplayName: "Magic Holy Water Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24172, DisplayName: "Magic Hunting Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24173, DisplayName: "Magic Insect Net Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24428, DisplayName: "Magic Vibration Dragon Killer Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24753, DisplayName: "Magical Spell Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24022, DisplayName: "Magical Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24497, DisplayName: "Magnus Shadow Weapon", Categories: [weapon], Price: 90}
+  - {Id: 24673, DisplayName: "Mammoth Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24792, DisplayName: "Master Shadow Weapon", Categories: [weapon], Price: 120}
+  - {Id: 24700, DisplayName: "Mechanic Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24290, DisplayName: "Mechanic Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24591, DisplayName: "Mechanic's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24076, DisplayName: "Medium Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24768, DisplayName: "Mega Blitz Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24709, DisplayName: "Wanderer&Minstrel Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24600, DisplayName: "Minstrel&Wanderer's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24370, DisplayName: "Mortal Blow Shadow Weapon", Categories: [weapon], Price: 95}
+  - {Id: 24104, DisplayName: "Neutral Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24358, DisplayName: "Neutral Shadow Weapon II", Categories: [weapon], Price: 105}
+  - {Id: 24285, DisplayName: "Ninja Shadow Weapon", Categories: [weapon], Price: 95}
+  - {Id: 24533, DisplayName: "Feint Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24687, DisplayName: "Paradise Shadow Weapon", Categories: [weapon], Price: 100}
+  - {Id: 24432, DisplayName: "Penetration Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24425, DisplayName: "Perfect Size Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24751, DisplayName: "Physical Power Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24019, DisplayName: "Physical Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24634, DisplayName: "Picky Rush Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24165, DisplayName: "Scissor Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24880, DisplayName: "Purity Shadow Weapon", Categories: [weapon], Price: 155}
+  - {Id: 24708, DisplayName: "Ranger Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24298, DisplayName: "Ranger Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24599, DisplayName: "Ranger's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24711, DisplayName: "Rebellion Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24742, DisplayName: "Rebellion Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24545, DisplayName: "Ripper Slasher Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24699, DisplayName: "Royal Guard Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24289, DisplayName: "Royal Guard Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24590, DisplayName: "Royal Guard's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24698, DisplayName: "Rune Knight Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24288, DisplayName: "Rune Knight Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24589, DisplayName: "Rune Knight's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24882, DisplayName: "Sanctified Shadow Weapon", Categories: [weapon], Price: 245}
+  - {Id: 24436, DisplayName: "Scissor Hunting Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24380, DisplayName: "Sentimental Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24703, DisplayName: "Shadow Chaser Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24295, DisplayName: "Shadow Chaser Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24594, DisplayName: "Shadow Chaser's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24001, DisplayName: "TDex1 Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24007, DisplayName: "TDex2 Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24012, DisplayName: "Promotional Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24527, DisplayName: "Shadowspell Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24461, DisplayName: "Shooting Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24479, DisplayName: "Sky Blow Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24077, DisplayName: "Small Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24152, DisplayName: "Solid Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24705, DisplayName: "Sorcerer Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24297, DisplayName: "Sorcerer Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24596, DisplayName: "Sorcerer's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24713, DisplayName: "Star Emperor Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24743, DisplayName: "Soul Reaper Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24228, DisplayName: "Soul Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24329, DisplayName: "Magic Spirit Executioner Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24078, DisplayName: "Spiritual Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24324, DisplayName: "Spiritual Shadow Weapon II", Categories: [weapon], Price: 85}
+  - {Id: 24759, DisplayName: "Stamina Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24712, DisplayName: "Soul Reaper Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24740, DisplayName: "Star Emperor Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24652, DisplayName: "Stardust Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24147, DisplayName: "Steal Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24515, DisplayName: "Strain Shadow Weapon", Categories: [weapon], Price: 90}
+  - {Id: 24739, DisplayName: "Summoner Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24646, DisplayName: "Sunshine Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24715, DisplayName: "Super Novice Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24684, DisplayName: "Super Novice Booster Shadow Weapon", Categories: [weapon], Price: 85}
+  - {Id: 24744, DisplayName: "Super Novice Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24282, DisplayName: "Super Novice Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24619, DisplayName: "Super Power Shadow Weapon", Categories: [weapon], Price: 115}
+  - {Id: 24707, DisplayName: "Sura Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24293, DisplayName: "Sura Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24598, DisplayName: "Sura's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24284, DisplayName: "Taekwondo Shadow Weapon", Categories: [weapon], Price: 95}
+  - {Id: 24601, DisplayName: "Tail Dragon Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24141, DisplayName: "Teleport Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24423, DisplayName: "Tempest Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24416, DisplayName: "Temporal Transcendent Shadow Weapon", Categories: [weapon], Price: 95}
+  - {Id: 24360, DisplayName: "Tension Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24485, DisplayName: "Tiger Cannon Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24613, DisplayName: "Trip Shadow Weapon", Categories: [weapon], Price: 95}
+  - {Id: 24099, DisplayName: "Unfreezing Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24356, DisplayName: "Unfreezing Shadow Weapon II", Categories: [weapon], Price: 105}
+  - {Id: 24557, DisplayName: "Varetyr Shadow Weapon", Categories: [weapon], Price: 90}
+  - {Id: 24509, DisplayName: "Reverberation Shadow Weapon", Categories: [weapon], Price: 90}
+  - {Id: 24437, DisplayName: "Vibration Dragon Killer Shadow Weapon", Categories: [weapon], Price: 135}
+  - {Id: 24300, DisplayName: "Wanderer Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24704, DisplayName: "Warlock Advanced Paradise Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24296, DisplayName: "Warlock Shadow Weapon", Categories: [weapon], Price: 105}
+  - {Id: 24595, DisplayName: "Warlock's Booster Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24757, DisplayName: "Wisdom Shadow Weapon", Categories: [weapon], Price: 75}
+  - {Id: 24779, DisplayName: "Level 1 Shadow Weapon", Categories: [weapon], Price: 50}
+  - {Id: 24694, DisplayName: "Advanced Paradise Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 1270132, DisplayName: "Advanced Trap Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24272, DisplayName: "Alchemist Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24029, DisplayName: "Ancient Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24097, DisplayName: "Adurate Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24458, DisplayName: "Arrow Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24275, DisplayName: "Assassin Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24216, DisplayName: "Attack Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24723, DisplayName: "Auto Spell Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24578, DisplayName: "Banishing Cannon Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24280, DisplayName: "Bard Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24186, DisplayName: "Basis Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24180, DisplayName: "Bearer's Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24337, DisplayName: "Bearer's Shadow Armor II", Categories: [armor], Price: 75}
+  - {Id: 24387, DisplayName: "Beginner's Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24271, DisplayName: "Blacksmith Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24954, DisplayName: "Blazing Flame Blast Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24344, DisplayName: "Blitz Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 1270136, DisplayName: "Blossom Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24584, DisplayName: "Booster Shadow Armor", Categories: [armor], Price: 85}
+  - {Id: 1270009, DisplayName: "Bow Master Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24572, DisplayName: "Brand Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24024, DisplayName: "Breeze Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24242, DisplayName: "Caster Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24330, DisplayName: "Caster Shadow Armor II", Categories: [armor], Price: 75}
+  - {Id: 24642, DisplayName: "Catnip Shadow Armor", Categories: [armor], Price: 85}
+  - {Id: 24132, DisplayName: "Cloaking Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24452, DisplayName: "Cluster Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24219, DisplayName: "Cold Bolt Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24446, DisplayName: "Cold Breath Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24912, DisplayName: "Crescive Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24518, DisplayName: "Crimson Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 15280, DisplayName: "Critical Hit Shadow Armor", Categories: [armor], Price: 70}
+  - {Id: 24030, DisplayName: "Critical Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24270, DisplayName: "Crusader Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24193, DisplayName: "Damned Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24281, DisplayName: "Dancer Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 1270101, DisplayName: "Dawn Break Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24037, DisplayName: "Dexterous Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24195, DisplayName: "Divine Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24969, DisplayName: "Divinus Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24410, DisplayName: "Doram Magical Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24408, DisplayName: "Doram Physical Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 1270089, DisplayName: "Double Blow Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24488, DisplayName: "Duple Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24548, DisplayName: "Dust Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24222, DisplayName: "Earth Spike Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 1270117, DisplayName: "Effltio Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24192, DisplayName: "Envenom Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24657, DisplayName: "Es Shadow Armor", Categories: [armor], Price: 165}
+  - {Id: 24375, DisplayName: "Executioner Holy Water Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 1270045, DisplayName: "Exorcism of Malicious Soul Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24194, DisplayName: "Geist Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24376, DisplayName: "Corrupted Exorcist Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 1270013, DisplayName: "Fatal Master Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24220, DisplayName: "Fire Bolt Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24630, DisplayName: "First Exploding Draft Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24379, DisplayName: "Fishing Insect Net Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 1270085, DisplayName: "Flame Bomb Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24190, DisplayName: "Flame Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24989, DisplayName: "Four Bearing God Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 1270097, DisplayName: "Frenzy Reaction Shot Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24985, DisplayName: "From Abyss Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24663, DisplayName: "Full Penetration Shadow Armor", Categories: [armor], Price: 195}
+  - {Id: 24872, DisplayName: "Full Power Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24874, DisplayName: "Full Rate Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24883, DisplayName: "Full Spell Shadow Armor", Categories: [armor], Price: 90}
+  - {Id: 24667, DisplayName: "Full Tempest Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24084, DisplayName: "Gemstone Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24609, DisplayName: "God Hammer Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24916, DisplayName: "Gold Blooded Cannon Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24114, DisplayName: "Greed Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24920, DisplayName: "Hack Slasher Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24187, DisplayName: "Hallowed Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24028, DisplayName: "Hard Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24091, DisplayName: "Plasterus Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24197, DisplayName: "Hasty Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24120, DisplayName: "Heal Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24126, DisplayName: "Hiding Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24958, DisplayName: "Hogogong Battering Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24279, DisplayName: "Hunter Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 1270033, DisplayName: "Leaf Spirit Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24027, DisplayName: "Immune Shadow Armor", Categories: [armor], Price: 90}
+  - {Id: 24093, DisplayName: "Insomnia Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24512, DisplayName: "Jack Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24494, DisplayName: "Judex Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24403, DisplayName: "Kagerou Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24401, DisplayName: "King Bird's Shadow Armor", Categories: [armor], Price: 60}
+  - {Id: 24269, DisplayName: "Knight Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24482, DisplayName: "Knuckle Arrow Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24624, DisplayName: "Kunai Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 1270125, DisplayName: "Kunai Shuriken Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24072, DisplayName: "Large Shadow Armor", Categories: [armor], Price: 165}
+  - {Id: 24221, DisplayName: "Lightning Bolt Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24981, DisplayName: "Lightning Swamp Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24764, DisplayName: "Lord Bearer's Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24040, DisplayName: "Lucky Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24812, DisplayName: "M. Abyss Chaser Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24840, DisplayName: "M. Arch Mage Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24828, DisplayName: "M. Biolo Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24816, DisplayName: "M. Cardinal Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24800, DisplayName: "M. Dragon Knight Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24844, DisplayName: "M. Elemental Master Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24868, DisplayName: "M. Hyper Novice Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24804, DisplayName: "M. Imperial Guard Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24820, DisplayName: "M. Inquisitor Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24824, DisplayName: "M. Meister Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24848, DisplayName: "M. Night Watch Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24808, DisplayName: "M. Shadow Cross Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24856, DisplayName: "M. Shinkiro & Shiranui Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24860, DisplayName: "M. Sky Emperor Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24864, DisplayName: "M. Soul Ascetic Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24852, DisplayName: "M. Spirit Handler Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24836, DisplayName: "M. Troubadour & Trouvere Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24832, DisplayName: "M. Windhawk Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 1270025, DisplayName: "Madness Breath Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24334, DisplayName: "Magic Compose Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24347, DisplayName: "Magic Executioner Holy Water Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24348, DisplayName: "Magic Corrupted Exorcist Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24351, DisplayName: "Magic Fishing Insect Net Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24350, DisplayName: "Magic Scissor Hunting Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24349, DisplayName: "Magic Vibration Dragon Killer Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24993, DisplayName: "Magical Master Shadow Armor", Categories: [armor], Price: 110}
+  - {Id: 24398, DisplayName: "Magical Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24728, DisplayName: "Major Auto Spell Shadow Armor", Categories: [armor], Price: 90}
+  - {Id: 24325, DisplayName: "Malicious Shadow Armor II", Categories: [armor], Price: 85}
+  - {Id: 24081, DisplayName: "Malicious Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24669, DisplayName: "Mammoth Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24679, DisplayName: "Maximum Mammoth Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24073, DisplayName: "Medium Shadow Armor", Categories: [armor], Price: 165}
+  - {Id: 24530, DisplayName: "Menace Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24924, DisplayName: "Metallic Fury Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24506, DisplayName: "Metallic Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24274, DisplayName: "Monk Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24942, DisplayName: "Mystery Dust Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 1270140, DisplayName: "Night Fire Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24404, DisplayName: "Oboro Shadow Armor", Categories: [armor], Price: 165}
+  - {Id: 24689, DisplayName: "Paradise Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24095, DisplayName: "Peerless Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24354, DisplayName: "Peerless Shadow Armor II", Categories: [armor], Price: 105}
+  - {Id: 24433, DisplayName: "Penetration Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24426, DisplayName: "Perfect Size Shadow Armor", Categories: [armor], Price: 165}
+  - {Id: 24395, DisplayName: "Physical Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24636, DisplayName: "Picky Rush Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24352, DisplayName: "Plasterus Shadow Armor II", Categories: [armor], Price: 105}
+  - {Id: 24938, DisplayName: "Powerful Rush Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24273, DisplayName: "Priest Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24554, DisplayName: "Psychic Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24950, DisplayName: "Rain Pressure Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24500, DisplayName: "Rainstorm Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24476, DisplayName: "Rampage Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24402, DisplayName: "Rebellion Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24245, DisplayName: "Reload Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24331, DisplayName: "Reload Shadow Armor II", Categories: [armor], Price: 75}
+  - {Id: 24276, DisplayName: "Rogue Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24536, DisplayName: "Rolling Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24278, DisplayName: "Sage Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24908, DisplayName: "Savage Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24378, DisplayName: "Scissor Hunting Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24013, DisplayName: "Promotional Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24000, DisplayName: "TForce1 Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24006, DisplayName: "TForce2 Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 1270041, DisplayName: "Shield Shooter Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24326, DisplayName: "Sigrun Shadow Armor", Categories: [armor], Price: 85}
+  - {Id: 24542, DisplayName: "Slash Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24074, DisplayName: "Small Shadow Armor", Categories: [armor], Price: 165}
+  - {Id: 24154, DisplayName: "Immortal Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24440, DisplayName: "Sonic Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 1270001, DisplayName: "Sorcery Master Shadow Armor", Categories: [armor], Price: 110}
+  - {Id: 24414, DisplayName: "Soul Reaper Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 1270037, DisplayName: "Spark Cannonade Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24747, DisplayName: "Spell Caster Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24997, DisplayName: "Spell Master Shadow Armor", Categories: [armor], Price: 110}
+  - {Id: 24112, DisplayName: "Spell Flow Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 24566, DisplayName: "Spore Bomb Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 1270081, DisplayName: "Stab Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24412, DisplayName: "Star Emperor Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 24654, DisplayName: "Stardust Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24144, DisplayName: "Steal Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24973, DisplayName: "Storm Hurricane Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24977, DisplayName: "Sunset Blast Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24648, DisplayName: "Sunshine Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24617, DisplayName: "Super Magic Shadow Armor", Categories: [armor], Price: 165}
+  - {Id: 1270005, DisplayName: "Sword Master Shadow Armor", Categories: [armor], Price: 95}
+  - {Id: 24603, DisplayName: "Tail Dragon Shadow Armor", Categories: [armor], Price: 85}
+  - {Id: 24138, DisplayName: "Teleport Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24424, DisplayName: "Tempest Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24417, DisplayName: "Temporal Transcendent Shadow Armor", Categories: [armor], Price: 75}
+  - {Id: 1270121, DisplayName: "Terra Stream Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 1270029, DisplayName: "Thorns Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24946, DisplayName: "Thunder Buster Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24464, DisplayName: "Tornado Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24560, DisplayName: "Cart Tornado Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24524, DisplayName: "Triangle Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24615, DisplayName: "Trip Shadow Armor", Categories: [armor], Price: 85}
+  - {Id: 24675, DisplayName: "True Gemstone Shadow Armor", Categories: [armor], Price: 90}
+  - {Id: 24189, DisplayName: "Underneath Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24188, DisplayName: "Saharic Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24377, DisplayName: "Vibration Dragon Killer Shadow Armor", Categories: [armor], Price: 135}
+  - {Id: 1270093, DisplayName: "Violent Soul Tremor Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24470, DisplayName: "Vulcan Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24928, DisplayName: "Wild Bullet Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24191, DisplayName: "Windy Shadow Armor", Categories: [armor], Price: 80}
+  - {Id: 24277, DisplayName: "Wizard Shadow Armor", Categories: [armor], Price: 105}
+  - {Id: 24778, DisplayName: "Level 1 Shadow Armor", Categories: [armor], Price: 50}
+  - {Id: 24685, DisplayName: "Absorb Shadow Shield", Categories: [shield], Price: 60}
+  - {Id: 24693, DisplayName: "Advanced Paradise Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24215, DisplayName: "Advanced Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24342, DisplayName: "All Races Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24305, DisplayName: "Archbishop Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24459, DisplayName: "Arrow Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24026, DisplayName: "Athena Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24039, DisplayName: "Athletic Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24722, DisplayName: "Auto Spell Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24579, DisplayName: "Banishing Cannon Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24198, DisplayName: "Basis Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24182, DisplayName: "Bearer's Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24211, DisplayName: "Novice Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24388, DisplayName: "Beginner's Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24232, DisplayName: "Blitz Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24585, DisplayName: "Booster Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24573, DisplayName: "Brand Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24054, DisplayName: "Brutal Shadow Shield", Categories: [shield], Price: 255}
+  - {Id: 24061, DisplayName: "Cadi Shadow Shield", Categories: [shield], Price: 165}
+  - {Id: 24241, DisplayName: "Caster Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24641, DisplayName: "Catnip Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24737, DisplayName: "Clever Shadow Shield", Categories: [shield], Price: 70}
+  - {Id: 24134, DisplayName: "Cloaking Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24453, DisplayName: "Cluster Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24447, DisplayName: "Cold Breath Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24756, DisplayName: "Concentration Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 1270048, DisplayName: "Corrupted Shadow Shield", Categories: [shield], Price: 100}
+  - {Id: 24052, DisplayName: "Cranial Shadow Shield", Categories: [shield], Price: 255}
+  - {Id: 24762, DisplayName: "Creative Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24519, DisplayName: "Crimson Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24332, DisplayName: "Critical Shadow Shield", Categories: [shield], Price: 115}
+  - {Id: 24205, DisplayName: "Damned Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24207, DisplayName: "Divine Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24317, DisplayName: "Doram Magical Shadow Shield", Categories: [shield], Price: 145}
+  - {Id: 24316, DisplayName: "Doram Physical Shadow Shield", Categories: [shield], Price: 145}
+  - {Id: 1270167, DisplayName: "Double Luck Shadow Shield (Magical)", Categories: [shield], Price: 90}
+  - {Id: 1270165, DisplayName: "Double Luck Shadow Shield (Physical)", Categories: [shield], Price: 105}
+  - {Id: 24057, DisplayName: "Dragoon Shadow Shield", Categories: [shield], Price: 165}
+  - {Id: 24489, DisplayName: "Duple Shadow Shield", Categories: [shield], Price: 120}
+  - {Id: 24735, DisplayName: "Durable Shadow Shield", Categories: [shield], Price: 100}
+  - {Id: 24549, DisplayName: "Dust Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24204, DisplayName: "Envenom Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24656, DisplayName: "Es Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24206, DisplayName: "Geist Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24683, DisplayName: "Experience Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24209, DisplayName: "Expert Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24629, DisplayName: "First Exploding Draft Shadow Shield", Categories: [shield], Price: 165}
+  - {Id: 24202, DisplayName: "Flame Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24059, DisplayName: "Frame Guard Shadow Shield", Categories: [shield], Price: 165}
+  - {Id: 24055, DisplayName: "Gargantua Shadow Shield", Categories: [shield], Price: 165}
+  - {Id: 24086, DisplayName: "Gemstone Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24336, DisplayName: "Gemstone Shadow Shield II", Categories: [shield], Price: 75}
+  - {Id: 24304, DisplayName: "Genetic Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24608, DisplayName: "God Hammer Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24116, DisplayName: "Greed Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24307, DisplayName: "Guillotine Cross Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24319, DisplayName: "Gunslinger Shadow Shield", Categories: [shield], Price: 135}
+  - {Id: 24199, DisplayName: "Hallowed Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24732, DisplayName: "Hasty Shadow Shield", Categories: [shield], Price: 70}
+  - {Id: 24122, DisplayName: "Heal Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24366, DisplayName: "Healing Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24128, DisplayName: "Hiding Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24056, DisplayName: "Homer's Shadow Shield", Categories: [shield], Price: 165}
+  - {Id: 24399, DisplayName: "Immune Athena Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24733, DisplayName: "Infinity Shadow Shield", Categories: [shield], Price: 100}
+  - {Id: 24513, DisplayName: "Jack Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24495, DisplayName: "Judex Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24483, DisplayName: "Knuckle Arrow Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24623, DisplayName: "Kunai Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24397, DisplayName: "Magical Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24754, DisplayName: "Magical Spell Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24083, DisplayName: "Malicious Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24674, DisplayName: "Mammoth Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24793, DisplayName: "Master Shadow Shield", Categories: [shield], Price: 120}
+  - {Id: 24303, DisplayName: "Mechanic Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24767, DisplayName: "Mega Blitz Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24531, DisplayName: "Menace Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24507, DisplayName: "Metallic Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24312, DisplayName: "Minstrel Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24314, DisplayName: "Ninja Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24688, DisplayName: "Paradise Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24374, DisplayName: "Penetration Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24752, DisplayName: "Physical Power Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24394, DisplayName: "Physical Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24635, DisplayName: "Picky Rush Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24555, DisplayName: "Psychic Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 1270047, DisplayName: "Purity Shadow Shield", Categories: [shield], Price: 100}
+  - {Id: 24501, DisplayName: "Rainstorm Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24477, DisplayName: "Rampage Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24311, DisplayName: "Ranger Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24244, DisplayName: "Reload Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24060, DisplayName: "Requiem Shadow Shield", Categories: [shield], Price: 165}
+  - {Id: 24537, DisplayName: "Rolling Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24213, DisplayName: "Rookie Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24302, DisplayName: "Royal Guard Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24301, DisplayName: "Rune Knight Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24053, DisplayName: "Safeguard Shadow Shield", Categories: [shield], Price: 165}
+  - {Id: 24200, DisplayName: "Saharic Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 1270049, DisplayName: "Sanctified Shadow Shield", Categories: [shield], Price: 190}
+  - {Id: 24058, DisplayName: "Satanic Shadow Shield", Categories: [shield], Price: 165}
+  - {Id: 24746, DisplayName: "Seperate Reload Shadow Shield", Categories: [shield], Price: 95}
+  - {Id: 24308, DisplayName: "Shadow Chaser Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24015, DisplayName: "Promotional Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24002, DisplayName: "TLuk1 Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24008, DisplayName: "TLuk2 Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24327, DisplayName: "Sigrun Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24543, DisplayName: "Slash Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24441, DisplayName: "Sonic Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24310, DisplayName: "Sorcerer Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24113, DisplayName: "Spell Flow Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24323, DisplayName: "Spell Flow Shadow Shield II", Categories: [shield], Price: 85}
+  - {Id: 24567, DisplayName: "Spore Bomb Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24090, DisplayName: "Stability Shadow Shield", Categories: [shield], Price: 315}
+  - {Id: 24760, DisplayName: "Stamina Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24653, DisplayName: "Stardust Shadow Shield", Categories: [shield], Price: 135}
+  - {Id: 24146, DisplayName: "Steal Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24647, DisplayName: "Sunshine Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24616, DisplayName: "Super Magic Shadow Shield", Categories: [shield], Price: 100}
+  - {Id: 24318, DisplayName: "Super Novice Shadow Shield", Categories: [shield], Price: 115}
+  - {Id: 24306, DisplayName: "Sura Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24315, DisplayName: "Taekwon Shadow Shield", Categories: [shield], Price: 125}
+  - {Id: 24602, DisplayName: "Tail Dragon Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24140, DisplayName: "Teleport Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24345, DisplayName: "Tempest Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24418, DisplayName: "Temporal Transcendent Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24465, DisplayName: "Tornado Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24561, DisplayName: "Cart Tornado Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24525, DisplayName: "Triangle Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24614, DisplayName: "Trip Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24201, DisplayName: "Underneath Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24044, DisplayName: "Vital Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24471, DisplayName: "Vulcan Shadow Shield", Categories: [shield], Price: 85}
+  - {Id: 24313, DisplayName: "Wanderer Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24309, DisplayName: "Warlock Shadow Shield", Categories: [shield], Price: 105}
+  - {Id: 24203, DisplayName: "Windy Shadow Shield", Categories: [shield], Price: 90}
+  - {Id: 24758, DisplayName: "Wisdom Shadow Shield", Categories: [shield], Price: 75}
+  - {Id: 24780, DisplayName: "Level 1 Shadow Shield", Categories: [shield], Price: 50}
+  - {Id: 24355, DisplayName: "Adurate Shadow Shoes II", Categories: [shoes], Price: 105}
+  - {Id: 24695, DisplayName: "Advanced Paradise Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24214, DisplayName: "Advanced Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270133, DisplayName: "Advanced Trap Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24259, DisplayName: "Alchemist Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24341, DisplayName: "All Races Shadow Shoes", Categories: [shoes], Price: 95}
+  - {Id: 24098, DisplayName: "Adurate Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24460, DisplayName: "Arrow Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24262, DisplayName: "Assassin Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24045, DisplayName: "Athletic Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24724, DisplayName: "Auto Spell Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24580, DisplayName: "Banishing Cannon Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24267, DisplayName: "Bard Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24181, DisplayName: "Bearer's Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24338, DisplayName: "Bearer's Shadow Shoes II", Categories: [shoes], Price: 75}
+  - {Id: 24210, DisplayName: "Novice Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24389, DisplayName: "Beginner's Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24069, DisplayName: "Beholder Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24258, DisplayName: "Blacksmith Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24955, DisplayName: "Blazing Flame Blast Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24231, DisplayName: "Blitz Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24062, DisplayName: "Bloody Shadow Shoes", Categories: [shoes], Price: 195}
+  - {Id: 1270137, DisplayName: "Blossom Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24586, DisplayName: "Booster Shadow Shoes", Categories: [shoes], Price: 85}
+  - {Id: 1270010, DisplayName: "Bow Master Shadow Shoes", Categories: [shoes], Price: 95}
+  - {Id: 24574, DisplayName: "Brand Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24240, DisplayName: "Caster Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24025, DisplayName: "Champion Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24064, DisplayName: "Chemical Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24065, DisplayName: "Clamorous Shadow Shoes", Categories: [shoes], Price: 195}
+  - {Id: 24133, DisplayName: "Cloaking Shadow Shoes", Categories: [shoes], Price: 50}
+  - {Id: 24454, DisplayName: "Cluster Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24448, DisplayName: "Cold Breath Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24913, DisplayName: "Crescive Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24520, DisplayName: "Crimson Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24333, DisplayName: "Critical Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24627, DisplayName: "Cross Shuriken Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24257, DisplayName: "Crusader Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24268, DisplayName: "Dancer Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270102, DisplayName: "Dawn Break Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24070, DisplayName: "Divine Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24970, DisplayName: "Divinus Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24411, DisplayName: "Doram Magical Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24409, DisplayName: "Doram Physical Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270090, DisplayName: "Double Blow Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24071, DisplayName: "Dragoon Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24490, DisplayName: "Duple Shadow Shoes", Categories: [shoes], Price: 95}
+  - {Id: 24550, DisplayName: "Dust Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270118, DisplayName: "Effltio Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24660, DisplayName: "Evil Curse Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270046, DisplayName: "Exorcism of Malicious Soul Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24208, DisplayName: "Expert Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270014, DisplayName: "Fatal Master Shadow Shoes", Categories: [shoes], Price: 95}
+  - {Id: 24067, DisplayName: "Fisher Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 1270086, DisplayName: "Flame Bomb Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24606, DisplayName: "Flare Dance Shadow Shoes", Categories: [shoes], Price: 85}
+  - {Id: 24990, DisplayName: "Four Bearing God Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 1270098, DisplayName: "Frenzy Reaction Shot Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24986, DisplayName: "From Abyss Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24664, DisplayName: "Full Penetration Shadow Shoes", Categories: [shoes], Price: 195}
+  - {Id: 24873, DisplayName: "Ç® ÆÄ¿ö Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24875, DisplayName: "Full Rate Shadow Shoes", Categories: [shoes], Price: 95}
+  - {Id: 24884, DisplayName: "Full Spell Shadow Shoes", Categories: [shoes], Price: 90}
+  - {Id: 24666, DisplayName: "Full Tempest Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24085, DisplayName: "Gemstone Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24917, DisplayName: "Golden Blooded Cannon Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24115, DisplayName: "Greed Shadow Shoes", Categories: [shoes], Price: 50}
+  - {Id: 24921, DisplayName: "Hack Slasher Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24400, DisplayName: "Hard Champion Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24092, DisplayName: "Plasterus Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24196, DisplayName: "Hasty Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24320, DisplayName: "Hasty Shadow Shoes II", Categories: [shoes], Price: 95}
+  - {Id: 24121, DisplayName: "Heal Shadow Shoes", Categories: [shoes], Price: 50}
+  - {Id: 24367, DisplayName: "Healing Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24127, DisplayName: "Hiding Shadow Shoes", Categories: [shoes], Price: 50}
+  - {Id: 24959, DisplayName: "Hogogong Battering Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24266, DisplayName: "Hunter Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 1270034, DisplayName: "Leaf Spirit Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24066, DisplayName: "Insecticide Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24094, DisplayName: "Insomnia Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24353, DisplayName: "Insomniac Shadow Shoes II", Categories: [shoes], Price: 105}
+  - {Id: 24514, DisplayName: "Jack Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24496, DisplayName: "Judex Shadow Shoes", Categories: [shoes], Price: 85}
+  - {Id: 24406, DisplayName: "Kagerou Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24256, DisplayName: "Knight Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24484, DisplayName: "Knuckle Arrow Shadow Shoes", Categories: [shoes], Price: 85}
+  - {Id: 1270126, DisplayName: "Kunai Shuriken Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24063, DisplayName: "Liberation Shadow Shoes", Categories: [shoes], Price: 195}
+  - {Id: 24982, DisplayName: "Lightning Swamp Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24763, DisplayName: "Lord Bearer's Shadow Shoes", Categories: [shoes], Price: 95}
+  - {Id: 24813, DisplayName: "M. Abyss Chaser Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24841, DisplayName: "M. Arch Mage Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24829, DisplayName: "M. Biolo Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24817, DisplayName: "M. Cardinal Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24801, DisplayName: "M. Dragon Knight Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24845, DisplayName: "M. Elemental Master Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24869, DisplayName: "M. Hyper Novice Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24805, DisplayName: "M. Imperial Guard Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24821, DisplayName: "M. Inquisitor Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24825, DisplayName: "M. Meister Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24849, DisplayName: "M. Night Watch Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24809, DisplayName: "M. Shadow Cross Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24857, DisplayName: "M. Shinkiro & Shiranui Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24861, DisplayName: "M. Sky Emperor Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24865, DisplayName: "M. Soul Ascetic Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24853, DisplayName: "M. Spirit Handler Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24837, DisplayName: "M. Troubadour & Trouvere Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24833, DisplayName: "M. Windhawk Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270026, DisplayName: "Madness Breath Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24994, DisplayName: "Magical Master Shadow Shoes", Categories: [shoes], Price: 110}
+  - {Id: 24396, DisplayName: "Magical Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24729, DisplayName: "Major Auto Spell Shadow Shoes", Categories: [shoes], Price: 90}
+  - {Id: 24082, DisplayName: "Malicious Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24670, DisplayName: "Mammoth Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24680, DisplayName: "Maximum Mammoth Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24532, DisplayName: "Menace Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24925, DisplayName: "Metallic Fury Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24508, DisplayName: "Metallic Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24261, DisplayName: "Monk Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24651, DisplayName: "Moonlight Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24943, DisplayName: "Mystery Dust Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 1270141, DisplayName: "Night Fire Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24407, DisplayName: "Oboro Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24690, DisplayName: "Paradise Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24096, DisplayName: "Peerless Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24373, DisplayName: "Penetration Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24393, DisplayName: "Physical Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24939, DisplayName: "Powerful Rush Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24260, DisplayName: "Priest Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24556, DisplayName: "Psychic Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24951, DisplayName: "Rain Pressure Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24502, DisplayName: "Rainstorm Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24478, DisplayName: "Rampage Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24405, DisplayName: "Rebellion Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24243, DisplayName: "Reload Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24263, DisplayName: "Rogue Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24538, DisplayName: "Rolling Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24212, DisplayName: "Rookie Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24265, DisplayName: "Sage Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24639, DisplayName: "Savage Rabbit Shadow Shoes", Categories: [shoes], Price: 85}
+  - {Id: 24909, DisplayName: "Savage Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24068, DisplayName: "Seraphim Shadow Shoes", Categories: [shoes], Price: 135}
+  - {Id: 24014, DisplayName: "Promotional Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24003, DisplayName: "TAgile1 Shadow Shoes", Categories: [shoes], Price: 50}
+  - {Id: 24009, DisplayName: "TAgile2 Shadow Shoes", Categories: [shoes], Price: 50}
+  - {Id: 24612, DisplayName: "Shatter Buster Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 1270042, DisplayName: "Shield Shooter Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24645, DisplayName: "Silvervine Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24544, DisplayName: "Slash Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24442, DisplayName: "Sonic Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270002, DisplayName: "Sorcery Master Shadow Shoes", Categories: [shoes], Price: 110}
+  - {Id: 24415, DisplayName: "Soul Reaper Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270038, DisplayName: "Spark Cannonade Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24748, DisplayName: "Spell Caster Shadow Shoes", Categories: [shoes], Price: 95}
+  - {Id: 24998, DisplayName: "Spell Master Shadow Shoes", Categories: [shoes], Price: 110}
+  - {Id: 24111, DisplayName: "Spell Flow Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24568, DisplayName: "Spore Bomb Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270082, DisplayName: "Stab Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24413, DisplayName: "Star Emperor Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24145, DisplayName: "Steal Shadow Shoes", Categories: [shoes], Price: 50}
+  - {Id: 24974, DisplayName: "Storm Hurricane Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24978, DisplayName: "Sunset Blast Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24618, DisplayName: "Super Magic Shadow Shoes", Categories: [shoes], Price: 195}
+  - {Id: 1270006, DisplayName: "Sword Master Shadow Shoes", Categories: [shoes], Price: 95}
+  - {Id: 24139, DisplayName: "Teleport Shadow Shoes", Categories: [shoes], Price: 50}
+  - {Id: 24346, DisplayName: "Tempest Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24419, DisplayName: "Temporal Transcendent Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 1270122, DisplayName: "Terra Stream Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 1270030, DisplayName: "Thorns Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24947, DisplayName: "Thunder Buster Cannon Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24466, DisplayName: "Tornado Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24562, DisplayName: "Cart Tornado Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24526, DisplayName: "Triangle Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24676, DisplayName: "True Gemstone Shadow Shoes", Categories: [shoes], Price: 90}
+  - {Id: 1270094, DisplayName: "Violent Soul Tremor Shadow Shoes", Categories: [shoes], Price: 165}
+  - {Id: 24038, DisplayName: "Vital Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24472, DisplayName: "Vulcan Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24929, DisplayName: "Wild Bullet Shadow Shoes", Categories: [shoes], Price: 105}
+  - {Id: 24633, DisplayName: "Wind Spear Petal Shadow Shoes", Categories: [shoes], Price: 85}
+  - {Id: 24264, DisplayName: "Wizard Shadow Shoes", Categories: [shoes], Price: 75}
+  - {Id: 24781, DisplayName: "Level 1 Shadow Shoes", Categories: [shoes], Price: 50}
+  - {Id: 24983, DisplayName: "Abyss Flame Shadow Earring", Categories: [right_accessory], Price: 135}
+  - {Id: 1270027, DisplayName: "Acidified Shadow Earring", Categories: [right_accessory], Price: 135}
+  - {Id: 24248, DisplayName: "Acolyte Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24493, DisplayName: "Adora Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24696, DisplayName: "Advanced Paradise Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24457, DisplayName: "Aimed Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 24339, DisplayName: "Almighty Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24967, DisplayName: "Arbit Shadow Earring", Categories: [right_accessory], Price: 135}
+  - {Id: 28392, DisplayName: "Archer Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24475, DisplayName: "Arm Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24505, DisplayName: "Arrow Vulcan Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24051, DisplayName: "Athena Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24727, DisplayName: "Auto Spell Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24184, DisplayName: "Bearer's Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24391, DisplayName: "Beginner's Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24217, DisplayName: "Blitz Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24236, DisplayName: "Boned Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24469, DisplayName: "Boomerang Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24587, DisplayName: "Booster Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 1270011, DisplayName: "Bow Master Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24565, DisplayName: "Cart Cannon Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 24109, DisplayName: "Caster Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24886, DisplayName: "Centering Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 24577, DisplayName: "Chain Press Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24523, DisplayName: "Chain Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24956, DisplayName: "Chulho Claw Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24136, DisplayName: "Cloaking Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24979, DisplayName: "Conflagrative Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 1270079, DisplayName: "Crater Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24571, DisplayName: "Crazy Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24625, DisplayName: "Cross Shuriken Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 1270091, DisplayName: "Crystal Illusion Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 1270095, DisplayName: "Deft Breaker Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 1270119, DisplayName: "Diamond Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 1270023, DisplayName: "Dragonic Spear Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24364, DisplayName: "Elegant Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24384, DisplayName: "Enchanting Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24906, DisplayName: "Eternal Cross Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24658, DisplayName: "Evil Curse Shadow Earring", Categories: [right_accessory], Price: 90}
+  - {Id: 24952, DisplayName: "Explosion Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24940, DisplayName: "Explosive Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 1270015, DisplayName: "Fatal Master Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24451, DisplayName: "Fire Breath Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24971, DisplayName: "Flare Bloom Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24604, DisplayName: "Flare Dance Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 24877, DisplayName: "Focusing Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 24225, DisplayName: "Force Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 1270115, DisplayName: "Fracella Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24107, DisplayName: "Uncurse Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24661, DisplayName: "Full Penetration Shadow Earring", Categories: [right_accessory], Price: 195}
+  - {Id: 24665, DisplayName: "Full Tempest Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24910, DisplayName: "Gale Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24088, DisplayName: "Gemstone Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24322, DisplayName: "Gemstone Shadow Earring II", Categories: [right_accessory], Price: 75}
+  - {Id: 24583, DisplayName: "Genesis Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24238, DisplayName: "Gigantic Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24553, DisplayName: "Grave Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24118, DisplayName: "Greed Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24049, DisplayName: "Hard Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24124, DisplayName: "Heal Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24130, DisplayName: "Hiding Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 1270031, DisplayName: "Hyunrok Cannon Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24445, DisplayName: "Ignition Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24150, DisplayName: "Infinity Shadow Earring", Categories: [right_accessory], Price: 135}
+  - {Id: 24042, DisplayName: "Intelligent Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24541, DisplayName: "Katar Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 1270127, DisplayName: "Limit Break Shadow Earring", Categories: [right_accessory], Price: 115}
+  - {Id: 24766, DisplayName: "Lord Bearer's Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24814, DisplayName: "M. Abyss Chaser Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24842, DisplayName: "M. Arch Mage Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24830, DisplayName: "M. Biolo Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24818, DisplayName: "M. Cardinal Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24802, DisplayName: "M. Dragon Knight Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24846, DisplayName: "M. Elemental Master Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24870, DisplayName: "M. Hyper Novice Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24806, DisplayName: "M. Imperial Guard Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24822, DisplayName: "M. Inquisitor Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24826, DisplayName: "M. Meister Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24850, DisplayName: "M. Night Watch Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24810, DisplayName: "M. Shadow Cross Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24858, DisplayName: "M. Shinkiro & Shiranui Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24862, DisplayName: "M. Sky Emperor Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24866, DisplayName: "M. Soul Ascetic Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24854, DisplayName: "M. Spirit Handler Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24838, DisplayName: "M. Troubadour & Trouvere Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24834, DisplayName: "M. Windhawk Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24021, DisplayName: "Magical Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24995, DisplayName: "Magical Master Shadow Earring", Categories: [right_accessory], Price: 110}
+  - {Id: 24249, DisplayName: "Magician Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24499, DisplayName: "Magnus Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24730, DisplayName: "Major Auto Spell Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24672, DisplayName: "Mammoth Shadow Earring", Categories: [right_accessory], Price: 115}
+  - {Id: 1270087, DisplayName: "Max Chain Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24681, DisplayName: "Maximum Mammoth Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24247, DisplayName: "Merchant Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 1270099, DisplayName: "Midnight Kick Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 1270138, DisplayName: "Midnight Shooting Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24936, DisplayName: "Mighty Stomp Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24649, DisplayName: "Moonlight Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24371, DisplayName: "Mortal Blow Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 1270134, DisplayName: "Musical Shooting Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24105, DisplayName: "Neutral Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24975, DisplayName: "Noon Sun Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24948, DisplayName: "Over Cross Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24535, DisplayName: "Feint Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24691, DisplayName: "Paradise Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24166, DisplayName: "Penetration Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24018, DisplayName: "Physical Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24035, DisplayName: "Power Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 1270083, DisplayName: "Punish Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 1270039, DisplayName: "Radiant Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24914, DisplayName: "Red Thunder Cannon Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24368, DisplayName: "Restore Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24922, DisplayName: "Rhythmical Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24547, DisplayName: "Ripper Slasher Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 1270259, DisplayName: "[S3] Serpent Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24637, DisplayName: "Savage Rabbit Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24381, DisplayName: "Sentimental Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 1270123, DisplayName: "Shadow Dance Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24016, DisplayName: "Promotional Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24004, DisplayName: "TVital1 Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24010, DisplayName: "TVital2 Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24529, DisplayName: "Shadowspell Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 24610, DisplayName: "Shatter Buster Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 24463, DisplayName: "Shooting Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24643, DisplayName: "Silvervine Shadow Earring", Categories: [right_accessory], Price: 150}
+  - {Id: 24481, DisplayName: "Sky Blow Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 24153, DisplayName: "Solid Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 1270003, DisplayName: "Sorcery Master Shadow Earring", Categories: [right_accessory], Price: 110}
+  - {Id: 24229, DisplayName: "Soul Shadow Earring", Categories: [right_accessory], Price: 85}
+  - {Id: 24749, DisplayName: "Spell Caster Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24999, DisplayName: "Spell Master Shadow Earring", Categories: [right_accessory], Price: 110}
+  - {Id: 1270168, DisplayName: "Spell Master Shadow Earring", Categories: [right_accessory], Price: 110}
+  - {Id: 24926, DisplayName: "Spiral One Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24079, DisplayName: "Spiritual Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24148, DisplayName: "Steal Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24918, DisplayName: "Storm Servant Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24879, DisplayName: "Stout Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24517, DisplayName: "Strain Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24621, DisplayName: "Super Power Shadow Earring", Categories: [right_accessory], Price: 135}
+  - {Id: 1270007, DisplayName: "Sword Master Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 24246, DisplayName: "Swordman Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 1270043, DisplayName: "Talisman of Red Blue Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24987, DisplayName: "Talisman of White Black Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24142, DisplayName: "Teleport Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24168, DisplayName: "Tempest Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24420, DisplayName: "Temporal Transcendent Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24361, DisplayName: "Tension Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 28391, DisplayName: "Thief Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24487, DisplayName: "Tiger Cannon Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24234, DisplayName: "Titan Shadow Earring", Categories: [right_accessory], Price: 95}
+  - {Id: 1270035, DisplayName: "Triple Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24677, DisplayName: "True Gemstone Shadow Earring", Categories: [right_accessory], Price: 90}
+  - {Id: 24100, DisplayName: "Unfreezing Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24559, DisplayName: "Varetyr Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24511, DisplayName: "Reverberation Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24102, DisplayName: "Vitality Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24357, DisplayName: "Vitality Shadow Earring II", Categories: [right_accessory], Price: 105}
+  - {Id: 24944, DisplayName: "Vulcan Jack Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 1270130, DisplayName: "Wild Hawk Shadow Earring", Categories: [right_accessory], Price: 105}
+  - {Id: 24631, DisplayName: "Wind Spear Petal Shadow Earring", Categories: [right_accessory], Price: 345}
+  - {Id: 24050, DisplayName: "Wise Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24888, DisplayName: "Witty Shadow Earring", Categories: [right_accessory], Price: 75}
+  - {Id: 24782, DisplayName: "Level 1 Shadow Earring", Categories: [right_accessory], Price: 50}
+  - {Id: 24984, DisplayName: "Abyss Flame Shadow Pendant", Categories: [left_accessory], Price: 135}
+  - {Id: 1270028, DisplayName: "Acidified Shadow Pendant", Categories: [left_accessory], Price: 135}
+  - {Id: 24252, DisplayName: "Acolyte Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24492, DisplayName: "Adora Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24697, DisplayName: "Advanced Paradise Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24456, DisplayName: "Aimed Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24340, DisplayName: "Almighty Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24968, DisplayName: "Arbit Shadow Pendant", Categories: [left_accessory], Price: 135}
+  - {Id: 24255, DisplayName: "Archer Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24474, DisplayName: "Arm Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24504, DisplayName: "Arrow Vulcan Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24726, DisplayName: "Auto Spell Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24185, DisplayName: "Bearer's Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24321, DisplayName: "Bearer's Shadow Pendant II", Categories: [left_accessory], Price: 75}
+  - {Id: 24392, DisplayName: "Beginner's Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24218, DisplayName: "Blitz Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24237, DisplayName: "Boned Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 24468, DisplayName: "Boomerang Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24588, DisplayName: "Booster Shadow Pendant", Categories: [left_accessory], Price: 85}
+  - {Id: 1270012, DisplayName: "Bow Master Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 24564, DisplayName: "Cart Cannon Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24048, DisplayName: "Caster Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24885, DisplayName: "Centering Shadow Pendant", Categories: [left_accessory], Price: 85}
+  - {Id: 24576, DisplayName: "Chain Press Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24522, DisplayName: "Chain Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24957, DisplayName: "Chulho Claw Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24137, DisplayName: "Cloaking Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24980, DisplayName: "Conflagrative Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270080, DisplayName: "Crater Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24570, DisplayName: "Crazy Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24626, DisplayName: "Cross Shuriken Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270092, DisplayName: "Crystal Illusion Shadow Pendant", Categories: [left_accessory], Price: 165}
+  - {Id: 1270096, DisplayName: "Deft Breaker Shadow Pendant", Categories: [left_accessory], Price: 135}
+  - {Id: 1270120, DisplayName: "Diamond Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270024, DisplayName: "Dragonic Spear Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24365, DisplayName: "Elegant Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24385, DisplayName: "Enchanting Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24907, DisplayName: "Eternal Cross Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24659, DisplayName: "Evil Curse Shadow Pendant", Categories: [left_accessory], Price: 110}
+  - {Id: 24953, DisplayName: "Explosion Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24941, DisplayName: "Explosive Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270016, DisplayName: "Fatal Master Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 24450, DisplayName: "Fire Breath Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24972, DisplayName: "Flare Bloom Shadow Pendant", Categories: [left_accessory], Price: 165}
+  - {Id: 24605, DisplayName: "Flare Dance Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24876, DisplayName: "Focusing Shadow Pendant", Categories: [left_accessory], Price: 85}
+  - {Id: 24226, DisplayName: "Force Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 1270116, DisplayName: "Fracella Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24108, DisplayName: "Uncurse Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24662, DisplayName: "Full Penetration Shadow Pendant", Categories: [left_accessory], Price: 195}
+  - {Id: 24668, DisplayName: "Full Tempest Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24911, DisplayName: "Gale Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24089, DisplayName: "Gemstone Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24582, DisplayName: "Genesis Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24239, DisplayName: "Gigantic Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 24552, DisplayName: "Grave Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24119, DisplayName: "Greed Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24125, DisplayName: "Heal Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24131, DisplayName: "Hiding Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 1270032, DisplayName: "Hyunrok Cannon Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24444, DisplayName: "Ignition Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24151, DisplayName: "Infinity Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24036, DisplayName: "Intelligent Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24540, DisplayName: "Katar Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 1270128, DisplayName: "Limit Break Shadow Pendant", Categories: [left_accessory], Price: 115}
+  - {Id: 24765, DisplayName: "Lord Bearer's Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 24815, DisplayName: "M. Abyss Chaser Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24843, DisplayName: "M. Arch Mage Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24831, DisplayName: "M. Biolo Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24819, DisplayName: "M. Cardinal Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24803, DisplayName: "M. Dragon Knight Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24847, DisplayName: "M. Elemental Master Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24871, DisplayName: "M. Hyper Novice Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24807, DisplayName: "M. Imperial Guard Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24823, DisplayName: "M. Inquisitor Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24827, DisplayName: "M. Meister Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24851, DisplayName: "M. Night Watch Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24811, DisplayName: "M. Shadow Cross Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24859, DisplayName: "M. Shinkiro & Shiranui Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24863, DisplayName: "M. Sky Emperor Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24867, DisplayName: "M. Soul Ascetic Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24855, DisplayName: "M. Spirit Handler Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24839, DisplayName: "M. Troubadour & Trouvere Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24835, DisplayName: "M. Windhawk Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24996, DisplayName: "Magical Master Shadow Pendant", Categories: [left_accessory], Price: 110}
+  - {Id: 24023, DisplayName: "Magical Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24254, DisplayName: "Magician Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24498, DisplayName: "Magnus Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24731, DisplayName: "Major Auto Spell Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 24671, DisplayName: "Mammoth Shadow Pendant", Categories: [left_accessory], Price: 85}
+  - {Id: 1270088, DisplayName: "Max Chain Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24682, DisplayName: "Maximum Mammoth Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24251, DisplayName: "Merchant Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270100, DisplayName: "Midnight Kick Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270139, DisplayName: "Midnight Shooting Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24937, DisplayName: "Mighty Stomp Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24650, DisplayName: "Moonlight Shadow Pendant", Categories: [left_accessory], Price: 85}
+  - {Id: 24372, DisplayName: "Mortal Blow Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 1270135, DisplayName: "Musical Shooting Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24106, DisplayName: "Neutral Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24976, DisplayName: "Noon Sun Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24949, DisplayName: "Over Cross Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24534, DisplayName: "Feint Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24692, DisplayName: "Paradise Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24167, DisplayName: "Penetration Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24020, DisplayName: "Physical Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24041, DisplayName: "Power Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 1270084, DisplayName: "Punish Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270040, DisplayName: "Radiant Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24047, DisplayName: "Rapid Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24915, DisplayName: "Red Thunder Cannon Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24046, DisplayName: "Resist Spell Power Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24369, DisplayName: "Restore Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24923, DisplayName: "Rhythmical Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24546, DisplayName: "Ripper Slasher Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270258, DisplayName: "[S3] Serpent Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24638, DisplayName: "Savage Rabbit Shadow Pendant", Categories: [left_accessory], Price: 135}
+  - {Id: 24382, DisplayName: "Sentimental Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 1270124, DisplayName: "Shadow Dance Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24017, DisplayName: "Promotional Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24005, DisplayName: "TInt1 Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24011, DisplayName: "TInt2 Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24528, DisplayName: "Shadowspell Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24611, DisplayName: "Shatter Buster Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24462, DisplayName: "Shooting Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24644, DisplayName: "Silvervine Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24480, DisplayName: "Sky Blow Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24155, DisplayName: "Immortal Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 1270004, DisplayName: "Sorcery Master Shadow Pendant", Categories: [left_accessory], Price: 110}
+  - {Id: 24230, DisplayName: "Soul Shadow Pendant", Categories: [left_accessory], Price: 85}
+  - {Id: 24750, DisplayName: "Spell Caster Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 1270000, DisplayName: "Spell Master Shadow Pendant", Categories: [left_accessory], Price: 110}
+  - {Id: 24927, DisplayName: "Spiral One Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24080, DisplayName: "Spiritual Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24149, DisplayName: "Steal Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24919, DisplayName: "Storm Servant Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24878, DisplayName: "Stout Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24516, DisplayName: "Strain Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24620, DisplayName: "Super Power Shadow Pendant", Categories: [left_accessory], Price: 135}
+  - {Id: 1270008, DisplayName: "Sword Master Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 24250, DisplayName: "Swordman Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270044, DisplayName: "Talisman of Red Blue Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24988, DisplayName: "Talisman of White Black Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24143, DisplayName: "Teleport Shadow Pendant", Categories: [left_accessory], Price: 50}
+  - {Id: 24169, DisplayName: "Tempest Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24421, DisplayName: "Temporal Transcendent Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24362, DisplayName: "Tension Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24253, DisplayName: "Thief Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24486, DisplayName: "Tiger Cannon Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24235, DisplayName: "Titan Shadow Pendant", Categories: [left_accessory], Price: 95}
+  - {Id: 1270036, DisplayName: "Triple Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24678, DisplayName: "True Gemstone Shadow Pendant", Categories: [left_accessory], Price: 90}
+  - {Id: 24359, DisplayName: "Uncurse Shadow Pendant II", Categories: [left_accessory], Price: 105}
+  - {Id: 24101, DisplayName: "Unfreezing Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24558, DisplayName: "Varetyr Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24510, DisplayName: "Reverberation Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24103, DisplayName: "Vitality Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 24945, DisplayName: "Vulcan Jack Shadow Pendant", Categories: [left_accessory], Price: 105}
+  - {Id: 1270131, DisplayName: "Wild Hawk Shadow Pendant", Categories: [left_accessory], Price: 135}
+  - {Id: 24632, DisplayName: "Wind Spear Petal Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24887, DisplayName: "Witty Shadow Pendant", Categories: [left_accessory], Price: 75}
+  - {Id: 24783, DisplayName: "Level 1 Shadow Pendant", Categories: [left_accessory], Price: 50}

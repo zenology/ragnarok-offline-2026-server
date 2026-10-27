@@ -1,0 +1,403 @@
+# Item catalog: Price is Event Stone Coin (7000) per item.
+# Native Barter stock and navigation are built from these records together.
+Header:
+  Type: MALANGDO_SHOP_CATALOG
+  Version: 1
+
+Body:
+  - {Id: 1000528, DisplayName: "Magic Power Stone(Upper)", Categories: [top], Price: 35}
+  - {Id: 1000375, DisplayName: "Ranged Stone(Upper)", Categories: [top], Price: 35}
+  - {Id: 1000377, DisplayName: "Melee Stone(Upper)", Categories: [top], Price: 35}
+  - {Id: 1000297, DisplayName: "Lord Knight Stone II(Upper", Categories: [top], Price: 45}
+  - {Id: 1000301, DisplayName: "Creator Stone II(Upper)", Categories: [top], Price: 45}
+  - {Id: 1000305, DisplayName: "Clown Gypsy Stone II(Upper)", Categories: [top], Price: 85}
+  - {Id: 1000214, DisplayName: "High Wizard Stone II(Upper)", Categories: [top], Price: 100}
+  - {Id: 1000218, DisplayName: "Paladin Stone II(Upper)", Categories: [top], Price: 80}
+  - {Id: 1000222, DisplayName: "Assassin Cross Stone II(Upper)", Categories: [top], Price: 80}
+  - {Id: 1000008, DisplayName: "Sniper Stone II(Upper)", Categories: [top], Price: 55}
+  - {Id: 1000012, DisplayName: "Whitesmith Stone II (Upper)", Categories: [top], Price: 135}
+  - {Id: 1000016, DisplayName: "High Priest Stone II(Upper)", Categories: [top], Price: 85}
+  - {Id: 25843, DisplayName: "Soul Linker Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25846, DisplayName: "Star Gladiator Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25850, DisplayName: "Ninja Stone(Upper)", Categories: [top], Price: 45}
+  - {Id: 25855, DisplayName: "Gunslinger Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25859, DisplayName: "Doram Stone(Upper)", Categories: [top], Price: 30}
+  - {Id: 25800, DisplayName: "Champion Stone II(Upper)", Categories: [top], Price: 85}
+  - {Id: 25804, DisplayName: "Professor Stone II(Upper)", Categories: [top], Price: 165}
+  - {Id: 25808, DisplayName: "Stalker Stone II(Upper)", Categories: [top], Price: 25}
+  - {Id: 25706, DisplayName: "High Priest Stone(Upper)", Categories: [top], Price: 45}
+  - {Id: 25710, DisplayName: "Paladin Stone(Upper)", Categories: [top], Price: 30}
+  - {Id: 25714, DisplayName: "Assassin Cross Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25490, DisplayName: "Stalker Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25494, DisplayName: "Whitesmith Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25498, DisplayName: "Clown Gypsy Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25445, DisplayName: "Lord Knight Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25450, DisplayName: "Creator Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25453, DisplayName: "High Wizard Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25409, DisplayName: "Champion Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25413, DisplayName: "Sniper Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25417, DisplayName: "Professor Stone(Upper)", Categories: [top], Price: 80}
+  - {Id: 25304, DisplayName: "Critical Stone(Upper)", Categories: [top], Price: 65}
+  - {Id: 25171, DisplayName: "Experience Stone(Upper)", Categories: [top], Price: 25}
+  - {Id: 25172, DisplayName: "Variable Cast Stone(Upper)", Categories: [top], Price: 65}
+  - {Id: 25068, DisplayName: "ASPD Stone(Upper)", Categories: [top], Price: 70}
+  - {Id: 25069, DisplayName: "Reload Stone(Upper)", Categories: [top], Price: 30}
+  - {Id: 6999, DisplayName: "HP Absorbtion Stone(Upper)", Categories: [top], Price: 120}
+  - {Id: 25000, DisplayName: "SP Absorbtion Stone(Upper)", Categories: [top], Price: 70}
+  - {Id: 1001168, DisplayName: "Defense Stone(Upper)", Categories: [top], Price: 125}
+  - {Id: 1000610, DisplayName: "Rune Knight Stone(Upper)", Categories: [top], Price: 230}
+  - {Id: 1000613, DisplayName: "Warlock Stone(Upper)", Categories: [top], Price: 245}
+  - {Id: 1000616, DisplayName: "Royal Guard Stone(Upper)", Categories: [top], Price: 285}
+  - {Id: 1000666, DisplayName: "Wanderer Minstrel Stone(Upper)", Categories: [top], Price: 215}
+  - {Id: 1000669, DisplayName: "Genetic Stone(Upper)", Categories: [top], Price: 215}
+  - {Id: 1000672, DisplayName: "Sorcerer Stone(Upper)", Categories: [top], Price: 295}
+  - {Id: 1000857, DisplayName: "Archbishop Stone(Upper)", Categories: [top], Price: 180}
+  - {Id: 1000860, DisplayName: "Ranger Stone(Upper)", Categories: [top], Price: 355}
+  - {Id: 1000863, DisplayName: "Shadow Chaser(Upper)", Categories: [top], Price: 230}
+  - {Id: 1000968, DisplayName: "Sura Stone(Upper)", Categories: [top], Price: 280}
+  - {Id: 1000971, DisplayName: "Mechanic Stone(Upper)", Categories: [top], Price: 250}
+  - {Id: 1000974, DisplayName: "Guillotine Cross Stone(Upper)", Categories: [top], Price: 240}
+  - {Id: 1001044, DisplayName: "Star Emperor Stone(Upper)", Categories: [top], Price: 265}
+  - {Id: 1001047, DisplayName: "Rebellion Stone(Upper)", Categories: [top], Price: 295}
+  - {Id: 1001050, DisplayName: "Soul Reaper Stone(Upper)", Categories: [top], Price: 115}
+  - {Id: 1001159, DisplayName: "Kagerou Stone(Upper)", Categories: [top], Price: 205}
+  - {Id: 1001162, DisplayName: "Oboro Stone(Upper)", Categories: [top], Price: 150}
+  - {Id: 1001165, DisplayName: "Summoner Stone(Upper)", Categories: [top], Price: 275}
+  - {Id: 1001327, DisplayName: "Super Novice Stone(Upper)", Categories: [top], Price: 260}
+  - {Id: 6636, DisplayName: "Strength Stone(Upper)", Categories: [top], Price: 5}
+  - {Id: 6637, DisplayName: "Intelligence Stone(Upper)", Categories: [top], Price: 5}
+  - {Id: 6638, DisplayName: "Agility Stone(Upper)", Categories: [top], Price: 5}
+  - {Id: 6639, DisplayName: "Dexterity Stone(Upper)", Categories: [top], Price: 5}
+  - {Id: 6640, DisplayName: "Health Stone(Upper)", Categories: [top], Price: 5}
+  - {Id: 6641, DisplayName: "Lucky Stone(Upper)", Categories: [top], Price: 5}
+  - {Id: 25207, DisplayName: "Enhanced SP Absorbtion Stone(Upper)", Categories: [top], Price: 70}
+  - {Id: 25210, DisplayName: "Enhanced HP Absorbtion Stone(Upper)", Categories: [top], Price: 120}
+  - {Id: 1001939, DisplayName: "Rune Knight Stone II(Upper)", Categories: [top], Price: 310}
+  - {Id: 1001942, DisplayName: "Wanderer Minstrel Stone II(Upper)", Categories: [top], Price: 320}
+  - {Id: 1001945, DisplayName: "Summoner Stone II(Upper)", Categories: [top], Price: 210}
+  - {Id: 1002096, DisplayName: "Guillotine Cross Stone II(Upper)", Categories: [top], Price: 240}
+  - {Id: 1002100, DisplayName: "Sura Stone II(Upper)", Categories: [top], Price: 280}
+  - {Id: 1002104, DisplayName: "Soul Reaper Stone II(Upper)", Categories: [top], Price: 225}
+  - {Id: 1002255, DisplayName: "Greed Stone (Upper)", Categories: [top], Price: 70}
+  - {Id: 1002273, DisplayName: "Archbishop Stone II(Upper)", Categories: [top], Price: 195}
+  - {Id: 1002277, DisplayName: "Shadow Chaser Stone II(Upper)", Categories: [top], Price: 225}
+  - {Id: 1002281, DisplayName: "Super Novice Stone II(Upper)", Categories: [top], Price: 270}
+  - {Id: 1002396, DisplayName: "Hit Physical Stone (Upper)", Categories: [top], Price: 35}
+  - {Id: 1002408, DisplayName: "Warlock Stone II (Upper)", Categories: [top], Price: 245}
+  - {Id: 1002411, DisplayName: "Genetic Stone II (Upper)", Categories: [top], Price: 210}
+  - {Id: 1002414, DisplayName: "Star Emperor Stone II (Upper)", Categories: [top], Price: 295}
+  - {Id: 1002784, DisplayName: "Ragnarok Festa Stone POW (Upper)", Categories: [top], Price: 160}
+  - {Id: 1002785, DisplayName: "Ragnarok Festa Stone WIS (Upper)", Categories: [top], Price: 205}
+  - {Id: 1002786, DisplayName: "Ragnarok Festa Stone STA (Upper)", Categories: [top], Price: 205}
+  - {Id: 1002787, DisplayName: "Ragnarok Festa Stone SPL (Upper)", Categories: [top], Price: 160}
+  - {Id: 1002788, DisplayName: "Ragnarok Festa Stone CON (Upper)", Categories: [top], Price: 160}
+  - {Id: 1002789, DisplayName: "Ragnarok Festa Stone CRT (Upper)", Categories: [top], Price: 175}
+  - {Id: 1002790, DisplayName: "Ragnarok Festa Stone Supreme (Upper)", Categories: [top], Price: 395}
+  - {Id: 1000529, DisplayName: "Magic Power Stone(Mid)", Categories: [middle], Price: 15}
+  - {Id: 1000378, DisplayName: "Melee Stone(Mid)", Categories: [middle], Price: 15}
+  - {Id: 1000298, DisplayName: "Lord Knight Stone II(Mid)", Categories: [middle], Price: 100}
+  - {Id: 1000302, DisplayName: "Creator Stone II(Mid)", Categories: [middle], Price: 110}
+  - {Id: 1000306, DisplayName: "Clown Gypsy Stone II(Mid)", Categories: [middle], Price: 65}
+  - {Id: 1000215, DisplayName: "High Wizard Stone II(Mid)", Categories: [middle], Price: 65}
+  - {Id: 1000219, DisplayName: "Paladin Stone II(Mid)", Categories: [middle], Price: 100}
+  - {Id: 1000223, DisplayName: "Assassin Cross Stone II(Mid)", Categories: [middle], Price: 100}
+  - {Id: 1000009, DisplayName: "Sniper Stone II(Mid)", Categories: [middle], Price: 30}
+  - {Id: 1000013, DisplayName: "Whitesmith Stone II(Mid)", Categories: [middle], Price: 85}
+  - {Id: 1000017, DisplayName: "High Priest Stone II(Mid)", Categories: [middle], Price: 45}
+  - {Id: 25844, DisplayName: "Soul Linker Stone(Mid)", Categories: [middle], Price: 100}
+  - {Id: 25847, DisplayName: "Star Gladiator Stone(Mid)", Categories: [middle], Price: 145}
+  - {Id: 25851, DisplayName: "Ninja Stone(Mid)", Categories: [middle], Price: 60}
+  - {Id: 25856, DisplayName: "Gunslinger Stone(Mid)", Categories: [middle], Price: 60}
+  - {Id: 25860, DisplayName: "Doram Stone(Mid)", Categories: [middle], Price: 100}
+  - {Id: 25799, DisplayName: "Champion Stone II(Mid)", Categories: [middle], Price: 85}
+  - {Id: 25803, DisplayName: "Professor Stone II(Mid)", Categories: [middle], Price: 135}
+  - {Id: 25807, DisplayName: "Stalker Stone II(Mid)", Categories: [middle], Price: 85}
+  - {Id: 25707, DisplayName: "High Priest Stone(Mid)", Categories: [middle], Price: 115}
+  - {Id: 25711, DisplayName: "Paladin Stone(Mid)", Categories: [middle], Price: 30}
+  - {Id: 25715, DisplayName: "Assassin Cross Stone(Mid)", Categories: [middle], Price: 45}
+  - {Id: 25491, DisplayName: "Stalker Stone(Mid)", Categories: [middle], Price: 45}
+  - {Id: 25495, DisplayName: "Whitesmith Stone(Mid)", Categories: [middle], Price: 55}
+  - {Id: 25499, DisplayName: "Clown Gypsy Stone(Mid)", Categories: [middle], Price: 165}
+  - {Id: 25446, DisplayName: "Lord Knight Stone(Mid)", Categories: [middle], Price: 85}
+  - {Id: 25451, DisplayName: "Creator Stone(Mid)", Categories: [middle], Price: 115}
+  - {Id: 25454, DisplayName: "High Wizard Stone(Mid)", Categories: [middle], Price: 100}
+  - {Id: 25410, DisplayName: "Champion Stone(Mid)", Categories: [middle], Price: 45}
+  - {Id: 25414, DisplayName: "Sniper Stone(Mid)", Categories: [middle], Price: 110}
+  - {Id: 25418, DisplayName: "Professor Stone(Mid)", Categories: [middle], Price: 100}
+  - {Id: 25173, DisplayName: "Variable Cast Stone(Mid)", Categories: [middle], Price: 65}
+  - {Id: 25175, DisplayName: "Lex Aeterna Stone(Mid)", Categories: [middle], Price: 70}
+  - {Id: 25141, DisplayName: "Exp Stone(Mid)", Categories: [middle], Price: 25}
+  - {Id: 25060, DisplayName: "Critical Stone(Mid)", Categories: [middle], Price: 30}
+  - {Id: 25061, DisplayName: "Range Stone(Mid)", Categories: [middle], Price: 15}
+  - {Id: 25070, DisplayName: "Reload Stone(Mid)", Categories: [middle], Price: 15}
+  - {Id: 1001169, DisplayName: "Defense Stone(Mid)", Categories: [middle], Price: 40}
+  - {Id: 1000611, DisplayName: "Rune Knight Stone(Mid)", Categories: [middle], Price: 290}
+  - {Id: 1000614, DisplayName: "Warlock Stone(Mid)", Categories: [middle], Price: 285}
+  - {Id: 1000617, DisplayName: "Royal Guard Stone(Mid)", Categories: [middle], Price: 235}
+  - {Id: 1000667, DisplayName: "Wanderer Minstrel Stone(Mid)", Categories: [middle], Price: 245}
+  - {Id: 1000670, DisplayName: "Genetic Stone(Middle)", Categories: [middle], Price: 265}
+  - {Id: 1000673, DisplayName: "Sorcerer Stone(Mid)", Categories: [middle], Price: 265}
+  - {Id: 1000858, DisplayName: "Archbishop Stone(Mid)", Categories: [middle], Price: 275}
+  - {Id: 1000861, DisplayName: "Ranger Stone(Mid)", Categories: [middle], Price: 250}
+  - {Id: 1000864, DisplayName: "Shadow Chaser(Mid)", Categories: [middle], Price: 250}
+  - {Id: 1000969, DisplayName: "Sura Stone(Mid)", Categories: [middle], Price: 255}
+  - {Id: 1000972, DisplayName: "Mechanic Stone(Mid)", Categories: [middle], Price: 250}
+  - {Id: 1000975, DisplayName: "Guillotine Cross Stone(Mid)", Categories: [middle], Price: 245}
+  - {Id: 1001045, DisplayName: "Star Emperor Stone(Mid)", Categories: [middle], Price: 175}
+  - {Id: 1001048, DisplayName: "Rebellion Stone(Mid)", Categories: [middle], Price: 175}
+  - {Id: 1001051, DisplayName: "Soul Reaper Stone(Mid)", Categories: [middle], Price: 165}
+  - {Id: 1001160, DisplayName: "Kagerou Stone(Mid)", Categories: [middle], Price: 205}
+  - {Id: 1001163, DisplayName: "Oboro Stone(Mid)", Categories: [middle], Price: 195}
+  - {Id: 1001166, DisplayName: "Summoner Stone(Mid)", Categories: [middle], Price: 180}
+  - {Id: 1001328, DisplayName: "Super Novice Stone(Mid)", Categories: [middle], Price: 230}
+  - {Id: 6642, DisplayName: "Attack Stone(Mid)", Categories: [middle], Price: 10}
+  - {Id: 6643, DisplayName: "MATK Stone(Mid)", Categories: [middle], Price: 15}
+  - {Id: 25001, DisplayName: "Defense Stone(Mid)", Categories: [middle], Price: 20}
+  - {Id: 25002, DisplayName: "LUK Convert Stone(Mid)", Categories: [middle], Price: 10}
+  - {Id: 25003, DisplayName: "STR Convert Stone(Mid)", Categories: [middle], Price: 10}
+  - {Id: 25004, DisplayName: "AGI Convert Stone(Mid)", Categories: [middle], Price: 10}
+  - {Id: 25005, DisplayName: "INT Convert Stone(Mid)", Categories: [middle], Price: 10}
+  - {Id: 25006, DisplayName: "VIT Convert Stone(Mid)", Categories: [middle], Price: 10}
+  - {Id: 25007, DisplayName: "DEX Convert Stone(Mid)", Categories: [middle], Price: 10}
+  - {Id: 1001940, DisplayName: "Rune Knight Stone II(Mid)", Categories: [middle], Price: 300}
+  - {Id: 1001943, DisplayName: "Wanderer Minstrel Stone II(Mid)", Categories: [middle], Price: 230}
+  - {Id: 1001946, DisplayName: "Summoner Stone II(Mid)", Categories: [middle], Price: 220}
+  - {Id: 1002097, DisplayName: "Guillotine Cross Stone II(Mid)", Categories: [middle], Price: 285}
+  - {Id: 1002101, DisplayName: "Sura Stone II(Mid)", Categories: [middle], Price: 265}
+  - {Id: 1002105, DisplayName: "Soul Reaper Stone II(Mid)", Categories: [middle], Price: 215}
+  - {Id: 1002256, DisplayName: "Greed Stone (Middle)", Categories: [middle], Price: 70}
+  - {Id: 1002274, DisplayName: "Archbishop Stone II(Mid)", Categories: [middle], Price: 280}
+  - {Id: 1002278, DisplayName: "Shadow Chaser Stone II(Mid)", Categories: [middle], Price: 250}
+  - {Id: 1002282, DisplayName: "Super Novice Stone II(Mid)", Categories: [middle], Price: 280}
+  - {Id: 1002397, DisplayName: "Hit Physical Stone (Middle)", Categories: [middle], Price: 15}
+  - {Id: 1002409, DisplayName: "Warlock Stone II (Middle)", Categories: [middle], Price: 285}
+  - {Id: 1002412, DisplayName: "Genetic Stone II (Middle)", Categories: [middle], Price: 210}
+  - {Id: 1002415, DisplayName: "Star Emperor Stone II (Middle)", Categories: [middle], Price: 280}
+  - {Id: 1000530, DisplayName: "Magic Power Stone(Lower)", Categories: [lower], Price: 15}
+  - {Id: 1000376, DisplayName: "Ranged Stone(Lower)", Categories: [lower], Price: 15}
+  - {Id: 1000379, DisplayName: "Melee Stone(Lower)", Categories: [lower], Price: 15}
+  - {Id: 1000299, DisplayName: "Lord Knight Stone II(Lower)", Categories: [lower], Price: 100}
+  - {Id: 1000303, DisplayName: "Creator Stone II(Lower)", Categories: [lower], Price: 30}
+  - {Id: 1000307, DisplayName: "Clown Gypsy Stone II(Lower)", Categories: [lower], Price: 145}
+  - {Id: 1000216, DisplayName: "High Wizard Stone II(Lower)", Categories: [lower], Price: 25}
+  - {Id: 1000220, DisplayName: "Paladin Stone II(Lower)", Categories: [lower], Price: 45}
+  - {Id: 1000224, DisplayName: "Assassin Cross Stone II(Lower)", Categories: [lower], Price: 65}
+  - {Id: 1000010, DisplayName: "Sniper Stone II(Lower)", Categories: [lower], Price: 25}
+  - {Id: 1000014, DisplayName: "Whitesmith Stone II(Lower)", Categories: [lower], Price: 45}
+  - {Id: 1000018, DisplayName: "High Priest Stone II(Lower)", Categories: [lower], Price: 55}
+  - {Id: 25845, DisplayName: "Soul Linker Stone(Lower)", Categories: [lower], Price: 115}
+  - {Id: 25848, DisplayName: "Star Gladiator Stone(Lower)", Categories: [lower], Price: 80}
+  - {Id: 25852, DisplayName: "Ninja Stone(Lower)", Categories: [lower], Price: 135}
+  - {Id: 25857, DisplayName: "Gunslinger Stone(Lower)", Categories: [lower], Price: 30}
+  - {Id: 25861, DisplayName: "Doram Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25798, DisplayName: "Champion Stone II(Lower)", Categories: [lower], Price: 25}
+  - {Id: 25802, DisplayName: "Professor Stone II(Lower)", Categories: [lower], Price: 25}
+  - {Id: 25806, DisplayName: "Stalker Stone II(Lower)", Categories: [lower], Price: 30}
+  - {Id: 25708, DisplayName: "High Priest Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25712, DisplayName: "Paladin Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25716, DisplayName: "Assassin Cross Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25492, DisplayName: "Stalker Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25496, DisplayName: "Whitesmith Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25500, DisplayName: "Clown Gypsy Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25447, DisplayName: "Lord Knight Stone(Lower)", Categories: [lower], Price: 80}
+  - {Id: 25452, DisplayName: "Creator Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25455, DisplayName: "High Wizard Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25411, DisplayName: "Champion Stone(Lower)", Categories: [lower], Price: 100}
+  - {Id: 25415, DisplayName: "Sniper Stone(Lower)", Categories: [lower], Price: 60}
+  - {Id: 25419, DisplayName: "Professor Stone(Lower)", Categories: [lower], Price: 135}
+  - {Id: 25305, DisplayName: "Critical Stone(Lower)", Categories: [lower], Price: 30}
+  - {Id: 25174, DisplayName: "Variable Cast Stone(Lower)", Categories: [lower], Price: 65}
+  - {Id: 25071, DisplayName: "Reload Stone(Lower)", Categories: [lower], Price: 15}
+  - {Id: 25015, DisplayName: "Experience Stone(Lower)", Categories: [lower], Price: 25}
+  - {Id: 1001170, DisplayName: "Defense Stone(Lower)", Categories: [lower], Price: 40}
+  - {Id: 1000612, DisplayName: "Rune Knight Stone(Lower)", Categories: [lower], Price: 305}
+  - {Id: 1000615, DisplayName: "Warlock Stone(Lower)", Categories: [lower], Price: 250}
+  - {Id: 1000618, DisplayName: "Royal Guard Stone(Lower)", Categories: [lower], Price: 300}
+  - {Id: 1000668, DisplayName: "Wanderer Minstrel Stone(Lower)", Categories: [lower], Price: 285}
+  - {Id: 1000671, DisplayName: "Genetic Stone(Lower)", Categories: [lower], Price: 260}
+  - {Id: 1000674, DisplayName: "Sorcerer Stone(Lower)", Categories: [lower], Price: 245}
+  - {Id: 1000859, DisplayName: "Archbishop Stone(Lower)", Categories: [lower], Price: 195}
+  - {Id: 1000862, DisplayName: "Ranger Stone(Lower)", Categories: [lower], Price: 145}
+  - {Id: 1000865, DisplayName: "Shadow Chaser(Lower)", Categories: [lower], Price: 140}
+  - {Id: 1000970, DisplayName: "Sura Stone(Lower)", Categories: [lower], Price: 245}
+  - {Id: 1000973, DisplayName: "Mechanic Stone(Lower)", Categories: [lower], Price: 240}
+  - {Id: 1000976, DisplayName: "Guillotine Cross Stone(Lower)", Categories: [lower], Price: 195}
+  - {Id: 1001046, DisplayName: "Star Emperor Stone(Lower)", Categories: [lower], Price: 335}
+  - {Id: 1001049, DisplayName: "Rebellion Stone(Lower)", Categories: [lower], Price: 345}
+  - {Id: 1001052, DisplayName: "Soul Reaper Stone(Lower)", Categories: [lower], Price: 195}
+  - {Id: 1001161, DisplayName: "Kagerou Stone(Lower)", Categories: [lower], Price: 255}
+  - {Id: 1001164, DisplayName: "Oboro Stone(Lower)", Categories: [lower], Price: 225}
+  - {Id: 1001167, DisplayName: "Summoner Stone(Lower)", Categories: [lower], Price: 150}
+  - {Id: 1001329, DisplayName: "Super Novice Stone(Lower)", Categories: [lower], Price: 85}
+  - {Id: 6644, DisplayName: "Hit Stone(Lower)", Categories: [lower], Price: 5}
+  - {Id: 6645, DisplayName: "Evasion Stone(Lower)", Categories: [lower], Price: 5}
+  - {Id: 25008, DisplayName: "VIT Convert Stone(Lower)", Categories: [lower], Price: 25}
+  - {Id: 25009, DisplayName: "AGI Convert Stone(Lower)", Categories: [lower], Price: 25}
+  - {Id: 25010, DisplayName: "DEX Convert Stone(Lower)", Categories: [lower], Price: 25}
+  - {Id: 25011, DisplayName: "LUK Convert Stone(Lower)", Categories: [lower], Price: 25}
+  - {Id: 25012, DisplayName: "STR Convert Stone(Lower)", Categories: [lower], Price: 25}
+  - {Id: 25013, DisplayName: "INT Convert Stone(Lower)", Categories: [lower], Price: 25}
+  - {Id: 25014, DisplayName: "Mabang Stone(Lower)", Categories: [lower], Price: 45}
+  - {Id: 25016, DisplayName: "Attack Stone(Lower)", Categories: [lower], Price: 15}
+  - {Id: 25017, DisplayName: "MATK Stone(Lower)", Categories: [lower], Price: 15}
+  - {Id: 25062, DisplayName: "Greed Stone(Lower)", Categories: [lower], Price: 70}
+  - {Id: 25063, DisplayName: "Stamina Stone(Lower)", Categories: [lower], Price: 20}
+  - {Id: 25064, DisplayName: "Magic Stone(Lower)", Categories: [lower], Price: 35}
+  - {Id: 25065, DisplayName: "Detox Stone(Lower)", Categories: [lower], Price: 40}
+  - {Id: 25072, DisplayName: "Kyrie Stone(Lower)", Categories: [lower], Price: 10}
+  - {Id: 25139, DisplayName: "Item Appraisal Stone(Lower)", Categories: [lower], Price: 40}
+  - {Id: 25140, DisplayName: "Resurrection Stone(Lower)", Categories: [lower], Price: 20}
+  - {Id: 25227, DisplayName: "Heal Stone(Lower)", Categories: [lower], Price: 5}
+  - {Id: 25228, DisplayName: "Teleport Stone(Lower)", Categories: [lower], Price: 20}
+  - {Id: 25229, DisplayName: "Steal Stone(Lower)", Categories: [lower], Price: 5}
+  - {Id: 1001941, DisplayName: "Rune Knight Stone II(Lower)", Categories: [lower], Price: 215}
+  - {Id: 1001944, DisplayName: "Wanderer Minstrel Stone II(Lower)", Categories: [lower], Price: 180}
+  - {Id: 1001947, DisplayName: "Summoner Stone II(Lower)", Categories: [lower], Price: 180}
+  - {Id: 1002098, DisplayName: "Guillotine Cross Stone II(Lower)", Categories: [lower], Price: 110}
+  - {Id: 1002102, DisplayName: "Sura Stone II(Lower)", Categories: [lower], Price: 405}
+  - {Id: 1002106, DisplayName: "Soul Reaper Stone II(Lower)", Categories: [lower], Price: 175}
+  - {Id: 1002275, DisplayName: "Archbishop Stone II(Lower)", Categories: [lower], Price: 270}
+  - {Id: 1002279, DisplayName: "Shadow Chaser Stone II(Lower)", Categories: [lower], Price: 250}
+  - {Id: 1002283, DisplayName: "Super Novice Stone II(Lower)", Categories: [lower], Price: 255}
+  - {Id: 1002398, DisplayName: "Hit Physical Stone (Lower)", Categories: [lower], Price: 15}
+  - {Id: 1002410, DisplayName: "Warlock Stone II (Lower)", Categories: [lower], Price: 250}
+  - {Id: 1002413, DisplayName: "Genetic Stone II (Lower)", Categories: [lower], Price: 285}
+  - {Id: 1002416, DisplayName: "Star Emperor Stone II (Lower)", Categories: [lower], Price: 335}
+  - {Id: 1000296, DisplayName: "Rune Knight Stone II(Garment)", Categories: [garment], Price: 325}
+  - {Id: 1000300, DisplayName: "Genetic Stone II(Garment)", Categories: [garment], Price: 310}
+  - {Id: 1000304, DisplayName: "Wanderer Minstrel Stone II(Garment)", Categories: [garment], Price: 310}
+  - {Id: 1000213, DisplayName: "Warlock Stone II(Garment)", Categories: [garment], Price: 250}
+  - {Id: 1000217, DisplayName: "Royal Guard Stone II(Garment)", Categories: [garment], Price: 250}
+  - {Id: 1000221, DisplayName: "Guillotine Cross Stone II(Garment)", Categories: [garment], Price: 245}
+  - {Id: 1000011, DisplayName: "Ranger Stone II(Garment", Categories: [garment], Price: 400}
+  - {Id: 1000015, DisplayName: "Mechanic Stone II(Garment)", Categories: [garment], Price: 305}
+  - {Id: 1000019, DisplayName: "Archbishop Stone II(Garment)", Categories: [garment], Price: 230}
+  - {Id: 25842, DisplayName: "Soul Reaper Stone(Garment)", Categories: [garment], Price: 305}
+  - {Id: 25849, DisplayName: "Star Emperor Stone(Garment)", Categories: [garment], Price: 395}
+  - {Id: 25853, DisplayName: "Kagerou Stone(Garment)", Categories: [garment], Price: 340}
+  - {Id: 25854, DisplayName: "Oboro Stone(Garment)", Categories: [garment], Price: 255}
+  - {Id: 25858, DisplayName: "Rebellion Stone(Garment)", Categories: [garment], Price: 350}
+  - {Id: 25862, DisplayName: "Doram Stone(Garment)", Categories: [garment], Price: 285}
+  - {Id: 25797, DisplayName: "Sura Stone II(Garment)", Categories: [garment], Price: 265}
+  - {Id: 25801, DisplayName: "Sorcerer Stone II(Garment)", Categories: [garment], Price: 295}
+  - {Id: 25805, DisplayName: "Shadow Chaser Stone II(Garment)", Categories: [garment], Price: 230}
+  - {Id: 25709, DisplayName: "Archbishop Stone(Garment)", Categories: [garment], Price: 275}
+  - {Id: 25713, DisplayName: "Royal Guard Stone(Garment)", Categories: [garment], Price: 245}
+  - {Id: 25717, DisplayName: "Guillotine Cross Stone(Garment)", Categories: [garment], Price: 275}
+  - {Id: 25493, DisplayName: "Shadow Chaser Stone(Garment)", Categories: [garment], Price: 230}
+  - {Id: 25497, DisplayName: "Mechanic Stone(Garment)", Categories: [garment], Price: 260}
+  - {Id: 25501, DisplayName: "Wanderer Minstrel Stone(Garment)", Categories: [garment], Price: 275}
+  - {Id: 25448, DisplayName: "Rune Knight Stone(Garment)", Categories: [garment], Price: 295}
+  - {Id: 25449, DisplayName: "Genetic Stone(Garment)", Categories: [garment], Price: 280}
+  - {Id: 25456, DisplayName: "Warlock Stone(Garment)", Categories: [garment], Price: 240}
+  - {Id: 25412, DisplayName: "Sura Stone(Garment)", Categories: [garment], Price: 260}
+  - {Id: 25416, DisplayName: "Ranger Stone(Garment)", Categories: [garment], Price: 215}
+  - {Id: 25420, DisplayName: "Sorcerer Stone(Garment)", Categories: [garment], Price: 375}
+  - {Id: 25302, DisplayName: "Double Attack Stone(Garment)", Categories: [garment], Price: 15}
+  - {Id: 25303, DisplayName: "Critical Stone(Garment)", Categories: [garment], Price: 145}
+  - {Id: 25306, DisplayName: "Variable Casting Stone(Garment)", Categories: [garment], Price: 85}
+  - {Id: 25170, DisplayName: "Minor Cast Stone(Garment)", Categories: [garment], Price: 85}
+  - {Id: 25067, DisplayName: "Cast Stone(Garment)", Categories: [garment], Price: 110}
+  - {Id: 6963, DisplayName: "HP Absorbtion Stone(Garment)", Categories: [garment], Price: 70}
+  - {Id: 6964, DisplayName: "SP Restoration Stone(Garment)", Categories: [garment], Price: 70}
+  - {Id: 6908, DisplayName: "ASPD Stone(Garment)", Categories: [garment], Price: 70}
+  - {Id: 1001326, DisplayName: "Super Novice Stone(Garment)", Categories: [garment], Price: 370}
+  - {Id: 1000922, DisplayName: "Special Magic Attack Stone(Garment)", Categories: [garment], Price: 150}
+  - {Id: 1001053, DisplayName: "Melee Physical Attack Stone(Garment)", Categories: [garment], Price: 150}
+  - {Id: 1001054, DisplayName: "Range Physical Attack Stone(Garment)", Categories: [garment], Price: 150}
+  - {Id: 1001171, DisplayName: "Resist Defense Stone(Garment)", Categories: [garment], Price: 175}
+  - {Id: 25208, DisplayName: "Enhanced SP Absorbtion Stone(Garment)", Categories: [garment], Price: 70}
+  - {Id: 25209, DisplayName: "Enhanced HP Absorbtion Stone(Garment)", Categories: [garment], Price: 120}
+  - {Id: 1001322, DisplayName: "Shinkiro Stone(Garment)", Categories: [garment], Price: 260}
+  - {Id: 1001323, DisplayName: "Shiranui Stone(Garment)", Categories: [garment], Price: 310}
+  - {Id: 1001324, DisplayName: "Shadow Cross Stone(Garment)", Categories: [garment], Price: 290}
+  - {Id: 1001325, DisplayName: "Cardinal Stone(Garment)", Categories: [garment], Price: 300}
+  - {Id: 1001419, DisplayName: "Sky Emperor Stone(Garment)", Categories: [garment], Price: 295}
+  - {Id: 1001420, DisplayName: "Elemental Master Stone(Garment)", Categories: [garment], Price: 320}
+  - {Id: 1001421, DisplayName: "Meister Stone(Garment)", Categories: [garment], Price: 270}
+  - {Id: 1001487, DisplayName: "Abyss Chaser Stone(Garment)", Categories: [garment], Price: 330}
+  - {Id: 1001488, DisplayName: "Troubadour & Trouvere Stone(Garment)", Categories: [garment], Price: 330}
+  - {Id: 1001489, DisplayName: "Hyper Novice Stone(Garment)", Categories: [garment], Price: 330}
+  - {Id: 1001603, DisplayName: "Imperial Guard Stone(Garment)", Categories: [garment], Price: 320}
+  - {Id: 1001604, DisplayName: "Dragon Knight Stone(Garment)", Categories: [garment], Price: 275}
+  - {Id: 1001605, DisplayName: "Night Watch Stone(Garment)", Categories: [garment], Price: 290}
+  - {Id: 1001737, DisplayName: "Biolo Stone(Garment)", Categories: [garment], Price: 370}
+  - {Id: 1001738, DisplayName: "Inquisitor Stone(Garment)", Categories: [garment], Price: 270}
+  - {Id: 1001739, DisplayName: "Spirit Handler Stone(Garment)", Categories: [garment], Price: 275}
+  - {Id: 1001787, DisplayName: "Arch Mage Stone(Garment)", Categories: [garment], Price: 250}
+  - {Id: 1001788, DisplayName: "Windhawk Stone(Garment)", Categories: [garment], Price: 285}
+  - {Id: 1001789, DisplayName: "Soul Ascetic Stone(Garment)", Categories: [garment], Price: 375}
+  - {Id: 1001938, DisplayName: "Critical Rate Stone(Garment)", Categories: [garment], Price: 170}
+  - {Id: 1001948, DisplayName: "Dragon Knight Stone II(Garment)", Categories: [garment], Price: 325}
+  - {Id: 1001949, DisplayName: "Troubadour & Trouvere Stone II(Garment)", Categories: [garment], Price: 265}
+  - {Id: 1001950, DisplayName: "Spirit Handler Stone II(Garment)", Categories: [garment], Price: 340}
+  - {Id: 1002099, DisplayName: "Shadow Cross Stone II(Garment)", Categories: [garment], Price: 300}
+  - {Id: 1002103, DisplayName: "Inquisitor Stone II(Garment)", Categories: [garment], Price: 230}
+  - {Id: 1002107, DisplayName: "Soul Ascetic Stone II(Garment)", Categories: [garment], Price: 325}
+  - {Id: 1002276, DisplayName: "Cardinal Stone II(Garment)", Categories: [garment], Price: 375}
+  - {Id: 1002280, DisplayName: "Abyss Chaser Stone II(Garment)", Categories: [garment], Price: 310}
+  - {Id: 1002284, DisplayName: "Hyper Novice Stone II(Garment)", Categories: [garment], Price: 285}
+  - {Id: 1002399, DisplayName: "Hit Physical Stone (Garment)", Categories: [garment], Price: 100}
+  - {Id: 1002404, DisplayName: "Experience Stone (Garment)", Categories: [garment], Price: 70}
+  - {Id: 1002405, DisplayName: "Arch Mage Stone II (Garment)", Categories: [garment], Price: 480}
+  - {Id: 1002406, DisplayName: "Biolo Stone II (Garment)", Categories: [garment], Price: 315}
+  - {Id: 1002407, DisplayName: "Sky Emperor Stone II (Garment)", Categories: [garment], Price: 345}
+  - {Id: 1002777, DisplayName: "Purified Stone Garment(STR)", Categories: [garment], Price: 150}
+  - {Id: 1002778, DisplayName: "Purified Stone Garment(AGI)", Categories: [garment], Price: 160}
+  - {Id: 1002779, DisplayName: "Purified Stone Garment(LUK)", Categories: [garment], Price: 175}
+  - {Id: 1002780, DisplayName: "Purified Stone Garment(DEX)", Categories: [garment], Price: 140}
+  - {Id: 1002781, DisplayName: "Purified Stone Garment(INT)", Categories: [garment], Price: 150}
+  - {Id: 1002782, DisplayName: "Purified Stone Garment(VIT)", Categories: [garment], Price: 150}
+  - {Id: 1002783, DisplayName: "Purified Stone Garment(Ultimate)", Categories: [garment], Price: 290}
+  - {Id: 1000521, DisplayName: "Minor Casting Stone(Dual)", Categories: [dual], Price: 100}
+  - {Id: 1000523, DisplayName: "Ranged Stone(Dual)", Categories: [dual], Price: 40}
+  - {Id: 1000525, DisplayName: "SP Absorbtion Stone(Dual)", Categories: [dual], Price: 70}
+  - {Id: 1000520, DisplayName: "ASPD Stone(Dual)", Categories: [dual], Price: 70}
+  - {Id: 1000522, DisplayName: "Variable Casting Stone(Dual)", Categories: [dual], Price: 135}
+  - {Id: 1000524, DisplayName: "Melee Stone(Dual)", Categories: [dual], Price: 40}
+  - {Id: 1000526, DisplayName: "HP Absorbtion Stone(Dual)", Categories: [dual], Price: 70}
+  - {Id: 1000527, DisplayName: "Magic Power Stone(Dual)", Categories: [dual], Price: 40}
+  - {Id: 1000675, DisplayName: "Reload Stone(Dual)", Categories: [dual], Price: 45}
+  - {Id: 1000676, DisplayName: "Creative Stone(Dual)", Categories: [dual], Price: 70}
+  - {Id: 1000855, DisplayName: "Critical Stone(Dual)", Categories: [dual], Price: 120}
+  - {Id: 1000856, DisplayName: "Concentration Stone(Dual)", Categories: [dual], Price: 70}
+  - {Id: 1000921, DisplayName: "Spell Stone(Dual)", Categories: [dual], Price: 70}
+  - {Id: 1001055, DisplayName: "Power Stone(Dual)", Categories: [dual], Price: 70}
+  - {Id: 1001172, DisplayName: "Stamina Wisdom Stone(Dual)", Categories: [dual], Price: 120}
+  - {Id: 1002395, DisplayName: "Hit Physical Stone (Dual)", Categories: [dual], Price: 85}
+  - {Id: 25226, DisplayName: "Water Field Effect(Lower)", Categories: [effect], Price: 50}
+  - {Id: 25137, DisplayName: "Green Flare Effect(Lower)", Categories: [effect], Price: 50}
+  - {Id: 25224, DisplayName: "White Body Effect(Mid)", Categories: [effect], Price: 50}
+  - {Id: 25225, DisplayName: "Crimson Wave(Mid)", Categories: [effect], Price: 50}
+  - {Id: 25176, DisplayName: "Blue Aura Effect(Mid)", Categories: [effect], Price: 50}
+  - {Id: 25177, DisplayName: "Shadow Effect(Mid)", Categories: [effect], Price: 50}
+  - {Id: 25178, DisplayName: "Pink Glow Effect(Mid)", Categories: [effect], Price: 50}
+  - {Id: 25136, DisplayName: "Electric Effect(Mid)", Categories: [effect], Price: 50}
+  - {Id: 25138, DisplayName: "Shrink Effect(Mid)", Categories: [effect], Price: 50}
+  - {Id: 25059, DisplayName: "Ghost Effect(Mid)", Categories: [effect], Price: 50}
+  - {Id: 25058, DisplayName: "Twinkle Effect(Upper)", Categories: [effect], Price: 50}
+  - {Id: 25205, DisplayName: "Shrink Effect(Lower)", Categories: [effect], Price: 50}
+  - {Id: 1001069, DisplayName: "Camellia Smoke Effect Stone (Head)", Categories: [effect], Price: 50}
+  - {Id: 1001252, DisplayName: "Rumble Effect Stone (Head)", Categories: [effect], Price: 50}
+  - {Id: 1001615, DisplayName: "Footprint Effect(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1001616, DisplayName: "Tornado Footprints (Garment)", Categories: [effect], Price: 50}
+  - {Id: 1001617, DisplayName: "Purple Star Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1001650, DisplayName: "Yellow Star Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1001651, DisplayName: "Red Star Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1001772, DisplayName: "Puppy Footprint Effect(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1001907, DisplayName: "Dumpling Footprint Effect(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1001908, DisplayName: "Panda Basic Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1001909, DisplayName: "Panda Color Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002108, DisplayName: "Blue Butterfly Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002239, DisplayName: "Toothless Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002240, DisplayName: "Bouncing Toothless Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002285, DisplayName: "Purple Butterfly Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002286, DisplayName: "ROS2025 Commemorative Footprints (Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002294, DisplayName: "Nyar's Blue Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002295, DisplayName: "Nyar's Purple Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002296, DisplayName: "Divine Light Footprint(Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002394, DisplayName: "Yellow Butterfly Footprints (Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002623, DisplayName: "Blue Star Footprints (Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002624, DisplayName: "Sacred Blue Light Footprints (Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002642, DisplayName: "Operation Firebird Footprints (Garment)", Categories: [effect], Price: 50}
+  - {Id: 1002822, DisplayName: "Flower Garden Footprints (Garment)", Categories: [effect], Price: 50}

@@ -1,0 +1,18 @@
+// Navigation and stock load together through native Barter initialization/reload.
+// Close all shop/dialog windows before @reloadbarterdb.
+function	script	F_MalangdoShopBrowse	{
+	.@key$ = getarg(0);
+	if (!msc_ready(.@key$)) return "";
+	.@node$ = "root";
+	while (.@node$ != "") {
+		.@shop$ = msc_shop(.@key$, .@node$);
+		if (.@shop$ != "") return .@shop$;
+		.@menu$ = msc_menu(.@key$, .@node$);
+		if (.@menu$ == "") return "";
+		.@choice = 0;
+		if (!msc_autosingle(.@key$, .@node$))
+			.@choice = select(.@menu$) - 1;
+		.@node$ = msc_child(.@key$, .@node$, .@choice);
+	}
+	return "";
+}
