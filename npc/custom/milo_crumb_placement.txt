@@ -1,6 +1,22 @@
-// Move the existing Cookie Shop NPC; keep its dialogue, appearance and barters.
+// Custom placement and separate Dual/Effect shop sections for the existing Milo NPC.
 -	script	MiloPlacement#offline	-1,{
 OnInit:
 	movenpc "Milo Crumb#stone",112,162,DIR_EAST;
+	end;
+}
+
+function	script	F_MiloDualStoneShop	{
+	mes "[Milo Crumb]";
+	mes "Dual stones! Two things at once. Like two cookies. Dangerous mathematics.";
+	close2;
+	callshop "milo_stone_dual";
+	end;
+}
+
+function	script	F_MiloEffectStoneShop	{
+	mes "[Milo Crumb]";
+	mes "Effect stones! All the sparkle, none of the crumbs. I checked.";
+	close2;
+	callshop "milo_stone_effect";
 	end;
 }

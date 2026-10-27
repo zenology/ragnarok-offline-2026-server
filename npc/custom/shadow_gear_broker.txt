@@ -200,7 +200,7 @@ mal_in01,62,116,0	script	Lemy#offline	4_EP17_BOY_B,{
 	mes "L-Lemy... yes, another brother. Remy minds the gear... Romy tends its shadows... I keep the books dry... rrr...";
 	next;
 	mes "[Lemy]";
-	mes "Spellbooks, Random Mix, Shadow Essence... ten Event Stone Coins apiece. P-please keep the pages out of the moonlit puddles...";
+	mes "Spellbooks, Random Mix, Shadow Essence... each has its price in Event Stone Coins. P-please keep the pages out of the moonlit puddles...";
 	next;
 	if (select("Spellbooks and Essence:Cancel") == 2) close;
 	close2;
