@@ -5,11 +5,22 @@ OnInit:
 	end;
 }
 
+function	script	F_MiloShopEntry	{
+	.@action = callfunc("F_MalangdoShopAction", "milo");
+	if (.@action == 1) return 0;
+	if (.@action == 3) return 1;
+	.@shop$ = callfunc("F_MalangdoShopSearch", "milo");
+	if (.@shop$ == "") return 1;
+	close2;
+	callshop .@shop$;
+	end;
+}
+
 function	script	F_MiloDualStoneShop	{
 	mes "[Milo Crumb]";
 	mes "Dual stones! Two things at once. Like two cookies. Dangerous mathematics.";
 	close2;
-	callshop "milo_stone_dual";
+	callshop msc_shop("milo", "dual");
 	end;
 }
 
@@ -17,6 +28,6 @@ function	script	F_MiloEffectStoneShop	{
 	mes "[Milo Crumb]";
 	mes "Effect stones! All the sparkle, none of the crumbs. I checked.";
 	close2;
-	callshop "milo_stone_effect";
+	callshop msc_shop("milo", "effect");
 	end;
 }

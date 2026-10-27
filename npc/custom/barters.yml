@@ -47,6 +47,4 @@ Header:
   Version: 2
 
 Footer:
-  Imports:
-    - Path: npc/custom/barters/enchantment_materials.yml
-    - Path: npc/custom/barters/milo_stone_sections.yml
+  Imports: []

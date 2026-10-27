@@ -20,6 +20,7 @@
 
 #include "black_market_cashshop.hpp"
 #include "black_market_catalog.hpp"
+#include "malangdo_shop_catalog.hpp"
 #include "silvervine_enchant.hpp"
 #include "silvervine_enchant_upgrade.hpp"
 #include "stripe_fallback.hpp"
@@ -149,6 +150,49 @@ BUILDIN_FUNC(premiumopenstorage) {
 
 BUILDIN_FUNC(bmc_load) {
 	script_pushint(st, bmc::load());
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(msc_ready) {
+	script_pushint(st, msc::ready(script_getstr(st, 2)));
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(msc_menu) {
+	script_pushstrcopy(st, msc::menu(script_getstr(st, 2), script_getstr(st, 3)).c_str());
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(msc_child) {
+	script_pushstrcopy(st, msc::child(script_getstr(st, 2), script_getstr(st, 3), script_getnum64(st, 4)).c_str());
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(msc_shop) {
+	script_pushstrcopy(st, msc::shop(script_getstr(st, 2), script_getstr(st, 3)).c_str());
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(msc_autosingle) {
+	script_pushint(st, msc::autosingle(script_getstr(st, 2), script_getstr(st, 3)));
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(msc_search) {
+	msc::Inventory matches;
+	script_pushint(st, msc::search(script_getstr(st, 2), script_getstr(st, 3), matches));
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(msc_revision) {
+	script_pushint(st, msc::revision(script_getstr(st, 2)));
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(msc_searchprepare) {
+	map_session_data* sd = nullptr;
+	if (!script_rid2sd(sd)) {
+		script_pushstrcopy(st, "");
+		return SCRIPT_CMD_SUCCESS;
+	}
+	script_pushstrcopy(st, msc::search_prepare(script_getstr(st, 2), script_getstr(st, 3),
+		script_getnum64(st, 4), script_getnum64(st, 5), *sd).c_str());
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(msc_shoplimited) {
+	script_pushint(st, msc::shop_limited(script_getstr(st, 2), script_getstr(st, 3)));
 	return SCRIPT_CMD_SUCCESS;
 }
 BUILDIN_FUNC(bmc_ready) {
