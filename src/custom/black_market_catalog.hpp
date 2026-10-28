@@ -437,7 +437,7 @@ inline bool prepare(const Profile& p, Catalog& cat, Inventories& stock) {
 			for (int t = 0; t < 6; ++t) if (row->tiers[t]) {
 				stock["cons" + std::to_string(row->category) + "#T" + std::to_string(t)].emplace_back(row->id, row->tiers[t]);
 				if (row->category == 7) {
-					uint64 price = (static_cast<uint64>(row->tiers[t]) * 120 + 50) / 100;
+					uint64 price = row->tiers[t];
 					if (price > INT32_MAX) { ShowError("Black Market catalog %s: Id %u Category 7 courier price overflow.\n", p.path().c_str(), row->id); return false; }
 					stock["rookup#T" + std::to_string(t)].emplace_back(row->id, static_cast<uint32>(price));
 				}

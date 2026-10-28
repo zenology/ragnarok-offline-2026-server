@@ -439,7 +439,7 @@ def catalog_inventory(key: str, directory: Path = CATALOG_DIR,
 
 
 def courier_price(price: int) -> int:
-    result = (price * 120 + 50) // 100
+    result = price
     if not 0 < result <= 2147483647:
         raise CatalogError("courier price overflow")
     return result
