@@ -1,0 +1,116 @@
+# Divine Pride iRO / English alignment, 2026-10-28.
+# Existing pair keys replace scripts; Clear removes only the approved extra set.
+Header:
+  Type: COMBO_DB
+  Version: 1
+
+Body:
+  - Combos:
+      - Combo: [Poenetentia_B_Crown, Poenitentia_Catapulta]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bShortAtkRate,15;
+      bonus2 bSkillAtk,"RK_HUNDREDSPEAR",10*(.@r/2);
+      bonus2 bSkillAtk,"DK_MADNESS_CRUSHER",10*(.@r/2);
+  # Visible Planta is 550060 / Poenitentia_Ramus; Ramus is 550061 / Poenitentia_Planta.
+  - Combos:
+      - Combo: [Poenetentia_S_Crown, Poenitentia_Ramus]
+    Script: |
+      bonus bSMatk,10;
+      bonus2 bSkillAtk,"SU_CN_METEOR",12*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"SH_HYUN_ROKS_BREEZE",8*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo: [Poenetentia_S_Crown, Poenitentia_Planta]
+    Script: |
+      bonus bSMatk,10;
+      bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",8*(getequiprefinerycnt(EQI_HAND_R)/2);
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_WHITE_TIGER",8*(getequiprefinerycnt(EQI_HAND_R)/2);
+  - Combos:
+      - Combo: [Poenitentia_Follower_US, Poenetentia_Dilacero]
+      - Combo: [Poenitentia_Follower_US, Poenetentia_Attendo]
+      - Combo: [Poenitentia_Follower_US, Poenetentia_Vatia]
+    Script: |
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus2 bAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+      bonus2 bMagicAddSize,Size_All,10*getequiprefinerycnt(EQI_HAND_R);
+  # Player-approved removal: neither iRO weapon description grants this extra set.
+  - Combos:
+      - Combo: [Poenitentia_Sol, Poenitentia_Jana]
+    Clear: true
+  - Combos:
+      - Combo: [IRO_History_Accessory_490742, Poenitentia_Ramus]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus2 bSkillCooldown,"SH_HYUN_ROKS_BREEZE",-2000;
+         bonus4 bAutoSpellOnSkill,"SH_HYUN_ROK_CANNON","SH_HYUN_ROK_CANNON",7,350;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490744, Poenitentia_Ungula]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus2 bSkillCooldown,"SR_EARTHSHAKER",-1500;
+         bonus2 bSkillCooldown,"SR_RAMPAGEBLASTER",-1500;
+         bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-350;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490750, Poenitentia_Foramen]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus2 bSkillCooldown,"NW_MAGAZINE_FOR_ONE",-200;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490750, Poenitentia_Veloci]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus bPAtk,10;
+         bonus bFixedCast,-1000;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490752, Poenitentia_Manus]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus2 bSkillCooldown,"SHC_IMPACT_CRATER",-1000;
+         bonus4 bAutoSpellOnSkill,"GC_ROLLINGCUTTER","SHC_IMPACT_CRATER",5,400;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490754, Poenitentia_Gladius]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus2 bSkillCooldown,"IG_CROSS_RAIN",-2000;
+         bonus4 bAutoSpellOnSkill,"LG_RAYOFGENESIS","IG_CROSS_RAIN",10,300;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490768, Poenetentia_Dilacero]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus bPAtk,10;
+         bonus4 bAutoSpellOnSkill,"ABC_DEFT_STAB","ABC_DEFT_STAB",10,400;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490770, Poenitentia_Clava]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus bNoMadoFuel;
+         bonus2 bVariableCastrate,"NC_ARMSCANNON",-100;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490770, Poenitentia_Ascia]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus bPAtk,10;
+         bonus2 bSkillCooldown,"MT_AXE_STOMP",-500;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490772, Poenitentia_Nervus]
+    Script: |
+      if (getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus4 bAutoSpellOnSkill,"RA_AIMEDBOLT","WH_CRESCIVE_BOLT",5,400;
+      }
+  - Combos:
+      - Combo: [IRO_History_Accessory_490774, Poenitentia_Jana]
+    Script: |
+      if (getequipid(EQI_HAND_R)==510057 && getequiprefinerycnt(EQI_HAND_R)>=10) {
+         bonus2 bSkillCooldown,"SS_RAIDENPOU",-500;
+         bonus4 bAutoSpellOnSkill,"SS_KINRYUUHOU","SS_RAIDENPOU",10,300;
+      }

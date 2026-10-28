@@ -157,3 +157,4 @@ Footer:
     - Path: db/import/item_db_chapter_cards.yml
     - Path: db/import/item_db_costume_fashion.yml
     - Path: db/import/item_db_costume_stones.yml
+    - Path: db/import/item_db_poenitentia_iro.yml
