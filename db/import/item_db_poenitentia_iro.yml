@@ -1,0 +1,327 @@
+# Divine Pride iRO / English alignment, 2026-10-28.
+# Partial field overrides; retain upstream IDs, AegisNames and unrelated fields.
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  - Id: 400447
+    Name: Poenetentia Courage Crown
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bBaseAtk,15*(.@r/2);
+      bonus bAtkRate,5*(.@r/3);
+      bonus2 bAddEle,Ele_All,3*(.@r/4);
+      bonus2 bMagicAddEle,Ele_All,3*(.@r/4);
+      if (.@r>=9) {
+         bonus bAspdRate,10;
+         if (.@r>=11) {
+            bonus2 bAddSize,Size_All,15;
+            if (.@r>=13) {
+               bonus2 bAddRace,RC_All,20;
+               bonus bFixedCast,-500;
+            }
+         }
+      }
+  - Id: 400457
+    Name: Poenetentia Ambition Crown
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bBaseAtk,15*(.@r/2);
+      bonus bCritAtkRate,5*(.@r/3);
+      bonus bShortAtkRate,4*(.@r/4);
+      if (.@r>=9) {
+         bonus bCritical,8;
+         if (.@r>=11) {
+            bonus2 bAddSize,Size_All,15;
+            if (.@r>=13) {
+               bonus2 bAddRace,RC_All,20;
+               bonus bFixedCast,-500;
+            }
+         }
+      }
+  - Id: 400469
+    Name: Poenetentia Purity Crown
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bBaseAtk,15*(.@r/2);
+      bonus bAtkRate,5*(.@r/3);
+      bonus bLongAtkRate,4*(.@r/4);
+      if (.@r>=9)
+         bonus bAspdRate,10;
+      if (.@r>=11)
+         bonus2 bAddSize,Size_All,15;
+      if (.@r>=13) {
+         bonus2 bAddRace,RC_All,20;
+         bonus bFixedCast,-500;
+      }
+  - Id: 400482
+    Name: Poenetentia Glory Crown
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bMatk,15*(.@r/2);
+      bonus bMatkRate,5*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_All,5*(.@r/4);
+      if (.@r>=9)
+         bonus bVariableCastrate,-10;
+      if (.@r>=11)
+         bonus2 bMagicAddSize,Size_All,15;
+      if (.@r>=13) {
+         bonus2 bMagicAddRace,RC_All,20;
+         bonus bFixedCast,-500;
+      }
+  - Id: 460013
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bMaxHPrate,5;
+      bonus bMaxSPrate,5;
+      bonus bMdef,10*(.@r/3);
+      bonus bDef,50*(.@r/3);
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus2 bSkillAtk,"IG_SHIELD_SHOOTING",5;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus2 bSkillAtk,"IG_SHIELD_SHOOTING",8;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus bPow,1;
+               bonus bSpl,1;
+               bonus2 bSkillAtk,"IG_SHIELD_SHOOTING",12;
+            }
+         }
+      }
+  - Id: 500020
+    Name: Poenitentia Rigula
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bAtkRate,10;
+      bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND",10;
+      bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",10;
+      bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WATER",10;
+      bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_GROUND",10;
+      bonus2 bSkillAtk,"GN_CARTCANNON",3*(.@r/2);
+      if (.@r>=7) {
+         bonus bVariableCastrate,-10;
+         if (.@r>=9) {
+            bonus2 bSkillAtk,"GN_CARTCANNON",25;
+            if (.@r>=11) {
+               bonus bLongAtkRate,10;
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND",5;
+         bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",5;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus bPAtk,1;
+            bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND",8;
+            bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",8;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus bPow,2;
+               bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND",12;
+               bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",12;
+            }
+         }
+      }
+  - Id: 530010
+    Name: Poenitentia Asta
+  - Id: 550019
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableWeapon;
+      bonus bMatkRate,10;
+      bonus2 bSkillAtk,"EM_CONFLAGRATION",10;
+      bonus2 bSkillAtk,"EM_LIGHTNING_LAND",10;
+      bonus2 bSkillAtk,"SO_VARETYR_SPEAR",3*(.@r/2);
+      bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",3*(.@r/2);
+      if (.@r>=7) {
+         bonus bVariableCastrate,-10;
+         if (.@r>=9) {
+            bonus2 bSkillAtk,"SO_VARETYR_SPEAR",25;
+            bonus2 bSkillAtk,"SO_PSYCHIC_WAVE",25;
+            if (.@r>=11) {
+               bonus2 bSkillCooldown,"SO_PSYCHIC_WAVE",-1500;
+               bonus2 bSkillCooldown,"SO_VARETYR_SPEAR",-2000;
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus2 bSkillAtk,"EM_CONFLAGRATION",5;
+         bonus2 bSkillAtk,"EM_LIGHTNING_LAND",5;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus bSMatk,1;
+            bonus2 bSkillAtk,"EM_CONFLAGRATION",3;
+            bonus2 bSkillAtk,"EM_LIGHTNING_LAND",3;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus bSpl,1;
+               bonus2 bSkillAtk,"EM_CONFLAGRATION",5;
+               bonus2 bSkillAtk,"EM_LIGHTNING_LAND",5;
+            }
+         }
+      }
+  - Id: 550062
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableWeapon;
+      bonus bMatkRate,5;
+      bonus2 bSkillAtk,"HN_METEOR_STORM_BUSTER",10;
+      bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",10;
+      bonus2 bSkillAtk,"WZ_METEOR",3*(.@r/2);
+      bonus2 bSkillAtk,"WZ_FROSTNOVA",3*(.@r/2);
+      if (.@r>=7) {
+         bonus bVariableCastrate,-10;
+         if (.@r>=9) {
+            bonus2 bSkillAtk,"WZ_METEOR",30;
+            bonus2 bSkillAtk,"WZ_FROSTNOVA",30;
+            if (.@r>=11) {
+               bonus2 bMagicAddRace,RC_All,15;
+               bonus2 bMagicAddRace,RC_Player_Human,-15;
+               bonus2 bMagicAddRace,RC_Player_Doram,-15;
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus2 bSkillAtk,"HN_METEOR_STORM_BUSTER",5;
+         bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",5;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus bSMatk,1;
+            bonus2 bSkillAtk,"HN_METEOR_STORM_BUSTER",8;
+            bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",8;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus bSpl,1;
+               bonus2 bSkillAtk,"HN_METEOR_STORM_BUSTER",12;
+               bonus2 bSkillAtk,"HN_JACK_FROST_NOVA",12;
+            }
+         }
+      }
+  - Id: 590016
+    SubType: Axe
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bUnbreakableWeapon;
+      bonus bAtkRate,10;
+      bonus2 bSkillAtk,"MT_AXE_STOMP",10;
+      bonus2 bSkillAtk,"NC_BOOSTKNUCKLE",(.@r/2)*5;
+      if (.@r>=7) {
+         bonus bVariableCastrate,-10;
+         if (.@r>=9) {
+            bonus2 bSkillAtk,"NC_VULCANARM",25;
+            if (.@r>=11) {
+               bonus2 bSkillAtk,"NC_ARMSCANNON",25;
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus bLongAtkRate,2;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus bLongAtkRate,3;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus bPAtk,1;
+               bonus bLongAtkRate,10;
+            }
+         }
+      }
+  - Id: 590017
+    Script: |
+      .@g = getenchantgrade();
+      .@r = getrefine();
+      bonus bAtkRate,10;
+      bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND",10;
+      bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",10;
+      bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WATER",10;
+      bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_GROUND",10;
+      bonus2 bSkillAtk,"GN_CART_TORNADO",3*(.@r/2);
+      if (.@r>=7) {
+         bonus bVariableCastrate,-10;
+         if (.@r>=9) {
+            bonus2 bSkillAtk,"GN_CART_TORNADO",25;
+            if (.@r>=11) {
+               bonus bShortAtkRate,10;
+            }
+         }
+      }
+      if (.@g >= ENCHANTGRADE_D) {
+         bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND",5;
+         bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",5;
+         if (.@g >= ENCHANTGRADE_C) {
+            bonus bPAtk,1;
+            bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND",8;
+            bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",8;
+            if (.@g >= ENCHANTGRADE_B) {
+               bonus bPow,2;
+               bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_WIND",10;
+               bonus2 bSkillAtk,"BO_ACIDIFIED_ZONE_FIRE",10;
+            }
+         }
+      }
+  - Id: 620006
+    Name: Poenitentia Axia
+  - Id: 630009
+    Name: Poenitentia Katapulta
+  - Id: 800011
+    Name: Poenitentia Flamen
+  - Id: 490742
+    Jobs:
+      Summoner: true
+      Spirit_Handler: true
+  - Id: 490744
+    Jobs:
+      Monk: true
+    Classes:
+      All: false
+      Fourth: true
+  - Id: 490748
+    Jobs:
+      SuperNovice: true
+    Classes:
+      All: false
+      Fourth: true
+  - Id: 490750
+    Jobs:
+      Rebellion: true
+    Classes:
+      All: false
+      Third: true
+  - Id: 490752
+    Jobs:
+      Assassin: true
+    Classes:
+      All: false
+      Fourth: true
+  - Id: 490754
+    Jobs:
+      Crusader: true
+    Classes:
+      All: false
+      Fourth: true
+  - Id: 490768
+    Jobs:
+      Rogue: true
+    Classes:
+      All: false
+      Fourth: true
+  - Id: 490770
+    Jobs:
+      Blacksmith: true
+    Classes:
+      All: false
+      Fourth: true
+  - Id: 490772
+    Jobs:
+      Hunter: true
+    Classes:
+      All: false
+      Fourth: true
+  - Id: 490774
+    Jobs:
+      KagerouOboro: true
+    Classes:
+      All: false
+      Third: true
