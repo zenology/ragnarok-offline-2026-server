@@ -389,8 +389,8 @@ def drawers(rows: list[dict], *, cards: bool = False, specialty: bool = False,
             card_special: bool = False) -> dict[str, list[tuple[int, int]]]:
     strict = cards and not card_special
     accepted = [r for r in rows if letter(r["DisplayName"], strict) is not None]
-    if not cards:
-        accepted.sort(key=lambda r: (letter(r["DisplayName"]) == "0", r["DisplayName"].casefold(), r["Id"]))
+    accepted.sort(key=lambda r: (letter(r["DisplayName"]) != "0" if cards else letter(r["DisplayName"]) == "0",
+                                 r["DisplayName"].casefold(), r["Id"]))
     inventory = {}
     for row in accepted:
         suffix = "" if specialty else drawer_key(row["DisplayName"], len(accepted), strict)

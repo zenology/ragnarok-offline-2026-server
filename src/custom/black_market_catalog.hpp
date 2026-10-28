@@ -455,9 +455,9 @@ inline bool prepare(const Profile& p, Catalog& cat, Inventories& stock) {
 			} else if (row->category != category) continue;
 			rows.push_back(row);
 		}
-		if (p.kind != Kind::Card) std::sort(rows.begin(), rows.end(), [](const auto& a, const auto& b) {
+		std::sort(rows.begin(), rows.end(), [&p](const auto& a, const auto& b) {
 			bool adigit = letter(a->name, false) == 26, bdigit = letter(b->name, false) == 26;
-			if (adigit != bdigit) return !adigit;
+			if (adigit != bdigit) return p.kind == Kind::Card ? adigit : !adigit;
 			auto aname = lower(a->name), bname = lower(b->name);
 			return aname == bname ? a->id < b->id : aname < bname;
 		});
@@ -622,7 +622,7 @@ inline bool search_allowed(const Profile& owner, const Record& row, const map_se
 	if (owner.tier == 1) return true;
 	if (owner.tier == 2) return (sd->class_ & MAPID_FIRSTMASK) == MAPID_SUMMONER || (sd->class_ & (JOBL_2 | JOBL_UPPER));
 	return ((sd->class_ & JOBL_THIRD) || sd->status.class_ == JOB_SPIRIT_HANDLER) &&
-		pc_readreg(sd, add_str(BLACK_MARKET_POINT_VAR)) >= 60000;
+		pc_readreg2(sd, BLACK_MARKET_POINT_VAR) >= 60000;
 }
 inline int search(std::string query, std::vector<t_itemid>& out, SearchKind kind = SearchKind::Equipment, const map_session_data* sd = nullptr) {
 	if (!search_available(kind)) return -1;
