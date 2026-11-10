@@ -1,0 +1,1197 @@
+# 2026-10-14 review allowlist; Divine Pride iRO-English refreshed 2026-11-03.
+# Partial overrides only. Unspecified proc rates retain the existing local rate.
+Header:
+  Type: ITEM_DB
+  Version: 3
+
+Body:
+  # Missing official partner of Last Performer; deliberately not added to a shop.
+  - Id: 450516
+    AegisName: IRO_Review_Armor_450516
+    Name: Thorn Armor
+    Type: Armor
+    Weight: 1500
+    Defense: 200
+    Slots: 1
+    Locations:
+      Armor: true
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Refineable: true
+    Gradable: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bDefEle,Ele_Earth;
+      bonus bShortWeaponDamageReturn,30;
+      bonus bLongWeaponDamageReturn,30;
+      bonus bPAtk,7*.@r;
+      bonus bPow,.@r/2;
+      bonus bCon,.@r/2;
+      bonus2 bAddEle,Ele_All,7*(.@r/2);
+      bonus bBaseAtk,70*(.@r/3);
+      if (.@r>=10) {
+         bonus bPow,5;
+         bonus bCon,5;
+         bonus bFlee2,20;
+      }
+      if (.@r>=11) {
+         bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",20;
+         bonus2 bSkillAtk,"TR_ROSEBLOSSOM",30;
+      }
+      if (.@r>=12) bonus2 bAddEle,Ele_All,15;
+      if (.@r>=13) {
+         skill "SO_STRIKING",5;
+         autobonus3 "{ bonus2 bAddEle,Ele_All,30; }",1000,20000,"SO_STRIKING";
+      }
+      if (.@r>=14) {
+         bonus bLongAtkRate,25;
+         bonus2 bSkillCooldown,"TR_ROSEBLOSSOM",-400;
+         bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-400;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bMaxHPrate,15;
+         bonus bMaxSPrate,15;
+      }
+      if (.@g>=ENCHANTGRADE_C) bonus bVariableCastrate,-15;
+      if (.@g>=ENCHANTGRADE_B) bonus bDelayrate,-20;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",50;
+         bonus2 bSkillAtk,"TR_ROSEBLOSSOM",50;
+      }
+  - Id: 470443
+    Weight: 300
+    Defense: 50
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Jobs:
+      All: false
+      Acolyte: true
+      Priest: true
+      Monk: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bBaseAtk,70*(BaseLevel/20);
+      bonus bMatk,70*(BaseLevel/20);
+      bonus bPow,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      bonus bWis,5*(.@r/3);
+      bonus2 bSkillAtk,"AB_ADORAMUS",30*(.@r/2);
+      bonus2 bSkillAtk,"SR_TIGERCANNON",30*(.@r/2);
+      if (.@r>=11) {
+         bonus2 bSkillCooldown,"SR_TIGERCANNON",-3000;
+         bonus2 bSkillCooldown,"AB_ADORAMUS",-2500;
+      }
+      if (.@r>=12) {
+         skill "MG_ENERGYCOAT",1;
+         bonus2 bSkillAtk,"AB_ADORAMUS",70;
+         bonus2 bSkillAtk,"SR_TIGERCANNON",70;
+      }
+      if (.@r>=13) {
+         bonus bFixedCast,-1000;
+         bonus2 bSkillAtk,"CD_FRAMEN",70;
+         bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",70;
+      }
+      if (.@r>=14) {
+         bonus bDelayrate,-30;
+         bonus bPow,20;
+         bonus bSpl,20;
+      }
+      if (.@r>=15) {
+         bonus2 bAddEle,Ele_All,50;
+         bonus2 bMagicAddEle,Ele_All,50;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         if (Class==Job_Cardinal) skill "IQ_EXPOSION_BLASTER",5;
+         if (Class==Job_Inquisitor) skill "CD_FRAMEN",5;
+      }
+      if (.@g>=ENCHANTGRADE_C)
+         autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,25; }",1000,10000,"MG_ENERGYCOAT";
+      if (.@g>=ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,25;
+         bonus2 bMagicAddRace,RC_All,25;
+      }
+      if (.@g>=ENCHANTGRADE_A) bonus bNoGemStone;
+  - Id: 470461
+    Weight: 300
+    Defense: 50
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Jobs:
+      All: false
+      Merchant: true
+      Blacksmith: true
+      Alchemist: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bBaseAtk,70*(BaseLevel/20);
+      bonus bMatk,70*(BaseLevel/20);
+      bonus bPow,5*(.@r/3);
+      bonus bCon,5*(.@r/3);
+      bonus2 bSkillAtk,"NC_ARMSCANNON",30*(.@r/2);
+      bonus2 bSkillAtk,"GN_CARTCANNON",30*(.@r/2);
+      if (.@r>=11) {
+         bonus2 bSkillAtk,"NC_ARMSCANNON",100;
+         bonus2 bSkillAtk,"GN_CARTCANNON",100;
+      }
+      if (.@r>=12) {
+         skill "MG_ENERGYCOAT",1;
+         bonus2 bSkillAtk,"NC_ARMSCANNON",70;
+         bonus2 bSkillAtk,"GN_CARTCANNON",70;
+      }
+      if (.@r>=13) {
+         bonus bFixedCast,-1000;
+         bonus2 bSkillAtk,"MT_TRIPLE_LASER",70;
+         bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",70;
+      }
+      if (.@r>=14) {
+         bonus bDelayrate,-30;
+         bonus bPow,20;
+         bonus bCon,20;
+      }
+      if (.@r>=15) {
+         bonus2 bAddEle,Ele_All,50;
+         bonus2 bMagicAddEle,Ele_All,50;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         if (Class==Job_Biolo) skill "MT_MIGHTY_SMASH",5;
+         if (Class==Job_Meister || Class==Job_Meister2) skill "BO_EXPLOSIVE_POWDER",5;
+      }
+      if (.@g>=ENCHANTGRADE_C)
+         autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,25; }",1000,10000,"MG_ENERGYCOAT";
+      if (.@g>=ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,25;
+         bonus2 bMagicAddRace,RC_All,25;
+      }
+      if (.@g>=ENCHANTGRADE_A) bonus bNoWalkDelay;
+  - Id: 470451
+    Weight: 300
+    Defense: 50
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Jobs:
+      All: false
+      Swordman: true
+      Knight: true
+      Crusader: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bBaseAtk,70*(BaseLevel/20);
+      bonus bMatk,70*(BaseLevel/20);
+      bonus bPow,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      bonus bWis,5*(.@r/3);
+      bonus2 bSkillAtk,"LG_RAYOFGENESIS",30*(.@r/2);
+      bonus2 bSkillAtk,"RK_IGNITIONBREAK",30*(.@r/2);
+      if (.@r>=11) {
+         bonus2 bSkillCooldown,"LG_RAYOFGENESIS",-2000;
+         bonus2 bSkillCooldown,"RK_IGNITIONBREAK",-2000;
+      }
+      if (.@r>=12) {
+         skill "MG_ENERGYCOAT",1;
+         bonus2 bSkillAtk,"LG_RAYOFGENESIS",70;
+         bonus2 bSkillAtk,"RK_IGNITIONBREAK",70;
+      }
+      if (.@r>=13) {
+         bonus bFixedCast,-1000;
+         bonus2 bSkillAtk,"IG_CROSS_RAIN",70;
+         bonus2 bSkillAtk,"DK_HACKANDSLASHER",70;
+      }
+      if (.@r>=14) {
+         bonus bDelayrate,-30;
+         bonus bPow,20;
+         bonus bSpl,20;
+      }
+      if (.@r>=15) {
+         bonus2 bAddEle,Ele_All,50;
+         bonus2 bMagicAddEle,Ele_All,50;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         if (Class==Job_Imperial_Guard || Class==Job_Imperial_Guard2) skill "DK_HACKANDSLASHER",10;
+         if (Class==Job_Dragon_Knight || Class==Job_Dragon_Knight2) skill "IG_CROSS_RAIN",10;
+      }
+      if (.@g>=ENCHANTGRADE_C)
+         autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,25; }",1000,10000,"MG_ENERGYCOAT";
+      if (.@g>=ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,25;
+         bonus2 bMagicAddRace,RC_All,25;
+      }
+      if (.@g>=ENCHANTGRADE_A) bonus bNoWalkDelay;
+  - Id: 470467
+    Weight: 300
+    Defense: 50
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Jobs:
+      All: false
+      Taekwon: true
+      StarGladiator: true
+      SoulLinker: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bBaseAtk,50*(BaseLevel/20);
+      bonus bMatk,50*(BaseLevel/20);
+      bonus bPow,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      bonus2 bSkillAtk,"SKE_NOON_BLAST",20*(.@r/2);
+      bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",20*(.@r/2);
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_WHITE_TIGER",20*(.@r/2);
+      bonus2 bSkillAtk,"SOA_TALISMAN_OF_RED_PHOENIX",20*(.@r/2);
+      if (.@r>=11) bonus bVariableCastrate,-30;
+      if (.@r>=12) {
+         skill "MG_ENERGYCOAT",1;
+         bonus2 bSkillAtk,"SKE_NOON_BLAST",50;
+         bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",50;
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_WHITE_TIGER",50;
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_RED_PHOENIX",50;
+      }
+      if (.@r>=13) {
+         bonus bFixedCast,-1000;
+         bonus2 bSkillAtk,"SKE_DAWN_BREAK",70;
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",70;
+         bonus2 bSkillAtk,"SOA_TALISMAN_OF_FOUR_BEARING_GOD",70;
+         bonus2 bSkillAtk,"SOA_EXORCISM_OF_MALICIOUS_SOUL",70;
+      }
+      if (.@r>=14) {
+         bonus bDelayrate,-30;
+         bonus bPow,20;
+         bonus bSpl,20;
+      }
+      if (.@r>=15) {
+         bonus2 bAddEle,Ele_All,50;
+         bonus2 bMagicAddEle,Ele_All,50;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         skill "AL_INCAGI",10;
+         skill "AL_BLESSING",10;
+      }
+      if (.@g>=ENCHANTGRADE_C)
+         autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,25; }",1000,10000,"MG_ENERGYCOAT";
+      if (.@g>=ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,25;
+         bonus2 bMagicAddRace,RC_All,25;
+      }
+      if (.@g>=ENCHANTGRADE_A) bonus bNoWalkDelay;
+  - Id: 470457
+    Weight: 300
+    Defense: 50
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Jobs:
+      All: false
+      Thief: true
+      Assassin: true
+      Rogue: true
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,10;
+      bonus bAllStats,15;
+      bonus bAllTraitStats,15;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bBaseAtk,70*(BaseLevel/20);
+      bonus bMatk,70*(BaseLevel/20);
+      bonus bPow,5*(.@r/3);
+      bonus bSpl,5*(.@r/3);
+      bonus2 bMagicAtkEle,Ele_All,30*(.@r/2);
+      bonus2 bSkillAtk,"GC_CROSSIMPACT",30*(.@r/2);
+      if (.@r>=11) {
+         bonus bSpl,20;
+         bonus2 bSkillCooldown,"GC_CROSSIMPACT",-300;
+      }
+      if (.@r>=12) {
+         skill "MG_ENERGYCOAT",1;
+         bonus2 bMagicAtkEle,Ele_All,60;
+         bonus2 bSkillAtk,"GC_CROSSIMPACT",60;
+      }
+      if (.@r>=13) {
+         bonus bFixedCast,-1000;
+         bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",60;
+         bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",60;
+      }
+      if (.@r>=14) {
+         bonus bDelayrate,-30;
+         bonus bPow,20;
+         bonus bSpl,20;
+      }
+      if (.@r>=15) {
+         bonus2 bAddEle,Ele_All,50;
+         bonus2 bMagicAddEle,Ele_All,50;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         if (Class==Job_Abyss_Chaser) skill "GC_CROSSIMPACT",5;
+         if (Class==Job_Shadow_Cross) skill "ABC_ABYSS_SQUARE",5;
+      }
+      if (.@g>=ENCHANTGRADE_C)
+         autobonus3 "{ bonus bStr,100; bonus bInt,100; bonus bSpeedRate,25; }",1000,10000,"MG_ENERGYCOAT";
+      if (.@g>=ENCHANTGRADE_B) {
+         bonus2 bAddRace,RC_All,25;
+         bonus2 bMagicAddRace,RC_All,25;
+      }
+      if (.@g>=ENCHANTGRADE_A) bonus bNoWalkDelay;
+  - Id: 470340
+    Weight: 1000
+    Defense: 50
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,10;
+      bonus bPow,3*(.@r/2);
+      bonus bMaxHPrate,5*(.@r/3);
+      bonus bDelayrate,-3*(.@r/3);
+      if (.@r>=9) bonus2 bAddSize,Size_All,15;
+      if (.@r>=11) {
+         bonus bAllStats,12;
+         bonus bSpeedRate,25;
+      }
+      if (.@r>=12) bonus2 bAddEle,Ele_All,25;
+      if (.@r>=13) {
+         bonus2 bSkillAtk,"RK_HUNDREDSPEAR",100;
+         bonus2 bSkillAtk,"RK_WINDCUTTER",100;
+         bonus2 bSkillCooldown,"RK_HUNDREDSPEAR",-2000;
+         bonus2 bSkillCooldown,"RK_WINDCUTTER",-2000;
+      }
+      if (.@r>=14) {
+         bonus2 bSkillAtk,"RK_HUNDREDSPEAR",2*BaseLevel;
+         bonus2 bSkillAtk,"RK_WINDCUTTER",5*BaseLevel;
+      }
+      if (.@g>=ENCHANTGRADE_D) bonus bFixedCast,-500;
+      if (.@g>=ENCHANTGRADE_C) bonus2 bAddSize,Size_All,15;
+      if (.@g>=ENCHANTGRADE_B) bonus bAllTraitStats,10;
+      if (.@g>=ENCHANTGRADE_A) bonus bMaxHPrate,50;
+  - Id: 470372
+    Weight: 1000
+    Defense: 100
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bPow,5;
+      bonus bDelayrate,-10;
+      if (Class==Job_Sky_Emperor || Class==Job_Sky_Emperor2) {
+         bonus bAllStats,7;
+         bonus bAllTraitStats,7;
+         bonus2 bSkillAtk,"SKE_ALL_IN_THE_SKY",20*.@r;
+      }
+      bonus2 bAddSize,Size_All,5*.@r;
+      if (.@r>=10) bonus2 bAddSize,Size_All,30;
+      if (.@r>=11) {
+         bonus2 bSkillAtk,"SJ_SOLARBURST",50;
+         bonus2 bSkillAtk,"SJ_FALLINGSTAR_ATK",50;
+         bonus2 bSkillAtk,"SJ_FALLINGSTAR_ATK2",50;
+         bonus2 bSkillAtk,"SJ_FULLMOONKICK",50;
+      }
+      if (.@r>=12) {
+         bonus bPow,5;
+         bonus bBaseAtk,50;
+         bonus2 bSkillAtk,"SKE_MIDNIGHT_KICK",50;
+         bonus2 bSkillAtk,"SKE_NOON_BLAST",50;
+         bonus2 bSkillAtk,"SKE_STAR_CANNON",50;
+      }
+      if (.@r>=13) {
+         bonus bPow,13;
+         bonus bBaseAtk,130;
+         bonus4 bAutoSpellOnSkill,"SJ_SOLARBURST","RK_IGNITIONBREAK",5,1000;
+         bonus4 bAutoSpellOnSkill,"SJ_FULLMOONKICK","RK_IGNITIONBREAK",5,1000;
+      }
+      if (.@r>=14) {
+         bonus bAllStats,25;
+         bonus bMaxHPrate,25;
+         bonus2 bSkillCooldown,"SKE_STAR_CANNON",-3500;
+      }
+      if (.@g>=ENCHANTGRADE_D) bonus bBaseAtk,75;
+      if (.@g>=ENCHANTGRADE_C) bonus bDelayrate,-15;
+      if (.@g>=ENCHANTGRADE_B) bonus2 bSkillCooldown,"SKE_TWINKLING_GALAXY",-5000;
+      if (.@g>=ENCHANTGRADE_A && .@r>=15) {
+         bonus bAllTraitStats,20;
+         bonus2 bAddClass,Class_Normal,20;
+         bonus2 bAddClass,Class_Boss,20;
+         bonus2 bMagicAddClass,Class_Normal,20;
+         bonus2 bMagicAddClass,Class_Boss,20;
+      }
+  - Id: 470354
+    Weight: 200
+    Defense: 7
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bAllStats,5;
+      bonus bBaseAtk,50;
+      bonus bMatk,50;
+      bonus bDelayrate,-2*(.@r/2);
+      bonus bAspdRate,3*(.@r/3);
+      if (.@r>=7) {
+         bonus bBaseAtk,100;
+         bonus bMatk,100;
+      }
+      if (.@r>=9) bonus bFixedCast,-500;
+      if (.@r>=11) {
+         bonus2 bAddSize,Size_All,12;
+         bonus2 bMagicAddSize,Size_All,12;
+      }
+      if (.@r>=13) {
+         bonus2 bAddRace,RC_All,12;
+         bonus2 bMagicAddRace,RC_All,12;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPow,3;
+         bonus bSpl,3;
+         bonus bCon,3;
+      }
+      if (.@g>=ENCHANTGRADE_C) bonus bFixedCast,-500;
+      if (.@g>=ENCHANTGRADE_B) {
+         bonus2 bAddEle,Ele_All,12;
+         bonus2 bMagicAddEle,Ele_All,12;
+      }
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bAddClass,Class_All,12;
+         bonus2 bMagicAddClass,Class_All,12;
+      }
+  - Id: 470343
+    Weight: 1500
+    Defense: 50
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus2 bMagicAtkEle,Ele_All,20;
+      bonus bInt,3*(.@r/2);
+      bonus bMatk,30*(.@r/2);
+      bonus bSpl,3*(.@r/3);
+      bonus bCon,3*(.@r/3);
+      bonus bSMatk,3*(.@r/3);
+      if (.@r>=10) {
+         bonus bMaxHPrate,20;
+         bonus bMaxSPrate,20;
+      }
+      if (.@r>=11) {
+         bonus bAllStats,15;
+         bonus bFixedCast,-500;
+      }
+      if (.@r>=12) bonus2 bMagicAtkEle,Ele_All,30;
+      if (.@r>=13) {
+         bonus bMatk,250;
+         bonus bSpl,15;
+      }
+      if (.@g>=ENCHANTGRADE_D) bonus bMatkRate,20;
+      if (.@g>=ENCHANTGRADE_C) bonus2 bMagicAddClass,Class_All,15;
+      if (.@g>=ENCHANTGRADE_B) bonus bSMatk,20;
+      if (.@g>=ENCHANTGRADE_A) bonus bSpl,8*(.@r/2);
+  - Id: 470414
+    Weight: 1000
+    Defense: 100
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,15;
+      if (readparam(bStr)>=110) {
+         bonus2 bAddSize,Size_All,20;
+         bonus bPow,12;
+      }
+      if (readparam(bInt)>=110) {
+         bonus2 bMagicAddSize,Size_All,20;
+         bonus bSpl,12;
+      }
+      if (readparam(bDex)>=110) {
+         bonus bLongAtkRate,20;
+         bonus bCon,12;
+      }
+      if (readparam(bLuk)>=110) {
+         bonus bCritAtkRate,20;
+         bonus bCrt,12;
+      }
+      bonus bBaseAtk,30*(.@r/2);
+      bonus bMaxHPrate,15*(.@r/3);
+      if (.@r>=7) bonus bDelayrate,-15;
+      if (.@r>=9) {
+         bonus2 bAddSize,Size_All,25;
+         bonus2 bMagicAddSize,Size_All,25;
+      }
+      if (.@r>=11) {
+         bonus bBaseAtk,200;
+         bonus bMatk,200;
+      }
+      if (.@r>=13) {
+         bonus bAllStats,20;
+         autobonus "{ bonus bPow,25; bonus bSpl,25; bonus bCon,25; }",50,10000,BF_WEAPON|BF_MAGIC;
+      }
+      if (.@r>=14) {
+         bonus bAllTraitStats,10;
+         bonus2 bAddClass,Class_Boss,30;
+         bonus2 bMagicAddClass,Class_Boss,30;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bBaseAtk,70;
+         bonus bMatk,70;
+      }
+      if (.@g>=ENCHANTGRADE_C) bonus bAspd,10;
+      if (.@g>=ENCHANTGRADE_B) bonus bFixedCast,-500;
+      if (.@g>=ENCHANTGRADE_A && .@r>=14) {
+         bonus2 bAddClass,Class_Normal,30;
+         bonus2 bMagicAddClass,Class_Normal,30;
+      }
+  - Id: 470440
+    Weight: 500
+    Defense: 50
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bMaxHPrate,4*(.@r/3);
+      bonus bDelayrate,-2*(.@r/3);
+      if (.@r>=7) {
+         bonus bPerfectHitAddRate,10;
+         bonus bCritical,15;
+      }
+      if (.@r>=9) {
+         bonus bShortAtkRate,10;
+         bonus bLongAtkRate,10;
+      }
+      if (.@r>=11) bonus2 bAddEle,Ele_All,10;
+      if (.@r>=13) autobonus "{ bonus bShortAtkRate,15; bonus bLongAtkRate,15; }",30,10000,BF_WEAPON;
+  - Id: 470426
+    Weight: 1000
+    Defense: 100
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMdef,15;
+      bonus bMaxHPrate,20;
+      bonus bMaxSPrate,20;
+      bonus bSpl,3*(.@r/2);
+      bonus bCon,3*(.@r/2);
+      bonus bMaxHPrate,5*(.@r/3);
+      bonus bDelayrate,-3*(.@r/3);
+      if (.@r>=9) bonus2 bMagicAddSize,Size_All,10;
+      if (.@r>=10) bonus2 bMagicAddEle,Ele_All,15;
+      if (.@r>=11) bonus2 bMagicAddEle,Ele_All,15;
+      if (.@r>=12) {
+         bonus bSpeedRate,25;
+         bonus bSpl,7;
+         bonus bCon,7;
+      }
+      if (.@r>=13) {
+         bonus2 bVariableCastrate,"WL_CHAINLIGHTNING",-100;
+         bonus2 bVariableCastrate,"AG_SOUL_VC_STRIKE",-100;
+      }
+      if (.@r>=14) {
+         bonus2 bSkillAtk,"WL_CHAINLIGHTNING",50;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",50;
+         bonus2 bSkillCooldown,"AG_SOUL_VC_STRIKE",-700;
+      }
+      if (.@g>=ENCHANTGRADE_D) bonus2 bMagicAddSize,Size_All,20;
+      if (.@g>=ENCHANTGRADE_C) bonus bAllTraitStats,12;
+      if (.@g>=ENCHANTGRADE_B) bonus bFixedCast,-700;
+      if (.@g>=ENCHANTGRADE_A) {
+         bonus2 bSkillAtk,"WL_CHAINLIGHTNING",100;
+         bonus2 bSkillAtk,"AG_SOUL_VC_STRIKE",100;
+      }
+  - Id: 470409
+    Weight: 100
+    EquipLevelMin: 1
+    Trade:
+      NoTrade: true
+      TradePartner: false
+      NoMail: true
+      NoAuction: true
+  - Id: 470324
+    EquipLevelMin: 1
+    Trade:
+      NoTrade: true
+      TradePartner: false
+      NoMail: true
+      NoAuction: true
+  - Id: 470114
+    Weight: 100
+    Defense: 30
+    EquipLevelMin: 1
+    Script: |
+      bonus2 bExpAddRace,RC_All,8;
+      bonus2 bSubRace,RC_All,-10;
+  - Id: 470452
+    Weight: 1000
+    Defense: 100
+    EquipLevelMin: 1
+    Trade:
+      NoTrade: true
+      TradePartner: false
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,15;
+      bonus bMaxHPrate,15;
+      bonus bMaxSPrate,15;
+      // DP: Lasgand, Fallen Angel Slug, Snowstorm Angel, Jormund Chief Cleaner.
+      // Numeric bonuses also cover the currently dormant EP20 boss definitions.
+      bonus2 bAddDamageClass,21981,15;
+      bonus2 bAddDamageClass,21982,15;
+      bonus2 bAddDamageClass,21996,15;
+      bonus2 bAddDamageClass,21980,15;
+      bonus2 bAddDefMonster,21981,15;
+      bonus2 bAddMDefMonster,21981,15;
+      bonus2 bAddDefMonster,21982,15;
+      bonus2 bAddMDefMonster,21982,15;
+      bonus2 bAddDefMonster,21996,15;
+      bonus2 bAddMDefMonster,21996,15;
+      bonus2 bAddDefMonster,21980,15;
+      bonus2 bAddMDefMonster,21980,15;
+      bonus bBaseAtk,30*(.@r/2);
+      if (.@r>=10) bonus bAllStats,15;
+      if (.@r>=11) bonus2 bAddRace,RC_All,25;
+      if (.@r>=12) bonus bBaseAtk,150;
+  - Id: 470454
+    Weight: 1000
+    Defense: 100
+    EquipLevelMin: 1
+    Trade:
+      NoTrade: true
+      TradePartner: false
+      NoMail: true
+      NoAuction: true
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,15;
+      bonus bMaxHPrate,15;
+      bonus bMaxSPrate,15;
+      bonus2 bAddMagicDamageClass,21981,15;
+      bonus2 bAddMagicDamageClass,21982,15;
+      bonus2 bAddMagicDamageClass,21996,15;
+      bonus2 bAddMagicDamageClass,21980,15;
+      bonus2 bAddDefMonster,21981,15;
+      bonus2 bAddMDefMonster,21981,15;
+      bonus2 bAddDefMonster,21982,15;
+      bonus2 bAddMDefMonster,21982,15;
+      bonus2 bAddDefMonster,21996,15;
+      bonus2 bAddMDefMonster,21996,15;
+      bonus2 bAddDefMonster,21980,15;
+      bonus2 bAddMDefMonster,21980,15;
+      bonus bMatk,30*(.@r/2);
+      if (.@r>=10) bonus bAllStats,15;
+      if (.@r>=11) bonus2 bMagicAddRace,RC_All,25;
+      if (.@r>=12) bonus bMatk,150;
+  - Id: 470404
+    Weight: 500
+    Defense: 100
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus bMdef,20;
+      bonus bBaseAtk,200;
+      bonus bMaxHPrate,20;
+      bonus2 bSubClass,Class_Normal,20;
+      bonus2 bSubClass,Class_Boss,20;
+      bonus2 bAddSize,Size_All,20+5*.@r;
+      bonus bAspdRate,3*.@r;
+      bonus bPow,3*(.@r/2);
+      bonus bCon,3*(.@r/2);
+      if (.@r>=11) {
+         bonus bMaxHPrate,20;
+         bonus2 bSkillCooldown,"WM_SEVERE_RAINSTORM",-5000;
+      }
+      if (.@r>=12) {
+         bonus bAllStats,20;
+         bonus bBaseAtk,200;
+         bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",20;
+      }
+      if (.@r>=13) {
+         bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",30;
+         bonus2 bSkillAtk,"TR_ROSEBLOSSOM",30;
+      }
+      if (.@r>=14) {
+         skill "MG_ENERGYCOAT",1;
+         bonus2 bSkillCooldown,"TR_RHYTHMSHOOTING",-300;
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",30;
+      }
+      if (.@r>=15) {
+         bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",40;
+         bonus2 bSkillAtk,"TR_ROSEBLOSSOM",40;
+      }
+      if (.@g>=ENCHANTGRADE_D) bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",20;
+      if (.@g>=ENCHANTGRADE_C) {
+         bonus2 bSkillAtk,"TR_ROSEBLOSSOM",20;
+      }
+      if (.@g>=ENCHANTGRADE_B) bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",20;
+      if (.@g>=ENCHANTGRADE_A) bonus bFixedCast,-500;
+  - Id: 470355
+    Weight: 500
+    Defense: 80
+    ArmorLevel: 2
+    EquipLevelMin: 100
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bUnbreakableShoes;
+      bonus2 bSubClass,Class_Normal,15;
+      bonus2 bSubClass,Class_Boss,15;
+      bonus bMaxHPrate,15;
+      bonus bMaxSPrate,15;
+      bonus bBaseAtk,30*(.@r/2);
+      bonus bMatk,30*(.@r/2);
+      bonus bPow,2*(.@r/2);
+      bonus bSpl,2*(.@r/2);
+      bonus2 bAddSize,Size_All,10*(.@r/3);
+      bonus2 bMagicAddSize,Size_All,10*(.@r/3);
+      if (.@r>=11) {
+         bonus2 bAddSize,Size_All,15;
+         bonus2 bMagicAddSize,Size_All,15;
+         bonus2 bSubClass,Class_Normal,15;
+         bonus2 bSubClass,Class_Boss,15;
+      }
+      if (.@r>=12) {
+         bonus bBaseAtk,150;
+         bonus bMatk,150;
+      }
+      if (.@r>=13) {
+         bonus2 bAddEle,Ele_All,30;
+         bonus2 bMagicAddEle,Ele_All,30;
+      }
+      if (.@r>=14) {
+         bonus bDelayrate,-20;
+         bonus bPow,20;
+         bonus bSpl,20;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus2 bAddSize,Size_All,15;
+         bonus2 bMagicAddSize,Size_All,15;
+      }
+      if (.@g>=ENCHANTGRADE_C) {
+         bonus bPAtk,20;
+         bonus bSMatk,20;
+      }
+      if (.@g>=ENCHANTGRADE_B) bonus bFixedCast,-500;
+      if (.@g>=ENCHANTGRADE_A && .@r>=14)
+         autobonus "{ bonus bStr,175; bonus bInt,175; bonus bDex,175; bonus bLuk,175; }",50,10000,BF_WEAPON|BF_MAGIC;
+  - Id: 470382
+    Weight: 500
+    Defense: 100
+    ArmorLevel: 2
+    EquipLevelMin: 1
+    Script: |
+      .@r = getrefine();
+      .@g = getenchantgrade();
+      bonus bMaxHPrate,15;
+      bonus bMaxSPrate,15;
+      bonus2 bAddSize,Size_All,30;
+      bonus2 bMagicAddSize,Size_All,30;
+      if (BaseClass==Job_Acolyte || BaseClass==Job_Thief) {
+         bonus bPow,10;
+         bonus bSpl,10;
+         bonus bBaseAtk,200;
+         bonus bMatk,200;
+      }
+      bonus2 bSkillAtk,"ASC_METEORASSAULT",2*BaseLevel;
+      bonus bAllStats,.@r;
+      bonus bAllTraitStats,.@r;
+      bonus bStr,10*(.@r/2);
+      bonus bInt,10*(.@r/2);
+      if (.@r>=10) {
+         skill "SO_POISON_BUSTER",5;
+         skill "SO_CLOUD_KILL",5;
+      }
+      if (.@r>=11) {
+         bonus2 bVariableCastrate,"ASC_METEORASSAULT",-100;
+         bonus2 bSkillCooldown,"ASC_METEORASSAULT",-500;
+      }
+      if (.@r>=12) {
+         bonus bDelayrate,-15;
+         bonus bAllStats,15;
+      }
+      if (.@r>=13) bonus2 bMagicAtkEle,Ele_Poison,100;
+      if (.@r>=14) {
+         bonus2 bAddSize,Size_All,30;
+         bonus2 bMagicAddSize,Size_All,30;
+      }
+      if (.@g>=ENCHANTGRADE_D) {
+         bonus bPow,4;
+         bonus bSpl,4;
+      }
+      if (.@g>=ENCHANTGRADE_C) {
+         bonus2 bAddSize,Size_All,15;
+         bonus2 bMagicAddSize,Size_All,15;
+      }
+      if (.@g>=ENCHANTGRADE_B) bonus bFixedCast,-300;
+      if (.@g>=ENCHANTGRADE_A) bonus bAllTraitStats,12;
+  - Id: 480156
+    Script: |
+      .@r = getrefine();
+      // Physical-only Normal reduction: src/custom/black_market_review.hpp.
+      bonus2 bSubEle,Ele_Neutral,2*.@r;
+      if (.@r>=7) {
+         bonus bMaxHPrate,20;
+         bonus bMaxSPrate,20;
+         bonus bNoCastCancel;
+      }
+      if (.@r>=9)
+         skill "SA_SPELLBREAKER",5;
+      if (getskilllv("SA_SPELLBREAKER")>=5)
+         bonus bVariableCastrate,-15;
+  - Id: 480338
+    Defense: 15
+    EquipLevelMin: 100
+  - Id: 480053
+    Script: |
+      .@r = getrefine();
+      bonus bAspdRate,.@r;
+      bonus2 bAddEle,Ele_Earth,15+.@r;
+      bonus2 bMagicAddEle,Ele_Earth,15+.@r;
+      bonus2 bSubRace,RC_Player_Human,5;
+      bonus2 bSubRace,RC_Player_Doram,5;
+      if (.@r>=13)
+         bonus2 bSubEle,Ele_Earth,100;
+  - Id: 480516
+    Script: |
+      .@r = getrefine();
+      bonus bAllStats,3;
+      bonus2 bSubClass,Class_Boss,5;
+      bonus2 bSubClass,Class_Normal,5;
+      bonus bMaxHPrate,2*.@r;
+      bonus bMaxSPrate,2*.@r;
+      bonus2 bSubEle,Ele_Neutral,5*.@r;
+      if (.@r>=7) {
+         bonus bDelayrate,-25;
+         bonus2 bSubEle,Ele_Neutral,15;
+      }
+      if (.@r>=9) {
+         bonus bAspdRate,20;
+         bonus2 bSubRace,RC_Player_Doram,5;
+         bonus2 bSubRace,RC_Player_Human,5;
+      }
+      if (.@r>=12) {
+         bonus bAllStats,15;
+         bonus bAllTraitStats,15;
+      }
+  - Id: 480319
+    Script: |
+      .@r = getrefine();
+      bonus2 bSubClass,Class_Boss,5;
+      bonus2 bSubClass,Class_Normal,5;
+      bonus2 bSubRace,RC_Player_Human,5;
+      bonus2 bSubRace,RC_Player_Doram,5;
+      bonus bMaxHPrate,2*.@r;
+      bonus bMaxSPrate,2*.@r;
+      bonus2 bSubEle,Ele_Holy,7*.@r;
+      if (.@r>=7) {
+         bonus bAllStats,10;
+         bonus2 bAddEle,Ele_All,10;
+         bonus2 bMagicAddEle,Ele_All,10;
+      }
+      if (.@r>=9) {
+         bonus2 bAddEle,Ele_All,15;
+         bonus2 bMagicAddEle,Ele_All,15;
+         bonus2 bHPDrainRate,5,5;
+      }
+  - Id: 480076
+    Script: |
+      .@r = getrefine();
+      bonus bMdef,10;
+      bonus bAtkRate,.@r/2;
+      bonus bMatkRate,.@r/2;
+      bonus bLongAtkRate,.@r/2;
+      bonus bCritical,3*(.@r/2);
+      bonus bCritAtkRate,.@r/2;
+      bonus2 bAddSize,Size_All,3*(.@r/4);
+      bonus2 bMagicAtkEle,Ele_All,3*(.@r/4);
+      bonus bMaxHPrate,3*(.@r/4);
+      bonus bAspdRate,3*(.@r/4);
+      bonus bDelayrate,-3*(.@r/4);
+      bonus bCritAtkRate,3*(.@r/4);
+      if (.@r>=9) {
+         bonus bAtkRate,7;
+         bonus bMatkRate,7;
+      }
+  - Id: 480278
+    Script: |
+      .@r = getrefine();
+      .@m = 1;
+      if (BaseJob==Job_Dancer || BaseJob==Job_Rogue || BaseJob==Job_Monk || BaseJob==Job_Assassin)
+         .@m = 2;
+      bonus bMdef,15;
+      bonus bBaseAtk,8*(.@r/2)*.@m;
+      bonus bMatk,8*(.@r/2)*.@m;
+      bonus2 bExpAddRace,RC_All,3*(.@r/4)*.@m;
+      if (.@r>=7) {
+         bonus bAtkRate,4*.@m;
+         bonus bMatkRate,4*.@m;
+      }
+      if (.@r>=9) {
+         bonus bShortAtkRate,7*.@m;
+         bonus bLongAtkRate,7*.@m;
+         bonus2 bMagicAtkEle,Ele_All,7*.@m;
+      }
+      if (.@r>=13) {
+         bonus2 bIgnoreDefClassRate,Class_Normal,10*.@m;
+         bonus2 bIgnoreMdefClassRate,Class_Normal,10*.@m;
+      }
+  - Id: 480291
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHP,3000;
+      bonus bMaxSP,200;
+      if (BaseLevel>=200) {
+         .@l = (BaseLevel-200)/10;
+         bonus bSMatk,1+.@l;
+         bonus bRes,7+5*.@l;
+         bonus bMRes,7+5*.@l;
+      }
+      bonus bMatk,10*(.@r/2);
+      bonus bMatkRate,2*(.@r/3);
+      if (.@r>=7) bonus bVariableCastrate,-10;
+      if (.@r>=9) bonus2 bMagicAddSize,Size_All,10;
+      if (.@r>=11) bonus bDelayrate,-10;
+      if (.@r>=13) bonus2 bMagicAddRace,RC_All,15;
+  - Id: 480372
+    Script: |
+      .@r = getrefine();
+      bonus2 bSubEle,Ele_Neutral,10;
+      bonus bBaseAtk,10*(.@r/2);
+      bonus bMatk,10*(.@r/2);
+      bonus bPow,2*(.@r/3);
+      bonus bCon,2*(.@r/3);
+      bonus bSpl,2*(.@r/3);
+      if (.@r>=7) {
+         bonus bAtkRate,10;
+         bonus bMatkRate,10;
+      }
+      if (.@r>=9) {
+         bonus bShortAtkRate,12;
+         bonus bLongAtkRate,12;
+         bonus2 bMagicAtkEle,Ele_All,12;
+      }
+      if (.@r>=11) bonus bDelayrate,-10;
+      if (.@r>=13) bonus2 bAddRace,RC_All,15;
+  - Id: 480331
+    Script: |
+      .@r = getrefine();
+      bonus bBaseAtk,50;
+      bonus bMatk,50;
+      bonus bAspdRate,5;
+      bonus bDelayrate,-5;
+      bonus2 bSubRace,RC_Player_Doram,5;
+      bonus2 bSubRace,RC_Player_Human,5;
+      if (.@r>=6) {
+         bonus bAspdRate,5;
+         bonus bDelayrate,-5;
+      }
+      if (.@r>=8) {
+         bonus bAspdRate,10;
+         bonus bDelayrate,-10;
+      }
+  - Id: 480317
+    Script: |
+      .@r = getrefine();
+      .@a = getskilllv("SO_EL_SYMPATHY");
+      .@b = getskilllv("SO_STRIKING");
+      bonus bAspdRate,5;
+      bonus bAspd,5;
+      bonus bMatkRate,30;
+      bonus2 bSubClass,Class_Boss,5;
+      bonus2 bSubClass,Class_Normal,5;
+      bonus2 bSubRace,RC_Player_Human,5;
+      bonus2 bSubRace,RC_Player_Doram,5;
+      bonus bInt,5*.@a;
+      bonus bDelayrate,-5*.@a;
+      bonus2 bSkillAtk,"MG_FIREBOLT",20*.@b;
+      bonus2 bSkillAtk,"MG_COLDBOLT",20*.@b;
+      bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",20*.@b;
+      bonus2 bSkillAtk,"WZ_EARTHSPIKE",20*.@b;
+      if (getskilllv("SO_SPELLFIST")>=10)
+         bonus3 bAutoSpell,"MG_SAFETYWALL",max(getskilllv("MG_SAFETYWALL"),3),20;
+      if (getskilllv("SO_PSYCHIC_WAVE")>=5) {
+         if (getskilllv("MG_FIREBOLT")) bonus3 bAutoSpell,"MG_FIREBOLT",getskilllv("MG_FIREBOLT"),20;
+         if (getskilllv("MG_COLDBOLT")) bonus3 bAutoSpell,"MG_COLDBOLT",getskilllv("MG_COLDBOLT"),20;
+         if (getskilllv("MG_LIGHTNINGBOLT")) bonus3 bAutoSpell,"MG_LIGHTNINGBOLT",getskilllv("MG_LIGHTNINGBOLT"),20;
+         if (getskilllv("WZ_EARTHSPIKE")) bonus3 bAutoSpell,"WZ_EARTHSPIKE",getskilllv("WZ_EARTHSPIKE"),20;
+         bonus3 bAutoSpell,"SO_PSYCHIC_WAVE",getskilllv("SO_PSYCHIC_WAVE"),20;
+      }
+      if (.@r>=7) {
+         bonus bAspdRate,5;
+         bonus bMatkRate,5;
+      }
+      if (.@r>=9) {
+         bonus bAspdRate,10;
+         bonus bMatkRate,10;
+      }
+  - Id: 480077
+    Script: |
+      .@r = getrefine();
+      bonus2 bAddSize,Size_All,5;
+      // Physical-only Boss reduction: src/custom/black_market_review.hpp.
+      bonus2 bSkillAtk,"NC_AXETORNADO",20*getskilllv("NC_AXEBOOMERANG");
+      bonus2 bSkillAtk,"NC_POWERSWING",20*getskilllv("NC_AXEBOOMERANG");
+      if (getskilllv("NC_MAGICDECOY")>=5) bonus bPerfectHitAddRate,50;
+      if (getskilllv("NC_MAGMA_ERUPTION")>=5) {
+         bonus2 bSubEle,Ele_Fire,50;
+         bonus2 bSubEle,Ele_Earth,50;
+      }
+      if (.@r>=5) {
+         bonus bMaxHPrate,3;
+         bonus bMaxSPrate,3;
+         bonus bAspdRate,5;
+      }
+      if (.@r>=7) {
+         bonus bMaxHPrate,5;
+         bonus bMaxSPrate,5;
+         bonus bAspdRate,5;
+      }
+  - Id: 480446
+    Script: |
+      .@r = getrefine();
+      autobonus3 "{ }",1000,60000,"GN_CARTBOOST","{ active_transform 1150,60000; }";
+      bonus bLongAtkRate,20;
+      bonus2 bAddSize,Size_All,10;
+      bonus2 bSkillAtk,"GN_CARTCANNON",2*(BaseLevel/10);
+      if (.@r>=7) bonus2 bSkillUseSP,"GN_CARTCANNON",20;
+      if (.@r>=9) bonus bDelayrate,-12;
+      if (.@r>=11) bonus2 bAddClass,Class_Boss,15;
+      if (.@r>=13) bonus bLongAtkRate,20;
+  - Id: 480251
+    Script: |
+      .@r = getrefine();
+      .@s = readparam(bStr)+readparam(bAgi)+readparam(bVit)+readparam(bInt)+readparam(bDex)+readparam(bLuk);
+      bonus2 bSubClass,Class_Boss,5;
+      bonus2 bSubClass,Class_Normal,5;
+      bonus2 bSubRace,RC_Player_Human,5;
+      bonus2 bSubRace,RC_Player_Doram,5;
+      bonus bAtkRate,5*(.@s/100);
+      bonus bMatkRate,5*(.@s/100);
+      bonus bCritAtkRate,5*(.@s/100);
+      if (.@s>=300) {
+         bonus bMaxHPrate,20;
+         bonus bMaxSPrate,20;
+      }
+      if (.@s>=400) {
+         bonus bAspdRate,15;
+         bonus bDelayrate,-15;
+      }
+      if (.@s>=500) {
+         bonus bPerfectHitAddRate,25;
+         bonus bFixedCastrate,-70;
+      }
+      if (.@s>=600) autobonus "{ bonus bFlee2,95; }",100,10000,BF_WEAPON|BF_MAGIC;
+      if (.@r>=7) {
+         bonus bDef,150;
+         bonus bMdef,15;
+      }
+      if (.@r>=9) {
+         bonus bDef,150;
+         bonus bMdef,15;
+      }
+  - Id: 480025
+    Script: |
+      .@r = getrefine();
+      bonus bInt,2;
+      bonus bAspdRate,10;
+      bonus bBaseAtk,6*.@r;
+      bonus bMatk,6*.@r;
+      if (.@r>=10) {
+         skill "PR_LEXAETERNA",1;
+         autobonus "{ bonus bAspdRate,40; }",50,30000,BF_WEAPON|BF_MAGIC,"{ specialeffect2 EF_HASTEUP; }";
+      } else if (.@r>=9) {
+         autobonus "{ bonus bAspdRate,20; }",50,30000,BF_WEAPON|BF_MAGIC,"{ specialeffect2 EF_HASTEUP; }";
+      } else if (.@r>=7) {
+         autobonus "{ bonus bAspdRate,10; }",50,30000,BF_WEAPON|BF_MAGIC,"{ specialeffect2 EF_HASTEUP; }";
+      }
+  - Id: 20973
+    Script: |
+      .@r = getrefine();
+      bonus bMaxHPrate,3;
+      bonus bMaxSPrate,3;
+      bonus bDelayrate,-5;
+      bonus2 bSubRace,RC_DemiHuman,5;
+      bonus2 bSubRace,RC_Player_Human,5;
+      bonus2 bSubRace,RC_Player_Doram,5;
+      if (.@r>=7) {
+         bonus bMaxHPrate,7;
+         bonus bMaxSPrate,7;
+         bonus bDelayrate,-5;
+      }
+      if (.@r>=11) {
+         bonus bMaxHPrate,10;
+         bonus bMaxSPrate,10;
+         bonus bDelayrate,-5;
+      }
+  - Id: 480175
+    Script: |
+      .@r = getrefine();
+      bonus bAspd,2;
+      bonus bMatkRate,20;
+      bonus bMatk,4*.@r;
+      bonus2 bMagicAtkEle,Ele_All,2*(.@r/3);
+      if (.@r>=7) bonus bAspdRate,10;
+      if (.@r>=9) bonus bMatkRate,10;
+      if (.@r>=11) {
+         bonus5 bAutoSpell,"MG_THUNDERSTORM",5,50,BF_SHORT|BF_WEAPON,1;
+         bonus5 bAutoSpell,"WZ_HEAVENDRIVE",5,50,BF_SHORT|BF_WEAPON,1;
+      }
+      if (getskilllv("SC_AUTOSHADOWSPELL")>=10) {
+         bonus bMatk,150;
+         bonus2 bMagicAddEle,Ele_All,10;
+         if (.@r>=9) {
+            bonus5 bAutoSpell,"WL_HELLINFERNO",3,50,BF_SHORT|BF_WEAPON,1;
+            bonus5 bAutoSpell,"SO_DIAMONDDUST",3,50,BF_SHORT|BF_WEAPON,1;
+         }
+         if (.@r>=11) {
+            bonus5 bAutoSpell,"SO_EARTHGRAVE",3,50,BF_SHORT|BF_WEAPON,1;
+            bonus5 bAutoSpell,"WL_CHAINLIGHTNING",3,50,BF_SHORT|BF_WEAPON,1;
+         }
+         if (.@r>=13) {
+            bonus2 bIgnoreMdefClassRate,Class_Boss,15;
+            bonus2 bIgnoreMdefClassRate,Class_Normal,15;
+         }
+      }
+  - Id: 480242
+    Script: |
+      .@r = getrefine();
+      bonus bMatk,10*(.@r/2);
+      bonus2 bMagicAtkEle,Ele_Wind,3*(.@r/4);
+      bonus2 bMagicAtkEle,Ele_Ghost,3*(.@r/4);
+      if (.@r>=7) bonus bMatkRate,10;
+      if (.@r>=9) bonus2 bMagicAddSize,Size_All,10;
+      if (.@r>=11) bonus bDelayrate,-12;
+      if (.@r>=13) bonus2 bIgnoreMdefClassRate,Class_Boss,10;

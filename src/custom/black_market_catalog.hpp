@@ -437,7 +437,7 @@ inline bool prepare(const Profile& p, Catalog& cat, Inventories& stock) {
 			for (int t = 0; t < 6; ++t) if (row->tiers[t]) {
 				stock["cons" + std::to_string(row->category) + "#T" + std::to_string(t)].emplace_back(row->id, row->tiers[t]);
 				if (row->category == 7) {
-					uint64 price = (static_cast<uint64>(row->tiers[t]) * 120 + 50) / 100;
+					uint64 price = row->tiers[t];
 					if (price > INT32_MAX) { ShowError("Black Market catalog %s: Id %u Category 7 courier price overflow.\n", p.path().c_str(), row->id); return false; }
 					stock["rookup#T" + std::to_string(t)].emplace_back(row->id, static_cast<uint32>(price));
 				}
@@ -455,9 +455,9 @@ inline bool prepare(const Profile& p, Catalog& cat, Inventories& stock) {
 			} else if (row->category != category) continue;
 			rows.push_back(row);
 		}
-		if (p.kind != Kind::Card) std::sort(rows.begin(), rows.end(), [](const auto& a, const auto& b) {
+		std::sort(rows.begin(), rows.end(), [&p](const auto& a, const auto& b) {
 			bool adigit = letter(a->name, false) == 26, bdigit = letter(b->name, false) == 26;
-			if (adigit != bdigit) return !adigit;
+			if (adigit != bdigit) return p.kind == Kind::Card ? adigit : !adigit;
 			auto aname = lower(a->name), bname = lower(b->name);
 			return aname == bname ? a->id < b->id : aname < bname;
 		});
@@ -622,7 +622,7 @@ inline bool search_allowed(const Profile& owner, const Record& row, const map_se
 	if (owner.tier == 1) return true;
 	if (owner.tier == 2) return (sd->class_ & MAPID_FIRSTMASK) == MAPID_SUMMONER || (sd->class_ & (JOBL_2 | JOBL_UPPER));
 	return ((sd->class_ & JOBL_THIRD) || sd->status.class_ == JOB_SPIRIT_HANDLER) &&
-		pc_readreg(sd, add_str(BLACK_MARKET_POINT_VAR)) >= 60000;
+		pc_readreg2(sd, BLACK_MARKET_POINT_VAR) >= 60000;
 }
 inline int search(std::string query, std::vector<t_itemid>& out, SearchKind kind = SearchKind::Equipment, const map_session_data* sd = nullptr) {
 	if (!search_available(kind)) return -1;
