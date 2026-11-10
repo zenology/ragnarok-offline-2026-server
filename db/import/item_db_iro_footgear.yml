@@ -26,7 +26,7 @@ Body:
     Shoes: true
   ArmorLevel: 1
   EquipLevelMin: 0
-  Script: bonus bExpAddRace,RC_All,8; bonus2 bSubRace,RC_All,-10;
+  Script: bonus2 bExpAddRace,RC_All,8; bonus2 bSubRace,RC_All,-10;
 - Id: 470128
   AegisName: IRO_History_Footgear_470128
   Name: Pegasus Shoes

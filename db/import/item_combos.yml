@@ -1072,7 +1072,7 @@ Body:
           - IRO_History_Footgear_470114
           - B_Ygnizem_Card
     Script: |
-      bonus bExpAddRace,RC_All,12;
+      bonus2 bExpAddRace,RC_All,12;
       bonus2 bSubRace,RC_All,10;
   - Combos:
       - Combo:
@@ -4115,3 +4115,4 @@ Footer:
     - Path: db/import/item_combos_chapter_cards.yml
     - Path: db/import/item_combos_iro_shadow_gear.yml
     - Path: db/import/item_combos_poenitentia_iro.yml
+    - Path: db/import/item_combos_black_market_review.yml

@@ -1,0 +1,362 @@
+# Targeted iRO-English combo repairs for the 2026-10-14 review.
+Header:
+  Type: COMBO_DB
+  Version: 1
+
+Body:
+  - Combos:
+      - Combo: [Poenetentia_D_Crown, Poenetentia_Vatia]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HAND_R);
+      bonus bLongAtkRate,15;
+      bonus2 bSkillAtk,"WM_SEVERE_RAINSTORM",10*(.@r/2);
+      bonus2 bSkillAtk,"TR_RHYTHMSHOOTING",10*(.@r/2);
+  - Combos:
+      - Combo: [IRO_History_Footgear_470340, Knight_Of_Abyss_Card]
+    Script: |
+      bonus bBaseAtk,150;
+      bonus2 bSkillAtk,"RK_WINDCUTTER",60;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470340, White_Knightage_Card]
+    Script: |
+      bonus bBaseAtk,150;
+      bonus2 bSkillAtk,"RK_HUNDREDSPEAR",60;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470340, Lord_Of_Death_Card]
+    Script: |
+      bonus bBaseAtk,150;
+      bonus bPow,20;
+      bonus2 bWeaponSubSize,Size_Medium,20;
+      bonus2 bWeaponSubSize,Size_Large,20;
+      bonus2 bAddSize,Size_All,6*(getequiprefinerycnt(EQI_SHOES)/2);
+      if (BaseClass==Job_Swordman) bonus bBaseAtk,250;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470372, Goblin_King_Card]
+    Script: |
+      bonus2 bAddClass,Class_Normal,30;
+      bonus2 bAddClass,Class_Boss,30;
+      if (getequiprefinerycnt(EQI_SHOES)>=14)
+         autobonus "{ bonus bStr,300; bonus bDex,300; bonus bLuk,300; }",70,10000,BF_WEAPON;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470354, Amon_Ra_Card]
+    Script: |
+      bonus bShortAtkRate,25;
+      bonus bLongAtkRate,25;
+      bonus2 bMagicAtkEle,Ele_All,25;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470343, Zombie_Slaughter_Card]
+    Script: |
+      bonus2 bMagicAtkEle,Ele_All,15;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470343, Fallen_Bishop_Card]
+    Script: |
+      bonus2 bMagicAddClass,Class_Boss,40;
+      if (getequiprefinerycnt(EQI_SHOES)>=14)
+         autobonus "{ bonus bInt,200; bonus bDex,200; bonus bLuk,200; bonus bSpl,50; }",50,10000,BF_MAGIC;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470343, Sealed_F_Bishop_Card]
+    Script: |
+      bonus2 bMagicAddClass,Class_Boss,20;
+      if (getequiprefinerycnt(EQI_SHOES)>=14)
+         autobonus "{ bonus bInt,100; bonus bDex,100; bonus bLuk,100; bonus bSpl,25; }",20,5000,BF_MAGIC;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470414, Circul_Of_Life_Spring]
+      - Combo: [IRO_History_Footgear_470414, Circul_Of_Life_Summer]
+      - Combo: [IRO_History_Footgear_470414, Circul_Of_Life_Autumn]
+      - Combo: [IRO_History_Footgear_470414, Circul_Of_Life_Winter]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus bPAtk,25;
+      bonus bSMatk,25;
+      bonus2 bAddSize,Size_All,7*.@r;
+      bonus2 bMagicAddSize,Size_All,7*.@r;
+      bonus bMaxHPrate,7*(.@r/2);
+      bonus bMaxSPrate,7*(.@r/2);
+  - Combos:
+      - Combo: [IRO_History_Footgear_470440, Little_Abyss_Dragon_]
+    Script: |
+      bonus bPow,15;
+      bonus bCon,15;
+      bonus2 bAddSize,Size_All,10;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470440, Detale_Card]
+    Script: |
+      bonus2 bAddClass,Class_All,40;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470440, Abbys_L_H_Armor]
+    Script: |
+      bonus bShortAtkRate,20;
+      bonus bLongAtkRate,20;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470426, WizardOfVeritas_Card]
+    Script: |
+      bonus bMatk,250;
+      bonus2 bMagicAtkEle,Ele_Wind,25;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470426, Bomi_Card]
+    Script: |
+      bonus bMatk,250;
+      bonus2 bMagicAtkEle,Ele_Ghost,25;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470426, Death_Witch_Card]
+    Script: |
+      bonus bSpl,30;
+      bonus2 bMagicAtkEle,Ele_Ghost,100;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470426, R001_Bestia_Card]
+    Script: |
+      bonus bSpl,30;
+      bonus2 bMagicAtkEle,Ele_Wind,100;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470443, Rechenier_Card]
+    Script: |
+      bonus bSMatk,15;
+      bonus2 bSkillAtk,"CD_FRAMEN",50;
+      bonus2 bSkillCooldown,"CD_FRAMEN",-200;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470443, Pa_Monk_Card]
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",50;
+      bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-600;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470443, MD_Geffen_Reche_Card]
+    Script: |
+      bonus bSMatk,30;
+      bonus bSpl,30;
+      bonus2 bSkillAtk,"CD_FRAMEN",100;
+      bonus2 bSkillCooldown,"CD_FRAMEN",-300;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470443, MD_Geffen_Monk_Card]
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"IQ_EXPOSION_BLASTER",100;
+      bonus2 bSkillCooldown,"IQ_EXPOSION_BLASTER",-700;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470461, Geffen_Thug_Card]
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"MT_TRIPLE_LASER",50;
+      bonus2 bSkillCooldown,"MT_TRIPLE_LASER",-150;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470461, Fei_Kanabian_Card]
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",100;
+      bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-300;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470461, MD_Geffen_Thug_Card]
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"MT_TRIPLE_LASER",100;
+      bonus2 bSkillCooldown,"MT_TRIPLE_LASER",-300;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470461, MD_Geffen_Fei_Card]
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"BO_MAYHEMIC_THORNS",100;
+      bonus2 bSkillCooldown,"BO_MAYHEMIC_THORNS",-600;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470451, Hyper_Death_Card]
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",50;
+      bonus2 bSkillCooldown,"DK_HACKANDSLASHER",-500;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470451, MD_Geffen_Blut_Card]
+    Script: |
+      bonus bSMatk,30;
+      bonus bSpl,30;
+      bonus2 bSkillAtk,"IG_CROSS_RAIN",100;
+      bonus2 bSkillCooldown,"IG_CROSS_RAIN",-2000;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470451, MD_Geffen_Hyper_Card]
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"DK_HACKANDSLASHER",100;
+      bonus2 bSkillCooldown,"DK_HACKANDSLASHER",-500;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470467, Archi_Card]
+    Script: |
+      bonus bPAtk,10;
+      bonus bSMatk,10;
+      bonus bVariableCastrate,-10;
+      bonus bDelayrate,-10;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470467, MD_Geffen_Archi_Card]
+    Script: |
+      bonus bPAtk,20;
+      bonus bSMatk,20;
+      bonus bVariableCastrate,-20;
+      bonus bDelayrate,-20;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470467, Fenrir_Card_]
+    Script: |
+      bonus bPAtk,15;
+      bonus bSMatk,15;
+      bonus bDelayrate,-20;
+      bonus2 bAddSize,Size_All,15;
+      bonus2 bMagicAddSize,Size_All,15;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470457, Geffen_Gang_Card]
+    Script: |
+      bonus bPAtk,15;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",50;
+      bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-300;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470457, Geffen_Thief_Card]
+    Script: |
+      bonus bSMatk,15;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",50;
+      bonus2 bSkillCooldown,"ABC_ABYSS_SQUARE",-1500;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470457, MD_Geffen_Gang_Card]
+    Script: |
+      bonus bPAtk,30;
+      bonus bPow,30;
+      bonus2 bSkillAtk,"SHC_SAVAGE_IMPACT",100;
+      bonus2 bSkillCooldown,"SHC_SAVAGE_IMPACT",-500;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470457, MD_Geffen_Thief_Card]
+    Script: |
+      bonus bSMatk,30;
+      bonus bSpl,30;
+      bonus2 bSkillAtk,"ABC_ABYSS_SQUARE",100;
+      bonus2 bSkillCooldown,"ABC_ABYSS_SQUARE",-2300;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470114, B_Ygnizem_Card]
+    Script: |
+      bonus2 bExpAddRace,RC_All,12;
+      bonus2 bSubRace,RC_All,10;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470382, Venom_Kimera_Card]
+    Script: |
+      bonus bAllStats,30;
+      bonus bAllTraitStats,30;
+      if (getenchantgrade(EQI_SHOES)>=ENCHANTGRADE_A)
+         bonus2 bMagicAtkEle,Ele_Poison,100;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470404, Grand_Pere_Card]
+    Script: |
+      bonus bPow,25;
+      bonus bCon,25;
+      bonus bLongAtkRate,30;
+  - Combos:
+      - Combo: [IRO_History_Footgear_470404, IRO_Review_Armor_450516]
+    Script: |
+      bonus bPow,7;
+      bonus bCon,7;
+      bonus bLongAtkRate,20;
+      if (getequiprefinerycnt(EQI_ARMOR)>=14 && getequiprefinerycnt(EQI_SHOES)>=14) {
+         bonus4 bAutoSpellOnSkill,"TR_ROSEBLOSSOM","WM_SEVERE_RAINSTORM",5,200;
+         bonus4 bAutoSpellOnSkill,"TR_RHYTHMSHOOTING","RA_ARROWSTORM",10,200;
+      }
+  - Combos:
+      - Combo: [IRO_Review_Armor_450516, MD_Airboat_Card]
+    Script: |
+      bonus bPow,7;
+      bonus bCon,7;
+      bonus2 bAddEle,Ele_All,7;
+  - Combos:
+      - Combo: [IRO_Review_Armor_450516, Silva_Papilia_Card]
+    Script: |
+      bonus bPow,25;
+      bonus bCon,25;
+      bonus2 bAddEle,Ele_All,25;
+      bonus bMagicDamageReturn,25;
+  - Combos:
+      - Combo: [Battle_Aura_Manteau_LT, Old_Blazing_Soul]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_HEAD_TOP);
+      bonus2 bSkillAtk,"IQ_SECOND_FLAME",15*(.@r/3);
+      bonus2 bSkillAtk,"IQ_THIRD_FLAME_BOMB",10*(.@r/3);
+      if (.@r>=13) bonus bMaxHPrate,25;
+  - Combos:
+      - Combo: [Behemoth_Muffler, Vocal_Card]
+    Script: |
+      bonus bMdef,10;
+      bonus bMaxHPrate,10;
+      bonus2 bSubEle,Ele_Neutral,20;
+  - Combos:
+      - Combo: [N_Spirit_Cape_TW, Nahtzigger_Card]
+    Script: |
+      bonus bSMatk,10;
+      bonus2 bMagicAddClass,Class_Boss,20;
+      autobonus "{ bonus2 bMagicAddClass,Class_Boss,20; bonus2 bMagicAtkEle,Ele_Fire,20; bonus2 bMagicAtkEle,Ele_Ghost,20; bonus2 bMagicAtkEle,Ele_Water,20; }",20,10000,BF_MAGIC,"{ active_transform 1956,10000; }";
+  - Combos:
+      - Combo: [N_Avenger_Cape_TW, Nahtzigger_Card]
+    Script: |
+      bonus bPAtk,10;
+      bonus2 bAddClass,Class_Boss,20;
+      autobonus "{ bonus2 bAddClass,Class_Boss,20; }",40,10000,BF_WEAPON,"{ active_transform 1956,10000; }";
+  - Combos:
+      - Combo: [Temporal_Boots_TW, Temporal_Cape_TW]
+    Script: |
+      bonus bMdef,5;
+      if (getequiprefinerycnt(EQI_GARMENT)+getequiprefinerycnt(EQI_SHOES)>=22) {
+         if (readparam(bStr)>=108) bonus bBaseAtk,50;
+         if (readparam(bAgi)>=108) bonus bAspd,1;
+         if (readparam(bVit)>=108) bonus bDelayrate,-5;
+         if (readparam(bInt)>=108) bonus bMatk,50;
+         if (readparam(bDex)>=108) bonus bLongAtkRate,7;
+         if (readparam(bLuk)>=108) bonus bCritAtkRate,7;
+      }
+  - Combos:
+      - Combo: [Old_Mitra, Subject_Cape_TW]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus bLongAtkDef,.@r/2;
+      if (.@r>=12) bonus2 bSubRace,RC_All,15;
+  - Combos:
+      - Combo: [Old_Magic_Stone_Hat, Subject_Cape_TW]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bMagicAddSize,Size_All,.@r/2;
+      if (.@r>=12) bonus2 bSkillCooldown,"WL_TELEKINESIS_INTENSE",-30000;
+  - Combos:
+      - Combo: [Old_Wind_Whisper, Subject_Cape_TW]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bMagicAddSize,Size_All,.@r/2;
+      if (.@r>=12) bonus bMatk,30;
+  - Combos:
+      - Combo: [Old_Circlet_Of_Bone, Subject_Cape_TW]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus bCritAtkRate,3*(.@r/2);
+      if (.@r>=12) {
+         bonus2 bIgnoreDefRaceRate,RC_All,25;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Human,-25;
+         bonus2 bIgnoreDefRaceRate,RC_Player_Doram,-25;
+      }
+  - Combos:
+      - Combo: [Old_Driver_Band_Y, Subject_Cape_TW]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bSkillAtk,"NC_VULCANARM",5*(.@r/2);
+      bonus2 bSkillAtk,"NC_PILEBUNKER",5*(.@r/2);
+      if (.@r>=12) bonus2 bSkillCooldown,"NC_SELFDESTRUCTION",-30000;
+  - Combos:
+      - Combo: [Giant_Mad_Bunny_TW, Mad_Bunny_K_LT]
+    Script: |
+      .@g = getenchantgrade(EQI_HAND_L);
+      .@rate = 20;
+      if (.@g>=ENCHANTGRADE_B) .@rate += 10;
+      if (.@g>=ENCHANTGRADE_A) .@rate += 10;
+      bonus2 bAddClass,Class_Boss,15;
+      bonus2 bMagicAddClass,Class_Boss,15;
+      autobonus "{ .@r = getequiprefinerycnt(EQI_GARMENT)+getequiprefinerycnt(EQI_HAND_L); bonus bBaseAtk,30*(.@r/3); bonus bMatk,30*(.@r/3); bonus2 bAddClass,Class_Boss,2; bonus2 bMagicAddClass,Class_Boss,2; }",.@rate,7000,BF_WEAPON|BF_MAGIC,"{ transform 1947,7000; }";
+  - Combos:
+      - Combo: [Eclipse_Card, Spiritual_Cloth]
+    Script: |
+      bonus2 bSubEle,Ele_Holy,75+5*getskilllv("CR_TRUST");
+  - Combos:
+      - Combo: [Katrinn_Card, Tele_WG_Cape]
+    Script: |
+      .@r = getequiprefinerycnt(EQI_GARMENT);
+      bonus2 bMagicAtkEle,Ele_Ghost,10+3*(.@r/2);
+      if (.@r>=12) bonus2 bMagicAddSize,Size_All,15;

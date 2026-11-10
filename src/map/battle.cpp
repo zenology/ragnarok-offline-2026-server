@@ -36,6 +36,7 @@
 #include "./skills/skill_impl.hpp"
 #include "custom/property_immune.hpp"
 #include "custom/monster_servant_weapon.hpp"
+#include "custom/black_market_review.hpp"
 
 using namespace rathena;
 
@@ -1139,7 +1140,7 @@ int32 battle_calc_cardfix(int32 attack_type, block_list *src, block_list *target
 					race_fix += it.rate;
 				}
 				cardfix = cardfix * (100 - race_fix) / 100;
-				cardfix = cardfix * (100 - tsd->indexed_bonus.subclass[sstatus->class_] - tsd->indexed_bonus.subclass[CLASS_ALL]) / 100;
+				cardfix = cardfix * (100 - tsd->indexed_bonus.subclass[sstatus->class_] - tsd->indexed_bonus.subclass[CLASS_ALL] - offline_black_market_review::physical_class_reduction(*tsd, *src, sstatus->class_)) / 100;
 				for (const auto &it : tsd->add_def) {
 					if (it.id == s_class) {
 						cardfix = cardfix * (100 - it.val) / 100;
