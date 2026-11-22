@@ -1,0 +1,177 @@
+# Stock order and explicit price policies are preserved from the original sidecar.
+# Price -1 reads the item's DB Buy; Stock -1 is unlimited.
+Header:
+  Type: AMMUNITION_PACK_STOCK
+  Version: 1
+
+Body:
+  - Shop: Arrow_Archer
+    Items:
+      - { Id: 1750, Price: -1, Stock: -1 }
+      - { Id: 1770, Price: -1, Stock: -1 }
+      - { Id: 1751, Price: -1, Stock: -1 }
+      - { Id: 1752, Price: -1, Stock: -1 }
+      - { Id: 1754, Price: -1, Stock: -1 }
+      - { Id: 1755, Price: -1, Stock: -1 }
+      - { Id: 1756, Price: -1, Stock: -1 }
+      - { Id: 1757, Price: -1, Stock: -1 }
+      - { Id: 1767, Price: -1, Stock: -1 }
+      - { Id: 1762, Price: -1, Stock: -1 }
+      - { Id: 1065, Price: -1, Stock: -1 }
+      - { Id: 7940, Price: -1, Stock: -1 }
+      - { Id: 12004, Price: 500, Stock: -1 }
+      - { Id: 12005, Price: 1500, Stock: -1 }
+      - { Id: 12009, Price: 2500, Stock: -1 }
+      - { Id: 12008, Price: 2500, Stock: -1 }
+      - { Id: 12012, Price: 2500, Stock: -1 }
+      - { Id: 12010, Price: 2500, Stock: -1 }
+      - { Id: 12011, Price: 2500, Stock: -1 }
+      - { Id: 12014, Price: 2500, Stock: -1 }
+      - { Id: 12013, Price: 2500, Stock: -1 }
+      - { Id: 12015, Price: 2500, Stock: -1 }
+      - { Id: 23711, Price: 25000, Stock: -1 }
+      - { Id: 12341, Price: 50000, Stock: -1 }
+
+  - Shop: Ammunition_Gunslinger
+    Items:
+      - { Id: 13200, Price: -1, Stock: -1 }
+      - { Id: 13221, Price: -1, Stock: -1 }
+      - { Id: 13228, Price: -1, Stock: -1 }
+      - { Id: 13229, Price: -1, Stock: -1 }
+      - { Id: 13230, Price: -1, Stock: -1 }
+      - { Id: 13231, Price: -1, Stock: -1 }
+      - { Id: 13232, Price: -1, Stock: -1 }
+      - { Id: 13222, Price: -1, Stock: -1 }
+      - { Id: 13215, Price: -1, Stock: -1 }
+      - { Id: 13216, Price: -1, Stock: -1 }
+      - { Id: 13217, Price: -1, Stock: -1 }
+      - { Id: 13218, Price: -1, Stock: -1 }
+      - { Id: 13219, Price: -1, Stock: -1 }
+      - { Id: 13220, Price: -1, Stock: -1 }
+      - { Id: 7663, Price: -1, Stock: -1 }
+      - { Id: 7665, Price: 15, Stock: -1 }
+      - { Id: 7664, Price: -1, Stock: -1 }
+      - { Id: 25187, Price: -1, Stock: -1 }
+      - { Id: 1000564, Price: -1, Stock: -1 }
+      - { Id: 12149, Price: 500, Stock: -1 }
+      - { Id: 22738, Price: 2500, Stock: -1 }
+      - { Id: 23123, Price: 2500, Stock: -1 }
+      - { Id: 23124, Price: 2500, Stock: -1 }
+      - { Id: 23125, Price: 2500, Stock: -1 }
+      - { Id: 23126, Price: 2500, Stock: -1 }
+      - { Id: 23127, Price: 2500, Stock: -1 }
+      - { Id: 22737, Price: 2500, Stock: -1 }
+      - { Id: 22744, Price: 2500, Stock: -1 }
+      - { Id: 22745, Price: 2500, Stock: -1 }
+      - { Id: 22746, Price: 2500, Stock: -1 }
+      - { Id: 22747, Price: 2500, Stock: -1 }
+      - { Id: 22748, Price: 2500, Stock: -1 }
+      - { Id: 22749, Price: 2500, Stock: -1 }
+      - { Id: 100195, Price: 7500, Stock: -1 }
+      - { Id: 100197, Price: 7500, Stock: -1 }
+      - { Id: 100196, Price: 15000, Stock: -1 }
+      - { Id: 101116, Price: 15000, Stock: -1 }
+
+  - Shop: Weapons_Ninja
+    Items:
+      - { Id: 1220001, Price: -1, Stock: -1 }
+      - { Id: 1220002, Price: -1, Stock: -1 }
+      - { Id: 1220003, Price: 30, Stock: -1 }
+      - { Id: 1220004, Price: -1, Stock: -1 }
+      - { Id: 13258, Price: -1, Stock: -1 }
+      - { Id: 13257, Price: -1, Stock: -1 }
+      - { Id: 13255, Price: -1, Stock: -1 }
+      - { Id: 13256, Price: -1, Stock: -1 }
+      - { Id: 13259, Price: -1, Stock: -1 }
+      - { Id: 13294, Price: -1, Stock: -1 }
+      - { Id: 6512, Price: -1, Stock: -1 }
+      - { Id: 6515, Price: -1, Stock: -1 }
+      - { Id: 6513, Price: -1, Stock: -1 }
+      - { Id: 6514, Price: -1, Stock: -1 }
+      - { Id: 13250, Price: -1, Stock: -1 }
+      - { Id: 13251, Price: -1, Stock: -1 }
+      - { Id: 13252, Price: -1, Stock: -1 }
+      - { Id: 13253, Price: -1, Stock: -1 }
+      - { Id: 13254, Price: -1, Stock: -1 }
+      - { Id: 7521, Price: -1, Stock: -1 }
+      - { Id: 7522, Price: -1, Stock: -1 }
+      - { Id: 7523, Price: -1, Stock: -1 }
+      - { Id: 7524, Price: -1, Stock: -1 }
+      - { Id: 1000565, Price: -1, Stock: -1 }
+      - { Id: 1000566, Price: -1, Stock: -1 }
+      - { Id: 1000567, Price: -1, Stock: -1 }
+      - { Id: 1000568, Price: -1, Stock: -1 }
+      - { Id: 1000569, Price: -1, Stock: -1 }
+      - { Id: 101112, Price: 15000, Stock: -1 }
+      - { Id: 101113, Price: 15000, Stock: -1 }
+      - { Id: 101114, Price: 15000, Stock: -1 }
+      - { Id: 101115, Price: 15000, Stock: -1 }
+      - { Id: 23081, Price: 15000, Stock: -1 }
+      - { Id: 23083, Price: 15000, Stock: -1 }
+      - { Id: 23082, Price: 15000, Stock: -1 }
+      - { Id: 23084, Price: 15000, Stock: -1 }
+      - { Id: 23085, Price: 15000, Stock: -1 }
+      - { Id: 100191, Price: 50000, Stock: -1 }
+      - { Id: 100187, Price: 25000, Stock: -1 }
+      - { Id: 100190, Price: 25000, Stock: -1 }
+      - { Id: 100188, Price: 25000, Stock: -1 }
+      - { Id: 100189, Price: 25000, Stock: -1 }
+      - { Id: 100183, Price: 25000, Stock: -1 }
+      - { Id: 100184, Price: 25000, Stock: -1 }
+      - { Id: 100185, Price: 25000, Stock: -1 }
+      - { Id: 100186, Price: 100000, Stock: -1 }
+      - { Id: 101118, Price: 15000, Stock: -1 }
+      - { Id: 101119, Price: 15000, Stock: -1 }
+      - { Id: 101120, Price: 15000, Stock: -1 }
+      - { Id: 101121, Price: 15000, Stock: -1 }
+      - { Id: 101122, Price: 15000, Stock: -1 }
+
+  - Shop: Ammunition_Mechanic
+    Items:
+      - { Id: 18000, Price: -1, Stock: -1 }
+      - { Id: 18003, Price: -1, Stock: -1 }
+      - { Id: 18001, Price: -1, Stock: -1 }
+      - { Id: 18002, Price: -1, Stock: -1 }
+      - { Id: 18004, Price: -1, Stock: -1 }
+      - { Id: 18005, Price: -1, Stock: -1 }
+      - { Id: 18006, Price: -1, Stock: -1 }
+      - { Id: 18007, Price: -1, Stock: -1 }
+      - { Id: 18008, Price: -1, Stock: -1 }
+      - { Id: 6145, Price: -1, Stock: -1 }
+      - { Id: 6146, Price: -1, Stock: -1 }
+      - { Id: 12394, Price: -1, Stock: -1 }
+      - { Id: 12393, Price: -1, Stock: -1 }
+      - { Id: 12392, Price: -1, Stock: -1 }
+      - { Id: 6147, Price: -1, Stock: -1 }
+      - { Id: 23277, Price: -1, Stock: -1 }
+      - { Id: 100158, Price: -1, Stock: -1 }
+      - { Id: 2804, Price: -1, Stock: -1 }
+      - { Id: 2809, Price: -1, Stock: -1 }
+      - { Id: 2810, Price: -1, Stock: -1 }
+      - { Id: 100171, Price: 15000, Stock: -1 }
+      - { Id: 100173, Price: 25000, Stock: -1 }
+      - { Id: 100177, Price: 25000, Stock: -1 }
+      - { Id: 100176, Price: 25000, Stock: -1 }
+      - { Id: 100172, Price: 40000, Stock: -1 }
+      - { Id: 101107, Price: 25000, Stock: -1 }
+      - { Id: 101108, Price: 25000, Stock: -1 }
+      - { Id: 101109, Price: 25000, Stock: -1 }
+      - { Id: 101110, Price: 25000, Stock: -1 }
+      - { Id: 12383, Price: 12000, Stock: -1 }
+      - { Id: 100179, Price: 187500, Stock: -1 }
+      - { Id: 100182, Price: 687500, Stock: -1 }
+      - { Id: 100181, Price: 250000, Stock: -1 }
+      - { Id: 100180, Price: 100000, Stock: -1 }
+      - { Id: 100178, Price: 62500, Stock: -1 }
+
+  - Shop: Talisman_Merchant
+    Items:
+      - { Id: 1000563, Price: 30, Stock: -1 }
+      - { Id: 101117, Price: 15000, Stock: -1 }
+
+  - Shop: Catch_Arrows
+    Items:
+      - { Id: 1773, Price: 5, Stock: -1 }
+      - { Id: 1774, Price: 5, Stock: -1 }
+      - { Id: 12575, Price: 2500, Stock: -1 }
+      - { Id: 12576, Price: 2500, Stock: -1 }
