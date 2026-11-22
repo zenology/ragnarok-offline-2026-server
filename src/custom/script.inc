@@ -21,6 +21,7 @@
 #include "black_market_cashshop.hpp"
 #include "black_market_catalog.hpp"
 #include "malangdo_shop_catalog.hpp"
+#include "ammunition_pack_stock.hpp"
 #include "silvervine_enchant.hpp"
 #include "silvervine_enchant_upgrade.hpp"
 #include "stripe_fallback.hpp"
@@ -150,6 +151,35 @@ BUILDIN_FUNC(premiumopenstorage) {
 
 BUILDIN_FUNC(bmc_load) {
 	script_pushint(st, bmc::load());
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(aps_load) {
+	script_pushint(st, aps::load());
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(aps_shopname) {
+	const auto shop = aps::shop_at(script_getnum64(st, 2));
+	script_pushstrcopy(st, shop ? shop->name.c_str() : "");
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(aps_rowcount) {
+	const auto shop = aps::shop_at(script_getnum64(st, 2));
+	script_pushint(st, shop ? shop->entries.size() : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(aps_itemid) {
+	const auto entry = aps::entry_at(script_getnum64(st, 2), script_getnum64(st, 3));
+	script_pushint(st, entry ? entry->id : 0);
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(aps_price) {
+	const auto entry = aps::entry_at(script_getnum64(st, 2), script_getnum64(st, 3));
+	script_pushint(st, entry ? entry->price : -2);
+	return SCRIPT_CMD_SUCCESS;
+}
+BUILDIN_FUNC(aps_stock) {
+	const auto entry = aps::entry_at(script_getnum64(st, 2), script_getnum64(st, 3));
+	script_pushint(st, entry ? entry->stock : -2);
 	return SCRIPT_CMD_SUCCESS;
 }
 BUILDIN_FUNC(msc_ready) {

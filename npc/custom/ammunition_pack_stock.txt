@@ -1,0 +1,41 @@
+// YAML owns all stock, prices and dependency IDs. Requires the aps_* commands.
+// Market stock is persistent: removing the registration alone is not rollback.
+// Reload this file after separately reloading either native merchant file.
+-	script	ammunition_pack_stock	-1,{
+OnInit:
+	// Apply after native initialization and persisted market-stock restoration.
+	initnpctimer;
+	end;
+
+OnTimer1000:
+	stopnpctimer;
+	if (!getbattleflag("feature.barter")) {
+		debugmes "Ammunition pack stock: skipped (feature.barter off).";
+		end;
+	}
+
+	// The loader validates every shop and every item before the first stock call.
+	.@shops = aps_load();
+	if (.@shops <= 0) {
+		debugmes "Ammunition pack stock: load failed; no stock changes applied.";
+		end;
+	}
+	.@total = 0;
+	for (.@shop = 0; .@shop < .@shops; ++.@shop) {
+		.@name$ = aps_shopname(.@shop);
+		.@rows = aps_rowcount(.@shop);
+		if (!npcshopitem(.@name$, aps_itemid(.@shop, 0), aps_price(.@shop, 0), aps_stock(.@shop, 0))) {
+			debugmes "Ammunition pack stock: replace failed for " + .@name$ + " at row 0.";
+			end;
+		}
+		for (.@row = 1; .@row < .@rows; ++.@row) {
+			if (!npcshopadditem(.@name$, aps_itemid(.@shop, .@row), aps_price(.@shop, .@row), aps_stock(.@shop, .@row))) {
+				debugmes "Ammunition pack stock: append failed for " + .@name$ + " at row " + .@row + ".";
+				end;
+			}
+		}
+		.@total += .@rows;
+	}
+	debugmes "Ammunition pack stock: " + .@shops + "/" + .@shops + " ready (" + .@total + " entries from YAML).";
+	end;
+}
