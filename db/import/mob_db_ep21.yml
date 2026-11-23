@@ -1195,8 +1195,8 @@ Body:
     Level: 265
     Hp: 26428044
     Sp: 0
-    BaseExp: 20210298
-    JobExp: 17718468
+    BaseExp: 6289000
+    JobExp: 4988000
     MvpExp: 0
     Attack: 57500
     Attack2: 65535
@@ -1242,8 +1242,8 @@ Body:
     Level: 265
     Hp: 32222557
     Sp: 0
-    BaseExp: 20126166
-    JobExp: 17685474
+    BaseExp: 6263000
+    JobExp: 4979000
     MvpExp: 0
     Attack: 58000
     Attack2: 65535
@@ -1289,8 +1289,8 @@ Body:
     Level: 253
     Hp: 21424383
     Sp: 0
-    BaseExp: 21930000
-    JobExp: 14760000
+    BaseExp: 1886000
+    JobExp: 1207000
     MvpExp: 0
     Attack: 58500
     Attack2: 65535
@@ -1335,8 +1335,8 @@ Body:
     Level: 253
     Hp: 17854432
     Sp: 0
-    BaseExp: 22020000
-    JobExp: 14820000
+    BaseExp: 1893000
+    JobExp: 1212000
     MvpExp: 0
     Attack: 58000
     Attack2: 65535
@@ -1382,8 +1382,8 @@ Body:
     Level: 253
     Hp: 18679789
     Sp: 0
-    BaseExp: 18824484
-    JobExp: 15373326
+    BaseExp: 1619000
+    JobExp: 1258000
     MvpExp: 0
     Attack: 62300
     Attack2: 51200
@@ -1429,8 +1429,8 @@ Body:
     Level: 245
     Hp: 16060874
     Sp: 0
-    BaseExp: 18285492
-    JobExp: 16008108
+    BaseExp: 1572000
+    JobExp: 1309000
     MvpExp: 0
     Attack: 65322
     Attack2: 54216
@@ -1475,8 +1475,8 @@ Body:
     Level: 246
     Hp: 15574933
     Sp: 0
-    BaseExp: 21720000
-    JobExp: 14580000
+    BaseExp: 1868000
+    JobExp: 1193000
     MvpExp: 0
     Attack: 56000
     Attack2: 64000
@@ -1522,8 +1522,8 @@ Body:
     Level: 264
     Hp: 42369774
     Sp: 0
-    BaseExp: 22170000
-    JobExp: 14910000
+    BaseExp: 6899000
+    JobExp: 4198000
     MvpExp: 0
     Attack: 65535
     Attack2: 58500
@@ -1569,8 +1569,8 @@ Body:
     Level: 264
     Hp: 36578292
     Sp: 0
-    BaseExp: 22143930
-    JobExp: 14893500
+    BaseExp: 6891000
+    JobExp: 4193000
     MvpExp: 0
     Attack: 65535
     Attack2: 54375
