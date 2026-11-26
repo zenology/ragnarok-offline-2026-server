@@ -28,7 +28,6 @@
 #include "instance.hpp"
 #include "intif.hpp"
 #include "log.hpp"
-#include "log.hpp"
 #include "map.hpp"
 #include "mob.hpp"
 #include "navi.hpp"

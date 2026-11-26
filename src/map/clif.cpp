@@ -35,7 +35,6 @@
 #include "chat.hpp"
 #include "chrif.hpp"
 #include "clan.hpp"
-#include "clif.hpp"
 #include "elemental.hpp"
 #include "guild.hpp"
 #include "homunculus.hpp"
