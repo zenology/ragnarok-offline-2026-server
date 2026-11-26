@@ -2,6 +2,7 @@
 //= Episode 21 permanent monster spawns
 //============================================================
 // DP default map/detail counts and respawn times, checked 2026-10-21.
+// Awake MVP respawns use the player-approved local 6-hour interval, 2026-11-26.
 // Evidence: KB research/episode-21-monster-spawns.md.
 // Random map-wide spawn cells; names/AI/skills/drops come from mob_db_ep21.yml.
 // 46 declarations, 36 distinct IDs, 3035 normal monsters + 5 MVPs.
@@ -49,16 +50,16 @@ jor_tmple2,0,0,0,0	monster	--ja--	22361,70,5000,0
 jor_tmple2,0,0,0,0	boss_monster	--ja--	22364,1,21600000,0
 
 // Jorscalf 1st Floor: 500 normal monsters + Awake Judge Yortus.
-// DP explicitly lists a 5-second respawn for this Awake MVP.
+// Local balance: fixed 6-hour respawn, approved 2026-11-26.
 jor_sklf1,0,0,0,0	monster	--ja--	22414,100,5000,0
 jor_sklf1,0,0,0,0	monster	--ja--	22415,100,5000,0
 jor_sklf1,0,0,0,0	monster	--ja--	22416,100,5000,0
 jor_sklf1,0,0,0,0	monster	--ja--	22417,100,5000,0
 jor_sklf1,0,0,0,0	monster	--ja--	22418,100,5000,0
-jor_sklf1,0,0,0,0	boss_monster	--ja--	22421,1,5000,0
+jor_sklf1,0,0,0,0	boss_monster	--ja--	22421,1,21600000,0
 
 // Jorscalf 2nd Floor: 505 normal monsters + Awake Yortus Executor.
-// DP explicitly lists a 5-second respawn for this Awake MVP.
+// Local balance: fixed 6-hour respawn, approved 2026-11-26.
 jor_sklf2,0,0,0,0	monster	--ja--	22412,100,5000,0
 jor_sklf2,0,0,0,0	monster	--ja--	22413,100,5000,0
 jor_sklf2,0,0,0,0	monster	--ja--	22414,35,5000,0
@@ -66,4 +67,4 @@ jor_sklf2,0,0,0,0	monster	--ja--	22415,35,5000,0
 jor_sklf2,0,0,0,0	monster	--ja--	22416,35,5000,0
 jor_sklf2,0,0,0,0	monster	--ja--	22419,100,5000,0
 jor_sklf2,0,0,0,0	monster	--ja--	22420,100,5000,0
-jor_sklf2,0,0,0,0	boss_monster	--ja--	22422,1,5000,0
+jor_sklf2,0,0,0,0	boss_monster	--ja--	22422,1,21600000,0
